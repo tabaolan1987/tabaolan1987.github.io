@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Basic | Ta Bao Lan]]></title>
-  <link href="http://tabaolan1987.github.io/blog/categories/basic/atom.xml" rel="self"/>
+  <title><![CDATA[Category: NewBie | Ta Bao Lan]]></title>
+  <link href="http://tabaolan1987.github.io/blog/categories/newbie/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-22T16:18:06+07:00</updated>
+  <updated>2014-05-22T16:38:57+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
