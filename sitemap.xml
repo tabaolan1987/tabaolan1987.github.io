@@ -1,16 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://tabaolan1987.github.io/blog/2014/05/22/download-and-install-java/</loc>
-        <lastmod>2014-05-22T15:29:28+07:00</lastmod>
+        <loc>
+            http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-1-download-and-install-java/
+        </loc>
+        <lastmod>2014-05-22T15:37:12+07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-2-download-and-start-eclipse/
+        </loc>
+        <lastmod>2014-05-22T16:17:55+07:00</lastmod>
     </url>
     <url>
         <loc>http://tabaolan1987.github.io/blog/archives/</loc>
-        <lastmod>2014-05-22T15:29:28+07:00</lastmod>
+        <lastmod>2014-05-22T16:17:55+07:00</lastmod>
     </url>
     <url>
         <loc>http://tabaolan1987.github.io/</loc>
-        <lastmod>2014-05-22T15:29:28+07:00</lastmod>
+        <lastmod>2014-05-22T16:17:55+07:00</lastmod>
     </url>
     <url>
         <loc>http://tabaolan1987.github.io/robots.txt</loc>

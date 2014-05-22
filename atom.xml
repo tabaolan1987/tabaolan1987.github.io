@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-22T15:29:35+07:00</updated>
+  <updated>2014-05-22T16:18:06+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,10 +14,91 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Download and Install Java]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/22/download-and-install-java/"/>
-    <updated>2014-05-22T14:38:00+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/22/download-and-install-java</id>
+    <title type="html"><![CDATA[Newbie Part 2 : Download and Start Eclipse]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-2-download-and-start-eclipse/"/>
+    <updated>2014-05-22T15:38:28+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-2-download-and-start-eclipse</id>
+    <content type="html"><![CDATA[<h2>Download and Start Eclipse IDE</h2>
+
+<p>Download Eclipse for Java Developers, extract and save it in any drive. It is totally free. You can run ‘eclipse.exe’ directly so you do not need to install Eclipse in your system.</p>
+
+<p>&mdash; Tải về Eclipse dành cho người lập trình Java, giải nén và lưu nó ở bất cứ ổ đĩa nào.Eclipse là bộ công cụ phát triển code Java hoàn toàn miễn phí. Bạn có thể chạy trực tiếp file &ldquo;eclipse.exe&rdquo; nên không cần thiết bạn cài nó vào máy tính của bạn.</p>
+
+<p>1) Go to <a href="http://www.eclipse.org/downloads.">|Eclipse download page</a></p>
+
+<p>&mdash; Ấn vào <a href="http://www.eclipse.org/downloads.">đây</a> để vào trang website tải về Eclipse.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Download-and-Install-Eclipse-1.png"></p>
+
+<p>2) For Windows users, you will have to know what type of version of your OS you have. If your computer is a 64 bit Windows , select Windows 64 and if you have a 32 bit Windows, select Windows 32 bit.</p>
+
+<p>&mdash; Đối với những người dùng hệ điều hành Window , bạn phải hiểu rõ WIN bạn đang chạy là 64 bit hay 32 bit để mà chọn Eclipse phù hợp.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Download-and-Install-Eclipse-2.png"></p>
+
+<p>3) Save the .zip file to your disk.</p>
+
+<p>&mdash; Lưu tập tin vào ổ đĩa của bạn.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Download-and-Install-Eclipse-3.png"></p>
+
+<p>4) Once you have downloaded the Eclipse archive you will need to Extract the zip file, which will create the unzipped Eclipse folder.</p>
+
+<p>&mdash; Khi tải về hoàn thành bạn sẽ có 1 file tên là eclipse.zip , bạn cần phải giải nén File này ra bằng winzar hay bằng 7-zip.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Download-and-Install-Eclipse-4.png"></p>
+
+<p>5) You may want to Extract the archive to the root of C: drive, thus creating the folder “C:eclipse”, or just moved the extracted eclipse folder to the root of C: drive if you extracted it already. I prefer to leave it as it is.</p>
+
+<p>&mdash; Nó sẽ hỏi bạn là giải nén file này vào đâu.Bạn có thể chọn tất cả các ổ đĩa nhưng để dễ nhớ nên chọn vào ổ đĩa C.sau khi giải nén xong nó sẽ có 1 folder tên là eclipse.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Download-and-Install-Eclipse-5.png"></p>
+
+<p>6) Let the extraction process finished.</p>
+
+<p>&mdash; Chờ cho việc giải nén hoàn thành.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Download-and-Install-Eclipse-6.png"></p>
+
+<p>7) Open the eclipse folder.</p>
+
+<p>&mdash; Tìm vào đường dẫn lúc nãy bạn chọn để giải nén file, sẽ tìm thấy folder eclipse và click chuột vào folder đấy.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Download-and-Install-Eclipse-7.png"></p>
+
+<p>8) Since Eclipse IDE does not have any installer, there will be a file inside the Eclipse folder named eclipse.exe. You can double click on the file to run Eclipse.</p>
+
+<p>Note:(This step is not required, but it’s strongly recommended.) Right-click the Eclipse Icon and press “Send To” &ndash;> “Desktop (Create Shortcut).” Now you will be able to launch Eclipse from your desktop.</p>
+
+<p>&mdash; Sẽ có một file tên là eclipse.exe. Bạn nên tạo 1 shortcut cho file đấy và để nó ở màn hình desktop.Sau đó bạn ấn vào cái shortcut đấy nó sẽ mở eclipse lên cho bạn</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Download-and-Install-Eclipse-8.png"></p>
+
+<p><img src="http://tabaolan1987.github.io/images/Download-and-Install-Eclipse-9.png"></p>
+
+<p>9) Create a workspace folder where you will contain all the program files you create.  You can choose whatever place you want for your workspace, but it’s easiest to just use the default you’re given. I like to choose my own workplace location and will place all my Toolsqa tutorial projects under it.</p>
+
+<p>&mdash; Eclipse khi mở lần đầu sẽ yêu cầu bạn khởi tạo 1 nơi để nó lưu tất cả các project của bạn.Bạn cứ chọn cái mà nó đưa ra cho bạn chọn thôi.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Start-Eclipse-2.png"></p>
+
+<p>10) You may see the window like this, this is the Welcome window for Eclipse.</p>
+
+<p>&mdash; Bạn sẽ nhìn thấy 1 màn hình như hình dưới , nó là màn hình chào mừng của Eclipse.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Download-and-Install-Eclipse-11.png"></p>
+
+<p>11) Now that you have finished installing eclipse restart your computer. By restarting your computer it refreshes system memory and allows changes made by installers and uninstallers to take effect.</p>
+
+<p>&mdash; Sau khi hoàn tất tôi khuyên bạn nên khởi động lại máy tính cho để máy tính giải thoát những bộ nhớ đệm không cần thiết được tạo ra bởi việc cài đặt.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Newbie Part 1 :Download and Install Java]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-1-download-and-install-java/"/>
+    <updated>2014-05-22T15:36:12+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-1-download-and-install-java</id>
     <content type="html"><![CDATA[<h2>Download and Install Java (Tải và Cài Java)</h2>
 
 <p>First of all you need to install JDK (Java development kit) in your system. So your next question will be “how can I download java”. <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Click here</a> to download Java and install it in your system as per given installation guide over there or follow the below mentioned steps.</p>
