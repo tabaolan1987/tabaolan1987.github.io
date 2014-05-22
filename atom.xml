@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-22T14:43:15+07:00</updated>
+  <updated>2014-05-22T14:44:48+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -20,7 +20,7 @@
     <id>http://tabaolan1987.github.io/blog/2014/05/22/download-and-install-java</id>
     <content type="html"><![CDATA[<h2>Download and Install Java</h2>
 
-<p>First of all you need to install JDK (Java development kit) in your system. So your next question will be “how can I download java”. [Click here] (<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>) to download Java and install it in your system as per given installation guide over there or follow the below mentioned steps.</p>
+<p>First of all you need to install JDK (Java development kit) in your system. So your next question will be “how can I download java”. <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Click here</a> to download Java and install it in your system as per given installation guide over there or follow the below mentioned steps.</p>
 ]]></content>
   </entry>
   
