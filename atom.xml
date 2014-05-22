@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-22T12:12:33+07:00</updated>
+  <updated>2014-05-22T12:20:40+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,5 +12,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My Starting With Octopress]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/22/my-starting-with-octopress/"/>
+    <updated>2014-05-22T12:20:02+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/22/my-starting-with-octopress</id>
+    <content type="html"><![CDATA[<p>this is my first post in octopress</p>
+]]></content>
+  </entry>
   
 </feed>
