@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Ta Bao Lan]]></title>
-  <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Test | Ta Bao Lan]]></title>
+  <link href="http://tabaolan1987.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
   <updated>2014-05-22T14:07:32+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
@@ -12,15 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Another Post]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/22/another-post/"/>
-    <updated>2014-05-22T14:07:14+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/22/another-post</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[My Starting With Octopress]]></title>
