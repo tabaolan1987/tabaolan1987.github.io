@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-22T15:03:52+07:00</updated>
+  <updated>2014-05-22T15:10:09+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -18,9 +18,10 @@
     <link href="http://tabaolan1987.github.io/blog/2014/05/22/download-and-install-java/"/>
     <updated>2014-05-22T14:38:00+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/22/download-and-install-java</id>
-    <content type="html"><![CDATA[<h2>Download and Install Java</h2>
+    <content type="html"><![CDATA[<h2>Download and Install Java (Tải và Cài Java)</h2>
 
-<p>First of all you need to install JDK (Java development kit) in your system. So your next question will be “how can I download java”. <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Click here</a> to download Java and install it in your system as per given installation guide over there or follow the below mentioned steps.</p>
+<p>First of all you need to install JDK (Java development kit) in your system. So your next question will be “how can I download java”. <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Click here</a> to download Java and install it in your system as per given installation guide over there or follow the below mentioned steps.
+(Điều đầu tiên bạn cần phải cài đặt JDK trong máy tính của bạn.Bạn có thể tải về bằng cách <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">ấn vào đây</a> và làm theo hướng dẫn của trang website đó.Hoặc bạn có thể làm theo các bước mà tôi đã minh họa ở dưới )</p>
 
 <p>1) Visit the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java downloads page</a> on Oracle’s website to find the JDK environment download. Scroll down until you find Java SE Latest Version and download JDK.</p>
 
