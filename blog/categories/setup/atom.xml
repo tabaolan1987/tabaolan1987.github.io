@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Setup | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/setup/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-22T14:55:10+07:00</updated>
+  <updated>2014-05-22T15:02:01+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -24,6 +24,33 @@
 
 <p>1) Visit the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java downloads page</a> on Oracle’s website to find the JDK environment download. Scroll down until you find Java SE Latest Version and download JDK.
 <img src="/images/Download-And-Install-Java-1.png"></p>
+
+<p>2) Once you have selected download, accept the terms of service and choose the correct OS corresponding for the specific JDK. (Windows, Mac, Linux, etc.)
+<img src="/images/Download-And-Install-Java-2.png"></p>
+
+<p>3) Save the .exe file to your disk.
+<img src="/images/Download-And-Install-Java-3.png"></p>
+
+<p>4) Once the download is complete, double click the file to begin the installation of JDK.
+<img src="/images/Download-And-Install-Java-4.png"></p>
+
+<p>5) To run the installer, click Run.
+<img src="/images/Download-And-Install-Java-5.png"></p>
+
+<p>6) The installation process starts. Click the Next button to continue the installation.
+<img src="/images/Download-And-Install-Java-6.png"></p>
+
+<p>7) On the next screen you will encounter some options. Just leave these alone and click Next unless you know what you are doing.
+<img src="/images/Download-And-Install-Java-7.png"></p>
+
+<p>8) After the initial installation is done, a pop up asking you where your source java files will be. You can choose to change where you want to keep your folder but it’s best to stick with what you were given first. Click Next to continue.
+<img src="/images/Download-And-Install-Java-8.png"></p>
+
+<p>9) Let the installation finish.
+<img src="/images/Download-And-Install-Java-9.png"></p>
+
+<p>10) A few brief dialogs confirm the last steps of the installation process; click Close on the last dialog. This will complete Java installation process.
+<img src="/images/Download-And-Install-Java-10.png"></p>
 ]]></content>
   </entry>
   
