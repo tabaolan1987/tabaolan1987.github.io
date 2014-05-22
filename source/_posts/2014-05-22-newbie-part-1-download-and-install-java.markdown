@@ -3,7 +3,7 @@ layout: post
 title: "Newbie Part 1 :Download and Install Java "
 date: 2014-05-22 15:36:12 +0700
 comments: true
-categories: Basic Project Selenium
+categories: NewBie
 ---
 
 ##Download and Install Java (Tải và Cài Java)

@@ -3,7 +3,7 @@ layout: post
 title: "Newbie Part 2 : Download and Start Eclipse"
 date: 2014-05-22 15:38:28 +0700
 comments: true
-categories: Basic Project Selenium
+categories: NewBie
 ---
 ##Download and Start Eclipse IDE
 
