@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-23T16:04:09+07:00</updated>
+  <updated>2014-05-23T16:09:12+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -26,12 +26,38 @@
 
 <h3>1)Get Command</h3>
 
-<p>Purpose: This command is use to open a new web page in the current browser. (Dùng để mở ra 1 trang web trên 1 trình duyệt).
-Command: driver.get(URL).;
-Parameters: url – The URL to load. It is best to use a fully qualified URL (Dữ liệu truyền vào là 1 URL. Tốt nhất là truyền vào 1 URL đầy đủ cả Http).</p>
+<p>Purpose: This command is use to open a new web page in the current browser. (Dùng để mở ra 1 trang web trên 1 trình duyệt)</p>
 
-<p><code>
+<p>Command: driver.get(URL);</p>
+
+<p>Parameters: url – The URL to load. It is best to use a fully qualified URL (Dữ liệu truyền vào là 1 URL. Tốt nhất là truyền vào 1 URL đầy đủ cả Http)</p>
+
+<p><code>Java
 driver.get("wwww.google.com");
+</code></p>
+
+<h3>2)Get Title Command</h3>
+
+<p>Purpose: This command is use to get the title of the current page.(Lấy ra tiêu đề của trang hiện tại)</p>
+
+<p><code>Java
+driver.getTitle();
+</code></p>
+
+<h3>3)Get Current URL Command</h3>
+
+<p>Purpose: This command is use to get the URL of the page currently loaded in the browser.(Lệnh này dùng để lấy ra URL của 1 trang đã được tải xong trên trình duyệt)</p>
+
+<p><code>Java
+driver.getCurrentUrl();
+</code></p>
+
+<h3>4)Get Page Source Command</h3>
+
+<p>Purpose: This command is use to get the source of the last loaded page.(Lệnh này dùng để lấy các code html của trang đã được tải về trên trình duyệt)</p>
+
+<p><code>Java
+driver.getPageSource();
 </code></p>
 ]]></content>
   </entry>
