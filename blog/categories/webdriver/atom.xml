@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-23T15:51:46+07:00</updated>
+  <updated>2014-05-23T16:00:47+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Browser Commands]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/23/webdriver-browser-commands/"/>
+    <updated>2014-05-23T15:56:48+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/23/webdriver-browser-commands</id>
+    <content type="html"><![CDATA[<h2>Selenium WebDriver Browser Commands</h2>
+
+<p>The very first thing you like to do with Selenium is to opening and closing a new browser. Below are the numbers of commands you can apply on the Selenium opened browser.</p>
+
+<p>&mdash; Điều đầu tiên bạn muốn làm với Selenium là mở và đóng 1 trình duyệt. Dưới đây là những lệnh hữu ích mà bạn có thể dùng.</p>
+
+<h3>1)Get Command</h3>
+
+<p>Purpose: This command is use to open a new web page in the current browser. (Dùng để mở ra 1 trang web trên 1 trình duyệt)
+Command: driver.get(URL);
+Parameters: url – The URL to load. It is best to use a fully qualified URL (Dữ liệu truyền vào là 1 URL. Tốt nhất là truyền vào 1 URL đầy đủ cả Http)</p>
+
+<p><code>
+driver.get("wwww.google.com");
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Introduction]]></title>
