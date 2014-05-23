@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Newbie Part 3 : Download Webdriver Java Client - Ta Bao Lan</title>
+  <title>Webdriver : Element Commands - Ta Bao Lan</title>
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="Download WebDriver Java client (Tải về Webdriver Java client) Selenium webdriver supports many languages and each language has its own client driver &hellip;">
+  <meta name="description" content="Selenium WebDriver WebElement Commands The next thing you like to do is to interact with a web page. You need to locate an element first on the web &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-3-download-webdriver-java-client">
+  <link rel="canonical" href="http://tabaolan1987.github.io/blog/2014/05/23/webdriver-element-commands">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ta Bao Lan" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Newbie Part 3 : Download Webdriver Java Client</h1>
+      <h1 class="entry-title">Webdriver : Element Commands</h1>
     
     
       <p class="meta">
@@ -84,54 +84,47 @@
   
 
 
-<time datetime="2014-05-22T16:49:41+07:00" pubdate data-updated="true">May 22<span>nd</span>, 2014</time>
+<time datetime="2014-05-23T16:29:53+07:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>Download WebDriver Java client (Tải về Webdriver Java client)</h2>
+<div class="entry-content"><h2>Selenium WebDriver WebElement Commands</h2>
 
-<p>Selenium webdriver supports many languages and each language has its own client driver. Here we are configuring selenium 2 with Java so we need ‘webdriver Java client driver’.</p>
+<p>The next thing you like to do is to interact with a web page. You need to locate an element first on the web page before interacting with it and locating elements can be done on the WebDriver instance itself or on a WebElement. Webdriver gives us “Find Element” and “Find Elements” method to locate elements on the web page.</p>
 
-<p>&mdash; Selenium hỗ trợ nhiều ngôn ngữ và mỗi một ngôn ngữ sẽ có 1 driver riêng.Ở đây chúng ta sẽ thiết lật Selenium 2 với Java nên chúng ta cần driver dành cho Java.</p>
+<p>&mdash; Điều thứ 2 mà bạn muốn làm đó là tương tác với trang web. Bạn cần phải tìm ra địa điểm của những element trên web trước rồi mới có thể tương tác được với nó.Webdriver có đối tượng WebElement dùng để lưu lại các vị trí của các Element. Webdriver cung cấp 2 hàm &ldquo;Find Element&rdquo; và &ldquo;Find Elements&rdquo; dùng để tìm ra các Element trên trang web.</p>
 
-<p>1) <a href="http://docs.seleniumhq.org/download/">Click here</a> to go on WebDriver Java client driver download page for webdriver download file. On that page click on ‘Download‘ link of Java client driver as shown in the below image.</p>
+<h3>Find Element &amp; Find Elements Method</h3>
 
-<p>&mdash; Nhấp chuột vào <a href="http://docs.seleniumhq.org/download/">đây</a> để đi tới website cho phép tải về driver của Selenium.Ở trang đó bạn nhấp chuột vào chữ &ldquo;Download&rdquo; của driver dành cho Java như hình phía dưới.</p>
+<p>The difference between “Find Element” and “Find Elements” method is the first returns a WebElement object otherwise it throws an exception and the latter returns a list of WebElements, it can return an empty list if no DOM elements match the query. The “Find” methods take a locator or query object called “By”. “By” strategies are listed below.</p>
 
-<p><img src="/images/Download-Webdriver-Java-Client-1.png"></p>
+<p>&mdash; Sự khác nhau của 2 hàm là 1 hàm trả về 1 dãy các Element. Nó dựa vào By.</p>
 
-<p>2) Save the zip file to your disk.</p>
+<h4>By ID</h4>
 
-<p>&mdash; Lưu file zip vào ổ đĩa máy tính.</p>
+<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised. This is the most efficient and preferred way to locate an element, as most of the times IDs are unique. But in some cases UI developers make it having non-unique ids on a page or auto-generating the id, in both cases it should be avoided.</p>
 
-<p><img src="/images/Download-Webdriver-Java-Client-2.png"></p>
+<p>&mdash; Tìm theo Id của Element trên trang web , nếu không tìm thấy sẽ báo lỗi NoSuchElementException.</p>
 
-<p>3) Once you have downloaded the archive you will need to Extract the zip file, which will create the unzipped Selenium Java folder.</p>
+<p>Example: If an element is given like this:</p>
 
-<p>&mdash; Tải về thành công bạn phải giải nén file đã tải về để tạo ra folder Selenium Java</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>&lt;!-- html code
+</span><span class='line'>&lt;input id="Username"&gt;&lt;/input&gt;
+</span><span class='line'>--!&gt;
+</span><span class='line'>//java code to find the input with id is "Username"
+</span><span class='line'>WebElement element = driver.findElement(By.id("Username"));
+</span></code></pre></td></tr></table></div></figure>
 
-<p><img src="/images/Download-Webdriver-Java-Client-3.png"></p>
-
-<p>4) You may want to Extract the archive to the folder where you are maintaing the test ware for your project. I like to extract it at the same location and then move it as per my needs.</p>
-
-<p>&mdash; Chọn ổ đĩa bạn muốn giải nén.</p>
-
-<p><img src="/images/Download-Webdriver-Java-Client-4.png"></p>
-
-<p>5) Once the extraction process is complete, Open the Selenium folder.</p>
-
-<p>&mdash; Khi việc giải nén hoàn tất , đi đến ổ đĩa mà lưu giữ folder Selenium</p>
-
-<p><img src="/images/Download-Webdriver-Java-Client-5.png"></p>
-
-<p>6) There will be ‘libs’ folder, 2 jar files and change log in unzipped folder as shown in bellow figure. We will use all these files for configuring webdriver in eclipse.</p>
-
-<p>&mdash; Bạn sẽ phải dùng tất cả các file và folder bên trong folder Selenium để thiết lập webdriver với cả eclipse.</p>
-
-<p><img src="/images/Download-Webdriver-Java-Client-6.png"></p>
 </div>
 
 
@@ -154,12 +147,12 @@
   
 
 
-<time datetime="2014-05-22T16:49:41+07:00" pubdate data-updated="true">May 22<span>nd</span>, 2014</time>
+<time datetime="2014-05-23T16:29:53+07:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/newbie/'>NewBie</a>
+    <a class='category' href='/blog/categories/webdriver/'>Webdriver</a>
   
 </span>
 
@@ -168,7 +161,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-3-download-webdriver-java-client/" data-via="" data-counturl="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-3-download-webdriver-java-client/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://tabaolan1987.github.io/blog/2014/05/23/webdriver-element-commands/" data-via="" data-counturl="http://tabaolan1987.github.io/blog/2014/05/23/webdriver-element-commands/" >Tweet</a>
   
   
   
@@ -177,10 +170,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/05/22/newbie-part-2-download-and-start-eclipse/" title="Previous Post: Newbie Part 2 : Download and Start Eclipse">&laquo; Newbie Part 2 : Download and Start Eclipse</a>
+        <a class="basic-alignment left" href="/blog/2014/05/23/webdriver-browser-commands/" title="Previous Post: Webdriver : Browser Commands">&laquo; Webdriver : Browser Commands</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/" title="Next Post: Newbie Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test">Newbie Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test &raquo;</a>
       
     </p>
   </footer>

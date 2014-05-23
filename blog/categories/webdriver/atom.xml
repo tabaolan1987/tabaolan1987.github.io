@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-23T16:25:21+07:00</updated>
+  <updated>2014-05-23T16:37:14+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Element Commands]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/23/webdriver-element-commands/"/>
+    <updated>2014-05-23T16:29:53+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/23/webdriver-element-commands</id>
+    <content type="html"><![CDATA[<h2>Selenium WebDriver WebElement Commands</h2>
+
+<p>The next thing you like to do is to interact with a web page. You need to locate an element first on the web page before interacting with it and locating elements can be done on the WebDriver instance itself or on a WebElement. Webdriver gives us “Find Element” and “Find Elements” method to locate elements on the web page.</p>
+
+<p>&mdash; Điều thứ 2 mà bạn muốn làm đó là tương tác với trang web. Bạn cần phải tìm ra địa điểm của những element trên web trước rồi mới có thể tương tác được với nó.Webdriver có đối tượng WebElement dùng để lưu lại các vị trí của các Element. Webdriver cung cấp 2 hàm &ldquo;Find Element&rdquo; và &ldquo;Find Elements&rdquo; dùng để tìm ra các Element trên trang web.</p>
+
+<h3>Find Element &amp; Find Elements Method</h3>
+
+<p>The difference between “Find Element” and “Find Elements” method is the first returns a WebElement object otherwise it throws an exception and the latter returns a list of WebElements, it can return an empty list if no DOM elements match the query. The “Find” methods take a locator or query object called “By”. “By” strategies are listed below.</p>
+
+<p>&mdash; Sự khác nhau của 2 hàm là 1 hàm trả về 1 dãy các Element. Nó dựa vào By.</p>
+
+<h4>By ID</h4>
+
+<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised. This is the most efficient and preferred way to locate an element, as most of the times IDs are unique. But in some cases UI developers make it having non-unique ids on a page or auto-generating the id, in both cases it should be avoided.</p>
+
+<p>&mdash; Tìm theo Id của Element trên trang web , nếu không tìm thấy sẽ báo lỗi NoSuchElementException.</p>
+
+<p>Example: If an element is given like this:</p>
+
+<p>```</p>
+
+<p><!-- html code
+<input id="Username"></input>
+&mdash;!>
+//java code to find the input with id is &ldquo;Username&rdquo;
+WebElement element = driver.findElement(By.id(&ldquo;Username&rdquo;));</p>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Browser Commands]]></title>
