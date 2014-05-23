@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-23T15:28:14+07:00</updated>
+  <updated>2014-05-23T15:33:00+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -18,7 +18,7 @@
     <link href="http://tabaolan1987.github.io/blog/2014/05/23/webdriver-introduction/"/>
     <updated>2014-05-23T15:26:35+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/23/webdriver-introduction</id>
-    <content type="html"><![CDATA[<p>aloha</p>
+    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
@@ -267,7 +267,7 @@
 
 <p>Once the execution is finished, you will see the message in Console section of the Eclipse IDE.</p>
 
-<p>Now you will need to know about WebDriver in Selenium. I just create some basic knowledge about Webdriver please click <a href="http://tabaolan1987.github.io/blog/categories/Webdriver/">here</a></p>
+<p>Now you will need to know about WebDriver in Selenium. I just create some basic knowledge about Webdriver please click <a href="http://tabaolan1987.github.io/blog/categories/webdriver/">here</a></p>
 
 <p>&mdash; Sau mấy giây , trình duyệt FireFox (bạn nhớ phải cài trình duyệt này từ trước nhé) sẽ mở lên bạn sẽ thấy nó chạy dựa theo dòng code mà bạn đã viết trước đó.Sau khi hoàn thành nó sẽ đóng trình duyệt và màn hình Console của Eclipse IDE sẽ mở ra.</p>
 ]]></content>
