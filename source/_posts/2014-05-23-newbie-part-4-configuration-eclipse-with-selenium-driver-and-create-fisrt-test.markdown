@@ -208,6 +208,7 @@ public class FirstTestCase {
 
 Once the execution is finished, you will see the message in Console section of the Eclipse IDE.
 
-Now you will need to know about WebDriver in Selenium. I just create some basic knowledge about Webdriver please click [here](/blog/categories/Webdriver/)
+Now you will need to know about WebDriver in Selenium. I just create some basic knowledge about Webdriver please click [here](/blog/categories/webdriver/)
 
 -- Sau mấy giây , trình duyệt FireFox (bạn nhớ phải cài trình duyệt này từ trước nhé) sẽ mở lên bạn sẽ thấy nó chạy dựa theo dòng code mà bạn đã viết trước đó.Sau khi hoàn thành nó sẽ đóng trình duyệt và màn hình Console của Eclipse IDE sẽ mở ra.
+Bạn đã hoàn thành 4 bước dành cho người mới dùng Selenium , hãy tiếp tục tìm hiểu Webdriver tại [đây](/blog/categories/webdriver/)
