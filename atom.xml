@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-23T13:45:22+07:00</updated>
+  <updated>2014-05-23T14:53:59+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,169 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Newbie Part 4 : Creat a Simple Test Case Selenium in Eclipse]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/23/newbie-part-4-creat-a-simple-test-case-selenium-in-eclipse/"/>
+    <updated>2014-05-23T14:09:02+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/23/newbie-part-4-creat-a-simple-test-case-selenium-in-eclipse</id>
+    <content type="html"><![CDATA[<h2>Creat a simple test case selenium in Eclipse</h2>
+
+<p>To configure Eclipse with Selenium webdriver, we need to launch the Eclipse IDE, create a Workspace, create a Project, create a Package, create a Class and add External libraries to the project.</p>
+
+<p>&mdash; Để cài Selenium vào Eclipse , chúng ta phải mở Eclipse IDE , tạo 1 workspace , tạo 1 project , tạo 1 package , và một Class.Tất nhiên chúng ta cũng phải thêm những file jar cần thiết vào cái project đấy.</p>
+
+<h3>1) Select WorkSpace on Eclipse start up.</h3>
+
+<p>&mdash; Chọn workspace khi Eclipse khởi động.</p>
+
+<p>a) Double click on ‘eclipse.exe’ to start eclipse. First time when you start eclipse, it will ask you to select your workspace where your work will be stored as shown in below image.</p>
+
+<p>&mdash; Ấn chuột 2 lần vào file &lsquo;eclipse.exe&rsquo; để mở eclipse.Lần đầu tiên bạn mở eclipse , nó sẽ hỏi bạn chọn workspace để lưu trữ project của bạn.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Start-Eclipse-1.png"></p>
+
+<p>b) Create a “working directory” for all of your projects. Think of it like “My Documents” in the Windows operating system. It’s a folder which contains a lot of your documents, but there’s nothing to prevent you from creating another folder called “My Other Documents” (for instance) to house other documents.</p>
+
+<p>Typically you only need one workspace, and you can think of it as your “My Documents” for Java code. If you wanted to, you could have more than one, but chances are you won’t have a use for more. I like to choose my own workplace location and will place all my ToolsQA tutorial projects under it.</p>
+
+<p>You can change it later on from ‘Switch Workspace‘ under ‘File‘ menu of eclipse. After selecting workspace folder, Eclipse will be open.</p>
+
+<p>&mdash; Workspace là nơi để lưu trữ project của bạn , bạn hoàn toàn có thể tạo nhiều workspace để lưu trữ khác nhau tùy vào bạn.Bạn có thể chuyển đổi workspace bằng cách ấn vào menu File trên đầu màn hình và chọn &lsquo;Switch Workspace&rsquo;.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Start-Eclipse-21.png"></p>
+
+<p><img src="http://tabaolan1987.github.io/images/Start-Eclipse-3.png"></p>
+
+<p>c) You may see the window like this, this is the Welcome window for Eclipse. You may close this window.</p>
+
+<p>&mdash; Bạn có thể thấy 1 màn hình như hình dưới đây,đấy là màn hình chào mừng của Eclipse.Bạn hoàn toàn có thể đóng màn hình đó lại cũng không sao.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Start-Eclipse-4.png"></p>
+
+<h3>2) Create a new Project</h3>
+
+<p>&mdash; Tạo mới 1 Project</p>
+
+<p>Projects: A collection of related code. Generally speaking, each project encompasses one independent program. Each programming assignment you do will typically require its own project.</p>
+
+<p>Once you’ve established your workspace, you’ll want to create a project and begin writing code. In Eclipse, projects are the next-smallest functional unit after workspaces, but where you might have only one workspace, you will usually have several projects inside one workspace.</p>
+
+<p>&mdash; Project là nơi chúng ta lưu code.Ở Eclipse thì Project là đối tượng nhỏ hơn Workspace.</p>
+
+<p>a) Create new Java Project from File > New > Project .</p>
+
+<p>&mdash; Tạo mới 1 project Java từ menu File > New > Project.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Setup-Project-1.png"></p>
+
+<p>b) Select Java Project and click Next.</p>
+
+<p>&mdash; Chọn vào mục Java Project và ấn vào nút có chữ &ldquo;Next&rdquo;.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Setup-Project-2.png"></p>
+
+<p>c) Give your Project name ‘OnlineStore‘ as shown in below given figures. Click on Finish button.</p>
+
+<p>&mdash; Đặt tên cho Project của bạn là &ldquo;OnlineStore&rdquo; như hình phía dưới và ấn nút có chữ &ldquo;Finish&rdquo;.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Setup-Project-3.png"></p>
+
+<p>d) You may or may not see this message but if in case you get any, check Remember my decision and  click on Yes.</p>
+
+<p>&mdash; Bạn có thể thấy hoặc không thấy cái dòng chữ phía dưới nhưng nếu thấy thì bạn cứ ấn vào cái checkbox &ldquo;Remember my decision&rdquo; và ấn nút có chữ &ldquo;Yes&rdquo;.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Setup-Project-4.png"></p>
+
+<h3>3) Create a new Package</h3>
+
+<p>&mdash; Tạo mới 1 Package</p>
+
+<p>a) Right click on Project name ‘OnlineStore‘ and select New > Package.</p>
+
+<p>&mdash; Ấn chuột phải vào Project &ldquo;OnlineStore&rdquo; và ấn vào menu New > Package.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Creating-Package-1.png"></p>
+
+<p>b) Give your Package name ‘automationFramework‘ and click on Finish button.</p>
+
+<p>&mdash; Đặt tên cho Package là &lsquo;automationFramework&rsquo; và ấn vào nút &lsquo;Finish&rsquo;.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Creating-Package-2.png"></p>
+
+<h3>4) Create a new Class</h3>
+
+<p>&mdash; Tạo mới 1 Class.</p>
+
+<p>Now that you have a project set up, you’re going to want start writing some new classes.</p>
+
+<p>&mdash; Sau khi hoàn thành việc tạo project và package , bây giờ bạn sẽ tạo 1 class và bắt đầu viết code.</p>
+
+<p>a) Right click on Package ‘automationFramework‘ and select New > Class.</p>
+
+<p>&mdash; Click chuột phải vào Package có tên là  &lsquo;automationFramework&rsquo; và chọn New > Class.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Creating-Class-1.png"></p>
+
+<p>b)  Give your Class name ‘FirstTestCase‘, check the option ‘public static void main‘ and click on Finish button. This will bring up totally a sweet class creation window.</p>
+
+<p>Note: In case of not creating class for Main test case, please do not click ‘public static void main’. We need to select it only in case of writing test cases which we are going to execute and from where we call other classes. For functional classes, POM classes or any other classes we dont need this to be checked.</p>
+
+<p>&mdash; Đặt tên cho Class của bạn là &lsquo;FirstTestCase&rsquo; và chọn thêm 1 cái lựa chọn là &lsquo;public static void main&rsquo; và cuối cùng là ấn vào nút &lsquo;Finish&rsquo;. Nó sẽ tạo ra 1 class mà có hầu hết các function chính.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Creating-Class-2.png"></p>
+
+<p>c) Now your Eclipse window will looks like bellow.</p>
+
+<p>&mdash; Bây giờ màn hình Eclipse của bạn sẽ giống như hình dưới đây.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Creating-Class-3.png"></p>
+
+<h3>5) Add External Jars to Java build path</h3>
+
+<p>Now you need to add selenium webdriver’s jar files in to Java build path.</p>
+
+<p>&mdash; Bây giờ bạn phải cài selenium webdriver vào trong Java Build Path.</p>
+
+<p>a) Right click on Project ‘OnlineStore‘ > Select Properties > Java build path. Then navigate to Libraries tab and click Add External JARs.</p>
+
+<p>&mdash; Ấn chuột phải vào Project &lsquo;OnlineStore&rsquo; > Select Properties > Java build path . Chuyển đến Libraries và ấn vào Add External Jars.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Selenium-Jar-1.png"></p>
+
+<p>b) Add Selenium Java jar, you may add the source file too.</p>
+
+<p>&mdash; Chọn file Selenium Java jar , bạn cũng có thể chọn các file source khác.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Selenium-Jar-2.png"></p>
+
+<p>c) Add all the jars from the libs folder as well.</p>
+
+<p>&mdash; Chọn tất cả cái file jars trong folder libs nữa nhé.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Selenium-Jar-3.png"></p>
+
+<p>d) Click OK.</p>
+
+<p>&mdash; Ấn nút Ok.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Selenium-Jar-4.png"></p>
+
+<p>That’s all about configuration of WebDriver with eclipse. Now you are ready to write your test script in eclipse and run it in WebDriver.</p>
+
+<p>&mdash; Đây là tất cả những bước cài đặt Webdriver vào trong Eclipse. Giờ bạn đã sẵn sàng để viết những dòng code của  bạn trong Epclise và chạy nó trên nền WebDriver của Selenium.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/Selenium-Jar-5.png"></p>
+
+<h3>6) Write your First Test Case</h3>
+
+<p>a) Copy &amp; paste the below code to your First Test Case class and give it a run.</p>
+
+<p>&mdash; Copy và paste đoạn code ở dưới vào file class FirstTestCase mà bạn vừa tạo.</p>
+
+<p>File C:/Users/lantb/git/tabaolan.github.io/source/downloads/code/main.java could not be found</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Newbie Part 3 : Download Webdriver Java Client]]></title>
