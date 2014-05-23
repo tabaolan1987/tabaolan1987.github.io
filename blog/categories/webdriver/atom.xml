@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-23T16:11:42+07:00</updated>
+  <updated>2014-05-23T16:22:10+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -26,11 +26,15 @@
 
 <h3>1)Get Command</h3>
 
-<p>Purpose: This command is use to open a new web page in the current browser. (Dùng để mở ra 1 trang web trên 1 trình duyệt)</p>
+<p>Purpose: This command is use to open a new web page in the current browser.</p>
+
+<p>(Dùng để mở ra 1 trang web trên 1 trình duyệt)</p>
 
 <p>Command: driver.get(URL);</p>
 
-<p>Parameters: url – The URL to load. It is best to use a fully qualified URL (Dữ liệu truyền vào là 1 URL. Tốt nhất là truyền vào 1 URL đầy đủ cả Http)</p>
+<p>Parameters: url – The URL to load. It is best to use a fully qualified URL.</p>
+
+<p>(Dữ liệu truyền vào là 1 URL. Tốt nhất là truyền vào 1 URL đầy đủ cả Http)</p>
 
 <p><code>
 driver.get("wwww.google.com");
@@ -38,7 +42,8 @@ driver.get("wwww.google.com");
 
 <h3>2)Get Title Command</h3>
 
-<p>Purpose: This command is use to get the title of the current page.(Lấy ra tiêu đề của trang hiện tại)</p>
+<p>Purpose: This command is use to get the title of the current page.
+(Lấy ra tiêu đề của trang hiện tại)</p>
 
 <p><code>
 driver.getTitle();
@@ -46,7 +51,9 @@ driver.getTitle();
 
 <h3>3)Get Current URL Command</h3>
 
-<p>Purpose: This command is use to get the URL of the page currently loaded in the browser.(Lệnh này dùng để lấy ra URL của 1 trang đã được tải xong trên trình duyệt)</p>
+<p>Purpose: This command is use to get the URL of the page currently loaded in the browser.</p>
+
+<p>(Lệnh này dùng để lấy ra URL của 1 trang đã được tải xong trên trình duyệt)</p>
 
 <p><code>
 driver.getCurrentUrl();
@@ -54,11 +61,131 @@ driver.getCurrentUrl();
 
 <h3>4)Get Page Source Command</h3>
 
-<p>Purpose: This command is use to get the source of the last loaded page.(Lệnh này dùng để lấy các code html của trang đã được tải về trên trình duyệt)</p>
+<p>Purpose: This command is use to get the source of the last loaded page.</p>
+
+<p>(Lệnh này dùng để lấy các code html của trang đã được tải về trên trình duyệt)</p>
 
 <p><code>
 driver.getPageSource();
 </code></p>
+
+<h3>5)Close Command</h3>
+
+<p>Purpose: This command is use to close the current window of the browser, if it’s the last window it will close the browser.</p>
+
+<p>(Lệnh này dùng dể đóng trang web hiện tại đang mở trên trình duyệt nếu nó là trang web cuối cùng thì trình duyệt sẽ tự động đóng)</p>
+
+<p><code>
+driver.close();
+</code></p>
+
+<h3>6)Quit Command</h3>
+
+<p>Purpose: This command is use to quit the browser and all the opened windows in the browser.</p>
+
+<p>(Lệnh này dùng để đóng trình duyêt)</p>
+
+<p><code>
+driver.quit();
+</code></p>
+
+<h3>7)Refresh Command</h3>
+
+<p>Purpose: There are some commands is use to refresh the current browser.</p>
+
+<p>(Những lệnh sau đây dùng để tải lại trang web hiện tại trên trình duyệt)</p>
+
+<p><code>
+driver.navigate().refresh();
+driver.get(driver.getCurrentUrl());
+driver.navigate().to(driver.getCurrentUrl());
+driver.findElement(By.name("s")).sendKeys("\uE035");
+</code></p>
+
+<h2>Simple Practice Exercise</h2>
+
+<p>1) Launch a new Firefox browser.</p>
+
+<p>2) Open ToolsQA.com</p>
+
+<p>3) Get Page Title name and Title length</p>
+
+<p>4) Print Page Title and Title length on the Eclipse Console.</p>
+
+<p>5) Get Page URL and URL length</p>
+
+<p>6) Print URL and URL length on the Eclipse Console.</p>
+
+<p>7) Refresh current page</p>
+
+<p>8) Get Page Source (HTML Source code) and Page Source length</p>
+
+<p>9) Print Page Source and length on Eclipse Console.</p>
+
+<p>10) Close the Browser.</p>
+
+<h3>Solution</h3>
+
+<h4>1) Create class &lsquo;PracticeBrowserCommands&rsquo; and copy code below paste to your class and Run this class.</h4>
+
+<p>```
+package automationFramework;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;</p>
+
+<p>public class PracticeBrowserCommands {</p>
+
+<pre><code>private static WebDriver driver = null;
+
+public static void main(String[] args) throws InterruptedException {
+
+     // Create a new instance of the Firefox driver
+    driver = new FirefoxDriver();
+
+    //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+    //Launch the markdown syntax
+    driver.get("http://daringfireball.net/");
+
+    // Storing Title name in String variable
+    String sTitle = driver.getTitle();
+    // Storing Title length in Int variable
+    int iTitleLength = driver.getTitle().length();
+    // Printing Title name on Console
+    System.out.println(sTitle);
+    // Printing Title length on console
+    System.out.println(iTitleLength);
+
+    // Storing URL in String variable
+    sTitle = driver.getCurrentUrl();
+    // Storing URL length in Int variable
+    iTitleLength = driver.getCurrentUrl().length();
+    // Printing URL on Console
+    System.out.println(sTitle);
+    // Printing URL length on console
+    System.out.println(iTitleLength);
+
+    // Refreshing current page
+    driver.get(driver.getCurrentUrl());  
+
+    // Storing Page Source in String variable
+    String sPageSource = driver.getPageSource();
+    // Storing Page Source length in Int variable
+    int iPageSourceLength = driver.getPageSource().length();
+    // Printing Page Source on console
+    System.out.println(sPageSource);
+    // Printing Page SOurce length on console
+    System.out.println(iPageSourceLength);
+
+    //Closing browser
+    driver.close();
+}
+</code></pre>
+
+<p>}
+```</p>
 ]]></content>
   </entry>
   
