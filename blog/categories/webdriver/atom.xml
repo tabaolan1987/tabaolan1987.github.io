@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-23T16:37:14+07:00</updated>
+  <updated>2014-05-23T16:59:13+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -34,7 +34,7 @@
 
 <p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised. This is the most efficient and preferred way to locate an element, as most of the times IDs are unique. But in some cases UI developers make it having non-unique ids on a page or auto-generating the id, in both cases it should be avoided.</p>
 
-<p>&mdash; Tìm theo Id của Element trên trang web , nếu không tìm thấy sẽ báo lỗi NoSuchElementException.</p>
+<p>&mdash; Tìm theo Id của Element trên trang web, nếu không tìm thấy sẽ báo lỗi NoSuchElementException.</p>
 
 <p>Example: If an element is given like this:</p>
 
@@ -45,6 +45,123 @@
 &mdash;!>
 //java code to find the input with id is &ldquo;Username&rdquo;
 WebElement element = driver.findElement(By.id(&ldquo;Username&rdquo;));</p>
+
+<p>```</p>
+
+<h4>By Name</h4>
+
+<p>This is also an efficient way to locate an element but again the problem is same as with ID that UI developer make it having non-unique names on a page or auto-generating the names. With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a NoSuchElementException will be raised.</p>
+
+<p>&mdash; Tìm theo thuộc tính name của đối tượng trên trang web.Nếu không tìm thấy sẽ báo lỗi NoSuchElementException.</p>
+
+<p>Example: If an element is given like this:</p>
+
+<p>```
+<!-- html code
+<input name="Username"></input>
+&mdash;!>
+//java code to find the input with name is &ldquo;Username&rdquo;
+WebElement element = driver.findElement(By.name(&ldquo;Username&rdquo;));</p>
+
+<p>```</p>
+
+<h4>By Class Name</h4>
+
+<p>With this you can find elements based on the value of the “class” attribute. If an element has many classes then this will match against each of them. A class can contain many elements.</p>
+
+<p>&mdash; Tìm theo thuộc tính class name của đối tượng.Với thuộc tính này bạn có thể tìm ra nhiều đối tượng vì 1 class name có thể đặt vào nhiều đối tượng cùng 1 lúc.</p>
+
+<p>Example: If an element is given like this:</p>
+
+<p>```
+<!-- html code
+<input class="Username"></input>
+&mdash;!>
+//java code to find the input with className is &ldquo;Username&rdquo;
+WebElement element = driver.findElement(By.className(&ldquo;Username&rdquo;));</p>
+
+<p>```</p>
+
+<h4>By Tag Name</h4>
+
+<p>With this you can find elements by their tag names.</p>
+
+<p>&mdash; Tìm theo thuộc tính tag Name.</p>
+
+<p>Example: If an element is given like this:</p>
+
+<p>```
+//html code
+<a href="link.html">Name of the Link</a></p>
+
+<p>// java code to find
+WebElement element=driver.findElement(By.linkText(&ldquo;Name of the Link&rdquo;));</p>
+
+<p>```</p>
+
+<p>By Partial Link Text</p>
+
+<p>With this you can find elements of “a” tags(Link) with the partial link names. Use this when you know link text used within an anchor tag.</p>
+
+<p>&mdash; Tìm theo tag Name nhưng có thể tìm 1 phần trong cái tag Name đấy. xem ví dụ để biết thêm.</p>
+
+<p>Example: If an element is given like this</p>
+
+<p><code>
+//html code
+&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;
+// java code to find
+WebElement element=driver.findElement(By.linkText("Name of"));
+</code></p>
+
+<p>or</p>
+
+<p><code>
+WebElement element=driver.findElement(By.linkText("the Link"));
+</code></p>
+
+<h3>Practice Exercise 1</h3>
+
+<p>1) Launch new Browser
+2) Open URL <a href="https://www.facebook.com">https://www.facebook.com</a>
+3) Type Name &amp; password
+4) Click on SignIn button</p>
+
+<h4>Solution</h4>
+
+<p>```
+package automationFramework;</p>
+
+<p>import java.util.concurrent.TimeUnit;</p>
+
+<p>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;</p>
+
+<p>public class PracticeWebElementCommands {</p>
+
+<pre><code>public static WebDriver driver;
+public static void main(String[] args) {
+     // Create a new instance of the Firefox driver
+    driver = new FirefoxDriver();
+
+    // Put an Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+    // Launch the ToolsQA Website
+    driver.get("https://www.facebook.com");
+
+    // Type email      
+    driver.findElement(By.id("emaill")).sendKeys("youremail"); 
+
+    //Type passwork
+    driver.findElement(By.name("pass")).sendKeys("yourpassword");
+
+    // Click on SignIn
+    driver.findElement(By.Xpath("//form[@id='login_form']/table/tbody/tr[2]/td[3]/label/input")).click();
+    }
+}
+</code></pre>
 
 <p>```</p>
 ]]></content>
