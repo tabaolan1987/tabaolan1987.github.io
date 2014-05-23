@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-23T16:10:31+07:00</updated>
+  <updated>2014-05-23T16:11:42+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -32,7 +32,7 @@
 
 <p>Parameters: url – The URL to load. It is best to use a fully qualified URL (Dữ liệu truyền vào là 1 URL. Tốt nhất là truyền vào 1 URL đầy đủ cả Http)</p>
 
-<p><code>Java
+<p><code>
 driver.get("wwww.google.com");
 </code></p>
 
@@ -40,7 +40,7 @@ driver.get("wwww.google.com");
 
 <p>Purpose: This command is use to get the title of the current page.(Lấy ra tiêu đề của trang hiện tại)</p>
 
-<p><code>Java
+<p><code>
 driver.getTitle();
 </code></p>
 
@@ -48,7 +48,7 @@ driver.getTitle();
 
 <p>Purpose: This command is use to get the URL of the page currently loaded in the browser.(Lệnh này dùng để lấy ra URL của 1 trang đã được tải xong trên trình duyệt)</p>
 
-<p><code>Java
+<p><code>
 driver.getCurrentUrl();
 </code></p>
 
@@ -56,7 +56,7 @@ driver.getCurrentUrl();
 
 <p>Purpose: This command is use to get the source of the last loaded page.(Lệnh này dùng để lấy các code html của trang đã được tải về trên trình duyệt)</p>
 
-<p><code>Java
+<p><code>
 driver.getPageSource();
 </code></p>
 ]]></content>
