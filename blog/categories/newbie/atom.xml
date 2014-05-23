@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NewBie | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/newbie/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-23T15:11:08+07:00</updated>
+  <updated>2014-05-23T15:14:19+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Newbie Part 4 : Creat a Simple Test Case Selenium in Eclipse]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/23/newbie-part-4-creat-a-simple-test-case-selenium-in-eclipse/"/>
-    <updated>2014-05-23T14:09:02+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/23/newbie-part-4-creat-a-simple-test-case-selenium-in-eclipse</id>
+    <title type="html"><![CDATA[Newbie Part 4 : Configuration Eclipse With Selenium Driver and Create Fisrt Test]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/"/>
+    <updated>2014-05-23T15:13:27+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test</id>
     <content type="html"><![CDATA[<h2>Creat a simple test case selenium in Eclipse</h2>
 
 <p>To configure Eclipse with Selenium webdriver, we need to launch the Eclipse IDE, create a Workspace, create a Project, create a Package, create a Class and add External libraries to the project.</p>
