@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: TestNG-Framework | Ta Bao Lan]]></title>
+  <link href="http://tabaolan1987.github.io/blog/categories/testng-framework/atom.xml" rel="self"/>
+  <link href="http://tabaolan1987.github.io/"/>
+  <updated>2014-05-26T11:08:12+07:00</updated>
+  <id>http://tabaolan1987.github.io/</id>
+  <author>
+    <name><![CDATA[Ta Bao Lan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TestNG Framework : Download]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-download/"/>
+    <updated>2014-05-26T11:03:25+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-download</id>
+    <content type="html"><![CDATA[<h2>Install TestNG in Eclipse</h2>
+
+<p>It is easy to install TestNG, as it comes as a plugin for Eclipse IDE. Prerequisite for installing TestNG is your Internet connection should be up &amp; running during installation of this plugin and Eclipse IDE should be installed in your computer. Please see Download and Install Eclipse to setup Eclipse to you system.</p>
+
+<h3>Steps to follow:</h3>
+
+<p>1) Launch the Eclipse IDE and from Help menu, click “Install New Software”.</p>
+
+<p><img src="/images/Install-TestNG-1.png"></p>
+
+<p>2) You will see a dialog window, click “Add” button.</p>
+
+<p><img src="/images/Install-TestNG-2.png"></p>
+
+<p>3) Type name as you wish, lets take “TestNG” and type “<a href="http://beust.com/eclipse/%E2%80%9D">http://beust.com/eclipse/%E2%80%9D</a> as location. Click OK.</p>
+
+<p><img src="/images/Install-TestNG-3.png"></p>
+
+<p>4) You come back to the previous window but this time you must see TestNG option in the available software list. Just Click TestNG and press “Next” button.</p>
+
+<p><img src="/images/Install-TestNG-4.png"></p>
+
+<p>5) Click “I accept the terms of the license agreement” then click Finish.</p>
+
+<p><img src="/images/Install-TestNG-5.png"></p>
+
+<p>6) You may or may not encounter a Security warning, if in case you do just click OK.</p>
+
+<p><img src="/images/Install-TestNG-7.png"></p>
+
+<p>7) Click Next again on the succeeding dialog box until it prompts you to Restart the Eclipse.</p>
+
+<p>8) You are all done now, just Click Yes.</p>
+
+<p><img src="/images/Install-TestNG-8.png"></p>
+
+<p>9) Proceed with your workplace.</p>
+
+<p>10) After restart, verify if TestNG was indeed successfully installed. Right click on you project and see if TestNG is displayed in the opened menu.</p>
+
+<p><img src="/images/Install-TestNG-9.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TestNG Framework : Introduction]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-introduction/"/>
+    <updated>2014-05-26T11:00:14+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-introduction</id>
+    <content type="html"><![CDATA[<h2>TestNG Introduction</h2>
+
+<p>TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionality that make it more powerful and easier to use.</p>
+
+<p>TestNG is an open source automated testing framework; where NG of TestNG means Next Generation. TestNG is similar to JUnit but it is much more powerful than JUnit but still it’s inspired by JUnit. It is designed to be better than JUnit, especially when testing integrated classes. Pay special thanks to Cedric Beust who is the creator of TestNG.</p>
+
+<p>TestNG eliminates most of the limitations of the older framework and gives the developer the ability to write more flexible and powerful tests with help of easy annotations, grouping, sequencing &amp; parameterizing.</p>
+
+<h3>Benefits of TestNG</h3>
+
+<p>There are number of benefits of TestNG but from Selenium perspective, major advantages of TestNG are :</p>
+
+<p>1) It gives the ability to produce HTML Reports of execution</p>
+
+<p>2) Annotations made testers life easy</p>
+
+<p>3) Test cases can be Grouped &amp; Prioritized more easily</p>
+
+<p>4) Parallel testing is possible</p>
+
+<p>5) Generates Logs</p>
+
+<p>6) Data Parameteriz ation is possible</p>
+
+<h3>Test Case Writing</h3>
+
+<p>Writing a test in TestNG is quite simple and basically involves following steps:</p>
+
+<p>Step 1 – Write the business logic of the test</p>
+
+<p>Step 2 – Insert TestNG annotations in the code</p>
+
+<p>Step 3 &ndash; Add the information about your test (e.g. the class names, methods names, groups names etc…) in a testng.xml file</p>
+
+<p>Step 4 &ndash; Run TestNG</p>
+
+<h3>Annotations in TestNG</h3>
+
+<p>@BeforeSuite: The annotated method will be run before all tests in this suite have run.</p>
+
+<p>@AfterSuite: The annotated method will be run after all tests in this suite have run.</p>
+
+<p>@BeforeTest: The annotated method will be run before any test method belonging to the classes inside the tag is run.</p>
+
+<p>@AfterTest: The annotated method will be run after all the test methods belonging to the classes inside the tag have run.</p>
+
+<p>@BeforeGroups: The list of groups that this configuration method will run before. This method is guaranteed to run shortly before the first test method that belongs to any of these groups is invoked.</p>
+
+<p>@AfterGroups: The list of groups that this configuration method will run after. This method is guaranteed to run shortly after the last test method that belongs to any of these groups is invoked.</p>
+
+<p>@BeforeClass: The annotated method will be run before the first test method in the current class is invoked.</p>
+
+<p>@AfterClass: The annotated method will be run after all the test methods in the current class have been run.</p>
+
+<p>@BeforeMethod: The annotated method will be run before each test method.</p>
+
+<p>@AfterMethod: The annotated method will be run after each test method.</p>
+
+<p>@Test: The annotated method is a part of a test case.</p>
+
+<p>Benefits of using annotations</p>
+
+<p>1) TestNG identifies the methods it is interested in by looking up annotations. Hence method names are not restricted to any pattern or format.</p>
+
+<p>2) We can pass additional parameters to annotations.</p>
+
+<p>3) Annotations are strongly typed, so the compiler will flag any mistakes right away.</p>
+
+<p>4) Test classes no longer need to extend anything (such as Test Case, for JUnit 3).</p>
+]]></content>
+  </entry>
+  
+</feed>
