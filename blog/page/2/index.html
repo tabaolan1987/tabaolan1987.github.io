@@ -9,7 +9,7 @@
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="Locators in Selenium Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are &hellip;">
+  <meta name="description" content="TestNG Introduction TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionality that make it more powerful and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,110 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/testng-framework-introduction/">TestNG Framework : Introduction</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T11:00:14+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>TestNG Introduction</h2>
+
+<p>TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionality that make it more powerful and easier to use.</p>
+
+<p>TestNG is an open source automated testing framework; where NG of TestNG means Next Generation. TestNG is similar to JUnit but it is much more powerful than JUnit but still it’s inspired by JUnit. It is designed to be better than JUnit, especially when testing integrated classes. Pay special thanks to Cedric Beust who is the creator of TestNG.</p>
+
+<p>TestNG eliminates most of the limitations of the older framework and gives the developer the ability to write more flexible and powerful tests with help of easy annotations, grouping, sequencing &amp; parameterizing.</p>
+
+<h3>Benefits of TestNG</h3>
+
+<p>There are number of benefits of TestNG but from Selenium perspective, major advantages of TestNG are :</p>
+
+<p>1) It gives the ability to produce HTML Reports of execution</p>
+
+<p>2) Annotations made testers life easy</p>
+
+<p>3) Test cases can be Grouped &amp; Prioritized more easily</p>
+
+<p>4) Parallel testing is possible</p>
+
+<p>5) Generates Logs</p>
+
+<p>6) Data Parameteriz ation is possible</p>
+
+<h3>Test Case Writing</h3>
+
+<p>Writing a test in TestNG is quite simple and basically involves following steps:</p>
+
+<p>Step 1 – Write the business logic of the test</p>
+
+<p>Step 2 – Insert TestNG annotations in the code</p>
+
+<p>Step 3 &ndash; Add the information about your test (e.g. the class names, methods names, groups names etc…) in a testng.xml file</p>
+
+<p>Step 4 &ndash; Run TestNG</p>
+
+<h3>Annotations in TestNG</h3>
+
+<p>@BeforeSuite: The annotated method will be run before all tests in this suite have run.</p>
+
+<p>@AfterSuite: The annotated method will be run after all tests in this suite have run.</p>
+
+<p>@BeforeTest: The annotated method will be run before any test method belonging to the classes inside the tag is run.</p>
+
+<p>@AfterTest: The annotated method will be run after all the test methods belonging to the classes inside the tag have run.</p>
+
+<p>@BeforeGroups: The list of groups that this configuration method will run before. This method is guaranteed to run shortly before the first test method that belongs to any of these groups is invoked.</p>
+
+<p>@AfterGroups: The list of groups that this configuration method will run after. This method is guaranteed to run shortly after the last test method that belongs to any of these groups is invoked.</p>
+
+<p>@BeforeClass: The annotated method will be run before the first test method in the current class is invoked.</p>
+
+<p>@AfterClass: The annotated method will be run after all the test methods in the current class have been run.</p>
+
+<p>@BeforeMethod: The annotated method will be run before each test method.</p>
+
+<p>@AfterMethod: The annotated method will be run after each test method.</p>
+
+<p>@Test: The annotated method is a part of a test case.</p>
+
+<p>Benefits of using annotations</p>
+
+<p>1) TestNG identifies the methods it is interested in by looking up annotations. Hence method names are not restricted to any pattern or format.</p>
+
+<p>2) We can pass additional parameters to annotations.</p>
+
+<p>3) Annotations are strongly typed, so the compiler will flag any mistakes right away.</p>
+
+<p>4) Test classes no longer need to extend anything (such as Test Case, for JUnit 3).</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1461,244 +1565,6 @@ link=”Name of the Link”</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/23/webdriver-browser-commands/">Webdriver : Browser Commands</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-23T15:56:48+07:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Selenium WebDriver Browser Commands</h2>
-
-<p>The very first thing you like to do with Selenium is to opening and closing a new browser. Below are the numbers of commands you can apply on the Selenium opened browser.</p>
-
-<h3>1)Get Command</h3>
-
-<p>Purpose: This command is use to open a new web page in the current browser.</p>
-
-<p>Command: driver.get(URL);</p>
-
-<p>Parameters: url – The URL to load. It is best to use a fully qualified URL.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.get("wwww.google.com");</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>2)Get Title Command</h3>
-
-<p>Purpose: This command is use to get the title of the current page.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.getTitle();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>3)Get Current URL Command</h3>
-
-<p>Purpose: This command is use to get the URL of the page currently loaded in the browser.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.getCurrentUrl();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>4)Get Page Source Command</h3>
-
-<p>Purpose: This command is use to get the source of the last loaded page.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.getPageSource();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>5)Close Command</h3>
-
-<p>Purpose: This command is use to close the current window of the browser, if it’s the last window it will close the browser.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.close();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>6)Quit Command</h3>
-
-<p>Purpose: This command is use to quit the browser and all the opened windows in the browser.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.quit();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>7)Refresh Command</h3>
-
-<p>Purpose: There are some commands is use to refresh the current browser.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().refresh();
-</span><span class='line'>driver.get(driver.getCurrentUrl());
-</span><span class='line'>driver.navigate().to(driver.getCurrentUrl());
-</span><span class='line'>driver.findElement(By.name("s")).sendKeys("\uE035");</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Simple Practice Exercise</h2>
-
-<p>1) Launch a new Firefox browser.</p>
-
-<p>2) Open daringfireball.net</p>
-
-<p>3) Get Page Title name and Title length</p>
-
-<p>4) Print Page Title and Title length on the Eclipse Console.</p>
-
-<p>5) Get Page URL and URL length</p>
-
-<p>6) Print URL and URL length on the Eclipse Console.</p>
-
-<p>7) Refresh current page</p>
-
-<p>8) Get Page Source (HTML Source code) and Page Source length</p>
-
-<p>9) Print Page Source and length on Eclipse Console.</p>
-
-<p>10) Close the Browser.</p>
-
-<h3>Solution</h3>
-
-<h4>1) Create class &lsquo;PracticeBrowserCommands&rsquo; and copy code below paste to your class and Run this class.</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'> 
-</span><span class='line'>public class PracticeBrowserCommands {
-</span><span class='line'>    private static WebDriver driver = null;
-</span><span class='line'> 
-</span><span class='line'>    public static void main(String[] args) throws InterruptedException {
-</span><span class='line'> 
-</span><span class='line'>         // Create a new instance of the Firefox driver
-</span><span class='line'>        driver = new FirefoxDriver();
-</span><span class='line'> 
-</span><span class='line'>        //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'> 
-</span><span class='line'>        //Launch the markdown syntax
-</span><span class='line'>        driver.get("http://daringfireball.net/");
-</span><span class='line'> 
-</span><span class='line'>        // Storing Title name in String variable
-</span><span class='line'>        String sTitle = driver.getTitle();
-</span><span class='line'>        // Storing Title length in Int variable
-</span><span class='line'>        int iTitleLength = driver.getTitle().length();
-</span><span class='line'>        // Printing Title name on Console
-</span><span class='line'>        System.out.println(sTitle);
-</span><span class='line'>        // Printing Title length on console
-</span><span class='line'>        System.out.println(iTitleLength);
-</span><span class='line'> 
-</span><span class='line'>        // Storing URL in String variable
-</span><span class='line'>        sTitle = driver.getCurrentUrl();
-</span><span class='line'>        // Storing URL length in Int variable
-</span><span class='line'>        iTitleLength = driver.getCurrentUrl().length();
-</span><span class='line'>        // Printing URL on Console
-</span><span class='line'>        System.out.println(sTitle);
-</span><span class='line'>        // Printing URL length on console
-</span><span class='line'>        System.out.println(iTitleLength);
-</span><span class='line'> 
-</span><span class='line'>        // Refreshing current page
-</span><span class='line'>        driver.get(driver.getCurrentUrl());  
-</span><span class='line'> 
-</span><span class='line'>        // Storing Page Source in String variable
-</span><span class='line'>        String sPageSource = driver.getPageSource();
-</span><span class='line'>        // Storing Page Source length in Int variable
-</span><span class='line'>        int iPageSourceLength = driver.getPageSource().length();
-</span><span class='line'>        // Printing Page Source on console
-</span><span class='line'>        System.out.println(sPageSource);
-</span><span class='line'>        // Printing Page SOurce length on console
-</span><span class='line'>        System.out.println(iPageSourceLength);
-</span><span class='line'> 
-</span><span class='line'>        //Closing browser
-</span><span class='line'>        driver.close();
-</span><span class='line'>    }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1716,6 +1582,10 @@ link=”Name of the Link”</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse/">Selenium Automation Framework : Install Maven to Eclipse</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a>
       </li>
     
@@ -1729,10 +1599,6 @@ link=”Name of the Link”</p>
     
       <li class="post">
         <a href="/blog/2014/05/26/testng-framework-reporters-and-asserts/">TestNG Framework :Reporters and Asserts</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/">TestNG Framework : Prioritizing and Sequencing</a>
       </li>
     
   </ul>

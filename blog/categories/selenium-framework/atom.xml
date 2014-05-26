@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-26T14:11:22+07:00</updated>
+  <updated>2014-05-26T14:24:21+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework : Install Maven to Eclipse]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse/"/>
+    <updated>2014-05-26T14:14:07+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse</id>
+    <content type="html"><![CDATA[<h2>Maven plugin for Eclipse</h2>
+
+<p>You can install Maven plugin for Eclipse via update site, simply copy the above update site link address and paste it into Eclipse’s “Update” or “Install New Software” manager as explained below.</p>
+
+<h3>Step 1 :</h3>
+
+<p>Installing m2eclipse is fairly simple. Start Eclipse then go to: Help &ndash;> Install New Software</p>
+
+<p>Copy this link <a href="http://download.eclipse.org/technology/m2e/releases">http://download.eclipse.org/technology/m2e/releases</a> for the latest Stable Release into Eclipse and hit Enter.</p>
+
+<p><img src="/images/maven-plugin-eclipse-1.jpeg"></p>
+
+<p>When the site loads, select the features to install, or click the Select All button. For our requirement select “Maven Integration for Eclipse” as shown above.</p>
+
+<p>Checking [x] Contact all update sites during install to find required software might take sometime and this is optional.</p>
+
+<h3>Step 2 :</h3>
+
+<p>Click Next to view Installation Details.</p>
+
+<p>Click Next to agree the license terms, and click Finish.</p>
+
+<h3>Step 3 :</h3>
+
+<p>If you get any warning message when installing, click OK to continue.</p>
+
+<p><img src="/images/maven-plugin-eclipse-2.jpg"></p>
+
+<p>This will take few minutes to install the Maven plugin and once done restart the Eclipse.</p>
+
+<p><img src="/images/maven-3.jpg"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework : Introduction]]></title>
