@@ -9,7 +9,7 @@
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="DropDown &amp; Multiple Select Operations Just like Checkboxes &amp; Radio buttons, Dropdown and Multiple Select also works together and almost the &hellip;">
+  <meta name="description" content="Locators in Selenium Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,373 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPath : Selenium Locators</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T10:48:22+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Locators in Selenium</h2>
+
+<p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
+
+<p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
+
+<h3>Different types of Locators</h3>
+
+<p>There are 8 explicit locators: id, name, identifier, dom, xpath, link, css and ui that Selenium’s commands support. I will explain just a few most important locators to avoid over dosage and any confusion.</p>
+
+<h4>ID Locator</h4>
+
+<p>Ids are the most preferred way to locate elements on a page, as each id is supposed to be unique which makes ids a very faster and reliable way to locate elements.</p>
+
+<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised.</p>
+
+<p>HTML CODE :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;form name="loginForm"&gt;Login 
+</span><span class='line'> Username: &lt;input id="username" type="text" name="login" /&gt;
+</span><span class='line'> Password: &lt;input id="password" type="password" name="password" /&gt;
+</span><span class='line'> &lt;input type="submit" name="signin" value="SignIn" /&gt;&lt;/form&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>You can easily choose the element with the help of ID locator from the above example:</p>
+
+<p>id = “username”</p>
+
+<p>id = “password”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.id("username"));
+</span><span class='line'>
+</span><span class='line'>WebElement elementPassword = driver.findElement(By.id("password"));
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Even though this is a great locator, obviously it is not realistic for all objects on a page to have ids. In some cases developers make it having non-unique ids on a page or auto-generate the ids, in both cases it should be avoided.</p>
+
+<h4>Name Locator</h4>
+
+<p>This is also an efficient way to locate an element  with name attribute, after Ids give it your second preference but likewise Ids, name attributes don’t have to be unique in a page.</p>
+
+<p>With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a  NoSuchElementException will be raised.</p>
+
+<p>Example: Let’s take the above example:</p>
+
+<p>You can easily choose the element with the help of Name locator from the above example:</p>
+
+<p>name = “login”</p>
+
+<p>name = “password”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.name("login"));
+</span><span class='line'> 
+</span><span class='line'>WebElement elementPassword = driver.findElement(By.name("password"));</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Identifier Locator</h4>
+
+<p>This selects the element with the specified @id attribute. If no match is found, then it tries to select the first element whose @name attribute is id.</p>
+
+<p>Example: Valid locator for above example is:
+identifier = “password”</p>
+
+<p>First it will try to find the locator with id = “password” if it exists, otherwise it would target name = “password”.</p>
+
+<h4>Link Locator</h4>
+
+<p>With this you can find elements of “a” tags(Link) with the link names. Use this when you know link text used within an anchor tag.</p>
+
+<p>Example: If an element is given like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To click this hyperlink using the anchor tag’s text, you can use the link locator:
+link=”Name of the Link”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element=driver.findElement(By.linkText("Name of the Link"));</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>DOM Locator</h4>
+
+<p>The DOM strategy works by locating elements that matches the JavaScript expression referring to an element in the DOM of the page. DOM stands for Document Object Model. DOM is convention for representing objects in HTML documents.</p>
+
+<p>Example: To select the username from the above example you can use the following ways:</p>
+
+<p>document.forms[0].elements[0]</p>
+
+<p>document.forms[&lsquo;loginForm&rsquo;].elements[&lsquo;username&rsquo;]</p>
+
+<p>document.forms[&lsquo;loginForm&rsquo;].username</p>
+
+<p>document.getElementById(‘username’)</p>
+
+<h4>XPath Locator</h4>
+
+<p>While DOM is the recognized standard for navigation through an HTML element tree, XPath is the standard navigation tool for XML; and an HTML document is also an XML document (xHTML). XPath is used everywhere where there is XML.</p>
+
+<p>Example: To select the username from the above example you can use the following ways:</p>
+
+<p>xpath=//*[@id=&lsquo;username&rsquo;]</p>
+
+<p>xpath=//input[@id=&lsquo;username&rsquo;]</p>
+
+<p>xpath=//form[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
+
+<p>xpath=//*[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/xpath-firebug-and-firepath/">XPath : FireBug and FirePath</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T10:37:18+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>FireBug and FirePath</h2>
+
+<h3>What is XPath</h3>
+
+<p>XPath is a language that describes a way to locate and process items in Extensible Markup Language (XML) documents by using an addressing syntax based on a path through the document’s logical structure or hierarchy. XPath in used in Selenium  to uniquely identify an element on a Webpage as element locator just like the way we use PostCode and House address in real world to locate Home Address.</p>
+
+<h3>What is Firebug</h3>
+
+<p>Firebug integrates with Firefox to put a wealth of web development tools at your fingertips while you browse. You can edit, debug, and monitor CSS, HTML, and JavaScript live in any web page. The whole content of this page is taken from the <a href="https://getfirebug.com/html">firebug</a>.</p>
+
+<h3>Why it is Useful to Selenium Automation Tester</h3>
+
+<p>1) View source live : Firefox has a “View Source” window, but it doesn’t show you what the HTML source really looks like once it has been transformed by JavaScript. Firebug’s HTML tab shows you what the HTML looks like right now.</p>
+
+<p>2) See changes highlighted: In any JavaScript-driven website, HTML elements are constantly being created, removed, and modified. Wouldn’t it be nice if you could see exactly what, when, and where these changes take place? Firebug highlights changes to the HTML in yellow immediately when they occur. If you want to spy even closer, you have the option to also scroll every change into view, so you won’t miss a thing.</p>
+
+<p>3) Find elements with the mouse: Something in your page doesn’t quite look right and you want to know why. There’s no faster way to get answers than to click the “Inspect” button on Firebug’s toolbar and then prepare for immediate gratification. As you move around the page, whatever is beneath your mouse will be instantly revealed within Firebug, showing you the HTML and CSS behind it.</p>
+
+<p>4) Copy the source: Right-click on any element, and you’ll have several options for copying aspects of that element to the clipboard, including its HTML fragment, the value of its “innerHTML” property, or an XPath expression that identifies the element uniquely.</p>
+
+<h3>How to Download FireBug</h3>
+
+<p>FireBug is a plugin which comes with Firefox browser, hence it is easily be downloadable from Firefox itself.</p>
+
+<p>1) Go to Tools > Web Developer > Get More Tools.</p>
+
+<p><img src="/images/Firebug-1.png"></p>
+
+<p>2) It will open a Webpage and display all the plugins available for Firefox browser. As we need Firebug, just click on Add to Firefox button for Firebug.</p>
+
+<p><img src="/images/Firebug-2.png"></p>
+
+<p>3) Hit on Install Now button to proceed.</p>
+
+<p><img src="/images/Firebug-3.png"></p>
+
+<p>4) Once the Installation is finished, press ‘F-12′ to open Firebug tool. It will display like this.</p>
+
+<p><img src="/images/FIND-ELEMENTS-2.png"></p>
+
+<h3>How to Use it</h3>
+
+<p>Most of the times it is used to Inspect Elements on a Webpage and to get the XPath of the Elements from a Webpage.</p>
+
+<p>1) Inspect Elements: Please visit Finding Elements using Browser Inspector for details explanation on How to find Elements using Browser Inspector.</p>
+
+<p>2) Copy XPath: Copying XPath is really very handy. Once you are done with selecting an Element using Inspector, all you need to do is to Right click on the HTML code of the selected element and select Copy XPath.</p>
+
+<p><img src="/images/Firebug-6.png"></p>
+
+<p>3) Now you can paste the copied XPath on your test script by pressing ‘Ctrl + V‘. It will display like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/html/body/div/header/div/a/img</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>What is FirePath</h3>
+
+<p>It is an extension to FireBug that adds a development tool to edit, inspect and generate XPath expressions and CSS3 Selectors.</p>
+
+<h3>Why it is Useful to Selenium Automation Tester</h3>
+
+<p>1) You can type self-written XPath and check if it is correct by highlighting the results directly on the Webpage.</p>
+
+<p>2) Generate an XPath expression or a CSS selector for an element by right clicking on it and selecting “Inspect in FirePath” in the context menu.</p>
+
+<p>3) Like Firebug it also gives you the Xpath of the selected Element.</p>
+
+<h3>How to Download Firepath</h3>
+
+<p>Firepath is an extension to Firebug, so you would only be able to install it after installing FireBug.</p>
+
+<p>1) Go to Tools > Web Developer > Get More Tools.</p>
+
+<p><img src="/images/Firebug-1.png"></p>
+
+<p>2) It will open a Webpage and will display all the plugins available for Firefox browser. As I said before that it is an extension to Firebug, you need to click on the Extensions link and the type Firepath on the Search field. As we need FirePath, just click on Add to Firefox button for FirePath.</p>
+
+<p><img src="/images/FirePath-1.png"></p>
+
+<p>3) Hit on Install Now button to proceed.</p>
+
+<p><img src="/images/FirePath-2.png"></p>
+
+<p>4) Once it is installed, it will ask to Restart the browser. Click on Restart Now button.</p>
+
+<p><img src="/images/FirePath-3.png"></p>
+
+<p>4) Once it is opened, press ‘F-12′ to open Firebug tool. It will display the FirePath on the same console.</p>
+
+<h3>How to Use FirePath</h3>
+
+<p>1) Inspect Elements: Please visit Finding Elements using Browser Inspector for details explanation on How to find Elements using Browser Inspector. But unlike FireBug, it displays the XPath of the selected element on the console.</p>
+
+<p><img src="/images/FirePath-6.png"></p>
+
+<p>2) Copy XPath: Copying XPath is really very handy. Once you are done with selecting an Element using Inspector, all you need to do is to Copy the XPath of the selected element and paste it to your Test script by pressing ‘Ctrl + V‘. It will display like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//*[@id='masthead']/div/a/img</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Difference between FireBug and FirePath</h3>
+
+<p>The only difference from Automation tester point of view is FireBug returns Absolute XPath and FirePath returns Relative XPath.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/xpath-using-browser-inspector/">XPath : Using Browser Inspector</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T10:24:15+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Finding Elements using Browser Inspector</h2>
+
+<p>Now days, it is very easy to find elements on the page. All the modern browsers have the web inspector, the built-in tool for to easily examine the structure of webpages.</p>
+
+<p>I used to use Google Chrome’s inspector because Chrome was my default browser; Safari uses the same inspector and IE uses IE Inspector. Firefox has its own built in Inspector and it has an optional extension called Firebug, which has a little more functionality that is sometimes worth switching over for. The steps to use it are largely the same.</p>
+
+<h3>1) Activating the Web Inspector</h3>
+
+<p>You can activate the web inspector in any of the above browsers by right-clicking on any element in the page, such as a photo. A pop-up menu should appear with the option to Inspect Element.  Or you can use the short cut key for Inspector which is F-12.</p>
+
+<p>F-12 will pop-up a panel, usually in the bottom-half of your browser, showing the HTML source. The red circle is pointing to the Element Inspector in Firefox.</p>
+
+<p><img src="/images/Finding-Elements-1.png"></p>
+
+<h3>2) Selecting Elements</h3>
+
+<p>Once you click the Inspector Icon from the bottom panel your element inspector is active and as you move your mouse around the page, the element under your mouse is highlighted with a dotted border and an annotation displays its HTML tag. At the same time, its HTML definition is displayed, in context, in the Inspector’s left-hand pane.</p>
+
+<p>In the screenshot below, I have chosen to inspect the &ldquo;Email or Phone” textbox on the <a href="https://www.facebook.com/">Facebook</a>. The inspector (in the bottom panel of the browser) highlights where in the HTML that the “Email or Phone” button appears.</p>
+
+<p><img src="/images/FIND-ELEMENTS-2.png"></p>
+
+<p>With the help of above html code you can simply write the below code in your test script:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.findElement(By.id("email")).sendKeys("your username or email login to facebook");</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1332,348 +1699,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/23/webdriver-introduction/">Webdriver : Introduction</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-23T15:26:35+07:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Selenium Introduction</h2>
-
-<h3>About Selenium</h3>
-
-<p>Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium project produces various tools for automation testing such as Selenium IDE, Selenium Remote Control (RC), Selenium Grid and Selenium 2.0 &amp; WebDriver. Learning all the tools will give you many different options for approaching different automation problems. The entire suits of tools result in a rich set of testing functions specially geared to the needs of testing of web application of all types.</p>
-
-<h3>Why Selenium</h3>
-
-<ul>
-<li>Selenium is an open source tool with Corporate backing.</li>
-<li>The tests can then be run against most modern web browsers.</li>
-<li>Selenium deploys on Windows, Linux, and Macintosh platforms.</li>
-<li>It allows recording, editing, and debugging tests.</li>
-<li>Recorded tests can be exported in most language e.g. html, Java, .net, perl, ruby etc.</li>
-<li>Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser.</li>
-</ul>
-
-
-<h3>Selenium WebDriver</h3>
-
-<p>The primary new feature in Selenium 2.0 is the integration of the WebDriver API. WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. It enables you to use a programming language to write test scripts in different programming languages like html, Java, .net , perl, ruby and which enables you to use conditional operations, looping and other programming concepts which makes you test script robust. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver’s goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/">Newbie Part 4 : Configuration Eclipse With Selenium Driver and Create Fisrt Test</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-23T15:13:27+07:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Creat a simple test case selenium in Eclipse</h2>
-
-<p>To configure Eclipse with Selenium webdriver, we need to launch the Eclipse IDE, create a Workspace, create a Project, create a Package, create a Class and add External libraries to the project.</p>
-
-<h3>1) Select WorkSpace on Eclipse start up.</h3>
-
-<p>a) Double click on ‘eclipse.exe’ to start eclipse. First time when you start eclipse, it will ask you to select your workspace where your work will be stored as shown in below image.</p>
-
-<p><img src="/images/Start-Eclipse-1.png"></p>
-
-<p>b) Create a “working directory” for all of your projects. Think of it like “My Documents” in the Windows operating system. It’s a folder which contains a lot of your documents, but there’s nothing to prevent you from creating another folder called “My Other Documents” (for instance) to house other documents.</p>
-
-<p>Typically you only need one workspace, and you can think of it as your “My Documents” for Java code. If you wanted to, you could have more than one, but chances are you won’t have a use for more. I like to choose my own workplace location and will place all my ToolsQA tutorial projects under it.</p>
-
-<p>You can change it later on from ‘Switch Workspace‘ under ‘File‘ menu of eclipse. After selecting workspace folder, Eclipse will be open.</p>
-
-<p><img src="/images/Start-Eclipse-21.png"></p>
-
-<p><img src="/images/Start-Eclipse-3.png"></p>
-
-<p>c) You may see the window like this, this is the Welcome window for Eclipse. You may close this window.</p>
-
-<p><img src="/images/Start-Eclipse-4.png"></p>
-
-<h3>2) Create a new Project</h3>
-
-<p>Projects: A collection of related code. Generally speaking, each project encompasses one independent program. Each programming assignment you do will typically require its own project.</p>
-
-<p>Once you’ve established your workspace, you’ll want to create a project and begin writing code. In Eclipse, projects are the next-smallest functional unit after workspaces, but where you might have only one workspace, you will usually have several projects inside one workspace.</p>
-
-<p>a) Create new Java Project from File > New > Project .</p>
-
-<p><img src="/images/Setup-Project-1.png"></p>
-
-<p>b) Select Java Project and click Next.</p>
-
-<p><img src="/images/Setup-Project-2.png"></p>
-
-<p>c) Give your Project name ‘OnlineStore‘ as shown in below given figures. Click on Finish button.</p>
-
-<p><img src="/images/Setup-Project-3.png"></p>
-
-<p>d) You may or may not see this message but if in case you get any, check Remember my decision and  click on Yes.</p>
-
-<p><img src="/images/Setup-Project-4.png"></p>
-
-<h3>3) Create a new Package</h3>
-
-<p>a) Right click on Project name ‘OnlineStore‘ and select New > Package.</p>
-
-<p><img src="/images/Creating-Package-1.png"></p>
-
-<p>b) Give your Package name ‘automationFramework‘ and click on Finish button.</p>
-
-<p><img src="/images/Creating-Package-2.png"></p>
-
-<h3>4) Create a new Class</h3>
-
-<p>Now that you have a project set up, you’re going to want start writing some new classes.</p>
-
-<p>a) Right click on Package ‘automationFramework‘ and select New > Class.</p>
-
-<p><img src="/images/Creating-Class-1.png"></p>
-
-<p>b)  Give your Class name ‘FirstTestCase‘, check the option ‘public static void main‘ and click on Finish button. This will bring up totally a sweet class creation window.</p>
-
-<p>Note: In case of not creating class for Main test case, please do not click ‘public static void main’. We need to select it only in case of writing test cases which we are going to execute and from where we call other classes. For functional classes, POM classes or any other classes we dont need this to be checked.</p>
-
-<p><img src="/images/Creating-Class-2.png"></p>
-
-<p>c) Now your Eclipse window will looks like bellow.</p>
-
-<p><img src="/images/Creating-Class-3.png"></p>
-
-<h3>5) Add External Jars to Java build path</h3>
-
-<p>Now you need to add selenium webdriver’s jar files in to Java build path.</p>
-
-<p>a) Right click on Project ‘OnlineStore‘ > Select Properties > Java build path. Then navigate to Libraries tab and click Add External JARs.</p>
-
-<p><img src="/images/Selenium-Jar-1.png"></p>
-
-<p>b) Add Selenium Java jar, you may add the source file too.</p>
-
-<p><img src="/images/Selenium-Jar-2.png"></p>
-
-<p>c) Add all the jars from the libs folder as well.</p>
-
-<p><img src="/images/Selenium-Jar-3.png"></p>
-
-<p>d) Click OK.</p>
-
-<p>&mdash; Ấn nút Ok.</p>
-
-<p><img src="/images/Selenium-Jar-4.png"></p>
-
-<p>That’s all about configuration of WebDriver with eclipse. Now you are ready to write your test script in eclipse and run it in WebDriver.</p>
-
-<p><img src="/images/Selenium-Jar-5.png"></p>
-
-<h3>6) Write your First Test Case</h3>
-
-<p>a) Copy &amp; paste the below code to your First Test Case class and give it a run.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'> 
-</span><span class='line'>import org.openqa.selenium.*;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'> 
-</span><span class='line'>public class FirstTestCase {
-</span><span class='line'>    private static WebDriver driver = null;
-</span><span class='line'> 
-</span><span class='line'>    public static void main(String[] args) {
-</span><span class='line'>        // Create a new instance of the Firefox driver
-</span><span class='line'>        driver = new FirefoxDriver();
-</span><span class='line'> 
-</span><span class='line'>        //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'> 
-</span><span class='line'>        //Launch the facebook
-</span><span class='line'>        driver.get("https://www.facebook.com/");
-</span><span class='line'> 
-</span><span class='line'>        
-</span><span class='line'>        // Find the element that's ID attribute is 'email' (Username)
-</span><span class='line'>        // Enter email on the element found by above desc.
-</span><span class='line'>      driver.findElement(By.id("email")).sendKeys('enter your username login to facebook')
-</span><span class='line'> 
-</span><span class='line'>        // Find the element that's ID attribute is 'pass' (Password)
-</span><span class='line'>        // Enter Password on the element found by the above desc.
-</span><span class='line'>         driver.findElement(By.id("pass")).sendKeys("enter your password login to facebook"); 
-</span><span class='line'> 
-</span><span class='line'>        // Now submit the form. WebDriver will find the form for us from the element 
-</span><span class='line'>        driver.findElement(By.Xpath("//form[@id='login_form']/table/tbody/tr[2]/td[3]/label/input")).click();
-</span><span class='line'> 
-</span><span class='line'>        // Print a Log In message to the screen
-</span><span class='line'>        System.out.println(" Login Successfully, now it is the time to Log Off buddy.");
-</span><span class='line'> 
-</span><span class='line'>        // Close the driver
-</span><span class='line'>        driver.quit();
-</span><span class='line'>            }
-</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
-
-
-<p>2) Now, to start the test just select Run > Run As > Java Application Or Right Click on Eclipse code and Click Run As  > Java Application</p>
-
-<p>3) After a few Seconds a Mozilla browser will open  and you will see that with the help of your script, Selenium will Launch the Online Store, perform Sign in, display the Message, perform Log out and then Close the browser.</p>
-
-<p>Once the execution is finished, you will see the message in Console section of the Eclipse IDE.</p>
-
-<p>Now you will need to know about WebDriver in Selenium. I just create some basic knowledge about Webdriver please click <a href="/blog/categories/webdriver/">here</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/22/newbie-part-3-download-webdriver-java-client/">Newbie Part 3 : Download Webdriver Java Client</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-22T16:49:41+07:00" pubdate data-updated="true">May 22<span>nd</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Download WebDriver Java client</h2>
-
-<p>Selenium webdriver supports many languages and each language has its own client driver. Here we are configuring selenium 2 with Java so we need ‘webdriver Java client driver’.</p>
-
-<p>1) <a href="http://docs.seleniumhq.org/download/">Click here</a> to go on WebDriver Java client driver download page for webdriver download file. On that page click on ‘Download‘ link of Java client driver as shown in the below image.</p>
-
-<p><img src="/images/Download-Webdriver-Java-Client-1.png"></p>
-
-<p>2) Save the zip file to your disk.</p>
-
-<p><img src="/images/Download-Webdriver-Java-Client-2.png"></p>
-
-<p>3) Once you have downloaded the archive you will need to Extract the zip file, which will create the unzipped Selenium Java folder.</p>
-
-<p><img src="/images/Download-Webdriver-Java-Client-3.png"></p>
-
-<p>4) You may want to Extract the archive to the folder where you are maintaing the test ware for your project. I like to extract it at the same location and then move it as per my needs.</p>
-
-<p><img src="/images/Download-Webdriver-Java-Client-4.png"></p>
-
-<p>5) Once the extraction process is complete, Open the Selenium folder.</p>
-
-<p><img src="/images/Download-Webdriver-Java-Client-5.png"></p>
-
-<p>6) There will be ‘libs’ folder, 2 jar files and change log in unzipped folder as shown in bellow figure. We will use all these files for configuring webdriver in eclipse.</p>
-
-<p><img src="/images/Download-Webdriver-Java-Client-6.png"></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1689,23 +1714,23 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPath : Selenium Locators</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/xpath-firebug-and-firepath/">XPath : FireBug and FirePath</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/xpath-using-browser-inspector/">XPath : Using Browser Inspector</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/">Webdriver : Dropdown and Multiple Select Operations</a>
       </li>
     
       <li class="post">
         <a href="/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations/">Webdriver : Checkbox and Radio Button Operations</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/webdriver-wait-commands/">Webdriver : Wait Commands</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/webdriver-switch-window-commands/">Webdriver : Switch Window Commands</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/webdriver-browser-navigation-commands/">Webdriver : Browser Navigation Commands</a>
       </li>
     
   </ul>

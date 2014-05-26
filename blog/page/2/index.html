@@ -9,7 +9,7 @@
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="Download and Start Eclipse IDE Download Eclipse for Java Developers, extract and save it in any drive. It is totally free. You can run ‘eclipse.exe’ &hellip;">
+  <meta name="description" content="Selenium Introduction About Selenium Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,348 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/23/webdriver-introduction/">Webdriver : Introduction</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-23T15:26:35+07:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Selenium Introduction</h2>
+
+<h3>About Selenium</h3>
+
+<p>Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium project produces various tools for automation testing such as Selenium IDE, Selenium Remote Control (RC), Selenium Grid and Selenium 2.0 &amp; WebDriver. Learning all the tools will give you many different options for approaching different automation problems. The entire suits of tools result in a rich set of testing functions specially geared to the needs of testing of web application of all types.</p>
+
+<h3>Why Selenium</h3>
+
+<ul>
+<li>Selenium is an open source tool with Corporate backing.</li>
+<li>The tests can then be run against most modern web browsers.</li>
+<li>Selenium deploys on Windows, Linux, and Macintosh platforms.</li>
+<li>It allows recording, editing, and debugging tests.</li>
+<li>Recorded tests can be exported in most language e.g. html, Java, .net, perl, ruby etc.</li>
+<li>Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser.</li>
+</ul>
+
+
+<h3>Selenium WebDriver</h3>
+
+<p>The primary new feature in Selenium 2.0 is the integration of the WebDriver API. WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. It enables you to use a programming language to write test scripts in different programming languages like html, Java, .net , perl, ruby and which enables you to use conditional operations, looping and other programming concepts which makes you test script robust. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver’s goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/">Newbie Part 4 : Configuration Eclipse With Selenium Driver and Create Fisrt Test</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-23T15:13:27+07:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Creat a simple test case selenium in Eclipse</h2>
+
+<p>To configure Eclipse with Selenium webdriver, we need to launch the Eclipse IDE, create a Workspace, create a Project, create a Package, create a Class and add External libraries to the project.</p>
+
+<h3>1) Select WorkSpace on Eclipse start up.</h3>
+
+<p>a) Double click on ‘eclipse.exe’ to start eclipse. First time when you start eclipse, it will ask you to select your workspace where your work will be stored as shown in below image.</p>
+
+<p><img src="/images/Start-Eclipse-1.png"></p>
+
+<p>b) Create a “working directory” for all of your projects. Think of it like “My Documents” in the Windows operating system. It’s a folder which contains a lot of your documents, but there’s nothing to prevent you from creating another folder called “My Other Documents” (for instance) to house other documents.</p>
+
+<p>Typically you only need one workspace, and you can think of it as your “My Documents” for Java code. If you wanted to, you could have more than one, but chances are you won’t have a use for more. I like to choose my own workplace location and will place all my ToolsQA tutorial projects under it.</p>
+
+<p>You can change it later on from ‘Switch Workspace‘ under ‘File‘ menu of eclipse. After selecting workspace folder, Eclipse will be open.</p>
+
+<p><img src="/images/Start-Eclipse-21.png"></p>
+
+<p><img src="/images/Start-Eclipse-3.png"></p>
+
+<p>c) You may see the window like this, this is the Welcome window for Eclipse. You may close this window.</p>
+
+<p><img src="/images/Start-Eclipse-4.png"></p>
+
+<h3>2) Create a new Project</h3>
+
+<p>Projects: A collection of related code. Generally speaking, each project encompasses one independent program. Each programming assignment you do will typically require its own project.</p>
+
+<p>Once you’ve established your workspace, you’ll want to create a project and begin writing code. In Eclipse, projects are the next-smallest functional unit after workspaces, but where you might have only one workspace, you will usually have several projects inside one workspace.</p>
+
+<p>a) Create new Java Project from File > New > Project .</p>
+
+<p><img src="/images/Setup-Project-1.png"></p>
+
+<p>b) Select Java Project and click Next.</p>
+
+<p><img src="/images/Setup-Project-2.png"></p>
+
+<p>c) Give your Project name ‘OnlineStore‘ as shown in below given figures. Click on Finish button.</p>
+
+<p><img src="/images/Setup-Project-3.png"></p>
+
+<p>d) You may or may not see this message but if in case you get any, check Remember my decision and  click on Yes.</p>
+
+<p><img src="/images/Setup-Project-4.png"></p>
+
+<h3>3) Create a new Package</h3>
+
+<p>a) Right click on Project name ‘OnlineStore‘ and select New > Package.</p>
+
+<p><img src="/images/Creating-Package-1.png"></p>
+
+<p>b) Give your Package name ‘automationFramework‘ and click on Finish button.</p>
+
+<p><img src="/images/Creating-Package-2.png"></p>
+
+<h3>4) Create a new Class</h3>
+
+<p>Now that you have a project set up, you’re going to want start writing some new classes.</p>
+
+<p>a) Right click on Package ‘automationFramework‘ and select New > Class.</p>
+
+<p><img src="/images/Creating-Class-1.png"></p>
+
+<p>b)  Give your Class name ‘FirstTestCase‘, check the option ‘public static void main‘ and click on Finish button. This will bring up totally a sweet class creation window.</p>
+
+<p>Note: In case of not creating class for Main test case, please do not click ‘public static void main’. We need to select it only in case of writing test cases which we are going to execute and from where we call other classes. For functional classes, POM classes or any other classes we dont need this to be checked.</p>
+
+<p><img src="/images/Creating-Class-2.png"></p>
+
+<p>c) Now your Eclipse window will looks like bellow.</p>
+
+<p><img src="/images/Creating-Class-3.png"></p>
+
+<h3>5) Add External Jars to Java build path</h3>
+
+<p>Now you need to add selenium webdriver’s jar files in to Java build path.</p>
+
+<p>a) Right click on Project ‘OnlineStore‘ > Select Properties > Java build path. Then navigate to Libraries tab and click Add External JARs.</p>
+
+<p><img src="/images/Selenium-Jar-1.png"></p>
+
+<p>b) Add Selenium Java jar, you may add the source file too.</p>
+
+<p><img src="/images/Selenium-Jar-2.png"></p>
+
+<p>c) Add all the jars from the libs folder as well.</p>
+
+<p><img src="/images/Selenium-Jar-3.png"></p>
+
+<p>d) Click OK.</p>
+
+<p>&mdash; Ấn nút Ok.</p>
+
+<p><img src="/images/Selenium-Jar-4.png"></p>
+
+<p>That’s all about configuration of WebDriver with eclipse. Now you are ready to write your test script in eclipse and run it in WebDriver.</p>
+
+<p><img src="/images/Selenium-Jar-5.png"></p>
+
+<h3>6) Write your First Test Case</h3>
+
+<p>a) Copy &amp; paste the below code to your First Test Case class and give it a run.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'> 
+</span><span class='line'>import org.openqa.selenium.*;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'> 
+</span><span class='line'>public class FirstTestCase {
+</span><span class='line'>    private static WebDriver driver = null;
+</span><span class='line'> 
+</span><span class='line'>    public static void main(String[] args) {
+</span><span class='line'>        // Create a new instance of the Firefox driver
+</span><span class='line'>        driver = new FirefoxDriver();
+</span><span class='line'> 
+</span><span class='line'>        //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
+</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'> 
+</span><span class='line'>        //Launch the facebook
+</span><span class='line'>        driver.get("https://www.facebook.com/");
+</span><span class='line'> 
+</span><span class='line'>        
+</span><span class='line'>        // Find the element that's ID attribute is 'email' (Username)
+</span><span class='line'>        // Enter email on the element found by above desc.
+</span><span class='line'>      driver.findElement(By.id("email")).sendKeys('enter your username login to facebook')
+</span><span class='line'> 
+</span><span class='line'>        // Find the element that's ID attribute is 'pass' (Password)
+</span><span class='line'>        // Enter Password on the element found by the above desc.
+</span><span class='line'>         driver.findElement(By.id("pass")).sendKeys("enter your password login to facebook"); 
+</span><span class='line'> 
+</span><span class='line'>        // Now submit the form. WebDriver will find the form for us from the element 
+</span><span class='line'>        driver.findElement(By.Xpath("//form[@id='login_form']/table/tbody/tr[2]/td[3]/label/input")).click();
+</span><span class='line'> 
+</span><span class='line'>        // Print a Log In message to the screen
+</span><span class='line'>        System.out.println(" Login Successfully, now it is the time to Log Off buddy.");
+</span><span class='line'> 
+</span><span class='line'>        // Close the driver
+</span><span class='line'>        driver.quit();
+</span><span class='line'>            }
+</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2) Now, to start the test just select Run > Run As > Java Application Or Right Click on Eclipse code and Click Run As  > Java Application</p>
+
+<p>3) After a few Seconds a Mozilla browser will open  and you will see that with the help of your script, Selenium will Launch the Online Store, perform Sign in, display the Message, perform Log out and then Close the browser.</p>
+
+<p>Once the execution is finished, you will see the message in Console section of the Eclipse IDE.</p>
+
+<p>Now you will need to know about WebDriver in Selenium. I just create some basic knowledge about Webdriver please click <a href="/blog/categories/webdriver/">here</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/22/newbie-part-3-download-webdriver-java-client/">Newbie Part 3 : Download Webdriver Java Client</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-22T16:49:41+07:00" pubdate data-updated="true">May 22<span>nd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Download WebDriver Java client</h2>
+
+<p>Selenium webdriver supports many languages and each language has its own client driver. Here we are configuring selenium 2 with Java so we need ‘webdriver Java client driver’.</p>
+
+<p>1) <a href="http://docs.seleniumhq.org/download/">Click here</a> to go on WebDriver Java client driver download page for webdriver download file. On that page click on ‘Download‘ link of Java client driver as shown in the below image.</p>
+
+<p><img src="/images/Download-Webdriver-Java-Client-1.png"></p>
+
+<p>2) Save the zip file to your disk.</p>
+
+<p><img src="/images/Download-Webdriver-Java-Client-2.png"></p>
+
+<p>3) Once you have downloaded the archive you will need to Extract the zip file, which will create the unzipped Selenium Java folder.</p>
+
+<p><img src="/images/Download-Webdriver-Java-Client-3.png"></p>
+
+<p>4) You may want to Extract the archive to the folder where you are maintaing the test ware for your project. I like to extract it at the same location and then move it as per my needs.</p>
+
+<p><img src="/images/Download-Webdriver-Java-Client-4.png"></p>
+
+<p>5) Once the extraction process is complete, Open the Selenium folder.</p>
+
+<p><img src="/images/Download-Webdriver-Java-Client-5.png"></p>
+
+<p>6) There will be ‘libs’ folder, 2 jar files and change log in unzipped folder as shown in bellow figure. We will use all these files for configuring webdriver in eclipse.</p>
+
+<p><img src="/images/Download-Webdriver-Java-Client-6.png"></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -255,23 +597,23 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPath : Selenium Locators</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/xpath-firebug-and-firepath/">XPath : FireBug and FirePath</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/xpath-using-browser-inspector/">XPath : Using Browser Inspector</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/">Webdriver : Dropdown and Multiple Select Operations</a>
       </li>
     
       <li class="post">
         <a href="/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations/">Webdriver : Checkbox and Radio Button Operations</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/webdriver-wait-commands/">Webdriver : Wait Commands</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/webdriver-switch-window-commands/">Webdriver : Switch Window Commands</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/webdriver-browser-navigation-commands/">Webdriver : Browser Navigation Commands</a>
       </li>
     
   </ul>
