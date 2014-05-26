@@ -10,19 +10,13 @@ categories: Webdriver
 
 The very first thing you like to do with Selenium is to opening and closing a new browser. Below are the numbers of commands you can apply on the Selenium opened browser.
 
--- Điều đầu tiên bạn muốn làm với Selenium là mở và đóng 1 trình duyệt. Dưới đây là những lệnh hữu ích mà bạn có thể dùng.
-
 ###1)Get Command
 
 Purpose: This command is use to open a new web page in the current browser. 
 
-(Dùng để mở ra 1 trang web trên 1 trình duyệt)
-
 Command: driver.get(URL);
 
 Parameters: url – The URL to load. It is best to use a fully qualified URL.
-
-(Dữ liệu truyền vào là 1 URL. Tốt nhất là truyền vào 1 URL đầy đủ cả Http)
 
 ``` 
 driver.get("wwww.google.com");
@@ -31,7 +25,6 @@ driver.get("wwww.google.com");
 ###2)Get Title Command
 
 Purpose: This command is use to get the title of the current page.
-(Lấy ra tiêu đề của trang hiện tại)
 
 ``` 
 driver.getTitle();
@@ -41,8 +34,6 @@ driver.getTitle();
 
 Purpose: This command is use to get the URL of the page currently loaded in the browser.
 
-(Lệnh này dùng để lấy ra URL của 1 trang đã được tải xong trên trình duyệt)
-
 ``` 
 driver.getCurrentUrl();
 ```
@@ -50,8 +41,6 @@ driver.getCurrentUrl();
 ###4)Get Page Source Command
 
 Purpose: This command is use to get the source of the last loaded page.
-
-(Lệnh này dùng để lấy các code html của trang đã được tải về trên trình duyệt)
 
 ``` 
 driver.getPageSource();
@@ -61,8 +50,6 @@ driver.getPageSource();
 
 Purpose: This command is use to close the current window of the browser, if it’s the last window it will close the browser.
 
-(Lệnh này dùng dể đóng trang web hiện tại đang mở trên trình duyệt nếu nó là trang web cuối cùng thì trình duyệt sẽ tự động đóng)
-
 ```
 driver.close();
 ```
@@ -71,8 +58,6 @@ driver.close();
 
 Purpose: This command is use to quit the browser and all the opened windows in the browser.
 
-(Lệnh này dùng để đóng trình duyêt)
-
 ```
 driver.quit();
 ```
@@ -80,8 +65,6 @@ driver.quit();
 ###7)Refresh Command
 
 Purpose: There are some commands is use to refresh the current browser.
-
-(Những lệnh sau đây dùng để tải lại trang web hiện tại trên trình duyệt)
 
 ```
 driver.navigate().refresh();
