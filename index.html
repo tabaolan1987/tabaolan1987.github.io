@@ -9,7 +9,7 @@
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="Install TestNG in Eclipse It is easy to install TestNG, as it comes as a plugin for Eclipse IDE. Prerequisite for installing TestNG is your Internet &hellip;">
+  <meta name="description" content="Multi Browser, Cross Browser &amp; Parallel Testing using TestNG When the time comes to turn your site from mock-up to something fully functional, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,1653 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">TestNG Framework : Multi Browser and Parallel Testing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T12:15:47+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Multi Browser, Cross Browser &amp; Parallel Testing using TestNG</h2>
+
+<p>When the time comes to turn your site from mock-up to something fully functional, you’ll want to make sure that it works great for everyone visiting your site whether they’re using Internet Explorer, Firefox, or any other browser. Testing your website with multiple combinations of browsers is known as Cross Browser testing.</p>
+
+<p>Your site will look different in different browsers. That’s because browsers understand some code slightly differently. Your designer should be testing to make sure that your site works well in all modern browsers. But as a tester we need to make sure that functionality should at least tested on Internet Explorer, Firefox, Safari &amp; Google Chrome browser.</p>
+
+<h3>Multi Browser Testing using Selenium TestNG</h3>
+
+<p>In every project it is required to perform multi-browser testing to make sure that the functionality is working as expected with every browser to give equal user experience to all of the wide range of audience. It takes a considerable time to test everything on every browser and when we have used automation to reduce the testing efforts then why don’t we perform the multi-browser testing using automation. TestNG gives us functionality to perform same test on different browsers in a simple and easy way.</p>
+
+<h4>How to do it…</h4>
+
+<p>1)Create your Script to test a LogIn application using TestNG class.</p>
+
+<p>2) Pass ‘Browser Type’ as parameters using TestNG annotations to the before method of the TestNG class. This method will launch only the browser, which will be provided as parameter.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.openqa.selenium.ie.InternetExplorerDriver;
+</span><span class='line'>import org.testng.annotations.AfterClass;
+</span><span class='line'>import org.testng.annotations.BeforeClass;
+</span><span class='line'>import org.testng.annotations.Parameters;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class MultiBrowser {
+</span><span class='line'>  public WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  @Parameters("browser")
+</span><span class='line'>  @BeforeClass
+</span><span class='line'>  // Passing Browser parameter from TestNG xml
+</span><span class='line'>  public void beforeTest(String browser) {
+</span><span class='line'>  // If the browser is Firefox, then do this
+</span><span class='line'>  if(browser.equalsIgnoreCase("firefox")) {
+</span><span class='line'>    driver = new FirefoxDriver();
+</span><span class='line'>  // If browser is IE, then do this     
+</span><span class='line'>  }else if (browser.equalsIgnoreCase("ie")) { 
+</span><span class='line'>    // Here I am setting up the path for my IEDriver
+</span><span class='line'>    System.setProperty("webdriver.ie.driver", "D:\OnlineStore\drivers\IEDriverServer.exe");
+</span><span class='line'>    driver = new InternetExplorerDriver();
+</span><span class='line'>  } 
+</span><span class='line'>  // Doesn't the browser type, lauch the Website
+</span><span class='line'>   driver.get("https://www.facebook.com");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  // Once Before method is completed, Test method will start
+</span><span class='line'>  @Test public void login() throws InterruptedException {
+</span><span class='line'>      driver.findElement(By.id("email")).sendKeys("your username");
+</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys("your password");
+</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
+</span><span class='line'>      driver.quit();
+</span><span class='line'>  }  
+</span><span class='line'>
+</span><span class='line'>  @AfterClass public void afterTest() {
+</span><span class='line'>      driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) Create a TestNG XML for running your test. Configure the TestNG XML for passing parameters i.e. to tell which browser should be used for Running the Test.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;suite name="Suite" parallel="none"&gt;
+</span><span class='line'> &lt;test name="FirefoxTest"&gt;
+</span><span class='line'> &lt;parameter name="browser" value="firefox" /&gt;
+</span><span class='line'> &lt;classes&gt;
+</span><span class='line'> &lt;class name="automationFramework.MultiBrowser" /&gt;
+</span><span class='line'> &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'>
+</span><span class='line'> &lt;test name="IETest"&gt;
+</span><span class='line'> &lt;parameter name="browser" value="ie" /&gt;
+</span><span class='line'> &lt;classes&gt;
+</span><span class='line'> &lt;class name="automationFramework.MultiBrowser" /&gt;
+</span><span class='line'> &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> Note: You can set any number of Browsers here and just for the example purpose I have set up only two main browsers.</p>
+
+<p>4) Now it’s time to run the xml. Run the test by right click on the testng.xml file and select Run As > TestNG Suite.</p>
+
+<p><img src="/images/TestNG-MultiBrowser-1.png"></p>
+
+<p>Note: TestNg will execute the test one by one. You may like to perform parallel tests, next topic will cover that.</p>
+
+<h3>Parallel Tests using TestNG</h3>
+
+<p>Using the feature provided by TestNG for Parallel Executions. just take the above example for Sign In application with two different browsers. This time all we want is to execute test in both browsers simultaneously.</p>
+
+<p>Now just set the ‘parallel‘ attribute to ‘tests‘ in the above used xml and give a run again. This time you will notice that your both browsers will open almost simultaneously and your test will run in parallel.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;suite name="Suite" parallel="tests"&gt;
+</span><span class='line'> &lt;test name="FirefoxTest"&gt;
+</span><span class='line'> &lt;parameter name="browser" value="firefox" /&gt;
+</span><span class='line'> &lt;classes&gt;
+</span><span class='line'> &lt;class name="automationFramework.MultiBrowser" /&gt;
+</span><span class='line'> &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'>
+</span><span class='line'> &lt;test name="IETest"&gt;
+</span><span class='line'> &lt;parameter name="browser" value="ie" /&gt;
+</span><span class='line'> &lt;classes&gt;
+</span><span class='line'> &lt;class name="automationFramework.MultiBrowser" /&gt;
+</span><span class='line'> &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: You may see some intermittent issues using parallel testing. I will not recommend you this rather run one by one only.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/testng-framework-parameters-and-data-provider/">TestNG Framework : Parameters and Data Provider</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T12:05:31+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>TestNG Parameters &amp; Data Provider</h2>
+
+<h3>TestNG Parameters</h3>
+
+<p>Everybody knows the importance of Parameterization in testing and in automation testing. It allows us to automatically run a test case multiple times with different input and validation values. As Selenium Webdriver is more an automated testing framework than a ready-to-use tool, you will have to put in some effort to support data driven testing in your automated tests. I usually prefer to use Microsoft Excel as the format for storing my parameters but so many of my followers have requested to write an article on TestNG Data Provider.</p>
+
+<p>TestNG again gives us another interesting feature called TestNG Parameters. TestNG lets you pass parameters directly to your test methods with your testng.xml.</p>
+
+<h4>How to do it…</h4>
+
+<p>Let me take a very simple example of LogIn application, where the username and password is required to clear the authentication.</p>
+
+<p>1) Create a test on my demo OnlineStore application to perform LogIn which takes the two string argument as username &amp; password.</p>
+
+<p>2) Provide Username &amp; Password as parameter using TestNG Annotation.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>import org.testng.annotations.Parameters;
+</span><span class='line'>
+</span><span class='line'>public class TestngParameters {
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  @Test 
+</span><span class='line'>  @Parameters({ "sUsername", "sPassword" })
+</span><span class='line'>  public void test(String sUsername, String sPassword) {
+</span><span class='line'>    driver = new FirefoxDriver();
+</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>      driver.get("https://www.facebook.com");
+</span><span class='line'>      driver.findElement(By.id("email")).sendKeys(sUsername);
+</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys(sPassword);
+</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
+</span><span class='line'>      driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) The parameter would be passed values from testng.xml which we will see in the next step.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite name="Suite"&gt;
+</span><span class='line'>    &lt;test name="ToolsQA"&gt;
+</span><span class='line'>  &lt;parameter name="sUsername" value="yourusername"/&gt;
+</span><span class='line'>  &lt;parameter name="sPassword" value="yourpassword"/&gt;
+</span><span class='line'>      &lt;classes&gt;
+</span><span class='line'>          &lt;class name="automationFramework.TestngParameters" /&gt;
+</span><span class='line'>      &lt;/classes&gt;
+</span><span class='line'>    &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, run the testng.xml, which will run the parameterTest method. TestNG will try to find a parameter named sUsername &amp; sPassword.</p>
+
+<h3>TestNG DataProviders</h3>
+
+<p>When you need to pass complex parameters or parameters that need to be created from Java (complex objects, objects read from a property file or a database, etc…), in such cases parameters can be passed using Dataproviders. A Data Provider is a method annotated with @DataProvider. A Data Provider returns an array of objects.</p>
+
+<p>Let us check out the same Sign In examples using Dataproviders.</p>
+
+<h4>How to do it…</h4>
+
+<p>1)  Define the method credentials() which is defined as a Dataprovider using the annotation. This method returns array of object array.</p>
+
+<p>2) Add a method test() to your DataProviderTest class. This method takes two strings as input parameters.</p>
+
+<p>3) Add the annotation @Test(dataProvider = “Authentication”) to this method. The attribute dataProvider is mapped to “Authentication”.</p>
+
+<p>Test will look like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.annotations.DataProvider;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class DataProviderTest {
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  @DataProvider(name = "Authentication")
+</span><span class='line'>  public static Object[][] credentials() {
+</span><span class='line'>        return new Object[][] { { "yourusername", "yourpassword" }, { "yourusername_another", "yourpassword_another" }};
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  // Here we are calling the Data Provider object with its Name
+</span><span class='line'>  @Test(dataProvider = "Authentication")
+</span><span class='line'>  public void test(String sUsername, String sPassword) {
+</span><span class='line'>     driver = new FirefoxDriver();
+</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>      driver.get("https://www.facebook.com");
+</span><span class='line'>      driver.findElement(By.id("email")).sendKeys(sUsername);
+</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys(sPassword);
+</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
+</span><span class='line'>      driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Run the test by right click on the test case script and select Run As > TestNG Test. Give it few minutes to complete the execution, once it is finished the results will look like this in the TestNg Result window.</p>
+
+<p>Note: As the test data is provided two times, the above test executed two times completely.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/testng-framework-reporters-and-asserts/">TestNG Framework :Reporters and Asserts</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T11:55:48+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>TestNG Reporters &amp; Asserts</h2>
+
+<h3>TestNG Reporters</h3>
+
+<p>TestNG is a Framework and so far we have already seen the many different powerful features of TestNG. It almost gives you all the important things you are required to complete the Framework.</p>
+
+<h3>TestNG Reporter Logs</h3>
+
+<p>TestNG also gives us the logging facility for the test. For example during the running of test case user wants some information to be logged in the console. Information could be any detail depends upon the purpose. Keeping this in mind that we are using Selenium for testing, we need the information which helps the User to understand the test steps or any failure during the test case execution. With the help of TestNG Logs it is possible to enable logging during the Selenium test case execution.</p>
+
+<p>In selenium there are two types of logging. High level logging and Low level logging. In low level logging you try to produce logs for the every step you take or every action you make in your automation script. In high  level logging you just try to capture main events of your test.</p>
+
+<p>Everybody has their own style of logging and I have mine too. I am also a big fan of Log4j logging and that’s why I do not mix log4j logging with testng logging but on the same side I make to use of both of its. I perform low level logging with log4j and high level logging with testng reporter logs.</p>
+
+<h4>How to do it…</h4>
+
+<p>1) Write a test case for Sign In application and implement Log4j logging on every step.</p>
+
+<p>2) Insert Reporter logs on the main events of the test.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>
+</span><span class='line'>import org.apache.log4j.Logger;
+</span><span class='line'>import org.apache.log4j.xml.DOMConfigurator;
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.Reporter;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>import utility.Log;
+</span><span class='line'>
+</span><span class='line'>public class ReporterLogs {
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  private static Logger Log = Logger.getLogger(Log.class.getName());
+</span><span class='line'>    @Test
+</span><span class='line'>  public static void test() {
+</span><span class='line'>      DOMConfigurator.configure("log4j.xml");
+</span><span class='line'>        driver = new FirefoxDriver();
+</span><span class='line'>        Log.info("New driver instantiated");
+</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>        Log.info("Implicit wait applied on the driver for 10 seconds");
+</span><span class='line'>        driver.get("https://www.facebook.com/");
+</span><span class='line'>        Log.info("Web application launched");
+</span><span class='line'>        // Our first step is complete, so we produce a main event log here for our reports.
+</span><span class='line'>        Reporter.log("Application Lauched successfully | ");
+</span><span class='line'>   
+</span><span class='line'>        driver.findElement(By.id("email")).sendKeys("yourusername");
+</span><span class='line'>        Log.info("Username entered in the Username and email text box");
+</span><span class='line'>        driver.findElement(By.id("pass")).sendKeys("yourpassword");
+</span><span class='line'>        Log.info("Password entered in the Password text box");
+</span><span class='line'>        driver.findElement(By.id("loginbutton")).click();
+</span><span class='line'>        Log.info("Click action performed on Submit button");
+</span><span class='line'>        // Here we are done with our Second main event
+</span><span class='line'>        Reporter.log("Sign In Successful | " );
+</span><span class='line'>        driver.quit();
+</span><span class='line'>        Log.info("Browser closed");
+</span><span class='line'>        // This is the third main event
+</span><span class='line'>        Reporter.log("User is Logged out and Application is closed | ");
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) Run the test by right click on the test case script and select Run As > TestNG Test.</p>
+
+<p>Your Log4j logging output will look like this:</p>
+
+<p><img src="/images/TestNG-Reporter-1.png"></p>
+
+<p>But your Reporters log will look like this:</p>
+
+<p><img src="/images/TestNG-Reporter-2.png"></p>
+
+<p>Log4j logging will help you to report a bug or steps taken during the test, on the other hand reporters log will help you to share the test status with leadership. As leadership is just interested in the test results, not the test steps.</p>
+
+<p>I also use reporter’s logs on the verification during the test. For example</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if(Text1.equals(Text2)){
+</span><span class='line'>      Reporter.log("Verification Passed forText");
+</span><span class='line'>  }else{
+</span><span class='line'>      Reporter.log("Verification Failed for Text");
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>TestNG Asserts</h3>
+
+<p>TestNG also gives us the power to take decisions in the middle of the test run with the help of Asserts. With this we can put various checkpoints in the test. Asserts are the most popular and frequently used methods while creating Selenium Scripts. In selenium there will be many situations in the test where you just like to check the presence of an element. All you need to do is to put an assert statement on to it to verify its existence.</p>
+
+<h4>Different Asserts Statements</h4>
+
+<p>1) Assert.assertTrue() &amp; Assert.assertFalse()</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.WebElement;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.Assert;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class Asserts {
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  @Test
+</span><span class='line'>  public void f() {
+</span><span class='line'>    driver = new FirefoxDriver();
+</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>      driver.get("https://www.facebook.com/");
+</span><span class='line'>      
+</span><span class='line'>      // Here driver will try to find out My username textbox on the application
+</span><span class='line'>      WebElement text_username = driver.findElement(By.id("email"));
+</span><span class='line'>      
+</span><span class='line'>      //Test will only continue, if the below statement is true
+</span><span class='line'>      //This is to check whether the textbox is displayed or not
+</span><span class='line'>      Assert.assertTrue(text_username.isDisplayed());
+</span><span class='line'>      
+</span><span class='line'>      //My username text will be type only if the above condition is true
+</span><span class='line'>      myAccount.sendKeys("your_username");
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: Assert true statement fails the test and stop the execution of the test, if the actual output is false.  Assert.assertFalse() works opposite of Assert.assertTrue(). It means that if you want your test to continue only if when some certain element is not present on the page. You will use Assert false, so it will fail the test in case of the element present on the page.</p>
+
+<p>2) Assert.assertEquals()</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@Test
+</span><span class='line'>  public void test() {
+</span><span class='line'>    String sValue = "Ta bao Lan";
+</span><span class='line'>    System.out.println(" What is your full name");
+</span><span class='line'>    Assert.assertEquals("Ta Bao Lan", sValue);
+</span><span class='line'>    System.out.println(sValue);
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It also works the same way like assert true and assert fail. It will also stop the execution, if the value is not equal and carry on the execution, if the value is equal.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/">TestNG Framework : Prioritizing and Sequencing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T11:48:09+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>TestNG Prioritizing &amp; Sequencing</h2>
+
+<h3>Multiple Tests</h3>
+
+<p>There will be situations when you want to put number of tests under a single test class and like to run all in single shot.  With the help of TestNG ‘@Test‘ annotations we can execute multiple tests in single TestNG file.</p>
+
+<p>Take an example of four different tests under one testng class and print the test sequence on the console.</p>
+
+<h4>How to do it…</h4>
+
+<p>1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next.</p>
+
+<p>Or</p>
+
+<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
+
+<p><img src="/images/TestNg-Muliple-0.png"></p>
+
+<p>2) If your project is set up and you have selected the Test Case folder before creating TestNG class then the source folder and the package name will be pre-populated on the form. Set class name as ‘TestNG‘.
+Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@AfterMethod” for now and click Finish. That’s it.</p>
+
+<p><img src="/images/TestNg-Muliple-1.png"></p>
+
+<p>3) By default a new class will have only one @Test method. Add two more methods by yourself and put your code accordingly in methods. Code will look like:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class MultipleTest {
+</span><span class='line'>  public WebDriver driver;
+</span><span class='line'>  @Test
+</span><span class='line'>  public void One() {
+</span><span class='line'>      System.out.println("This is the Test Case number One");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @Test
+</span><span class='line'>  public void Two() {
+</span><span class='line'>    System.out.println("This is the Test Case number Two");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @Test
+</span><span class='line'>  public void Three() {
+</span><span class='line'>    System.out.println("This is the Test Case number Three");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @Test
+</span><span class='line'>  public void Four() {
+</span><span class='line'>    System.out.println("This is the Test Case number Four");
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will enable you to execute all four tests with just one testng class. Take a look on the output.</p>
+
+<p><img src="/images/TestNg-Muliple-3.png"></p>
+
+<p>Attention: By default, methods annotated by @Test are executed alphabetically. Take a look over the next topic to see how to prioritize @Test.</p>
+
+<h3>Sequencing &amp; Prioritizing</h3>
+
+<p>You need to use the ‘priority‘ parameter, if you want the methods to be executed in your order. Parameters are keywords that modify the annotation’s function.</p>
+
+<p>Let’s take the same above example and execute all @Test methods in right order. Simply assign priority to all @Test methods starting from 0(Zero).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class MultipleTest {
+</span><span class='line'>  public WebDriver driver;
+</span><span class='line'>  @Test(priority = 0)
+</span><span class='line'>  public void One() {
+</span><span class='line'>      System.out.println("This is the Test Case number One");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @Test(priority = 1)
+</span><span class='line'>  public void Two() {
+</span><span class='line'>    System.out.println("This is the Test Case number Two");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @Test(priority = 2)
+</span><span class='line'>  public void Three() {
+</span><span class='line'>    System.out.println("This is the Test Case number Three");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @Test(priority = 3)
+</span><span class='line'>  public void Four() {
+</span><span class='line'>    System.out.println("This is the Test Case number Four");
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: TestNG will execute the @Test annotation with the lowest priority value up to the largest.</p>
+
+<p>Output of the above:</p>
+
+<p><img src="/images/TestNg-Muliple-4.png"></p>
+
+<h3>Skipping a Test Case</h3>
+
+<p>Think of a situation where you are required to skip one or more @Test from your testng class. In testng, you can easily able to handle this situation by setting the ‘enabled’ parameter to ‘false’ for e.g.:</p>
+
+<p>@Test(enabled = false)</p>
+
+<p>To use two or more parameters in a single annotation, separate them with a comma:</p>
+
+<p>@Test(priority = 3, enabled = false)</p>
+
+<p>Again take the same example and set the value false for the third test.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class MultipleTest {
+</span><span class='line'>  public WebDriver driver;
+</span><span class='line'>  @Test(priority = 0)
+</span><span class='line'>  public void One() {
+</span><span class='line'>      System.out.println("This is the Test Case number One");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @Test(priority = 1)
+</span><span class='line'>  public void Two() {
+</span><span class='line'>    System.out.println("This is the Test Case number Two");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @Test(priority = 2, enabled = false)
+</span><span class='line'>  public void Three() {
+</span><span class='line'>    System.out.println("This is the Test Case number Three");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @Test(priority = 3)
+</span><span class='line'>  public void Four() {
+</span><span class='line'>    System.out.println("This is the Test Case number Four");
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Output of the above example:</p>
+
+<p><img src="/images/TestNg-Muliple-5.png"></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/testng-framework-annotations/">TestNG Framework : Annotations , Groups and OnDepends</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T11:35:51+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>TestNG Annotations, Groups &amp; OnDepends</h2>
+
+<h3>TestNG Annotations</h3>
+
+<p>In the TestNG Introduction chapter we have came across different annotations used in TestNG Framework but so far we have used just three(Before, After &amp; Test). All though these are the most frequently used annotations but who know how far you will go with your framework and may like to use other useful TestNG annotations.</p>
+
+<p>Before that I would like you to give a small idea on Annotations hierarchy or Annotations levels in TestNG.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite&gt;
+</span><span class='line'>     &lt;test&gt;
+</span><span class='line'>           &lt;classes&gt;
+</span><span class='line'>                  &lt;method&gt;
+</span><span class='line'>                        &lt;test&gt;
+</span><span class='line'>                  &lt;/method&gt;
+</span><span class='line'>           &lt;/classes&gt;
+</span><span class='line'>     &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It says that @Test is the smallest annotation here. @Method will be executed first, before and after the execution of @Test. The same way @Class will be executed first, before and after the execution of @Method and so on.</p>
+
+<p>Now with the below example it will be clear to you easily.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'> 
+</span><span class='line'>import org.testng.annotations.AfterClass;
+</span><span class='line'>import org.testng.annotations.AfterMethod;
+</span><span class='line'>import org.testng.annotations.AfterSuite;
+</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>import org.testng.annotations.BeforeClass;
+</span><span class='line'>import org.testng.annotations.BeforeMethod;
+</span><span class='line'>import org.testng.annotations.BeforeSuite;
+</span><span class='line'>import org.testng.annotations.BeforeTest;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>public class Sequencing {
+</span><span class='line'> 
+</span><span class='line'>        @Test
+</span><span class='line'>        public void testCase1() {
+</span><span class='line'>            System.out.println("This is the Test Case 1");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @Test
+</span><span class='line'>        public void testCase2() {
+</span><span class='line'>            System.out.println("This is the Test Case 2");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @BeforeMethod
+</span><span class='line'>        public void beforeMethod() {
+</span><span class='line'>            System.out.println("This will execute before every Method");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @AfterMethod
+</span><span class='line'>        public void afterMethod() {
+</span><span class='line'>            System.out.println("This will execute after every Method");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @BeforeClass
+</span><span class='line'>        public void beforeClass() {
+</span><span class='line'>            System.out.println("This will execute before the Class");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @AfterClass
+</span><span class='line'>        public void afterClass() {
+</span><span class='line'>            System.out.println("This will execute after the Class");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @BeforeTest
+</span><span class='line'>        public void beforeTest() {
+</span><span class='line'>            System.out.println("This will execute before the Test");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @AfterTest
+</span><span class='line'>        public void afterTest() {
+</span><span class='line'>            System.out.println("This will execute after the Test");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @BeforeSuite
+</span><span class='line'>        public void beforeSuite() {
+</span><span class='line'>            System.out.println("This will execute before the Test Suite");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @AfterSuite
+</span><span class='line'>        public void afterSuite() {
+</span><span class='line'>            System.out.println("This will execute after the Test Suite");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>    }
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Output of the above code will be like this:</p>
+
+<p><img src="/images/TestNG-Annotations-1.png"></p>
+
+<p>It is clearly visible that the @Suite annotation is the very first and the very lastly executed. Then @Test followed by @Class. Now if you notice, the @Method has executed twice. As @Test is a method in the class, hence @Method will always executed for each @Test method.</p>
+
+<h3>Test Case Grouping</h3>
+
+<p>‘Groups‘ is one more annotation of TestNG which can be used in the execution of multiple tests. Let’s say you have hundred tests of class vehicle and in it ten method of car, ten method of scooter and so on. You probably like to run all the scooter tests together in a batch. And you want all to be in a single test suite. With the help of grouping you can easily overcome this situation.</p>
+
+<h4>How to do it…</h4>
+
+<p>1) Create two methods for Car, two methods for Scooter and one method in conjunction with Car &amp; Sedan Car.</p>
+
+<p>2) Group them separately with using  (groups = { ” Group Name” })</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class Grouping {
+</span><span class='line'>  @Test (groups = { "Car" })
+</span><span class='line'>  public void Car1() {
+</span><span class='line'>    System.out.println("Batch Car - Test car 1");
+</span><span class='line'>  }
+</span><span class='line'>  @Test (groups = { "Car" })
+</span><span class='line'>  public void Car2() {
+</span><span class='line'>    System.out.println("Batch Car - Test car 2");
+</span><span class='line'>  }
+</span><span class='line'>  @Test (groups = { "Scooter" })
+</span><span class='line'>  public void Scooter1() {
+</span><span class='line'>    System.out.println("Batch Scooter - Test scooter 1");
+</span><span class='line'>  }
+</span><span class='line'>  @Test (groups = { "Scooter" })
+</span><span class='line'>  public void Scooter2() {
+</span><span class='line'>    System.out.println("Batch Scooter - Test scooter 2");
+</span><span class='line'>  }
+</span><span class='line'>  @Test (groups = { "Car", "Sedan Car" })
+</span><span class='line'>  public void Sedan1() {
+</span><span class='line'>    System.out.println("Batch Sedan Car - Test sedan 1");
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) Create a testng xml like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite name="Suite"&gt;
+</span><span class='line'>    &lt;test name="Practice Grouping"&gt;
+</span><span class='line'>        &lt;groups&gt;
+</span><span class='line'>      &lt;run&gt;
+</span><span class='line'>      &lt;include name="Car" /&gt;
+</span><span class='line'>      &lt;/run&gt;
+</span><span class='line'>  &lt;/groups&gt;
+</span><span class='line'>  &lt;classes&gt;
+</span><span class='line'>      &lt;class name="automationFramework.Grouping" /&gt;
+</span><span class='line'>  &lt;/classes&gt;
+</span><span class='line'>    &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4) Run the test by right click on the testng.xml file and select Run As > TestNG Suite. Output will be like this in TestNg console:</p>
+
+<p><img src="/images/TestNG-Grouping-1.png"></p>
+
+<p> Note: We have just call the group ‘Car’ from the xml and it also executed the test for Sedan Car, as we have mentioned the ‘Car’ as well while declaring the group of Sedan Car.</p>
+
+<p>Clubbing of groups is also possible, take a look at the below xml:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>&lt;suite name="Suite"&gt;
+</span><span class='line'>   &lt;test name="Practice Grouping"&gt;
+</span><span class='line'>      &lt;groups&gt;
+</span><span class='line'>         &lt;define name="All"&gt;
+</span><span class='line'>           &lt;include name="Car"/&gt;
+</span><span class='line'>           &lt;include name="Scooter"/&gt;
+</span><span class='line'>       &lt;/define&gt;
+</span><span class='line'>      &lt;run&gt;
+</span><span class='line'>           &lt;include name="All"/&gt;
+</span><span class='line'>      &lt;/run&gt;
+</span><span class='line'>       &lt;/groups&gt;
+</span><span class='line'>   &lt;classes&gt;
+</span><span class='line'>        &lt;class name="automationFramework.Grouping" /&gt;
+</span><span class='line'>  &lt;/classes&gt;
+</span><span class='line'>   &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can see that we have created a new Group with the name ‘All’ and include other groups in it. Then simply called the newly created group for execution. The output will be like this:</p>
+
+<p><img src="/images/TestNG-Grouping-2.png"></p>
+
+<h3>Dependent Test</h3>
+
+<p>Sometimes, you may need to invoke methods in a Test case in a particular order or you want to share some data and state between methods. This kind of dependency is supported by TestNG as it supports the declaration of explicit dependencies between test methods.</p>
+
+<p>TestNG allows you to specify dependencies either with:</p>
+
+<p>Using attributes dependsOnMethods in @Test annotations OR</p>
+
+<p>Using attributes dependsOnGroups in @Test annotations.</p>
+
+<p>Take a look over the below example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class Dependent {
+</span><span class='line'>  @Test (dependsOnMethods = { "OpenBrowser" })
+</span><span class='line'>  public void SignIn() {
+</span><span class='line'>    System.out.println("This will execute second (SignIn)");
+</span><span class='line'>  }
+</span><span class='line'>  @Test
+</span><span class='line'>  public void OpenBrowser() {
+</span><span class='line'>    System.out.println("This will execute first (Open Browser)");
+</span><span class='line'>  }
+</span><span class='line'>  @Test (dependsOnMethods = { "SignIn" })
+</span><span class='line'>  public void LogOut() {
+</span><span class='line'>    System.out.println("This will execute third (Log Out)");
+</span><span class='line'>  }
+</span><span class='line'>  </span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output will be like this:</p>
+
+<p><img src="/images/TestNG-Dependent1.png"></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/testng-framework-test-suite/">TestNG Framework : Test Suite</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T11:28:33+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>TestNG Test Suite</h2>
+
+<p>In any project, you will end up to a place where you need to execute so many test cases on a run. Running a set of test cases together is call executing a Test Suite. Those test cases can be dependent to each other or may have to be executed in a certain order. TestNg gives us the capability to manage our test execution.</p>
+
+<p>In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. This is the xml file where you will configure your test run, set test dependency, include or exclude any test, method, class or package and set priority etc.</p>
+
+<h3>How to do it…</h3>
+
+<h4>Step 1 : Create a TestNG XML</h4>
+
+<p>1) Right click on Project folder, go to New and select ‘File‘ as shown in below image.</p>
+
+<p><img src="/images/TestNG-Suite1.png"></p>
+
+<p>2) In New file wizard, add file name = ‘testng.xml‘ as shown in below given image and click on Finish button.</p>
+
+<p><img src="/images/TestNG-Suite2.png"></p>
+
+<p>3) It will add testng.xml file under your project folder.</p>
+
+<h4>Step 2 : Write xml code ?</h4>
+
+<p>Now add below given code in your testng.xml file.see the image below</p>
+
+<p><img src="/images/TestNG-Suite3.png"></p>
+
+<p>Hope you have understood the xml code, as it is quite simple hierarchy:</p>
+
+<p>Very first tag is the Suite tag<suite>, under that it is the Test tag<test> and then the Class tag<classes>. You can give any name to the suite and the test but you need to provide the correct name to the <classes> tag which is a combination of your Package name and Test Case name.</p>
+
+<h4>Step 3 : Execute a testng.xml</h4>
+
+<p>Now it’s time to run the xml. Run the test by right click on the testng.xml file and select Run As > TestNG Suite.</p>
+
+<p><img src="/images/TestNG-Suite4.png"></p>
+
+<p>It will take few seconds to start the testng execution engine and soon you will notice that your test will run and complete. Once the execution is complete, you can view test execution result under the TestNg console.</p>
+
+<p><img src="/images/TestNG-Suite5.png"></p>
+
+<p>This is the one simple example of creating and running testng.xml file in eclipse.</p>
+
+<h3>Building a Test Suite</h3>
+
+<p>Now when you have learned how to build the xml, now it’s time to learn how to build a Test Suite using testng.xml. It is again not a complex task, all you need to do is to add your test cases to your xml file in <classes> tag.</p>
+
+<p><img src="/images/TestNG-Suite6.png"></p>
+
+<p>The above test will execute only those tests, which are mentioned in the testng.xml. The rest of the test cases under ‘automationFramework’ package will remain untouched.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/testng-framework-first-test-case-with-testng/">TestNG Framework : First Test Case With TestNG</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T11:09:19+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>First Test case with TestNG</h2>
+
+<p>Steps to follow:</p>
+
+<p>1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next.</p>
+
+<p>Or</p>
+
+<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
+
+<p><img src="/images/TestNG-FTC-1.png"></p>
+
+<p>2) If your project is set up and you have selected the Test Case folder before creating TestNG class then the source folder and the package name will be prepopullated on the form. Set class name as ‘TestNG‘.
+Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finish. That’s it.</p>
+
+<p><img src="/images/TestNG-FTC-2.png"></p>
+
+<p>3) Now it will display the newly created TestNg class under the Test Case package(folder). TestNG class will look like the image below with displaying three empty methods. One method f() by default and before &amp; after method, as selected during the creation of the class.</p>
+
+<p><img src="/images/TestNG-FTC-3.png"></p>
+
+<p>4) Project explorer will look like this with TestNG class.</p>
+
+<p><img src="/images/TestNG-FTC-3.png"></p>
+
+<p>Now it is the time to write the first TestNG test case.</p>
+
+<p>5) Let’s take an example of First Test Case and divide the test case in to three parts .</p>
+
+<p>@BeforeMethod : Launch Firefox and direct it to the Base URL</p>
+
+<p>@Test : Enter Username &amp; Password to Login, Print console message</p>
+
+<p>@AfterMethod : Close Firefox browser</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>import org.testng.annotations.BeforeMethod;
+</span><span class='line'>import org.testng.annotations.AfterMethod;
+</span><span class='line'>
+</span><span class='line'>public class TestNG {
+</span><span class='line'>  public WebDriver driver;
+</span><span class='line'>
+</span><span class='line'>  @Test
+</span><span class='line'>  public void main() {
+</span><span class='line'>  // Find the element that's ID attribute is 'account'(My Account)
+</span><span class='line'>      driver.findElement(By.id("account")).click();
+</span><span class='line'>      // Find the element that's ID attribute is 'log' (Username)
+</span><span class='line'>      // Enter Username on the element found by above desc.
+</span><span class='line'>      driver.findElement(By.id("email")).sendKeys("yourusername");
+</span><span class='line'>      // Find the element that's ID attribute is 'pwd' (Password)
+</span><span class='line'>      // Enter Password on the element found by the above desc.
+</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys("yourpassword");
+</span><span class='line'>      // Now submit the form. WebDriver will find the form for us from the element
+</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
+</span><span class='line'>      // Print a Log In message to the screen
+</span><span class='line'>      System.out.println(" Login Successfully");
+</span><span class='line'>  }
+</span><span class='line'>  @BeforeMethod
+</span><span class='line'>  public void beforeMethod() {
+</span><span class='line'>    // Create a new instance of the Firefox driver
+</span><span class='line'>      driver = new FirefoxDriver();
+</span><span class='line'>      //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
+</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>      //Launch the Online Store Website
+</span><span class='line'>      driver.get("https://www.facebook.com/");
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  @AfterMethod
+</span><span class='line'>  public void afterMethod() {
+</span><span class='line'>    // Close the driver
+</span><span class='line'>      driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6) Run the test by right click on the test case script and select Run As > TestNG Test.</p>
+
+<p><img src="/images/TestNG-FTC-5.png"></p>
+
+<h4>Results of running the Testng Test Case</h4>
+
+<p>7) Give it few minutes to complete the execution, once it is finished the results will look like this in the TestNg Result window.</p>
+
+<p><img src="/images/TestNG-FTC-6.png"></p>
+
+<p>It displayed ‘passed : 1′. This means test is successful and  Passed.</p>
+
+<p>There are 3 sub tabs. “All Tests”, “Failed Tests” and “Summary”. Just click “All Tests” to see what is there.</p>
+
+<p><img src="/images/TestNG-FTC-7.png"></p>
+
+<p>As you see, there is information of which test cases are executed and their duration. Take look to other tabs. Better than Junit right?</p>
+
+<p>8) TestNG also produce HTML reports. To access those reports go to the Project directory and open test-output folder.</p>
+
+<p><img src="/images/TestNG-FTC-8.png"></p>
+
+<p>9) TestNG also produce ‘index.html‘ report and it resides in the same test-output folder. This reports gives the link to all the different component of the TestNG reports like Groups &amp; Reporter Output. On clicking these will display detailed descriptions of execution. In the advance chapter of TestNG we will go though each of the TestNG topics.</p>
+
+<p><img src="/images/TestNG-FTC-10.png"></p>
+
+<p><img src="/images/TestNG-FTC-11.png"></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -421,1010 +2068,6 @@ link=”Name of the Link”</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/xpath-firebug-and-firepath/">XPath : FireBug and FirePath</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T10:37:18+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>FireBug and FirePath</h2>
-
-<h3>What is XPath</h3>
-
-<p>XPath is a language that describes a way to locate and process items in Extensible Markup Language (XML) documents by using an addressing syntax based on a path through the document’s logical structure or hierarchy. XPath in used in Selenium  to uniquely identify an element on a Webpage as element locator just like the way we use PostCode and House address in real world to locate Home Address.</p>
-
-<h3>What is Firebug</h3>
-
-<p>Firebug integrates with Firefox to put a wealth of web development tools at your fingertips while you browse. You can edit, debug, and monitor CSS, HTML, and JavaScript live in any web page. The whole content of this page is taken from the <a href="https://getfirebug.com/html">firebug</a>.</p>
-
-<h3>Why it is Useful to Selenium Automation Tester</h3>
-
-<p>1) View source live : Firefox has a “View Source” window, but it doesn’t show you what the HTML source really looks like once it has been transformed by JavaScript. Firebug’s HTML tab shows you what the HTML looks like right now.</p>
-
-<p>2) See changes highlighted: In any JavaScript-driven website, HTML elements are constantly being created, removed, and modified. Wouldn’t it be nice if you could see exactly what, when, and where these changes take place? Firebug highlights changes to the HTML in yellow immediately when they occur. If you want to spy even closer, you have the option to also scroll every change into view, so you won’t miss a thing.</p>
-
-<p>3) Find elements with the mouse: Something in your page doesn’t quite look right and you want to know why. There’s no faster way to get answers than to click the “Inspect” button on Firebug’s toolbar and then prepare for immediate gratification. As you move around the page, whatever is beneath your mouse will be instantly revealed within Firebug, showing you the HTML and CSS behind it.</p>
-
-<p>4) Copy the source: Right-click on any element, and you’ll have several options for copying aspects of that element to the clipboard, including its HTML fragment, the value of its “innerHTML” property, or an XPath expression that identifies the element uniquely.</p>
-
-<h3>How to Download FireBug</h3>
-
-<p>FireBug is a plugin which comes with Firefox browser, hence it is easily be downloadable from Firefox itself.</p>
-
-<p>1) Go to Tools > Web Developer > Get More Tools.</p>
-
-<p><img src="/images/Firebug-1.png"></p>
-
-<p>2) It will open a Webpage and display all the plugins available for Firefox browser. As we need Firebug, just click on Add to Firefox button for Firebug.</p>
-
-<p><img src="/images/Firebug-2.png"></p>
-
-<p>3) Hit on Install Now button to proceed.</p>
-
-<p><img src="/images/Firebug-3.png"></p>
-
-<p>4) Once the Installation is finished, press ‘F-12′ to open Firebug tool. It will display like this.</p>
-
-<p><img src="/images/FIND-ELEMENTS-2.png"></p>
-
-<h3>How to Use it</h3>
-
-<p>Most of the times it is used to Inspect Elements on a Webpage and to get the XPath of the Elements from a Webpage.</p>
-
-<p>1) Inspect Elements: Please visit Finding Elements using Browser Inspector for details explanation on How to find Elements using Browser Inspector.</p>
-
-<p>2) Copy XPath: Copying XPath is really very handy. Once you are done with selecting an Element using Inspector, all you need to do is to Right click on the HTML code of the selected element and select Copy XPath.</p>
-
-<p><img src="/images/Firebug-6.png"></p>
-
-<p>3) Now you can paste the copied XPath on your test script by pressing ‘Ctrl + V‘. It will display like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/html/body/div/header/div/a/img</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>What is FirePath</h3>
-
-<p>It is an extension to FireBug that adds a development tool to edit, inspect and generate XPath expressions and CSS3 Selectors.</p>
-
-<h3>Why it is Useful to Selenium Automation Tester</h3>
-
-<p>1) You can type self-written XPath and check if it is correct by highlighting the results directly on the Webpage.</p>
-
-<p>2) Generate an XPath expression or a CSS selector for an element by right clicking on it and selecting “Inspect in FirePath” in the context menu.</p>
-
-<p>3) Like Firebug it also gives you the Xpath of the selected Element.</p>
-
-<h3>How to Download Firepath</h3>
-
-<p>Firepath is an extension to Firebug, so you would only be able to install it after installing FireBug.</p>
-
-<p>1) Go to Tools > Web Developer > Get More Tools.</p>
-
-<p><img src="/images/Firebug-1.png"></p>
-
-<p>2) It will open a Webpage and will display all the plugins available for Firefox browser. As I said before that it is an extension to Firebug, you need to click on the Extensions link and the type Firepath on the Search field. As we need FirePath, just click on Add to Firefox button for FirePath.</p>
-
-<p><img src="/images/FirePath-1.png"></p>
-
-<p>3) Hit on Install Now button to proceed.</p>
-
-<p><img src="/images/FirePath-2.png"></p>
-
-<p>4) Once it is installed, it will ask to Restart the browser. Click on Restart Now button.</p>
-
-<p><img src="/images/FirePath-3.png"></p>
-
-<p>4) Once it is opened, press ‘F-12′ to open Firebug tool. It will display the FirePath on the same console.</p>
-
-<h3>How to Use FirePath</h3>
-
-<p>1) Inspect Elements: Please visit Finding Elements using Browser Inspector for details explanation on How to find Elements using Browser Inspector. But unlike FireBug, it displays the XPath of the selected element on the console.</p>
-
-<p><img src="/images/FirePath-6.png"></p>
-
-<p>2) Copy XPath: Copying XPath is really very handy. Once you are done with selecting an Element using Inspector, all you need to do is to Copy the XPath of the selected element and paste it to your Test script by pressing ‘Ctrl + V‘. It will display like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//*[@id='masthead']/div/a/img</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Difference between FireBug and FirePath</h3>
-
-<p>The only difference from Automation tester point of view is FireBug returns Absolute XPath and FirePath returns Relative XPath.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/xpath-using-browser-inspector/">XPath : Using Browser Inspector</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T10:24:15+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Finding Elements using Browser Inspector</h2>
-
-<p>Now days, it is very easy to find elements on the page. All the modern browsers have the web inspector, the built-in tool for to easily examine the structure of webpages.</p>
-
-<p>I used to use Google Chrome’s inspector because Chrome was my default browser; Safari uses the same inspector and IE uses IE Inspector. Firefox has its own built in Inspector and it has an optional extension called Firebug, which has a little more functionality that is sometimes worth switching over for. The steps to use it are largely the same.</p>
-
-<h3>1) Activating the Web Inspector</h3>
-
-<p>You can activate the web inspector in any of the above browsers by right-clicking on any element in the page, such as a photo. A pop-up menu should appear with the option to Inspect Element.  Or you can use the short cut key for Inspector which is F-12.</p>
-
-<p>F-12 will pop-up a panel, usually in the bottom-half of your browser, showing the HTML source. The red circle is pointing to the Element Inspector in Firefox.</p>
-
-<p><img src="/images/Finding-Elements-1.png"></p>
-
-<h3>2) Selecting Elements</h3>
-
-<p>Once you click the Inspector Icon from the bottom panel your element inspector is active and as you move your mouse around the page, the element under your mouse is highlighted with a dotted border and an annotation displays its HTML tag. At the same time, its HTML definition is displayed, in context, in the Inspector’s left-hand pane.</p>
-
-<p>In the screenshot below, I have chosen to inspect the &ldquo;Email or Phone” textbox on the <a href="https://www.facebook.com/">Facebook</a>. The inspector (in the bottom panel of the browser) highlights where in the HTML that the “Email or Phone” button appears.</p>
-
-<p><img src="/images/FIND-ELEMENTS-2.png"></p>
-
-<p>With the help of above html code you can simply write the below code in your test script:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.findElement(By.id("email")).sendKeys("your username or email login to facebook");</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/">Webdriver : Dropdown and Multiple Select Operations</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T10:15:16+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>DropDown &amp; Multiple Select Operations</h2>
-
-<p>Just like Checkboxes &amp; Radio buttons, Dropdown and Multiple Select also works together and almost the same way. To perform any action, the first task is to identify the element group. I am saying it a group, as dropdown/multiple select is not a single element. They always have a single name but and they contains one or more than one elements in them. I should rather say more than one option in dropdown and multiple select. The only difference between these two is deselecting statement &amp; multiple selections are not allowed on dropdowns. Let’s look at the different operations:</p>
-
-<h3>Selecting Dropdown/Multiple Select Box</h3>
-
-<p>It is just an ordinary operation like selecting any other type of element on a webpage. You can choose it by ID, Name, Css &amp; Xpath etc. But to perform any action on this element it is required to import ‘import org.openqa.selenium.support.ui.Select&#8217; package and to use it we need to create a new select object of class select.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: Select class only works for elements with <select> tags</p>
-
-<h3>Selecting an option using ‘selectByVisibleText’</h3>
-
-<p>It is very easy to choose or select an option given under any dropdowns and multiple selection boxes with selectByVisibleText method.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>oSelection.selectByVisibleText(text);
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Selecting an option using ‘selectByIndex’</h3>
-
-<p>It is almost the same as selectByVisibleText but the only difference here is that we provide the index number of the option here rather the option text.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>
-</span><span class='line'>oSelection.selectByIndex(index);</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Selecting an option using ‘selectByValue’</h3>
-
-<p>It is again the same what we have discussed earlier, the only difference in this is that we need to provide the value of the option rather the option text.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>oSelection.selectByValue(value);
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: The value of an option and the text of the option may not be always same and there can be a possibility that the value is not assigned to Select webelement. If the value is given in the Select tag then only you can use the selectByValue method.</p>
-
-<h3>Getting the Size of Select item</h3>
-
-<p>Sometimes you may like to count the element in the dropdown and multiple select box, so that you can use the loop on Select element.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>List&lt;WebElement&gt; oSize = oSelection.getOptions();
-</span><span class='line'>int iListSize = oSize.size();
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Printing the Options</h3>
-
-<p>Once you get the size of the Select element then it is easy to print the Text of the options.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>  List oSize = oSelection.getOptions();
-</span><span class='line'>  int iListSize = oSize.size();
-</span><span class='line'>  for(int i =0; i&gt;iListSize ; i++){
-</span><span class='line'>      String sValue = oSelection.getOptions().get(i).getText();
-</span><span class='line'>      System.out.println(sValue);
-</span><span class='line'>      }</span></code></pre></td></tr></table></div></figure>
-
-
-<p>All of the above methods work on both Dropdown and Multiple select box.</p>
-
-<h3>Deselect methods</h3>
-
-<p>This only works on Multiple selection boxes. If in case you want to deselect any selected option and that can be done with either deselectAll(), deselectByIndex, deselectByValue and deselectByVisibletext.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>  oSelection.deselectAll();
-</span><span class='line'>  oSelection.deselectByIndex(index);
-</span><span class='line'>  oSelection.deselectByValue(value);
-</span><span class='line'>  oSelection.deselectByVisibleText(text);
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Multiple selection method</h3>
-
-<p>This one also just works on Multiple selection boxes and not on regular List boxes or dropdowns. There is no additional logic behind selecting multiple options of Select element. All you need to do is to fire select commands on multiple elements one by one that’s it.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>  oSelection.selectByIndex(index)
-</span><span class='line'>  oSelection.selectByIndex(index)
-</span><span class='line'>  // Or
-</span><span class='line'>  oSelection.selectByVisibleText(text)
-</span><span class='line'>  oSelection.selectByVisibleText(text)
-</span><span class='line'>  // Or
-</span><span class='line'>  oSelection.selectByValue(value)
-</span><span class='line'>  oSelection.selectByValue(value)</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations/">Webdriver : Checkbox and Radio Button Operations</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T10:10:11+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>CheckBox &amp; Radio Button Operations</h2>
-
-<p>Operations on Checkboxes and Radio Buttons are easy to perform and most of the times the simple ID attributes work fine for both of these. But selection and d-selection is not the only thing we want with checkboxes and radio buttons. We might like to check that if the checkbox is already checked or if the radio button is selected by default or anything. Checkboxes and Radio button deals exactly the same way and you can perform below mentioned operations on either of them.</p>
-
-<h3>Different Selection Method</h3>
-
-<h4>By ID</h4>
-
-<p>If ID is given for the radio button/checkbox and you just want to click the radio button/checkbox Irrespective of its value, then the command will be like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement radioBtn = driver.findElement(By.id("toolsqa"));
-</span><span class='line'>radioBtn.click();</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>With ‘IsSelected’</h4>
-
-<p>If your choice is based on the pre-selection of the Radio button/Checkbox and you just need to select the deselected radio button/checkbox. Assume there are two radio buttons/checkboxes, one is selected by default and you want to select the other one for your test. With IsSelected statement, you can get to know that the radio button or the check box is selected or not.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> // Store all the elements of same category in the list of WebLements    
-</span><span class='line'> List  oRadioButton = driver.findElements(By.name("toolsqa"));
-</span><span class='line'>
-</span><span class='line'> // Create a boolean variable which will hold the value (True/False)
-</span><span class='line'> boolean bValue = false;
-</span><span class='line'>
-</span><span class='line'> // This statement will return True, in case of first Radio button is selected
-</span><span class='line'> bValue = oRadioButton.get(0).isSelected();
-</span><span class='line'>
-</span><span class='line'> // This will check that if the bValue is True means if the first radio button is selected
-</span><span class='line'> if(bValue = true){
-</span><span class='line'>
-</span><span class='line'>  // This will select Second radio button, if the first radio button is selected by default
-</span><span class='line'>  oRadioButton.get(1).click();
-</span><span class='line'>
-</span><span class='line'> }else{
-</span><span class='line'>
-</span><span class='line'>  // If the first radio button is not selected by default, the first will be selected
-</span><span class='line'>  oRadioButton.get(0).click();
-</span><span class='line'> }
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: Name is always same for the same group of radio buttons/checkboxes but their Values are different. So if you find the checkbox/radio button element with the name attribute then it means that it may contain more than one element, hence we need to use findElements method and store it the list of WebElements.</p>
-
-<h3>With ‘Value’</h3>
-
-<p>You can even select Radio buttons/Checkboxes with their Values.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// Find the checkbox or radio button element by Name
-</span><span class='line'> List oCheckBox = driver.findElements(By.name("example"));
-</span><span class='line'>
-</span><span class='line'> // This will tell you the number of checkboxes are present
-</span><span class='line'> int iSize = oCheckBox.size();
-</span><span class='line'>
-</span><span class='line'> // Start the loop from first checkbox to last checkboxe
-</span><span class='line'> for(int i=0; i &lt; iSize ; i++ ){
-</span><span class='line'>
-</span><span class='line'>   // Store the checkbox name to the string variable, using 'Value' attribute
-</span><span class='line'>   String sValue = oCheckBox.get(i).getAttribute("value");
-</span><span class='line'>
-</span><span class='line'>   // Select the checkbox it the value of the checkbox is same what you are looking for
-</span><span class='line'>   if (sValue.equalsIgnoreCase("your value")){
-</span><span class='line'>       oCheckBox.get(i).click();
-</span><span class='line'>
-</span><span class='line'>       // This will take the execution out of for loop
-</span><span class='line'>       break;
-</span><span class='line'>       }
-</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>By ‘CssSelector’</h3>
-
-<p>A simple way of selecting a check-box or radio button is by using its value:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement oCheckBox = driver.findElement(By.cssSelector("input[value='example']"));
-</span><span class='line'>oCheckBox.click();</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/webdriver-wait-commands/">Webdriver : Wait Commands</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T10:03:49+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>WebDriver Wait Commands</h2>
-
-<p>Listing out the different WebDriver Wait statements that can be useful for an effective scripting and can avoid using the Thread.sleep() commands.</p>
-
-<h3>ImplicitlyWait Command</h3>
-
-<p>Purpose: Selenium WebDriver has borrowed the idea of implicit waits from Watir. This means that we can tell Selenium that we would like it to wait for a certain amount of time before throwing an exception that it cannot find the element on the page. We should note that implicit waits will be in place for the entire time the browser is open. This means that any search for elements on the page could take the time the implicit wait is set for.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'> WebDriver driver =&gt; new FirefoxDriver();
-</span><span class='line'> driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'> driver.get("http://url_that_delays_loading");
-</span><span class='line'> WebElement myDynamicElement = driver.findElement(By.id("myDynamicElement"));
-</span><span class='line'> </span></code></pre></td></tr></table></div></figure>
-
-
-<h3>FluentWait Command</h3>
-
-<p>Purpose: Each FluentWait instance defines the maximum amount of time to wait for a condition, as well as the frequency with which to check the condition. Furthermore, the user may configure the wait to ignore specific types of exceptions whilst waiting, such as NoSuchElementExceptions when searching for an element on the page.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// Waiting 30 seconds for an element to be present on the page, checking
-</span><span class='line'>  // for its presence once every 5 seconds.
-</span><span class='line'>  Wait wait = new FluentWait(driver)
-</span><span class='line'>    .withTimeout(30, SECONDS)
-</span><span class='line'>    .pollingEvery(5, SECONDS)
-</span><span class='line'>    .ignoring(NoSuchElementException.class);
-</span><span class='line'>  WebElement foo = wait.until(new Function() {
-</span><span class='line'>    public WebElement apply(WebDriver driver) {
-</span><span class='line'>    return driver.findElement(By.id("foo"));
-</span><span class='line'>    }
-</span><span class='line'>   });
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>ExpectedConditions Command</h3>
-
-<p>Purpose: Models a condition that might reasonably be expected to eventually evaluate to something that is neither null nor false.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebDriverWait wait = new WebDriverWait(driver, 10);
-</span><span class='line'>WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(&gt;someid&gt;)));</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>PageLoadTimeout Command</h3>
-
-<p>Purpose: Sets the amount of time to wait for a page load to complete before throwing an error. If the timeout is negative, page loads can be indefinite.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.manage().timeouts().pageLoadTimeout(100, SECONDS);</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>SetScriptTimeout Command</h3>
-
-<p>Purpose: Sets the amount of time to wait for an asynchronous script to finish execution before throwing an error. If the timeout is negative, then the script will be allowed to run indefinitely.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.manage().timeouts().setScriptTimeout(100,SECONDS);</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Sleep Command</h3>
-
-<p>Purpose: This is rarely used, as it always force the browser to wait for a specific time. Thread.Sleep is never a good idea and that’s why Selenium provides wait primitives. If you use them you can specify much higher timeout value which makes tests more reliable without slowing them down as the condition can be evaluated as often as it’s required.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>thread.sleep(1000);</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/webdriver-switch-window-commands/">Webdriver : Switch Window Commands</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T09:02:20+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>WebDriver Switch Window Commands</h2>
-
-<p>Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.</p>
-
-<h3>GetWindowHandle Command</h3>
-
-<p>Purpose: To get the window handle of the current window.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>String  handle= driver.getWindowHandle();//Return a string of alphanumeric window handle</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>GetWindowHandles Command</h3>
-
-<p>Purpose: To get the window handle of all the current windows.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Set&lt;String&gt; handle= driver.getWindowHandles();//Return a set of window handle</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>SwitchTo Window Command</h3>
-
-<p>Purpose: WebDriver supports moving between named windows using the “switchTo” method.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.switchTo().window("windowName");
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Alternatively, you can pass a “window handle” to the “switchTo().window()” method. Knowing this, it’s possible to iterate over every open window like so:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>for (String handle : driver.getWindowHandles()) {
-</span><span class='line'>    driver.switchTo().window(handle);
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Switching between windows with Iterators:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>driver.findElement(By.id(“id of the link which opens new window”)).click();
-</span><span class='line'> //wait till two windows are not opened
-</span><span class='line'> waitForNumberofWindowsToEqual(2);//this method is for wait
-</span><span class='line'>
-</span><span class='line'> Set handles = driver.getWindowHandles();
-</span><span class='line'> firstWinHandle = driver.getWindowHandle(); handles.remove(firstWinHandle);
-</span><span class='line'> String winHandle=handles.iterator().next();
-</span><span class='line'> if (winHandle!=firstWinHandle){
-</span><span class='line'> //To retrieve the handle of second window, extracting the handle which does not match to first window handle
-</span><span class='line'> secondWinHandle=winHandle; //Storing handle of second window handle
-</span><span class='line'>
-</span><span class='line'>//Switch control to new window
-</span><span class='line'> driver.switchTo().window(secondWinHandle);
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>SwitchTo Frame Command</h3>
-
-<p>Purpose: WebDriver supports moving between named frames using the “switchTo” method.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.switchTo().frame("frameName");</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>SwitchTo PopUp Command</h3>
-
-<p>Purpose: WebDriver supports moving between named PopUps using the “switchTo” method. After you’ve triggered an action that opens a popup, you can access the alert and it will return the currently open alert object. With this object you can now accept, dismiss, read its contents or even type into a prompt. This interface works equally well on alerts, confirms, and prompts.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Alert alert = driver.switchTo().alert();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Practice Exercise 1</h3>
-
-<p>1) Launch new Browser</p>
-
-<p>2) Open URL &ldquo;<a href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a>&rdquo;</p>
-
-<p>3) Get Window name (Use GetWindowHandle command)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package practiceTestCases;
-</span><span class='line'>import java.util.Set;
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.By;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>
-</span><span class='line'>public class PracticeSwitchWindow {
-</span><span class='line'>
-</span><span class='line'>      public static WebDriver driver;
-</span><span class='line'>      public static void main(String[] args) {
-</span><span class='line'>
-</span><span class='line'>          // Create a new instance of the Firefox driver
-</span><span class='line'>          driver = new FirefoxDriver();
-</span><span class='line'>
-</span><span class='line'>          // Put an Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-</span><span class='line'>          driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'>
-</span><span class='line'>          // Launch the URL
-</span><span class='line'>          driver.get("http://docs.seleniumhq.org/download/");
-</span><span class='line'>
-</span><span class='line'>          // Store and Print the name of the First window on the console
-</span><span class='line'>          String handle= driver.getWindowHandle();
-</span><span class='line'>          System.out.println(handle);
-</span><span class='line'>
-</span><span class='line'>          // Close Original window
-</span><span class='line'>          driver.quit();
-</span><span class='line'>
-</span><span class='line'>  }
-</span><span class='line'>
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/webdriver-browser-navigation-commands/">Webdriver : Browser Navigation Commands</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T08:53:47+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>WebDriver Browser Navigation Commands</h2>
-
-<p>The navigate interface exposes the ability to move backwards and forwards in your browser’s history but navigate().to() and get() do exactly the same thing. One’s just a lot easier to type than the other.</p>
-
-<h3>To Command</h3>
-
-<p>Purpose : This command is use to navigate on specific page or URL in between the  test Command : driver.navigate().to(URL); Parameters : url – The URL to load. It is best to use a fully qualified URL.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().to("http://www.gooogle.com");</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Forward Command</h3>
-
-<p>Purpose : This command is use to go on to next page like browser’s forward button.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().forward();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Back Command</h3>
-
-<p>Purpose : This command is use to go back to previous page like browser’s back button.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().back();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Practice Exercise</h3>
-
-<p>1) Launch new Browser</p>
-
-<p>2) Open Selenium docs website</p>
-
-<p>3) Click on About link ( On top navigation)</p>
-
-<p>4) Come back to Home page (Use ‘Back’ command)</p>
-
-<p>5) Again go back to About page (This time use ‘Forward’ command)</p>
-
-<p>6) Again come back to Home page (This time use ‘To’ command)</p>
-
-<p>7) Refresh the Browser (Use ‘Refresh’ command)</p>
-
-<p>8) Close the Browser</p>
-
-<h4>Solution</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.By;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>
-</span><span class='line'>public class PracticeNavigationCommands {
-</span><span class='line'>  private static WebDriver driver = null;
-</span><span class='line'>  public static void main(String[] args) {
-</span><span class='line'>
-</span><span class='line'>      // Create a new instance of the Firefox driver
-</span><span class='line'>      driver = new FirefoxDriver();
-</span><span class='line'>
-</span><span class='line'>      // Open Selenium website
-</span><span class='line'>      driver.get("http://docs.seleniumhq.org/");
-</span><span class='line'>
-</span><span class='line'>      // Put an Implicit wait on driver
-</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'>
-</span><span class='line'>      // Click on About link
-</span><span class='line'>        driver.findElement(By.Xpath("//a[contains(@href, '/about/')]")).click();
-</span><span class='line'>
-</span><span class='line'>      // Go back to Home Page
-</span><span class='line'>      driver.navigate().back();
-</span><span class='line'>
-</span><span class='line'>      // Go forward to About page
-</span><span class='line'>        driver.navigate().forward();
-</span><span class='line'>
-</span><span class='line'>      // Go back to Home page
-</span><span class='line'>        driver.navigate().to("http://docs.seleniumhq.org/");
-</span><span class='line'>
-</span><span class='line'>      // Refresh browser
-</span><span class='line'>      driver.navigate().refresh();
-</span><span class='line'>
-</span><span class='line'>      // Close browser
-</span><span class='line'>      driver.close();
-</span><span class='line'>  }
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1440,23 +2083,23 @@ link=”Name of the Link”</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/05/26/testng-framework-download/">TestNG Framework : Download</a>
+        <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">TestNG Framework : Multi Browser and Parallel Testing</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/05/26/testng-framework-introduction/">TestNG Framework : Introduction</a>
+        <a href="/blog/2014/05/26/testng-framework-parameters-and-data-provider/">TestNG Framework : Parameters and Data Provider</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPath : Selenium Locators</a>
+        <a href="/blog/2014/05/26/testng-framework-reporters-and-asserts/">TestNG Framework :Reporters and Asserts</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/05/26/xpath-firebug-and-firepath/">XPath : FireBug and FirePath</a>
+        <a href="/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/">TestNG Framework : Prioritizing and Sequencing</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/05/26/xpath-using-browser-inspector/">XPath : Using Browser Inspector</a>
+        <a href="/blog/2014/05/26/testng-framework-annotations/">TestNG Framework : Annotations , Groups and OnDepends</a>
       </li>
     
   </ul>
