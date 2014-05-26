@@ -108,29 +108,166 @@
 
   <div class="entry-content"><h2>Create new Project</h2>
 
-<p>Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with Continuous integration.</p>
+<p>Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with Continuous Integration.</p>
 
 <p>Now we will create a project Maven name &ldquo;Selenium-Automation-Framework&rdquo;.</p>
 
-<h3>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h3>
+<h4>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h4>
 
 <p><img src="/images/c-maven-1.png"></p>
 
-<h3>Step 2 : Find Maven &ndash;> Choose Maven Project &ndash;> Click &lsquo;Next&rsquo; button</h3>
+<h4>Step 2 : Find Maven &ndash;> Choose Maven Project &ndash;> Click &lsquo;Next&rsquo; button</h4>
 
 <p><img src="/images/c-maven-2.png"></p>
 
-<h3>Step 3 : Tick on  &ldquo;Create a simple project&rdquo; , &ldquo;Use default workspace&rdquo;</h3>
+<h4>Step 3 : Tick on  &ldquo;Create a simple project&rdquo; , &ldquo;Use default workspace&rdquo;</h4>
 
 <p><img src="/images/c-maven-3.png"></p>
 
-<h3>Step 4 : Enter value for &ldquo;Group ID&rdquo; and  &ldquo;Artifact ID&rdquo; . Then click &ldquo;Finish&rdquo;.</h3>
+<h4>Step 4 : Enter value for &ldquo;Group ID&rdquo; and  &ldquo;Artifact ID&rdquo; . Then click &ldquo;Finish&rdquo;.</h4>
 
 <p><img src="/images/c-maven-4.png"></p>
 
-<h3>Step 5 : The new Project &ldquo;Selenium-Automation-Framework&rdquo; will show in the left menu of Eclipse.</h3>
+<h4>Step 5 : The new Project &ldquo;Selenium-Automation-Framework&rdquo; will show in the left menu of Eclipse.</h4>
 
 <p><img src="/images/c-maven-5.png"></p>
+
+<h2>Configuration Project</h2>
+
+<p>First you need to configuration the pom.xml file to add library required by Selenium.</p>
+
+<h4>Step 1 : Open project &ndash;> Double click to file &ldquo;pom.xml&rdquo;</h4>
+
+<p><img src="/images/c-maven-6.png"></p>
+
+<h4>Stemp 2 : Copy this code and paste into your pom.xml file</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+</span><span class='line'>  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+</span><span class='line'>  &lt;groupId&gt;Selenium-Automation-Framework&lt;/groupId&gt;
+</span><span class='line'>  &lt;artifactId&gt;Selenium-Framework&lt;/artifactId&gt;
+</span><span class='line'>  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+</span><span class='line'>      &lt;dependencies&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-server&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-firefox-driver&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-chrome-driver&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-remote-driver&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-ie-driver&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;junit&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;junit&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;4.11&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>       &lt;dependency&gt;
+</span><span class='line'>            &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+</span><span class='line'>            &lt;artifactId&gt;poi&lt;/artifactId&gt;
+</span><span class='line'>            &lt;version&gt;3.10-FINAL&lt;/version&gt;
+</span><span class='line'>        &lt;/dependency&gt;
+</span><span class='line'>        &lt;dependency&gt;
+</span><span class='line'>            &lt;groupId&gt;org.testng&lt;/groupId&gt;
+</span><span class='line'>            &lt;artifactId&gt;testng&lt;/artifactId&gt;
+</span><span class='line'>            &lt;version&gt;6.8.8&lt;/version&gt;
+</span><span class='line'>        &lt;/dependency&gt;
+</span><span class='line'>  &lt;/dependencies&gt;
+</span><span class='line'>&lt;/project&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>By adding this code , we are telling to maven that we will use jar files that we define in the tag <dependency>.</p>
+
+<h4>Step 3 : Right click into project and choose Maven &ndash;> Update project.</h4>
+
+<p><img src="/images/c-maven-7.png"></p>
+
+<h4>Step 4 : Click &ldquo;Ok&rdquo; button to let Maven download jar files.</h4>
+
+<p><img src="/images/c-maven-8.png"></p>
+
+<h4>Step 5 : Open the &ldquo;Maven dependencies&rdquo; to see jar file are available in your project.</h4>
+
+<p><img src="/images/c-maven-9.png"></p>
+
+<h3>Note : you will need to have an internet in your laptop to allow the download of maven.</h3>
+
+<p>Now the setup and configuration is done , you are able to start writing Selenium Automation Framework.</p>
 </div>
   
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-26T15:01:45+07:00</updated>
+  <updated>2014-05-26T15:57:58+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -20,29 +20,117 @@
     <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project</id>
     <content type="html"><![CDATA[<h2>Create new Project</h2>
 
-<p>Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with Continuous integration.</p>
+<p>Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with Continuous Integration.</p>
 
 <p>Now we will create a project Maven name &ldquo;Selenium-Automation-Framework&rdquo;.</p>
 
-<h3>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h3>
+<h4>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h4>
 
 <p><img src="/images/c-maven-1.png"></p>
 
-<h3>Step 2 : Find Maven &ndash;> Choose Maven Project &ndash;> Click &lsquo;Next&rsquo; button</h3>
+<h4>Step 2 : Find Maven &ndash;> Choose Maven Project &ndash;> Click &lsquo;Next&rsquo; button</h4>
 
 <p><img src="/images/c-maven-2.png"></p>
 
-<h3>Step 3 : Tick on  &ldquo;Create a simple project&rdquo; , &ldquo;Use default workspace&rdquo;</h3>
+<h4>Step 3 : Tick on  &ldquo;Create a simple project&rdquo; , &ldquo;Use default workspace&rdquo;</h4>
 
 <p><img src="/images/c-maven-3.png"></p>
 
-<h3>Step 4 : Enter value for &ldquo;Group ID&rdquo; and  &ldquo;Artifact ID&rdquo; . Then click &ldquo;Finish&rdquo;.</h3>
+<h4>Step 4 : Enter value for &ldquo;Group ID&rdquo; and  &ldquo;Artifact ID&rdquo; . Then click &ldquo;Finish&rdquo;.</h4>
 
 <p><img src="/images/c-maven-4.png"></p>
 
-<h3>Step 5 : The new Project &ldquo;Selenium-Automation-Framework&rdquo; will show in the left menu of Eclipse.</h3>
+<h4>Step 5 : The new Project &ldquo;Selenium-Automation-Framework&rdquo; will show in the left menu of Eclipse.</h4>
 
 <p><img src="/images/c-maven-5.png"></p>
+
+<h2>Configuration Project</h2>
+
+<p>First you need to configuration the pom.xml file to add library required by Selenium.</p>
+
+<h4>Step 1 : Open project &ndash;> Double click to file &ldquo;pom.xml&rdquo;</h4>
+
+<p><img src="/images/c-maven-6.png"></p>
+
+<h4>Stemp 2 : Copy this code and paste into your pom.xml file</h4>
+
+<p>```
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Selenium-Automation-Framework</groupId>
+  <artifactId>Selenium-Framework</artifactId>
+  <version>0.0.1-SNAPSHOT</version></p>
+
+<pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-server&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-firefox-driver&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-chrome-driver&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-remote-driver&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-ie-driver&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+        &lt;version&gt;4.11&lt;/version&gt;
+    &lt;/dependency&gt;
+     &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+        &lt;artifactId&gt;poi&lt;/artifactId&gt;
+        &lt;version&gt;3.10-FINAL&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.testng&lt;/groupId&gt;
+        &lt;artifactId&gt;testng&lt;/artifactId&gt;
+        &lt;version&gt;6.8.8&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+
+<p></project></p>
+
+<p>```</p>
+
+<p>By adding this code , we are telling to maven that we will use jar files that we define in the tag <dependency>.</p>
+
+<h4>Step 3 : Right click into project and choose Maven &ndash;> Update project.</h4>
+
+<p><img src="/images/c-maven-7.png"></p>
+
+<h4>Step 4 : Click &ldquo;Ok&rdquo; button to let Maven download jar files.</h4>
+
+<p><img src="/images/c-maven-8.png"></p>
+
+<h4>Step 5 : Open the &ldquo;Maven dependencies&rdquo; to see jar file are available in your project.</h4>
+
+<p><img src="/images/c-maven-9.png"></p>
+
+<h3>Note : you will need to have an internet in your laptop to allow the download of maven.</h3>
+
+<p>Now the setup and configuration is done , you are able to start writing Selenium Automation Framework.</p>
 ]]></content>
   </entry>
   
