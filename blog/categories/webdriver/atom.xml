@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-26T08:36:11+07:00</updated>
+  <updated>2014-05-26T08:49:35+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -22,19 +22,13 @@
 
 <p>The next thing you like to do is to interact with a web page. You need to locate an element first on the web page before interacting with it and locating elements can be done on the WebDriver instance itself or on a WebElement. Webdriver gives us “Find Element” and “Find Elements” method to locate elements on the web page.</p>
 
-<p>&mdash; Điều thứ 2 mà bạn muốn làm đó là tương tác với trang web. Bạn cần phải tìm ra địa điểm của những element trên web trước rồi mới có thể tương tác được với nó.Webdriver có đối tượng WebElement dùng để lưu lại các vị trí của các Element. Webdriver cung cấp 2 hàm &ldquo;Find Element&rdquo; và &ldquo;Find Elements&rdquo; dùng để tìm ra các Element trên trang web.</p>
-
 <h3>Find Element &amp; Find Elements Method</h3>
 
 <p>The difference between “Find Element” and “Find Elements” method is the first returns a WebElement object otherwise it throws an exception and the latter returns a list of WebElements, it can return an empty list if no DOM elements match the query. The “Find” methods take a locator or query object called “By”. “By” strategies are listed below.</p>
 
-<p>&mdash; Sự khác nhau của 2 hàm là 1 hàm trả về 1 dãy các Element. Nó dựa vào By.</p>
-
 <h4>By ID</h4>
 
 <p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised. This is the most efficient and preferred way to locate an element, as most of the times IDs are unique. But in some cases UI developers make it having non-unique ids on a page or auto-generating the id, in both cases it should be avoided.</p>
-
-<p>&mdash; Tìm theo Id của Element trên trang web, nếu không tìm thấy sẽ báo lỗi NoSuchElementException.</p>
 
 <p>Example: If an element is given like this:</p>
 
@@ -52,8 +46,6 @@ WebElement element = driver.findElement(By.id(&ldquo;Username&rdquo;));</p>
 
 <p>This is also an efficient way to locate an element but again the problem is same as with ID that UI developer make it having non-unique names on a page or auto-generating the names. With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a NoSuchElementException will be raised.</p>
 
-<p>&mdash; Tìm theo thuộc tính name của đối tượng trên trang web.Nếu không tìm thấy sẽ báo lỗi NoSuchElementException.</p>
-
 <p>Example: If an element is given like this:</p>
 
 <p>```
@@ -68,8 +60,6 @@ WebElement element = driver.findElement(By.name(&ldquo;Username&rdquo;));</p>
 <h4>By Class Name</h4>
 
 <p>With this you can find elements based on the value of the “class” attribute. If an element has many classes then this will match against each of them. A class can contain many elements.</p>
-
-<p>&mdash; Tìm theo thuộc tính class name của đối tượng.Với thuộc tính này bạn có thể tìm ra nhiều đối tượng vì 1 class name có thể đặt vào nhiều đối tượng cùng 1 lúc.</p>
 
 <p>Example: If an element is given like this:</p>
 
@@ -86,8 +76,6 @@ WebElement element = driver.findElement(By.className(&ldquo;Username&rdquo;));</
 
 <p>With this you can find elements by their tag names.</p>
 
-<p>&mdash; Tìm theo thuộc tính tag Name.</p>
-
 <p>Example: If an element is given like this:</p>
 
 <p>```
@@ -102,8 +90,6 @@ WebElement element=driver.findElement(By.linkText(&ldquo;Name of the Link&rdquo;
 <p>By Partial Link Text</p>
 
 <p>With this you can find elements of “a” tags(Link) with the partial link names. Use this when you know link text used within an anchor tag.</p>
-
-<p>&mdash; Tìm theo tag Name nhưng có thể tìm 1 phần trong cái tag Name đấy. xem ví dụ để biết thêm.</p>
 
 <p>Example: If an element is given like this</p>
 
@@ -179,19 +165,13 @@ public static void main(String[] args) {
 
 <p>The very first thing you like to do with Selenium is to opening and closing a new browser. Below are the numbers of commands you can apply on the Selenium opened browser.</p>
 
-<p>&mdash; Điều đầu tiên bạn muốn làm với Selenium là mở và đóng 1 trình duyệt. Dưới đây là những lệnh hữu ích mà bạn có thể dùng.</p>
-
 <h3>1)Get Command</h3>
 
 <p>Purpose: This command is use to open a new web page in the current browser.</p>
 
-<p>(Dùng để mở ra 1 trang web trên 1 trình duyệt)</p>
-
 <p>Command: driver.get(URL);</p>
 
 <p>Parameters: url – The URL to load. It is best to use a fully qualified URL.</p>
-
-<p>(Dữ liệu truyền vào là 1 URL. Tốt nhất là truyền vào 1 URL đầy đủ cả Http)</p>
 
 <p><code>
 driver.get("wwww.google.com");
@@ -199,8 +179,7 @@ driver.get("wwww.google.com");
 
 <h3>2)Get Title Command</h3>
 
-<p>Purpose: This command is use to get the title of the current page.
-(Lấy ra tiêu đề của trang hiện tại)</p>
+<p>Purpose: This command is use to get the title of the current page.</p>
 
 <p><code>
 driver.getTitle();
@@ -210,8 +189,6 @@ driver.getTitle();
 
 <p>Purpose: This command is use to get the URL of the page currently loaded in the browser.</p>
 
-<p>(Lệnh này dùng để lấy ra URL của 1 trang đã được tải xong trên trình duyệt)</p>
-
 <p><code>
 driver.getCurrentUrl();
 </code></p>
@@ -219,8 +196,6 @@ driver.getCurrentUrl();
 <h3>4)Get Page Source Command</h3>
 
 <p>Purpose: This command is use to get the source of the last loaded page.</p>
-
-<p>(Lệnh này dùng để lấy các code html của trang đã được tải về trên trình duyệt)</p>
 
 <p><code>
 driver.getPageSource();
@@ -230,8 +205,6 @@ driver.getPageSource();
 
 <p>Purpose: This command is use to close the current window of the browser, if it’s the last window it will close the browser.</p>
 
-<p>(Lệnh này dùng dể đóng trang web hiện tại đang mở trên trình duyệt nếu nó là trang web cuối cùng thì trình duyệt sẽ tự động đóng)</p>
-
 <p><code>
 driver.close();
 </code></p>
@@ -240,8 +213,6 @@ driver.close();
 
 <p>Purpose: This command is use to quit the browser and all the opened windows in the browser.</p>
 
-<p>(Lệnh này dùng để đóng trình duyêt)</p>
-
 <p><code>
 driver.quit();
 </code></p>
@@ -249,8 +220,6 @@ driver.quit();
 <h3>7)Refresh Command</h3>
 
 <p>Purpose: There are some commands is use to refresh the current browser.</p>
-
-<p>(Những lệnh sau đây dùng để tải lại trang web hiện tại trên trình duyệt)</p>
 
 <p><code>
 driver.navigate().refresh();
@@ -357,25 +326,21 @@ public static void main(String[] args) throws InterruptedException {
 
 <p>Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium project produces various tools for automation testing such as Selenium IDE, Selenium Remote Control (RC), Selenium Grid and Selenium 2.0 &amp; WebDriver. Learning all the tools will give you many different options for approaching different automation problems. The entire suits of tools result in a rich set of testing functions specially geared to the needs of testing of web application of all types.</p>
 
-<p>&mdash; Selenium là 1 phần mềm dành cho việc tự động hóa test cái website. Selenium cung cấp cho chúng ta rất nhiều công cụ để tạo automation test như Selenium IDE (1 plugin dành cho Firefox, tự động ghi lại quá trình người sử dụng trên trang web), Selenium Remote Control (RC) , Selenium Grid và Selenium 2.0 và WebDriver. Nếu hiểu rõ tất cả các sản phẩm mà Selenium cung cấp bạn có thể hoàn thành việc tạo 1 project chạy automation test rất hữu ích.</p>
-
 <h3>Why Selenium</h3>
 
 <ul>
-<li>Selenium is an open source tool with Corporate backing. (Đây là phần mềm miễn phí)</li>
-<li>The tests can then be run against most modern web browsers.(Có thể chạy trên nhiều trình duyệt)</li>
-<li>Selenium deploys on Windows, Linux, and Macintosh platforms.(Thích ứng với các hệ điều hành OS, WINDOW, LINUX)</li>
-<li>It allows recording, editing, and debugging tests.(Nó cho phép bạn ghi lại , sửa chữa và chạy từng bước test)</li>
-<li>Recorded tests can be exported in most language e.g. html, Java, .net, perl, ruby etc. (Ghi lại các quá trình test có thể chuyển đổi sang các File Java, HTML , .net ,perl ,ruby&hellip;)</li>
-<li>Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser.(Selenium được sự giúp đỡ của rất nhiều các chuyên gia về trình duyệt)</li>
+<li>Selenium is an open source tool with Corporate backing.</li>
+<li>The tests can then be run against most modern web browsers.</li>
+<li>Selenium deploys on Windows, Linux, and Macintosh platforms.</li>
+<li>It allows recording, editing, and debugging tests.</li>
+<li>Recorded tests can be exported in most language e.g. html, Java, .net, perl, ruby etc.</li>
+<li>Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser.</li>
 </ul>
 
 
 <h3>Selenium WebDriver</h3>
 
 <p>The primary new feature in Selenium 2.0 is the integration of the WebDriver API. WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. It enables you to use a programming language to write test scripts in different programming languages like html, Java, .net , perl, ruby and which enables you to use conditional operations, looping and other programming concepts which makes you test script robust. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver’s goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.</p>
-
-<p>&mdash; WebDriver là 1 ứng dụng mới của Selenium phiên bản 2.0 , nó được thiết kế đơn giản hơn , ngắn gọn cho việc lập trình và giải quyết được một số vấn đề hạn chế của Selenium RC- API. Nó cho phép bạn viết code bằng rất nhiều ngôn ngữ như html , java, .net , perl, ruby .Nó cho phép bạn dùng những điều kiện , vòng lặp , và một số trường hợp khác để bạn tạo ra code dễ dàng.Selenium Webdriver được phát triển để hỗ trợ nhiều trình duyệt nơi mà các đối tượng trong page có thể thay đổi khi mà reload.</p>
 ]]></content>
   </entry>
   
