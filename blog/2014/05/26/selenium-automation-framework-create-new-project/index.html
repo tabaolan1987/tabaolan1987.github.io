@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>TestNG Framework : Test Suite - Ta Bao Lan</title>
+  <title>Selenium Automation Framework : Create New Project - Ta Bao Lan</title>
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="TestNG Test Suite In any project, you will end up to a place where you need to execute so many test cases on a run. Running a set of test cases &hellip;">
+  <meta name="description" content="Create new Project Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite">
+  <link rel="canonical" href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ta Bao Lan" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">TestNG Framework : Test Suite</h1>
+      <h1 class="entry-title">Selenium Automation Framework : Create New Project</h1>
     
     
       <p class="meta">
@@ -96,62 +96,38 @@
   
 
 
-<time datetime="2014-05-26T11:28:33+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+<time datetime="2014-05-26T15:01:18+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>TestNG Test Suite</h2>
+<div class="entry-content"><h2>Create new Project</h2>
 
-<p>In any project, you will end up to a place where you need to execute so many test cases on a run. Running a set of test cases together is call executing a Test Suite. Those test cases can be dependent to each other or may have to be executed in a certain order. TestNg gives us the capability to manage our test execution.</p>
+<p>Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with Continuous integration.</p>
 
-<p>In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. This is the xml file where you will configure your test run, set test dependency, include or exclude any test, method, class or package and set priority etc.</p>
+<p>Now we will create a project Maven name &ldquo;Selenium-Automation-Framework&rdquo;.</p>
 
-<h3>How to do it…</h3>
+<h3>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h3>
 
-<h4>Step 1 : Create a TestNG XML</h4>
+<p><img src="/images/c-maven-1.png"></p>
 
-<p>1) Right click on Project folder, go to New and select ‘File‘ as shown in below image.</p>
+<h3>Step 2 : Find Maven &ndash;> Choose Maven Project &ndash;> Click &lsquo;Next&rsquo; button</h3>
 
-<p><img src="/images/TestNG-Suite1.png"></p>
+<p><img src="/images/c-maven-2.png"></p>
 
-<p>2) In New file wizard, add file name = ‘testng.xml‘ as shown in below given image and click on Finish button.</p>
+<h3>Step 3 : Tick on  &ldquo;Create a simple project&rdquo; , &ldquo;Use default workspace&rdquo;</h3>
 
-<p><img src="/images/TestNG-Suite2.png"></p>
+<p><img src="/images/c-maven-3.png"></p>
 
-<p>3) It will add testng.xml file under your project folder.</p>
+<h3>Step 4 : Enter value for &ldquo;Group ID&rdquo; and  &ldquo;Artifact ID&rdquo; . Then click &ldquo;Finish&rdquo;.</h3>
 
-<h4>Step 2 : Write xml code ?</h4>
+<p><img src="/images/c-maven-4.png"></p>
 
-<p>Now add below given code in your testng.xml file.see the image below</p>
+<h3>Step 5 : The new Project &ldquo;Selenium-Automation-Framework&rdquo; will show in the left menu of Eclipse.</h3>
 
-<p><img src="/images/TestNG-Suite3.png"></p>
-
-<p>Hope you have understood the xml code, as it is quite simple hierarchy:</p>
-
-<p>Very first tag is the Suite tag<suite>, under that it is the Test tag<test> and then the Class tag<classes>. You can give any name to the suite and the test but you need to provide the correct name to the <classes> tag which is a combination of your Package name and Test Case name.</p>
-
-<h4>Step 3 : Execute a testng.xml</h4>
-
-<p>Now it’s time to run the xml. Run the test by right click on the testng.xml file and select Run As > TestNG Suite.</p>
-
-<p><img src="/images/TestNG-Suite4.png"></p>
-
-<p>It will take few seconds to start the testng execution engine and soon you will notice that your test will run and complete. Once the execution is complete, you can view test execution result under the TestNg console.</p>
-
-<p><img src="/images/TestNG-Suite5.png"></p>
-
-<p>This is the one simple example of creating and running testng.xml file in eclipse.</p>
-
-<h3>Building a Test Suite</h3>
-
-<p>Now when you have learned how to build the xml, now it’s time to learn how to build a Test Suite using testng.xml. It is again not a complex task, all you need to do is to add your test cases to your xml file in <classes> tag.</p>
-
-<p><img src="/images/TestNG-Suite6.png"></p>
-
-<p>The above test will execute only those tests, which are mentioned in the testng.xml. The rest of the test cases under ‘automationFramework’ package will remain untouched.</p>
+<p><img src="/images/c-maven-5.png"></p>
 </div>
 
 
@@ -174,12 +150,12 @@
   
 
 
-<time datetime="2014-05-26T11:28:33+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+<time datetime="2014-05-26T15:01:18+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/testng-framework/'>TestNG-Framework</a>
+    <a class='category' href='/blog/categories/selenium-framework/'>Selenium-Framework</a>
   
 </span>
 
@@ -188,7 +164,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite/" data-via="" data-counturl="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project/" data-via="" data-counturl="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project/" >Tweet</a>
   
   
   
@@ -197,10 +173,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/05/26/testng-framework-first-test-case-with-testng/" title="Previous Post: TestNG Framework : First Test case with TestNG">&laquo; TestNG Framework : First Test case with TestNG</a>
+        <a class="basic-alignment left" href="/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse/" title="Previous Post: Selenium Automation Framework : Install Maven to Eclipse">&laquo; Selenium Automation Framework : Install Maven to Eclipse</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/05/26/testng-framework-annotations/" title="Next Post: TestNG Framework : Annotations , Groups and OnDepends">TestNG Framework : Annotations , Groups and OnDepends &raquo;</a>
       
     </p>
   </footer>

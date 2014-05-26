@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-26T14:59:46+07:00</updated>
+  <updated>2014-05-26T15:01:45+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework : Create New Project]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project/"/>
+    <updated>2014-05-26T15:01:18+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project</id>
+    <content type="html"><![CDATA[<h2>Create new Project</h2>
+
+<p>Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with Continuous integration.</p>
+
+<p>Now we will create a project Maven name &ldquo;Selenium-Automation-Framework&rdquo;.</p>
+
+<h3>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h3>
+
+<p><img src="/images/c-maven-1.png"></p>
+
+<h3>Step 2 : Find Maven &ndash;> Choose Maven Project &ndash;> Click &lsquo;Next&rsquo; button</h3>
+
+<p><img src="/images/c-maven-2.png"></p>
+
+<h3>Step 3 : Tick on  &ldquo;Create a simple project&rdquo; , &ldquo;Use default workspace&rdquo;</h3>
+
+<p><img src="/images/c-maven-3.png"></p>
+
+<h3>Step 4 : Enter value for &ldquo;Group ID&rdquo; and  &ldquo;Artifact ID&rdquo; . Then click &ldquo;Finish&rdquo;.</h3>
+
+<p><img src="/images/c-maven-4.png"></p>
+
+<h3>Step 5 : The new Project &ldquo;Selenium-Automation-Framework&rdquo; will show in the left menu of Eclipse.</h3>
+
+<p><img src="/images/c-maven-5.png"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework : Install Maven to Eclipse]]></title>
