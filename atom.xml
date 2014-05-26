@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-26T12:22:53+07:00</updated>
+  <updated>2014-05-26T14:11:22+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework : Introduction]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-introduction/"/>
+    <updated>2014-05-26T14:07:59+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-introduction</id>
+    <content type="html"><![CDATA[<h2>Selenium Automation Framework</h2>
+
+<h3>Introduction</h3>
+
+<p>Mission critical software undergoes rigorous functional tests, especially supported by automated testing frameworks. Automating these frameworks and maintaining quality software releases are critical to business performance. Enterprises often face the dilemma of balancing costs and managing resources to ensure that automation frameworks cover all the business scenarios and the applications delivered are error – free.
+By implementing the appropriate automated testing framework, enterprises can significantly increase the speed and accuracy of the testing process, provide a higher return on investment (ROI) from software projects and systematically minimize risk.</p>
+
+<h3>Why Framework</h3>
+
+<p>A framework defines the organization’s way of doing things – a ‘Single Standard’. Following this standard would result in the project team achieving:</p>
+
+<h4>Script-less representation of Automated tests</h4>
+
+<p>The testing framework should offer point-and-click interface for accessing and interacting with the application components under test—as opposed to presenting line after line of scripting. Testers should be able to visualize each step of the business scenario, view and edit test cases intuitively. This will shorten the learning curve for testers and help QA teams meet deadlines.</p>
+
+<h4>Data Driven tests</h4>
+
+<p>A key benefit of automating functional testing is the ability to test large volumes of data on the system quickly. But you must be able to manipulate the data sets, perform calculations, and quickly create hundreds of test iterations and permutations with minimal effort. Test Automation Frameworks must have capability to integrate with spreadsheets and provide powerful calculation features.</p>
+
+<h4>Concise Reporting</h4>
+
+<p>The ability to run high volume of tests is of little benefit if the results of the tests are not easy to understand. The framework must automatically generate reports of the test run and show the results in an easy-to-read format. The reports should provide specifics about where application failures occurred and what test data was used. Reports must present application screen shots for every step to highlight any discrepancies and provide detailed explanations of each checkpoint pass and failure. Reports must also be easily shared across the entire QA and development teams.</p>
+
+<h4>Standard Scripting and Team Consistency</h4>
+
+<p>Scripting standard should be maintained across the framework library creation, which includes business components, system communications, data check points, loggers, reporters etc. Project team should follow the defined scripting standards. Published standards across the project team pre-empt the effort involved in duplicate coding, which prevent individuals from following their own coding standards.</p>
+
+<h4>Encapsulation from Complexities</h4>
+
+<p>Test engineers are encapsulated from the complexities and critical aspects of the code. Engineers are exposed only to the implemented libraries and tests are executed by just invoking the libraries.</p>
+
+<h4>Implement and Maximize Re-Usability</h4>
+
+<p>Establish the developed libraries across the organization/project team/product team, i.e. publish the library and provide access rights. Utilities/components shared across the team. Usage of available libraries. Minimized effort for repeated regression cycle.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework : Multi Browser and Parallel Testing]]></title>
@@ -2945,35 +2987,6 @@ link=”Name of the Link”</p>
 </span><span class='line'>    }
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Introduction]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/23/webdriver-introduction/"/>
-    <updated>2014-05-23T15:26:35+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/23/webdriver-introduction</id>
-    <content type="html"><![CDATA[<h2>Selenium Introduction</h2>
-
-<h3>About Selenium</h3>
-
-<p>Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium project produces various tools for automation testing such as Selenium IDE, Selenium Remote Control (RC), Selenium Grid and Selenium 2.0 &amp; WebDriver. Learning all the tools will give you many different options for approaching different automation problems. The entire suits of tools result in a rich set of testing functions specially geared to the needs of testing of web application of all types.</p>
-
-<h3>Why Selenium</h3>
-
-<ul>
-<li>Selenium is an open source tool with Corporate backing.</li>
-<li>The tests can then be run against most modern web browsers.</li>
-<li>Selenium deploys on Windows, Linux, and Macintosh platforms.</li>
-<li>It allows recording, editing, and debugging tests.</li>
-<li>Recorded tests can be exported in most language e.g. html, Java, .net, perl, ruby etc.</li>
-<li>Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser.</li>
-</ul>
-
-
-<h3>Selenium WebDriver</h3>
-
-<p>The primary new feature in Selenium 2.0 is the integration of the WebDriver API. WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. It enables you to use a programming language to write test scripts in different programming languages like html, Java, .net , perl, ruby and which enables you to use conditional operations, looping and other programming concepts which makes you test script robust. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver’s goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.</p>
 ]]></content>
   </entry>
   

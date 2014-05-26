@@ -9,7 +9,7 @@
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="Multi Browser, Cross Browser &amp; Parallel Testing using TestNG When the time comes to turn your site from mock-up to something fully functional, &hellip;">
+  <meta name="description" content="Selenium Automation Framework Introduction Mission critical software undergoes rigorous functional tests, especially supported by automated testing &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,75 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T14:07:59+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Selenium Automation Framework</h2>
+
+<h3>Introduction</h3>
+
+<p>Mission critical software undergoes rigorous functional tests, especially supported by automated testing frameworks. Automating these frameworks and maintaining quality software releases are critical to business performance. Enterprises often face the dilemma of balancing costs and managing resources to ensure that automation frameworks cover all the business scenarios and the applications delivered are error – free.
+By implementing the appropriate automated testing framework, enterprises can significantly increase the speed and accuracy of the testing process, provide a higher return on investment (ROI) from software projects and systematically minimize risk.</p>
+
+<h3>Why Framework</h3>
+
+<p>A framework defines the organization’s way of doing things – a ‘Single Standard’. Following this standard would result in the project team achieving:</p>
+
+<h4>Script-less representation of Automated tests</h4>
+
+<p>The testing framework should offer point-and-click interface for accessing and interacting with the application components under test—as opposed to presenting line after line of scripting. Testers should be able to visualize each step of the business scenario, view and edit test cases intuitively. This will shorten the learning curve for testers and help QA teams meet deadlines.</p>
+
+<h4>Data Driven tests</h4>
+
+<p>A key benefit of automating functional testing is the ability to test large volumes of data on the system quickly. But you must be able to manipulate the data sets, perform calculations, and quickly create hundreds of test iterations and permutations with minimal effort. Test Automation Frameworks must have capability to integrate with spreadsheets and provide powerful calculation features.</p>
+
+<h4>Concise Reporting</h4>
+
+<p>The ability to run high volume of tests is of little benefit if the results of the tests are not easy to understand. The framework must automatically generate reports of the test run and show the results in an easy-to-read format. The reports should provide specifics about where application failures occurred and what test data was used. Reports must present application screen shots for every step to highlight any discrepancies and provide detailed explanations of each checkpoint pass and failure. Reports must also be easily shared across the entire QA and development teams.</p>
+
+<h4>Standard Scripting and Team Consistency</h4>
+
+<p>Scripting standard should be maintained across the framework library creation, which includes business components, system communications, data check points, loggers, reporters etc. Project team should follow the defined scripting standards. Published standards across the project team pre-empt the effort involved in duplicate coding, which prevent individuals from following their own coding standards.</p>
+
+<h4>Encapsulation from Complexities</h4>
+
+<p>Test engineers are encapsulated from the complexities and critical aspects of the code. Engineers are exposed only to the implemented libraries and tests are executed by just invoking the libraries.</p>
+
+<h4>Implement and Maximize Re-Usability</h4>
+
+<p>Establish the developed libraries across the organization/project team/product team, i.e. publish the library and provide access rights. Utilities/components shared across the team. Usage of available libraries. Minimized effort for repeated regression cycle.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1905,169 +1974,6 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPath : Selenium Locators</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T10:48:22+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Locators in Selenium</h2>
-
-<p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
-
-<p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
-
-<h3>Different types of Locators</h3>
-
-<p>There are 8 explicit locators: id, name, identifier, dom, xpath, link, css and ui that Selenium’s commands support. I will explain just a few most important locators to avoid over dosage and any confusion.</p>
-
-<h4>ID Locator</h4>
-
-<p>Ids are the most preferred way to locate elements on a page, as each id is supposed to be unique which makes ids a very faster and reliable way to locate elements.</p>
-
-<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised.</p>
-
-<p>HTML CODE :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;form name="loginForm"&gt;Login 
-</span><span class='line'> Username: &lt;input id="username" type="text" name="login" /&gt;
-</span><span class='line'> Password: &lt;input id="password" type="password" name="password" /&gt;
-</span><span class='line'> &lt;input type="submit" name="signin" value="SignIn" /&gt;&lt;/form&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>You can easily choose the element with the help of ID locator from the above example:</p>
-
-<p>id = “username”</p>
-
-<p>id = “password”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.id("username"));
-</span><span class='line'>
-</span><span class='line'>WebElement elementPassword = driver.findElement(By.id("password"));
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Even though this is a great locator, obviously it is not realistic for all objects on a page to have ids. In some cases developers make it having non-unique ids on a page or auto-generate the ids, in both cases it should be avoided.</p>
-
-<h4>Name Locator</h4>
-
-<p>This is also an efficient way to locate an element  with name attribute, after Ids give it your second preference but likewise Ids, name attributes don’t have to be unique in a page.</p>
-
-<p>With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a  NoSuchElementException will be raised.</p>
-
-<p>Example: Let’s take the above example:</p>
-
-<p>You can easily choose the element with the help of Name locator from the above example:</p>
-
-<p>name = “login”</p>
-
-<p>name = “password”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.name("login"));
-</span><span class='line'> 
-</span><span class='line'>WebElement elementPassword = driver.findElement(By.name("password"));</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Identifier Locator</h4>
-
-<p>This selects the element with the specified @id attribute. If no match is found, then it tries to select the first element whose @name attribute is id.</p>
-
-<p>Example: Valid locator for above example is:
-identifier = “password”</p>
-
-<p>First it will try to find the locator with id = “password” if it exists, otherwise it would target name = “password”.</p>
-
-<h4>Link Locator</h4>
-
-<p>With this you can find elements of “a” tags(Link) with the link names. Use this when you know link text used within an anchor tag.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>To click this hyperlink using the anchor tag’s text, you can use the link locator:
-link=”Name of the Link”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element=driver.findElement(By.linkText("Name of the Link"));</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>DOM Locator</h4>
-
-<p>The DOM strategy works by locating elements that matches the JavaScript expression referring to an element in the DOM of the page. DOM stands for Document Object Model. DOM is convention for representing objects in HTML documents.</p>
-
-<p>Example: To select the username from the above example you can use the following ways:</p>
-
-<p>document.forms[0].elements[0]</p>
-
-<p>document.forms[&lsquo;loginForm&rsquo;].elements[&lsquo;username&rsquo;]</p>
-
-<p>document.forms[&lsquo;loginForm&rsquo;].username</p>
-
-<p>document.getElementById(‘username’)</p>
-
-<h4>XPath Locator</h4>
-
-<p>While DOM is the recognized standard for navigation through an HTML element tree, XPath is the standard navigation tool for XML; and an HTML document is also an XML document (xHTML). XPath is used everywhere where there is XML.</p>
-
-<p>Example: To select the username from the above example you can use the following ways:</p>
-
-<p>xpath=//*[@id=&lsquo;username&rsquo;]</p>
-
-<p>xpath=//input[@id=&lsquo;username&rsquo;]</p>
-
-<p>xpath=//form[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
-
-<p>xpath=//*[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -2083,6 +1989,10 @@ link=”Name of the Link”</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">TestNG Framework : Multi Browser and Parallel Testing</a>
       </li>
     
@@ -2096,10 +2006,6 @@ link=”Name of the Link”</p>
     
       <li class="post">
         <a href="/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/">TestNG Framework : Prioritizing and Sequencing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/testng-framework-annotations/">TestNG Framework : Annotations , Groups and OnDepends</a>
       </li>
     
   </ul>

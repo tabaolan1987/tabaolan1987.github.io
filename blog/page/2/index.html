@@ -9,7 +9,7 @@
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="FireBug and FirePath What is XPath XPath is a language that describes a way to locate and process items in Extensible Markup Language (XML) documents &hellip;">
+  <meta name="description" content="Locators in Selenium Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,169 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPath : Selenium Locators</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T10:48:22+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Locators in Selenium</h2>
+
+<p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
+
+<p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
+
+<h3>Different types of Locators</h3>
+
+<p>There are 8 explicit locators: id, name, identifier, dom, xpath, link, css and ui that Selenium’s commands support. I will explain just a few most important locators to avoid over dosage and any confusion.</p>
+
+<h4>ID Locator</h4>
+
+<p>Ids are the most preferred way to locate elements on a page, as each id is supposed to be unique which makes ids a very faster and reliable way to locate elements.</p>
+
+<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised.</p>
+
+<p>HTML CODE :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;form name="loginForm"&gt;Login 
+</span><span class='line'> Username: &lt;input id="username" type="text" name="login" /&gt;
+</span><span class='line'> Password: &lt;input id="password" type="password" name="password" /&gt;
+</span><span class='line'> &lt;input type="submit" name="signin" value="SignIn" /&gt;&lt;/form&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>You can easily choose the element with the help of ID locator from the above example:</p>
+
+<p>id = “username”</p>
+
+<p>id = “password”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.id("username"));
+</span><span class='line'>
+</span><span class='line'>WebElement elementPassword = driver.findElement(By.id("password"));
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Even though this is a great locator, obviously it is not realistic for all objects on a page to have ids. In some cases developers make it having non-unique ids on a page or auto-generate the ids, in both cases it should be avoided.</p>
+
+<h4>Name Locator</h4>
+
+<p>This is also an efficient way to locate an element  with name attribute, after Ids give it your second preference but likewise Ids, name attributes don’t have to be unique in a page.</p>
+
+<p>With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a  NoSuchElementException will be raised.</p>
+
+<p>Example: Let’s take the above example:</p>
+
+<p>You can easily choose the element with the help of Name locator from the above example:</p>
+
+<p>name = “login”</p>
+
+<p>name = “password”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.name("login"));
+</span><span class='line'> 
+</span><span class='line'>WebElement elementPassword = driver.findElement(By.name("password"));</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Identifier Locator</h4>
+
+<p>This selects the element with the specified @id attribute. If no match is found, then it tries to select the first element whose @name attribute is id.</p>
+
+<p>Example: Valid locator for above example is:
+identifier = “password”</p>
+
+<p>First it will try to find the locator with id = “password” if it exists, otherwise it would target name = “password”.</p>
+
+<h4>Link Locator</h4>
+
+<p>With this you can find elements of “a” tags(Link) with the link names. Use this when you know link text used within an anchor tag.</p>
+
+<p>Example: If an element is given like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To click this hyperlink using the anchor tag’s text, you can use the link locator:
+link=”Name of the Link”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element=driver.findElement(By.linkText("Name of the Link"));</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>DOM Locator</h4>
+
+<p>The DOM strategy works by locating elements that matches the JavaScript expression referring to an element in the DOM of the page. DOM stands for Document Object Model. DOM is convention for representing objects in HTML documents.</p>
+
+<p>Example: To select the username from the above example you can use the following ways:</p>
+
+<p>document.forms[0].elements[0]</p>
+
+<p>document.forms[&lsquo;loginForm&rsquo;].elements[&lsquo;username&rsquo;]</p>
+
+<p>document.forms[&lsquo;loginForm&rsquo;].username</p>
+
+<p>document.getElementById(‘username’)</p>
+
+<h4>XPath Locator</h4>
+
+<p>While DOM is the recognized standard for navigation through an HTML element tree, XPath is the standard navigation tool for XML; and an HTML document is also an XML document (xHTML). XPath is used everywhere where there is XML.</p>
+
+<p>Example: To select the username from the above example you can use the following ways:</p>
+
+<p>xpath=//*[@id=&lsquo;username&rsquo;]</p>
+
+<p>xpath=//input[@id=&lsquo;username&rsquo;]</p>
+
+<p>xpath=//form[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
+
+<p>xpath=//*[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1536,62 +1699,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/23/webdriver-introduction/">Webdriver : Introduction</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-23T15:26:35+07:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Selenium Introduction</h2>
-
-<h3>About Selenium</h3>
-
-<p>Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium project produces various tools for automation testing such as Selenium IDE, Selenium Remote Control (RC), Selenium Grid and Selenium 2.0 &amp; WebDriver. Learning all the tools will give you many different options for approaching different automation problems. The entire suits of tools result in a rich set of testing functions specially geared to the needs of testing of web application of all types.</p>
-
-<h3>Why Selenium</h3>
-
-<ul>
-<li>Selenium is an open source tool with Corporate backing.</li>
-<li>The tests can then be run against most modern web browsers.</li>
-<li>Selenium deploys on Windows, Linux, and Macintosh platforms.</li>
-<li>It allows recording, editing, and debugging tests.</li>
-<li>Recorded tests can be exported in most language e.g. html, Java, .net, perl, ruby etc.</li>
-<li>Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser.</li>
-</ul>
-
-
-<h3>Selenium WebDriver</h3>
-
-<p>The primary new feature in Selenium 2.0 is the integration of the WebDriver API. WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. It enables you to use a programming language to write test scripts in different programming languages like html, Java, .net , perl, ruby and which enables you to use conditional operations, looping and other programming concepts which makes you test script robust. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver’s goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1609,6 +1716,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">TestNG Framework : Multi Browser and Parallel Testing</a>
       </li>
     
@@ -1622,10 +1733,6 @@
     
       <li class="post">
         <a href="/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/">TestNG Framework : Prioritizing and Sequencing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/testng-framework-annotations/">TestNG Framework : Annotations , Groups and OnDepends</a>
       </li>
     
   </ul>
