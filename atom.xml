@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-26T10:02:13+07:00</updated>
+  <updated>2014-05-26T10:21:18+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,363 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Dropdown and Multiple Select Operations]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/"/>
+    <updated>2014-05-26T10:15:16+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations</id>
+    <content type="html"><![CDATA[<h2>DropDown &amp; Multiple Select Operations</h2>
+
+<p>Just like Checkboxes &amp; Radio buttons, Dropdown and Multiple Select also works together and almost the same way. To perform any action, the first task is to identify the element group. I am saying it a group, as dropdown/multiple select is not a single element. They always have a single name but and they contains one or more than one elements in them. I should rather say more than one option in dropdown and multiple select. The only difference between these two is deselecting statement &amp; multiple selections are not allowed on dropdowns. Let’s look at the different operations:</p>
+
+<h3>Selecting Dropdown/Multiple Select Box</h3>
+
+<p>It is just an ordinary operation like selecting any other type of element on a webpage. You can choose it by ID, Name, Css &amp; Xpath etc. But to perform any action on this element it is required to import ‘import org.openqa.selenium.support.ui.Select&#8217; package and to use it we need to create a new select object of class select.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: Select class only works for elements with <select> tags</p>
+
+<h3>Selecting an option using ‘selectByVisibleText’</h3>
+
+<p>It is very easy to choose or select an option given under any dropdowns and multiple selection boxes with selectByVisibleText method.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>oSelection.selectByVisibleText(text);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Selecting an option using ‘selectByIndex’</h3>
+
+<p>It is almost the same as selectByVisibleText but the only difference here is that we provide the index number of the option here rather the option text.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>
+</span><span class='line'>oSelection.selectByIndex(index);</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Selecting an option using ‘selectByValue’</h3>
+
+<p>It is again the same what we have discussed earlier, the only difference in this is that we need to provide the value of the option rather the option text.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>oSelection.selectByValue(value);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: The value of an option and the text of the option may not be always same and there can be a possibility that the value is not assigned to Select webelement. If the value is given in the Select tag then only you can use the selectByValue method.</p>
+
+<h3>Getting the Size of Select item</h3>
+
+<p>Sometimes you may like to count the element in the dropdown and multiple select box, so that you can use the loop on Select element.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>List&lt;WebElement&gt; oSize = oSelection.getOptions();
+</span><span class='line'>int iListSize = oSize.size();
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Printing the Options</h3>
+
+<p>Once you get the size of the Select element then it is easy to print the Text of the options.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>  List oSize = oSelection.getOptions();
+</span><span class='line'>  int iListSize = oSize.size();
+</span><span class='line'>  for(int i =0; i&gt;iListSize ; i++){
+</span><span class='line'>      String sValue = oSelection.getOptions().get(i).getText();
+</span><span class='line'>      System.out.println(sValue);
+</span><span class='line'>      }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>All of the above methods work on both Dropdown and Multiple select box.</p>
+
+<h3>Deselect methods</h3>
+
+<p>This only works on Multiple selection boxes. If in case you want to deselect any selected option and that can be done with either deselectAll(), deselectByIndex, deselectByValue and deselectByVisibletext.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>  oSelection.deselectAll();
+</span><span class='line'>  oSelection.deselectByIndex(index);
+</span><span class='line'>  oSelection.deselectByValue(value);
+</span><span class='line'>  oSelection.deselectByVisibleText(text);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Multiple selection method</h3>
+
+<p>This one also just works on Multiple selection boxes and not on regular List boxes or dropdowns. There is no additional logic behind selecting multiple options of Select element. All you need to do is to fire select commands on multiple elements one by one that’s it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>  oSelection.selectByIndex(index)
+</span><span class='line'>  oSelection.selectByIndex(index)
+</span><span class='line'>  // Or
+</span><span class='line'>  oSelection.selectByVisibleText(text)
+</span><span class='line'>  oSelection.selectByVisibleText(text)
+</span><span class='line'>  // Or
+</span><span class='line'>  oSelection.selectByValue(value)
+</span><span class='line'>  oSelection.selectByValue(value)</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Checkbox and Radio Button Operations]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations/"/>
+    <updated>2014-05-26T10:10:11+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations</id>
+    <content type="html"><![CDATA[<h2>CheckBox &amp; Radio Button Operations</h2>
+
+<p>Operations on Checkboxes and Radio Buttons are easy to perform and most of the times the simple ID attributes work fine for both of these. But selection and d-selection is not the only thing we want with checkboxes and radio buttons. We might like to check that if the checkbox is already checked or if the radio button is selected by default or anything. Checkboxes and Radio button deals exactly the same way and you can perform below mentioned operations on either of them.</p>
+
+<h3>Different Selection Method</h3>
+
+<h4>By ID</h4>
+
+<p>If ID is given for the radio button/checkbox and you just want to click the radio button/checkbox Irrespective of its value, then the command will be like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement radioBtn = driver.findElement(By.id("toolsqa"));
+</span><span class='line'>radioBtn.click();</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>With ‘IsSelected’</h4>
+
+<p>If your choice is based on the pre-selection of the Radio button/Checkbox and you just need to select the deselected radio button/checkbox. Assume there are two radio buttons/checkboxes, one is selected by default and you want to select the other one for your test. With IsSelected statement, you can get to know that the radio button or the check box is selected or not.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> // Store all the elements of same category in the list of WebLements    
+</span><span class='line'> List  oRadioButton = driver.findElements(By.name("toolsqa"));
+</span><span class='line'>
+</span><span class='line'> // Create a boolean variable which will hold the value (True/False)
+</span><span class='line'> boolean bValue = false;
+</span><span class='line'>
+</span><span class='line'> // This statement will return True, in case of first Radio button is selected
+</span><span class='line'> bValue = oRadioButton.get(0).isSelected();
+</span><span class='line'>
+</span><span class='line'> // This will check that if the bValue is True means if the first radio button is selected
+</span><span class='line'> if(bValue = true){
+</span><span class='line'>
+</span><span class='line'>  // This will select Second radio button, if the first radio button is selected by default
+</span><span class='line'>  oRadioButton.get(1).click();
+</span><span class='line'>
+</span><span class='line'> }else{
+</span><span class='line'>
+</span><span class='line'>  // If the first radio button is not selected by default, the first will be selected
+</span><span class='line'>  oRadioButton.get(0).click();
+</span><span class='line'> }
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: Name is always same for the same group of radio buttons/checkboxes but their Values are different. So if you find the checkbox/radio button element with the name attribute then it means that it may contain more than one element, hence we need to use findElements method and store it the list of WebElements.</p>
+
+<h3>With ‘Value’</h3>
+
+<p>You can even select Radio buttons/Checkboxes with their Values.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// Find the checkbox or radio button element by Name
+</span><span class='line'> List oCheckBox = driver.findElements(By.name("example"));
+</span><span class='line'>
+</span><span class='line'> // This will tell you the number of checkboxes are present
+</span><span class='line'> int iSize = oCheckBox.size();
+</span><span class='line'>
+</span><span class='line'> // Start the loop from first checkbox to last checkboxe
+</span><span class='line'> for(int i=0; i &lt; iSize ; i++ ){
+</span><span class='line'>
+</span><span class='line'>   // Store the checkbox name to the string variable, using 'Value' attribute
+</span><span class='line'>   String sValue = oCheckBox.get(i).getAttribute("value");
+</span><span class='line'>
+</span><span class='line'>   // Select the checkbox it the value of the checkbox is same what you are looking for
+</span><span class='line'>   if (sValue.equalsIgnoreCase("your value")){
+</span><span class='line'>       oCheckBox.get(i).click();
+</span><span class='line'>
+</span><span class='line'>       // This will take the execution out of for loop
+</span><span class='line'>       break;
+</span><span class='line'>       }
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>By ‘CssSelector’</h3>
+
+<p>A simple way of selecting a check-box or radio button is by using its value:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement oCheckBox = driver.findElement(By.cssSelector("input[value='example']"));
+</span><span class='line'>oCheckBox.click();</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Wait Commands]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-wait-commands/"/>
+    <updated>2014-05-26T10:03:49+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-wait-commands</id>
+    <content type="html"><![CDATA[<h2>WebDriver Wait Commands</h2>
+
+<p>Listing out the different WebDriver Wait statements that can be useful for an effective scripting and can avoid using the Thread.sleep() commands.</p>
+
+<h3>ImplicitlyWait Command</h3>
+
+<p>Purpose: Selenium WebDriver has borrowed the idea of implicit waits from Watir. This means that we can tell Selenium that we would like it to wait for a certain amount of time before throwing an exception that it cannot find the element on the page. We should note that implicit waits will be in place for the entire time the browser is open. This means that any search for elements on the page could take the time the implicit wait is set for.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'> WebDriver driver =&gt; new FirefoxDriver();
+</span><span class='line'> driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'> driver.get("http://url_that_delays_loading");
+</span><span class='line'> WebElement myDynamicElement = driver.findElement(By.id("myDynamicElement"));
+</span><span class='line'> </span></code></pre></td></tr></table></div></figure>
+
+
+<h3>FluentWait Command</h3>
+
+<p>Purpose: Each FluentWait instance defines the maximum amount of time to wait for a condition, as well as the frequency with which to check the condition. Furthermore, the user may configure the wait to ignore specific types of exceptions whilst waiting, such as NoSuchElementExceptions when searching for an element on the page.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// Waiting 30 seconds for an element to be present on the page, checking
+</span><span class='line'>  // for its presence once every 5 seconds.
+</span><span class='line'>  Wait wait = new FluentWait(driver)
+</span><span class='line'>    .withTimeout(30, SECONDS)
+</span><span class='line'>    .pollingEvery(5, SECONDS)
+</span><span class='line'>    .ignoring(NoSuchElementException.class);
+</span><span class='line'>  WebElement foo = wait.until(new Function() {
+</span><span class='line'>    public WebElement apply(WebDriver driver) {
+</span><span class='line'>    return driver.findElement(By.id("foo"));
+</span><span class='line'>    }
+</span><span class='line'>   });
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ExpectedConditions Command</h3>
+
+<p>Purpose: Models a condition that might reasonably be expected to eventually evaluate to something that is neither null nor false.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebDriverWait wait = new WebDriverWait(driver, 10);
+</span><span class='line'>WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(&gt;someid&gt;)));</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>PageLoadTimeout Command</h3>
+
+<p>Purpose: Sets the amount of time to wait for a page load to complete before throwing an error. If the timeout is negative, page loads can be indefinite.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.manage().timeouts().pageLoadTimeout(100, SECONDS);</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>SetScriptTimeout Command</h3>
+
+<p>Purpose: Sets the amount of time to wait for an asynchronous script to finish execution before throwing an error. If the timeout is negative, then the script will be allowed to run indefinitely.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.manage().timeouts().setScriptTimeout(100,SECONDS);</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Sleep Command</h3>
+
+<p>Purpose: This is rarely used, as it always force the browser to wait for a specific time. Thread.Sleep is never a good idea and that’s why Selenium provides wait primitives. If you use them you can specify much higher timeout value which makes tests more reliable without slowing them down as the condition can be evaluated as often as it’s required.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>thread.sleep(1000);</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Switch Window Commands]]></title>

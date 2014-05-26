@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-26T10:02:13+07:00</updated>
+  <updated>2014-05-26T10:21:18+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,298 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Dropdown and Multiple Select Operations]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/"/>
+    <updated>2014-05-26T10:15:16+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations</id>
+    <content type="html"><![CDATA[<h2>DropDown &amp; Multiple Select Operations</h2>
+
+<p>Just like Checkboxes &amp; Radio buttons, Dropdown and Multiple Select also works together and almost the same way. To perform any action, the first task is to identify the element group. I am saying it a group, as dropdown/multiple select is not a single element. They always have a single name but and they contains one or more than one elements in them. I should rather say more than one option in dropdown and multiple select. The only difference between these two is deselecting statement &amp; multiple selections are not allowed on dropdowns. Let’s look at the different operations:</p>
+
+<h3>Selecting Dropdown/Multiple Select Box</h3>
+
+<p>It is just an ordinary operation like selecting any other type of element on a webpage. You can choose it by ID, Name, Css &amp; Xpath etc. But to perform any action on this element it is required to import ‘import org.openqa.selenium.support.ui.Select' package and to use it we need to create a new select object of class select.</p>
+
+<p><code>
+Select oSelection = new Select(driver.findElement(By.id(id)));
+</code></p>
+
+<p>Note: Select class only works for elements with <select> tags</p>
+
+<h3>Selecting an option using ‘selectByVisibleText’</h3>
+
+<p>It is very easy to choose or select an option given under any dropdowns and multiple selection boxes with selectByVisibleText method.</p>
+
+<p>```
+Select oSelection = new Select(driver.findElement(By.id(id)));
+oSelection.selectByVisibleText(text);</p>
+
+<p>```</p>
+
+<h3>Selecting an option using ‘selectByIndex’</h3>
+
+<p>It is almost the same as selectByVisibleText but the only difference here is that we provide the index number of the option here rather the option text.</p>
+
+<p>```
+Select oSelection = new Select(driver.findElement(By.id(id)));</p>
+
+<p>oSelection.selectByIndex(index);
+```</p>
+
+<h3>Selecting an option using ‘selectByValue’</h3>
+
+<p>It is again the same what we have discussed earlier, the only difference in this is that we need to provide the value of the option rather the option text.</p>
+
+<p>```
+Select oSelection = new Select(driver.findElement(By.id(id)));
+oSelection.selectByValue(value);</p>
+
+<p>```</p>
+
+<p>Note: The value of an option and the text of the option may not be always same and there can be a possibility that the value is not assigned to Select webelement. If the value is given in the Select tag then only you can use the selectByValue method.</p>
+
+<h3>Getting the Size of Select item</h3>
+
+<p>Sometimes you may like to count the element in the dropdown and multiple select box, so that you can use the loop on Select element.</p>
+
+<p>```
+Select oSelection = new Select(driver.findElement(By.id(id)));
+List<WebElement> oSize = oSelection.getOptions();
+int iListSize = oSize.size();</p>
+
+<p>```</p>
+
+<h3>Printing the Options</h3>
+
+<p>Once you get the size of the Select element then it is easy to print the Text of the options.</p>
+
+<p>```
+Select oSelection = new Select(driver.findElement(By.id(id)));</p>
+
+<pre><code>List oSize = oSelection.getOptions();
+int iListSize = oSize.size();
+for(int i =0; i&gt;iListSize ; i++){
+    String sValue = oSelection.getOptions().get(i).getText();
+    System.out.println(sValue);
+    }
+</code></pre>
+
+<p>```</p>
+
+<p>All of the above methods work on both Dropdown and Multiple select box.</p>
+
+<h3>Deselect methods</h3>
+
+<p>This only works on Multiple selection boxes. If in case you want to deselect any selected option and that can be done with either deselectAll(), deselectByIndex, deselectByValue and deselectByVisibletext.</p>
+
+<p>```
+Select oSelection = new Select(driver.findElement(By.id(id)));</p>
+
+<pre><code>oSelection.deselectAll();
+oSelection.deselectByIndex(index);
+oSelection.deselectByValue(value);
+oSelection.deselectByVisibleText(text);
+</code></pre>
+
+<p>```</p>
+
+<h3>Multiple selection method</h3>
+
+<p>This one also just works on Multiple selection boxes and not on regular List boxes or dropdowns. There is no additional logic behind selecting multiple options of Select element. All you need to do is to fire select commands on multiple elements one by one that’s it.</p>
+
+<p>```
+Select oSelection = new Select(driver.findElement(By.id(id)));</p>
+
+<pre><code>oSelection.selectByIndex(index)
+oSelection.selectByIndex(index)
+// Or
+oSelection.selectByVisibleText(text)
+oSelection.selectByVisibleText(text)
+// Or
+oSelection.selectByValue(value)
+oSelection.selectByValue(value)
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Checkbox and Radio Button Operations]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations/"/>
+    <updated>2014-05-26T10:10:11+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations</id>
+    <content type="html"><![CDATA[<h2>CheckBox &amp; Radio Button Operations</h2>
+
+<p>Operations on Checkboxes and Radio Buttons are easy to perform and most of the times the simple ID attributes work fine for both of these. But selection and d-selection is not the only thing we want with checkboxes and radio buttons. We might like to check that if the checkbox is already checked or if the radio button is selected by default or anything. Checkboxes and Radio button deals exactly the same way and you can perform below mentioned operations on either of them.</p>
+
+<h3>Different Selection Method</h3>
+
+<h4>By ID</h4>
+
+<p>If ID is given for the radio button/checkbox and you just want to click the radio button/checkbox Irrespective of its value, then the command will be like this:</p>
+
+<p><code>
+WebElement radioBtn = driver.findElement(By.id("toolsqa"));
+radioBtn.click();
+</code></p>
+
+<h4>With ‘IsSelected’</h4>
+
+<p>If your choice is based on the pre-selection of the Radio button/Checkbox and you just need to select the deselected radio button/checkbox. Assume there are two radio buttons/checkboxes, one is selected by default and you want to select the other one for your test. With IsSelected statement, you can get to know that the radio button or the check box is selected or not.</p>
+
+<p>```
+ // Store all the elements of same category in the list of WebLements <br/>
+ List  oRadioButton = driver.findElements(By.name(&ldquo;toolsqa&rdquo;));</p>
+
+<p> // Create a boolean variable which will hold the value (True/False)
+ boolean bValue = false;</p>
+
+<p> // This statement will return True, in case of first Radio button is selected
+ bValue = oRadioButton.get(0).isSelected();</p>
+
+<p> // This will check that if the bValue is True means if the first radio button is selected
+ if(bValue = true){</p>
+
+<pre><code>// This will select Second radio button, if the first radio button is selected by default
+oRadioButton.get(1).click();
+</code></pre>
+
+<p> }else{</p>
+
+<pre><code>// If the first radio button is not selected by default, the first will be selected
+oRadioButton.get(0).click();
+</code></pre>
+
+<p> }</p>
+
+<p>```</p>
+
+<p>Note: Name is always same for the same group of radio buttons/checkboxes but their Values are different. So if you find the checkbox/radio button element with the name attribute then it means that it may contain more than one element, hence we need to use findElements method and store it the list of WebElements.</p>
+
+<h3>With ‘Value’</h3>
+
+<p>You can even select Radio buttons/Checkboxes with their Values.</p>
+
+<p>```
+// Find the checkbox or radio button element by Name
+ List oCheckBox = driver.findElements(By.name(&ldquo;example&rdquo;));</p>
+
+<p> // This will tell you the number of checkboxes are present
+ int iSize = oCheckBox.size();</p>
+
+<p> // Start the loop from first checkbox to last checkboxe
+ for(int i=0; i &lt; iSize ; i++ ){</p>
+
+<pre><code> // Store the checkbox name to the string variable, using 'Value' attribute
+ String sValue = oCheckBox.get(i).getAttribute("value");
+
+ // Select the checkbox it the value of the checkbox is same what you are looking for
+ if (sValue.equalsIgnoreCase("your value")){
+     oCheckBox.get(i).click();
+
+     // This will take the execution out of for loop
+     break;
+     }
+}
+</code></pre>
+
+<p>```</p>
+
+<h3>By ‘CssSelector’</h3>
+
+<p>A simple way of selecting a check-box or radio button is by using its value:</p>
+
+<p><code>
+WebElement oCheckBox = driver.findElement(By.cssSelector("input[value='example']"));
+oCheckBox.click();
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Wait Commands]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-wait-commands/"/>
+    <updated>2014-05-26T10:03:49+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-wait-commands</id>
+    <content type="html"><![CDATA[<h2>WebDriver Wait Commands</h2>
+
+<p>Listing out the different WebDriver Wait statements that can be useful for an effective scripting and can avoid using the Thread.sleep() commands.</p>
+
+<h3>ImplicitlyWait Command</h3>
+
+<p>Purpose: Selenium WebDriver has borrowed the idea of implicit waits from Watir. This means that we can tell Selenium that we would like it to wait for a certain amount of time before throwing an exception that it cannot find the element on the page. We should note that implicit waits will be in place for the entire time the browser is open. This means that any search for elements on the page could take the time the implicit wait is set for.</p>
+
+<p>```</p>
+
+<p> WebDriver driver => new FirefoxDriver();
+ driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+ driver.get(&ldquo;<a href="http://url_that_delays_loading">http://url_that_delays_loading</a>&rdquo;);
+ WebElement myDynamicElement = driver.findElement(By.id(&ldquo;myDynamicElement&rdquo;));</p>
+
+<p>```</p>
+
+<h3>FluentWait Command</h3>
+
+<p>Purpose: Each FluentWait instance defines the maximum amount of time to wait for a condition, as well as the frequency with which to check the condition. Furthermore, the user may configure the wait to ignore specific types of exceptions whilst waiting, such as NoSuchElementExceptions when searching for an element on the page.</p>
+
+<p>```
+// Waiting 30 seconds for an element to be present on the page, checking
+  // for its presence once every 5 seconds.
+  Wait wait = new FluentWait(driver)</p>
+
+<pre><code>.withTimeout(30, SECONDS)
+.pollingEvery(5, SECONDS)
+.ignoring(NoSuchElementException.class);
+</code></pre>
+
+<p>  WebElement foo = wait.until(new Function() {</p>
+
+<pre><code>public WebElement apply(WebDriver driver) {
+return driver.findElement(By.id("foo"));
+}
+</code></pre>
+
+<p>   });</p>
+
+<p>```</p>
+
+<h3>ExpectedConditions Command</h3>
+
+<p>Purpose: Models a condition that might reasonably be expected to eventually evaluate to something that is neither null nor false.</p>
+
+<p><code>
+WebDriverWait wait = new WebDriverWait(driver, 10);
+WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(&gt;someid&gt;)));
+</code></p>
+
+<h3>PageLoadTimeout Command</h3>
+
+<p>Purpose: Sets the amount of time to wait for a page load to complete before throwing an error. If the timeout is negative, page loads can be indefinite.</p>
+
+<p><code>
+driver.manage().timeouts().pageLoadTimeout(100, SECONDS);
+</code></p>
+
+<h3>SetScriptTimeout Command</h3>
+
+<p>Purpose: Sets the amount of time to wait for an asynchronous script to finish execution before throwing an error. If the timeout is negative, then the script will be allowed to run indefinitely.</p>
+
+<p><code>
+driver.manage().timeouts().setScriptTimeout(100,SECONDS);
+</code></p>
+
+<h3>Sleep Command</h3>
+
+<p>Purpose: This is rarely used, as it always force the browser to wait for a specific time. Thread.Sleep is never a good idea and that’s why Selenium provides wait primitives. If you use them you can specify much higher timeout value which makes tests more reliable without slowing them down as the condition can be evaluated as often as it’s required.</p>
+
+<p><code>
+thread.sleep(1000);
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Switch Window Commands]]></title>
@@ -240,337 +532,6 @@ public static void main(String[] args) {
 <p>}</p>
 
 <p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Element Commands]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/23/webdriver-element-commands/"/>
-    <updated>2014-05-23T16:29:53+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/23/webdriver-element-commands</id>
-    <content type="html"><![CDATA[<h2>Selenium WebDriver WebElement Commands</h2>
-
-<p>The next thing you like to do is to interact with a web page. You need to locate an element first on the web page before interacting with it and locating elements can be done on the WebDriver instance itself or on a WebElement. Webdriver gives us “Find Element” and “Find Elements” method to locate elements on the web page.</p>
-
-<h3>Find Element &amp; Find Elements Method</h3>
-
-<p>The difference between “Find Element” and “Find Elements” method is the first returns a WebElement object otherwise it throws an exception and the latter returns a list of WebElements, it can return an empty list if no DOM elements match the query. The “Find” methods take a locator or query object called “By”. “By” strategies are listed below.</p>
-
-<h4>By ID</h4>
-
-<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised. This is the most efficient and preferred way to locate an element, as most of the times IDs are unique. But in some cases UI developers make it having non-unique ids on a page or auto-generating the id, in both cases it should be avoided.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<p>```</p>
-
-<p><!-- html code
-<input id="Username"></input>
-&mdash;!>
-//java code to find the input with id is &ldquo;Username&rdquo;
-WebElement element = driver.findElement(By.id(&ldquo;Username&rdquo;));</p>
-
-<p>```</p>
-
-<h4>By Name</h4>
-
-<p>This is also an efficient way to locate an element but again the problem is same as with ID that UI developer make it having non-unique names on a page or auto-generating the names. With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a NoSuchElementException will be raised.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<p>```
-<!-- html code
-<input name="Username"></input>
-&mdash;!>
-//java code to find the input with name is &ldquo;Username&rdquo;
-WebElement element = driver.findElement(By.name(&ldquo;Username&rdquo;));</p>
-
-<p>```</p>
-
-<h4>By Class Name</h4>
-
-<p>With this you can find elements based on the value of the “class” attribute. If an element has many classes then this will match against each of them. A class can contain many elements.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<p>```
-<!-- html code
-<input class="Username"></input>
-&mdash;!>
-//java code to find the input with className is &ldquo;Username&rdquo;
-WebElement element = driver.findElement(By.className(&ldquo;Username&rdquo;));</p>
-
-<p>```</p>
-
-<h4>By Tag Name</h4>
-
-<p>With this you can find elements by their tag names.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<p>```
-//html code
-<a href="link.html">Name of the Link</a></p>
-
-<p>// java code to find
-WebElement element=driver.findElement(By.linkText(&ldquo;Name of the Link&rdquo;));</p>
-
-<p>```</p>
-
-<p>By Partial Link Text</p>
-
-<p>With this you can find elements of “a” tags(Link) with the partial link names. Use this when you know link text used within an anchor tag.</p>
-
-<p>Example: If an element is given like this</p>
-
-<p><code>
-//html code
-&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;
-// java code to find
-WebElement element=driver.findElement(By.linkText("Name of"));
-</code></p>
-
-<p>or</p>
-
-<p><code>
-WebElement element=driver.findElement(By.linkText("the Link"));
-</code></p>
-
-<h3>Practice Exercise 1</h3>
-
-<p>1) Launch new Browser</p>
-
-<p>2) Open URL <a href="https://www.facebook.com">https://www.facebook.com</a></p>
-
-<p>3) Type Name &amp; password</p>
-
-<p>4) Click on SignIn button</p>
-
-<h4>Solution</h4>
-
-<p>```
-package automationFramework;</p>
-
-<p>import java.util.concurrent.TimeUnit;</p>
-
-<p>import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;</p>
-
-<p>public class PracticeWebElementCommands {</p>
-
-<pre><code>public static WebDriver driver;
-public static void main(String[] args) {
-     // Create a new instance of the Firefox driver
-    driver = new FirefoxDriver();
-
-    // Put an Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-    // Launch the ToolsQA Website
-    driver.get("https://www.facebook.com");
-
-    // Type email      
-    driver.findElement(By.id("emaill")).sendKeys("youremail"); 
-
-    //Type passwork
-    driver.findElement(By.name("pass")).sendKeys("yourpassword");
-
-    // Click on SignIn
-    driver.findElement(By.Xpath("//form[@id='login_form']/table/tbody/tr[2]/td[3]/label/input")).click();
-    }
-}
-</code></pre>
-
-<p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Browser Commands]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/23/webdriver-browser-commands/"/>
-    <updated>2014-05-23T15:56:48+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/23/webdriver-browser-commands</id>
-    <content type="html"><![CDATA[<h2>Selenium WebDriver Browser Commands</h2>
-
-<p>The very first thing you like to do with Selenium is to opening and closing a new browser. Below are the numbers of commands you can apply on the Selenium opened browser.</p>
-
-<h3>1)Get Command</h3>
-
-<p>Purpose: This command is use to open a new web page in the current browser.</p>
-
-<p>Command: driver.get(URL);</p>
-
-<p>Parameters: url – The URL to load. It is best to use a fully qualified URL.</p>
-
-<p><code>
-driver.get("wwww.google.com");
-</code></p>
-
-<h3>2)Get Title Command</h3>
-
-<p>Purpose: This command is use to get the title of the current page.</p>
-
-<p><code>
-driver.getTitle();
-</code></p>
-
-<h3>3)Get Current URL Command</h3>
-
-<p>Purpose: This command is use to get the URL of the page currently loaded in the browser.</p>
-
-<p><code>
-driver.getCurrentUrl();
-</code></p>
-
-<h3>4)Get Page Source Command</h3>
-
-<p>Purpose: This command is use to get the source of the last loaded page.</p>
-
-<p><code>
-driver.getPageSource();
-</code></p>
-
-<h3>5)Close Command</h3>
-
-<p>Purpose: This command is use to close the current window of the browser, if it’s the last window it will close the browser.</p>
-
-<p><code>
-driver.close();
-</code></p>
-
-<h3>6)Quit Command</h3>
-
-<p>Purpose: This command is use to quit the browser and all the opened windows in the browser.</p>
-
-<p><code>
-driver.quit();
-</code></p>
-
-<h3>7)Refresh Command</h3>
-
-<p>Purpose: There are some commands is use to refresh the current browser.</p>
-
-<p><code>
-driver.navigate().refresh();
-driver.get(driver.getCurrentUrl());
-driver.navigate().to(driver.getCurrentUrl());
-driver.findElement(By.name("s")).sendKeys("\uE035");
-</code></p>
-
-<h2>Simple Practice Exercise</h2>
-
-<p>1) Launch a new Firefox browser.</p>
-
-<p>2) Open daringfireball.net</p>
-
-<p>3) Get Page Title name and Title length</p>
-
-<p>4) Print Page Title and Title length on the Eclipse Console.</p>
-
-<p>5) Get Page URL and URL length</p>
-
-<p>6) Print URL and URL length on the Eclipse Console.</p>
-
-<p>7) Refresh current page</p>
-
-<p>8) Get Page Source (HTML Source code) and Page Source length</p>
-
-<p>9) Print Page Source and length on Eclipse Console.</p>
-
-<p>10) Close the Browser.</p>
-
-<h3>Solution</h3>
-
-<h4>1) Create class &lsquo;PracticeBrowserCommands&rsquo; and copy code below paste to your class and Run this class.</h4>
-
-<p>```
-package automationFramework;
-import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;</p>
-
-<p>public class PracticeBrowserCommands {</p>
-
-<pre><code>private static WebDriver driver = null;
-
-public static void main(String[] args) throws InterruptedException {
-
-     // Create a new instance of the Firefox driver
-    driver = new FirefoxDriver();
-
-    //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-    //Launch the markdown syntax
-    driver.get("http://daringfireball.net/");
-
-    // Storing Title name in String variable
-    String sTitle = driver.getTitle();
-    // Storing Title length in Int variable
-    int iTitleLength = driver.getTitle().length();
-    // Printing Title name on Console
-    System.out.println(sTitle);
-    // Printing Title length on console
-    System.out.println(iTitleLength);
-
-    // Storing URL in String variable
-    sTitle = driver.getCurrentUrl();
-    // Storing URL length in Int variable
-    iTitleLength = driver.getCurrentUrl().length();
-    // Printing URL on Console
-    System.out.println(sTitle);
-    // Printing URL length on console
-    System.out.println(iTitleLength);
-
-    // Refreshing current page
-    driver.get(driver.getCurrentUrl());  
-
-    // Storing Page Source in String variable
-    String sPageSource = driver.getPageSource();
-    // Storing Page Source length in Int variable
-    int iPageSourceLength = driver.getPageSource().length();
-    // Printing Page Source on console
-    System.out.println(sPageSource);
-    // Printing Page SOurce length on console
-    System.out.println(iPageSourceLength);
-
-    //Closing browser
-    driver.close();
-}
-</code></pre>
-
-<p>}
-```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Introduction]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/23/webdriver-introduction/"/>
-    <updated>2014-05-23T15:26:35+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/23/webdriver-introduction</id>
-    <content type="html"><![CDATA[<h2>Selenium Introduction</h2>
-
-<h3>About Selenium</h3>
-
-<p>Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium project produces various tools for automation testing such as Selenium IDE, Selenium Remote Control (RC), Selenium Grid and Selenium 2.0 &amp; WebDriver. Learning all the tools will give you many different options for approaching different automation problems. The entire suits of tools result in a rich set of testing functions specially geared to the needs of testing of web application of all types.</p>
-
-<h3>Why Selenium</h3>
-
-<ul>
-<li>Selenium is an open source tool with Corporate backing.</li>
-<li>The tests can then be run against most modern web browsers.</li>
-<li>Selenium deploys on Windows, Linux, and Macintosh platforms.</li>
-<li>It allows recording, editing, and debugging tests.</li>
-<li>Recorded tests can be exported in most language e.g. html, Java, .net, perl, ruby etc.</li>
-<li>Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser.</li>
-</ul>
-
-
-<h3>Selenium WebDriver</h3>
-
-<p>The primary new feature in Selenium 2.0 is the integration of the WebDriver API. WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. It enables you to use a programming language to write test scripts in different programming languages like html, Java, .net , perl, ruby and which enables you to use conditional operations, looping and other programming concepts which makes you test script robust. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver’s goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.</p>
 ]]></content>
   </entry>
   
