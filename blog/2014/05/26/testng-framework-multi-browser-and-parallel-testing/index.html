@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>TestNG Framework : Multi Browser and Parallel Testing - Ta Bao Lan</title>
+  <meta name="author" content="Ta Bao Lan">
+
+  
+  <meta name="description" content="Multi Browser, Cross Browser &amp; Parallel Testing using TestNG When the time comes to turn your site from mock-up to something fully functional, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ta Bao Lan" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ta Bao Lan</a></h1>
+  
+    <h2>Software Engineer - Test Automation Engineer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:tabaolan1987.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">TestNG Framework : Multi Browser and Parallel Testing</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T12:15:47+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>Multi Browser, Cross Browser &amp; Parallel Testing using TestNG</h2>
+
+<p>When the time comes to turn your site from mock-up to something fully functional, you’ll want to make sure that it works great for everyone visiting your site whether they’re using Internet Explorer, Firefox, or any other browser. Testing your website with multiple combinations of browsers is known as Cross Browser testing.</p>
+
+<p>Your site will look different in different browsers. That’s because browsers understand some code slightly differently. Your designer should be testing to make sure that your site works well in all modern browsers. But as a tester we need to make sure that functionality should at least tested on Internet Explorer, Firefox, Safari &amp; Google Chrome browser.</p>
+
+<h3>Multi Browser Testing using Selenium TestNG</h3>
+
+<p>In every project it is required to perform multi-browser testing to make sure that the functionality is working as expected with every browser to give equal user experience to all of the wide range of audience. It takes a considerable time to test everything on every browser and when we have used automation to reduce the testing efforts then why don’t we perform the multi-browser testing using automation. TestNG gives us functionality to perform same test on different browsers in a simple and easy way.</p>
+
+<h4>How to do it…</h4>
+
+<p>1)Create your Script to test a LogIn application using TestNG class.</p>
+
+<p>2) Pass ‘Browser Type’ as parameters using TestNG annotations to the before method of the TestNG class. This method will launch only the browser, which will be provided as parameter.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.openqa.selenium.ie.InternetExplorerDriver;
+</span><span class='line'>import org.testng.annotations.AfterClass;
+</span><span class='line'>import org.testng.annotations.BeforeClass;
+</span><span class='line'>import org.testng.annotations.Parameters;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class MultiBrowser {
+</span><span class='line'>  public WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  @Parameters("browser")
+</span><span class='line'>  @BeforeClass
+</span><span class='line'>  // Passing Browser parameter from TestNG xml
+</span><span class='line'>  public void beforeTest(String browser) {
+</span><span class='line'>  // If the browser is Firefox, then do this
+</span><span class='line'>  if(browser.equalsIgnoreCase("firefox")) {
+</span><span class='line'>    driver = new FirefoxDriver();
+</span><span class='line'>  // If browser is IE, then do this     
+</span><span class='line'>  }else if (browser.equalsIgnoreCase("ie")) { 
+</span><span class='line'>    // Here I am setting up the path for my IEDriver
+</span><span class='line'>    System.setProperty("webdriver.ie.driver", "D:\OnlineStore\drivers\IEDriverServer.exe");
+</span><span class='line'>    driver = new InternetExplorerDriver();
+</span><span class='line'>  } 
+</span><span class='line'>  // Doesn't the browser type, lauch the Website
+</span><span class='line'>   driver.get("https://www.facebook.com");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  // Once Before method is completed, Test method will start
+</span><span class='line'>  @Test public void login() throws InterruptedException {
+</span><span class='line'>      driver.findElement(By.id("email")).sendKeys("your username");
+</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys("your password");
+</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
+</span><span class='line'>      driver.quit();
+</span><span class='line'>  }  
+</span><span class='line'>
+</span><span class='line'>  @AfterClass public void afterTest() {
+</span><span class='line'>      driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) Create a TestNG XML for running your test. Configure the TestNG XML for passing parameters i.e. to tell which browser should be used for Running the Test.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;suite name="Suite" parallel="none"&gt;
+</span><span class='line'> &lt;test name="FirefoxTest"&gt;
+</span><span class='line'> &lt;parameter name="browser" value="firefox" /&gt;
+</span><span class='line'> &lt;classes&gt;
+</span><span class='line'> &lt;class name="automationFramework.MultiBrowser" /&gt;
+</span><span class='line'> &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'>
+</span><span class='line'> &lt;test name="IETest"&gt;
+</span><span class='line'> &lt;parameter name="browser" value="ie" /&gt;
+</span><span class='line'> &lt;classes&gt;
+</span><span class='line'> &lt;class name="automationFramework.MultiBrowser" /&gt;
+</span><span class='line'> &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> Note: You can set any number of Browsers here and just for the example purpose I have set up only two main browsers.</p>
+
+<p>4) Now it’s time to run the xml. Run the test by right click on the testng.xml file and select Run As > TestNG Suite.</p>
+
+<p><img src="/images/TestNG-MultiBrowser-1.png"></p>
+
+<p>Note: TestNg will execute the test one by one. You may like to perform parallel tests, next topic will cover that.</p>
+
+<h3>Parallel Tests using TestNG</h3>
+
+<p>Using the feature provided by TestNG for Parallel Executions. just take the above example for Sign In application with two different browsers. This time all we want is to execute test in both browsers simultaneously.</p>
+
+<p>Now just set the ‘parallel‘ attribute to ‘tests‘ in the above used xml and give a run again. This time you will notice that your both browsers will open almost simultaneously and your test will run in parallel.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;suite name="Suite" parallel="tests"&gt;
+</span><span class='line'> &lt;test name="FirefoxTest"&gt;
+</span><span class='line'> &lt;parameter name="browser" value="firefox" /&gt;
+</span><span class='line'> &lt;classes&gt;
+</span><span class='line'> &lt;class name="automationFramework.MultiBrowser" /&gt;
+</span><span class='line'> &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'>
+</span><span class='line'> &lt;test name="IETest"&gt;
+</span><span class='line'> &lt;parameter name="browser" value="ie" /&gt;
+</span><span class='line'> &lt;classes&gt;
+</span><span class='line'> &lt;class name="automationFramework.MultiBrowser" /&gt;
+</span><span class='line'> &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: You may see some intermittent issues using parallel testing. I will not recommend you this rather run one by one only.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ta Bao Lan</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T12:15:47+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/testng-framework/'>TestNG-Framework</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/" data-via="" data-counturl="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/26/testng-framework-parameters-and-data-provider/" title="Previous Post: TestNG Framework : Parameters and Data Provider">&laquo; TestNG Framework : Parameters and Data Provider</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/05/26/selenium-automation-framework-introduction/" title="Next Post: Selenium Automation Framework : Introduction">Selenium Automation Framework : Introduction &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse/">Selenium Automation Framework : Install Maven to Eclipse</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">TestNG Framework : Multi Browser and Parallel Testing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/testng-framework-parameters-and-data-provider/">TestNG Framework : Parameters and Data Provider</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/testng-framework-reporters-and-asserts/">TestNG Framework :Reporters and Asserts</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ta Bao Lan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
