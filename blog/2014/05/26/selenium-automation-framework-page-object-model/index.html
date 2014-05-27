@@ -107,7 +107,7 @@
 
 <p>Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is used. Duplicated code could be caused by duplicated functionality and this will result in duplicated usage of locators. The disadvantage of duplicated code is that the project is less maintainable. If some locator will change, you have to walk through the whole test code to adjust locators where necessary. By using the page object model we can make non-brittle test code and reduce or eliminate duplicate test code. Beside of that it improves the readability and allows us to create interactive documentation. Last but not least, we can create tests with less keystroke. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.</p>
 
-<p>Note : We will try to create Login Page follow website <a href="https://facebook.com">Facebook</a></p>
+<p>Note : We will try to create Login Page and Homepage follow website <a href="https://facebook.com">Facebook</a></p>
 
 <h3>How to do it</h3>
 
@@ -123,7 +123,7 @@
 <p><img src="/images/pom-3.png"></p>
 
 <ol>
-<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is LogIn Page.</li>
+<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is Login Page.</li>
 </ol>
 
 
@@ -250,7 +250,89 @@
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>We are finish to create a Login Page follow Page Object Model . Now you will need to create an Action Login , please <a href="">click here</a></h3>
+<ol>
+<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is Home Page.</li>
+</ol>
+
+
+<p><img src="/images/pom-1.png"></p>
+
+<p><img src="/images/pom-7.png"></p>
+
+<ol>
+<li>Open URL : <a href="Https://facebook.com">Https://facebook.com</a> &ndash;> login in &ndash; use xpath to find element location (textarena to post status and button for post).</li>
+</ol>
+
+
+<p><img src="/images/pom-8.png"></p>
+
+<p>8.Now create a Static Method for each Element (Object) in the Home Page. Each method will have an Argument (driver) and a Return value (element).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.pageObject;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.WebElement;
+</span><span class='line'>
+</span><span class='line'>public class HomePage {
+</span><span class='line'>
+</span><span class='line'>  /**
+</span><span class='line'>   * WebElement
+</span><span class='line'>   */
+</span><span class='line'>  private static WebElement element;
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @return textbox update status element
+</span><span class='line'>   */
+</span><span class='line'>  public static WebElement txt_status(WebDriver driver) {
+</span><span class='line'>      element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[2]/div/div/div[2]/div/div/textarea"));
+</span><span class='line'>      return element;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @return button to post status
+</span><span class='line'>   */
+</span><span class='line'>  public static WebElement butt_post(WebDriver driver){
+</span><span class='line'>      element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[4]/div/ul/li[2]/button"));
+</span><span class='line'>      return element;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>We are finish to create a Login Page , Home Page follow Page Object Model . Now you will need to create an Action in Java base on User Define, please <a href="">click here</a></h3>
 </div>
 
 
@@ -299,6 +381,8 @@
         <a class="basic-alignment left" href="/blog/2014/05/26/selenium-automation-framework-create-new-project/" title="Previous Post: Selenium Automation Framework : Create New Project">&laquo; Selenium Automation Framework : Create New Project</a>
       
       
+        <a class="basic-alignment right" href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/" title="Next Post: Selenium Automation Framework : Modular Driven Framework">Selenium Automation Framework : Modular Driven Framework &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -310,6 +394,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Selenium Automation Framework : Modular Driven Framework</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Selenium Automation Framework : Page Object Model</a>
@@ -325,10 +413,6 @@
     
       <li class="post">
         <a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">TestNG Framework : Multi Browser and Parallel Testing</a>
       </li>
     
   </ul>

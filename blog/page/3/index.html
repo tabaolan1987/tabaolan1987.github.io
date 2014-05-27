@@ -9,7 +9,7 @@
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="WebDriver Browser Navigation Commands The navigate interface exposes the ability to move backwards and forwards in your browser’s history but &hellip;">
+  <meta name="description" content="WebDriver Switch Window Commands Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,203 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/webdriver-switch-window-commands/">Webdriver : Switch Window Commands</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T09:02:20+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>WebDriver Switch Window Commands</h2>
+
+<p>Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.</p>
+
+<h3>GetWindowHandle Command</h3>
+
+<p>Purpose: To get the window handle of the current window.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>String  handle= driver.getWindowHandle();//Return a string of alphanumeric window handle</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>GetWindowHandles Command</h3>
+
+<p>Purpose: To get the window handle of all the current windows.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Set&lt;String&gt; handle= driver.getWindowHandles();//Return a set of window handle</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>SwitchTo Window Command</h3>
+
+<p>Purpose: WebDriver supports moving between named windows using the “switchTo” method.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.switchTo().window("windowName");
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Alternatively, you can pass a “window handle” to the “switchTo().window()” method. Knowing this, it’s possible to iterate over every open window like so:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for (String handle : driver.getWindowHandles()) {
+</span><span class='line'>    driver.switchTo().window(handle);
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Switching between windows with Iterators:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>driver.findElement(By.id(“id of the link which opens new window”)).click();
+</span><span class='line'> //wait till two windows are not opened
+</span><span class='line'> waitForNumberofWindowsToEqual(2);//this method is for wait
+</span><span class='line'>
+</span><span class='line'> Set handles = driver.getWindowHandles();
+</span><span class='line'> firstWinHandle = driver.getWindowHandle(); handles.remove(firstWinHandle);
+</span><span class='line'> String winHandle=handles.iterator().next();
+</span><span class='line'> if (winHandle!=firstWinHandle){
+</span><span class='line'> //To retrieve the handle of second window, extracting the handle which does not match to first window handle
+</span><span class='line'> secondWinHandle=winHandle; //Storing handle of second window handle
+</span><span class='line'>
+</span><span class='line'>//Switch control to new window
+</span><span class='line'> driver.switchTo().window(secondWinHandle);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>SwitchTo Frame Command</h3>
+
+<p>Purpose: WebDriver supports moving between named frames using the “switchTo” method.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.switchTo().frame("frameName");</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>SwitchTo PopUp Command</h3>
+
+<p>Purpose: WebDriver supports moving between named PopUps using the “switchTo” method. After you’ve triggered an action that opens a popup, you can access the alert and it will return the currently open alert object. With this object you can now accept, dismiss, read its contents or even type into a prompt. This interface works equally well on alerts, confirms, and prompts.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Alert alert = driver.switchTo().alert();</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Practice Exercise 1</h3>
+
+<p>1) Launch new Browser</p>
+
+<p>2) Open URL &ldquo;<a href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a>&rdquo;</p>
+
+<p>3) Get Window name (Use GetWindowHandle command)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package practiceTestCases;
+</span><span class='line'>import java.util.Set;
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>
+</span><span class='line'>public class PracticeSwitchWindow {
+</span><span class='line'>
+</span><span class='line'>      public static WebDriver driver;
+</span><span class='line'>      public static void main(String[] args) {
+</span><span class='line'>
+</span><span class='line'>          // Create a new instance of the Firefox driver
+</span><span class='line'>          driver = new FirefoxDriver();
+</span><span class='line'>
+</span><span class='line'>          // Put an Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
+</span><span class='line'>          driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>
+</span><span class='line'>          // Launch the URL
+</span><span class='line'>          driver.get("http://docs.seleniumhq.org/download/");
+</span><span class='line'>
+</span><span class='line'>          // Store and Print the name of the First window on the console
+</span><span class='line'>          String handle= driver.getWindowHandle();
+</span><span class='line'>          System.out.println(handle);
+</span><span class='line'>
+</span><span class='line'>          // Close Original window
+</span><span class='line'>          driver.quit();
+</span><span class='line'>
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1216,6 +1413,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Selenium Automation Framework : Modular Driven Framework</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Selenium Automation Framework : Page Object Model</a>
       </li>
     
@@ -1229,10 +1430,6 @@
     
       <li class="post">
         <a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">TestNG Framework : Multi Browser and Parallel Testing</a>
       </li>
     
   </ul>

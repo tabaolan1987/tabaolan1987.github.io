@@ -9,7 +9,7 @@
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="Page Object Model | POM Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is &hellip;">
+  <meta name="description" content="Modular Driven Framework In most of the web application we have few set of actions which are always executed in the series of actions. Rather than &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,152 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Selenium Automation Framework : Modular Driven Framework</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-27T10:11:21+07:00" pubdate data-updated="true">May 27<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Modular Driven Framework</h2>
+
+<p>In most of the web application we have few set of actions which are always executed in the series of actions. Rather than writing those actions again and again in our test, we can club those actions in to a method and then calling that method in our test script. Modularity avoids duplicacy of code. In future if there is any change in the series of action, all you have to do is to make changes in your main modular method script. No test case will be impacted with the change.</p>
+
+<h3>How to do it..</h3>
+
+<p>Look for repeated functionality in your application for example the &lsquo;login&rsquo; functionality. We can simple wrap this functionality in a method and we can give it a sensible name.</p>
+
+<p>1) Create a &lsquo;New Package&rsquo; file and name it as &lsquo;userAction&rsquo;, by right click on the Project and select New > Package. We will be creating different packages for Page Objects, Utilities, Test Data, Test Cases and Modular actions. It is always recommended to use this structure, as it is easy to understand, easy to use and easy to maintain.</p>
+
+<p><img src="/images/pom-1.png"></p>
+
+<p><img src="/images/user-action-1"></p>
+
+<p><img src="/images/user-action-2"></p>
+
+<p>2) Create &lsquo;New Class&rsquo; and name it as SignIn by right click on package &lsquo;userAction&rsquo; and select New > Class. It will add new class &lsquo;SignIn&rsquo; under package &lsquo;userAction&rsquo;.</p>
+
+<p><img src="/images/user-action-3"></p>
+
+<p><img src="/images/user-action-4"></p>
+
+<p>3) Now create a Public Static Void Method and name it as Execute  and club the following steps in to it:</p>
+
+<p>Load Page login Facebook</p>
+
+<p>Enter Username</p>
+
+<p>Enter Password</p>
+
+<p>Click on the Submit button</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.userAction;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>
+</span><span class='line'>import com.selenium.pageObject.LoginPage;
+</span><span class='line'>
+</span><span class='line'>public class SignIn {
+</span><span class='line'>
+</span><span class='line'>  public static void Execute(WebDriver driver , String username, String password) {
+</span><span class='line'>      LoginPage.loadPage(driver);
+</span><span class='line'>      LoginPage.txtbx_UserName(driver).sendKeys(username);
+</span><span class='line'>      LoginPage.txtbx_Password(driver).sendKeys(password);
+</span><span class='line'>      LoginPage.btn_LogIn(driver).click();
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4) Create &lsquo;New Class&rsquo; and name it as PostStatus by right click on package &lsquo;userAction&rsquo; and select New > Class. It will add new class &lsquo;PostStatus&rsquo; under package &lsquo;userAction&rsquo;.</p>
+
+<p><img src="/images/user-action-3"></p>
+
+<p><img src="/images/user-action-5"></p>
+
+<p>5) Now create a Public Static Void Method and name it as Execute  and club the following steps in to it:</p>
+
+<p>Enter Status</p>
+
+<p>Click on button Post.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.userAction;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>
+</span><span class='line'>import com.selenium.pageObject.HomePage;
+</span><span class='line'>
+</span><span class='line'>public class PostStatus {
+</span><span class='line'>  
+</span><span class='line'>  public static void Execute(WebDriver driver, String status){
+</span><span class='line'>      HomePage.txt_status(driver).sendKeys(status);
+</span><span class='line'>      HomePage.butt_post(driver).click();
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>We are complete to create the actions next we will follow to create the first test with TestNG</h3>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Selenium Automation Framework : Page Object Model</a></h1>
     
     
@@ -110,7 +256,7 @@
 
 <p>Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is used. Duplicated code could be caused by duplicated functionality and this will result in duplicated usage of locators. The disadvantage of duplicated code is that the project is less maintainable. If some locator will change, you have to walk through the whole test code to adjust locators where necessary. By using the page object model we can make non-brittle test code and reduce or eliminate duplicate test code. Beside of that it improves the readability and allows us to create interactive documentation. Last but not least, we can create tests with less keystroke. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.</p>
 
-<p>Note : We will try to create Login Page follow website <a href="https://facebook.com">Facebook</a></p>
+<p>Note : We will try to create Login Page and Homepage follow website <a href="https://facebook.com">Facebook</a></p>
 
 <h3>How to do it</h3>
 
@@ -126,7 +272,7 @@
 <p><img src="/images/pom-3.png"></p>
 
 <ol>
-<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is LogIn Page.</li>
+<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is Login Page.</li>
 </ol>
 
 
@@ -253,7 +399,89 @@
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>We are finish to create a Login Page follow Page Object Model . Now you will need to create an Action Login , please <a href="">click here</a></h3>
+<ol>
+<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is Home Page.</li>
+</ol>
+
+
+<p><img src="/images/pom-1.png"></p>
+
+<p><img src="/images/pom-7.png"></p>
+
+<ol>
+<li>Open URL : <a href="Https://facebook.com">Https://facebook.com</a> &ndash;> login in &ndash; use xpath to find element location (textarena to post status and button for post).</li>
+</ol>
+
+
+<p><img src="/images/pom-8.png"></p>
+
+<p>8.Now create a Static Method for each Element (Object) in the Home Page. Each method will have an Argument (driver) and a Return value (element).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.pageObject;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.WebElement;
+</span><span class='line'>
+</span><span class='line'>public class HomePage {
+</span><span class='line'>
+</span><span class='line'>  /**
+</span><span class='line'>   * WebElement
+</span><span class='line'>   */
+</span><span class='line'>  private static WebElement element;
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @return textbox update status element
+</span><span class='line'>   */
+</span><span class='line'>  public static WebElement txt_status(WebDriver driver) {
+</span><span class='line'>      element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[2]/div/div/div[2]/div/div/textarea"));
+</span><span class='line'>      return element;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @return button to post status
+</span><span class='line'>   */
+</span><span class='line'>  public static WebElement butt_post(WebDriver driver){
+</span><span class='line'>      element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[4]/div/ul/li[2]/button"));
+</span><span class='line'>      return element;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>We are finish to create a Login Page , Home Page follow Page Object Model . Now you will need to create an Action in Java base on User Define, please <a href="">click here</a></h3>
 </div>
   
   
@@ -1972,90 +2200,6 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/testng-framework-test-suite/">TestNG Framework : Test Suite</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T11:28:33+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>TestNG Test Suite</h2>
-
-<p>In any project, you will end up to a place where you need to execute so many test cases on a run. Running a set of test cases together is call executing a Test Suite. Those test cases can be dependent to each other or may have to be executed in a certain order. TestNg gives us the capability to manage our test execution.</p>
-
-<p>In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. This is the xml file where you will configure your test run, set test dependency, include or exclude any test, method, class or package and set priority etc.</p>
-
-<h3>How to do it…</h3>
-
-<h4>Step 1 : Create a TestNG XML</h4>
-
-<p>1) Right click on Project folder, go to New and select ‘File‘ as shown in below image.</p>
-
-<p><img src="/images/TestNG-Suite1.png"></p>
-
-<p>2) In New file wizard, add file name = ‘testng.xml‘ as shown in below given image and click on Finish button.</p>
-
-<p><img src="/images/TestNG-Suite2.png"></p>
-
-<p>3) It will add testng.xml file under your project folder.</p>
-
-<h4>Step 2 : Write xml code ?</h4>
-
-<p>Now add below given code in your testng.xml file.see the image below</p>
-
-<p><img src="/images/TestNG-Suite3.png"></p>
-
-<p>Hope you have understood the xml code, as it is quite simple hierarchy:</p>
-
-<p>Very first tag is the Suite tag<suite>, under that it is the Test tag<test> and then the Class tag<classes>. You can give any name to the suite and the test but you need to provide the correct name to the <classes> tag which is a combination of your Package name and Test Case name.</p>
-
-<h4>Step 3 : Execute a testng.xml</h4>
-
-<p>Now it’s time to run the xml. Run the test by right click on the testng.xml file and select Run As > TestNG Suite.</p>
-
-<p><img src="/images/TestNG-Suite4.png"></p>
-
-<p>It will take few seconds to start the testng execution engine and soon you will notice that your test will run and complete. Once the execution is complete, you can view test execution result under the TestNg console.</p>
-
-<p><img src="/images/TestNG-Suite5.png"></p>
-
-<p>This is the one simple example of creating and running testng.xml file in eclipse.</p>
-
-<h3>Building a Test Suite</h3>
-
-<p>Now when you have learned how to build the xml, now it’s time to learn how to build a Test Suite using testng.xml. It is again not a complex task, all you need to do is to add your test cases to your xml file in <classes> tag.</p>
-
-<p><img src="/images/TestNG-Suite6.png"></p>
-
-<p>The above test will execute only those tests, which are mentioned in the testng.xml. The rest of the test cases under ‘automationFramework’ package will remain untouched.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -2071,6 +2215,10 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Selenium Automation Framework : Modular Driven Framework</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Selenium Automation Framework : Page Object Model</a>
       </li>
     
@@ -2084,10 +2232,6 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
     
       <li class="post">
         <a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">TestNG Framework : Multi Browser and Parallel Testing</a>
       </li>
     
   </ul>
