@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-27T15:54:35+07:00</updated>
+  <updated>2014-05-27T16:03:47+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -66,6 +66,12 @@
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.userAction;
 </span><span class='line'>
 </span><span class='line'>import org.openqa.selenium.WebDriver;
@@ -74,6 +80,12 @@
 </span><span class='line'>
 </span><span class='line'>public class SignIn {
 </span><span class='line'>
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @param username
+</span><span class='line'>   * @param password
+</span><span class='line'>   * execute login to facebook
+</span><span class='line'>   */
 </span><span class='line'>  public static void Execute(WebDriver driver , String username, String password) {
 </span><span class='line'>      LoginPage.loadPage(driver);
 </span><span class='line'>      LoginPage.txtbx_UserName(driver).sendKeys(username);
@@ -111,6 +123,11 @@
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.userAction;
 </span><span class='line'>
 </span><span class='line'>import org.openqa.selenium.WebDriver;
@@ -119,6 +136,11 @@
 </span><span class='line'>
 </span><span class='line'>public class PostStatus {
 </span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @param status
+</span><span class='line'>   * execute post status in facebook
+</span><span class='line'>   */
 </span><span class='line'>  public static void Execute(WebDriver driver, String status){
 </span><span class='line'>      HomePage.txt_status(driver).sendKeys(status);
 </span><span class='line'>      HomePage.butt_post(driver).click();

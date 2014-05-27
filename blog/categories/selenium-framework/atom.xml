@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-27T15:54:35+07:00</updated>
+  <updated>2014-05-27T16:03:47+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -59,7 +59,13 @@ package com.selenium.userAction;</p>
 
 <p>public class SignIn {</p>
 
-<pre><code>public static void Execute(WebDriver driver , String username, String password) {
+<pre><code>/**
+ * @param driver
+ * @param username
+ * @param password
+ * execute login to facebook
+ */
+public static void Execute(WebDriver driver , String username, String password) {
     LoginPage.loadPage(driver);
     LoginPage.txtbx_UserName(driver).sendKeys(username);
     LoginPage.txtbx_Password(driver).sendKeys(password);
@@ -92,7 +98,12 @@ package com.selenium.userAction;</p>
 
 <p>public class PostStatus {</p>
 
-<pre><code>public static void Execute(WebDriver driver, String status){
+<pre><code>/**
+ * @param driver
+ * @param status
+ * execute post status in facebook
+ */
+public static void Execute(WebDriver driver, String status){
     HomePage.txt_status(driver).sendKeys(status);
     HomePage.butt_post(driver).click();
 }
