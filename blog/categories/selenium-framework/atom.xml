@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-26T15:57:58+07:00</updated>
+  <updated>2014-05-27T09:57:42+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,109 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework : Page Object Model]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model/"/>
+    <updated>2014-05-26T16:03:08+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model</id>
+    <content type="html"><![CDATA[<h2>Page Object Model | POM</h2>
+
+<p>Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is used. Duplicated code could be caused by duplicated functionality and this will result in duplicated usage of locators. The disadvantage of duplicated code is that the project is less maintainable. If some locator will change, you have to walk through the whole test code to adjust locators where necessary. By using the page object model we can make non-brittle test code and reduce or eliminate duplicate test code. Beside of that it improves the readability and allows us to create interactive documentation. Last but not least, we can create tests with less keystroke. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.</p>
+
+<p>Note : We will try to create Login Page follow website <a href="https://facebook.com">Facebook</a></p>
+
+<h3>How to do it</h3>
+
+<ol>
+<li>Create a ‘New Package’ file and name it as ‘pageObjects’, by right click on the Project and select New > Package. We will be creating different packages for Page Objects, Utilities, Test Data, Test Cases and Modular actions. It is always recommended to use this structure, as it is easy to understand, easy to use and easy to maintain.</li>
+</ol>
+
+
+<p><img src="/images/pom-1.png"></p>
+
+<p><img src="/images/pom-2.png"></p>
+
+<p><img src="/images/pom-3.png"></p>
+
+<ol>
+<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is LogIn Page.</li>
+</ol>
+
+
+<p><img src="/images/pom-4.png"></p>
+
+<p><img src="/images/pom-5.png"></p>
+
+<ol>
+<li>Open URL : <a href="Https://facebook.com">Https://facebook.com</a> . Wait for page loading then we will use firebug to find the location elements of form login Facebook.</li>
+</ol>
+
+
+<p><img src="/images/pom-5.png"></p>
+
+<p>3.Now create a Static Method for each Element (Object) in the Login Page. Each method will have an Argument (driver) and a Return value (element).</p>
+
+<p>```
+package com.selenium.pageObject;</p>
+
+<p>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;</p>
+
+<p>import com.gargoylesoftware.htmlunit.ElementNotFoundException;</p>
+
+<p>public class LoginPage {</p>
+
+<pre><code> /**
+ * WebElement element 
+ */
+private static WebElement element = null;
+
+/**
+ * @param driver
+ * @return let driver load the login page of facebook
+ * @throws InterruptedException
+ */
+public static WebDriver loadPage(WebDriver driver) {
+    driver.get("https://facebook.com");
+    return driver;
+}
+
+
+/**
+ * @param driver
+ * 
+ * @return the textbox username of login form facebook
+ */
+public static WebElement txtbx_UserName(WebDriver driver) throws ElementNotFoundException{
+    element = driver.findElement(By.id("email"));
+    return element;
+}
+
+/**
+ * @param driver
+ * @return the textbox passwork of login form facebook
+ */
+public static WebElement txtbx_Password(WebDriver driver) throws ElementNotFoundException{
+    element = driver.findElement(By.id("password"));
+    return element;
+}
+
+/**
+ * @param driver
+ * @return the button login of login form facebook
+ */
+public static WebElement btn_LogIn(WebDriver driver) throws ElementNotFoundException{
+    element = driver.findElement(By.id("loginbutton"));
+    return element;
+}
+</code></pre>
+
+<p>}
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework : Create New Project]]></title>

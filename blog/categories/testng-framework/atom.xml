@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TestNG-Framework | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-26T15:57:58+07:00</updated>
+  <updated>2014-05-27T09:57:42+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -669,59 +669,269 @@ import org.testng.annotations.Test;</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Test Suite]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite/"/>
-    <updated>2014-05-26T11:28:33+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite</id>
-    <content type="html"><![CDATA[<h2>TestNG Test Suite</h2>
+    <title type="html"><![CDATA[TestNG Framework : Annotations , Groups and OnDepends]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations/"/>
+    <updated>2014-05-26T11:35:51+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations</id>
+    <content type="html"><![CDATA[<h2>TestNG Annotations, Groups &amp; OnDepends</h2>
 
-<p>In any project, you will end up to a place where you need to execute so many test cases on a run. Running a set of test cases together is call executing a Test Suite. Those test cases can be dependent to each other or may have to be executed in a certain order. TestNg gives us the capability to manage our test execution.</p>
+<h3>TestNG Annotations</h3>
 
-<p>In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. This is the xml file where you will configure your test run, set test dependency, include or exclude any test, method, class or package and set priority etc.</p>
+<p>In the TestNG Introduction chapter we have came across different annotations used in TestNG Framework but so far we have used just three(Before, After &amp; Test). All though these are the most frequently used annotations but who know how far you will go with your framework and may like to use other useful TestNG annotations.</p>
 
-<h3>How to do it…</h3>
+<p>Before that I would like you to give a small idea on Annotations hierarchy or Annotations levels in TestNG.</p>
 
-<h4>Step 1 : Create a TestNG XML</h4>
+<p>```
+<suite></p>
 
-<p>1) Right click on Project folder, go to New and select ‘File‘ as shown in below image.</p>
+<pre><code>   &lt;test&gt;
+         &lt;classes&gt;
+                &lt;method&gt;
+                      &lt;test&gt;
+                &lt;/method&gt;
+         &lt;/classes&gt;
+   &lt;/test&gt;
+</code></pre>
 
-<p><img src="/images/TestNG-Suite1.png"></p>
+<p></suite>
+```</p>
 
-<p>2) In New file wizard, add file name = ‘testng.xml‘ as shown in below given image and click on Finish button.</p>
+<p>It says that @Test is the smallest annotation here. @Method will be executed first, before and after the execution of @Test. The same way @Class will be executed first, before and after the execution of @Method and so on.</p>
 
-<p><img src="/images/TestNG-Suite2.png"></p>
+<p>Now with the below example it will be clear to you easily.</p>
 
-<p>3) It will add testng.xml file under your project folder.</p>
+<p>```
+package automationFramework;</p>
 
-<h4>Step 2 : Write xml code ?</h4>
+<p>import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+public class Sequencing {</p>
 
-<p>Now add below given code in your testng.xml file.see the image below</p>
+<pre><code>    @Test
+    public void testCase1() {
+        System.out.println("This is the Test Case 1");
+    }
 
-<p><img src="/images/TestNG-Suite3.png"></p>
+    @Test
+    public void testCase2() {
+        System.out.println("This is the Test Case 2");
+    }
 
-<p>Hope you have understood the xml code, as it is quite simple hierarchy:</p>
+    @BeforeMethod
+    public void beforeMethod() {
+        System.out.println("This will execute before every Method");
+    }
 
-<p>Very first tag is the Suite tag<suite>, under that it is the Test tag<test> and then the Class tag<classes>. You can give any name to the suite and the test but you need to provide the correct name to the <classes> tag which is a combination of your Package name and Test Case name.</p>
+    @AfterMethod
+    public void afterMethod() {
+        System.out.println("This will execute after every Method");
+    }
 
-<h4>Step 3 : Execute a testng.xml</h4>
+    @BeforeClass
+    public void beforeClass() {
+        System.out.println("This will execute before the Class");
+    }
 
-<p>Now it’s time to run the xml. Run the test by right click on the testng.xml file and select Run As > TestNG Suite.</p>
+    @AfterClass
+    public void afterClass() {
+        System.out.println("This will execute after the Class");
+    }
 
-<p><img src="/images/TestNG-Suite4.png"></p>
+    @BeforeTest
+    public void beforeTest() {
+        System.out.println("This will execute before the Test");
+    }
 
-<p>It will take few seconds to start the testng execution engine and soon you will notice that your test will run and complete. Once the execution is complete, you can view test execution result under the TestNg console.</p>
+    @AfterTest
+    public void afterTest() {
+        System.out.println("This will execute after the Test");
+    }
 
-<p><img src="/images/TestNG-Suite5.png"></p>
+    @BeforeSuite
+    public void beforeSuite() {
+        System.out.println("This will execute before the Test Suite");
+    }
 
-<p>This is the one simple example of creating and running testng.xml file in eclipse.</p>
+    @AfterSuite
+    public void afterSuite() {
+        System.out.println("This will execute after the Test Suite");
+    }
 
-<h3>Building a Test Suite</h3>
+}
+</code></pre>
 
-<p>Now when you have learned how to build the xml, now it’s time to learn how to build a Test Suite using testng.xml. It is again not a complex task, all you need to do is to add your test cases to your xml file in <classes> tag.</p>
+<p>```</p>
 
-<p><img src="/images/TestNG-Suite6.png"></p>
+<p>Output of the above code will be like this:</p>
 
-<p>The above test will execute only those tests, which are mentioned in the testng.xml. The rest of the test cases under ‘automationFramework’ package will remain untouched.</p>
+<p><img src="/images/TestNG-Annotations-1.png"></p>
+
+<p>It is clearly visible that the @Suite annotation is the very first and the very lastly executed. Then @Test followed by @Class. Now if you notice, the @Method has executed twice. As @Test is a method in the class, hence @Method will always executed for each @Test method.</p>
+
+<h3>Test Case Grouping</h3>
+
+<p>‘Groups‘ is one more annotation of TestNG which can be used in the execution of multiple tests. Let’s say you have hundred tests of class vehicle and in it ten method of car, ten method of scooter and so on. You probably like to run all the scooter tests together in a batch. And you want all to be in a single test suite. With the help of grouping you can easily overcome this situation.</p>
+
+<h4>How to do it…</h4>
+
+<p>1) Create two methods for Car, two methods for Scooter and one method in conjunction with Car &amp; Sedan Car.</p>
+
+<p>2) Group them separately with using  (groups = { ” Group Name” })</p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import org.testng.annotations.Test;</p>
+
+<p>public class Grouping {
+  @Test (groups = { &ldquo;Car&rdquo; })
+  public void Car1() {</p>
+
+<pre><code>  System.out.println("Batch Car - Test car 1");
+</code></pre>
+
+<p>  }
+  @Test (groups = { &ldquo;Car&rdquo; })
+  public void Car2() {</p>
+
+<pre><code>  System.out.println("Batch Car - Test car 2");
+</code></pre>
+
+<p>  }
+  @Test (groups = { &ldquo;Scooter&rdquo; })
+  public void Scooter1() {</p>
+
+<pre><code>  System.out.println("Batch Scooter - Test scooter 1");
+</code></pre>
+
+<p>  }
+  @Test (groups = { &ldquo;Scooter&rdquo; })
+  public void Scooter2() {</p>
+
+<pre><code>  System.out.println("Batch Scooter - Test scooter 2");
+</code></pre>
+
+<p>  }
+  @Test (groups = { &ldquo;Car&rdquo;, &ldquo;Sedan Car&rdquo; })
+  public void Sedan1() {</p>
+
+<pre><code>  System.out.println("Batch Sedan Car - Test sedan 1");
+</code></pre>
+
+<p>  }
+}</p>
+
+<p>```</p>
+
+<p>3) Create a testng xml like this:</p>
+
+<p>```
+<suite name="Suite"></p>
+
+<pre><code>&lt;test name="Practice Grouping"&gt;
+    &lt;groups&gt;
+    &lt;run&gt;
+    &lt;include name="Car" /&gt;
+    &lt;/run&gt;
+&lt;/groups&gt;
+&lt;classes&gt;
+    &lt;class name="automationFramework.Grouping" /&gt;
+&lt;/classes&gt;
+&lt;/test&gt;
+</code></pre>
+
+<p></suite></p>
+
+<p>```</p>
+
+<p>4) Run the test by right click on the testng.xml file and select Run As > TestNG Suite. Output will be like this in TestNg console:</p>
+
+<p><img src="/images/TestNG-Grouping-1.png"></p>
+
+<p> Note: We have just call the group ‘Car’ from the xml and it also executed the test for Sedan Car, as we have mentioned the ‘Car’ as well while declaring the group of Sedan Car.</p>
+
+<p>Clubbing of groups is also possible, take a look at the below xml:</p>
+
+<p>```</p>
+
+<p><suite name="Suite">
+   <test name="Practice Grouping"></p>
+
+<pre><code>  &lt;groups&gt;
+     &lt;define name="All"&gt;
+         &lt;include name="Car"/&gt;
+         &lt;include name="Scooter"/&gt;
+     &lt;/define&gt;
+    &lt;run&gt;
+         &lt;include name="All"/&gt;
+    &lt;/run&gt;
+ &lt;/groups&gt;
+ &lt;classes&gt;
+      &lt;class name="automationFramework.Grouping" /&gt;
+&lt;/classes&gt;
+</code></pre>
+
+<p>   </test>
+</suite></p>
+
+<p>```</p>
+
+<p>You can see that we have created a new Group with the name ‘All’ and include other groups in it. Then simply called the newly created group for execution. The output will be like this:</p>
+
+<p><img src="/images/TestNG-Grouping-2.png"></p>
+
+<h3>Dependent Test</h3>
+
+<p>Sometimes, you may need to invoke methods in a Test case in a particular order or you want to share some data and state between methods. This kind of dependency is supported by TestNG as it supports the declaration of explicit dependencies between test methods.</p>
+
+<p>TestNG allows you to specify dependencies either with:</p>
+
+<p>Using attributes dependsOnMethods in @Test annotations OR</p>
+
+<p>Using attributes dependsOnGroups in @Test annotations.</p>
+
+<p>Take a look over the below example:</p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import org.testng.annotations.Test;</p>
+
+<p>public class Dependent {
+  @Test (dependsOnMethods = { &ldquo;OpenBrowser&rdquo; })
+  public void SignIn() {</p>
+
+<pre><code>  System.out.println("This will execute second (SignIn)");
+</code></pre>
+
+<p>  }
+  @Test
+  public void OpenBrowser() {</p>
+
+<pre><code>  System.out.println("This will execute first (Open Browser)");
+</code></pre>
+
+<p>  }
+  @Test (dependsOnMethods = { &ldquo;SignIn&rdquo; })
+  public void LogOut() {</p>
+
+<pre><code>  System.out.println("This will execute third (Log Out)");
+</code></pre>
+
+<p>  }</p>
+
+<p>```</p>
+
+<p>The output will be like this:</p>
+
+<p><img src="/images/TestNG-Dependent1.png"></p>
 ]]></content>
   </entry>
   

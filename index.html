@@ -9,7 +9,7 @@
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="Create new Project Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with &hellip;">
+  <meta name="description" content="Page Object Model | POM Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,187 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Selenium Automation Framework : Page Object Model</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T16:03:08+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Page Object Model | POM</h2>
+
+<p>Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is used. Duplicated code could be caused by duplicated functionality and this will result in duplicated usage of locators. The disadvantage of duplicated code is that the project is less maintainable. If some locator will change, you have to walk through the whole test code to adjust locators where necessary. By using the page object model we can make non-brittle test code and reduce or eliminate duplicate test code. Beside of that it improves the readability and allows us to create interactive documentation. Last but not least, we can create tests with less keystroke. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.</p>
+
+<p>Note : We will try to create Login Page follow website <a href="https://facebook.com">Facebook</a></p>
+
+<h3>How to do it</h3>
+
+<ol>
+<li>Create a ‘New Package’ file and name it as ‘pageObjects’, by right click on the Project and select New > Package. We will be creating different packages for Page Objects, Utilities, Test Data, Test Cases and Modular actions. It is always recommended to use this structure, as it is easy to understand, easy to use and easy to maintain.</li>
+</ol>
+
+
+<p><img src="/images/pom-1.png"></p>
+
+<p><img src="/images/pom-2.png"></p>
+
+<p><img src="/images/pom-3.png"></p>
+
+<ol>
+<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is LogIn Page.</li>
+</ol>
+
+
+<p><img src="/images/pom-4.png"></p>
+
+<p><img src="/images/pom-5.png"></p>
+
+<ol>
+<li>Open URL : <a href="Https://facebook.com">Https://facebook.com</a> . Wait for page loading then we will use firebug to find the location elements of form login Facebook.</li>
+</ol>
+
+
+<p><img src="/images/pom-5.png"></p>
+
+<p>3.Now create a Static Method for each Element (Object) in the Login Page. Each method will have an Argument (driver) and a Return value (element).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.pageObject;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.WebElement;
+</span><span class='line'>
+</span><span class='line'>import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+</span><span class='line'>
+</span><span class='line'>public class LoginPage {
+</span><span class='line'>  
+</span><span class='line'>   /**
+</span><span class='line'>   * WebElement element 
+</span><span class='line'>   */
+</span><span class='line'>  private static WebElement element = null;
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @return let driver load the login page of facebook
+</span><span class='line'>   * @throws InterruptedException
+</span><span class='line'>   */
+</span><span class='line'>  public static WebDriver loadPage(WebDriver driver) {
+</span><span class='line'>      driver.get("https://facebook.com");
+</span><span class='line'>      return driver;
+</span><span class='line'>  }
+</span><span class='line'>   
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * 
+</span><span class='line'>   * @return the textbox username of login form facebook
+</span><span class='line'>   */
+</span><span class='line'>  public static WebElement txtbx_UserName(WebDriver driver) throws ElementNotFoundException{
+</span><span class='line'>      element = driver.findElement(By.id("email"));
+</span><span class='line'>      return element;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @return the textbox passwork of login form facebook
+</span><span class='line'>   */
+</span><span class='line'>  public static WebElement txtbx_Password(WebDriver driver) throws ElementNotFoundException{
+</span><span class='line'>      element = driver.findElement(By.id("password"));
+</span><span class='line'>      return element;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @return the button login of login form facebook
+</span><span class='line'>   */
+</span><span class='line'>  public static WebElement btn_LogIn(WebDriver driver) throws ElementNotFoundException{
+</span><span class='line'>      element = driver.findElement(By.id("loginbutton"));
+</span><span class='line'>      return element;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1867,196 +2048,6 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/testng-framework-first-test-case-with-testng/">TestNG Framework : First Test Case With TestNG</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T11:09:19+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>First Test case with TestNG</h2>
-
-<p>Steps to follow:</p>
-
-<p>1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next.</p>
-
-<p>Or</p>
-
-<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
-
-<p><img src="/images/TestNG-FTC-1.png"></p>
-
-<p>2) If your project is set up and you have selected the Test Case folder before creating TestNG class then the source folder and the package name will be prepopullated on the form. Set class name as ‘TestNG‘.
-Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finish. That’s it.</p>
-
-<p><img src="/images/TestNG-FTC-2.png"></p>
-
-<p>3) Now it will display the newly created TestNg class under the Test Case package(folder). TestNG class will look like the image below with displaying three empty methods. One method f() by default and before &amp; after method, as selected during the creation of the class.</p>
-
-<p><img src="/images/TestNG-FTC-3.png"></p>
-
-<p>4) Project explorer will look like this with TestNG class.</p>
-
-<p><img src="/images/TestNG-FTC-3.png"></p>
-
-<p>Now it is the time to write the first TestNG test case.</p>
-
-<p>5) Let’s take an example of First Test Case and divide the test case in to three parts .</p>
-
-<p>@BeforeMethod : Launch Firefox and direct it to the Base URL</p>
-
-<p>@Test : Enter Username &amp; Password to Login, Print console message</p>
-
-<p>@AfterMethod : Close Firefox browser</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>import org.openqa.selenium.By;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>import org.testng.annotations.BeforeMethod;
-</span><span class='line'>import org.testng.annotations.AfterMethod;
-</span><span class='line'>
-</span><span class='line'>public class TestNG {
-</span><span class='line'>  public WebDriver driver;
-</span><span class='line'>
-</span><span class='line'>  @Test
-</span><span class='line'>  public void main() {
-</span><span class='line'>  // Find the element that's ID attribute is 'account'(My Account)
-</span><span class='line'>      driver.findElement(By.id("account")).click();
-</span><span class='line'>      // Find the element that's ID attribute is 'log' (Username)
-</span><span class='line'>      // Enter Username on the element found by above desc.
-</span><span class='line'>      driver.findElement(By.id("email")).sendKeys("yourusername");
-</span><span class='line'>      // Find the element that's ID attribute is 'pwd' (Password)
-</span><span class='line'>      // Enter Password on the element found by the above desc.
-</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys("yourpassword");
-</span><span class='line'>      // Now submit the form. WebDriver will find the form for us from the element
-</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
-</span><span class='line'>      // Print a Log In message to the screen
-</span><span class='line'>      System.out.println(" Login Successfully");
-</span><span class='line'>  }
-</span><span class='line'>  @BeforeMethod
-</span><span class='line'>  public void beforeMethod() {
-</span><span class='line'>    // Create a new instance of the Firefox driver
-</span><span class='line'>      driver = new FirefoxDriver();
-</span><span class='line'>      //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'>      //Launch the Online Store Website
-</span><span class='line'>      driver.get("https://www.facebook.com/");
-</span><span class='line'>  }
-</span><span class='line'>
-</span><span class='line'>  @AfterMethod
-</span><span class='line'>  public void afterMethod() {
-</span><span class='line'>    // Close the driver
-</span><span class='line'>      driver.quit();
-</span><span class='line'>  }
-</span><span class='line'>
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>6) Run the test by right click on the test case script and select Run As > TestNG Test.</p>
-
-<p><img src="/images/TestNG-FTC-5.png"></p>
-
-<h4>Results of running the Testng Test Case</h4>
-
-<p>7) Give it few minutes to complete the execution, once it is finished the results will look like this in the TestNg Result window.</p>
-
-<p><img src="/images/TestNG-FTC-6.png"></p>
-
-<p>It displayed ‘passed : 1′. This means test is successful and  Passed.</p>
-
-<p>There are 3 sub tabs. “All Tests”, “Failed Tests” and “Summary”. Just click “All Tests” to see what is there.</p>
-
-<p><img src="/images/TestNG-FTC-7.png"></p>
-
-<p>As you see, there is information of which test cases are executed and their duration. Take look to other tabs. Better than Junit right?</p>
-
-<p>8) TestNG also produce HTML reports. To access those reports go to the Project directory and open test-output folder.</p>
-
-<p><img src="/images/TestNG-FTC-8.png"></p>
-
-<p>9) TestNG also produce ‘index.html‘ report and it resides in the same test-output folder. This reports gives the link to all the different component of the TestNG reports like Groups &amp; Reporter Output. On clicking these will display detailed descriptions of execution. In the advance chapter of TestNG we will go though each of the TestNG topics.</p>
-
-<p><img src="/images/TestNG-FTC-10.png"></p>
-
-<p><img src="/images/TestNG-FTC-11.png"></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -2072,6 +2063,10 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Selenium Automation Framework : Page Object Model</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/26/selenium-automation-framework-create-new-project/">Selenium Automation Framework : Create New Project</a>
       </li>
     
@@ -2085,10 +2080,6 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
     
       <li class="post">
         <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">TestNG Framework : Multi Browser and Parallel Testing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/26/testng-framework-parameters-and-data-provider/">TestNG Framework : Parameters and Data Provider</a>
       </li>
     
   </ul>

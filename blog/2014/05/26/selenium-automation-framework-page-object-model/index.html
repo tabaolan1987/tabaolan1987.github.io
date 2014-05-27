@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Webdriver : Browser Navigation Commands - Ta Bao Lan</title>
+  <title>Selenium Automation Framework : Page Object Model - Ta Bao Lan</title>
   <meta name="author" content="Ta Bao Lan">
 
   
-  <meta name="description" content="WebDriver Browser Navigation Commands The navigate interface exposes the ability to move backwards and forwards in your browser’s history but &hellip;">
+  <meta name="description" content="Page Object Model | POM Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-browser-navigation-commands">
+  <link rel="canonical" href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ta Bao Lan" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Webdriver : Browser Navigation Commands</h1>
+      <h1 class="entry-title">Selenium Automation Framework : Page Object Model</h1>
     
     
       <p class="meta">
@@ -96,60 +96,49 @@
   
 
 
-<time datetime="2014-05-26T08:53:47+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+<time datetime="2014-05-26T16:03:08+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>WebDriver Browser Navigation Commands</h2>
+<div class="entry-content"><h2>Page Object Model | POM</h2>
 
-<p>The navigate interface exposes the ability to move backwards and forwards in your browser’s history but navigate().to() and get() do exactly the same thing. One’s just a lot easier to type than the other.</p>
+<p>Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is used. Duplicated code could be caused by duplicated functionality and this will result in duplicated usage of locators. The disadvantage of duplicated code is that the project is less maintainable. If some locator will change, you have to walk through the whole test code to adjust locators where necessary. By using the page object model we can make non-brittle test code and reduce or eliminate duplicate test code. Beside of that it improves the readability and allows us to create interactive documentation. Last but not least, we can create tests with less keystroke. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.</p>
 
-<h3>To Command</h3>
+<p>Note : We will try to create Login Page follow website <a href="https://facebook.com">Facebook</a></p>
 
-<p>Purpose : This command is use to navigate on specific page or URL in between the  test Command : driver.navigate().to(URL); Parameters : url – The URL to load. It is best to use a fully qualified URL.</p>
+<h3>How to do it</h3>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().to("http://www.gooogle.com");</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Forward Command</h3>
-
-<p>Purpose : This command is use to go on to next page like browser’s forward button.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().forward();</span></code></pre></td></tr></table></div></figure>
+<ol>
+<li>Create a ‘New Package’ file and name it as ‘pageObjects’, by right click on the Project and select New > Package. We will be creating different packages for Page Objects, Utilities, Test Data, Test Cases and Modular actions. It is always recommended to use this structure, as it is easy to understand, easy to use and easy to maintain.</li>
+</ol>
 
 
-<h3>Back Command</h3>
+<p><img src="/images/pom-1.png"></p>
 
-<p>Purpose : This command is use to go back to previous page like browser’s back button.</p>
+<p><img src="/images/pom-2.png"></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().back();</span></code></pre></td></tr></table></div></figure>
+<p><img src="/images/pom-3.png"></p>
+
+<ol>
+<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is LogIn Page.</li>
+</ol>
 
 
-<h3>Practice Exercise</h3>
+<p><img src="/images/pom-4.png"></p>
 
-<p>1) Launch new Browser</p>
+<p><img src="/images/pom-5.png"></p>
 
-<p>2) Open Selenium docs website</p>
+<ol>
+<li>Open URL : <a href="Https://facebook.com">Https://facebook.com</a> . Wait for page loading then we will use firebug to find the location elements of form login Facebook.</li>
+</ol>
 
-<p>3) Click on About link ( On top navigation)</p>
 
-<p>4) Come back to Home page (Use ‘Back’ command)</p>
+<p><img src="/images/pom-5.png"></p>
 
-<p>5) Again go back to About page (This time use ‘Forward’ command)</p>
-
-<p>6) Again come back to Home page (This time use ‘To’ command)</p>
-
-<p>7) Refresh the Browser (Use ‘Refresh’ command)</p>
-
-<p>8) Close the Browser</p>
-
-<h4>Solution</h4>
+<p>3.Now create a Static Method for each Element (Object) in the Login Page. Each method will have an Argument (driver) and a Return value (element).</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -191,47 +180,74 @@
 <span class='line-number'>38</span>
 <span class='line-number'>39</span>
 <span class='line-number'>40</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import java.util.concurrent.TimeUnit;
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.pageObject;
 </span><span class='line'>
 </span><span class='line'>import org.openqa.selenium.By;
 </span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.openqa.selenium.WebElement;
 </span><span class='line'>
-</span><span class='line'>public class PracticeNavigationCommands {
-</span><span class='line'>  private static WebDriver driver = null;
-</span><span class='line'>  public static void main(String[] args) {
+</span><span class='line'>import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 </span><span class='line'>
-</span><span class='line'>      // Create a new instance of the Firefox driver
-</span><span class='line'>      driver = new FirefoxDriver();
-</span><span class='line'>
-</span><span class='line'>      // Open Selenium website
-</span><span class='line'>      driver.get("http://docs.seleniumhq.org/");
-</span><span class='line'>
-</span><span class='line'>      // Put an Implicit wait on driver
-</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'>
-</span><span class='line'>      // Click on About link
-</span><span class='line'>        driver.findElement(By.Xpath("//a[contains(@href, '/about/')]")).click();
-</span><span class='line'>
-</span><span class='line'>      // Go back to Home Page
-</span><span class='line'>      driver.navigate().back();
-</span><span class='line'>
-</span><span class='line'>      // Go forward to About page
-</span><span class='line'>        driver.navigate().forward();
-</span><span class='line'>
-</span><span class='line'>      // Go back to Home page
-</span><span class='line'>        driver.navigate().to("http://docs.seleniumhq.org/");
-</span><span class='line'>
-</span><span class='line'>      // Refresh browser
-</span><span class='line'>      driver.navigate().refresh();
-</span><span class='line'>
-</span><span class='line'>      // Close browser
-</span><span class='line'>      driver.close();
+</span><span class='line'>public class LoginPage {
+</span><span class='line'>  
+</span><span class='line'>   /**
+</span><span class='line'>   * WebElement element 
+</span><span class='line'>   */
+</span><span class='line'>  private static WebElement element = null;
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @return let driver load the login page of facebook
+</span><span class='line'>   * @throws InterruptedException
+</span><span class='line'>   */
+</span><span class='line'>  public static WebDriver loadPage(WebDriver driver) {
+</span><span class='line'>      driver.get("https://facebook.com");
+</span><span class='line'>      return driver;
 </span><span class='line'>  }
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>   
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * 
+</span><span class='line'>   * @return the textbox username of login form facebook
+</span><span class='line'>   */
+</span><span class='line'>  public static WebElement txtbx_UserName(WebDriver driver) throws ElementNotFoundException{
+</span><span class='line'>      element = driver.findElement(By.id("email"));
+</span><span class='line'>      return element;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @return the textbox passwork of login form facebook
+</span><span class='line'>   */
+</span><span class='line'>  public static WebElement txtbx_Password(WebDriver driver) throws ElementNotFoundException{
+</span><span class='line'>      element = driver.findElement(By.id("password"));
+</span><span class='line'>      return element;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver
+</span><span class='line'>   * @return the button login of login form facebook
+</span><span class='line'>   */
+</span><span class='line'>  public static WebElement btn_LogIn(WebDriver driver) throws ElementNotFoundException{
+</span><span class='line'>      element = driver.findElement(By.id("loginbutton"));
+</span><span class='line'>      return element;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
@@ -255,12 +271,12 @@
   
 
 
-<time datetime="2014-05-26T08:53:47+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+<time datetime="2014-05-26T16:03:08+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/webdriver/'>Webdriver</a>
+    <a class='category' href='/blog/categories/selenium-framework/'>Selenium-Framework</a>
   
 </span>
 
@@ -269,7 +285,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-browser-navigation-commands/" data-via="" data-counturl="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-browser-navigation-commands/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model/" data-via="" data-counturl="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model/" >Tweet</a>
   
   
   
@@ -278,10 +294,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/05/23/webdriver-element-commands/" title="Previous Post: Webdriver : Element Commands">&laquo; Webdriver : Element Commands</a>
+        <a class="basic-alignment left" href="/blog/2014/05/26/selenium-automation-framework-create-new-project/" title="Previous Post: Selenium Automation Framework : Create New Project">&laquo; Selenium Automation Framework : Create New Project</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/05/26/webdriver-switch-window-commands/" title="Next Post: Webdriver : Switch Window Commands">Webdriver : Switch Window Commands &raquo;</a>
       
     </p>
   </footer>
