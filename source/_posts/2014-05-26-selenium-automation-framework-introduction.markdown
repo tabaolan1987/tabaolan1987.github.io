@@ -41,3 +41,11 @@ Test engineers are encapsulated from the complexities and critical aspects of th
 
 Establish the developed libraries across the organization/project team/product team, i.e. publish the library and provide access rights. Utilities/components shared across the team. Usage of available libraries. Minimized effort for repeated regression cycle.
 
+###Class Diagram
+
+{% img /images/diagram.png%}
+
+What does this look like in code? How would we best accomplish this task? Well, that depends on what you are doing. For example, maybe you need to test 5 different types of projects, or maybe you need to test same page differently each time. Either way, as a coding standard, you should always design classes with a specific purpose. Anything that is shared should go into a base class for common functionality.
+
+
+

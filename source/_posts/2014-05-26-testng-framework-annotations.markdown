@@ -3,7 +3,7 @@ layout: post
 title: "TestNG Framework : Annotations , Groups and OnDepends"
 date: 2014-05-26 11:35:51 +0700
 comments: true
-categories: 
+categories: TestNG-Framework
 ---
 
 ##TestNG Annotations, Groups & OnDepends
