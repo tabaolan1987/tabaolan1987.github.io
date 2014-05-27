@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-27T09:57:42+07:00</updated>
+  <updated>2014-05-27T10:06:17+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -51,7 +51,7 @@
 </ol>
 
 
-<p><img src="http://tabaolan1987.github.io/images/pom-5.png"></p>
+<p><img src="http://tabaolan1987.github.io/images/pom-6.png"></p>
 
 <p>3.Now create a Static Method for each Element (Object) in the Login Page. Each method will have an Argument (driver) and a Return value (element).</p>
 
@@ -164,6 +164,8 @@
 </span><span class='line'>  }
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
+
+<h3>We are finish to create a Login Page follow Page Object Model . Now you will need to create an Action Login , please <a href="">click here</a></h3>
 ]]></content>
   </entry>
   
@@ -415,6 +417,12 @@ By implementing the appropriate automated testing framework, enterprises can sig
 <h4>Implement and Maximize Re-Usability</h4>
 
 <p>Establish the developed libraries across the organization/project team/product team, i.e. publish the library and provide access rights. Utilities/components shared across the team. Usage of available libraries. Minimized effort for repeated regression cycle.</p>
+
+<h3>Class Diagram</h3>
+
+<p><img src="http://tabaolan1987.github.io/images/diagram.png"></p>
+
+<p>What does this look like in code? How would we best accomplish this task? Well, that depends on what you are doing. For example, maybe you need to test 5 different types of projects, or maybe you need to test same page differently each time. Either way, as a coding standard, you should always design classes with a specific purpose. Anything that is shared should go into a base class for common functionality.</p>
 ]]></content>
   </entry>
   
