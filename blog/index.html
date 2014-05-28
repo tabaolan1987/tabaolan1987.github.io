@@ -1,24 +1,110 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
-  <title><![CDATA[Ta Bao Lan]]></title>
-  <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
-  <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-28T14:09:50+07:00</updated>
-  <id>http://tabaolan1987.github.io/</id>
-  <author>
-    <name><![CDATA[Ta Bao Lan]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
   
-  <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Modular Driven Framework]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/"/>
-    <updated>2014-05-27T10:11:21+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework</id>
-    <content type="html"><![CDATA[<h2>Modular Driven Framework</h2>
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Ta Bao Lan</title>
+    <meta name="author" content="Ta Bao Lan">
+    
+    <meta name="description" content="Selenium Automation Framework : Modular Driven Framework May 27th, 2014 Selenium-Framework Modular Driven Framework In most of the web application &hellip;">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://tabaolan1987.github.io/blog">
+    
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="/atom.xml" rel="alternate" title="Ta Bao Lan" type="application/atom+xml">
+  </head>
+
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item two-fifths lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">Ta Bao Lan</a>
+</div>
+
+<div class="grid__item three-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">Blog</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          
+
+  
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Selenium Automation Framework : Modular Driven Framework</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-05-27T10:11:21+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 27<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/selenium-framework/'>Selenium-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Modular Driven Framework</h2>
 
 <p>In most of the web application we have few set of actions which are always executed in the series of actions. Rather than writing those actions again and again in our test, we can club those actions in to a method and then calling that method in our test script. Modularity avoids duplicacy of code. In future if there is any change in the series of action, all you have to do is to make changes in your main modular method script. No test case will be impacted with the change.</p>
 
@@ -28,17 +114,17 @@
 
 <p>1) Create a &lsquo;New Package&rsquo; file and name it as &lsquo;userAction&rsquo;, by right click on the Project and select New > Package. We will be creating different packages for Page Objects, Utilities, Test Data, Test Cases and Modular actions. It is always recommended to use this structure, as it is easy to understand, easy to use and easy to maintain.</p>
 
-<p><img src="http://tabaolan1987.github.io/images/pom-1.png"></p>
+<p><img src="/images/pom-1.png"></p>
 
-<p><img src="http://tabaolan1987.github.io/images/user-action-1.png"></p>
+<p><img src="/images/user-action-1.png"></p>
 
-<p><img src="http://tabaolan1987.github.io/images/user-action-2.png"></p>
+<p><img src="/images/user-action-2.png"></p>
 
 <p>2) Create &lsquo;New Class&rsquo; and name it as SignIn by right click on package &lsquo;userAction&rsquo; and select New > Class. It will add new class &lsquo;SignIn&rsquo; under package &lsquo;userAction&rsquo;.</p>
 
-<p><img src="http://tabaolan1987.github.io/images/user-action-3.png"></p>
+<p><img src="/images/user-action-3.png"></p>
 
-<p><img src="http://tabaolan1987.github.io/images/user-action-4.png"></p>
+<p><img src="/images/user-action-4.png"></p>
 
 <p>3) Now create a Public Static Void Method and name it as Execute  and club the following steps in to it:</p>
 
@@ -99,9 +185,9 @@
 
 <p>4) Create &lsquo;New Class&rsquo; and name it as PostStatus by right click on package &lsquo;userAction&rsquo; and select New > Class. It will add new class &lsquo;PostStatus&rsquo; under package &lsquo;userAction&rsquo;.</p>
 
-<p><img src="http://tabaolan1987.github.io/images/user-action-3.png"></p>
+<p><img src="/images/user-action-3.png"></p>
 
-<p><img src="http://tabaolan1987.github.io/images/user-action-5.png"></p>
+<p><img src="/images/user-action-5.png"></p>
 
 <p>5) Now create a Public Static Void Method and name it as Execute  and club the following steps in to it:</p>
 
@@ -151,15 +237,57 @@
 
 
 <h3>We are complete to create the actions next we will follow to create the first test with TestNG</h3>
-]]></content>
-  </entry>
+
+
+  </article>
+  <hr>
+
   
-  <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Page Object Model]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model/"/>
-    <updated>2014-05-26T16:03:08+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model</id>
-    <content type="html"><![CDATA[<h2>Page Object Model | POM</h2>
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Selenium Automation Framework : Page Object Model</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-05-26T16:03:08+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/selenium-framework/'>Selenium-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Page Object Model | POM</h2>
 
 <p>Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is used. Duplicated code could be caused by duplicated functionality and this will result in duplicated usage of locators. The disadvantage of duplicated code is that the project is less maintainable. If some locator will change, you have to walk through the whole test code to adjust locators where necessary. By using the page object model we can make non-brittle test code and reduce or eliminate duplicate test code. Beside of that it improves the readability and allows us to create interactive documentation. Last but not least, we can create tests with less keystroke. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.</p>
 
@@ -172,27 +300,27 @@
 </ol>
 
 
-<p><img src="http://tabaolan1987.github.io/images/pom-1.png"></p>
+<p><img src="/images/pom-1.png"></p>
 
-<p><img src="http://tabaolan1987.github.io/images/pom-2.png"></p>
+<p><img src="/images/pom-2.png"></p>
 
-<p><img src="http://tabaolan1987.github.io/images/pom-3.png"></p>
+<p><img src="/images/pom-3.png"></p>
 
 <ol>
 <li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is Login Page.</li>
 </ol>
 
 
-<p><img src="http://tabaolan1987.github.io/images/pom-4.png"></p>
+<p><img src="/images/pom-4.png"></p>
 
-<p><img src="http://tabaolan1987.github.io/images/pom-5.png"></p>
+<p><img src="/images/pom-5.png"></p>
 
 <ol>
 <li>Open URL : <a href="Https://facebook.com">Https://facebook.com</a> . Wait for page loading then we will use firebug to find the location elements of form login Facebook.</li>
 </ol>
 
 
-<p><img src="http://tabaolan1987.github.io/images/pom-6.png"></p>
+<p><img src="/images/pom-6.png"></p>
 
 <p>3.Now create a Static Method for each Element (Object) in the Login Page. Each method will have an Argument (driver) and a Return value (element).</p>
 
@@ -311,16 +439,16 @@
 </ol>
 
 
-<p><img src="http://tabaolan1987.github.io/images/pom-1.png"></p>
+<p><img src="/images/pom-1.png"></p>
 
-<p><img src="http://tabaolan1987.github.io/images/pom-7.png"></p>
+<p><img src="/images/pom-7.png"></p>
 
 <ol>
 <li>Open URL : <a href="Https://facebook.com">Https://facebook.com</a> &ndash;> login in &ndash; use xpath to find element location (textarena to post status and button for post).</li>
 </ol>
 
 
-<p><img src="http://tabaolan1987.github.io/images/pom-8.png"></p>
+<p><img src="/images/pom-8.png"></p>
 
 <p>8.Now create a Static Method for each Element (Object) in the Home Page. Each method will have an Argument (driver) and a Return value (element).</p>
 
@@ -389,15 +517,57 @@
 
 
 <h3>We are finish to create a Login Page , Home Page follow Page Object Model . Now you will need to create an Action in Java base on User Define, please <a href="">click here</a></h3>
-]]></content>
-  </entry>
+
+
+  </article>
+  <hr>
+
   
-  <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Create New Project]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project/"/>
-    <updated>2014-05-26T15:01:18+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project</id>
-    <content type="html"><![CDATA[<h2>Create new Project</h2>
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/05/26/selenium-automation-framework-create-new-project/">Selenium Automation Framework : Create New Project</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-05-26T15:01:18+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/selenium-framework/'>Selenium-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Create new Project</h2>
 
 <p>Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with Continuous Integration.</p>
 
@@ -405,23 +575,23 @@
 
 <h4>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h4>
 
-<p><img src="http://tabaolan1987.github.io/images/c-maven-1.png"></p>
+<p><img src="/images/c-maven-1.png"></p>
 
 <h4>Step 2 : Find Maven &ndash;> Choose Maven Project &ndash;> Click &lsquo;Next&rsquo; button</h4>
 
-<p><img src="http://tabaolan1987.github.io/images/c-maven-2.png"></p>
+<p><img src="/images/c-maven-2.png"></p>
 
 <h4>Step 3 : Tick on  &ldquo;Create a simple project&rdquo; , &ldquo;Use default workspace&rdquo;</h4>
 
-<p><img src="http://tabaolan1987.github.io/images/c-maven-3.png"></p>
+<p><img src="/images/c-maven-3.png"></p>
 
 <h4>Step 4 : Enter value for &ldquo;Group ID&rdquo; and  &ldquo;Artifact ID&rdquo; . Then click &ldquo;Finish&rdquo;.</h4>
 
-<p><img src="http://tabaolan1987.github.io/images/c-maven-4.png"></p>
+<p><img src="/images/c-maven-4.png"></p>
 
 <h4>Step 5 : The new Project &ldquo;Selenium-Automation-Framework&rdquo; will show in the left menu of Eclipse.</h4>
 
-<p><img src="http://tabaolan1987.github.io/images/c-maven-5.png"></p>
+<p><img src="/images/c-maven-5.png"></p>
 
 <h2>Configuration Project</h2>
 
@@ -429,7 +599,7 @@
 
 <h4>Step 1 : Open project &ndash;> Double click to file &ldquo;pom.xml&rdquo;</h4>
 
-<p><img src="http://tabaolan1987.github.io/images/c-maven-6.png"></p>
+<p><img src="/images/c-maven-6.png"></p>
 
 <h4>Stemp 2 : Copy this code and paste into your pom.xml file</h4>
 
@@ -546,28 +716,70 @@
 
 <h4>Step 3 : Right click into project and choose Maven &ndash;> Update project.</h4>
 
-<p><img src="http://tabaolan1987.github.io/images/c-maven-7.png"></p>
+<p><img src="/images/c-maven-7.png"></p>
 
 <h4>Step 4 : Click &ldquo;Ok&rdquo; button to let Maven download jar files.</h4>
 
-<p><img src="http://tabaolan1987.github.io/images/c-maven-8.png"></p>
+<p><img src="/images/c-maven-8.png"></p>
 
 <h4>Step 5 : Open the &ldquo;Maven dependencies&rdquo; to see jar file are available in your project.</h4>
 
-<p><img src="http://tabaolan1987.github.io/images/c-maven-9.png"></p>
+<p><img src="/images/c-maven-9.png"></p>
 
 <h3>Note : you will need to have an internet in your laptop to allow the download of maven.</h3>
 
 <p>Now the setup and configuration is done , you are able to start writing Selenium Automation Framework.</p>
-]]></content>
-  </entry>
+
+
+  </article>
+  <hr>
+
   
-  <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Install Maven to Eclipse]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse/"/>
-    <updated>2014-05-26T14:14:07+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse</id>
-    <content type="html"><![CDATA[<h2>Maven plugin for Eclipse</h2>
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse/">Selenium Automation Framework : Install Maven to Eclipse</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-05-26T14:14:07+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/selenium-framework/'>Selenium-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Maven plugin for Eclipse</h2>
 
 <p>You can install Maven plugin for Eclipse via update site, simply copy the above update site link address and paste it into Eclipse’s “Update” or “Install New Software” manager as explained below.</p>
 
@@ -577,7 +789,7 @@
 
 <p>Copy this link <a href="http://download.eclipse.org/technology/m2e/releases">http://download.eclipse.org/technology/m2e/releases</a> for the latest Stable Release into Eclipse and hit Enter.</p>
 
-<p><img src="http://tabaolan1987.github.io/images/maven-plugin-eclipse-1.jpeg"></p>
+<p><img src="/images/maven-plugin-eclipse-1.jpeg"></p>
 
 <p>When the site loads, select the features to install, or click the Select All button. For our requirement select “Maven Integration for Eclipse” as shown above.</p>
 
@@ -593,20 +805,62 @@
 
 <p>If you get any warning message when installing, click OK to continue.</p>
 
-<p><img src="http://tabaolan1987.github.io/images/maven-plugin-eclipse-2.jpg"></p>
+<p><img src="/images/maven-plugin-eclipse-2.jpg"></p>
 
 <p>This will take few minutes to install the Maven plugin and once done restart the Eclipse.</p>
 
-<p><img src="http://tabaolan1987.github.io/images/maven-3.jpg"></p>
-]]></content>
-  </entry>
+<p><img src="/images/maven-3.jpg"></p>
+
+
+  </article>
+  <hr>
+
   
-  <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Introduction]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-introduction/"/>
-    <updated>2014-05-26T14:07:59+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-introduction</id>
-    <content type="html"><![CDATA[<h2>Selenium Automation Framework</h2>
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-05-26T14:07:59+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/selenium-framework/'>Selenium-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Selenium Automation Framework</h2>
 
 <h3>Introduction</h3>
 
@@ -643,18 +897,60 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 <h3>Class Diagram</h3>
 
-<p><img src="http://tabaolan1987.github.io/images/diagram.png"></p>
+<p><img src="/images/diagram.png"></p>
 
 <p>What does this look like in code? How would we best accomplish this task? Well, that depends on what you are doing. For example, maybe you need to test 5 different types of projects, or maybe you need to test same page differently each time. Either way, as a coding standard, you should always design classes with a specific purpose. Anything that is shared should go into a base class for common functionality.</p>
-]]></content>
-  </entry>
+
+
+  </article>
+  <hr>
+
   
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework : Multi Browser and Parallel Testing]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/"/>
-    <updated>2014-05-26T12:15:47+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing</id>
-    <content type="html"><![CDATA[<h2>Multi Browser, Cross Browser &amp; Parallel Testing using TestNG</h2>
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">TestNG Framework : Multi Browser and Parallel Testing</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-05-26T12:15:47+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/testng-framework/'>TestNG-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Multi Browser, Cross Browser &amp; Parallel Testing using TestNG</h2>
 
 <p>When the time comes to turn your site from mock-up to something fully functional, you’ll want to make sure that it works great for everyone visiting your site whether they’re using Internet Explorer, Firefox, or any other browser. Testing your website with multiple combinations of browsers is known as Cross Browser testing.</p>
 
@@ -806,7 +1102,7 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 <p>4) Now it’s time to run the xml. Run the test by right click on the testng.xml file and select Run As > TestNG Suite.</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNG-MultiBrowser-1.png"></p>
+<p><img src="/images/TestNG-MultiBrowser-1.png"></p>
 
 <p>Note: TestNg will execute the test one by one. You may like to perform parallel tests, next topic will cover that.</p>
 
@@ -858,15 +1154,57 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 
 <p>Note: You may see some intermittent issues using parallel testing. I will not recommend you this rather run one by one only.</p>
-]]></content>
-  </entry>
+
+
+  </article>
+  <hr>
+
   
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework : Parameters and Data Provider]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider/"/>
-    <updated>2014-05-26T12:05:31+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider</id>
-    <content type="html"><![CDATA[<h2>TestNG Parameters &amp; Data Provider</h2>
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/05/26/testng-framework-parameters-and-data-provider/">TestNG Framework : Parameters and Data Provider</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-05-26T12:05:31+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/testng-framework/'>TestNG-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>TestNG Parameters &amp; Data Provider</h2>
 
 <h3>TestNG Parameters</h3>
 
@@ -1041,15 +1379,57 @@ By implementing the appropriate automated testing framework, enterprises can sig
 <p>Run the test by right click on the test case script and select Run As > TestNG Test. Give it few minutes to complete the execution, once it is finished the results will look like this in the TestNg Result window.</p>
 
 <p>Note: As the test data is provided two times, the above test executed two times completely.</p>
-]]></content>
-  </entry>
+
+
+  </article>
+  <hr>
+
   
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework :Reporters and Asserts ]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts/"/>
-    <updated>2014-05-26T11:55:48+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts</id>
-    <content type="html"><![CDATA[<h2>TestNG Reporters &amp; Asserts</h2>
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/05/26/testng-framework-reporters-and-asserts/">TestNG Framework :Reporters and Asserts </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-05-26T11:55:48+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/testng-framework/'>TestNG-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>TestNG Reporters &amp; Asserts</h2>
 
 <h3>TestNG Reporters</h3>
 
@@ -1163,11 +1543,11 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 <p>Your Log4j logging output will look like this:</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Reporter-1.png"></p>
+<p><img src="/images/TestNG-Reporter-1.png"></p>
 
 <p>But your Reporters log will look like this:</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Reporter-2.png"></p>
+<p><img src="/images/TestNG-Reporter-2.png"></p>
 
 <p>Log4j logging will help you to report a bug or steps taken during the test, on the other hand reporters log will help you to share the test status with leadership. As leadership is just interested in the test results, not the test steps.</p>
 
@@ -1276,15 +1656,57 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 
 <p>It also works the same way like assert true and assert fail. It will also stop the execution, if the value is not equal and carry on the execution, if the value is equal.</p>
-]]></content>
-  </entry>
+
+
+  </article>
+  <hr>
+
   
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework : Prioritizing and Sequencing]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/"/>
-    <updated>2014-05-26T11:48:09+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing</id>
-    <content type="html"><![CDATA[<h2>TestNG Prioritizing &amp; Sequencing</h2>
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/">TestNG Framework : Prioritizing and Sequencing</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-05-26T11:48:09+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/testng-framework/'>TestNG-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>TestNG Prioritizing &amp; Sequencing</h2>
 
 <h3>Multiple Tests</h3>
 
@@ -1300,12 +1722,12 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 <p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-0.png"></p>
+<p><img src="/images/TestNg-Muliple-0.png"></p>
 
 <p>2) If your project is set up and you have selected the Test Case folder before creating TestNG class then the source folder and the package name will be pre-populated on the form. Set class name as ‘TestNG‘.
 Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@AfterMethod” for now and click Finish. That’s it.</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-1.png"></p>
+<p><img src="/images/TestNg-Muliple-1.png"></p>
 
 <p>3) By default a new class will have only one @Test method. Add two more methods by yourself and put your code accordingly in methods. Code will look like:</p>
 
@@ -1367,7 +1789,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
 <p>This will enable you to execute all four tests with just one testng class. Take a look on the output.</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-3.png"></p>
+<p><img src="/images/TestNg-Muliple-3.png"></p>
 
 <p>Attention: By default, methods annotated by @Test are executed alphabetically. Take a look over the next topic to see how to prioritize @Test.</p>
 
@@ -1437,7 +1859,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
 <p>Output of the above:</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-4.png"></p>
+<p><img src="/images/TestNg-Muliple-4.png"></p>
 
 <h3>Skipping a Test Case</h3>
 
@@ -1510,16 +1932,58 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
 <p>Output of the above example:</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-5.png"></p>
-]]></content>
-  </entry>
+<p><img src="/images/TestNg-Muliple-5.png"></p>
+
+
+  </article>
+  <hr>
+
   
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework : Annotations , Groups and OnDepends]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations/"/>
-    <updated>2014-05-26T11:35:51+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations</id>
-    <content type="html"><![CDATA[<h2>TestNG Annotations, Groups &amp; OnDepends</h2>
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/05/26/testng-framework-annotations/">TestNG Framework : Annotations , Groups and OnDepends</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-05-26T11:35:51+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/testng-framework/'>TestNG-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>TestNG Annotations, Groups &amp; OnDepends</h2>
 
 <h3>TestNG Annotations</h3>
 
@@ -1684,7 +2148,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
 <p>Output of the above code will be like this:</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Annotations-1.png"></p>
+<p><img src="/images/TestNG-Annotations-1.png"></p>
 
 <p>It is clearly visible that the @Suite annotation is the very first and the very lastly executed. Then @Test followed by @Class. Now if you notice, the @Method has executed twice. As @Test is a method in the class, hence @Method will always executed for each @Test method.</p>
 
@@ -1784,7 +2248,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
 <p>4) Run the test by right click on the testng.xml file and select Run As > TestNG Suite. Output will be like this in TestNg console:</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Grouping-1.png"></p>
+<p><img src="/images/TestNG-Grouping-1.png"></p>
 
 <p> Note: We have just call the group ‘Car’ from the xml and it also executed the test for Sedan Car, as we have mentioned the ‘Car’ as well while declaring the group of Sedan Car.</p>
 
@@ -1829,7 +2293,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
 <p>You can see that we have created a new Group with the name ‘All’ and include other groups in it. Then simply called the newly created group for execution. The output will be like this:</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Grouping-2.png"></p>
+<p><img src="/images/TestNG-Grouping-2.png"></p>
 
 <h3>Dependent Test</h3>
 
@@ -1883,997 +2347,123 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
 <p>The output will be like this:</p>
 
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Dependent1.png"></p>
-]]></content>
-  </entry>
+<p><img src="/images/TestNG-Dependent1.png"></p>
+
+
+  </article>
+  <hr>
+
+
+  <div class="pagination">
+    
+      <a class="btn pull-left" href="/blog/page/2/">&larr; Older</a>
+    
+
+    
+  </div>
+
+        </div>
+
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
   
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework : Test Suite]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite/"/>
-    <updated>2014-05-26T11:28:33+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite</id>
-    <content type="html"><![CDATA[<h2>TestNG Test Suite</h2>
-
-<p>In any project, you will end up to a place where you need to execute so many test cases on a run. Running a set of test cases together is call executing a Test Suite. Those test cases can be dependent to each other or may have to be executed in a certain order. TestNg gives us the capability to manage our test execution.</p>
-
-<p>In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. This is the xml file where you will configure your test run, set test dependency, include or exclude any test, method, class or package and set priority etc.</p>
-
-<h3>How to do it…</h3>
-
-<h4>Step 1 : Create a TestNG XML</h4>
-
-<p>1) Right click on Project folder, go to New and select ‘File‘ as shown in below image.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite1.png"></p>
-
-<p>2) In New file wizard, add file name = ‘testng.xml‘ as shown in below given image and click on Finish button.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite2.png"></p>
-
-<p>3) It will add testng.xml file under your project folder.</p>
-
-<h4>Step 2 : Write xml code ?</h4>
-
-<p>Now add below given code in your testng.xml file.see the image below</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite3.png"></p>
-
-<p>Hope you have understood the xml code, as it is quite simple hierarchy:</p>
-
-<p>Very first tag is the Suite tag<suite>, under that it is the Test tag<test> and then the Class tag<classes>. You can give any name to the suite and the test but you need to provide the correct name to the <classes> tag which is a combination of your Package name and Test Case name.</p>
-
-<h4>Step 3 : Execute a testng.xml</h4>
-
-<p>Now it’s time to run the xml. Run the test by right click on the testng.xml file and select Run As > TestNG Suite.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite4.png"></p>
-
-<p>It will take few seconds to start the testng execution engine and soon you will notice that your test will run and complete. Once the execution is complete, you can view test execution result under the TestNg console.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite5.png"></p>
-
-<p>This is the one simple example of creating and running testng.xml file in eclipse.</p>
-
-<h3>Building a Test Suite</h3>
-
-<p>Now when you have learned how to build the xml, now it’s time to learn how to build a Test Suite using testng.xml. It is again not a complex task, all you need to do is to add your test cases to your xml file in <classes> tag.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite6.png"></p>
-
-<p>The above test will execute only those tests, which are mentioned in the testng.xml. The rest of the test cases under ‘automationFramework’ package will remain untouched.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework : First Test case with TestNG]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng/"/>
-    <updated>2014-05-26T11:09:19+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng</id>
-    <content type="html"><![CDATA[<h2>First Test case with TestNG</h2>
-
-<p>Steps to follow:</p>
-
-<p>1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next.</p>
-
-<p>Or</p>
-
-<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-1.png"></p>
-
-<p>2) If your project is set up and you have selected the Test Case folder before creating TestNG class then the source folder and the package name will be prepopullated on the form. Set class name as ‘TestNG‘.
-Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finish. That’s it.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-2.png"></p>
-
-<p>3) Now it will display the newly created TestNg class under the Test Case package(folder). TestNG class will look like the image below with displaying three empty methods. One method f() by default and before &amp; after method, as selected during the creation of the class.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-3.png"></p>
-
-<p>4) Project explorer will look like this with TestNG class.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-3.png"></p>
-
-<p>Now it is the time to write the first TestNG test case.</p>
-
-<p>5) Let’s take an example of First Test Case and divide the test case in to three parts .</p>
-
-<p>@BeforeMethod : Launch Firefox and direct it to the Base URL</p>
-
-<p>@Test : Enter Username &amp; Password to Login, Print console message</p>
-
-<p>@AfterMethod : Close Firefox browser</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>import org.openqa.selenium.By;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>import org.testng.annotations.BeforeMethod;
-</span><span class='line'>import org.testng.annotations.AfterMethod;
-</span><span class='line'>
-</span><span class='line'>public class TestNG {
-</span><span class='line'>  public WebDriver driver;
-</span><span class='line'>
-</span><span class='line'>  @Test
-</span><span class='line'>  public void main() {
-</span><span class='line'>  // Find the element that's ID attribute is 'account'(My Account)
-</span><span class='line'>      driver.findElement(By.id("account")).click();
-</span><span class='line'>      // Find the element that's ID attribute is 'log' (Username)
-</span><span class='line'>      // Enter Username on the element found by above desc.
-</span><span class='line'>      driver.findElement(By.id("email")).sendKeys("yourusername");
-</span><span class='line'>      // Find the element that's ID attribute is 'pwd' (Password)
-</span><span class='line'>      // Enter Password on the element found by the above desc.
-</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys("yourpassword");
-</span><span class='line'>      // Now submit the form. WebDriver will find the form for us from the element
-</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
-</span><span class='line'>      // Print a Log In message to the screen
-</span><span class='line'>      System.out.println(" Login Successfully");
-</span><span class='line'>  }
-</span><span class='line'>  @BeforeMethod
-</span><span class='line'>  public void beforeMethod() {
-</span><span class='line'>    // Create a new instance of the Firefox driver
-</span><span class='line'>      driver = new FirefoxDriver();
-</span><span class='line'>      //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'>      //Launch the Online Store Website
-</span><span class='line'>      driver.get("https://www.facebook.com/");
-</span><span class='line'>  }
-</span><span class='line'>
-</span><span class='line'>  @AfterMethod
-</span><span class='line'>  public void afterMethod() {
-</span><span class='line'>    // Close the driver
-</span><span class='line'>      driver.quit();
-</span><span class='line'>  }
-</span><span class='line'>
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>6) Run the test by right click on the test case script and select Run As > TestNG Test.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-5.png"></p>
-
-<h4>Results of running the Testng Test Case</h4>
-
-<p>7) Give it few minutes to complete the execution, once it is finished the results will look like this in the TestNg Result window.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-6.png"></p>
-
-<p>It displayed ‘passed : 1′. This means test is successful and  Passed.</p>
-
-<p>There are 3 sub tabs. “All Tests”, “Failed Tests” and “Summary”. Just click “All Tests” to see what is there.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-7.png"></p>
-
-<p>As you see, there is information of which test cases are executed and their duration. Take look to other tabs. Better than Junit right?</p>
-
-<p>8) TestNG also produce HTML reports. To access those reports go to the Project directory and open test-output folder.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-8.png"></p>
-
-<p>9) TestNG also produce ‘index.html‘ report and it resides in the same test-output folder. This reports gives the link to all the different component of the TestNG reports like Groups &amp; Reporter Output. On clicking these will display detailed descriptions of execution. In the advance chapter of TestNG we will go though each of the TestNG topics.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-10.png"></p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-11.png"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework : Download]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-download/"/>
-    <updated>2014-05-26T11:03:25+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-download</id>
-    <content type="html"><![CDATA[<h2>Install TestNG in Eclipse</h2>
-
-<p>It is easy to install TestNG, as it comes as a plugin for Eclipse IDE. Prerequisite for installing TestNG is your Internet connection should be up &amp; running during installation of this plugin and Eclipse IDE should be installed in your computer. Please see Download and Install Eclipse to setup Eclipse to you system.</p>
-
-<h3>Steps to follow:</h3>
-
-<p>1) Launch the Eclipse IDE and from Help menu, click “Install New Software”.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-1.png"></p>
-
-<p>2) You will see a dialog window, click “Add” button.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-2.png"></p>
-
-<p>3) Type name as you wish, lets take “TestNG” and type “<a href="http://beust.com/eclipse/%E2%80%9D">http://beust.com/eclipse/%E2%80%9D</a> as location. Click OK.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-3.png"></p>
-
-<p>4) You come back to the previous window but this time you must see TestNG option in the available software list. Just Click TestNG and press “Next” button.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-4.png"></p>
-
-<p>5) Click “I accept the terms of the license agreement” then click Finish.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-5.png"></p>
-
-<p>6) You may or may not encounter a Security warning, if in case you do just click OK.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-7.png"></p>
-
-<p>7) Click Next again on the succeeding dialog box until it prompts you to Restart the Eclipse.</p>
-
-<p>8) You are all done now, just Click Yes.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-8.png"></p>
-
-<p>9) Proceed with your workplace.</p>
-
-<p>10) After restart, verify if TestNG was indeed successfully installed. Right click on you project and see if TestNG is displayed in the opened menu.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-9.png"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework : Introduction]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-introduction/"/>
-    <updated>2014-05-26T11:00:14+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-introduction</id>
-    <content type="html"><![CDATA[<h2>TestNG Introduction</h2>
-
-<p>TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionality that make it more powerful and easier to use.</p>
-
-<p>TestNG is an open source automated testing framework; where NG of TestNG means Next Generation. TestNG is similar to JUnit but it is much more powerful than JUnit but still it’s inspired by JUnit. It is designed to be better than JUnit, especially when testing integrated classes. Pay special thanks to Cedric Beust who is the creator of TestNG.</p>
-
-<p>TestNG eliminates most of the limitations of the older framework and gives the developer the ability to write more flexible and powerful tests with help of easy annotations, grouping, sequencing &amp; parameterizing.</p>
-
-<h3>Benefits of TestNG</h3>
-
-<p>There are number of benefits of TestNG but from Selenium perspective, major advantages of TestNG are :</p>
-
-<p>1) It gives the ability to produce HTML Reports of execution</p>
-
-<p>2) Annotations made testers life easy</p>
-
-<p>3) Test cases can be Grouped &amp; Prioritized more easily</p>
-
-<p>4) Parallel testing is possible</p>
-
-<p>5) Generates Logs</p>
-
-<p>6) Data Parameteriz ation is possible</p>
-
-<h3>Test Case Writing</h3>
-
-<p>Writing a test in TestNG is quite simple and basically involves following steps:</p>
-
-<p>Step 1 – Write the business logic of the test</p>
-
-<p>Step 2 – Insert TestNG annotations in the code</p>
-
-<p>Step 3 &ndash; Add the information about your test (e.g. the class names, methods names, groups names etc…) in a testng.xml file</p>
-
-<p>Step 4 &ndash; Run TestNG</p>
-
-<h3>Annotations in TestNG</h3>
-
-<p>@BeforeSuite: The annotated method will be run before all tests in this suite have run.</p>
-
-<p>@AfterSuite: The annotated method will be run after all tests in this suite have run.</p>
-
-<p>@BeforeTest: The annotated method will be run before any test method belonging to the classes inside the tag is run.</p>
-
-<p>@AfterTest: The annotated method will be run after all the test methods belonging to the classes inside the tag have run.</p>
-
-<p>@BeforeGroups: The list of groups that this configuration method will run before. This method is guaranteed to run shortly before the first test method that belongs to any of these groups is invoked.</p>
-
-<p>@AfterGroups: The list of groups that this configuration method will run after. This method is guaranteed to run shortly after the last test method that belongs to any of these groups is invoked.</p>
-
-<p>@BeforeClass: The annotated method will be run before the first test method in the current class is invoked.</p>
-
-<p>@AfterClass: The annotated method will be run after all the test methods in the current class have been run.</p>
-
-<p>@BeforeMethod: The annotated method will be run before each test method.</p>
-
-<p>@AfterMethod: The annotated method will be run after each test method.</p>
-
-<p>@Test: The annotated method is a part of a test case.</p>
-
-<p>Benefits of using annotations</p>
-
-<p>1) TestNG identifies the methods it is interested in by looking up annotations. Hence method names are not restricted to any pattern or format.</p>
-
-<p>2) We can pass additional parameters to annotations.</p>
-
-<p>3) Annotations are strongly typed, so the compiler will flag any mistakes right away.</p>
-
-<p>4) Test classes no longer need to extend anything (such as Test Case, for JUnit 3).</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[XPath : Selenium Locators]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/xpath-locators-in-selenium/"/>
-    <updated>2014-05-26T10:48:22+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/xpath-locators-in-selenium</id>
-    <content type="html"><![CDATA[<h2>Locators in Selenium</h2>
-
-<p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
-
-<p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
-
-<h3>Different types of Locators</h3>
-
-<p>There are 8 explicit locators: id, name, identifier, dom, xpath, link, css and ui that Selenium’s commands support. I will explain just a few most important locators to avoid over dosage and any confusion.</p>
-
-<h4>ID Locator</h4>
-
-<p>Ids are the most preferred way to locate elements on a page, as each id is supposed to be unique which makes ids a very faster and reliable way to locate elements.</p>
-
-<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised.</p>
-
-<p>HTML CODE :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;form name="loginForm"&gt;Login 
-</span><span class='line'> Username: &lt;input id="username" type="text" name="login" /&gt;
-</span><span class='line'> Password: &lt;input id="password" type="password" name="password" /&gt;
-</span><span class='line'> &lt;input type="submit" name="signin" value="SignIn" /&gt;&lt;/form&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>You can easily choose the element with the help of ID locator from the above example:</p>
-
-<p>id = “username”</p>
-
-<p>id = “password”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.id("username"));
-</span><span class='line'>
-</span><span class='line'>WebElement elementPassword = driver.findElement(By.id("password"));
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Even though this is a great locator, obviously it is not realistic for all objects on a page to have ids. In some cases developers make it having non-unique ids on a page or auto-generate the ids, in both cases it should be avoided.</p>
-
-<h4>Name Locator</h4>
-
-<p>This is also an efficient way to locate an element  with name attribute, after Ids give it your second preference but likewise Ids, name attributes don’t have to be unique in a page.</p>
-
-<p>With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a  NoSuchElementException will be raised.</p>
-
-<p>Example: Let’s take the above example:</p>
-
-<p>You can easily choose the element with the help of Name locator from the above example:</p>
-
-<p>name = “login”</p>
-
-<p>name = “password”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.name("login"));
-</span><span class='line'> 
-</span><span class='line'>WebElement elementPassword = driver.findElement(By.name("password"));</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Identifier Locator</h4>
-
-<p>This selects the element with the specified @id attribute. If no match is found, then it tries to select the first element whose @name attribute is id.</p>
-
-<p>Example: Valid locator for above example is:
-identifier = “password”</p>
-
-<p>First it will try to find the locator with id = “password” if it exists, otherwise it would target name = “password”.</p>
-
-<h4>Link Locator</h4>
-
-<p>With this you can find elements of “a” tags(Link) with the link names. Use this when you know link text used within an anchor tag.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>To click this hyperlink using the anchor tag’s text, you can use the link locator:
-link=”Name of the Link”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element=driver.findElement(By.linkText("Name of the Link"));</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>DOM Locator</h4>
-
-<p>The DOM strategy works by locating elements that matches the JavaScript expression referring to an element in the DOM of the page. DOM stands for Document Object Model. DOM is convention for representing objects in HTML documents.</p>
-
-<p>Example: To select the username from the above example you can use the following ways:</p>
-
-<p>document.forms[0].elements[0]</p>
-
-<p>document.forms[&lsquo;loginForm&rsquo;].elements[&lsquo;username&rsquo;]</p>
-
-<p>document.forms[&lsquo;loginForm&rsquo;].username</p>
-
-<p>document.getElementById(‘username’)</p>
-
-<h4>XPath Locator</h4>
-
-<p>While DOM is the recognized standard for navigation through an HTML element tree, XPath is the standard navigation tool for XML; and an HTML document is also an XML document (xHTML). XPath is used everywhere where there is XML.</p>
-
-<p>Example: To select the username from the above example you can use the following ways:</p>
-
-<p>xpath=//*[@id=&lsquo;username&rsquo;]</p>
-
-<p>xpath=//input[@id=&lsquo;username&rsquo;]</p>
-
-<p>xpath=//form[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
-
-<p>xpath=//*[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[XPath : FireBug and FirePath]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/xpath-firebug-and-firepath/"/>
-    <updated>2014-05-26T10:37:18+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/xpath-firebug-and-firepath</id>
-    <content type="html"><![CDATA[<h2>FireBug and FirePath</h2>
-
-<h3>What is XPath</h3>
-
-<p>XPath is a language that describes a way to locate and process items in Extensible Markup Language (XML) documents by using an addressing syntax based on a path through the document’s logical structure or hierarchy. XPath in used in Selenium  to uniquely identify an element on a Webpage as element locator just like the way we use PostCode and House address in real world to locate Home Address.</p>
-
-<h3>What is Firebug</h3>
-
-<p>Firebug integrates with Firefox to put a wealth of web development tools at your fingertips while you browse. You can edit, debug, and monitor CSS, HTML, and JavaScript live in any web page. The whole content of this page is taken from the <a href="https://getfirebug.com/html">firebug</a>.</p>
-
-<h3>Why it is Useful to Selenium Automation Tester</h3>
-
-<p>1) View source live : Firefox has a “View Source” window, but it doesn’t show you what the HTML source really looks like once it has been transformed by JavaScript. Firebug’s HTML tab shows you what the HTML looks like right now.</p>
-
-<p>2) See changes highlighted: In any JavaScript-driven website, HTML elements are constantly being created, removed, and modified. Wouldn’t it be nice if you could see exactly what, when, and where these changes take place? Firebug highlights changes to the HTML in yellow immediately when they occur. If you want to spy even closer, you have the option to also scroll every change into view, so you won’t miss a thing.</p>
-
-<p>3) Find elements with the mouse: Something in your page doesn’t quite look right and you want to know why. There’s no faster way to get answers than to click the “Inspect” button on Firebug’s toolbar and then prepare for immediate gratification. As you move around the page, whatever is beneath your mouse will be instantly revealed within Firebug, showing you the HTML and CSS behind it.</p>
-
-<p>4) Copy the source: Right-click on any element, and you’ll have several options for copying aspects of that element to the clipboard, including its HTML fragment, the value of its “innerHTML” property, or an XPath expression that identifies the element uniquely.</p>
-
-<h3>How to Download FireBug</h3>
-
-<p>FireBug is a plugin which comes with Firefox browser, hence it is easily be downloadable from Firefox itself.</p>
-
-<p>1) Go to Tools > Web Developer > Get More Tools.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Firebug-1.png"></p>
-
-<p>2) It will open a Webpage and display all the plugins available for Firefox browser. As we need Firebug, just click on Add to Firefox button for Firebug.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Firebug-2.png"></p>
-
-<p>3) Hit on Install Now button to proceed.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Firebug-3.png"></p>
-
-<p>4) Once the Installation is finished, press ‘F-12′ to open Firebug tool. It will display like this.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FIND-ELEMENTS-2.png"></p>
-
-<h3>How to Use it</h3>
-
-<p>Most of the times it is used to Inspect Elements on a Webpage and to get the XPath of the Elements from a Webpage.</p>
-
-<p>1) Inspect Elements: Please visit Finding Elements using Browser Inspector for details explanation on How to find Elements using Browser Inspector.</p>
-
-<p>2) Copy XPath: Copying XPath is really very handy. Once you are done with selecting an Element using Inspector, all you need to do is to Right click on the HTML code of the selected element and select Copy XPath.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Firebug-6.png"></p>
-
-<p>3) Now you can paste the copied XPath on your test script by pressing ‘Ctrl + V‘. It will display like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/html/body/div/header/div/a/img</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>What is FirePath</h3>
-
-<p>It is an extension to FireBug that adds a development tool to edit, inspect and generate XPath expressions and CSS3 Selectors.</p>
-
-<h3>Why it is Useful to Selenium Automation Tester</h3>
-
-<p>1) You can type self-written XPath and check if it is correct by highlighting the results directly on the Webpage.</p>
-
-<p>2) Generate an XPath expression or a CSS selector for an element by right clicking on it and selecting “Inspect in FirePath” in the context menu.</p>
-
-<p>3) Like Firebug it also gives you the Xpath of the selected Element.</p>
-
-<h3>How to Download Firepath</h3>
-
-<p>Firepath is an extension to Firebug, so you would only be able to install it after installing FireBug.</p>
-
-<p>1) Go to Tools > Web Developer > Get More Tools.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Firebug-1.png"></p>
-
-<p>2) It will open a Webpage and will display all the plugins available for Firefox browser. As I said before that it is an extension to Firebug, you need to click on the Extensions link and the type Firepath on the Search field. As we need FirePath, just click on Add to Firefox button for FirePath.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FirePath-1.png"></p>
-
-<p>3) Hit on Install Now button to proceed.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FirePath-2.png"></p>
-
-<p>4) Once it is installed, it will ask to Restart the browser. Click on Restart Now button.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FirePath-3.png"></p>
-
-<p>4) Once it is opened, press ‘F-12′ to open Firebug tool. It will display the FirePath on the same console.</p>
-
-<h3>How to Use FirePath</h3>
-
-<p>1) Inspect Elements: Please visit Finding Elements using Browser Inspector for details explanation on How to find Elements using Browser Inspector. But unlike FireBug, it displays the XPath of the selected element on the console.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FirePath-6.png"></p>
-
-<p>2) Copy XPath: Copying XPath is really very handy. Once you are done with selecting an Element using Inspector, all you need to do is to Copy the XPath of the selected element and paste it to your Test script by pressing ‘Ctrl + V‘. It will display like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//*[@id='masthead']/div/a/img</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Difference between FireBug and FirePath</h3>
-
-<p>The only difference from Automation tester point of view is FireBug returns Absolute XPath and FirePath returns Relative XPath.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[XPath : Using Browser Inspector]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/xpath-using-browser-inspector/"/>
-    <updated>2014-05-26T10:24:15+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/xpath-using-browser-inspector</id>
-    <content type="html"><![CDATA[<h2>Finding Elements using Browser Inspector</h2>
-
-<p>Now days, it is very easy to find elements on the page. All the modern browsers have the web inspector, the built-in tool for to easily examine the structure of webpages.</p>
-
-<p>I used to use Google Chrome’s inspector because Chrome was my default browser; Safari uses the same inspector and IE uses IE Inspector. Firefox has its own built in Inspector and it has an optional extension called Firebug, which has a little more functionality that is sometimes worth switching over for. The steps to use it are largely the same.</p>
-
-<h3>1) Activating the Web Inspector</h3>
-
-<p>You can activate the web inspector in any of the above browsers by right-clicking on any element in the page, such as a photo. A pop-up menu should appear with the option to Inspect Element.  Or you can use the short cut key for Inspector which is F-12.</p>
-
-<p>F-12 will pop-up a panel, usually in the bottom-half of your browser, showing the HTML source. The red circle is pointing to the Element Inspector in Firefox.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Finding-Elements-1.png"></p>
-
-<h3>2) Selecting Elements</h3>
-
-<p>Once you click the Inspector Icon from the bottom panel your element inspector is active and as you move your mouse around the page, the element under your mouse is highlighted with a dotted border and an annotation displays its HTML tag. At the same time, its HTML definition is displayed, in context, in the Inspector’s left-hand pane.</p>
-
-<p>In the screenshot below, I have chosen to inspect the &ldquo;Email or Phone” textbox on the <a href="https://www.facebook.com/">Facebook</a>. The inspector (in the bottom panel of the browser) highlights where in the HTML that the “Email or Phone” button appears.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FIND-ELEMENTS-2.png"></p>
-
-<p>With the help of above html code you can simply write the below code in your test script:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.findElement(By.id("email")).sendKeys("your username or email login to facebook");</span></code></pre></td></tr></table></div></figure>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Dropdown and Multiple Select Operations]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/"/>
-    <updated>2014-05-26T10:15:16+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations</id>
-    <content type="html"><![CDATA[<h2>DropDown &amp; Multiple Select Operations</h2>
-
-<p>Just like Checkboxes &amp; Radio buttons, Dropdown and Multiple Select also works together and almost the same way. To perform any action, the first task is to identify the element group. I am saying it a group, as dropdown/multiple select is not a single element. They always have a single name but and they contains one or more than one elements in them. I should rather say more than one option in dropdown and multiple select. The only difference between these two is deselecting statement &amp; multiple selections are not allowed on dropdowns. Let’s look at the different operations:</p>
-
-<h3>Selecting Dropdown/Multiple Select Box</h3>
-
-<p>It is just an ordinary operation like selecting any other type of element on a webpage. You can choose it by ID, Name, Css &amp; Xpath etc. But to perform any action on this element it is required to import ‘import org.openqa.selenium.support.ui.Select&#8217; package and to use it we need to create a new select object of class select.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: Select class only works for elements with <select> tags</p>
-
-<h3>Selecting an option using ‘selectByVisibleText’</h3>
-
-<p>It is very easy to choose or select an option given under any dropdowns and multiple selection boxes with selectByVisibleText method.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>oSelection.selectByVisibleText(text);
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Selecting an option using ‘selectByIndex’</h3>
-
-<p>It is almost the same as selectByVisibleText but the only difference here is that we provide the index number of the option here rather the option text.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>
-</span><span class='line'>oSelection.selectByIndex(index);</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Selecting an option using ‘selectByValue’</h3>
-
-<p>It is again the same what we have discussed earlier, the only difference in this is that we need to provide the value of the option rather the option text.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>oSelection.selectByValue(value);
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: The value of an option and the text of the option may not be always same and there can be a possibility that the value is not assigned to Select webelement. If the value is given in the Select tag then only you can use the selectByValue method.</p>
-
-<h3>Getting the Size of Select item</h3>
-
-<p>Sometimes you may like to count the element in the dropdown and multiple select box, so that you can use the loop on Select element.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>List&lt;WebElement&gt; oSize = oSelection.getOptions();
-</span><span class='line'>int iListSize = oSize.size();
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Printing the Options</h3>
-
-<p>Once you get the size of the Select element then it is easy to print the Text of the options.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>  List oSize = oSelection.getOptions();
-</span><span class='line'>  int iListSize = oSize.size();
-</span><span class='line'>  for(int i =0; i&gt;iListSize ; i++){
-</span><span class='line'>      String sValue = oSelection.getOptions().get(i).getText();
-</span><span class='line'>      System.out.println(sValue);
-</span><span class='line'>      }</span></code></pre></td></tr></table></div></figure>
-
-
-<p>All of the above methods work on both Dropdown and Multiple select box.</p>
-
-<h3>Deselect methods</h3>
-
-<p>This only works on Multiple selection boxes. If in case you want to deselect any selected option and that can be done with either deselectAll(), deselectByIndex, deselectByValue and deselectByVisibletext.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>  oSelection.deselectAll();
-</span><span class='line'>  oSelection.deselectByIndex(index);
-</span><span class='line'>  oSelection.deselectByValue(value);
-</span><span class='line'>  oSelection.deselectByVisibleText(text);
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Multiple selection method</h3>
-
-<p>This one also just works on Multiple selection boxes and not on regular List boxes or dropdowns. There is no additional logic behind selecting multiple options of Select element. All you need to do is to fire select commands on multiple elements one by one that’s it.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>  oSelection.selectByIndex(index)
-</span><span class='line'>  oSelection.selectByIndex(index)
-</span><span class='line'>  // Or
-</span><span class='line'>  oSelection.selectByVisibleText(text)
-</span><span class='line'>  oSelection.selectByVisibleText(text)
-</span><span class='line'>  // Or
-</span><span class='line'>  oSelection.selectByValue(value)
-</span><span class='line'>  oSelection.selectByValue(value)</span></code></pre></td></tr></table></div></figure>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Checkbox and Radio Button Operations]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations/"/>
-    <updated>2014-05-26T10:10:11+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations</id>
-    <content type="html"><![CDATA[<h2>CheckBox &amp; Radio Button Operations</h2>
-
-<p>Operations on Checkboxes and Radio Buttons are easy to perform and most of the times the simple ID attributes work fine for both of these. But selection and d-selection is not the only thing we want with checkboxes and radio buttons. We might like to check that if the checkbox is already checked or if the radio button is selected by default or anything. Checkboxes and Radio button deals exactly the same way and you can perform below mentioned operations on either of them.</p>
-
-<h3>Different Selection Method</h3>
-
-<h4>By ID</h4>
-
-<p>If ID is given for the radio button/checkbox and you just want to click the radio button/checkbox Irrespective of its value, then the command will be like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement radioBtn = driver.findElement(By.id("toolsqa"));
-</span><span class='line'>radioBtn.click();</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>With ‘IsSelected’</h4>
-
-<p>If your choice is based on the pre-selection of the Radio button/Checkbox and you just need to select the deselected radio button/checkbox. Assume there are two radio buttons/checkboxes, one is selected by default and you want to select the other one for your test. With IsSelected statement, you can get to know that the radio button or the check box is selected or not.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> // Store all the elements of same category in the list of WebLements    
-</span><span class='line'> List  oRadioButton = driver.findElements(By.name("toolsqa"));
-</span><span class='line'>
-</span><span class='line'> // Create a boolean variable which will hold the value (True/False)
-</span><span class='line'> boolean bValue = false;
-</span><span class='line'>
-</span><span class='line'> // This statement will return True, in case of first Radio button is selected
-</span><span class='line'> bValue = oRadioButton.get(0).isSelected();
-</span><span class='line'>
-</span><span class='line'> // This will check that if the bValue is True means if the first radio button is selected
-</span><span class='line'> if(bValue = true){
-</span><span class='line'>
-</span><span class='line'>  // This will select Second radio button, if the first radio button is selected by default
-</span><span class='line'>  oRadioButton.get(1).click();
-</span><span class='line'>
-</span><span class='line'> }else{
-</span><span class='line'>
-</span><span class='line'>  // If the first radio button is not selected by default, the first will be selected
-</span><span class='line'>  oRadioButton.get(0).click();
-</span><span class='line'> }
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: Name is always same for the same group of radio buttons/checkboxes but their Values are different. So if you find the checkbox/radio button element with the name attribute then it means that it may contain more than one element, hence we need to use findElements method and store it the list of WebElements.</p>
-
-<h3>With ‘Value’</h3>
-
-<p>You can even select Radio buttons/Checkboxes with their Values.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// Find the checkbox or radio button element by Name
-</span><span class='line'> List oCheckBox = driver.findElements(By.name("example"));
-</span><span class='line'>
-</span><span class='line'> // This will tell you the number of checkboxes are present
-</span><span class='line'> int iSize = oCheckBox.size();
-</span><span class='line'>
-</span><span class='line'> // Start the loop from first checkbox to last checkboxe
-</span><span class='line'> for(int i=0; i &lt; iSize ; i++ ){
-</span><span class='line'>
-</span><span class='line'>   // Store the checkbox name to the string variable, using 'Value' attribute
-</span><span class='line'>   String sValue = oCheckBox.get(i).getAttribute("value");
-</span><span class='line'>
-</span><span class='line'>   // Select the checkbox it the value of the checkbox is same what you are looking for
-</span><span class='line'>   if (sValue.equalsIgnoreCase("your value")){
-</span><span class='line'>       oCheckBox.get(i).click();
-</span><span class='line'>
-</span><span class='line'>       // This will take the execution out of for loop
-</span><span class='line'>       break;
-</span><span class='line'>       }
-</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>By ‘CssSelector’</h3>
-
-<p>A simple way of selecting a check-box or radio button is by using its value:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement oCheckBox = driver.findElement(By.cssSelector("input[value='example']"));
-</span><span class='line'>oCheckBox.click();</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Wait Commands]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-wait-commands/"/>
-    <updated>2014-05-26T10:03:49+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-wait-commands</id>
-    <content type="html"><![CDATA[<h2>WebDriver Wait Commands</h2>
-
-<p>Listing out the different WebDriver Wait statements that can be useful for an effective scripting and can avoid using the Thread.sleep() commands.</p>
-
-<h3>ImplicitlyWait Command</h3>
-
-<p>Purpose: Selenium WebDriver has borrowed the idea of implicit waits from Watir. This means that we can tell Selenium that we would like it to wait for a certain amount of time before throwing an exception that it cannot find the element on the page. We should note that implicit waits will be in place for the entire time the browser is open. This means that any search for elements on the page could take the time the implicit wait is set for.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'> WebDriver driver =&gt; new FirefoxDriver();
-</span><span class='line'> driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'> driver.get("http://url_that_delays_loading");
-</span><span class='line'> WebElement myDynamicElement = driver.findElement(By.id("myDynamicElement"));
-</span><span class='line'> </span></code></pre></td></tr></table></div></figure>
-
-
-<h3>FluentWait Command</h3>
-
-<p>Purpose: Each FluentWait instance defines the maximum amount of time to wait for a condition, as well as the frequency with which to check the condition. Furthermore, the user may configure the wait to ignore specific types of exceptions whilst waiting, such as NoSuchElementExceptions when searching for an element on the page.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// Waiting 30 seconds for an element to be present on the page, checking
-</span><span class='line'>  // for its presence once every 5 seconds.
-</span><span class='line'>  Wait wait = new FluentWait(driver)
-</span><span class='line'>    .withTimeout(30, SECONDS)
-</span><span class='line'>    .pollingEvery(5, SECONDS)
-</span><span class='line'>    .ignoring(NoSuchElementException.class);
-</span><span class='line'>  WebElement foo = wait.until(new Function() {
-</span><span class='line'>    public WebElement apply(WebDriver driver) {
-</span><span class='line'>    return driver.findElement(By.id("foo"));
-</span><span class='line'>    }
-</span><span class='line'>   });
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>ExpectedConditions Command</h3>
-
-<p>Purpose: Models a condition that might reasonably be expected to eventually evaluate to something that is neither null nor false.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebDriverWait wait = new WebDriverWait(driver, 10);
-</span><span class='line'>WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(&gt;someid&gt;)));</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>PageLoadTimeout Command</h3>
-
-<p>Purpose: Sets the amount of time to wait for a page load to complete before throwing an error. If the timeout is negative, page loads can be indefinite.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.manage().timeouts().pageLoadTimeout(100, SECONDS);</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>SetScriptTimeout Command</h3>
-
-<p>Purpose: Sets the amount of time to wait for an asynchronous script to finish execution before throwing an error. If the timeout is negative, then the script will be allowed to run indefinitely.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.manage().timeouts().setScriptTimeout(100,SECONDS);</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Sleep Command</h3>
-
-<p>Purpose: This is rarely used, as it always force the browser to wait for a specific time. Thread.Sleep is never a good idea and that’s why Selenium provides wait primitives. If you use them you can specify much higher timeout value which makes tests more reliable without slowing them down as the condition can be evaluated as often as it’s required.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>thread.sleep(1000);</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-</feed>
+<section class="social aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    Follow me!
+  </h1>
+  <ul class="unstyled">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</section>
+
+
+  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      <li class="post">
+        <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Selenium Automation Framework : Modular Driven Framework</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Selenium Automation Framework : Page Object Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-create-new-project/">Selenium Automation Framework : Create New Project</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse/">Selenium Automation Framework : Install Maven to Eclipse</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+</div>
+
+        </aside>
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <p class="copyright">
+  All content by Ta Bao Lan and licenced under <a href="//creativecommons.org/licenses/by-nc-sa/3.0/ie/">Creative Commons</a>.<br>
+  Code under <a href="//github.com/coogie/oscailte/blob/master/README.md">MIT Licence</a>.
+</p>
+    </div>
+  </div>
+</div>
+
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-51278981-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
