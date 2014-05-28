@@ -18,15 +18,15 @@ Look for repeated functionality in your application for example the 'login' func
 
 {% img /images/pom-1.png%}
 
-{% img /images/user-action-1%}
+{% img /images/user-action-1.png%}
 
-{% img /images/user-action-2%}
+{% img /images/user-action-2.png%}
 
 2) Create 'New Class' and name it as SignIn by right click on package 'userAction' and select New > Class. It will add new class 'SignIn' under package 'userAction'.
 
-{% img /images/user-action-3%}
+{% img /images/user-action-3.png%}
 
-{% img /images/user-action-4%}
+{% img /images/user-action-4.png%}
 
 3) Now create a Public Static Void Method and name it as Execute  and club the following steps in to it:
 
@@ -66,9 +66,9 @@ public class SignIn {
 
 4) Create 'New Class' and name it as PostStatus by right click on package 'userAction' and select New > Class. It will add new class 'PostStatus' under package 'userAction'.
 
-{% img /images/user-action-3%}
+{% img /images/user-action-3.png%}
 
-{% img /images/user-action-5%}
+{% img /images/user-action-5.png%}
 
 5) Now create a Public Static Void Method and name it as Execute  and club the following steps in to it:
 
