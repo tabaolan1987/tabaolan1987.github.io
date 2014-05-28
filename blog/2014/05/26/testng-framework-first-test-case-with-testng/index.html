@@ -1,104 +1,109 @@
-<!doctype html>
-  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>TestNG Framework : First Test Case With TestNG - Ta Bao Lan</title>
+  <meta name="author" content="Ta Bao Lan">
 
   
-    
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>TestNG Framework : First Test case with TestNG - Ta Bao Lan</title>
-    <meta name="author" content="Ta Bao Lan">
-    
-    <meta name="description" content="TestNG Framework : First Test case with TestNG May 26th, 2014 TestNG-Framework First Test case with TestNG Steps to follow: 1) Press Ctrl+N , select &hellip;">
-    
-    <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng">
-    
-    <link href="/favicon.png" rel="icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="/atom.xml" rel="alternate" title="Ta Bao Lan" type="application/atom+xml">
-  </head>
-
-
-  <body >
-
-    <header>
-      <div class="grid-wrapper">
-  <div class="grid">
-
-    <div class="grid__item two-fifths lap-four-sixths palm-one-whole">
-  <a href="/" class="site-title">Ta Bao Lan</a>
-</div>
-
-<div class="grid__item three-fifths lap-two-sixths palm-one-whole">
-  <nav>
-    <input type="checkbox" id="toggle">
-<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
-<ul class="menu pull-right">
-  <li><a href="/">Home</a></li>
-  <li><a href="/blog/">Blog</a></li>
-</ul>
-  </nav>
-</div>
-
-  </div>
-</div>
-    </header>
-
-    
-
-    <div class="grid-wrapper">
-      <div class="grid grid-center">
-        
-        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
-        
-
-          <article class="post">
-  <header>
-  
-  <h1 class="title indent">TestNG Framework : First Test case with TestNG</h1>
+  <meta name="description" content="First Test case with TestNG Steps to follow: 1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next. Or Right click on Test &hellip;">
   
 
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
+  <link rel="canonical" href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ta Bao Lan" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
-
-<time class="pull-left" datetime="2014-05-26T11:09:19+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/blog/categories/testng-framework/'>TestNG-Framework</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-  </div>
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ta Bao Lan</a></h1>
+  
+    <h2>Software Engineer - Test Automation Engineer</h2>
+  
+</hgroup>
+
 </header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:tabaolan1987.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">TestNG Framework : First Test Case With TestNG</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
 
-  <h2>First Test case with TestNG</h2>
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T11:09:19+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>First Test case with TestNG</h2>
 
 <p>Steps to follow:</p>
 
@@ -253,41 +258,73 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
 <p><img src="/images/TestNG-FTC-10.png"></p>
 
 <p><img src="/images/TestNG-FTC-11.png"></p>
+</div>
 
 
-</article>
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ta Bao Lan</span></span>
+
+      
 
 
 
-        </div>
 
-        
-        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
-          <div class="grid">
+
+
+
 
   
-<section class="social aside-module grid__item one-whole lap-one-half">
-  <h1 class="title delta">
-    Follow me!
-  </h1>
-  <ul class="unstyled">
+
+
+<time datetime="2014-05-26T11:09:19+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/testng-framework/'>TestNG-Framework</a>
+  
+</span>
+
+
+    </p>
     
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng/" data-via="" data-counturl="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
     
-    
-    
-    
-    
-    
-    
-    
-    
-  </ul>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/26/testng-framework-download/" title="Previous Post: TestNG Framework : Download">&laquo; TestNG Framework : Download</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/05/26/testng-framework-test-suite/" title="Next Post: TestNG Framework : Test Suite">TestNG Framework : Test Suite &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>A little something about me.</p>
 </section>
-
-
-  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
-  <h1 class="title delta">Recent Posts</h1>
-  <ul class="divided">
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
     
       <li class="post">
         <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Selenium Automation Framework : Modular Driven Framework</a>
@@ -311,56 +348,50 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
     
   </ul>
 </section>
+Included file 'asides/twitter.html' not found in _includes directory
+
+  
+</aside>
 
 
-
-
-</div>
-
-        </aside>
-        
-      </div>
-    </div>
-
-    <footer>
-      <div class="grid-wrapper">
-  <div class="grid">
-    <div class="grid__item">
-      <p class="copyright">
-  All content by Ta Bao Lan and licenced under <a href="//creativecommons.org/licenses/by-nc-sa/3.0/ie/">Creative Commons</a>.<br>
-  Code under <a href="//github.com/coogie/oscailte/blob/master/README.md">MIT Licence</a>.
-</p>
     </div>
   </div>
-</div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ta Bao Lan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
 
-    </footer>
-
-    <!--[if lt IE 7]>
-      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-<script defer src="/javascripts/octopress.js"></script>
+</footer>
+  
 
 
-<script>
-  var _gaq=[['_setAccount','UA-51278981-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
 
 
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
 
 
 
 
 
-  </body>
+</body>
 </html>

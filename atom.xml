@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-28T14:15:00+07:00</updated>
+  <updated>2014-05-28T14:20:03+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -1045,7 +1045,7 @@ By implementing the appropriate automated testing framework, enterprises can sig
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework :Reporters and Asserts ]]></title>
+    <title type="html"><![CDATA[TestNG Framework :Reporters and Asserts]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts/"/>
     <updated>2014-05-26T11:55:48+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts</id>
@@ -1945,7 +1945,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : First Test case with TestNG]]></title>
+    <title type="html"><![CDATA[TestNG Framework : First Test Case With TestNG]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng/"/>
     <updated>2014-05-26T11:09:19+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng</id>
