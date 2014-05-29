@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T17:00:10+07:00</updated>
+  <updated>2014-05-29T17:23:20+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -529,7 +529,7 @@ private static String status_facebook;
 
 <p><img src="/images/mulb-11.png"></p>
 
-<h3>Note : in this tutorial we have many knowledge so I recommend you to read the comment of code to know what it do.</h3>
+<h3>Note : In this tutorial we have many knowledge so I recommend you to read the comment of code to know what it do.</h3>
 ]]></content>
   </entry>
   
@@ -538,15 +538,22 @@ private static String status_facebook;
     <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script/"/>
     <updated>2014-05-29T14:48:11+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script</id>
-    <content type="html"><![CDATA[<h2>Create Test Script</h2>
+    <content type="html"><![CDATA[<h2>Create Test Script using TestNG</h2>
 
 <h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="/blog/categories/testng-framework/">TestNG Framework</a></h3>
 
-<p>In this tutorial we will use testNG to create our test script base on action :</p>
+<p>TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use. In simple words TestNG is a tool that help us to organize the tests and help us to produce the test reports. TestNG framework can be used for automation testing with Selenium (web application automation testing tool).</p>
 
-<p>Login Facebook</p>
+<p>TestNG Advantages</p>
 
-<p>Post Status</p>
+<ul>
+<li><p>Multiple built in Annotations which are easier to use and understand</p></li>
+<li><p>Test method can be dependent to other method</p></li>
+<li><p>Test cases can be Grouped and can be execute separately by groups</p></li>
+<li><p>Parallel testing is possible</p></li>
+<li><p>TestNG has built in HTML report and XML report generation facility. It has also built in  logging facility</p></li>
+</ul>
+
 
 <!--more-->
 
