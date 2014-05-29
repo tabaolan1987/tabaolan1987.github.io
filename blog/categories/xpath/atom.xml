@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: XPath | Ta Bao Lan]]></title>
+  <title><![CDATA[Category: XPath | Ta Bao Lan Software Engineer - Test Automation Engineer]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/xpath/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T10:48:18+07:00</updated>
+  <updated>2014-05-29T10:53:09+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
-    
+    <email><![CDATA[tabaolan1987@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
