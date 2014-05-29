@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T10:23:17+07:00</updated>
+  <updated>2014-05-29T10:29:37+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -128,6 +128,9 @@ public static void Execute(WebDriver driver, String status){
     <content type="html"><![CDATA[<h2>Page Object Model | POM</h2>
 
 <p>Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is used. Duplicated code could be caused by duplicated functionality and this will result in duplicated usage of locators. The disadvantage of duplicated code is that the project is less maintainable. If some locator will change, you have to walk through the whole test code to adjust locators where necessary. By using the page object model we can make non-brittle test code and reduce or eliminate duplicate test code. Beside of that it improves the readability and allows us to create interactive documentation. Last but not least, we can create tests with less keystroke. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.</p>
+
+<!--more-->
+
 
 <p>Note : We will try to create Login Page and Homepage follow website <a href="https://facebook.com">Facebook</a></p>
 
@@ -288,6 +291,9 @@ public static WebElement butt_post(WebDriver driver){
 
 <p>Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with Continuous Integration.</p>
 
+<!--more-->
+
+
 <p>Now we will create a project Maven name &ldquo;Selenium-Automation-Framework&rdquo;.</p>
 
 <h4>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h4>
@@ -409,6 +415,9 @@ public static WebElement butt_post(WebDriver driver){
 
 <p>You can install Maven plugin for Eclipse via update site, simply copy the above update site link address and paste it into Eclipse’s “Update” or “Install New Software” manager as explained below.</p>
 
+<!--more-->
+
+
 <h3>Step 1 :</h3>
 
 <p>Installing m2eclipse is fairly simple. Start Eclipse then go to: Help &ndash;> Install New Software</p>
@@ -450,6 +459,9 @@ public static WebElement butt_post(WebDriver driver){
 
 <p>Mission critical software undergoes rigorous functional tests, especially supported by automated testing frameworks. Automating these frameworks and maintaining quality software releases are critical to business performance. Enterprises often face the dilemma of balancing costs and managing resources to ensure that automation frameworks cover all the business scenarios and the applications delivered are error – free.
 By implementing the appropriate automated testing framework, enterprises can significantly increase the speed and accuracy of the testing process, provide a higher return on investment (ROI) from software projects and systematically minimize risk.</p>
+
+<!--more-->
+
 
 <h3>Why Framework</h3>
 

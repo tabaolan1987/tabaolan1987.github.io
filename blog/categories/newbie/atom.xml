@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NewBie | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/newbie/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T10:23:17+07:00</updated>
+  <updated>2014-05-29T10:29:37+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<h2>Creat a simple test case selenium in Eclipse</h2>
 
 <p>To configure Eclipse with Selenium webdriver, we need to launch the Eclipse IDE, create a Workspace, create a Project, create a Package, create a Class and add External libraries to the project.</p>
+
+<!--more-->
+
 
 <h3>1) Select WorkSpace on Eclipse start up.</h3>
 
@@ -185,6 +188,9 @@ public static void main(String[] args) {
 
 <p>Selenium webdriver supports many languages and each language has its own client driver. Here we are configuring selenium 2 with Java so we need ‘webdriver Java client driver’.</p>
 
+<!--more-->
+
+
 <p>1) <a href="http://docs.seleniumhq.org/download/">Click here</a> to go on WebDriver Java client driver download page for webdriver download file. On that page click on ‘Download‘ link of Java client driver as shown in the below image.</p>
 
 <p><img src="/images/Download-Webdriver-Java-Client-1.png"></p>
@@ -219,6 +225,9 @@ public static void main(String[] args) {
     <content type="html"><![CDATA[<h2>Download and Start Eclipse IDE</h2>
 
 <p>Download Eclipse for Java Developers, extract and save it in any drive. It is totally free. You can run ‘eclipse.exe’ directly so you do not need to install Eclipse in your system.</p>
+
+<!--more-->
+
 
 <p>1) Go to <a href="http://www.eclipse.org/downloads.">|Eclipse download page</a></p>
 
@@ -276,6 +285,9 @@ public static void main(String[] args) {
     <content type="html"><![CDATA[<h2>Download and Install Java</h2>
 
 <p>First of all you need to install JDK (Java development kit) in your system. So your next question will be “how can I download java”. <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Click here</a> to download Java and install it in your system as per given installation guide over there or follow the below mentioned steps.</p>
+
+<!--more-->
+
 
 <p>1) Visit the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java downloads page</a> on Oracle’s website to find the JDK environment download. Scroll down until you find Java SE Latest Version and download JDK.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: XPath | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/xpath/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T10:23:17+07:00</updated>
+  <updated>2014-05-29T10:29:37+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -23,6 +23,9 @@
 <p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
 
 <p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
+
+<!--more-->
+
 
 <h3>Different types of Locators</h3>
 
@@ -151,6 +154,9 @@ WebElement element=driver.findElement(By.linkText("Name of the Link"));
 
 <p>XPath is a language that describes a way to locate and process items in Extensible Markup Language (XML) documents by using an addressing syntax based on a path through the document’s logical structure or hierarchy. XPath in used in Selenium  to uniquely identify an element on a Webpage as element locator just like the way we use PostCode and House address in real world to locate Home Address.</p>
 
+<!--more-->
+
+
 <h3>What is Firebug</h3>
 
 <p>Firebug integrates with Firefox to put a wealth of web development tools at your fingertips while you browse. You can edit, debug, and monitor CSS, HTML, and JavaScript live in any web page. The whole content of this page is taken from the <a href="https://getfirebug.com/html">firebug</a>.</p>
@@ -263,6 +269,9 @@ WebElement element=driver.findElement(By.linkText("Name of the Link"));
 <p>Now days, it is very easy to find elements on the page. All the modern browsers have the web inspector, the built-in tool for to easily examine the structure of webpages.</p>
 
 <p>I used to use Google Chrome’s inspector because Chrome was my default browser; Safari uses the same inspector and IE uses IE Inspector. Firefox has its own built in Inspector and it has an optional extension called Firebug, which has a little more functionality that is sometimes worth switching over for. The steps to use it are largely the same.</p>
+
+<!--more-->
+
 
 <h3>1) Activating the Web Inspector</h3>
 

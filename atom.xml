@@ -4,7 +4,7 @@
   <title><![CDATA[Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T10:23:17+07:00</updated>
+  <updated>2014-05-29T10:29:37+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -165,6 +165,9 @@
     <content type="html"><![CDATA[<h2>Page Object Model | POM</h2>
 
 <p>Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is used. Duplicated code could be caused by duplicated functionality and this will result in duplicated usage of locators. The disadvantage of duplicated code is that the project is less maintainable. If some locator will change, you have to walk through the whole test code to adjust locators where necessary. By using the page object model we can make non-brittle test code and reduce or eliminate duplicate test code. Beside of that it improves the readability and allows us to create interactive documentation. Last but not least, we can create tests with less keystroke. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.</p>
+
+<!--more-->
+
 
 <p>Note : We will try to create Login Page and Homepage follow website <a href="https://facebook.com">Facebook</a></p>
 
@@ -404,6 +407,9 @@
 
 <p>Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with Continuous Integration.</p>
 
+<!--more-->
+
+
 <p>Now we will create a project Maven name &ldquo;Selenium-Automation-Framework&rdquo;.</p>
 
 <h4>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h4>
@@ -574,6 +580,9 @@
 
 <p>You can install Maven plugin for Eclipse via update site, simply copy the above update site link address and paste it into Eclipse’s “Update” or “Install New Software” manager as explained below.</p>
 
+<!--more-->
+
+
 <h3>Step 1 :</h3>
 
 <p>Installing m2eclipse is fairly simple. Start Eclipse then go to: Help &ndash;> Install New Software</p>
@@ -615,6 +624,9 @@
 
 <p>Mission critical software undergoes rigorous functional tests, especially supported by automated testing frameworks. Automating these frameworks and maintaining quality software releases are critical to business performance. Enterprises often face the dilemma of balancing costs and managing resources to ensure that automation frameworks cover all the business scenarios and the applications delivered are error – free.
 By implementing the appropriate automated testing framework, enterprises can significantly increase the speed and accuracy of the testing process, provide a higher return on investment (ROI) from software projects and systematically minimize risk.</p>
+
+<!--more-->
+
 
 <h3>Why Framework</h3>
 
@@ -662,6 +674,9 @@ By implementing the appropriate automated testing framework, enterprises can sig
 <p>When the time comes to turn your site from mock-up to something fully functional, you’ll want to make sure that it works great for everyone visiting your site whether they’re using Internet Explorer, Firefox, or any other browser. Testing your website with multiple combinations of browsers is known as Cross Browser testing.</p>
 
 <p>Your site will look different in different browsers. That’s because browsers understand some code slightly differently. Your designer should be testing to make sure that your site works well in all modern browsers. But as a tester we need to make sure that functionality should at least tested on Internet Explorer, Firefox, Safari &amp; Google Chrome browser.</p>
+
+<!--more-->
+
 
 <h3>Multi Browser Testing using Selenium TestNG</h3>
 
@@ -877,6 +892,9 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 <p>TestNG again gives us another interesting feature called TestNG Parameters. TestNG lets you pass parameters directly to your test methods with your testng.xml.</p>
 
+<!--more-->
+
+
 <h4>How to do it…</h4>
 
 <p>Let me take a very simple example of LogIn application, where the username and password is required to clear the authentication.</p>
@@ -1057,6 +1075,9 @@ By implementing the appropriate automated testing framework, enterprises can sig
 <h3>TestNG Reporters</h3>
 
 <p>TestNG is a Framework and so far we have already seen the many different powerful features of TestNG. It almost gives you all the important things you are required to complete the Framework.</p>
+
+<!--more-->
+
 
 <h3>TestNG Reporter Logs</h3>
 
@@ -1295,6 +1316,9 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 <p>Take an example of four different tests under one testng class and print the test sequence on the console.</p>
 
+<!--more-->
+
+
 <h4>How to do it…</h4>
 
 <p>1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next.</p>
@@ -1527,6 +1551,9 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 <h3>TestNG Annotations</h3>
 
 <p>In the TestNG Introduction chapter we have came across different annotations used in TestNG Framework but so far we have used just three(Before, After &amp; Test). All though these are the most frequently used annotations but who know how far you will go with your framework and may like to use other useful TestNG annotations.</p>
+
+<!--more-->
+
 
 <p>Before that I would like you to give a small idea on Annotations hierarchy or Annotations levels in TestNG.</p>
 
@@ -1901,6 +1928,9 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
 <p>In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. This is the xml file where you will configure your test run, set test dependency, include or exclude any test, method, class or package and set priority etc.</p>
 
+<!--more-->
+
+
 <h3>How to do it…</h3>
 
 <h4>Step 1 : Create a TestNG XML</h4>
@@ -1960,7 +1990,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
 <p>Or</p>
 
-<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
+<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“. <!--more--></p>
 
 <p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-1.png"></p>
 
@@ -2119,6 +2149,9 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
 
 <p>It is easy to install TestNG, as it comes as a plugin for Eclipse IDE. Prerequisite for installing TestNG is your Internet connection should be up &amp; running during installation of this plugin and Eclipse IDE should be installed in your computer. Please see Download and Install Eclipse to setup Eclipse to you system.</p>
 
+<!--more-->
+
+
 <h3>Steps to follow:</h3>
 
 <p>1) Launch the Eclipse IDE and from Help menu, click “Install New Software”.</p>
@@ -2167,6 +2200,9 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
     <content type="html"><![CDATA[<h2>TestNG Introduction</h2>
 
 <p>TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionality that make it more powerful and easier to use.</p>
+
+<!--more-->
+
 
 <p>TestNG is an open source automated testing framework; where NG of TestNG means Next Generation. TestNG is similar to JUnit but it is much more powerful than JUnit but still it’s inspired by JUnit. It is designed to be better than JUnit, especially when testing integrated classes. Pay special thanks to Cedric Beust who is the creator of TestNG.</p>
 
@@ -2246,6 +2282,9 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
 <p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
 
 <p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
+
+<!--more-->
+
 
 <h3>Different types of Locators</h3>
 
@@ -2383,6 +2422,9 @@ link=”Name of the Link”</p>
 
 <p>XPath is a language that describes a way to locate and process items in Extensible Markup Language (XML) documents by using an addressing syntax based on a path through the document’s logical structure or hierarchy. XPath in used in Selenium  to uniquely identify an element on a Webpage as element locator just like the way we use PostCode and House address in real world to locate Home Address.</p>
 
+<!--more-->
+
+
 <h3>What is Firebug</h3>
 
 <p>Firebug integrates with Firefox to put a wealth of web development tools at your fingertips while you browse. You can edit, debug, and monitor CSS, HTML, and JavaScript live in any web page. The whole content of this page is taken from the <a href="https://getfirebug.com/html">firebug</a>.</p>
@@ -2496,6 +2538,9 @@ link=”Name of the Link”</p>
 
 <p>I used to use Google Chrome’s inspector because Chrome was my default browser; Safari uses the same inspector and IE uses IE Inspector. Firefox has its own built in Inspector and it has an optional extension called Firebug, which has a little more functionality that is sometimes worth switching over for. The steps to use it are largely the same.</p>
 
+<!--more-->
+
+
 <h3>1) Activating the Web Inspector</h3>
 
 <p>You can activate the web inspector in any of the above browsers by right-clicking on any element in the page, such as a photo. A pop-up menu should appear with the option to Inspect Element.  Or you can use the short cut key for Inspector which is F-12.</p>
@@ -2530,6 +2575,9 @@ link=”Name of the Link”</p>
     <content type="html"><![CDATA[<h2>DropDown &amp; Multiple Select Operations</h2>
 
 <p>Just like Checkboxes &amp; Radio buttons, Dropdown and Multiple Select also works together and almost the same way. To perform any action, the first task is to identify the element group. I am saying it a group, as dropdown/multiple select is not a single element. They always have a single name but and they contains one or more than one elements in them. I should rather say more than one option in dropdown and multiple select. The only difference between these two is deselecting statement &amp; multiple selections are not allowed on dropdowns. Let’s look at the different operations:</p>
+
+<!--more-->
+
 
 <h3>Selecting Dropdown/Multiple Select Box</h3>
 
@@ -2666,6 +2714,9 @@ link=”Name of the Link”</p>
 
 <p>Operations on Checkboxes and Radio Buttons are easy to perform and most of the times the simple ID attributes work fine for both of these. But selection and d-selection is not the only thing we want with checkboxes and radio buttons. We might like to check that if the checkbox is already checked or if the radio button is selected by default or anything. Checkboxes and Radio button deals exactly the same way and you can perform below mentioned operations on either of them.</p>
 
+<!--more-->
+
+
 <h3>Different Selection Method</h3>
 
 <h4>By ID</h4>
@@ -2795,6 +2846,9 @@ link=”Name of the Link”</p>
     <content type="html"><![CDATA[<h2>WebDriver Wait Commands</h2>
 
 <p>Listing out the different WebDriver Wait statements that can be useful for an effective scripting and can avoid using the Thread.sleep() commands.</p>
+
+<!--more-->
+
 
 <h3>ImplicitlyWait Command</h3>
 

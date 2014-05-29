@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TestNG-Framework | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T10:23:17+07:00</updated>
+  <updated>2014-05-29T10:29:37+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -23,6 +23,9 @@
 <p>When the time comes to turn your site from mock-up to something fully functional, you’ll want to make sure that it works great for everyone visiting your site whether they’re using Internet Explorer, Firefox, or any other browser. Testing your website with multiple combinations of browsers is known as Cross Browser testing.</p>
 
 <p>Your site will look different in different browsers. That’s because browsers understand some code slightly differently. Your designer should be testing to make sure that your site works well in all modern browsers. But as a tester we need to make sure that functionality should at least tested on Internet Explorer, Firefox, Safari &amp; Google Chrome browser.</p>
+
+<!--more-->
+
 
 <h3>Multi Browser Testing using Selenium TestNG</h3>
 
@@ -173,6 +176,9 @@ import org.testng.annotations.Test;</p>
 
 <p>TestNG again gives us another interesting feature called TestNG Parameters. TestNG lets you pass parameters directly to your test methods with your testng.xml.</p>
 
+<!--more-->
+
+
 <h4>How to do it…</h4>
 
 <p>Let me take a very simple example of LogIn application, where the username and password is required to clear the authentication.</p>
@@ -309,6 +315,9 @@ import org.testng.annotations.Test;</p>
 <h3>TestNG Reporters</h3>
 
 <p>TestNG is a Framework and so far we have already seen the many different powerful features of TestNG. It almost gives you all the important things you are required to complete the Framework.</p>
+
+<!--more-->
+
 
 <h3>TestNG Reporter Logs</h3>
 
@@ -478,6 +487,9 @@ import org.testng.annotations.Test;</p>
 <p>There will be situations when you want to put number of tests under a single test class and like to run all in single shot.  With the help of TestNG ‘@Test‘ annotations we can execute multiple tests in single TestNG file.</p>
 
 <p>Take an example of four different tests under one testng class and print the test sequence on the console.</p>
+
+<!--more-->
+
 
 <h4>How to do it…</h4>
 
@@ -678,6 +690,9 @@ import org.testng.annotations.Test;</p>
 <h3>TestNG Annotations</h3>
 
 <p>In the TestNG Introduction chapter we have came across different annotations used in TestNG Framework but so far we have used just three(Before, After &amp; Test). All though these are the most frequently used annotations but who know how far you will go with your framework and may like to use other useful TestNG annotations.</p>
+
+<!--more-->
+
 
 <p>Before that I would like you to give a small idea on Annotations hierarchy or Annotations levels in TestNG.</p>
 

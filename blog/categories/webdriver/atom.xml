@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T10:23:17+07:00</updated>
+  <updated>2014-05-29T10:29:37+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<h2>DropDown &amp; Multiple Select Operations</h2>
 
 <p>Just like Checkboxes &amp; Radio buttons, Dropdown and Multiple Select also works together and almost the same way. To perform any action, the first task is to identify the element group. I am saying it a group, as dropdown/multiple select is not a single element. They always have a single name but and they contains one or more than one elements in them. I should rather say more than one option in dropdown and multiple select. The only difference between these two is deselecting statement &amp; multiple selections are not allowed on dropdowns. Let’s look at the different operations:</p>
+
+<!--more-->
+
 
 <h3>Selecting Dropdown/Multiple Select Box</h3>
 
@@ -139,6 +142,9 @@ oSelection.selectByValue(value)
 
 <p>Operations on Checkboxes and Radio Buttons are easy to perform and most of the times the simple ID attributes work fine for both of these. But selection and d-selection is not the only thing we want with checkboxes and radio buttons. We might like to check that if the checkbox is already checked or if the radio button is selected by default or anything. Checkboxes and Radio button deals exactly the same way and you can perform below mentioned operations on either of them.</p>
 
+<!--more-->
+
+
 <h3>Different Selection Method</h3>
 
 <h4>By ID</h4>
@@ -232,6 +238,9 @@ oCheckBox.click();
 
 <p>Listing out the different WebDriver Wait statements that can be useful for an effective scripting and can avoid using the Thread.sleep() commands.</p>
 
+<!--more-->
+
+
 <h3>ImplicitlyWait Command</h3>
 
 <p>Purpose: Selenium WebDriver has borrowed the idea of implicit waits from Watir. This means that we can tell Selenium that we would like it to wait for a certain amount of time before throwing an exception that it cannot find the element on the page. We should note that implicit waits will be in place for the entire time the browser is open. This means that any search for elements on the page could take the time the implicit wait is set for.</p>
@@ -313,6 +322,9 @@ thread.sleep(1000);
     <content type="html"><![CDATA[<h2>WebDriver Switch Window Commands</h2>
 
 <p>Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.</p>
+
+<!--more-->
+
 
 <h3>GetWindowHandle Command</h3>
 
@@ -441,6 +453,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;</p>
     <content type="html"><![CDATA[<h2>WebDriver Browser Navigation Commands</h2>
 
 <p>The navigate interface exposes the ability to move backwards and forwards in your browser’s history but navigate().to() and get() do exactly the same thing. One’s just a lot easier to type than the other.</p>
+
+<!--more-->
+
 
 <h3>To Command</h3>
 
