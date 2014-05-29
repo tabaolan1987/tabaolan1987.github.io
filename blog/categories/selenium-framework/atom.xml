@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T14:20:02+07:00</updated>
+  <updated>2014-05-29T15:00:18+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,15 +14,103 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Using testNG]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-using-testng/"/>
-    <updated>2014-05-29T14:15:37+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-using-testng</id>
-    <content type="html"><![CDATA[<h2>TestNG</h2>
+    <title type="html"><![CDATA[Selenium Automation Framework : Create Test Script]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script/"/>
+    <updated>2014-05-29T14:48:11+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script</id>
+    <content type="html"><![CDATA[<h2>Create Test Script</h2>
 
-<h3>Required knowledge : <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a></h3>
+<h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>,<a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="/blog/categories/testng-framework/">TestNG Framework</a></h3>
 
-<p>In this tutorial we will use testNG to call 2 action that we already created is SignIn and PostStatus.</p>
+<p>In this tutorial we will use testNG to create our test script base on action :</p>
+
+<p>Login Facebook</p>
+
+<p>Post Status</p>
+
+<h4>How to do it&hellip;</h4>
+
+<p>1) Right Click in &lsquo;src/test/java&rsquo; &ndash;> New &ndash;> Package &ndash;> name it as &lsquo;com.selenium.test&rsquo;</p>
+
+<p><img src="/images/testng-1.png"></p>
+
+<p><img src="/images/testng-2.png"></p>
+
+<p>2) Right Click in package &lsquo;com.selenium.test&rsquo; &ndash;> TestNG &ndash;> Create TestNG Class.</p>
+
+<p><img src="/images/testng-3.png"></p>
+
+<p>3) Name your class as &lsquo;autoTestFacebook&rsquo; and tick on &lsquo;BeforeTest&rsquo; and &lsquo;AfterTest&rsquo; option.</p>
+
+<p><img src="/images/testng-4.png"></p>
+
+<p>4) Double click in &lsquo;autoTestFacebook&rsquo; to open it. Copy and paste the code below to this.</p>
+
+<p>```
+package com.selenium.test;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
+
+<p>import com.selenium.pageObject.LoginPage;
+import com.selenium.userAction.PostStatus;
+import com.selenium.userAction.SignIn;</p>
+
+<p>public class autoTestFacebook {</p>
+
+<pre><code>/**
+ * Create WebDriver as static variable
+ */
+private static WebDriver driver;
+</code></pre>
+
+<p>  /<em>*
+ * Setup some variable to run your script test
+ </em>/
+@BeforeTest
+  public void beforeTest() {</p>
+
+<pre><code>  driver = new FirefoxDriver();
+</code></pre>
+
+<p>  }</p>
+
+<p>  @Test
+  public void f() {</p>
+
+<pre><code>  LoginPage.loadPage(driver);
+  SignIn.Execute(driver, "gaumun", "63hamlong");
+  PostStatus.Execute(driver, "this is my status posted by my automation test");
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * after run your script test , use this code to close your browser
+ </em>/
+@AfterTest
+  public void afterTest() {</p>
+
+<pre><code>  driver.quit();
+</code></pre>
+
+<p>  }
+}</p>
+
+<p>```</p>
+
+<p>5) Right click on your class &ndash;> Run As &ndash;> TestNG Test.</p>
+
+<p><img src="/images/testng-5.png"></p>
+
+<p>6) Wait for TestNG running and check the result of test in folder &lsquo;test-output&rsquo;</p>
+
+<p><img src="/images/testng-6.png"></p>
+
+<h3>After this tutorial you are already have a project base on Selenium Framework. Take a look what you have done , you will see maintain this project is not hard. Your test script is very easy to know base on actually action of user.</h3>
 ]]></content>
   </entry>
   
@@ -220,7 +308,7 @@ public static WebElement txtbx_UserName(WebDriver driver) throws ElementNotFound
  * @return the textbox passwork of login form facebook
  */
 public static WebElement txtbx_Password(WebDriver driver) throws ElementNotFoundException{
-    element = driver.findElement(By.id("password"));
+    element = driver.findElement(By.id("pass"));
     return element;
 }
 
@@ -283,7 +371,7 @@ public static WebElement txt_status(WebDriver driver) {
  * @return button to post status
  */
 public static WebElement butt_post(WebDriver driver){
-    element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[4]/div/ul/li[2]/button"));
+    element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[4]/div/ul/li[3]/button"));
     return element;
 }
 </code></pre>

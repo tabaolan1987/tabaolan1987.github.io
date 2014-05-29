@@ -4,7 +4,7 @@
   <title><![CDATA[Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T14:20:02+07:00</updated>
+  <updated>2014-05-29T15:00:18+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,15 +14,138 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Using testNG]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-using-testng/"/>
-    <updated>2014-05-29T14:15:37+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-using-testng</id>
-    <content type="html"><![CDATA[<h2>TestNG</h2>
+    <title type="html"><![CDATA[Selenium Automation Framework : Create Test Script]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script/"/>
+    <updated>2014-05-29T14:48:11+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script</id>
+    <content type="html"><![CDATA[<h2>Create Test Script</h2>
 
-<h3>Required knowledge : <a href="http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a></h3>
+<h3>Required knowledge : <a href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>,<a href="http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="http://tabaolan1987.github.io/blog/categories/testng-framework/">TestNG Framework</a></h3>
 
-<p>In this tutorial we will use testNG to call 2 action that we already created is SignIn and PostStatus.</p>
+<p>In this tutorial we will use testNG to create our test script base on action :</p>
+
+<p>Login Facebook</p>
+
+<p>Post Status</p>
+
+<h4>How to do it&hellip;</h4>
+
+<p>1) Right Click in &lsquo;src/test/java&rsquo; &ndash;> New &ndash;> Package &ndash;> name it as &lsquo;com.selenium.test&rsquo;</p>
+
+<p><img src="http://tabaolan1987.github.io/images/testng-1.png"></p>
+
+<p><img src="http://tabaolan1987.github.io/images/testng-2.png"></p>
+
+<p>2) Right Click in package &lsquo;com.selenium.test&rsquo; &ndash;> TestNG &ndash;> Create TestNG Class.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/testng-3.png"></p>
+
+<p>3) Name your class as &lsquo;autoTestFacebook&rsquo; and tick on &lsquo;BeforeTest&rsquo; and &lsquo;AfterTest&rsquo; option.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/testng-4.png"></p>
+
+<p>4) Double click in &lsquo;autoTestFacebook&rsquo; to open it. Copy and paste the code below to this.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>import org.testng.annotations.BeforeTest;
+</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>
+</span><span class='line'>import com.selenium.pageObject.LoginPage;
+</span><span class='line'>import com.selenium.userAction.PostStatus;
+</span><span class='line'>import com.selenium.userAction.SignIn;
+</span><span class='line'>
+</span><span class='line'>public class autoTestFacebook {
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * Create WebDriver as static variable
+</span><span class='line'>   */
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * Setup some variable to run your script test
+</span><span class='line'> */
+</span><span class='line'>@BeforeTest
+</span><span class='line'>  public void beforeTest() {
+</span><span class='line'>    driver = new FirefoxDriver();
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @Test
+</span><span class='line'>  public void f() {
+</span><span class='line'>    LoginPage.loadPage(driver);
+</span><span class='line'>    SignIn.Execute(driver, "gaumun", "63hamlong");
+</span><span class='line'>    PostStatus.Execute(driver, "this is my status posted by my automation test");
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * after run your script test , use this code to close your browser
+</span><span class='line'> */
+</span><span class='line'>@AfterTest
+</span><span class='line'>  public void afterTest() {
+</span><span class='line'>    driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5) Right click on your class &ndash;> Run As &ndash;> TestNG Test.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/testng-5.png"></p>
+
+<p>6) Wait for TestNG running and check the result of test in folder &lsquo;test-output&rsquo;</p>
+
+<p><img src="http://tabaolan1987.github.io/images/testng-6.png"></p>
+
+<h3>After this tutorial you are already have a project base on Selenium Framework. Take a look what you have done , you will see maintain this project is not hard. Your test script is very easy to know base on actually action of user.</h3>
 ]]></content>
   </entry>
   
@@ -310,7 +433,7 @@
 </span><span class='line'>   * @return the textbox passwork of login form facebook
 </span><span class='line'>   */
 </span><span class='line'>  public static WebElement txtbx_Password(WebDriver driver) throws ElementNotFoundException{
-</span><span class='line'>      element = driver.findElement(By.id("password"));
+</span><span class='line'>      element = driver.findElement(By.id("pass"));
 </span><span class='line'>      return element;
 </span><span class='line'>  }
 </span><span class='line'>  
@@ -401,7 +524,7 @@
 </span><span class='line'>   * @return button to post status
 </span><span class='line'>   */
 </span><span class='line'>  public static WebElement butt_post(WebDriver driver){
-</span><span class='line'>      element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[4]/div/ul/li[2]/button"));
+</span><span class='line'>      element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[4]/div/ul/li[3]/button"));
 </span><span class='line'>      return element;
 </span><span class='line'>  }
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
