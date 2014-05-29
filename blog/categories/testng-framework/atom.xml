@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TestNG-Framework | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T09:20:56+07:00</updated>
+  <updated>2014-05-29T09:26:51+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -300,7 +300,7 @@ import org.testng.annotations.Test;</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework :Reporters and Asserts]]></title>
+    <title type="html"><![CDATA[TestNG Framework :Reporters and Asserts ]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts/"/>
     <updated>2014-05-26T11:55:48+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts</id>
