@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Ta Bao Lan]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T09:26:51+07:00</updated>
+  <updated>2014-05-29T09:45:08+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -30,7 +30,7 @@
 Select oSelection = new Select(driver.findElement(By.id(id)));
 </code></p>
 
-<p>Note: Select class only works for elements with <select> tags</p>
+<p>Note: Select class only works for elements with select tags</p>
 
 <h3>Selecting an option using ‘selectByVisibleText’</h3>
 
