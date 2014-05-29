@@ -1,58 +1,90 @@
 
 <!DOCTYPE html>
-<html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <title>Webdriver : Switch Window Commands - Ta Bao Lan</title>
-  <meta name="viewport" content="width=device-width">
-  
-  <meta name="description" content="Webdriver : Switch Window Commands Webdriver May 26th, 2014 WebDriver Switch Window Commands Some web applications have many frames or multiple &hellip;">
   <meta name="author" content="Ta Bao Lan">
 
   
+  <meta name="description" content="WebDriver Switch Window Commands Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
   <link rel="canonical" href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-switch-window-commands">
-  <link href="/favicon.ico" rel="icon">
+  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ta Bao Lan" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
-  <script type="text/javascript" src="/javascripts/jquery-2.0.3.min.js"></script>
-  <script type="text/javascript" src="/javascripts/jquery.isotope.min.js"></script>
-  <script type="text/javascript" src="/javascripts/jquery.lettering.min.js"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
 
-  <script language="JavaScript">
-$(document).ready( function () {
-  $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
-})
-</script>
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
-<body>
-  <div class="container">
-    <header role="banner" class="header"><h1 class="site-title"><a href="/"><i class="icon-chevron-right"></i> Ta Bao Lan</a></h1>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ta Bao Lan</a></h1>
+  
+    <h2>Software Engineer - Test Automation Engineer</h2>
+  
+</hgroup>
 
 </header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:tabaolan1987.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
     
-
+      <h1 class="entry-title">Webdriver : Switch Window Commands</h1>
     
-
-
-<article role="main" class="article theme-orange">
-  <header class="article-header">
-  
-    <h1 class="article-title lettering">Webdriver : Switch Window Commands</h1>
-  
-  <div>
-    <span><i class="icon-tag"></i> 
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/webdriver/'>Webdriver</a>
-  
-</span>
-
-</span>
-    <span class="pull-right">
+    
+      <p class="meta">
+        
 
 
 
@@ -64,22 +96,14 @@ $(document).ready( function () {
   
 
 
+<time datetime="2014-05-26T09:02:20+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
 
-<time datetime="2014-05-26T09:02:20+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time></span>
-  </div>
-</header>
 
-
-  
-    <div class="sharing">
-  <a href="javascript:(function(){window.twttr=window.twttr||{};var D=550,A=450,C=screen.height,B=screen.width,H=Math.round((B/2)-(D/2)),G=0,F=document,E;if(C&gt;A){G=Math.round((C/2)-(A/2))}window.twttr.shareWin=window.open('http://twitter.com/share','','left='+H+',top='+G+',width='+D+',height='+A+',personalbar=0,toolbar=0,scrollbars=1,resizable=1');E=F.createElement('script');E.src='http://platform.twitter.com/bookmarklets/share.js?v=1';F.getElementsByTagName('head')[0].appendChild(E)}());"><img src="/images/sharing/twitter.png" alt="twitter"></a>
-  <a href="javascript:var%20d=document,f='http://www.facebook.com/share',l=d.location,e=encodeURIComponent,p='.php?src=bm&v=4&i=1390933711&u='+e(l.href)+'&t='+e(d.title);1;try{if%20(!/^(.*\.)?facebook\.[^.]*$/.test(l.host))throw(0);share_internal_bookmarklet(p)}catch(z)%20{a=function()%20{if%20(!window.open(f+'r'+p,'sharer','toolbar=0,status=0,resizable=1,width=626,height=436'))l.href=f+p};if%20(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else{a()}}void(0)"><img src="/images/sharing/facebook.png" alt="facebook"></a>
-  <a href="javascript:void(window.open('https://plus.google.com/share?ur\l='+encodeURIComponent(location),%20'Share%20to%20Google+','width=600,height=460,menubar=no,location=no,status=no'));"><img src="/images/sharing/google+.png" alt="google+"></a>
-  <a href="javascript:window.open('http://b.hatena.ne.jp/add?mode=confirm&is_bm=1&title='+escape(document.title)+'&url='+escape(location.href),%20'_blank',%20'width=520,height=600,resizable=1,scrollbars=1');undefined;"><img src="/images/sharing/hatena_bookmark.png" alt="hatena_bookmark"></a>
-</div>
-
-  
-  <div><h2>WebDriver Switch Window Commands</h2>
+<div class="entry-content"><h2>WebDriver Switch Window Commands</h2>
 
 <p>Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.</p>
 
@@ -244,47 +268,138 @@ $(document).ready( function () {
 </div>
 
 
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ta Bao Lan</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T09:02:20+07:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/webdriver/'>Webdriver</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-switch-window-commands/" data-via="" data-counturl="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-switch-window-commands/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/26/webdriver-browser-navigation-commands/" title="Previous Post: Webdriver : Browser Navigation Commands">&laquo; Webdriver : Browser Navigation Commands</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/05/26/webdriver-wait-commands/" title="Next Post: Webdriver : Wait Commands">Webdriver : Wait Commands &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
-
-
-    <footer role="contentinfo" class="footer"><div class="footer-icons">
-  
-  
-  <a href="/atom.xml" target="_blank" class="icon-rss icon-2x"></a>
 </div>
-<p>&copy; 2014 Ta Bao Lan, Powered by <a href="http://octopress.org" target="_blank">Octopress</a> &amp; <a href="https://github.com/midnightSuyama/respectMattt" target="_blank">respectMattt</a></p>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>A little something about me.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Selenium Automation Framework : Modular Driven Framework</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Selenium Automation Framework : Page Object Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-create-new-project/">Selenium Automation Framework : Create New Project</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse/">Selenium Automation Framework : Install Maven to Eclipse</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/26/selenium-automation-framework-introduction/">Selenium Automation Framework : Introduction</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ta Bao Lan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
 
 </footer>
-    
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 
 
 
   <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-51278981-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
 
 
-<script language="JavaScript">
-$('.article-index').isotope({
-  articleSelector: '.article',
-  masonry: {
-    columnWidth: 310
-  }
-});
-
-$('.lettering').lettering();
-</script>
 
 
-  </div>
+
 </body>
 </html>
