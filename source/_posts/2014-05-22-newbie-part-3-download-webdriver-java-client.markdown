@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Newbie Part 3 : Download Webdriver Java client"
+title: "Beginner Part 3 : Download Webdriver Java client"
 date: 2014-05-22 16:49:41 +0700
 comments: true
 categories: NewBie
@@ -8,6 +8,8 @@ categories: NewBie
 ##Download WebDriver Java client
 
 Selenium webdriver supports many languages and each language has its own client driver. Here we are configuring selenium 2 with Java so we need ‘webdriver Java client driver’.
+
+<!--more-->
 
 1) [Click here](http://docs.seleniumhq.org/download/) to go on WebDriver Java client driver download page for webdriver download file. On that page click on ‘Download‘ link of Java client driver as shown in the below image.
 

@@ -12,6 +12,8 @@ categories: TestNG-Framework
 
 In the TestNG Introduction chapter we have came across different annotations used in TestNG Framework but so far we have used just three(Before, After & Test). All though these are the most frequently used annotations but who know how far you will go with your framework and may like to use other useful TestNG annotations.
 
+<!--more-->
+
 Before that I would like you to give a small idea on Annotations hierarchy or Annotations levels in TestNG.
 
 ```

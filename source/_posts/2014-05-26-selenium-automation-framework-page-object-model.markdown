@@ -8,7 +8,11 @@ categories: Selenium-Framework
 
 ##Page Object Model | POM
 
+###Required knowledge : [WebDriver](/blog/categories/webdriver/),[Xpath](/blog/categories/xpath/)
+
 Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is used. Duplicated code could be caused by duplicated functionality and this will result in duplicated usage of locators. The disadvantage of duplicated code is that the project is less maintainable. If some locator will change, you have to walk through the whole test code to adjust locators where necessary. By using the page object model we can make non-brittle test code and reduce or eliminate duplicate test code. Beside of that it improves the readability and allows us to create interactive documentation. Last but not least, we can create tests with less keystroke. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.
+
+<!--more-->
 
 Note : We will try to create Login Page and Homepage follow website [Facebook](https://facebook.com)
 
@@ -76,7 +80,7 @@ public class LoginPage {
 	 * @return the textbox passwork of login form facebook
 	 */
 	public static WebElement txtbx_Password(WebDriver driver) throws ElementNotFoundException{
-		element = driver.findElement(By.id("password"));
+		element = driver.findElement(By.id("pass"));
 		return element;
 	}
 	
@@ -131,7 +135,7 @@ public class HomePage {
 	 * @return button to post status
 	 */
 	public static WebElement butt_post(WebDriver driver){
-		element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[4]/div/ul/li[2]/button"));
+		element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[4]/div/ul/li[3]/button"));
 		return element;
 	}
 }

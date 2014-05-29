@@ -8,7 +8,11 @@ categories: Selenium-Framework
 
 ##Create new Project
 
-Maven project is very helpful for us to manage the version of each library we used and easy to build , easy to configuration with Continuous Integration.
+###Required knowledge : [Maven Project](http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+
+Maven project is very helpful for us to automate download jar file and manage the version we used, easy to build , easy to configuration with Continuous Integration.
+
+<!--more-->
 
 Now we will create a project Maven name "Selenium-Automation-Framework". 
 

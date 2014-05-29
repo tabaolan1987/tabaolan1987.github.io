@@ -10,6 +10,8 @@ categories: TestNG-Framework
 
 It is easy to install TestNG, as it comes as a plugin for Eclipse IDE. Prerequisite for installing TestNG is your Internet connection should be up & running during installation of this plugin and Eclipse IDE should be installed in your computer. Please see Download and Install Eclipse to setup Eclipse to you system.
 
+<!--more-->
+
 ###Steps to follow:
 
 1) Launch the Eclipse IDE and from Help menu, click “Install New Software”.

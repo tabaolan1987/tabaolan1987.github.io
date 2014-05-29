@@ -13,7 +13,7 @@ categories: TestNG-Framework
 There will be situations when you want to put number of tests under a single test class and like to run all in single shot.  With the help of TestNG ‘@Test‘ annotations we can execute multiple tests in single TestNG file.
 
 Take an example of four different tests under one testng class and print the test sequence on the console.
-
+<!--more-->
 ####How to do it…
 
 1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next.

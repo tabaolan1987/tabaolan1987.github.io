@@ -9,7 +9,7 @@ categories: Webdriver
 ##CheckBox & Radio Button Operations
 
 Operations on Checkboxes and Radio Buttons are easy to perform and most of the times the simple ID attributes work fine for both of these. But selection and d-selection is not the only thing we want with checkboxes and radio buttons. We might like to check that if the checkbox is already checked or if the radio button is selected by default or anything. Checkboxes and Radio button deals exactly the same way and you can perform below mentioned operations on either of them.
-
+<!--more-->
 ###Different Selection Method
 
 ####By ID

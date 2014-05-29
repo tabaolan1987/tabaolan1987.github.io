@@ -9,7 +9,7 @@ categories: Webdriver
 ##WebDriver Switch Window Commands
 
 Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.
-
+<!--more-->
 ###GetWindowHandle Command
 
 Purpose: To get the window handle of the current window.

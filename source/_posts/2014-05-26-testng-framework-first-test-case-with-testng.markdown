@@ -14,7 +14,7 @@ Steps to follow:
 
 Or
 
-Right click on Test Case folder, go to TestNG and select “TestNG Class“.
+Right click on Test Case folder, go to TestNG and select “TestNG Class“. <!--more-->
 
 {% img /images/TestNG-FTC-1.png%}
 

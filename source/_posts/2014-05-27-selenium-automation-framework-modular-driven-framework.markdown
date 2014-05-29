@@ -8,7 +8,11 @@ categories: Selenium-Framework
 
 ##Modular Driven Framework
 
+###Required knowledge : [Page Object Model](/blog/2014/05/26/selenium-automation-framework-page-object-model/)
+
 In most of the web application we have few set of actions which are always executed in the series of actions. Rather than writing those actions again and again in our test, we can club those actions in to a method and then calling that method in our test script. Modularity avoids duplicacy of code. In future if there is any change in the series of action, all you have to do is to make changes in your main modular method script. No test case will be impacted with the change.
+
+<!--more-->
 
 ###How to do it..
 

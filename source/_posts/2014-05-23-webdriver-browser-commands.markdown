@@ -10,6 +10,8 @@ categories: Webdriver
 
 The very first thing you like to do with Selenium is to opening and closing a new browser. Below are the numbers of commands you can apply on the Selenium opened browser.
 
+<!--more-->
+
 ###1)Get Command
 
 Purpose: This command is use to open a new web page in the current browser. 

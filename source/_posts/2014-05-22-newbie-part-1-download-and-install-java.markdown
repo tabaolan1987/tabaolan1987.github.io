@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Newbie Part 1 :Download and Install Java "
+title: "Beginner Part 1 :Download and Install Java "
 date: 2014-05-22 15:36:12 +0700
 comments: true
 categories: NewBie
@@ -9,6 +9,8 @@ categories: NewBie
 ##Download and Install Java
 
 First of all you need to install JDK (Java development kit) in your system. So your next question will be “how can I download java”. [Click here](http://www.oracle.com/technetwork/java/javase/downloads/index.html) to download Java and install it in your system as per given installation guide over there or follow the below mentioned steps.
+
+<!--more-->
 
 1) Visit the [Java downloads page](http://www.oracle.com/technetwork/java/javase/downloads/index.html) on Oracle’s website to find the JDK environment download. Scroll down until you find Java SE Latest Version and download JDK.
 

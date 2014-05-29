@@ -9,7 +9,7 @@ categories: Webdriver
 ##WebDriver Browser Navigation Commands
 
 The navigate interface exposes the ability to move backwards and forwards in your browser’s history but navigate().to() and get() do exactly the same thing. One’s just a lot easier to type than the other.
-
+<!--more-->
 ###To Command
 
 Purpose : This command is use to navigate on specific page or URL in between the  test Command : driver.navigate().to(URL); Parameters : url – The URL to load. It is best to use a fully qualified URL.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Newbie Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test"
+title: "Beginner Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test"
 date: 2014-05-23 15:13:27 +0700
 comments: true
 categories: NewBie
@@ -8,6 +8,8 @@ categories: NewBie
 ##Creat a simple test case selenium in Eclipse
 
 To configure Eclipse with Selenium webdriver, we need to launch the Eclipse IDE, create a Workspace, create a Project, create a Package, create a Class and add External libraries to the project.
+
+<!--more-->
 
 ###1) Select WorkSpace on Eclipse start up.
 

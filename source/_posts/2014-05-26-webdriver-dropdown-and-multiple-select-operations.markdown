@@ -9,7 +9,7 @@ categories: Webdriver
 ##DropDown & Multiple Select Operations
 
 Just like Checkboxes & Radio buttons, Dropdown and Multiple Select also works together and almost the same way. To perform any action, the first task is to identify the element group. I am saying it a group, as dropdown/multiple select is not a single element. They always have a single name but and they contains one or more than one elements in them. I should rather say more than one option in dropdown and multiple select. The only difference between these two is deselecting statement & multiple selections are not allowed on dropdowns. Let’s look at the different operations:
-
+<!--more-->
 ###Selecting Dropdown/Multiple Select Box
 
 It is just an ordinary operation like selecting any other type of element on a webpage. You can choose it by ID, Name, Css & Xpath etc. But to perform any action on this element it is required to import ‘import org.openqa.selenium.support.ui.Select' package and to use it we need to create a new select object of class select.
@@ -18,7 +18,7 @@ It is just an ordinary operation like selecting any other type of element on a w
 Select oSelection = new Select(driver.findElement(By.id(id)));
 ```
 
-Note: Select class only works for elements with <select> tags
+Note: Select class only works for elements with select tags
 
 ###Selecting an option using ‘selectByVisibleText’
 

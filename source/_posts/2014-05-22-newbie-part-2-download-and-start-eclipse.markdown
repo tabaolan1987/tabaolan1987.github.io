@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Newbie Part 2 : Download and Start Eclipse"
+title: "Beginner Part 2 : Download and Start Eclipse"
 date: 2014-05-22 15:38:28 +0700
 comments: true
 categories: NewBie
@@ -8,6 +8,8 @@ categories: NewBie
 ##Download and Start Eclipse IDE
 
 Download Eclipse for Java Developers, extract and save it in any drive. It is totally free. You can run ‘eclipse.exe’ directly so you do not need to install Eclipse in your system.
+
+<!--more-->
 
 1) Go to [|Eclipse download page](http://www.eclipse.org/downloads.)
 

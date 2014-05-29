@@ -10,6 +10,8 @@ categories: Selenium-Framework
 
 You can install Maven plugin for Eclipse via update site, simply copy the above update site link address and paste it into Eclipse’s “Update” or “Install New Software” manager as explained below.
 
+<!--more-->
+
 ###Step 1 : 
 
 Installing m2eclipse is fairly simple. Start Eclipse then go to: Help -> Install New Software

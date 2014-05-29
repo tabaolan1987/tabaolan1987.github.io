@@ -13,6 +13,8 @@ categories: Selenium-Framework
 Mission critical software undergoes rigorous functional tests, especially supported by automated testing frameworks. Automating these frameworks and maintaining quality software releases are critical to business performance. Enterprises often face the dilemma of balancing costs and managing resources to ensure that automation frameworks cover all the business scenarios and the applications delivered are error – free.
 By implementing the appropriate automated testing framework, enterprises can significantly increase the speed and accuracy of the testing process, provide a higher return on investment (ROI) from software projects and systematically minimize risk.
 
+<!--more-->
+
 ###Why Framework
 
 A framework defines the organization’s way of doing things – a ‘Single Standard’. Following this standard would result in the project team achieving:

@@ -11,6 +11,8 @@ categories: Webdriver
 
 Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium project produces various tools for automation testing such as Selenium IDE, Selenium Remote Control (RC), Selenium Grid and Selenium 2.0 & WebDriver. Learning all the tools will give you many different options for approaching different automation problems. The entire suits of tools result in a rich set of testing functions specially geared to the needs of testing of web application of all types.
 
+<!--more-->
+
 ###Why Selenium
 
 - Selenium is an open source tool with Corporate backing.

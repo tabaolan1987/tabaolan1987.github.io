@@ -13,7 +13,7 @@ categories: TestNG-Framework
 Everybody knows the importance of Parameterization in testing and in automation testing. It allows us to automatically run a test case multiple times with different input and validation values. As Selenium Webdriver is more an automated testing framework than a ready-to-use tool, you will have to put in some effort to support data driven testing in your automated tests. I usually prefer to use Microsoft Excel as the format for storing my parameters but so many of my followers have requested to write an article on TestNG Data Provider.
 
 TestNG again gives us another interesting feature called TestNG Parameters. TestNG lets you pass parameters directly to your test methods with your testng.xml.
-
+<!--more-->
 ####How to do it…
 
 Let me take a very simple example of LogIn application, where the username and password is required to clear the authentication.

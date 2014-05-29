@@ -1,9 +1,18 @@
-<ul class="main-navigation">
-  <li><a href="{{ root_url }}/">Blog</a></li>
-  <li><a href="{{ root_url }}/blog/archives">Archives</a></li>
-  <li><a href="{{ root_url }} /blog/categories/newbie">Selenium For Newbie</a></li>
-  <li><a href="{{ root_url }} /blog/categories/xpath">Xpath Location</a></li>
-  <li><a href="{{ root_url }} /blog/categories/webdriver">Webdriver Basic</a></li>
-  <li><a href="{{ root_url }} /blog/categories/testng-framework">TestNG Framework</a></li>
-  <li><a href="{{ root_url }} /blog/categories/selenium-framework">Selenium Framework</a></li>
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="{{ root_url }}/index.html">Home</a></li>
+	<li id="ajax"><a href="{{ root_url }}/blog/categories/selenium-framework/">Selenium Framework</a></li>
+	<li id="ajax"><a href="{{ root_url }}/blog/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="{{ root_url }}/blog/categories/xpath/">Xpath</a></li>
+	<li id="ajax"><a href="{{ root_url }}/blog/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="{{ root_url }}/blog/categories/newbie/">Selenium Beginner</a></li>
+    {% if site.simple_search %}
+    <li>
+    <div id="dark">
+        <form method="get" action="{{ root_url }}/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+    {% endif %}    
 </ul>

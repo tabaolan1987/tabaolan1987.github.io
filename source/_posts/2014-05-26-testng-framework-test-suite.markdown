@@ -11,7 +11,7 @@ categories: TestNG-Framework
 In any project, you will end up to a place where you need to execute so many test cases on a run. Running a set of test cases together is call executing a Test Suite. Those test cases can be dependent to each other or may have to be executed in a certain order. TestNg gives us the capability to manage our test execution.
 
 In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. This is the xml file where you will configure your test run, set test dependency, include or exclude any test, method, class or package and set priority etc.
-
+<!--more-->
 ###How to do it…
 
 ####Step 1 : Create a TestNG XML
