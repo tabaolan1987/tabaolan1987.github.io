@@ -6,7 +6,7 @@
 	<title>Selenium Automation Framework : Create Test Script - Software Engineer</title>
     <meta name="author" content="Ta Bao Lan">
     
-	<meta name="description" content="Create Test Script Required knowledge : Page Object Model,Modular Driven Framework , TestNG Framework In this tutorial we will use testNG to create &hellip;">
+	<meta name="description" content="Create Test Script Required knowledge : Page Object Model, Modular Driven Framework , TestNG Framework In this tutorial we will use testNG to create &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -126,7 +126,7 @@
 	<h2 class="title">Selenium Automation Framework : Create Test Script</h2>
 	<div class="entry-content"><h2>Create Test Script</h2>
 
-<h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>,<a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="/blog/categories/testng-framework/">TestNG Framework</a></h3>
+<h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="/blog/categories/testng-framework/">TestNG Framework</a></h3>
 
 <p>In this tutorial we will use testNG to create our test script base on action :</p>
 
@@ -199,6 +199,9 @@
 <span class='line-number'>42</span>
 <span class='line-number'>43</span>
 <span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
 </span><span class='line'>
 </span><span class='line'>import org.openqa.selenium.WebDriver;
@@ -227,7 +230,10 @@
 </span><span class='line'>    driver = new FirefoxDriver();
 </span><span class='line'>  }
 </span><span class='line'>  
-</span><span class='line'>  @Test
+</span><span class='line'>  /**
+</span><span class='line'> * your test script call action class here
+</span><span class='line'> */
+</span><span class='line'>@Test
 </span><span class='line'>  public void f() {
 </span><span class='line'>    LoginPage.loadPage(driver);
 </span><span class='line'>    SignIn.Execute(driver, "gaumun", "63hamlong");
@@ -242,8 +248,7 @@
 </span><span class='line'>  public void afterTest() {
 </span><span class='line'>    driver.quit();
 </span><span class='line'>  }
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
 <p>5) Right click on your class &ndash;> Run As &ndash;> TestNG Test.</p>
