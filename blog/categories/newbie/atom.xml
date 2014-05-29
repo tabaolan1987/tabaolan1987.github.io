@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NewBie | Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/newbie/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T12:22:21+07:00</updated>
+  <updated>2014-05-29T12:24:38+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Newbie Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test]]></title>
+    <title type="html"><![CDATA[Beginner Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/"/>
     <updated>2014-05-23T15:13:27+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test</id>
@@ -180,7 +180,7 @@ public static void main(String[] args) {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Newbie Part 3 : Download Webdriver Java client]]></title>
+    <title type="html"><![CDATA[Beginner Part 3 : Download Webdriver Java client]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-3-download-webdriver-java-client/"/>
     <updated>2014-05-22T16:49:41+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-3-download-webdriver-java-client</id>
@@ -218,7 +218,7 @@ public static void main(String[] args) {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Newbie Part 2 : Download and Start Eclipse]]></title>
+    <title type="html"><![CDATA[Beginner Part 2 : Download and Start Eclipse]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-2-download-and-start-eclipse/"/>
     <updated>2014-05-22T15:38:28+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-2-download-and-start-eclipse</id>
@@ -278,7 +278,7 @@ public static void main(String[] args) {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Newbie Part 1 :Download and Install Java ]]></title>
+    <title type="html"><![CDATA[Beginner Part 1 :Download and Install Java ]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-1-download-and-install-java/"/>
     <updated>2014-05-22T15:36:12+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-1-download-and-install-java</id>
