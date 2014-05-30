@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-30T12:24:26+07:00</updated>
+  <updated>2014-05-30T13:51:58+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -43,9 +43,9 @@
 
 <p>4) Unzip and Copy 2 driver Chrome and IE to folder &lsquo;Driver&rsquo;.</p>
 
-<p><img src="/images/mulb-1.png"></p>
+<p><img src="/images/mulb-2.png"></p>
 
-<p>5) Double click on &lsquo;pom.xml&rsquo; paste the configuration below the tag <dependencies> to enable maven get the Directory of project.</p>
+<p>5) Double click on &lsquo;pom.xml&rsquo; paste the configuration below the tag &lsquo;dependencies&rsquo; to enable Maven automatic get the Directory of project when build project.</p>
 
 <p>```
 <reporting></p>
@@ -477,7 +477,7 @@ private static String status_facebook;
 
 <p><img src="/images/mulb-9.png"></p>
 
-<p>17) Copy code below and paste to &lsquo;TestNg.xml&rsquo;.Remember to change the username and password in tag parameter.</p>
+<p>17) Copy code below and paste to &lsquo;TestNg.xml&rsquo;. Remember to change the username and password in tag parameter. You can change the value of parallel to test &ndash;> it will run 3 browser in the same time.</p>
 
 <p>```
 &lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?></p>
