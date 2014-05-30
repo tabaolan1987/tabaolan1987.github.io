@@ -4,7 +4,7 @@
   <title><![CDATA[Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-30T13:51:58+07:00</updated>
+  <updated>2014-05-30T14:33:02+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,95 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Action Class]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/30/webdriver-action-class/"/>
+    <updated>2014-05-30T14:01:08+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/30/webdriver-action-class</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>The Advanced User Interactions API is a new, more comprehensive API for describing actions a user can perform on a web page. This includes actions such as drag and drop or clicking multiple elements while holding down the Control key.</p>
+
+<h3>Mouse Hover action</h3>
+
+<p>There will be situations where it is required to click on the item of the drop down menu that will show up when you mouse over this menu.take a look in the example :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// find the menu that have the dropdown showing when we mouse over it.   
+</span><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
+</span><span class='line'>//Create instance of action class
+</span><span class='line'>Actions action = new Actions(driver);
+</span><span class='line'>//move mouse over the menu.
+</span><span class='line'>action.moveToElement(element).build().perform();
+</span><span class='line'>//find the link you want and click it.
+</span><span class='line'>driver.findElement(By.linkText("News")).click();</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or you can code like this way :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
+</span><span class='line'>        Actions action = new Actions(driver);
+</span><span class='line'>action.moveToElement(element).moveToElement(driver.findElement(By.linkText("News"))).click().build().perform();
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>With some of the browser it happens that once mouse hover action is performed, the menu list disappear with in the fractions of seconds before Selenium identify the next submenu item and perform click action on it. In that case it is better to use perform()&lsquo; action on the main menu to hold the menu list till the time Selenium identify the sub menu item and click on it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
+</span><span class='line'>Actions action = new Actions(driver);
+</span><span class='line'>action.moveToElement(element).perform();
+</span><span class='line'>WebElement subElement = driver.findElement(By.linkText("News"));
+</span><span class='line'>action.moveToElement(subElement);
+</span><span class='line'>action.click();
+</span><span class='line'>action.perform();</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Drag And Drop</h3>
+
+<p>In case you need drag and drop an element to another position , the action class provide us the way like below code :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>WebElement From = driver.findElement(By.xpath("yourlocationElement));
+</span><span class='line'>WebElement To = driver.findElement(By.xpath("yourlocationElement"));
+</span><span class='line'>Actions builder = new Actions(driver);
+</span><span class='line'>Action dragAndDrop = builder.clickAndHold(From)
+</span><span class='line'>.moveToElement(To)
+</span><span class='line'>.release(To)
+</span><span class='line'>.build();
+</span><span class='line'>dragAndDrop.perform();
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework P7 : Run on Multi Browser]]></title>
@@ -3605,144 +3694,6 @@ link=”Name of the Link”</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>driver.findElement(By.id("email")).sendKeys("your username or email login to facebook");</span></code></pre></td></tr></table></div></figure>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Dropdown and Multiple Select Operations]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/"/>
-    <updated>2014-05-26T10:15:16+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations</id>
-    <content type="html"><![CDATA[<h2>DropDown &amp; Multiple Select Operations</h2>
-
-<p>Just like Checkboxes &amp; Radio buttons, Dropdown and Multiple Select also works together and almost the same way. To perform any action, the first task is to identify the element group. I am saying it a group, as dropdown/multiple select is not a single element. They always have a single name but and they contains one or more than one elements in them. I should rather say more than one option in dropdown and multiple select. The only difference between these two is deselecting statement &amp; multiple selections are not allowed on dropdowns. Let’s look at the different operations:</p>
-
-<!--more-->
-
-
-<h3>Selecting Dropdown/Multiple Select Box</h3>
-
-<p>It is just an ordinary operation like selecting any other type of element on a webpage. You can choose it by ID, Name, Css &amp; Xpath etc. But to perform any action on this element it is required to import ‘import org.openqa.selenium.support.ui.Select&#8217; package and to use it we need to create a new select object of class select.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: Select class only works for elements with select tags</p>
-
-<h3>Selecting an option using ‘selectByVisibleText’</h3>
-
-<p>It is very easy to choose or select an option given under any dropdowns and multiple selection boxes with selectByVisibleText method.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>oSelection.selectByVisibleText(text);
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Selecting an option using ‘selectByIndex’</h3>
-
-<p>It is almost the same as selectByVisibleText but the only difference here is that we provide the index number of the option here rather the option text.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>
-</span><span class='line'>oSelection.selectByIndex(index);</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Selecting an option using ‘selectByValue’</h3>
-
-<p>It is again the same what we have discussed earlier, the only difference in this is that we need to provide the value of the option rather the option text.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>oSelection.selectByValue(value);
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: The value of an option and the text of the option may not be always same and there can be a possibility that the value is not assigned to Select webelement. If the value is given in the Select tag then only you can use the selectByValue method.</p>
-
-<h3>Getting the Size of Select item</h3>
-
-<p>Sometimes you may like to count the element in the dropdown and multiple select box, so that you can use the loop on Select element.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>List&lt;WebElement&gt; oSize = oSelection.getOptions();
-</span><span class='line'>int iListSize = oSize.size();
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Printing the Options</h3>
-
-<p>Once you get the size of the Select element then it is easy to print the Text of the options.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>  List oSize = oSelection.getOptions();
-</span><span class='line'>  int iListSize = oSize.size();
-</span><span class='line'>  for(int i =0; i&gt;iListSize ; i++){
-</span><span class='line'>      String sValue = oSelection.getOptions().get(i).getText();
-</span><span class='line'>      System.out.println(sValue);
-</span><span class='line'>      }</span></code></pre></td></tr></table></div></figure>
-
-
-<p>All of the above methods work on both Dropdown and Multiple select box.</p>
-
-<h3>Deselect methods</h3>
-
-<p>This only works on Multiple selection boxes. If in case you want to deselect any selected option and that can be done with either deselectAll(), deselectByIndex, deselectByValue and deselectByVisibletext.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>  oSelection.deselectAll();
-</span><span class='line'>  oSelection.deselectByIndex(index);
-</span><span class='line'>  oSelection.deselectByValue(value);
-</span><span class='line'>  oSelection.deselectByVisibleText(text);
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Multiple selection method</h3>
-
-<p>This one also just works on Multiple selection boxes and not on regular List boxes or dropdowns. There is no additional logic behind selecting multiple options of Select element. All you need to do is to fire select commands on multiple elements one by one that’s it.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
-</span><span class='line'>  oSelection.selectByIndex(index)
-</span><span class='line'>  oSelection.selectByIndex(index)
-</span><span class='line'>  // Or
-</span><span class='line'>  oSelection.selectByVisibleText(text)
-</span><span class='line'>  oSelection.selectByVisibleText(text)
-</span><span class='line'>  // Or
-</span><span class='line'>  oSelection.selectByValue(value)
-</span><span class='line'>  oSelection.selectByValue(value)</span></code></pre></td></tr></table></div></figure>
 
 
 
