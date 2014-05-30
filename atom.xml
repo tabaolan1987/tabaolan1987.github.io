@@ -4,7 +4,7 @@
   <title><![CDATA[Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-30T12:22:26+07:00</updated>
+  <updated>2014-05-30T12:24:26+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -2583,7 +2583,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework P 5: Annotations , Groups and OnDepends]]></title>
+    <title type="html"><![CDATA[TestNG Framework P5: Annotations , Groups and OnDepends]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations/"/>
     <updated>2014-05-26T11:35:51+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations</id>
