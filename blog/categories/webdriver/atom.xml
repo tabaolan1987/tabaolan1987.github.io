@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-30T14:33:02+07:00</updated>
+  <updated>2014-05-30T14:35:38+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
 <p>The Advanced User Interactions API is a new, more comprehensive API for describing actions a user can perform on a web page. This includes actions such as drag and drop or clicking multiple elements while holding down the Control key.</p>
+
+<!--more-->
+
 
 <h3>Mouse Hover action</h3>
 

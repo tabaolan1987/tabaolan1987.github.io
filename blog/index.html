@@ -174,88 +174,14 @@
 
 
 
+<div class="entry-content clearfix">
   <h2>Introduction</h2>
 
 <p>The Advanced User Interactions API is a new, more comprehensive API for describing actions a user can perform on a web page. This includes actions such as drag and drop or clicking multiple elements while holding down the Control key.</p>
 
-<h3>Mouse Hover action</h3>
 
-<p>There will be situations where it is required to click on the item of the drop down menu that will show up when you mouse over this menu.take a look in the example :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// find the menu that have the dropdown showing when we mouse over it.   
-</span><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
-</span><span class='line'>//Create instance of action class
-</span><span class='line'>Actions action = new Actions(driver);
-</span><span class='line'>//move mouse over the menu.
-</span><span class='line'>action.moveToElement(element).build().perform();
-</span><span class='line'>//find the link you want and click it.
-</span><span class='line'>driver.findElement(By.linkText("News")).click();</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or you can code like this way :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
-</span><span class='line'>        Actions action = new Actions(driver);
-</span><span class='line'>action.moveToElement(element).moveToElement(driver.findElement(By.linkText("News"))).click().build().perform();
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>With some of the browser it happens that once mouse hover action is performed, the menu list disappear with in the fractions of seconds before Selenium identify the next submenu item and perform click action on it. In that case it is better to use perform()&lsquo; action on the main menu to hold the menu list till the time Selenium identify the sub menu item and click on it.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
-</span><span class='line'>Actions action = new Actions(driver);
-</span><span class='line'>action.moveToElement(element).perform();
-</span><span class='line'>WebElement subElement = driver.findElement(By.linkText("News"));
-</span><span class='line'>action.moveToElement(subElement);
-</span><span class='line'>action.click();
-</span><span class='line'>action.perform();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Drag And Drop</h3>
-
-<p>In case you need drag and drop an element to another position , the action class provide us the way like below code :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>WebElement From = driver.findElement(By.xpath("yourlocationElement));
-</span><span class='line'>WebElement To = driver.findElement(By.xpath("yourlocationElement"));
-</span><span class='line'>Actions builder = new Actions(driver);
-</span><span class='line'>Action dragAndDrop = builder.clickAndHold(From)
-</span><span class='line'>.moveToElement(To)
-</span><span class='line'>.release(To)
-</span><span class='line'>.build();
-</span><span class='line'>dragAndDrop.perform();
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
+  <a class="btn pull-right" href="/blog/2014/05/30/webdriver-action-class/">Continue reading</a>
+</div>
 
   </article>
   <hr>
