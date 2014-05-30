@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-30T15:38:36+07:00</updated>
+  <updated>2014-05-30T15:43:29+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -80,6 +80,174 @@ Action dragAndDrop = builder.clickAndHold(From)
 dragAndDrop.perform();</p>
 
 <p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[XPath : Selenium Locators]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/xpath-locators-in-selenium/"/>
+    <updated>2014-05-26T10:48:22+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/xpath-locators-in-selenium</id>
+    <content type="html"><![CDATA[<h2>Locators in Selenium</h2>
+
+<p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
+
+<p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
+
+<!--more-->
+
+
+<h3>Different types of Locators</h3>
+
+<p>There are 8 explicit locators: id, name, identifier, dom, xpath, link, css and ui that Selenium’s commands support. I will explain just a few most important locators to avoid over dosage and any confusion.</p>
+
+<h4>ID Locator</h4>
+
+<p>Ids are the most preferred way to locate elements on a page, as each id is supposed to be unique which makes ids a very faster and reliable way to locate elements.</p>
+
+<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised.</p>
+
+<p>HTML CODE :</p>
+
+<p><code>
+&lt;form name="loginForm"&gt;Login
+ Username: &lt;input id="username" type="text" name="login" /&gt;
+ Password: &lt;input id="password" type="password" name="password" /&gt;
+ &lt;input type="submit" name="signin" value="SignIn" /&gt;&lt;/form&gt;
+</code></p>
+
+<p>You can easily choose the element with the help of ID locator from the above example:</p>
+
+<p>id = “username”</p>
+
+<p>id = “password”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<p>```
+WebElement elementUsername = driver.findElement(By.id(&ldquo;username&rdquo;));</p>
+
+<p>WebElement elementPassword = driver.findElement(By.id(&ldquo;password&rdquo;));</p>
+
+<p>```</p>
+
+<p>Even though this is a great locator, obviously it is not realistic for all objects on a page to have ids. In some cases developers make it having non-unique ids on a page or auto-generate the ids, in both cases it should be avoided.</p>
+
+<h4>Name Locator</h4>
+
+<p>This is also an efficient way to locate an element  with name attribute, after Ids give it your second preference but likewise Ids, name attributes don’t have to be unique in a page.</p>
+
+<p>With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a  NoSuchElementException will be raised.</p>
+
+<p>Example: Let’s take the above example:</p>
+
+<p>You can easily choose the element with the help of Name locator from the above example:</p>
+
+<p>name = “login”</p>
+
+<p>name = “password”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<p>```
+WebElement elementUsername = driver.findElement(By.name(&ldquo;login&rdquo;));</p>
+
+<p>WebElement elementPassword = driver.findElement(By.name(&ldquo;password&rdquo;));
+```</p>
+
+<h4>Identifier Locator</h4>
+
+<p>This selects the element with the specified @id attribute. If no match is found, then it tries to select the first element whose @name attribute is id.</p>
+
+<p>Example: Valid locator for above example is:
+identifier = “password”</p>
+
+<p>First it will try to find the locator with id = “password” if it exists, otherwise it would target name = “password”.</p>
+
+<h4>Link Locator</h4>
+
+<p>With this you can find elements of “a” tags(Link) with the link names. Use this when you know link text used within an anchor tag.</p>
+
+<p>Example: If an element is given like this:</p>
+
+<p><code>
+&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;
+</code></p>
+
+<p>To click this hyperlink using the anchor tag’s text, you can use the link locator:
+link=”Name of the Link”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<p><code>
+WebElement element=driver.findElement(By.linkText("Name of the Link"));
+</code></p>
+
+<h4>DOM Locator</h4>
+
+<p>The DOM strategy works by locating elements that matches the JavaScript expression referring to an element in the DOM of the page. DOM stands for Document Object Model. DOM is convention for representing objects in HTML documents.</p>
+
+<p>Example: To select the username from the above example you can use the following ways:</p>
+
+<p>document.forms[0].elements[0]</p>
+
+<p>document.forms[&lsquo;loginForm&rsquo;].elements[&lsquo;username&rsquo;]</p>
+
+<p>document.forms[&lsquo;loginForm&rsquo;].username</p>
+
+<p>document.getElementById(‘username’)</p>
+
+<h4>XPath Locator</h4>
+
+<p>While DOM is the recognized standard for navigation through an HTML element tree, XPath is the standard navigation tool for XML; and an HTML document is also an XML document (xHTML). XPath is used everywhere where there is XML.</p>
+
+<p>Example: To select the username from the above example you can use the following ways:</p>
+
+<p>xpath=//*[@id=&lsquo;username&rsquo;]</p>
+
+<p>xpath=//input[@id=&lsquo;username&rsquo;]</p>
+
+<p>xpath=//form[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
+
+<p>xpath=//*[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[XPath : Using Browser Inspector]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/26/xpath-using-browser-inspector/"/>
+    <updated>2014-05-26T10:24:15+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/26/xpath-using-browser-inspector</id>
+    <content type="html"><![CDATA[<h2>Finding Elements using Browser Inspector</h2>
+
+<p>Now days, it is very easy to find elements on the page. All the modern browsers have the web inspector, the built-in tool for to easily examine the structure of webpages.</p>
+
+<p>I used to use Google Chrome’s inspector because Chrome was my default browser; Safari uses the same inspector and IE uses IE Inspector. Firefox has its own built in Inspector and it has an optional extension called Firebug, which has a little more functionality that is sometimes worth switching over for. The steps to use it are largely the same.</p>
+
+<!--more-->
+
+
+<h3>1) Activating the Web Inspector</h3>
+
+<p>You can activate the web inspector in any of the above browsers by right-clicking on any element in the page, such as a photo. A pop-up menu should appear with the option to Inspect Element.  Or you can use the short cut key for Inspector which is F-12.</p>
+
+<p>F-12 will pop-up a panel, usually in the bottom-half of your browser, showing the HTML source. The red circle is pointing to the Element Inspector in Firefox.</p>
+
+<p><img src="/images/Finding-Elements-1.png"></p>
+
+<h3>2) Selecting Elements</h3>
+
+<p>Once you click the Inspector Icon from the bottom panel your element inspector is active and as you move your mouse around the page, the element under your mouse is highlighted with a dotted border and an annotation displays its HTML tag. At the same time, its HTML definition is displayed, in context, in the Inspector’s left-hand pane.</p>
+
+<p>In the screenshot below, I have chosen to inspect the &ldquo;Email or Phone” textbox on the <a href="https://www.facebook.com/">Facebook</a>. The inspector (in the bottom panel of the browser) highlights where in the HTML that the “Email or Phone” button appears.</p>
+
+<p><img src="/images/FIND-ELEMENTS-2.png"></p>
+
+<p>With the help of above html code you can simply write the below code in your test script:</p>
+
+<p><code>
+driver.findElement(By.id("email")).sendKeys("your username or email login to facebook");
+</code></p>
 ]]></content>
   </entry>
   
@@ -296,222 +464,6 @@ oRadioButton.get(0).click();
 WebElement oCheckBox = driver.findElement(By.cssSelector("input[value='example']"));
 oCheckBox.click();
 </code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Wait Commands]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-wait-commands/"/>
-    <updated>2014-05-26T10:03:49+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-wait-commands</id>
-    <content type="html"><![CDATA[<h2>WebDriver Wait Commands</h2>
-
-<p>Listing out the different WebDriver Wait statements that can be useful for an effective scripting and can avoid using the Thread.sleep() commands.</p>
-
-<!--more-->
-
-
-<h3>ImplicitlyWait Command</h3>
-
-<p>Purpose: Selenium WebDriver has borrowed the idea of implicit waits from Watir. This means that we can tell Selenium that we would like it to wait for a certain amount of time before throwing an exception that it cannot find the element on the page. We should note that implicit waits will be in place for the entire time the browser is open. This means that any search for elements on the page could take the time the implicit wait is set for.</p>
-
-<p>```</p>
-
-<p> WebDriver driver => new FirefoxDriver();
- driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
- driver.get(&ldquo;<a href="http://url_that_delays_loading">http://url_that_delays_loading</a>&rdquo;);
- WebElement myDynamicElement = driver.findElement(By.id(&ldquo;myDynamicElement&rdquo;));</p>
-
-<p>```</p>
-
-<h3>FluentWait Command</h3>
-
-<p>Purpose: Each FluentWait instance defines the maximum amount of time to wait for a condition, as well as the frequency with which to check the condition. Furthermore, the user may configure the wait to ignore specific types of exceptions whilst waiting, such as NoSuchElementExceptions when searching for an element on the page.</p>
-
-<p>```
-// Waiting 30 seconds for an element to be present on the page, checking
-  // for its presence once every 5 seconds.
-  Wait wait = new FluentWait(driver)</p>
-
-<pre><code>.withTimeout(30, SECONDS)
-.pollingEvery(5, SECONDS)
-.ignoring(NoSuchElementException.class);
-</code></pre>
-
-<p>  WebElement foo = wait.until(new Function() {</p>
-
-<pre><code>public WebElement apply(WebDriver driver) {
-return driver.findElement(By.id("foo"));
-}
-</code></pre>
-
-<p>   });</p>
-
-<p>```</p>
-
-<h3>ExpectedConditions Command</h3>
-
-<p>Purpose: Models a condition that might reasonably be expected to eventually evaluate to something that is neither null nor false.</p>
-
-<p><code>
-WebDriverWait wait = new WebDriverWait(driver, 10);
-WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(&gt;someid&gt;)));
-</code></p>
-
-<h3>PageLoadTimeout Command</h3>
-
-<p>Purpose: Sets the amount of time to wait for a page load to complete before throwing an error. If the timeout is negative, page loads can be indefinite.</p>
-
-<p><code>
-driver.manage().timeouts().pageLoadTimeout(100, SECONDS);
-</code></p>
-
-<h3>SetScriptTimeout Command</h3>
-
-<p>Purpose: Sets the amount of time to wait for an asynchronous script to finish execution before throwing an error. If the timeout is negative, then the script will be allowed to run indefinitely.</p>
-
-<p><code>
-driver.manage().timeouts().setScriptTimeout(100,SECONDS);
-</code></p>
-
-<h3>Sleep Command</h3>
-
-<p>Purpose: This is rarely used, as it always force the browser to wait for a specific time. Thread.Sleep is never a good idea and that’s why Selenium provides wait primitives. If you use them you can specify much higher timeout value which makes tests more reliable without slowing them down as the condition can be evaluated as often as it’s required.</p>
-
-<p><code>
-thread.sleep(1000);
-</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Switch Window Commands]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/webdriver-switch-window-commands/"/>
-    <updated>2014-05-26T09:02:20+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/webdriver-switch-window-commands</id>
-    <content type="html"><![CDATA[<h2>WebDriver Switch Window Commands</h2>
-
-<p>Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.</p>
-
-<!--more-->
-
-
-<h3>GetWindowHandle Command</h3>
-
-<p>Purpose: To get the window handle of the current window.</p>
-
-<p><code>
-String  handle= driver.getWindowHandle();//Return a string of alphanumeric window handle
-</code></p>
-
-<h3>GetWindowHandles Command</h3>
-
-<p>Purpose: To get the window handle of all the current windows.</p>
-
-<p><code>
-Set&lt;String&gt; handle= driver.getWindowHandles();//Return a set of window handle
-</code></p>
-
-<h3>SwitchTo Window Command</h3>
-
-<p>Purpose: WebDriver supports moving between named windows using the “switchTo” method.</p>
-
-<p>```
-driver.switchTo().window(&ldquo;windowName&rdquo;);</p>
-
-<p>```</p>
-
-<p>Alternatively, you can pass a “window handle” to the “switchTo().window()” method. Knowing this, it’s possible to iterate over every open window like so:</p>
-
-<p>```
-for (String handle : driver.getWindowHandles()) {</p>
-
-<pre><code>driver.switchTo().window(handle);
-</code></pre>
-
-<p>}</p>
-
-<p>```</p>
-
-<p>Switching between windows with Iterators:</p>
-
-<p>```</p>
-
-<p>driver.findElement(By.id(“id of the link which opens new window”)).click();
- //wait till two windows are not opened
- waitForNumberofWindowsToEqual(2);//this method is for wait</p>
-
-<p> Set handles = driver.getWindowHandles();
- firstWinHandle = driver.getWindowHandle(); handles.remove(firstWinHandle);
- String winHandle=handles.iterator().next();
- if (winHandle!=firstWinHandle){
- //To retrieve the handle of second window, extracting the handle which does not match to first window handle
- secondWinHandle=winHandle; //Storing handle of second window handle</p>
-
-<p>//Switch control to new window
- driver.switchTo().window(secondWinHandle);</p>
-
-<p>```</p>
-
-<h3>SwitchTo Frame Command</h3>
-
-<p>Purpose: WebDriver supports moving between named frames using the “switchTo” method.</p>
-
-<p><code>
-driver.switchTo().frame("frameName");
-</code></p>
-
-<h3>SwitchTo PopUp Command</h3>
-
-<p>Purpose: WebDriver supports moving between named PopUps using the “switchTo” method. After you’ve triggered an action that opens a popup, you can access the alert and it will return the currently open alert object. With this object you can now accept, dismiss, read its contents or even type into a prompt. This interface works equally well on alerts, confirms, and prompts.</p>
-
-<p><code>
-Alert alert = driver.switchTo().alert();
-</code></p>
-
-<h3>Practice Exercise 1</h3>
-
-<p>1) Launch new Browser</p>
-
-<p>2) Open URL &ldquo;<a href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a>&rdquo;</p>
-
-<p>3) Get Window name (Use GetWindowHandle command)</p>
-
-<p>```
-package practiceTestCases;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;</p>
-
-<p>import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;</p>
-
-<p>public class PracticeSwitchWindow {</p>
-
-<pre><code>    public static WebDriver driver;
-    public static void main(String[] args) {
-
-        // Create a new instance of the Firefox driver
-        driver = new FirefoxDriver();
-
-        // Put an Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        // Launch the URL
-        driver.get("http://docs.seleniumhq.org/download/");
-
-        // Store and Print the name of the First window on the console
-        String handle= driver.getWindowHandle();
-        System.out.println(handle);
-
-        // Close Original window
-        driver.quit();
-
-}
-</code></pre>
-
-<p>}
-```</p>
 ]]></content>
   </entry>
   

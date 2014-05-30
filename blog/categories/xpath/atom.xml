@@ -4,7 +4,7 @@
   <title><![CDATA[Category: XPath | Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/xpath/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-30T15:38:36+07:00</updated>
+  <updated>2014-05-30T15:43:29+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,136 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[XPath : Selenium Locators]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/xpath-locators-in-selenium/"/>
-    <updated>2014-05-26T10:48:22+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/xpath-locators-in-selenium</id>
-    <content type="html"><![CDATA[<h2>Locators in Selenium</h2>
-
-<p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
-
-<p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
-
-<!--more-->
-
-
-<h3>Different types of Locators</h3>
-
-<p>There are 8 explicit locators: id, name, identifier, dom, xpath, link, css and ui that Selenium’s commands support. I will explain just a few most important locators to avoid over dosage and any confusion.</p>
-
-<h4>ID Locator</h4>
-
-<p>Ids are the most preferred way to locate elements on a page, as each id is supposed to be unique which makes ids a very faster and reliable way to locate elements.</p>
-
-<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised.</p>
-
-<p>HTML CODE :</p>
-
-<p><code>
-&lt;form name="loginForm"&gt;Login
- Username: &lt;input id="username" type="text" name="login" /&gt;
- Password: &lt;input id="password" type="password" name="password" /&gt;
- &lt;input type="submit" name="signin" value="SignIn" /&gt;&lt;/form&gt;
-</code></p>
-
-<p>You can easily choose the element with the help of ID locator from the above example:</p>
-
-<p>id = “username”</p>
-
-<p>id = “password”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<p>```
-WebElement elementUsername = driver.findElement(By.id(&ldquo;username&rdquo;));</p>
-
-<p>WebElement elementPassword = driver.findElement(By.id(&ldquo;password&rdquo;));</p>
-
-<p>```</p>
-
-<p>Even though this is a great locator, obviously it is not realistic for all objects on a page to have ids. In some cases developers make it having non-unique ids on a page or auto-generate the ids, in both cases it should be avoided.</p>
-
-<h4>Name Locator</h4>
-
-<p>This is also an efficient way to locate an element  with name attribute, after Ids give it your second preference but likewise Ids, name attributes don’t have to be unique in a page.</p>
-
-<p>With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a  NoSuchElementException will be raised.</p>
-
-<p>Example: Let’s take the above example:</p>
-
-<p>You can easily choose the element with the help of Name locator from the above example:</p>
-
-<p>name = “login”</p>
-
-<p>name = “password”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<p>```
-WebElement elementUsername = driver.findElement(By.name(&ldquo;login&rdquo;));</p>
-
-<p>WebElement elementPassword = driver.findElement(By.name(&ldquo;password&rdquo;));
-```</p>
-
-<h4>Identifier Locator</h4>
-
-<p>This selects the element with the specified @id attribute. If no match is found, then it tries to select the first element whose @name attribute is id.</p>
-
-<p>Example: Valid locator for above example is:
-identifier = “password”</p>
-
-<p>First it will try to find the locator with id = “password” if it exists, otherwise it would target name = “password”.</p>
-
-<h4>Link Locator</h4>
-
-<p>With this you can find elements of “a” tags(Link) with the link names. Use this when you know link text used within an anchor tag.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<p><code>
-&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;
-</code></p>
-
-<p>To click this hyperlink using the anchor tag’s text, you can use the link locator:
-link=”Name of the Link”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<p><code>
-WebElement element=driver.findElement(By.linkText("Name of the Link"));
-</code></p>
-
-<h4>DOM Locator</h4>
-
-<p>The DOM strategy works by locating elements that matches the JavaScript expression referring to an element in the DOM of the page. DOM stands for Document Object Model. DOM is convention for representing objects in HTML documents.</p>
-
-<p>Example: To select the username from the above example you can use the following ways:</p>
-
-<p>document.forms[0].elements[0]</p>
-
-<p>document.forms[&lsquo;loginForm&rsquo;].elements[&lsquo;username&rsquo;]</p>
-
-<p>document.forms[&lsquo;loginForm&rsquo;].username</p>
-
-<p>document.getElementById(‘username’)</p>
-
-<h4>XPath Locator</h4>
-
-<p>While DOM is the recognized standard for navigation through an HTML element tree, XPath is the standard navigation tool for XML; and an HTML document is also an XML document (xHTML). XPath is used everywhere where there is XML.</p>
-
-<p>Example: To select the username from the above example you can use the following ways:</p>
-
-<p>xpath=//*[@id=&lsquo;username&rsquo;]</p>
-
-<p>xpath=//input[@id=&lsquo;username&rsquo;]</p>
-
-<p>xpath=//form[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
-
-<p>xpath=//*[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[XPath : FireBug and FirePath]]></title>
@@ -256,44 +126,6 @@ WebElement element=driver.findElement(By.linkText("Name of the Link"));
 <h3>Difference between FireBug and FirePath</h3>
 
 <p>The only difference from Automation tester point of view is FireBug returns Absolute XPath and FirePath returns Relative XPath.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[XPath : Using Browser Inspector]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/xpath-using-browser-inspector/"/>
-    <updated>2014-05-26T10:24:15+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/xpath-using-browser-inspector</id>
-    <content type="html"><![CDATA[<h2>Finding Elements using Browser Inspector</h2>
-
-<p>Now days, it is very easy to find elements on the page. All the modern browsers have the web inspector, the built-in tool for to easily examine the structure of webpages.</p>
-
-<p>I used to use Google Chrome’s inspector because Chrome was my default browser; Safari uses the same inspector and IE uses IE Inspector. Firefox has its own built in Inspector and it has an optional extension called Firebug, which has a little more functionality that is sometimes worth switching over for. The steps to use it are largely the same.</p>
-
-<!--more-->
-
-
-<h3>1) Activating the Web Inspector</h3>
-
-<p>You can activate the web inspector in any of the above browsers by right-clicking on any element in the page, such as a photo. A pop-up menu should appear with the option to Inspect Element.  Or you can use the short cut key for Inspector which is F-12.</p>
-
-<p>F-12 will pop-up a panel, usually in the bottom-half of your browser, showing the HTML source. The red circle is pointing to the Element Inspector in Firefox.</p>
-
-<p><img src="/images/Finding-Elements-1.png"></p>
-
-<h3>2) Selecting Elements</h3>
-
-<p>Once you click the Inspector Icon from the bottom panel your element inspector is active and as you move your mouse around the page, the element under your mouse is highlighted with a dotted border and an annotation displays its HTML tag. At the same time, its HTML definition is displayed, in context, in the Inspector’s left-hand pane.</p>
-
-<p>In the screenshot below, I have chosen to inspect the &ldquo;Email or Phone” textbox on the <a href="https://www.facebook.com/">Facebook</a>. The inspector (in the bottom panel of the browser) highlights where in the HTML that the “Email or Phone” button appears.</p>
-
-<p><img src="/images/FIND-ELEMENTS-2.png"></p>
-
-<p>With the help of above html code you can simply write the below code in your test script:</p>
-
-<p><code>
-driver.findElement(By.id("email")).sendKeys("your username or email login to facebook");
-</code></p>
 ]]></content>
   </entry>
   
