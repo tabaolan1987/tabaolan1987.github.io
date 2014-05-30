@@ -4,7 +4,7 @@
   <title><![CDATA[Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T17:23:20+07:00</updated>
+  <updated>2014-05-30T12:22:26+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Run on Multi Browser]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P7 : Run on Multi Browser]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser/"/>
     <updated>2014-05-29T15:16:59+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser</id>
@@ -898,7 +898,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Create Test Script]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P6 : Create Test Script]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script/"/>
     <updated>2014-05-29T14:48:11+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script</id>
@@ -1049,7 +1049,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Modular Driven Framework]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P5 : Modular Driven Framework]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/"/>
     <updated>2014-05-27T10:11:21+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework</id>
@@ -1195,7 +1195,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Page Object Model]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P4 : Page Object Model]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model/"/>
     <updated>2014-05-26T16:03:08+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model</id>
@@ -1438,7 +1438,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Create New Project]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P3 : Create New Project]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project/"/>
     <updated>2014-05-26T15:01:18+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project</id>
@@ -1613,7 +1613,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Install Maven to Eclipse]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P2 : Install Maven to Eclipse]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse/"/>
     <updated>2014-05-26T14:14:07+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse</id>
@@ -1655,7 +1655,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Introduction]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P1 : Introduction]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-introduction/"/>
     <updated>2014-05-26T14:07:59+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-introduction</id>
@@ -1706,7 +1706,7 @@ By implementing the appropriate automated testing framework, enterprises can sig
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Multi Browser and Parallel Testing]]></title>
+    <title type="html"><![CDATA[TestNG Framework P9 : Multi Browser and Parallel Testing]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/"/>
     <updated>2014-05-26T12:15:47+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing</id>
@@ -1921,7 +1921,7 @@ By implementing the appropriate automated testing framework, enterprises can sig
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Parameters and Data Provider]]></title>
+    <title type="html"><![CDATA[TestNG Framework P8 : Parameters and Data Provider]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider/"/>
     <updated>2014-05-26T12:05:31+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider</id>
@@ -2107,7 +2107,7 @@ By implementing the appropriate automated testing framework, enterprises can sig
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework :Reporters and Asserts ]]></title>
+    <title type="html"><![CDATA[TestNG Framework P7 : Reporters and Asserts ]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts/"/>
     <updated>2014-05-26T11:55:48+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts</id>
@@ -2345,7 +2345,7 @@ By implementing the appropriate automated testing framework, enterprises can sig
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Prioritizing and Sequencing]]></title>
+    <title type="html"><![CDATA[TestNG Framework P6 : Prioritizing and Sequencing]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/"/>
     <updated>2014-05-26T11:48:09+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing</id>
@@ -2583,7 +2583,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Annotations , Groups and OnDepends]]></title>
+    <title type="html"><![CDATA[TestNG Framework P 5: Annotations , Groups and OnDepends]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations/"/>
     <updated>2014-05-26T11:35:51+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations</id>
@@ -2959,7 +2959,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Test Suite]]></title>
+    <title type="html"><![CDATA[TestNG Framework P4 : Test Suite]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite/"/>
     <updated>2014-05-26T11:28:33+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite</id>
@@ -3019,7 +3019,7 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : First Test case with TestNG]]></title>
+    <title type="html"><![CDATA[TestNG Framework P3 : First Test case with TestNG]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng/"/>
     <updated>2014-05-26T11:09:19+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng</id>
@@ -3031,7 +3031,10 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 
 <p>Or</p>
 
-<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“. <!--more--></p>
+<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
+
+<!--more-->
+
 
 <p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-1.png"></p>
 
@@ -3182,7 +3185,7 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Download]]></title>
+    <title type="html"><![CDATA[TestNG Framework P2 : Download]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-download/"/>
     <updated>2014-05-26T11:03:25+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-download</id>
@@ -3234,7 +3237,7 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Introduction]]></title>
+    <title type="html"><![CDATA[TestNG Framework P1 : Introduction]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-introduction/"/>
     <updated>2014-05-26T11:00:14+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-introduction</id>

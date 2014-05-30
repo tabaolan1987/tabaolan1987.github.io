@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T17:23:20+07:00</updated>
+  <updated>2014-05-30T12:22:26+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Run on Multi Browser]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P7 : Run on Multi Browser]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser/"/>
     <updated>2014-05-29T15:16:59+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser</id>
@@ -534,7 +534,7 @@ private static String status_facebook;
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Create Test Script]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P6 : Create Test Script]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script/"/>
     <updated>2014-05-29T14:48:11+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script</id>
@@ -647,7 +647,7 @@ private static WebDriver driver;
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Modular Driven Framework]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P5 : Modular Driven Framework]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/"/>
     <updated>2014-05-27T10:11:21+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework</id>
@@ -756,7 +756,7 @@ public static void Execute(WebDriver driver, String status){
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Page Object Model]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P4 : Page Object Model]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model/"/>
     <updated>2014-05-26T16:03:08+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model</id>
@@ -920,7 +920,7 @@ public static WebElement butt_post(WebDriver driver){
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework : Create New Project]]></title>
+    <title type="html"><![CDATA[Selenium Automation Framework P3 : Create New Project]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project/"/>
     <updated>2014-05-26T15:01:18+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project</id>

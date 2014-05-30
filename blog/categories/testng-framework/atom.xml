@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TestNG-Framework | Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-29T17:23:20+07:00</updated>
+  <updated>2014-05-30T12:22:26+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Multi Browser and Parallel Testing]]></title>
+    <title type="html"><![CDATA[TestNG Framework P9 : Multi Browser and Parallel Testing]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/"/>
     <updated>2014-05-26T12:15:47+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing</id>
@@ -164,7 +164,7 @@ import org.testng.annotations.Test;</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Parameters and Data Provider]]></title>
+    <title type="html"><![CDATA[TestNG Framework P8 : Parameters and Data Provider]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider/"/>
     <updated>2014-05-26T12:05:31+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider</id>
@@ -306,7 +306,7 @@ import org.testng.annotations.Test;</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework :Reporters and Asserts ]]></title>
+    <title type="html"><![CDATA[TestNG Framework P7 : Reporters and Asserts ]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts/"/>
     <updated>2014-05-26T11:55:48+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts</id>
@@ -476,7 +476,7 @@ import org.testng.annotations.Test;</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Prioritizing and Sequencing]]></title>
+    <title type="html"><![CDATA[TestNG Framework P6 : Prioritizing and Sequencing]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/"/>
     <updated>2014-05-26T11:48:09+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing</id>
@@ -681,7 +681,7 @@ import org.testng.annotations.Test;</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TestNG Framework : Annotations , Groups and OnDepends]]></title>
+    <title type="html"><![CDATA[TestNG Framework P 5: Annotations , Groups and OnDepends]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations/"/>
     <updated>2014-05-26T11:35:51+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations</id>
