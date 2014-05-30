@@ -4,7 +4,7 @@
   <title><![CDATA[Software Engineer]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-05-30T14:35:38+07:00</updated>
+  <updated>2014-05-30T15:30:46+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,609 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Mobile : Run test scripts in real IPhone]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/"/>
+    <updated>2014-05-30T15:22:09+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>We want to execute our testscripts on a iphone device. The iphone driver allows us to execute the WebDriver tests on a real iphone device.</p>
+
+<!--more-->
+
+
+<h3>Configuration</h3>
+
+<p>We need to install Xcode which is available for the Mac operating systems. We also need a provisoning profile for running the script on a real device.</p>
+
+<p>1) We need to create a provisioning profile, so go to this <a href="http://developer.apple.com/programs/ios/">website</a> and create a profile.</p>
+
+<p>2) We need to download Xcode from the following location: <a href="http://developer.apple.com/iphone">this</a></p>
+
+<p>3) The iPhone WebDriver application is not available from the App Store, therefore we need to check-out the code and build it manually. We can do the check-out by entering the following terminal command:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>svn checkout http://selenium.googlecode.com/svn/trunk/</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Solution</h3>
+
+<p>1) Open the project selenium-read-only/iphone/iWebDriver.xcodeproj in Xcode.</p>
+
+<p>2) Double-click on the project and set the build configuration to the latest version of the iPhone Simulator, by using the drop-down box in the top left corner.</p>
+
+<p>3) Configure and install the iPhone provisioning profile.</p>
+
+<p>4) Open Info.plist and edit the Bundle Identifier to com.NAME.$ {PRODUCT_NAME:identifier} where NAME is the name you registered your provisioning profile to be an authority on.</p>
+
+<p>5) Make sure your device is connected to your computer. Your device must also be routable from your computer. The easiest way to do this is to configure a wifi network and connect your device to it.</p>
+
+<p>6) Click on Run (play button). After compiling, the iphone simulator should appear and the iWebDriver app will be installed in it.</p>
+
+<p>7) Now we can use the IPhoneDriver in our tests. You will need to take a look in <a href="http://tabaolan1987.github.io/blog/categories/testng-framework/">TestNG Framework</a>. Create new TestNG class and paste the code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.iphone.IPhoneDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>import org.testng.annotations.BeforeTest;
+</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>
+</span><span class='line'>import com.selenium.pageObject.LoginPage;
+</span><span class='line'>import com.selenium.userAction.PostStatus;
+</span><span class='line'>import com.selenium.userAction.SignIn;
+</span><span class='line'>
+</span><span class='line'>public class autoTestLoadingFacebook {
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * Create WebDriver as static variable
+</span><span class='line'>   */
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * Setup some variable to run your script test
+</span><span class='line'> */
+</span><span class='line'>@BeforeTest
+</span><span class='line'>  public void beforeTest() {
+</span><span class='line'>    driver =  new IPhoneDriver();
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * your test script
+</span><span class='line'> */
+</span><span class='line'>@Test
+</span><span class='line'>  public void f() {
+</span><span class='line'>  driver.get("https://facebook.com");
+</span><span class='line'>  //create more test script here
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * after run your script test , use this code to close your browser
+</span><span class='line'> */
+</span><span class='line'>@AfterTest
+</span><span class='line'>  public void afterTest() {
+</span><span class='line'>    driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>8) Run your script.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Mobile : Run test scripts on a Xcode iPhone simulator]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/"/>
+    <updated>2014-05-30T15:07:42+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>We want to run our test in a iPhone simulator. The iphone simulator comes with Xcode which is available for the Mac operating systems. This recipe will show us how we can run our WebDriver tests in a iphone simulator.</p>
+
+<!--more-->
+
+
+<p>We need to download Xcode from the following location: <a href="http://developer.apple.com/iphone">here</a></p>
+
+<p>The iPhone WebDriver application is not available from the App Store, therefore we need to check-out the code and build it manually. We can do the check-out by entering the following terminal command</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>svn checkout http://selenium.googlecode.com/svn/trunk/
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Solution</h2>
+
+<p>1) Open the project selenium-read-only/iphone/iWebDriver.xcodeproj in Xcode.</p>
+
+<p>2) Double-click on the project and set the build configuration to the latest version of the iPhone Simulator, by using the drop-down box in the top left corner.</p>
+
+<p>3) Click on Run (play button). After compiling, the iphone simulator should appear and the iWebDriver app will be installed in it.</p>
+
+<p>4) Now we can use the IPhoneDriver in our tests. You will need to take a look in <a href="http://tabaolan1987.github.io/blog/categories/testng-framework/">TestNG Framework</a>. Create new TestNG class and paste the code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.iphone.IPhoneDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>import org.testng.annotations.BeforeTest;
+</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>
+</span><span class='line'>import com.selenium.pageObject.LoginPage;
+</span><span class='line'>import com.selenium.userAction.PostStatus;
+</span><span class='line'>import com.selenium.userAction.SignIn;
+</span><span class='line'>
+</span><span class='line'>public class autoTestLoadingFacebook {
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * Create WebDriver as static variable
+</span><span class='line'>   */
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * Setup some variable to run your script test
+</span><span class='line'> */
+</span><span class='line'>@BeforeTest
+</span><span class='line'>  public void beforeTest() {
+</span><span class='line'>    driver =  new IPhoneDriver();
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * your test script
+</span><span class='line'> */
+</span><span class='line'>@Test
+</span><span class='line'>  public void f() {
+</span><span class='line'>  driver.get("https://facebook.com");
+</span><span class='line'>  //create more test script here
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * after run your script test , use this code to close your browser
+</span><span class='line'> */
+</span><span class='line'>@AfterTest
+</span><span class='line'>  public void afterTest() {
+</span><span class='line'>    driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5) Run your test.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Mobile : Run tests on a real Android device]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/"/>
+    <updated>2014-05-30T15:02:24+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>We want to run our testscripts on a real Android device. The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device.</p>
+
+<!--more-->
+
+
+<p>Before we can register our simulator we have to download the android SDK (Software Development Kit) from the following location: <a href="http://developer.android.com/sdk/">SDK</a></p>
+
+<h2>Solution</h2>
+
+<p>We can divide this section into three parts: setup the device, install the WebDriver APK and finally run the test.</p>
+
+<h3>Setup the device</h3>
+
+<p>Connect the android device with the computer using a USB cable.</p>
+
+<h2>Install the WebDriver APK</h2>
+
+<p>1) We need to retrieve the serial id with the following command:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$cd /android_sdk/platform-tools/
+</span><span class='line'>adb devices</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2) Download the Android server from <a href="http://code.google.com/p/selenium/downloads/list">Selenium website</a> and save it in the platform-tools directory. To install the application enter:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; -e install -r android-server.apk</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) Start the Android WebDriver application,by running this command:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; shell am start -a android.intent.action.MAIN -n org.openqa.selenium.android.app/.MainActivity</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4) Now we need to setup the port forwarding in order to forward traffic from the host machine to the emulator. Enter the following in the terminal :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; forward tcp:8080 tcp:8080</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Run the test</h3>
+
+<p>You will need to take a look in <a href="http://tabaolan1987.github.io/blog/categories/testng-framework/">TestNG Framework</a></p>
+
+<p>Now we have our environment setup we can run our tests.Create new TestNG and paste the code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.android.AndroidDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>import org.testng.annotations.BeforeTest;
+</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>
+</span><span class='line'>import com.selenium.pageObject.LoginPage;
+</span><span class='line'>import com.selenium.userAction.PostStatus;
+</span><span class='line'>import com.selenium.userAction.SignIn;
+</span><span class='line'>
+</span><span class='line'>public class autoTestLoadingFacebook {
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * Create WebDriver as static variable
+</span><span class='line'>   */
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * Setup some variable to run your script test
+</span><span class='line'> */
+</span><span class='line'>@BeforeTest
+</span><span class='line'>  public void beforeTest() {
+</span><span class='line'>    driver =  new AndroidDriver();
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * your test script
+</span><span class='line'> */
+</span><span class='line'>@Test
+</span><span class='line'>  public void f() {
+</span><span class='line'>  driver.get("https://facebook.com");
+</span><span class='line'>  //create more test script here
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * after run your script test , use this code to close your browser
+</span><span class='line'> */
+</span><span class='line'>@AfterTest
+</span><span class='line'>  public void afterTest() {
+</span><span class='line'>    driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5) Run your test.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Mobile : Running tests on an Android simulator]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/"/>
+    <updated>2014-05-30T14:46:17+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device. This recipe will walk us through the steps we have to do to run our tests in a simulator.</p>
+
+<!--more-->
+
+
+<p>Before we can register our simulator we have to download the android SDK (Software Development Kit) from the following location: <a href="http://developer.android.com/sdk/">SDK</a></p>
+
+<h2>Solution</h2>
+
+<p>We can divide this section into three parts: setup the emulator, install the WebDriver APK and finally run the test.</p>
+
+<h3>Setup the emulator</h3>
+
+<p>1) Navigate to the tools directory and create an Android Virtual Device. -n: specifies the name of the AVD -t: specifies the platform target -c: specifies the SD card storage space.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>$cd ~/android_sdk/tools/ 
+</span><span class='line'>$./android create avd -n my_android -t 12 -c 100M
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2) We can list the targets with the following command to check if the creation succeeded:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>./android list targets
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3)Finally we can start the emulator with the following command:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$./emulator -avd my_android &</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install the WebDriver APK</h3>
+
+<p>1) We need to retrieve the serial id with the following command:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$cd /android_sdk/platform-tools/
+</span><span class='line'>adb devices</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2) Download the Android server from <a href="http://code.google.com/p/selenium/downloads/list">Selenium website</a> and save it in the platform-tools directory. To install the application enter:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; -e install -r android-server.apk</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) Start the Android WebDriver application,by running this command:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; shell am start -a android.intent.action.MAIN -n org.openqa.selenium.android.app/.MainActivity</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4) Now we need to setup the port forwarding in order to forward traffic from the host machine to the emulator. Enter the following in the terminal :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; forward tcp:8080 tcp:8080</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Run the test</h3>
+
+<p>You will need to take a look in <a href="http://tabaolan1987.github.io/blog/categories/testng-framework/">TestNG Framework</a></p>
+
+<p>Now we have our environment setup we can run our tests. Create new TestNG and paste the code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.android.AndroidDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>import org.testng.annotations.BeforeTest;
+</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>
+</span><span class='line'>import com.selenium.pageObject.LoginPage;
+</span><span class='line'>import com.selenium.userAction.PostStatus;
+</span><span class='line'>import com.selenium.userAction.SignIn;
+</span><span class='line'>
+</span><span class='line'>public class autoTestLoadingFacebook {
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * Create WebDriver as static variable
+</span><span class='line'>   */
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * Setup some variable to run your script test
+</span><span class='line'> */
+</span><span class='line'>@BeforeTest
+</span><span class='line'>  public void beforeTest() {
+</span><span class='line'>    driver =  new AndroidDriver();
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * your test script
+</span><span class='line'> */
+</span><span class='line'>@Test
+</span><span class='line'>  public void f() {
+</span><span class='line'>  driver.get("https://facebook.com");
+</span><span class='line'>  //create more test script here
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * after run your script test , use this code to close your browser
+</span><span class='line'> */
+</span><span class='line'>@AfterTest
+</span><span class='line'>  public void afterTest() {
+</span><span class='line'>    driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5) Run your test.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Action Class]]></title>
@@ -3325,381 +3928,6 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
 <p>10) After restart, verify if TestNG was indeed successfully installed. Right click on you project and see if TestNG is displayed in the opened menu.</p>
 
 <p><img src="http://tabaolan1987.github.io/images/Install-TestNG-9.png"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework P1 : Introduction]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-introduction/"/>
-    <updated>2014-05-26T11:00:14+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-introduction</id>
-    <content type="html"><![CDATA[<h2>TestNG Introduction</h2>
-
-<p>TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionality that make it more powerful and easier to use.</p>
-
-<!--more-->
-
-
-<p>TestNG is an open source automated testing framework; where NG of TestNG means Next Generation. TestNG is similar to JUnit but it is much more powerful than JUnit but still it’s inspired by JUnit. It is designed to be better than JUnit, especially when testing integrated classes. Pay special thanks to Cedric Beust who is the creator of TestNG.</p>
-
-<p>TestNG eliminates most of the limitations of the older framework and gives the developer the ability to write more flexible and powerful tests with help of easy annotations, grouping, sequencing &amp; parameterizing.</p>
-
-<h3>Benefits of TestNG</h3>
-
-<p>There are number of benefits of TestNG but from Selenium perspective, major advantages of TestNG are :</p>
-
-<p>1) It gives the ability to produce HTML Reports of execution</p>
-
-<p>2) Annotations made testers life easy</p>
-
-<p>3) Test cases can be Grouped &amp; Prioritized more easily</p>
-
-<p>4) Parallel testing is possible</p>
-
-<p>5) Generates Logs</p>
-
-<p>6) Data Parameteriz ation is possible</p>
-
-<h3>Test Case Writing</h3>
-
-<p>Writing a test in TestNG is quite simple and basically involves following steps:</p>
-
-<p>Step 1 – Write the business logic of the test</p>
-
-<p>Step 2 – Insert TestNG annotations in the code</p>
-
-<p>Step 3 &ndash; Add the information about your test (e.g. the class names, methods names, groups names etc…) in a testng.xml file</p>
-
-<p>Step 4 &ndash; Run TestNG</p>
-
-<h3>Annotations in TestNG</h3>
-
-<p>@BeforeSuite: The annotated method will be run before all tests in this suite have run.</p>
-
-<p>@AfterSuite: The annotated method will be run after all tests in this suite have run.</p>
-
-<p>@BeforeTest: The annotated method will be run before any test method belonging to the classes inside the tag is run.</p>
-
-<p>@AfterTest: The annotated method will be run after all the test methods belonging to the classes inside the tag have run.</p>
-
-<p>@BeforeGroups: The list of groups that this configuration method will run before. This method is guaranteed to run shortly before the first test method that belongs to any of these groups is invoked.</p>
-
-<p>@AfterGroups: The list of groups that this configuration method will run after. This method is guaranteed to run shortly after the last test method that belongs to any of these groups is invoked.</p>
-
-<p>@BeforeClass: The annotated method will be run before the first test method in the current class is invoked.</p>
-
-<p>@AfterClass: The annotated method will be run after all the test methods in the current class have been run.</p>
-
-<p>@BeforeMethod: The annotated method will be run before each test method.</p>
-
-<p>@AfterMethod: The annotated method will be run after each test method.</p>
-
-<p>@Test: The annotated method is a part of a test case.</p>
-
-<p>Benefits of using annotations</p>
-
-<p>1) TestNG identifies the methods it is interested in by looking up annotations. Hence method names are not restricted to any pattern or format.</p>
-
-<p>2) We can pass additional parameters to annotations.</p>
-
-<p>3) Annotations are strongly typed, so the compiler will flag any mistakes right away.</p>
-
-<p>4) Test classes no longer need to extend anything (such as Test Case, for JUnit 3).</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[XPath : Selenium Locators]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/xpath-locators-in-selenium/"/>
-    <updated>2014-05-26T10:48:22+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/xpath-locators-in-selenium</id>
-    <content type="html"><![CDATA[<h2>Locators in Selenium</h2>
-
-<p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
-
-<p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
-
-<!--more-->
-
-
-<h3>Different types of Locators</h3>
-
-<p>There are 8 explicit locators: id, name, identifier, dom, xpath, link, css and ui that Selenium’s commands support. I will explain just a few most important locators to avoid over dosage and any confusion.</p>
-
-<h4>ID Locator</h4>
-
-<p>Ids are the most preferred way to locate elements on a page, as each id is supposed to be unique which makes ids a very faster and reliable way to locate elements.</p>
-
-<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised.</p>
-
-<p>HTML CODE :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;form name="loginForm"&gt;Login 
-</span><span class='line'> Username: &lt;input id="username" type="text" name="login" /&gt;
-</span><span class='line'> Password: &lt;input id="password" type="password" name="password" /&gt;
-</span><span class='line'> &lt;input type="submit" name="signin" value="SignIn" /&gt;&lt;/form&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>You can easily choose the element with the help of ID locator from the above example:</p>
-
-<p>id = “username”</p>
-
-<p>id = “password”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.id("username"));
-</span><span class='line'>
-</span><span class='line'>WebElement elementPassword = driver.findElement(By.id("password"));
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Even though this is a great locator, obviously it is not realistic for all objects on a page to have ids. In some cases developers make it having non-unique ids on a page or auto-generate the ids, in both cases it should be avoided.</p>
-
-<h4>Name Locator</h4>
-
-<p>This is also an efficient way to locate an element  with name attribute, after Ids give it your second preference but likewise Ids, name attributes don’t have to be unique in a page.</p>
-
-<p>With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a  NoSuchElementException will be raised.</p>
-
-<p>Example: Let’s take the above example:</p>
-
-<p>You can easily choose the element with the help of Name locator from the above example:</p>
-
-<p>name = “login”</p>
-
-<p>name = “password”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.name("login"));
-</span><span class='line'> 
-</span><span class='line'>WebElement elementPassword = driver.findElement(By.name("password"));</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Identifier Locator</h4>
-
-<p>This selects the element with the specified @id attribute. If no match is found, then it tries to select the first element whose @name attribute is id.</p>
-
-<p>Example: Valid locator for above example is:
-identifier = “password”</p>
-
-<p>First it will try to find the locator with id = “password” if it exists, otherwise it would target name = “password”.</p>
-
-<h4>Link Locator</h4>
-
-<p>With this you can find elements of “a” tags(Link) with the link names. Use this when you know link text used within an anchor tag.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>To click this hyperlink using the anchor tag’s text, you can use the link locator:
-link=”Name of the Link”</p>
-
-<p>Use the same in your Selenium test script as well:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element=driver.findElement(By.linkText("Name of the Link"));</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>DOM Locator</h4>
-
-<p>The DOM strategy works by locating elements that matches the JavaScript expression referring to an element in the DOM of the page. DOM stands for Document Object Model. DOM is convention for representing objects in HTML documents.</p>
-
-<p>Example: To select the username from the above example you can use the following ways:</p>
-
-<p>document.forms[0].elements[0]</p>
-
-<p>document.forms[&lsquo;loginForm&rsquo;].elements[&lsquo;username&rsquo;]</p>
-
-<p>document.forms[&lsquo;loginForm&rsquo;].username</p>
-
-<p>document.getElementById(‘username’)</p>
-
-<h4>XPath Locator</h4>
-
-<p>While DOM is the recognized standard for navigation through an HTML element tree, XPath is the standard navigation tool for XML; and an HTML document is also an XML document (xHTML). XPath is used everywhere where there is XML.</p>
-
-<p>Example: To select the username from the above example you can use the following ways:</p>
-
-<p>xpath=//*[@id=&lsquo;username&rsquo;]</p>
-
-<p>xpath=//input[@id=&lsquo;username&rsquo;]</p>
-
-<p>xpath=//form[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
-
-<p>xpath=//*[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[XPath : FireBug and FirePath]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/xpath-firebug-and-firepath/"/>
-    <updated>2014-05-26T10:37:18+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/xpath-firebug-and-firepath</id>
-    <content type="html"><![CDATA[<h2>FireBug and FirePath</h2>
-
-<h3>What is XPath</h3>
-
-<p>XPath is a language that describes a way to locate and process items in Extensible Markup Language (XML) documents by using an addressing syntax based on a path through the document’s logical structure or hierarchy. XPath in used in Selenium  to uniquely identify an element on a Webpage as element locator just like the way we use PostCode and House address in real world to locate Home Address.</p>
-
-<!--more-->
-
-
-<h3>What is Firebug</h3>
-
-<p>Firebug integrates with Firefox to put a wealth of web development tools at your fingertips while you browse. You can edit, debug, and monitor CSS, HTML, and JavaScript live in any web page. The whole content of this page is taken from the <a href="https://getfirebug.com/html">firebug</a>.</p>
-
-<h3>Why it is Useful to Selenium Automation Tester</h3>
-
-<p>1) View source live : Firefox has a “View Source” window, but it doesn’t show you what the HTML source really looks like once it has been transformed by JavaScript. Firebug’s HTML tab shows you what the HTML looks like right now.</p>
-
-<p>2) See changes highlighted: In any JavaScript-driven website, HTML elements are constantly being created, removed, and modified. Wouldn’t it be nice if you could see exactly what, when, and where these changes take place? Firebug highlights changes to the HTML in yellow immediately when they occur. If you want to spy even closer, you have the option to also scroll every change into view, so you won’t miss a thing.</p>
-
-<p>3) Find elements with the mouse: Something in your page doesn’t quite look right and you want to know why. There’s no faster way to get answers than to click the “Inspect” button on Firebug’s toolbar and then prepare for immediate gratification. As you move around the page, whatever is beneath your mouse will be instantly revealed within Firebug, showing you the HTML and CSS behind it.</p>
-
-<p>4) Copy the source: Right-click on any element, and you’ll have several options for copying aspects of that element to the clipboard, including its HTML fragment, the value of its “innerHTML” property, or an XPath expression that identifies the element uniquely.</p>
-
-<h3>How to Download FireBug</h3>
-
-<p>FireBug is a plugin which comes with Firefox browser, hence it is easily be downloadable from Firefox itself.</p>
-
-<p>1) Go to Tools > Web Developer > Get More Tools.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Firebug-1.png"></p>
-
-<p>2) It will open a Webpage and display all the plugins available for Firefox browser. As we need Firebug, just click on Add to Firefox button for Firebug.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Firebug-2.png"></p>
-
-<p>3) Hit on Install Now button to proceed.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Firebug-3.png"></p>
-
-<p>4) Once the Installation is finished, press ‘F-12′ to open Firebug tool. It will display like this.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FIND-ELEMENTS-2.png"></p>
-
-<h3>How to Use it</h3>
-
-<p>Most of the times it is used to Inspect Elements on a Webpage and to get the XPath of the Elements from a Webpage.</p>
-
-<p>1) Inspect Elements: Please visit Finding Elements using Browser Inspector for details explanation on How to find Elements using Browser Inspector.</p>
-
-<p>2) Copy XPath: Copying XPath is really very handy. Once you are done with selecting an Element using Inspector, all you need to do is to Right click on the HTML code of the selected element and select Copy XPath.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Firebug-6.png"></p>
-
-<p>3) Now you can paste the copied XPath on your test script by pressing ‘Ctrl + V‘. It will display like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/html/body/div/header/div/a/img</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>What is FirePath</h3>
-
-<p>It is an extension to FireBug that adds a development tool to edit, inspect and generate XPath expressions and CSS3 Selectors.</p>
-
-<h3>Why it is Useful to Selenium Automation Tester</h3>
-
-<p>1) You can type self-written XPath and check if it is correct by highlighting the results directly on the Webpage.</p>
-
-<p>2) Generate an XPath expression or a CSS selector for an element by right clicking on it and selecting “Inspect in FirePath” in the context menu.</p>
-
-<p>3) Like Firebug it also gives you the Xpath of the selected Element.</p>
-
-<h3>How to Download Firepath</h3>
-
-<p>Firepath is an extension to Firebug, so you would only be able to install it after installing FireBug.</p>
-
-<p>1) Go to Tools > Web Developer > Get More Tools.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Firebug-1.png"></p>
-
-<p>2) It will open a Webpage and will display all the plugins available for Firefox browser. As I said before that it is an extension to Firebug, you need to click on the Extensions link and the type Firepath on the Search field. As we need FirePath, just click on Add to Firefox button for FirePath.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FirePath-1.png"></p>
-
-<p>3) Hit on Install Now button to proceed.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FirePath-2.png"></p>
-
-<p>4) Once it is installed, it will ask to Restart the browser. Click on Restart Now button.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FirePath-3.png"></p>
-
-<p>4) Once it is opened, press ‘F-12′ to open Firebug tool. It will display the FirePath on the same console.</p>
-
-<h3>How to Use FirePath</h3>
-
-<p>1) Inspect Elements: Please visit Finding Elements using Browser Inspector for details explanation on How to find Elements using Browser Inspector. But unlike FireBug, it displays the XPath of the selected element on the console.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FirePath-6.png"></p>
-
-<p>2) Copy XPath: Copying XPath is really very handy. Once you are done with selecting an Element using Inspector, all you need to do is to Copy the XPath of the selected element and paste it to your Test script by pressing ‘Ctrl + V‘. It will display like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//*[@id='masthead']/div/a/img</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Difference between FireBug and FirePath</h3>
-
-<p>The only difference from Automation tester point of view is FireBug returns Absolute XPath and FirePath returns Relative XPath.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[XPath : Using Browser Inspector]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/xpath-using-browser-inspector/"/>
-    <updated>2014-05-26T10:24:15+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/xpath-using-browser-inspector</id>
-    <content type="html"><![CDATA[<h2>Finding Elements using Browser Inspector</h2>
-
-<p>Now days, it is very easy to find elements on the page. All the modern browsers have the web inspector, the built-in tool for to easily examine the structure of webpages.</p>
-
-<p>I used to use Google Chrome’s inspector because Chrome was my default browser; Safari uses the same inspector and IE uses IE Inspector. Firefox has its own built in Inspector and it has an optional extension called Firebug, which has a little more functionality that is sometimes worth switching over for. The steps to use it are largely the same.</p>
-
-<!--more-->
-
-
-<h3>1) Activating the Web Inspector</h3>
-
-<p>You can activate the web inspector in any of the above browsers by right-clicking on any element in the page, such as a photo. A pop-up menu should appear with the option to Inspect Element.  Or you can use the short cut key for Inspector which is F-12.</p>
-
-<p>F-12 will pop-up a panel, usually in the bottom-half of your browser, showing the HTML source. The red circle is pointing to the Element Inspector in Firefox.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Finding-Elements-1.png"></p>
-
-<h3>2) Selecting Elements</h3>
-
-<p>Once you click the Inspector Icon from the bottom panel your element inspector is active and as you move your mouse around the page, the element under your mouse is highlighted with a dotted border and an annotation displays its HTML tag. At the same time, its HTML definition is displayed, in context, in the Inspector’s left-hand pane.</p>
-
-<p>In the screenshot below, I have chosen to inspect the &ldquo;Email or Phone” textbox on the <a href="https://www.facebook.com/">Facebook</a>. The inspector (in the bottom panel of the browser) highlights where in the HTML that the “Email or Phone” button appears.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/FIND-ELEMENTS-2.png"></p>
-
-<p>With the help of above html code you can simply write the below code in your test script:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.findElement(By.id("email")).sendKeys("your username or email login to facebook");</span></code></pre></td></tr></table></div></figure>
-
-
-
 ]]></content>
   </entry>
   

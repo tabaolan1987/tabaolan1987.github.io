@@ -1,0 +1,340 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Selenium Mobile : Run test scripts in real IPhone - Software Engineer</title>
+    <meta name="author" content="Ta Bao Lan">
+    
+	<meta name="description" content="Introduction We want to execute our testscripts on a iphone device. The iphone driver allows us to execute the WebDriver tests on a real iphone &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Software Engineer" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+   
+    
+    
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-51278981-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        Ta Bao Lan
+		<br>
+		Software Engineer
+		<br>
+		Test Automation Engineer
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/tabaolan1987" class="github" title="Github"></a>
+  </li>
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/tabaolan1987?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/categories/selenium-framework/">Selenium Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/xpath/">Xpath</a></li>
+	<li id="ajax"><a href="/blog/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/blog/categories/newbie/">Selenium Beginner</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">Selenium Mobile : Run Test Scripts in Real IPhone</h2>
+	<div class="entry-content"><h2>Introduction</h2>
+
+<p>We want to execute our testscripts on a iphone device. The iphone driver allows us to execute the WebDriver tests on a real iphone device.</p>
+
+<!--more-->
+
+
+<h3>Configuration</h3>
+
+<p>We need to install Xcode which is available for the Mac operating systems. We also need a provisoning profile for running the script on a real device.</p>
+
+<p>1) We need to create a provisioning profile, so go to this <a href="http://developer.apple.com/programs/ios/">website</a> and create a profile.</p>
+
+<p>2) We need to download Xcode from the following location: <a href="http://developer.apple.com/iphone">this</a></p>
+
+<p>3) The iPhone WebDriver application is not available from the App Store, therefore we need to check-out the code and build it manually. We can do the check-out by entering the following terminal command:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>svn checkout http://selenium.googlecode.com/svn/trunk/</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Solution</h3>
+
+<p>1) Open the project selenium-read-only/iphone/iWebDriver.xcodeproj in Xcode.</p>
+
+<p>2) Double-click on the project and set the build configuration to the latest version of the iPhone Simulator, by using the drop-down box in the top left corner.</p>
+
+<p>3) Configure and install the iPhone provisioning profile.</p>
+
+<p>4) Open Info.plist and edit the Bundle Identifier to com.NAME.$ {PRODUCT_NAME:identifier} where NAME is the name you registered your provisioning profile to be an authority on.</p>
+
+<p>5) Make sure your device is connected to your computer. Your device must also be routable from your computer. The easiest way to do this is to configure a wifi network and connect your device to it.</p>
+
+<p>6) Click on Run (play button). After compiling, the iphone simulator should appear and the iWebDriver app will be installed in it.</p>
+
+<p>7) Now we can use the IPhoneDriver in our tests. You will need to take a look in <a href="/blog/categories/testng-framework/">TestNG Framework</a>. Create new TestNG class and paste the code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.iphone.IPhoneDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>import org.testng.annotations.BeforeTest;
+</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>
+</span><span class='line'>import com.selenium.pageObject.LoginPage;
+</span><span class='line'>import com.selenium.userAction.PostStatus;
+</span><span class='line'>import com.selenium.userAction.SignIn;
+</span><span class='line'>
+</span><span class='line'>public class autoTestLoadingFacebook {
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * Create WebDriver as static variable
+</span><span class='line'>   */
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * Setup some variable to run your script test
+</span><span class='line'> */
+</span><span class='line'>@BeforeTest
+</span><span class='line'>  public void beforeTest() {
+</span><span class='line'>    driver =  new IPhoneDriver();
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * your test script
+</span><span class='line'> */
+</span><span class='line'>@Test
+</span><span class='line'>  public void f() {
+</span><span class='line'>  driver.get("https://facebook.com");
+</span><span class='line'>  //create more test script here
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * after run your script test , use this code to close your browser
+</span><span class='line'> */
+</span><span class='line'>@AfterTest
+</span><span class='line'>  public void afterTest() {
+</span><span class='line'>    driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>8) Run your script.</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/';
+        var disqus_url = 'http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
