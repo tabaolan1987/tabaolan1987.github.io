@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-02T14:24:51+07:00</updated>
+  <updated>2014-06-02T15:20:32+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,94 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Beginner with Selenium Ide Part 2: Record User Action and Export this Script to another langugae]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/"/>
+    <updated>2014-06-02T15:03:46+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>In this tutorial  , we will let you know how to record the user action in browser via Selenium IDE and How to export this to another language like java , &hellip;!</p>
+
+<h3>Record User Action</h3>
+
+<!--more-->
+
+
+<p>1) Open Firefox Browser and click in the icon of Selenium IDE.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ide-3.png"></p>
+
+<p>2) The GUI of Selenium Ide will show , click in the red circle button of the top to record user action.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ide-5.png"></p>
+
+<p>3) Go back to the firefox driver and type to the url &ldquo;<a href="https://facebook.com">https://facebook.com</a>&rdquo;</p>
+
+<p>4) Login to facebook as normal.</p>
+
+<p>5) Back to Selenium IDE GUI , you will see it recorded your action.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ide-6.png"></p>
+
+<p>6) Click in the button play to let Selenium IDE run again each action that you made before.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ide-7.png"></p>
+
+<p>7) Now if you can save this test case as html file and re-run it by Open Selenium IDE and Open File &ndash;> choose the path you save this file.</p>
+
+<h3>Export this test script to another language script.</h3>
+
+<p>Selenium IDE provide us a function export file html script to another language such as JAVA , RUBY, PYTHON ,C# test.</p>
+
+<p>You just need click in menu File &ndash;> Export Test Case As.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ide-8.png"></p>
+
+<p>Note : You need to know that some function when you export from Selenium IDE to another language will be fail. I suggest you need to re-check the export File by running it again.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beginner with Selenium Ide Part 1 : Download Selenium Ide and install in FireFox Browser]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/02/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser/"/>
+    <updated>2014-06-02T14:34:19+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/02/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>Selenium IDE is a Firefox plugin which records and plays back user interactions with the browser. Use this to either create simple scripts or assist in exploratory testing. It can also export Remote Control or WebDriver scripts, though they tend to be somewhat brittle and should be overhauled into some sort of Page Object-y structure for any kind of resiliency.</p>
+
+<!--more-->
+
+
+<h3>How to download and install to firefox browser</h3>
+
+<p>1) Install Firefox browser and setup it to your computer by click into this <a href="http://www.mozilla.org/en-US/firefox/new/">link</a></p>
+
+<p>2) Go to Selenium and download Selenium IDE by click into this <a href="http://docs.seleniumhq.org/download/">link</a></p>
+
+<p>3) Click to the version current of Selenium IDE</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ide-1.png"></p>
+
+<p>4) Click to &lsquo;Allow&rsquo; button if it existed in the top of browser.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ide-2.png"></p>
+
+<p>5) Click on button &lsquo;Install Now&rsquo; when it enable.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ide-3.png"></p>
+
+<p>6) After install please click in the &lsquo;Restart Now&rsquo; button in the top of browser</p>
+
+<p>7) After restart you will see the icon of Selenium IDE show in the top of browser.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ide-3.png"></p>
+
+<p>8) Now let us share with you how to playing with ide in the <a href="">Selenium IDE : User action record</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework P8 : Read Data From Excel File]]></title>
@@ -24,7 +112,7 @@
 
 <p>In some way , the client want us read data from excel file then past it to the automation test.In this tutorial , I will write step by step to read data from excel file then past it to the test.</p>
 
-<p>This is the scenario  : Login to facebook by get username and passwork from excel file.</p>
+<p>This is the scenario  : Login to facebook by get username and password from excel file.</p>
 
 <h3>How to do</h3>
 
@@ -3908,232 +3996,6 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 <p>The output will be like this:</p>
 
 <p><img src="http://tabaolan1987.github.io/images/TestNG-Dependent1.png"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework P4 : Test Suite]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite/"/>
-    <updated>2014-05-26T11:28:33+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-test-suite</id>
-    <content type="html"><![CDATA[<h2>TestNG Test Suite</h2>
-
-<p>In any project, you will end up to a place where you need to execute so many test cases on a run. Running a set of test cases together is call executing a Test Suite. Those test cases can be dependent to each other or may have to be executed in a certain order. TestNg gives us the capability to manage our test execution.</p>
-
-<p>In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. This is the xml file where you will configure your test run, set test dependency, include or exclude any test, method, class or package and set priority etc.</p>
-
-<!--more-->
-
-
-<h3>How to do it…</h3>
-
-<h4>Step 1 : Create a TestNG XML</h4>
-
-<p>1) Right click on Project folder, go to New and select ‘File‘ as shown in below image.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite1.png"></p>
-
-<p>2) In New file wizard, add file name = ‘testng.xml‘ as shown in below given image and click on Finish button.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite2.png"></p>
-
-<p>3) It will add testng.xml file under your project folder.</p>
-
-<h4>Step 2 : Write xml code ?</h4>
-
-<p>Now add below given code in your testng.xml file.see the image below</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite3.png"></p>
-
-<p>Hope you have understood the xml code, as it is quite simple hierarchy:</p>
-
-<p>Very first tag is the Suite tag<suite>, under that it is the Test tag<test> and then the Class tag<classes>. You can give any name to the suite and the test but you need to provide the correct name to the <classes> tag which is a combination of your Package name and Test Case name.</p>
-
-<h4>Step 3 : Execute a testng.xml</h4>
-
-<p>Now it’s time to run the xml. Run the test by right click on the testng.xml file and select Run As > TestNG Suite.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite4.png"></p>
-
-<p>It will take few seconds to start the testng execution engine and soon you will notice that your test will run and complete. Once the execution is complete, you can view test execution result under the TestNg console.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite5.png"></p>
-
-<p>This is the one simple example of creating and running testng.xml file in eclipse.</p>
-
-<h3>Building a Test Suite</h3>
-
-<p>Now when you have learned how to build the xml, now it’s time to learn how to build a Test Suite using testng.xml. It is again not a complex task, all you need to do is to add your test cases to your xml file in <classes> tag.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Suite6.png"></p>
-
-<p>The above test will execute only those tests, which are mentioned in the testng.xml. The rest of the test cases under ‘automationFramework’ package will remain untouched.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework P3 : First Test case with TestNG]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng/"/>
-    <updated>2014-05-26T11:09:19+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-first-test-case-with-testng</id>
-    <content type="html"><![CDATA[<h2>First Test case with TestNG</h2>
-
-<p>Steps to follow:</p>
-
-<p>1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next.</p>
-
-<p>Or</p>
-
-<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
-
-<!--more-->
-
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-1.png"></p>
-
-<p>2) If your project is set up and you have selected the Test Case folder before creating TestNG class then the source folder and the package name will be prepopullated on the form. Set class name as ‘TestNG‘.
-Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finish. That’s it.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-2.png"></p>
-
-<p>3) Now it will display the newly created TestNg class under the Test Case package(folder). TestNG class will look like the image below with displaying three empty methods. One method f() by default and before &amp; after method, as selected during the creation of the class.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-3.png"></p>
-
-<p>4) Project explorer will look like this with TestNG class.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-3.png"></p>
-
-<p>Now it is the time to write the first TestNG test case.</p>
-
-<p>5) Let’s take an example of First Test Case and divide the test case in to three parts .</p>
-
-<p>@BeforeMethod : Launch Firefox and direct it to the Base URL</p>
-
-<p>@Test : Enter Username &amp; Password to Login, Print console message</p>
-
-<p>@AfterMethod : Close Firefox browser</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>import org.openqa.selenium.By;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>import org.testng.annotations.BeforeMethod;
-</span><span class='line'>import org.testng.annotations.AfterMethod;
-</span><span class='line'>
-</span><span class='line'>public class TestNG {
-</span><span class='line'>  public WebDriver driver;
-</span><span class='line'>
-</span><span class='line'>  @Test
-</span><span class='line'>  public void main() {
-</span><span class='line'>  // Find the element that's ID attribute is 'account'(My Account)
-</span><span class='line'>      driver.findElement(By.id("account")).click();
-</span><span class='line'>      // Find the element that's ID attribute is 'log' (Username)
-</span><span class='line'>      // Enter Username on the element found by above desc.
-</span><span class='line'>      driver.findElement(By.id("email")).sendKeys("yourusername");
-</span><span class='line'>      // Find the element that's ID attribute is 'pwd' (Password)
-</span><span class='line'>      // Enter Password on the element found by the above desc.
-</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys("yourpassword");
-</span><span class='line'>      // Now submit the form. WebDriver will find the form for us from the element
-</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
-</span><span class='line'>      // Print a Log In message to the screen
-</span><span class='line'>      System.out.println(" Login Successfully");
-</span><span class='line'>  }
-</span><span class='line'>  @BeforeMethod
-</span><span class='line'>  public void beforeMethod() {
-</span><span class='line'>    // Create a new instance of the Firefox driver
-</span><span class='line'>      driver = new FirefoxDriver();
-</span><span class='line'>      //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'>      //Launch the Online Store Website
-</span><span class='line'>      driver.get("https://www.facebook.com/");
-</span><span class='line'>  }
-</span><span class='line'>
-</span><span class='line'>  @AfterMethod
-</span><span class='line'>  public void afterMethod() {
-</span><span class='line'>    // Close the driver
-</span><span class='line'>      driver.quit();
-</span><span class='line'>  }
-</span><span class='line'>
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>6) Run the test by right click on the test case script and select Run As > TestNG Test.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-5.png"></p>
-
-<h4>Results of running the Testng Test Case</h4>
-
-<p>7) Give it few minutes to complete the execution, once it is finished the results will look like this in the TestNg Result window.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-6.png"></p>
-
-<p>It displayed ‘passed : 1′. This means test is successful and  Passed.</p>
-
-<p>There are 3 sub tabs. “All Tests”, “Failed Tests” and “Summary”. Just click “All Tests” to see what is there.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-7.png"></p>
-
-<p>As you see, there is information of which test cases are executed and their duration. Take look to other tabs. Better than Junit right?</p>
-
-<p>8) TestNG also produce HTML reports. To access those reports go to the Project directory and open test-output folder.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-8.png"></p>
-
-<p>9) TestNG also produce ‘index.html‘ report and it resides in the same test-output folder. This reports gives the link to all the different component of the TestNG reports like Groups &amp; Reporter Output. On clicking these will display detailed descriptions of execution. In the advance chapter of TestNG we will go though each of the TestNG topics.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-10.png"></p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-11.png"></p>
 ]]></content>
   </entry>
   

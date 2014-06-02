@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NewBie | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/newbie/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-02T14:24:51+07:00</updated>
+  <updated>2014-06-02T15:20:32+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,7 +14,95 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Beginner Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test]]></title>
+    <title type="html"><![CDATA[Beginner with Selenium Ide Part 2: Record User Action and Export this Script to another langugae]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/"/>
+    <updated>2014-06-02T15:03:46+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>In this tutorial  , we will let you know how to record the user action in browser via Selenium IDE and How to export this to another language like java , &hellip;!</p>
+
+<h3>Record User Action</h3>
+
+<!--more-->
+
+
+<p>1) Open Firefox Browser and click in the icon of Selenium IDE.</p>
+
+<p><img src="/images/ide-3.png"></p>
+
+<p>2) The GUI of Selenium Ide will show , click in the red circle button of the top to record user action.</p>
+
+<p><img src="/images/ide-5.png"></p>
+
+<p>3) Go back to the firefox driver and type to the url &ldquo;<a href="https://facebook.com">https://facebook.com</a>&rdquo;</p>
+
+<p>4) Login to facebook as normal.</p>
+
+<p>5) Back to Selenium IDE GUI , you will see it recorded your action.</p>
+
+<p><img src="/images/ide-6.png"></p>
+
+<p>6) Click in the button play to let Selenium IDE run again each action that you made before.</p>
+
+<p><img src="/images/ide-7.png"></p>
+
+<p>7) Now if you can save this test case as html file and re-run it by Open Selenium IDE and Open File &ndash;> choose the path you save this file.</p>
+
+<h3>Export this test script to another language script.</h3>
+
+<p>Selenium IDE provide us a function export file html script to another language such as JAVA , RUBY, PYTHON ,C# test.</p>
+
+<p>You just need click in menu File &ndash;> Export Test Case As.</p>
+
+<p><img src="/images/ide-8.png"></p>
+
+<p>Note : You need to know that some function when you export from Selenium IDE to another language will be fail. I suggest you need to re-check the export File by running it again.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beginner with Selenium Ide Part 1 : Download Selenium Ide and install in FireFox Browser]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/02/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser/"/>
+    <updated>2014-06-02T14:34:19+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/02/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>Selenium IDE is a Firefox plugin which records and plays back user interactions with the browser. Use this to either create simple scripts or assist in exploratory testing. It can also export Remote Control or WebDriver scripts, though they tend to be somewhat brittle and should be overhauled into some sort of Page Object-y structure for any kind of resiliency.</p>
+
+<!--more-->
+
+
+<h3>How to download and install to firefox browser</h3>
+
+<p>1) Install Firefox browser and setup it to your computer by click into this <a href="http://www.mozilla.org/en-US/firefox/new/">link</a></p>
+
+<p>2) Go to Selenium and download Selenium IDE by click into this <a href="http://docs.seleniumhq.org/download/">link</a></p>
+
+<p>3) Click to the version current of Selenium IDE</p>
+
+<p><img src="/images/ide-1.png"></p>
+
+<p>4) Click to &lsquo;Allow&rsquo; button if it existed in the top of browser.</p>
+
+<p><img src="/images/ide-2.png"></p>
+
+<p>5) Click on button &lsquo;Install Now&rsquo; when it enable.</p>
+
+<p><img src="/images/ide-3.png"></p>
+
+<p>6) After install please click in the &lsquo;Restart Now&rsquo; button in the top of browser</p>
+
+<p>7) After restart you will see the icon of Selenium IDE show in the top of browser.</p>
+
+<p><img src="/images/ide-3.png"></p>
+
+<p>8) Now let us share with you how to playing with ide in the <a href="">Selenium IDE : User action record</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beginner with Webdriver Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/"/>
     <updated>2014-05-23T15:13:27+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test</id>
@@ -180,7 +268,7 @@ public static void main(String[] args) {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Beginner Part 3 : Download Webdriver Java client]]></title>
+    <title type="html"><![CDATA[Beginner with Webdriver Part 3 : Download Webdriver Java client]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-3-download-webdriver-java-client/"/>
     <updated>2014-05-22T16:49:41+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-3-download-webdriver-java-client</id>
@@ -214,11 +302,13 @@ public static void main(String[] args) {
 <p>6) There will be ‘libs’ folder, 2 jar files and change log in unzipped folder as shown in bellow figure. We will use all these files for configuring webdriver in eclipse.</p>
 
 <p><img src="/images/Download-Webdriver-Java-Client-6.png"></p>
+
+<p>7 ) Now you will take a look in the <a href="/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/">Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test</a></p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Beginner Part 2 : Download and Start Eclipse]]></title>
+    <title type="html"><![CDATA[Beginner with Webdriver Part 2 : Download and Start Eclipse]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-2-download-and-start-eclipse/"/>
     <updated>2014-05-22T15:38:28+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-2-download-and-start-eclipse</id>
@@ -274,60 +364,8 @@ public static void main(String[] args) {
 <p><img src="/images/Download-and-Install-Eclipse-11.png"></p>
 
 <p>11) Now that you have finished installing eclipse restart your computer. By restarting your computer it refreshes system memory and allows changes made by installers and uninstallers to take effect.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Beginner Part 1 :Download and Install Java ]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-1-download-and-install-java/"/>
-    <updated>2014-05-22T15:36:12+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-1-download-and-install-java</id>
-    <content type="html"><![CDATA[<h2>Download and Install Java</h2>
 
-<p>First of all you need to install JDK (Java development kit) in your system. So your next question will be “how can I download java”. <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Click here</a> to download Java and install it in your system as per given installation guide over there or follow the below mentioned steps.</p>
-
-<!--more-->
-
-
-<p>1) Visit the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java downloads page</a> on Oracle’s website to find the JDK environment download. Scroll down until you find Java SE Latest Version and download JDK.</p>
-
-<p><img src="/images/Download-And-Install-Java-1.png"></p>
-
-<p>2) Once you have selected download, accept the terms of service and choose the correct OS corresponding for the specific JDK. (Windows, Mac, Linux, etc.)</p>
-
-<p><img src="/images/Download-And-Install-Java-2.png"></p>
-
-<p>3) Save the .exe file to your disk.</p>
-
-<p><img src="/images/Download-And-Install-Java-3.png"></p>
-
-<p>4) Once the download is complete, double click the file to begin the installation of JDK.</p>
-
-<p><img src="/images/Download-And-Install-Java-4.png"></p>
-
-<p>5) To run the installer, click Run.</p>
-
-<p><img src="/images/Download-And-Install-Java-5.png"></p>
-
-<p>6) The installation process starts. Click the Next button to continue the installation.</p>
-
-<p><img src="/images/Download-And-Install-Java-6.png"></p>
-
-<p>7) On the next screen you will encounter some options. Just leave these alone and click Next unless you know what you are doing.</p>
-
-<p><img src="/images/Download-And-Install-Java-7.png"></p>
-
-<p>8) After the initial installation is done, a pop up asking you where your source java files will be. You can choose to change where you want to keep your folder but it’s best to stick with what you were given first. Click Next to continue.</p>
-
-<p><img src="/images/Download-And-Install-Java-8.png"></p>
-
-<p>9) Let the installation finish.</p>
-
-<p><img src="/images/Download-And-Install-Java-9.png"></p>
-
-<p>10) A few brief dialogs confirm the last steps of the installation process; click Close on the last dialog. This will complete Java installation process.</p>
-
-<p><img src="/images/Download-And-Install-Java-10.png"></p>
+<p>12) Take a look in the next part <a href="/blog/2014/05/22/newbie-part-3-download-webdriver-java-client/">Part 3 : Download Webdriver Java client</a></p>
 ]]></content>
   </entry>
   
