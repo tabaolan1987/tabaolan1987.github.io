@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-02T15:46:02+07:00</updated>
+  <updated>2014-06-02T17:29:33+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -85,9 +85,9 @@
 
 <h3>How to download and install to firefox browser</h3>
 
-<p>1) Install Firefox browser and setup it to your computer by click into this <a href="http://www.mozilla.org/en-US/firefox/new/">link</a></p>
+<p>1) Install Firefox browser and setup it to your computer by click into this <a href="http://adf.ly/p8vFO">link</a></p>
 
-<p>2) Go to Selenium and download Selenium IDE by click into this <a href="http://docs.seleniumhq.org/download/">link</a></p>
+<p>2) Go to Selenium and download Selenium IDE by click into this <a href="http://adf.ly/p8uzn">link</a></p>
 
 <p>3) Click to the version current of Selenium IDE</p>
 
@@ -385,9 +385,9 @@
 
 <p>We need to install Xcode which is available for the Mac operating systems. We also need a provisoning profile for running the script on a real device.</p>
 
-<p>1) We need to create a provisioning profile, so go to this <a href="http://developer.apple.com/programs/ios/">website</a> and create a profile.</p>
+<p>1) We need to create a provisioning profile, so go to this <a href="http://adf.ly/p8wJ3">website</a> and create a profile.</p>
 
-<p>2) We need to download Xcode from the following location: <a href="http://developer.apple.com/iphone">this</a></p>
+<p>2) We need to download Xcode from the following location: <a href="http://adf.ly/p8wOu">this</a></p>
 
 <p>3) The iPhone WebDriver application is not available from the App Store, therefore we need to check-out the code and build it manually. We can do the check-out by entering the following terminal command:</p>
 
@@ -521,7 +521,7 @@
 <!--more-->
 
 
-<p>We need to download Xcode from the following location: <a href="http://developer.apple.com/iphone">here</a></p>
+<p>We need to download Xcode from the following location: <a href="http://adf.ly/p8wOu">here</a></p>
 
 <p>The iPhone WebDriver application is not available from the App Store, therefore we need to check-out the code and build it manually. We can do the check-out by entering the following terminal command</p>
 
@@ -652,7 +652,7 @@
 <!--more-->
 
 
-<p>Before we can register our simulator we have to download the android SDK (Software Development Kit) from the following location: <a href="http://developer.android.com/sdk/">SDK</a></p>
+<p>Before we can register our simulator we have to download the android SDK (Software Development Kit) from the following location: <a href="http://adf.ly/p8w0X">SDK</a></p>
 
 <h2>Solution</h2>
 
@@ -672,7 +672,7 @@
 </span><span class='line'>adb devices</span></code></pre></td></tr></table></div></figure>
 
 
-<p>2) Download the Android server from <a href="http://code.google.com/p/selenium/downloads/list">Selenium website</a> and save it in the platform-tools directory. To install the application enter:</p>
+<p>2) Download the Android server from <a href="http://adf.ly/p8w7c">Selenium website</a> and save it in the platform-tools directory. To install the application enter:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; -e install -r android-server.apk</span></code></pre></td></tr></table></div></figure>
@@ -806,7 +806,7 @@
 <!--more-->
 
 
-<p>Before we can register our simulator we have to download the android SDK (Software Development Kit) from the following location: <a href="http://developer.android.com/sdk/">SDK</a></p>
+<p>Before we can register our simulator we have to download the android SDK (Software Development Kit) from the following location: <a href="http://adf.ly/p8w0X">SDK</a></p>
 
 <h2>Solution</h2>
 
@@ -850,7 +850,7 @@
 </span><span class='line'>adb devices</span></code></pre></td></tr></table></div></figure>
 
 
-<p>2) Download the Android server from <a href="http://code.google.com/p/selenium/downloads/list">Selenium website</a> and save it in the platform-tools directory. To install the application enter:</p>
+<p>2) Download the Android server from <a href="http://adf.ly/p8w7c">Selenium website</a> and save it in the platform-tools directory. To install the application enter:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; -e install -r android-server.apk</span></code></pre></td></tr></table></div></figure>
@@ -1084,9 +1084,9 @@
 <!--more-->
 
 
-<p>1) Download driver for IE: <a href="http://selenium-release.storage.googleapis.com/2.42/IEDriverServer_Win32_2.42.0.zip"> 32 bit Windows</a> , <a href="http://selenium-release.storage.googleapis.com/2.42/IEDriverServer_x64_2.42.0.zip"> 64 bit Windows</a></p>
+<p>1) Download driver for IE: <a href="http://adf.ly/p8x8u"> 32 bit Windows</a> , <a href="http://adf.ly/p8xEK"> 64 bit Windows</a></p>
 
-<p>2) Download driver for <a href="http://chromedriver.storage.googleapis.com/index.html?path=2.9/">Chrome</a></p>
+<p>2) Download driver for <a href="http://adf.ly/p8xJd">Chrome</a></p>
 
 <p>3) Right click into project &ndash;> New &ndash;> folder &ndash;> name it as &lsquo;Driver&rsquo;</p>
 

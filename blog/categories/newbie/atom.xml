@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NewBie | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/newbie/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-02T15:46:02+07:00</updated>
+  <updated>2014-06-02T17:29:33+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -85,9 +85,9 @@
 
 <h3>How to download and install to firefox browser</h3>
 
-<p>1) Install Firefox browser and setup it to your computer by click into this <a href="http://www.mozilla.org/en-US/firefox/new/">link</a></p>
+<p>1) Install Firefox browser and setup it to your computer by click into this <a href="http://adf.ly/p8vFO">link</a></p>
 
-<p>2) Go to Selenium and download Selenium IDE by click into this <a href="http://docs.seleniumhq.org/download/">link</a></p>
+<p>2) Go to Selenium and download Selenium IDE by click into this <a href="http://adf.ly/p8uzn">link</a></p>
 
 <p>3) Click to the version current of Selenium IDE</p>
 
@@ -289,7 +289,7 @@ public static void main(String[] args) {
 <!--more-->
 
 
-<p>1) <a href="http://docs.seleniumhq.org/download/">Click here</a> to go on WebDriver Java client driver download page for webdriver download file. On that page click on ‘Download‘ link of Java client driver as shown in the below image.</p>
+<p>1) <a href="http://adf.ly/p8uzn">Click here</a> to go on WebDriver Java client driver download page for webdriver download file. On that page click on ‘Download‘ link of Java client driver as shown in the below image.</p>
 
 <p><img src="/images/Download-Webdriver-Java-Client-1.png"></p>
 
@@ -329,7 +329,7 @@ public static void main(String[] args) {
 <!--more-->
 
 
-<p>1) Go to <a href="http://www.eclipse.org/downloads.">|Eclipse download page</a></p>
+<p>1) Go to <a href="http://adf.ly/p8uot">|Eclipse download page</a></p>
 
 <p><img src="/images/Download-and-Install-Eclipse-1.png"></p>
 
