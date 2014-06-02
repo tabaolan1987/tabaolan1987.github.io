@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Selenium Automation Framework : Run on Multi Browser"
+title: "Selenium Automation Framework P7 : Run on Multi Browser"
 date: 2014-05-29 15:16:59 +0700
 comments: true
 categories: Selenium-Framework
@@ -29,9 +29,9 @@ Post Status
 
 4) Unzip and Copy 2 driver Chrome and IE to folder 'Driver'.
 
-{% img /images/mulb-1.png%}
+{% img /images/mulb-2.png%}
 
-5) Double click on 'pom.xml' paste the configuration below the tag <dependencies> to enable maven get the Directory of project.
+5) Double click on 'pom.xml' paste the configuration below the tag 'dependencies' to enable Maven automatic get the Directory of project when build project.
 
 ```
 <reporting>
@@ -442,7 +442,7 @@ public class autoTestFacebook {
 
 {% img /images/mulb-9.png%}
 
-17) Copy code below and paste to 'TestNg.xml'.Remember to change the username and password in tag parameter.
+17) Copy code below and paste to 'TestNg.xml'. Remember to change the username and password in tag parameter. You can change the value of parallel to test -> it will run 3 browser in the same time.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>

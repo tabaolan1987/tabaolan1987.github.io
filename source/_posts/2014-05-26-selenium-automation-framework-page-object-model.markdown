@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Selenium Automation Framework : Page Object Model"
+title: "Selenium Automation Framework P4 : Page Object Model"
 date: 2014-05-26 16:03:08 +0700
 comments: true
 categories: Selenium-Framework

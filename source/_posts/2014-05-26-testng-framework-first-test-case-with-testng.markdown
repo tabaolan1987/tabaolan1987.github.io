@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TestNG Framework : First Test case with TestNG"
+title: "TestNG Framework P3 : First Test case with TestNG"
 date: 2014-05-26 11:09:19 +0700
 comments: true
 categories: TestNG-Framework
@@ -14,8 +14,8 @@ Steps to follow:
 
 Or
 
-Right click on Test Case folder, go to TestNG and select “TestNG Class“. <!--more-->
-
+Right click on Test Case folder, go to TestNG and select “TestNG Class“. 
+<!--more-->
 {% img /images/TestNG-FTC-1.png%}
 
 2) If your project is set up and you have selected the Test Case folder before creating TestNG class then the source folder and the package name will be prepopullated on the form. Set class name as ‘TestNG‘.

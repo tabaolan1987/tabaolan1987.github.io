@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Beginner Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test"
+title: "Beginner with Webdriver Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test"
 date: 2014-05-23 15:13:27 +0700
 comments: true
 categories: NewBie

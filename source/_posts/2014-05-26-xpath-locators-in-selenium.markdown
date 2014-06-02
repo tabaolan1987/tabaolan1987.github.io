@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "XPath : Selenium Locators"
+title: "Webdriver XPath : Selenium Locators"
 date: 2014-05-26 10:48:22 +0700
 comments: true
-categories: XPath
+categories: Webdriver
 ---
 
 ##Locators in Selenium

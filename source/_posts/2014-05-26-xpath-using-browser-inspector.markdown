@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "XPath : Using Browser Inspector"
+title: "Webdriver XPath : Using Browser Inspector"
 date: 2014-05-26 10:24:15 +0700
 comments: true
-categories: XPath
+categories: Webdriver
 ---
 
 ##Finding Elements using Browser Inspector

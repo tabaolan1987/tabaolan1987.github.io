@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Beginner Part 1 :Download and Install Java "
+title: "Beginner with Webdriver Part 1 :Download and Install Java "
 date: 2014-05-22 15:36:12 +0700
 comments: true
 categories: NewBie
@@ -51,3 +51,5 @@ First of all you need to install JDK (Java development kit) in your system. So y
 10) A few brief dialogs confirm the last steps of the installation process; click Close on the last dialog. This will complete Java installation process.
 
 {% img /images/Download-And-Install-Java-10.png %}
+
+11 ) You have finish download and install Java , take a look in [Part 2 : Download and Start Eclipse](/blog/2014/05/22/newbie-part-2-download-and-start-eclipse/)

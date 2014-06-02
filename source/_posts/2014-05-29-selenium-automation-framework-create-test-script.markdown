@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Selenium Automation Framework : Create Test Script"
+title: "Selenium Automation Framework P6 : Create Test Script"
 date: 2014-05-29 14:48:11 +0700
 comments: true
 categories: Selenium-Framework

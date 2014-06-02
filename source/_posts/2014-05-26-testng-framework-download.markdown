@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TestNG Framework : Download"
+title: "TestNG Framework P2 : Download"
 date: 2014-05-26 11:03:25 +0700
 comments: true
 categories: TestNG-Framework

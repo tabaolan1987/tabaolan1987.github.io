@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Selenium Automation Framework : Create New Project"
+title: "Selenium Automation Framework P3 : Create New Project"
 date: 2014-05-26 15:01:18 +0700
 comments: true
 categories: Selenium-Framework

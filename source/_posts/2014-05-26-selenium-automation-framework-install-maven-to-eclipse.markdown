@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Selenium Automation Framework : Install Maven to Eclipse"
+title: "Selenium Automation Framework P2 : Install Maven to Eclipse"
 date: 2014-05-26 14:14:07 +0700
 comments: true
 categories: Selenium-Framework

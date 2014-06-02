@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "XPath : FireBug and FirePath"
+title: "Webdriver XPath : FireBug and FirePath"
 date: 2014-05-26 10:37:18 +0700
 comments: true
-categories: XPath
+categories: Webdriver
 ---
 
 ##FireBug and FirePath

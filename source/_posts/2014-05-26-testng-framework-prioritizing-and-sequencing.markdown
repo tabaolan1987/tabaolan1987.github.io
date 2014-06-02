@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TestNG Framework : Prioritizing and Sequencing"
+title: "TestNG Framework P6 : Prioritizing and Sequencing"
 date: 2014-05-26 11:48:09 +0700
 comments: true
 categories: TestNG-Framework

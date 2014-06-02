@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TestNG Framework : Test Suite"
+title: "TestNG Framework P4 : Test Suite"
 date: 2014-05-26 11:28:33 +0700
 comments: true
 categories: TestNG-Framework

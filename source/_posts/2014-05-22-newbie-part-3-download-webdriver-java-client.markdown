@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Beginner Part 3 : Download Webdriver Java client"
+title: "Beginner with Webdriver Part 3 : Download Webdriver Java client"
 date: 2014-05-22 16:49:41 +0700
 comments: true
 categories: NewBie
@@ -34,3 +34,5 @@ Selenium webdriver supports many languages and each language has its own client 
 6) There will be ‘libs’ folder, 2 jar files and change log in unzipped folder as shown in bellow figure. We will use all these files for configuring webdriver in eclipse.
 
 {% img /images/Download-Webdriver-Java-Client-6.png %}
+
+7 ) Now you will take a look in the [Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test](/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/)

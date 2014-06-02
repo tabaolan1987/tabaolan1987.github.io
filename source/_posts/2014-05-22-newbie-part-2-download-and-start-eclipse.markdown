@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Beginner Part 2 : Download and Start Eclipse"
+title: "Beginner with Webdriver Part 2 : Download and Start Eclipse"
 date: 2014-05-22 15:38:28 +0700
 comments: true
 categories: NewBie
@@ -56,3 +56,5 @@ Note:(This step is not required, but it’s strongly recommended.) Right-click t
 {% img /images/Download-and-Install-Eclipse-11.png %}
 
 11) Now that you have finished installing eclipse restart your computer. By restarting your computer it refreshes system memory and allows changes made by installers and uninstallers to take effect.
+
+12) Take a look in the next part [Part 3 : Download Webdriver Java client](/blog/2014/05/22/newbie-part-3-download-webdriver-java-client/)

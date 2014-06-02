@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TestNG Framework : Multi Browser and Parallel Testing"
+title: "TestNG Framework P9 : Multi Browser and Parallel Testing"
 date: 2014-05-26 12:15:47 +0700
 comments: true
 categories: TestNG-Framework

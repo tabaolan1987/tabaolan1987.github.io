@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TestNG Framework :Reporters and Asserts "
+title: "TestNG Framework P7 : Reporters and Asserts "
 date: 2014-05-26 11:55:48 +0700
 comments: true
 categories: TestNG-Framework

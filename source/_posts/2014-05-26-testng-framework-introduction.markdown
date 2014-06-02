@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TestNG Framework : Introduction"
+title: "TestNG Framework P1 : Introduction"
 date: 2014-05-26 11:00:14 +0700
 comments: true
 categories: TestNG-Framework

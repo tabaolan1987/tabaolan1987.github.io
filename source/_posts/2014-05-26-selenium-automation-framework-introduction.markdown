@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Selenium Automation Framework : Introduction"
+title: "Selenium Automation Framework P1 : Introduction"
 date: 2014-05-26 14:07:59 +0700
 comments: true
 categories: Selenium-Framework

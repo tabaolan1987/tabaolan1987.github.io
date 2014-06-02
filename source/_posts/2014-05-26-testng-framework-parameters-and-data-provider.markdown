@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TestNG Framework : Parameters and Data Provider"
+title: "TestNG Framework P8 : Parameters and Data Provider"
 date: 2014-05-26 12:05:31 +0700
 comments: true
 categories: TestNG-Framework
