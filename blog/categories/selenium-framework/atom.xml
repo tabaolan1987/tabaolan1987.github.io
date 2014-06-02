@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-02T11:50:34+07:00</updated>
+  <updated>2014-06-02T14:22:33+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,167 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework P8 : Read Data From Excel File]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file/"/>
+    <updated>2014-06-02T12:05:43+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file</id>
+    <content type="html"><![CDATA[<h2>Reading data from the Excel</h2>
+
+<h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a></h3>
+
+<p>In some way , the client want us read data from excel file then past it to the automation test.In this tutorial , I will write step by step to read data from excel file then past it to the test.</p>
+
+<p>This is the scenario  : Login to facebook by get username and passwork from excel file.</p>
+
+<h3>How to do</h3>
+
+<p>1)Create new file excel &lsquo;test.xlsx&rsquo; like this  and paste to the folder &lsquo;Driver&rsquo; or you can create new folder.</p>
+
+<p><img src="/images/excel-3.png"></p>
+
+<p>2) Open your &lsquo;pom.xml&rsquo; to make sure that we added apache POI jar file(this jar file will allow us to open ,get data from excel) in the dependency tag.</p>
+
+<p><img src="/images/excel-1.png"></p>
+
+<p>3) Open your project go to package &lsquo;com.selenium.util&rsquo; and create new class &lsquo;ExcelUtil&rsquo;.</p>
+
+<p><img src="/images/excel-2.png"></p>
+
+<p>4) Open &lsquo;ExcelUtil.java&rsquo; and paste the code below to it :</p>
+
+<p>```
+package com.selenium.util;</p>
+
+<p>import java.io.File;
+import java.io.FileInputStream;</p>
+
+<p>import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;</p>
+
+<p>public class ExcelUtil {</p>
+
+<pre><code>private static XSSFSheet ExcelWSheet;
+private static XSSFWorkbook ExcelWBook;
+private static XSSFCell Cell;
+
+
+//this method is to get the path of the file 'test.xlsx' in folder driver
+public static String PathExcelInProject(){
+    String path = DriverUtil.getKey(DriverUtil.PROP_PROJECT_BASE_DIR) + File.separator + DriverUtil.FOLDER_DRIVER 
+            + File.separator + "";
+    try {
+        File Excel = new File(path);
+        if(Excel.exists()){
+            return Excel.getAbsolutePath();
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null;
+    }
+    return null;    
+}
+
+// This method is to set the File path and to open the Excel file, Pass
+// Excel Path and Sheetname as Arguments to this method
+public static void setExcelFile(String Path, String SheetName)
+        throws Exception {
+    try {
+        // Open the Excel file
+        FileInputStream ExcelFile = new FileInputStream(Path);
+        // Access the required test data sheet
+        ExcelWBook = new XSSFWorkbook(ExcelFile);
+        ExcelWSheet = ExcelWBook.getSheet(SheetName);
+    } catch (Exception e) {
+        throw (e);
+    }
+}
+
+// This method is to read the test data from the Excel cell, in this we are
+// passing parameters as Row num and Col num
+public static String getCellData(int RowNum, int ColNum) throws Exception {
+    try {
+        Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
+        String CellData = Cell.getStringCellValue();
+        return CellData;
+    } catch (Exception e) {
+        return "";
+    }
+}
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>5) Create a new testNG class and with name &lsquo;loginFacebookByExcelData&rsquo; and paste the code below :</p>
+
+<p>```
+package com.selenium.test;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
+
+<p>import com.selenium.pageObject.LoginPage;
+import com.selenium.userAction.SignIn;
+import com.selenium.util.ExcelUtil;</p>
+
+<p>public class loginFacebookByExcelData {</p>
+
+<pre><code>private WebDriver driver;
+
+private static String username;
+
+private static String password;
+</code></pre>
+
+<p>  @Test
+  public void loginByExcel() {</p>
+
+<pre><code>  //Call loading page of login page facebook , take a look in post [Page Object Model] of my blog
+ LoginPage.loadPage(driver);
+ //Call action SignIn , take a look in post [Modular Driven Framework] of my blogs
+ SignIn.Execute(driver, username, password);
+</code></pre>
+
+<p>  }</p>
+
+<p>  @BeforeTest
+  public void beforeTest() throws Exception {</p>
+
+<pre><code>  driver = new FirefoxDriver();
+
+  //set file excel is my excel file in folder Driver , you can set the other path to your excel file
+  ExcelUtil.setExcelFile(ExcelUtil.PathExcelInProject(), "test");
+  //get the data from file excel
+  username = ExcelUtil.getCellData(2, 1);
+  password = ExcelUtil.getCellData(2, 2);
+</code></pre>
+
+<p>  }</p>
+
+<p>  @AfterTest
+  public void afterTest() {</p>
+
+<pre><code>  driver.quit();
+</code></pre>
+
+<p>  }</p>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>6) Right click into class and chose &lsquo;Run as&rsquo; &ndash;> &lsquo;TestNg Test&rsquo;</p>
+
+<p><img src="/images/excel-5.png"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework P7 : Run on Multi Browser]]></title>
@@ -916,132 +1077,6 @@ public static WebElement butt_post(WebDriver driver){
 ```</p>
 
 <h3>We are finish to create a Login Page , Home Page follow Page Object Model . Now you will need to create an Action in Java base on User Define, please <a href="">click here</a></h3>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework P3 : Create New Project]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project/"/>
-    <updated>2014-05-26T15:01:18+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-create-new-project</id>
-    <content type="html"><![CDATA[<h2>Create new Project</h2>
-
-<h3>Required knowledge : <a href="http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">Maven Project</a></h3>
-
-<p>Maven project is very helpful for us to automate download jar file and manage the version we used, easy to build , easy to configuration with Continuous Integration.</p>
-
-<!--more-->
-
-
-<p>Now we will create a project Maven name &ldquo;Selenium-Automation-Framework&rdquo;.</p>
-
-<h4>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h4>
-
-<p><img src="/images/c-maven-1.png"></p>
-
-<h4>Step 2 : Find Maven &ndash;> Choose Maven Project &ndash;> Click &lsquo;Next&rsquo; button</h4>
-
-<p><img src="/images/c-maven-2.png"></p>
-
-<h4>Step 3 : Tick on  &ldquo;Create a simple project&rdquo; , &ldquo;Use default workspace&rdquo;</h4>
-
-<p><img src="/images/c-maven-3.png"></p>
-
-<h4>Step 4 : Enter value for &ldquo;Group ID&rdquo; and  &ldquo;Artifact ID&rdquo; . Then click &ldquo;Finish&rdquo;.</h4>
-
-<p><img src="/images/c-maven-4.png"></p>
-
-<h4>Step 5 : The new Project &ldquo;Selenium-Automation-Framework&rdquo; will show in the left menu of Eclipse.</h4>
-
-<p><img src="/images/c-maven-5.png"></p>
-
-<h2>Configuration Project</h2>
-
-<p>First you need to configuration the pom.xml file to add library required by Selenium.</p>
-
-<h4>Step 1 : Open project &ndash;> Double click to file &ldquo;pom.xml&rdquo;</h4>
-
-<p><img src="/images/c-maven-6.png"></p>
-
-<h4>Stemp 2 : Copy this code and paste into your pom.xml file</h4>
-
-<p>```
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>Selenium-Automation-Framework</groupId>
-  <artifactId>Selenium-Framework</artifactId>
-  <version>0.0.1-SNAPSHOT</version></p>
-
-<pre><code>&lt;dependencies&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-        &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
-        &lt;version&gt;2.41.0&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-        &lt;artifactId&gt;selenium-server&lt;/artifactId&gt;
-        &lt;version&gt;2.41.0&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-        &lt;artifactId&gt;selenium-firefox-driver&lt;/artifactId&gt;
-        &lt;version&gt;2.41.0&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-        &lt;artifactId&gt;selenium-chrome-driver&lt;/artifactId&gt;
-        &lt;version&gt;2.41.0&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-        &lt;artifactId&gt;selenium-remote-driver&lt;/artifactId&gt;
-        &lt;version&gt;2.41.0&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-        &lt;artifactId&gt;selenium-ie-driver&lt;/artifactId&gt;
-        &lt;version&gt;2.41.0&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;junit&lt;/groupId&gt;
-        &lt;artifactId&gt;junit&lt;/artifactId&gt;
-        &lt;version&gt;4.11&lt;/version&gt;
-    &lt;/dependency&gt;
-     &lt;dependency&gt;
-        &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
-        &lt;artifactId&gt;poi&lt;/artifactId&gt;
-        &lt;version&gt;3.10-FINAL&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.testng&lt;/groupId&gt;
-        &lt;artifactId&gt;testng&lt;/artifactId&gt;
-        &lt;version&gt;6.8.8&lt;/version&gt;
-    &lt;/dependency&gt;
-&lt;/dependencies&gt;
-</code></pre>
-
-<p></project></p>
-
-<p>```</p>
-
-<p>By adding this code , we are telling to maven that we will use jar files that we define in the tag <dependency>.</p>
-
-<h4>Step 3 : Right click into project and choose Maven &ndash;> Update project.</h4>
-
-<p><img src="/images/c-maven-7.png"></p>
-
-<h4>Step 4 : Click &ldquo;Ok&rdquo; button to let Maven download jar files.</h4>
-
-<p><img src="/images/c-maven-8.png"></p>
-
-<h4>Step 5 : Open the &ldquo;Maven dependencies&rdquo; to see jar file are available in your project.</h4>
-
-<p><img src="/images/c-maven-9.png"></p>
-
-<h3>Note : you will need to have an internet in your laptop to allow the download of maven.</h3>
-
-<p>Now the setup and configuration is done , you are able to start writing Selenium Automation Framework.</p>
 ]]></content>
   </entry>
   

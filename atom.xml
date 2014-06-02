@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-02T11:50:34+07:00</updated>
+  <updated>2014-06-02T14:22:33+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,261 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework P8 : Read Data From Excel File]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file/"/>
+    <updated>2014-06-02T12:05:43+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file</id>
+    <content type="html"><![CDATA[<h2>Reading data from the Excel</h2>
+
+<h3>Required knowledge : <a href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a></h3>
+
+<p>In some way , the client want us read data from excel file then past it to the automation test.In this tutorial , I will write step by step to read data from excel file then past it to the test.</p>
+
+<p>This is the scenario  : Login to facebook by get username and passwork from excel file.</p>
+
+<h3>How to do</h3>
+
+<p>1)Create new file excel &lsquo;test.xlsx&rsquo; like this  and paste to the folder &lsquo;Driver&rsquo; or you can create new folder.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/excel-3.png"></p>
+
+<p>2) Open your &lsquo;pom.xml&rsquo; to make sure that we added apache POI jar file(this jar file will allow us to open ,get data from excel) in the dependency tag.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/excel-1.png"></p>
+
+<p>3) Open your project go to package &lsquo;com.selenium.util&rsquo; and create new class &lsquo;ExcelUtil&rsquo;.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/excel-2.png"></p>
+
+<p>4) Open &lsquo;ExcelUtil.java&rsquo; and paste the code below to it :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.util;
+</span><span class='line'>
+</span><span class='line'>import java.io.File;
+</span><span class='line'>import java.io.FileInputStream;
+</span><span class='line'>
+</span><span class='line'>import org.apache.poi.xssf.usermodel.XSSFCell;
+</span><span class='line'>import org.apache.poi.xssf.usermodel.XSSFSheet;
+</span><span class='line'>import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+</span><span class='line'>
+</span><span class='line'>public class ExcelUtil {
+</span><span class='line'>  private static XSSFSheet ExcelWSheet;
+</span><span class='line'>  private static XSSFWorkbook ExcelWBook;
+</span><span class='line'>  private static XSSFCell Cell;
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  //this method is to get the path of the file 'test.xlsx' in folder driver
+</span><span class='line'>  public static String PathExcelInProject(){
+</span><span class='line'>      String path = DriverUtil.getKey(DriverUtil.PROP_PROJECT_BASE_DIR) + File.separator + DriverUtil.FOLDER_DRIVER 
+</span><span class='line'>              + File.separator + "";
+</span><span class='line'>      try {
+</span><span class='line'>          File Excel = new File(path);
+</span><span class='line'>          if(Excel.exists()){
+</span><span class='line'>              return Excel.getAbsolutePath();
+</span><span class='line'>          }
+</span><span class='line'>      } catch (Exception e) {
+</span><span class='line'>          e.printStackTrace();
+</span><span class='line'>          return null;
+</span><span class='line'>      }
+</span><span class='line'>      return null;    
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  // This method is to set the File path and to open the Excel file, Pass
+</span><span class='line'>  // Excel Path and Sheetname as Arguments to this method
+</span><span class='line'>  public static void setExcelFile(String Path, String SheetName)
+</span><span class='line'>          throws Exception {
+</span><span class='line'>      try {
+</span><span class='line'>          // Open the Excel file
+</span><span class='line'>          FileInputStream ExcelFile = new FileInputStream(Path);
+</span><span class='line'>          // Access the required test data sheet
+</span><span class='line'>          ExcelWBook = new XSSFWorkbook(ExcelFile);
+</span><span class='line'>          ExcelWSheet = ExcelWBook.getSheet(SheetName);
+</span><span class='line'>      } catch (Exception e) {
+</span><span class='line'>          throw (e);
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  // This method is to read the test data from the Excel cell, in this we are
+</span><span class='line'>  // passing parameters as Row num and Col num
+</span><span class='line'>  public static String getCellData(int RowNum, int ColNum) throws Exception {
+</span><span class='line'>      try {
+</span><span class='line'>          Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
+</span><span class='line'>          String CellData = Cell.getStringCellValue();
+</span><span class='line'>          return CellData;
+</span><span class='line'>      } catch (Exception e) {
+</span><span class='line'>          return "";
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5) Create a new testNG class and with name &lsquo;loginFacebookByExcelData&rsquo; and paste the code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>import org.testng.annotations.BeforeTest;
+</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>
+</span><span class='line'>import com.selenium.pageObject.LoginPage;
+</span><span class='line'>import com.selenium.userAction.SignIn;
+</span><span class='line'>import com.selenium.util.ExcelUtil;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>public class loginFacebookByExcelData {
+</span><span class='line'>  
+</span><span class='line'>  private WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  private static String username;
+</span><span class='line'>  
+</span><span class='line'>  private static String password;
+</span><span class='line'>  
+</span><span class='line'>  @Test
+</span><span class='line'>  public void loginByExcel() {
+</span><span class='line'>    //Call loading page of login page facebook , take a look in post [Page Object Model] of my blog
+</span><span class='line'>   LoginPage.loadPage(driver);
+</span><span class='line'>   //Call action SignIn , take a look in post [Modular Driven Framework] of my blogs
+</span><span class='line'>   SignIn.Execute(driver, username, password);
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  @BeforeTest
+</span><span class='line'>  public void beforeTest() throws Exception {
+</span><span class='line'>    
+</span><span class='line'>    driver = new FirefoxDriver();
+</span><span class='line'>    
+</span><span class='line'>    //set file excel is my excel file in folder Driver , you can set the other path to your excel file
+</span><span class='line'>    ExcelUtil.setExcelFile(ExcelUtil.PathExcelInProject(), "test");
+</span><span class='line'>    //get the data from file excel
+</span><span class='line'>    username = ExcelUtil.getCellData(2, 1);
+</span><span class='line'>    password = ExcelUtil.getCellData(2, 2);
+</span><span class='line'>    
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  @AfterTest
+</span><span class='line'>  public void afterTest() {
+</span><span class='line'>    driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6) Right click into class and chose &lsquo;Run as&rsquo; &ndash;> &lsquo;TestNg Test&rsquo;</p>
+
+<p><img src="http://tabaolan1987.github.io/images/excel-5.png"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Selenium Mobile : Run test scripts in real IPhone]]></title>
@@ -3876,58 +4131,6 @@ Under Annotations, check “@BeforeMethod”, “@AfterMethod” and click Finis
 <p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-10.png"></p>
 
 <p><img src="http://tabaolan1987.github.io/images/TestNG-FTC-11.png"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework P2 : Download]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-download/"/>
-    <updated>2014-05-26T11:03:25+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-download</id>
-    <content type="html"><![CDATA[<h2>Install TestNG in Eclipse</h2>
-
-<p>It is easy to install TestNG, as it comes as a plugin for Eclipse IDE. Prerequisite for installing TestNG is your Internet connection should be up &amp; running during installation of this plugin and Eclipse IDE should be installed in your computer. Please see Download and Install Eclipse to setup Eclipse to you system.</p>
-
-<!--more-->
-
-
-<h3>Steps to follow:</h3>
-
-<p>1) Launch the Eclipse IDE and from Help menu, click “Install New Software”.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-1.png"></p>
-
-<p>2) You will see a dialog window, click “Add” button.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-2.png"></p>
-
-<p>3) Type name as you wish, lets take “TestNG” and type “<a href="http://beust.com/eclipse/%E2%80%9D">http://beust.com/eclipse/%E2%80%9D</a> as location. Click OK.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-3.png"></p>
-
-<p>4) You come back to the previous window but this time you must see TestNG option in the available software list. Just Click TestNG and press “Next” button.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-4.png"></p>
-
-<p>5) Click “I accept the terms of the license agreement” then click Finish.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-5.png"></p>
-
-<p>6) You may or may not encounter a Security warning, if in case you do just click OK.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-7.png"></p>
-
-<p>7) Click Next again on the succeeding dialog box until it prompts you to Restart the Eclipse.</p>
-
-<p>8) You are all done now, just Click Yes.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-8.png"></p>
-
-<p>9) Proceed with your workplace.</p>
-
-<p>10) After restart, verify if TestNG was indeed successfully installed. Right click on you project and see if TestNG is displayed in the opened menu.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/Install-TestNG-9.png"></p>
 ]]></content>
   </entry>
   
