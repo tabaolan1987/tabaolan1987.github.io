@@ -148,6 +148,50 @@
 <h3>Selenium WebDriver</h3>
 
 <p>The primary new feature in Selenium 2.0 is the integration of the WebDriver API. WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. It enables you to use a programming language to write test scripts in different programming languages like html, Java, .net , perl, ruby and which enables you to use conditional operations, looping and other programming concepts which makes you test script robust. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver’s goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.</p>
+
+<h3>WebDriver Vs Selenium RC</h3>
+
+<p>1) Architecture</p>
+
+<h4>WebDriver&rsquo;s architecture is simpler than Selenium RC&rsquo;s.</h4>
+
+<p>It controls the browser from the OS level</p>
+
+<p>All you need are your programming language&rsquo;s IDE (which contains your Selenium commands) and a browser.</p>
+
+<p><img src="/images/compare-1.jpg"></p>
+
+<h4>Selenium RC&rsquo;s architecture is way more complicated.</h4>
+
+<p>You first need to launch a separate application called Selenium Remote Control (RC) Server before you can start testing</p>
+
+<p>The Selenium RC Server acts as a &ldquo;middleman&rdquo; between your Selenium commands and your browser</p>
+
+<p>When you begin testing, Selenium RC Server &ldquo;injects&rdquo; a Javascript program called Selenium Core into the browser.</p>
+
+<p>Once injected, Selenium Core will start receiving instructions relayed by the RC Server from your test program.</p>
+
+<p>When the instructions are received, Selenium Core will execute them as Javascript commands.</p>
+
+<p>The browser will obey the instructions of Selenium Core, and will relay its response to the RC Server.</p>
+
+<p>The RC Server will receive the response of the browser and then display the results to you.</p>
+
+<p>RC Server will fetch the next instruction from your test script to repeat the whole cycle.</p>
+
+<p><img src="/images/compare-2.jpg"></p>
+
+<p>2) Speed</p>
+
+<p>WebDriver is faster than Selenium RC since it  speaks directly to the browser uses the browser&rsquo;s own engine to control it.</p>
+
+<p>Selenium RC is slower  sinceit uses a Javascript program called Selenium Core.This Selenium Core is the one that directly controls the browser, not you.</p>
+
+<p>3) Real-life Interaction</p>
+
+<p>WebDriver interacts with page elements in a more realistic way. For example, if you have a disabled text box on a page you were testing, WebDriver really cannot enter any value in it just as how a real person cannot.</p>
+
+<p>Selenium Core, just like other Javascript codes, can access disabled elements .In the past, Selenium testers complain that Selenium Core was able to enter values to a disabled text box in their tests.Differences in API.</p>
 </div>
 
 <div class="meta">
