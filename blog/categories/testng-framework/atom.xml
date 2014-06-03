@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TestNG-Framework | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-03T09:18:41+07:00</updated>
+  <updated>2014-06-03T11:02:59+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -302,6 +302,8 @@ import org.testng.annotations.Test;</p>
 <p>Run the test by right click on the test case script and select Run As > TestNG Test. Give it few minutes to complete the execution, once it is finished the results will look like this in the TestNg Result window.</p>
 
 <p>Note: As the test data is provided two times, the above test executed two times completely.</p>
+
+<h3>Take a look in : <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">P9 : Multi Browser and Parallel Testing</a></h3>
 ]]></content>
   </entry>
   
@@ -472,6 +474,8 @@ import org.testng.annotations.Test;</p>
 ```</p>
 
 <p>It also works the same way like assert true and assert fail. It will also stop the execution, if the value is not equal and carry on the execution, if the value is equal.</p>
+
+<h3>Take a look in more helpful: <a href="/blog/2014/05/26/testng-framework-parameters-and-data-provider/">P8 : Parameters and Data Provider</a></h3>
 ]]></content>
   </entry>
   
@@ -677,6 +681,8 @@ import org.testng.annotations.Test;</p>
 <p>Output of the above example:</p>
 
 <p><img src="/images/TestNg-Muliple-5.png"></p>
+
+<h3>Take a look in more helpful <a href="/blog/2014/05/26/testng-framework-reporters-and-asserts/">P7 : Reporters and Asserts</a></h3>
 ]]></content>
   </entry>
   
@@ -947,6 +953,8 @@ package automationFramework;</p>
 <p>The output will be like this:</p>
 
 <p><img src="/images/TestNG-Dependent1.png"></p>
+
+<h3>Take look for more information about : [P6 : Prioritizing and Sequencing][/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/]</h3>
 ]]></content>
   </entry>
   
