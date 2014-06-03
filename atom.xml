@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-03T17:16:42+07:00</updated>
+  <updated>2014-06-03T17:24:46+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -1117,6 +1117,28 @@
 </span><span class='line'>action.perform();</span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Sliding</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement draggable = driver.findElement("find your slider in here by id or xpath etc.."); 
+</span><span class='line'>new Actions(driver).dragAndDropBy(draggable, 120, 0).build().perform();</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>SelectMulti</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>List&lt;WebElement&gt; listItems = driver.findElements("find your select by id or xpath or etc");
+</span><span class='line'>Actions builder = new Actions(driver); 
+</span><span class='line'>builder.clickAndHold(listItems.get(1)).clickAndHold(listItems.get(2)).click();
+</span><span class='line'>Action selectMultiple = builder.build(); 
+</span><span class='line'>selectMultiple.perform();</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

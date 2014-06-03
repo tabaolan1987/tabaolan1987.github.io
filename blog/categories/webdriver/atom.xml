@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-03T17:16:42+07:00</updated>
+  <updated>2014-06-03T17:24:46+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -123,6 +123,23 @@ Thread.sleep(1000L);
 Actions actions = new Actions(driver);    
 Action action=actions.contextClick(WebElement).build(); //pass WebElement as an argument
 action.perform();
+</code></p>
+
+<h3>Sliding</h3>
+
+<p><code>
+WebElement draggable = driver.findElement("find your slider in here by id or xpath etc..");
+new Actions(driver).dragAndDropBy(draggable, 120, 0).build().perform();
+</code></p>
+
+<h3>SelectMulti</h3>
+
+<p><code>
+List&lt;WebElement&gt; listItems = driver.findElements("find your select by id or xpath or etc");
+Actions builder = new Actions(driver);
+builder.clickAndHold(listItems.get(1)).clickAndHold(listItems.get(2)).click();
+Action selectMultiple = builder.build();
+selectMultiple.perform();
 </code></p>
 ]]></content>
   </entry>
