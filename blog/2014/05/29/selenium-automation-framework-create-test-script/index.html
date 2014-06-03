@@ -214,8 +214,8 @@
 </span><span class='line'>import org.openqa.selenium.WebDriver;
 </span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
 </span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>import org.testng.annotations.BeforeTest;
-</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>import org.testng.annotations.BeforeMethod;
+</span><span class='line'>import org.testng.annotations.AfterMethod;
 </span><span class='line'>
 </span><span class='line'>import com.selenium.pageObject.LoginPage;
 </span><span class='line'>import com.selenium.userAction.PostStatus;
@@ -232,8 +232,8 @@
 </span><span class='line'>  /**
 </span><span class='line'> * Setup some variable to run your script test
 </span><span class='line'> */
-</span><span class='line'>@BeforeTest
-</span><span class='line'>  public void beforeTest() {
+</span><span class='line'>@beforeMethod
+</span><span class='line'>  public void beforeMethod() {
 </span><span class='line'>    driver = new FirefoxDriver();
 </span><span class='line'>  }
 </span><span class='line'>  
@@ -251,8 +251,8 @@
 </span><span class='line'>  /**
 </span><span class='line'> * after run your script test , use this code to close your browser
 </span><span class='line'> */
-</span><span class='line'>@AfterTest
-</span><span class='line'>  public void afterTest() {
+</span><span class='line'>@afterMethod
+</span><span class='line'>  public void afterMethod() {
 </span><span class='line'>    driver.quit();
 </span><span class='line'>  }
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>

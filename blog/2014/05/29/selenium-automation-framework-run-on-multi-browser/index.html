@@ -850,8 +850,8 @@
 </span><span class='line'>import org.openqa.selenium.ie.InternetExplorerDriver;
 </span><span class='line'>import org.testng.annotations.Parameters;
 </span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>import org.testng.annotations.BeforeTest;
-</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>import org.testng.annotations.BeforeMethod;
+</span><span class='line'>import org.testng.annotations.AfterMethod;
 </span><span class='line'>
 </span><span class='line'>import com.selenium.pageObject.LoginPage;
 </span><span class='line'>import com.selenium.userAction.PostStatus;
@@ -873,8 +873,8 @@
 </span><span class='line'> * Your parameters in annotation Parameters will match with define in TestNG.xml 
 </span><span class='line'> */
 </span><span class='line'>@Parameters({"browser","status","username","password"})   
-</span><span class='line'>@BeforeTest
-</span><span class='line'>  public void beforeTest(String browser, String status, String username, String password) {
+</span><span class='line'>@beforeMethod
+</span><span class='line'>  public void beforeMethod(String browser, String status, String username, String password) {
 </span><span class='line'>   if(browser.equalsIgnoreCase("firefox")) {
 </span><span class='line'>        driver = new FirefoxDriver();
 </span><span class='line'>    }else if (browser.equalsIgnoreCase("ie")) { 
@@ -904,8 +904,8 @@
 </span><span class='line'>  /**
 </span><span class='line'> * after run your script test , use this code to close your browser
 </span><span class='line'> */
-</span><span class='line'>@AfterTest
-</span><span class='line'>  public void afterTest() {
+</span><span class='line'>@afterMethod
+</span><span class='line'>  public void afterMethod() {
 </span><span class='line'>    driver.quit();
 </span><span class='line'>  } 
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
