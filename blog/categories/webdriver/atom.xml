@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-03T13:47:12+07:00</updated>
+  <updated>2014-06-03T16:29:49+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -78,6 +78,40 @@ Action dragAndDrop = builder.clickAndHold(From)
 .release(To)
 .build();
 dragAndDrop.perform();</p>
+
+<p>```</p>
+
+<h3>Scroll bars dragging</h3>
+
+<p>The following code demonstrates how to drag the vertical scroll bars on a window. The &ldquo;Actions&rdquo; class is used to click and hold on to the scroll bar and then it is dragged to a new location.</p>
+
+<p>```
+Actions dragger = new Actions(driver);
+WebElement draggablePartOfScrollbar = driver.findElement(By.xpath(&ldquo;yourscrollbarsXpaht&rdquo;));</p>
+
+<p>// drag downwards
+int numberOfPixelsToDragTheScrollbarDown = 10;
+for (int i=10;i&lt;150;i=i+numberOfPixelsToDragTheScrollbarDown){</p>
+
+<pre><code>// this causes a gradual drag of the scroll bar, 10 units at a time
+dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
+Thread.sleep(1000L);
+</code></pre>
+
+<p>}</p>
+
+<pre><code>// now drag opposite way (downwards)
+numberOfPixelsToDragTheScrollbarDown = -10;
+</code></pre>
+
+<p>for (int i=150;i>10;i=i+numberOfPixelsToDragTheScrollbarDown){</p>
+
+<pre><code>// this causes a gradual drag of the scroll bar, -10 units at a time
+dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
+Thread.sleep(1000L);
+</code></pre>
+
+<p>}</p>
 
 <p>```</p>
 ]]></content>

@@ -209,6 +209,49 @@
 
 
 <p></p>
+
+<h3>Scroll bars dragging</h3>
+
+<p>The following code demonstrates how to drag the vertical scroll bars on a window. The &ldquo;Actions&rdquo; class is used to click and hold on to the scroll bar and then it is dragged to a new location.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Actions dragger = new Actions(driver);
+</span><span class='line'>WebElement draggablePartOfScrollbar = driver.findElement(By.xpath("yourscrollbarsXpaht"));
+</span><span class='line'>
+</span><span class='line'>// drag downwards
+</span><span class='line'>int numberOfPixelsToDragTheScrollbarDown = 10;
+</span><span class='line'>for (int i=10;i&lt;150;i=i+numberOfPixelsToDragTheScrollbarDown){
+</span><span class='line'>  // this causes a gradual drag of the scroll bar, 10 units at a time
+</span><span class='line'>  dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
+</span><span class='line'>  Thread.sleep(1000L);
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>  // now drag opposite way (downwards)
+</span><span class='line'>  numberOfPixelsToDragTheScrollbarDown = -10;
+</span><span class='line'>for (int i=150;i&gt;10;i=i+numberOfPixelsToDragTheScrollbarDown){
+</span><span class='line'>  // this causes a gradual drag of the scroll bar, -10 units at a time
+</span><span class='line'>  dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
+</span><span class='line'>  Thread.sleep(1000L);
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 <div class="meta">
