@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-03T16:29:49+07:00</updated>
+  <updated>2014-06-03T17:16:42+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -114,6 +114,16 @@ Thread.sleep(1000L);
 <p>}</p>
 
 <p>```</p>
+
+<h3>RightClick on Element</h3>
+
+<p>In case you want right click on Element please follow the code below :</p>
+
+<p><code>
+Actions actions = new Actions(driver);    
+Action action=actions.contextClick(WebElement).build(); //pass WebElement as an argument
+action.perform();
+</code></p>
 ]]></content>
   </entry>
   
