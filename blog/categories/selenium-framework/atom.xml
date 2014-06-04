@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-04T09:21:46+07:00</updated>
+  <updated>2014-06-04T10:10:49+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -567,8 +567,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;</p>
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
 
 <p>import com.selenium.pageObject.LoginPage;
 import com.selenium.userAction.PostStatus;
@@ -591,8 +591,8 @@ private static String status_facebook;
  * Your parameters in annotation Parameters will match with define in TestNG.xml
  </em>/
 @Parameters({&ldquo;browser&rdquo;,&ldquo;status&rdquo;,&ldquo;username&rdquo;,&ldquo;password&rdquo;})
-@beforeMethod
-  public void beforeMethod(String browser, String status, String username, String password) {</p>
+@BeforeTest
+  public void beforeTest(String browser, String status, String username, String password) {</p>
 
 <pre><code> if(browser.equalsIgnoreCase("firefox")) {
       driver = new FirefoxDriver();
@@ -627,8 +627,8 @@ private static String status_facebook;
 <p>  /<em>*
  * after run your script test , use this code to close your browser
  </em>/
-@afterMethod
-  public void afterMethod() {</p>
+@AfterTest
+  public void afterTest() {</p>
 
 <pre><code>  driver.quit();
 </code></pre>
@@ -746,8 +746,8 @@ package com.selenium.test;</p>
 <p>import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;</p>
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
 
 <p>import com.selenium.pageObject.LoginPage;
 import com.selenium.userAction.PostStatus;
@@ -764,8 +764,8 @@ private static WebDriver driver;
 <p>  /<em>*
  * Setup some variable to run your script test
  </em>/
-@beforeMethod
-  public void beforeMethod() {</p>
+@BeforeTest
+  public void beforeTest() {</p>
 
 <pre><code>  driver = new FirefoxDriver();
 </code></pre>
@@ -788,8 +788,8 @@ private static WebDriver driver;
 <p>  /<em>*
  * after run your script test , use this code to close your browser
  </em>/
-@afterMethod
-  public void afterMethod() {</p>
+@AfterTest
+  public void afterTest() {</p>
 
 <pre><code>  driver.quit();
 </code></pre>
