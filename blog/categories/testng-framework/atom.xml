@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TestNG-Framework | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-06T09:15:58+07:00</updated>
+  <updated>2014-06-06T09:25:24+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -954,7 +954,7 @@ package automationFramework;</p>
 
 <p><img src="/images/TestNG-Dependent1.png"></p>
 
-<h3>Take look for more information about : [P6 : Prioritizing and Sequencing][/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/]</h3>
+<h3>Take look for more information about : <a href="/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/">P6 : Prioritizing and Sequencing</a></h3>
 ]]></content>
   </entry>
   
