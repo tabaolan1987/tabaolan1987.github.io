@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-09T11:44:39+07:00</updated>
+  <updated>2014-06-09T14:42:20+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,7 +14,64 @@
 
   
   <entry>
-    <title type="html"><![CDATA[IceCream Framework : Introduction]]></title>
+    <title type="html"><![CDATA[IceCream Framework Part 2 : Download and Configuration]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-download-and-configuration/"/>
+    <updated>2014-06-09T11:51:13+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-download-and-configuration</id>
+    <content type="html"><![CDATA[<h2>DOWNLOAD</h2>
+
+<h3>Required Tools (If you already have this in your laptop or computer , you can skip this step) :</h3>
+
+<p>1) Download and install Microsoft Office trial here : <a href="http://q.gs/7KN4D">Link</a></p>
+
+<p>2) Download and install JAVA here : <a href="http://tabaolan1987.github.io/blog/2014/05/22/newbie-part-1-download-and-install-java/">How to download and install Java</a></p>
+
+<h3>IceCream Framework version (all version of framework) :</h3>
+
+<p>1) Version Beta 0.1 : <a href="">Click here</a></p>
+
+<h2>Configuration</h2>
+
+<p>You can watch the video set up here : (Watch now)[]</p>
+
+<p>Or you can follow in these step below :</p>
+
+<p>1) Click on this link version of Icecream you want and wait for browser download this.</p>
+
+<p>2) After download success , copy and paste the &lsquo;Icecream.zip&rsquo; file to any location in your disk you want.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ICE_CONFIG-1.png"></p>
+
+<p>3) Unzip file &lsquo;Icecream.zip&rsquo; by <a href="http://q.gs/7KNKy">winzar</a> or <a href="http://q.gs/7KNLO">7zip</a></p>
+
+<p><img src="http://tabaolan1987.github.io/images/ICE_CONFIG-2.png"></p>
+
+<p>4) You will see the folder &lsquo;Icecream&rsquo; with inside it contain 3 folder : TestCase and Report and Screenshot , 1 file &lsquo;IceCream.jar&rsquo; and 1 file &lsquo;run.cmd&rsquo;. Do not delete them.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/"></p>
+
+<p>5) Open file &lsquo;run.cmd&rsquo; by <a href="">Notepad++</a> or Notepad program</p>
+
+<p><img src="http://tabaolan1987.github.io/images/"></p>
+
+<p>6) Copy the path to the folder &lsquo;IceCream&rsquo; and paste to the &lsquo;replace-it-with-your-path-to-folder-Icecream&rsquo;</p>
+
+<p><img src="http://tabaolan1987.github.io/images/"></p>
+
+<p><img src="http://tabaolan1987.github.io/images/"></p>
+
+<p><img src="http://tabaolan1987.github.io/images/"></p>
+
+<p>7) Save this file &lsquo;run.cmd&rsquo;.</p>
+
+<h2>Now you are finish the configuration , is it easy?</h2>
+
+<p><img src="http://tabaolan1987.github.io/images/ICE-2.jpg"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IceCream Framework Part 1 : Introduction]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-introduction/"/>
     <updated>2014-06-09T10:23:15+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-introduction</id>
@@ -24,10 +81,10 @@
 
 <p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
 
-<p>Tester just have the basic understanding of XPATH Location and Excel files is enough to make one test automation programs running on multiple browsers.</p>
-
 <!--more-->
 
+
+<p>Tester just have the basic understanding of XPATH Location and Excel files is enough to make one test automation programs running on multiple browsers.</p>
 
 <p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
 
@@ -39,13 +96,13 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.</p>
 
-<p>If your company wants to use this Framework IceCream for automating the process of test sites or want to build your own 1 Framework, please contact me via email: <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x74;&#97;&#98;&#97;&#111;&#108;&#97;&#110;&#x31;&#x39;&#56;&#x37;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#116;&#97;&#x62;&#x61;&#x6f;&#108;&#x61;&#110;&#x31;&#x39;&#x38;&#x37;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#116;&#x61;&#x62;&#97;&#111;&#x6c;&#x61;&#110;&#49;&#x39;&#x38;&#55;&#64;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#x6d;">&#x74;&#97;&#98;&#x61;&#111;&#108;&#x61;&#x6e;&#49;&#x39;&#56;&#55;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your reading my blog.</p>
 
 <p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, easy to raise, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
 
-<p>Let IceCream say Hi with you</p>
+<p>Let IceCream say Hi with you and take a look in <a href="">Download and Configuration</a></p>
 
 <p><img src="http://tabaolan1987.github.io/images/ICE-1.jpg"></p>
 ]]></content>
@@ -3513,246 +3570,6 @@ By implementing the appropriate automated testing framework, enterprises can sig
 <p>It also works the same way like assert true and assert fail. It will also stop the execution, if the value is not equal and carry on the execution, if the value is equal.</p>
 
 <h3>Take a look in more helpful: <a href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider/">P8 : Parameters and Data Provider</a></h3>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework P6 : Prioritizing and Sequencing]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/"/>
-    <updated>2014-05-26T11:48:09+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing</id>
-    <content type="html"><![CDATA[<h2>TestNG Prioritizing &amp; Sequencing</h2>
-
-<h3>Multiple Tests</h3>
-
-<p>There will be situations when you want to put number of tests under a single test class and like to run all in single shot.  With the help of TestNG ‘@Test‘ annotations we can execute multiple tests in single TestNG file.</p>
-
-<p>Take an example of four different tests under one testng class and print the test sequence on the console.</p>
-
-<!--more-->
-
-
-<h4>How to do it…</h4>
-
-<p>1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next.</p>
-
-<p>Or</p>
-
-<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-0.png"></p>
-
-<p>2) If your project is set up and you have selected the Test Case folder before creating TestNG class then the source folder and the package name will be pre-populated on the form. Set class name as ‘TestNG‘.
-Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@AfterMethod” for now and click Finish. That’s it.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-1.png"></p>
-
-<p>3) By default a new class will have only one @Test method. Add two more methods by yourself and put your code accordingly in methods. Code will look like:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>
-</span><span class='line'>public class MultipleTest {
-</span><span class='line'>  public WebDriver driver;
-</span><span class='line'>  @Test
-</span><span class='line'>  public void One() {
-</span><span class='line'>      System.out.println("This is the Test Case number One");
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  @Test
-</span><span class='line'>  public void Two() {
-</span><span class='line'>    System.out.println("This is the Test Case number Two");
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  @Test
-</span><span class='line'>  public void Three() {
-</span><span class='line'>    System.out.println("This is the Test Case number Three");
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  @Test
-</span><span class='line'>  public void Four() {
-</span><span class='line'>    System.out.println("This is the Test Case number Four");
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This will enable you to execute all four tests with just one testng class. Take a look on the output.</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-3.png"></p>
-
-<p>Attention: By default, methods annotated by @Test are executed alphabetically. Take a look over the next topic to see how to prioritize @Test.</p>
-
-<h3>Sequencing &amp; Prioritizing</h3>
-
-<p>You need to use the ‘priority‘ parameter, if you want the methods to be executed in your order. Parameters are keywords that modify the annotation’s function.</p>
-
-<p>Let’s take the same above example and execute all @Test methods in right order. Simply assign priority to all @Test methods starting from 0(Zero).</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>
-</span><span class='line'>public class MultipleTest {
-</span><span class='line'>  public WebDriver driver;
-</span><span class='line'>  @Test(priority = 0)
-</span><span class='line'>  public void One() {
-</span><span class='line'>      System.out.println("This is the Test Case number One");
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  @Test(priority = 1)
-</span><span class='line'>  public void Two() {
-</span><span class='line'>    System.out.println("This is the Test Case number Two");
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  @Test(priority = 2)
-</span><span class='line'>  public void Three() {
-</span><span class='line'>    System.out.println("This is the Test Case number Three");
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  @Test(priority = 3)
-</span><span class='line'>  public void Four() {
-</span><span class='line'>    System.out.println("This is the Test Case number Four");
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: TestNG will execute the @Test annotation with the lowest priority value up to the largest.</p>
-
-<p>Output of the above:</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-4.png"></p>
-
-<h3>Skipping a Test Case</h3>
-
-<p>Think of a situation where you are required to skip one or more @Test from your testng class. In testng, you can easily able to handle this situation by setting the ‘enabled’ parameter to ‘false’ for e.g.:</p>
-
-<p>@Test(enabled = false)</p>
-
-<p>To use two or more parameters in a single annotation, separate them with a comma:</p>
-
-<p>@Test(priority = 3, enabled = false)</p>
-
-<p>Again take the same example and set the value false for the third test.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>
-</span><span class='line'>public class MultipleTest {
-</span><span class='line'>  public WebDriver driver;
-</span><span class='line'>  @Test(priority = 0)
-</span><span class='line'>  public void One() {
-</span><span class='line'>      System.out.println("This is the Test Case number One");
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  @Test(priority = 1)
-</span><span class='line'>  public void Two() {
-</span><span class='line'>    System.out.println("This is the Test Case number Two");
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  @Test(priority = 2, enabled = false)
-</span><span class='line'>  public void Three() {
-</span><span class='line'>    System.out.println("This is the Test Case number Three");
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  @Test(priority = 3)
-</span><span class='line'>  public void Four() {
-</span><span class='line'>    System.out.println("This is the Test Case number Four");
-</span><span class='line'>  }
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Output of the above example:</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-5.png"></p>
-
-<h3>Take a look in more helpful <a href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts/">P7 : Reporters and Asserts</a></h3>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IceCream | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/icecream/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-09T11:44:39+07:00</updated>
+  <updated>2014-06-09T14:42:20+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,7 +14,64 @@
 
   
   <entry>
-    <title type="html"><![CDATA[IceCream Framework : Introduction]]></title>
+    <title type="html"><![CDATA[IceCream Framework Part 2 : Download and Configuration]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-download-and-configuration/"/>
+    <updated>2014-06-09T11:51:13+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-download-and-configuration</id>
+    <content type="html"><![CDATA[<h2>DOWNLOAD</h2>
+
+<h3>Required Tools (If you already have this in your laptop or computer , you can skip this step) :</h3>
+
+<p>1) Download and install Microsoft Office trial here : <a href="http://q.gs/7KN4D">Link</a></p>
+
+<p>2) Download and install JAVA here : <a href="/blog/2014/05/22/newbie-part-1-download-and-install-java/">How to download and install Java</a></p>
+
+<h3>IceCream Framework version (all version of framework) :</h3>
+
+<p>1) Version Beta 0.1 : <a href="">Click here</a></p>
+
+<h2>Configuration</h2>
+
+<p>You can watch the video set up here : (Watch now)[]</p>
+
+<p>Or you can follow in these step below :</p>
+
+<p>1) Click on this link version of Icecream you want and wait for browser download this.</p>
+
+<p>2) After download success , copy and paste the &lsquo;Icecream.zip&rsquo; file to any location in your disk you want.</p>
+
+<p><img src="/images/ICE_CONFIG-1.png"></p>
+
+<p>3) Unzip file &lsquo;Icecream.zip&rsquo; by <a href="http://q.gs/7KNKy">winzar</a> or <a href="http://q.gs/7KNLO">7zip</a></p>
+
+<p><img src="/images/ICE_CONFIG-2.png"></p>
+
+<p>4) You will see the folder &lsquo;Icecream&rsquo; with inside it contain 3 folder : TestCase and Report and Screenshot , 1 file &lsquo;IceCream.jar&rsquo; and 1 file &lsquo;run.cmd&rsquo;. Do not delete them.</p>
+
+<p><img src="/images/"></p>
+
+<p>5) Open file &lsquo;run.cmd&rsquo; by <a href="">Notepad++</a> or Notepad program</p>
+
+<p><img src="/images/"></p>
+
+<p>6) Copy the path to the folder &lsquo;IceCream&rsquo; and paste to the &lsquo;replace-it-with-your-path-to-folder-Icecream&rsquo;</p>
+
+<p><img src="/images/"></p>
+
+<p><img src="/images/"></p>
+
+<p><img src="/images/"></p>
+
+<p>7) Save this file &lsquo;run.cmd&rsquo;.</p>
+
+<h2>Now you are finish the configuration , is it easy?</h2>
+
+<p><img src="/images/ICE-2.jpg"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IceCream Framework Part 1 : Introduction]]></title>
     <link href="http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-introduction/"/>
     <updated>2014-06-09T10:23:15+07:00</updated>
     <id>http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-introduction</id>
@@ -24,10 +81,10 @@
 
 <p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
 
-<p>Tester just have the basic understanding of XPATH Location and Excel files is enough to make one test automation programs running on multiple browsers.</p>
-
 <!--more-->
 
+
+<p>Tester just have the basic understanding of XPATH Location and Excel files is enough to make one test automation programs running on multiple browsers.</p>
 
 <p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
 
@@ -39,13 +96,13 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.</p>
 
-<p>If your company wants to use this Framework IceCream for automating the process of test sites or want to build your own 1 Framework, please contact me via email: <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#116;&#x61;&#x62;&#x61;&#x6f;&#x6c;&#x61;&#x6e;&#49;&#57;&#x38;&#55;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#109;">&#116;&#x61;&#x62;&#97;&#x6f;&#108;&#97;&#110;&#49;&#x39;&#56;&#55;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x74;&#97;&#x62;&#x61;&#111;&#108;&#x61;&#x6e;&#x31;&#x39;&#56;&#55;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#116;&#x61;&#98;&#97;&#111;&#x6c;&#97;&#110;&#49;&#57;&#56;&#55;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your reading my blog.</p>
 
 <p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, easy to raise, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
 
-<p>Let IceCream say Hi with you</p>
+<p>Let IceCream say Hi with you and take a look in <a href="">Download and Configuration</a></p>
 
 <p><img src="/images/ICE-1.jpg"></p>
 ]]></content>
