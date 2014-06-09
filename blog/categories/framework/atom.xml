@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Framework | Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/blog/categories/framework/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-09T15:46:54+07:00</updated>
+  <updated>2014-06-09T17:27:28+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,72 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IceCream Framework Part 3 : Running an example test case.]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/"/>
+    <updated>2014-06-09T15:58:03+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase</id>
+    <content type="html"><![CDATA[<h2>Running an example test case</h2>
+
+<h3>You can watch video here : <a href="">Watch Now</a></h3>
+
+<h3>Or You can follow to there steps below :</h3>
+
+<!--more-->
+
+
+<p>1) Open IceCream folder.You will see the file &lsquo;TESTEXAMPLE.xslx&rsquo;.</p>
+
+<p><img src="/images/ICE_TEST-1.png"></p>
+
+<p>3) Copy this file and paste to Folder TestCase then rename this file like you want.</p>
+
+<p><img src="/images/ICE_TEST-2.png"></p>
+
+<p><img src="/images/ICE_TEST-3.png"></p>
+
+<p><img src="/images/ICE_TEST-4.png"></p>
+
+<p>4) Open this file you copied by Microsoft Excel.</p>
+
+<p><img src="/images/ICE_TEST-5.png"></p>
+
+<p><img src="/images/ICE_TEST-6.png"></p>
+
+<p>5) In this file , I create my example test case is : Running in Browser Chrome , Open &lsquo;<a href="http://facebook.com">http://facebook.com</a>&rsquo; , wait for text-box password present in 5 second , then I type in text-box email , type in text-box password. Take a screenshot and close the browser.</p>
+
+<p>5) First take a look in the top , you can able to set up browser you want to run this test case. The list provide you 3 browser : Firefox , IE , Chrome. Make sure that 3 browser is install in your laptop. Or you can download <a href="http://q.gs/7KQ8E">Firefox browser here</a> , <a href="http://q.gs/7KQ7q">Chrome browser here</a>. In this case , I choose my test case running in Chrome. You can set IE ,CHROME ,FIREFOX like you want.</p>
+
+<p><img src="/images/ICE_TEST-7.png"></p>
+
+<p>6) Now take a look in row 3. I use the action &lsquo;OpenUrl&rsquo; with value is &lsquo;<a href="http://facebook.com">http://facebook.com</a>&rsquo; , It mean that I will let browser access to url facebook.com and wait for the facebook.com load success.You can change whatever URL you like in this Action Input Value.</p>
+
+<p><img src="/images/ICE_TEST-8.png"></p>
+
+<p>7) Take a look in row 4 . I use the action &lsquo;WaitElementPresent&rsquo; with the Action Type Input is 5.It mean that I will wait 5 second for the Element that I find BY ID is pass present in this page.</p>
+
+<p><img src="/images/ICE_TEST-9.png"></p>
+
+<p>8) You can see row 4- 8  some action , but I think you need to see the <a href="">How to use Action in Excel</a></p>
+
+<p>9) Now save and close this file.</p>
+
+<p>10) Back to folder IceCream , double click in file &lsquo;run.cmd&rsquo; and see the automation test process.</p>
+
+<p><img src="/images/ICE_TEST-10.png"></p>
+
+<p>11) After automation test process success , check Report in folder Report and check the screenshot in folder Screenshot.</p>
+
+<p><img src="/images/ICE_TEST-11.png"></p>
+
+<p><img src="/images/ICE_TEST-12.png"></p>
+
+<p>12) Now you can create your own test case by copy file &lsquo;TESTEXAMPLE.xslx&rsquo; to the test case folder, rename this file , open this file , choose the browser , and delete row 3 to 8 and define your action in this excel file.We recommend you to take a look in <a href="">How to use Action in Excel</a> . If you have any trouble to setup and run your test case , give your comment to me.</p>
+
+<p><img src="/images/ICE-3.jpg"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IceCream Framework Part 2 : Download and Configuration]]></title>
@@ -35,7 +101,7 @@
 
 <h2>Configuration</h2>
 
-<p>You can watch the video set up here : (Watch now)[]</p>
+<p>You can watch the video set up here : <a href="">Watch Now</a></p>
 
 <p>Or you can follow in these step below :</p>
 
@@ -69,7 +135,7 @@
 
 <p>7) Save this file &lsquo;run.cmd&rsquo;.</p>
 
-<h2>Now you are finish the configuration , is it easy?</h2>
+<h2>Now you are finish the configuration , is it easy? It&rsquo;s time to know [how to create your own testcase] ()</h2>
 
 <p><img src="/images/ICE-2.jpg"></p>
 ]]></content>
@@ -101,7 +167,7 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#116;&#x61;&#98;&#x61;&#x6f;&#108;&#97;&#x6e;&#49;&#57;&#x38;&#x37;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x74;&#x61;&#98;&#97;&#111;&#108;&#97;&#x6e;&#49;&#x39;&#x38;&#x37;&#x40;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#116;&#97;&#98;&#97;&#x6f;&#x6c;&#97;&#110;&#x31;&#x39;&#x38;&#55;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#116;&#x61;&#x62;&#97;&#111;&#x6c;&#x61;&#110;&#x31;&#57;&#56;&#x37;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your reading my blog.</p>
 
