@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-08T20:55:55+07:00</updated>
+  <updated>2014-06-09T11:42:44+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IceCream Framework : Introduction]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-introduction/"/>
+    <updated>2014-06-09T10:23:15+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/09/icecream-framework-introduction</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
+
+<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
+
+<p>Tester just have the basic understanding of XPATH Location and Excel files is enough to make one test automation programs running on multiple browsers.</p>
+
+<p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
+
+<p>IceCream Framework is written by Java language and use the core Selenium WebDriver.</p>
+
+<p>Currently IceCream Framework version 1.0 Beta version only the basic function to perform automatic chemical testing.</p>
+
+<p>The reason for this because I want to collect more of your opinions, feedback and the desire to have more function for me so that I can write to serve you.</p>
+
+<p>IceCream Framework is completely free to use for personal learning and doing the simple test case.</p>
+
+<p>If your company wants to use this Framework IceCream for automating the process of test sites or want to build your own 1 Framework, please contact me via email: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x74;&#x61;&#x62;&#x61;&#x6f;&#108;&#x61;&#110;&#49;&#x39;&#x38;&#x37;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#116;&#x61;&#x62;&#x61;&#111;&#x6c;&#x61;&#110;&#x31;&#57;&#56;&#55;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+
+<p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your reading my blog.</p>
+
+<p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, easy to raise, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
+
+<p>Let IceCream say Hi with you</p>
+
+<p><img src="http://tabaolan1987.github.io/images/ICE-1.jpg"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Beginner with Selenium Ide Part 2: Record User Action and Export this Script to another langugae]]></title>
@@ -3715,384 +3750,6 @@ Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@
 <p><img src="http://tabaolan1987.github.io/images/TestNg-Muliple-5.png"></p>
 
 <h3>Take a look in more helpful <a href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts/">P7 : Reporters and Asserts</a></h3>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework P5: Annotations , Groups and OnDepends]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations/"/>
-    <updated>2014-05-26T11:35:51+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations</id>
-    <content type="html"><![CDATA[<h2>TestNG Annotations, Groups &amp; OnDepends</h2>
-
-<h3>TestNG Annotations</h3>
-
-<p>In the TestNG Introduction chapter we have came across different annotations used in TestNG Framework but so far we have used just three(Before, After &amp; Test). All though these are the most frequently used annotations but who know how far you will go with your framework and may like to use other useful TestNG annotations.</p>
-
-<!--more-->
-
-
-<p>Before that I would like you to give a small idea on Annotations hierarchy or Annotations levels in TestNG.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite&gt;
-</span><span class='line'>     &lt;test&gt;
-</span><span class='line'>           &lt;classes&gt;
-</span><span class='line'>                  &lt;method&gt;
-</span><span class='line'>                        &lt;test&gt;
-</span><span class='line'>                  &lt;/method&gt;
-</span><span class='line'>           &lt;/classes&gt;
-</span><span class='line'>     &lt;/test&gt;
-</span><span class='line'>&lt;/suite&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It says that @Test is the smallest annotation here. @Method will be executed first, before and after the execution of @Test. The same way @Class will be executed first, before and after the execution of @Method and so on.</p>
-
-<p>Now with the below example it will be clear to you easily.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'> 
-</span><span class='line'>import org.testng.annotations.AfterClass;
-</span><span class='line'>import org.testng.annotations.AfterMethod;
-</span><span class='line'>import org.testng.annotations.AfterSuite;
-</span><span class='line'>import org.testng.annotations.AfterTest;
-</span><span class='line'>import org.testng.annotations.BeforeClass;
-</span><span class='line'>import org.testng.annotations.BeforeMethod;
-</span><span class='line'>import org.testng.annotations.BeforeSuite;
-</span><span class='line'>import org.testng.annotations.BeforeTest;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>public class Sequencing {
-</span><span class='line'> 
-</span><span class='line'>        @Test
-</span><span class='line'>        public void testCase1() {
-</span><span class='line'>            System.out.println("This is the Test Case 1");
-</span><span class='line'>        }
-</span><span class='line'> 
-</span><span class='line'>        @Test
-</span><span class='line'>        public void testCase2() {
-</span><span class='line'>            System.out.println("This is the Test Case 2");
-</span><span class='line'>        }
-</span><span class='line'> 
-</span><span class='line'>        @BeforeMethod
-</span><span class='line'>        public void beforeMethod() {
-</span><span class='line'>            System.out.println("This will execute before every Method");
-</span><span class='line'>        }
-</span><span class='line'> 
-</span><span class='line'>        @AfterMethod
-</span><span class='line'>        public void afterMethod() {
-</span><span class='line'>            System.out.println("This will execute after every Method");
-</span><span class='line'>        }
-</span><span class='line'> 
-</span><span class='line'>        @BeforeClass
-</span><span class='line'>        public void beforeClass() {
-</span><span class='line'>            System.out.println("This will execute before the Class");
-</span><span class='line'>        }
-</span><span class='line'> 
-</span><span class='line'>        @AfterClass
-</span><span class='line'>        public void afterClass() {
-</span><span class='line'>            System.out.println("This will execute after the Class");
-</span><span class='line'>        }
-</span><span class='line'> 
-</span><span class='line'>        @BeforeTest
-</span><span class='line'>        public void beforeTest() {
-</span><span class='line'>            System.out.println("This will execute before the Test");
-</span><span class='line'>        }
-</span><span class='line'> 
-</span><span class='line'>        @AfterTest
-</span><span class='line'>        public void afterTest() {
-</span><span class='line'>            System.out.println("This will execute after the Test");
-</span><span class='line'>        }
-</span><span class='line'> 
-</span><span class='line'>        @BeforeSuite
-</span><span class='line'>        public void beforeSuite() {
-</span><span class='line'>            System.out.println("This will execute before the Test Suite");
-</span><span class='line'>        }
-</span><span class='line'> 
-</span><span class='line'>        @AfterSuite
-</span><span class='line'>        public void afterSuite() {
-</span><span class='line'>            System.out.println("This will execute after the Test Suite");
-</span><span class='line'>        }
-</span><span class='line'> 
-</span><span class='line'>    }
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Output of the above code will be like this:</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Annotations-1.png"></p>
-
-<p>It is clearly visible that the @Suite annotation is the very first and the very lastly executed. Then @Test followed by @Class. Now if you notice, the @Method has executed twice. As @Test is a method in the class, hence @Method will always executed for each @Test method.</p>
-
-<h3>Test Case Grouping</h3>
-
-<p>‘Groups‘ is one more annotation of TestNG which can be used in the execution of multiple tests. Let’s say you have hundred tests of class vehicle and in it ten method of car, ten method of scooter and so on. You probably like to run all the scooter tests together in a batch. And you want all to be in a single test suite. With the help of grouping you can easily overcome this situation.</p>
-
-<h4>How to do it…</h4>
-
-<p>1) Create two methods for Car, two methods for Scooter and one method in conjunction with Car &amp; Sedan Car.</p>
-
-<p>2) Group them separately with using  (groups = { ” Group Name” })</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>
-</span><span class='line'>public class Grouping {
-</span><span class='line'>  @Test (groups = { "Car" })
-</span><span class='line'>  public void Car1() {
-</span><span class='line'>    System.out.println("Batch Car - Test car 1");
-</span><span class='line'>  }
-</span><span class='line'>  @Test (groups = { "Car" })
-</span><span class='line'>  public void Car2() {
-</span><span class='line'>    System.out.println("Batch Car - Test car 2");
-</span><span class='line'>  }
-</span><span class='line'>  @Test (groups = { "Scooter" })
-</span><span class='line'>  public void Scooter1() {
-</span><span class='line'>    System.out.println("Batch Scooter - Test scooter 1");
-</span><span class='line'>  }
-</span><span class='line'>  @Test (groups = { "Scooter" })
-</span><span class='line'>  public void Scooter2() {
-</span><span class='line'>    System.out.println("Batch Scooter - Test scooter 2");
-</span><span class='line'>  }
-</span><span class='line'>  @Test (groups = { "Car", "Sedan Car" })
-</span><span class='line'>  public void Sedan1() {
-</span><span class='line'>    System.out.println("Batch Sedan Car - Test sedan 1");
-</span><span class='line'>  }
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>3) Create a testng xml like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite name="Suite"&gt;
-</span><span class='line'>    &lt;test name="Practice Grouping"&gt;
-</span><span class='line'>        &lt;groups&gt;
-</span><span class='line'>      &lt;run&gt;
-</span><span class='line'>      &lt;include name="Car" /&gt;
-</span><span class='line'>      &lt;/run&gt;
-</span><span class='line'>  &lt;/groups&gt;
-</span><span class='line'>  &lt;classes&gt;
-</span><span class='line'>      &lt;class name="automationFramework.Grouping" /&gt;
-</span><span class='line'>  &lt;/classes&gt;
-</span><span class='line'>    &lt;/test&gt;
-</span><span class='line'>&lt;/suite&gt;
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>4) Run the test by right click on the testng.xml file and select Run As > TestNG Suite. Output will be like this in TestNg console:</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Grouping-1.png"></p>
-
-<p> Note: We have just call the group ‘Car’ from the xml and it also executed the test for Sedan Car, as we have mentioned the ‘Car’ as well while declaring the group of Sedan Car.</p>
-
-<p>Clubbing of groups is also possible, take a look at the below xml:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>&lt;suite name="Suite"&gt;
-</span><span class='line'>   &lt;test name="Practice Grouping"&gt;
-</span><span class='line'>      &lt;groups&gt;
-</span><span class='line'>         &lt;define name="All"&gt;
-</span><span class='line'>           &lt;include name="Car"/&gt;
-</span><span class='line'>           &lt;include name="Scooter"/&gt;
-</span><span class='line'>       &lt;/define&gt;
-</span><span class='line'>      &lt;run&gt;
-</span><span class='line'>           &lt;include name="All"/&gt;
-</span><span class='line'>      &lt;/run&gt;
-</span><span class='line'>       &lt;/groups&gt;
-</span><span class='line'>   &lt;classes&gt;
-</span><span class='line'>        &lt;class name="automationFramework.Grouping" /&gt;
-</span><span class='line'>  &lt;/classes&gt;
-</span><span class='line'>   &lt;/test&gt;
-</span><span class='line'>&lt;/suite&gt;
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>You can see that we have created a new Group with the name ‘All’ and include other groups in it. Then simply called the newly created group for execution. The output will be like this:</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Grouping-2.png"></p>
-
-<h3>Dependent Test</h3>
-
-<p>Sometimes, you may need to invoke methods in a Test case in a particular order or you want to share some data and state between methods. This kind of dependency is supported by TestNG as it supports the declaration of explicit dependencies between test methods.</p>
-
-<p>TestNG allows you to specify dependencies either with:</p>
-
-<p>Using attributes dependsOnMethods in @Test annotations OR</p>
-
-<p>Using attributes dependsOnGroups in @Test annotations.</p>
-
-<p>Take a look over the below example:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>
-</span><span class='line'>public class Dependent {
-</span><span class='line'>  @Test (dependsOnMethods = { "OpenBrowser" })
-</span><span class='line'>  public void SignIn() {
-</span><span class='line'>    System.out.println("This will execute second (SignIn)");
-</span><span class='line'>  }
-</span><span class='line'>  @Test
-</span><span class='line'>  public void OpenBrowser() {
-</span><span class='line'>    System.out.println("This will execute first (Open Browser)");
-</span><span class='line'>  }
-</span><span class='line'>  @Test (dependsOnMethods = { "SignIn" })
-</span><span class='line'>  public void LogOut() {
-</span><span class='line'>    System.out.println("This will execute third (Log Out)");
-</span><span class='line'>  }
-</span><span class='line'>  </span></code></pre></td></tr></table></div></figure>
-
-
-<p>The output will be like this:</p>
-
-<p><img src="http://tabaolan1987.github.io/images/TestNG-Dependent1.png"></p>
-
-<h3>Take look for more information about : <a href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/">P6 : Prioritizing and Sequencing</a></h3>
 ]]></content>
   </entry>
   
