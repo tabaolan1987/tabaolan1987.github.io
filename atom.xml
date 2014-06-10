@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://tabaolan1987.github.io/atom.xml" rel="self"/>
   <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-10T08:50:01+07:00</updated>
+  <updated>2014-06-10T14:20:41+07:00</updated>
   <id>http://tabaolan1987.github.io/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,329 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IceCream Framework Part 4 :Function available in excel file and how to use!]]></title>
+    <link href="http://tabaolan1987.github.io/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file/"/>
+    <updated>2014-06-10T08:53:24+07:00</updated>
+    <id>http://tabaolan1987.github.io/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file</id>
+    <content type="html"><![CDATA[<h2>Version Beta 0.1</h2>
+
+<h3>Function Browser</h3>
+
+<p>1) Define : choose your browser you want to run your test case.</p>
+
+<p>2) Available : Chrome , FireFox , IE.</p>
+
+<p>3) Required : All browser must be install in your laptop or computer.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-1.png"></p>
+
+<h3>Function OpenUrl</h3>
+
+<p>1) Define : open the url you want to test.It will wait for the browser load this page success!</p>
+
+<p>2) Available : with any url that publish to internet or your local network.</p>
+
+<p>3) Required : correct the format of URL such as  : www.anyurl.com or http/<a href="https://anyurl.com.">https://anyurl.com.</a> Must put value in column &lsquo;ACTION INPUT VALUE&rsquo;.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-2.png"></p>
+
+<h3>Function CloseBrowser</h3>
+
+<p>1) Define : close the browser.</p>
+
+<p>2) Available : All browser that you choose in the top of excel file.</p>
+
+<p>3) Required : don&rsquo;t need to put any value in &lsquo;ACTION INPUT VALUE&rsquo; , &lsquo;FIND BY&rsquo;, &lsquo;FIND BY VALUE&rsquo;</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-3.png"></p>
+
+<h3>Function Type</h3>
+
+<p>1) Define : type in text-box that you want.Return false if element is not display or not is text box or text arena.</p>
+
+<p>2) Available : all text-box that visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type in text-box!</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this text-box if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<p>4) Example : Let&rsquo;s take a look in this html source below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="holder"&gt;
+</span><span class='line'>  &lt;input type='text' id='textbox' class='example'&gt;&lt;/input&gt;
+</span><span class='line'>&lt;/div&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is find the textbox and type in it  value &lsquo;example&rsquo; by using function type in excel.</p>
+
+<p>I choose the demo to you 3 option is :</p>
+
+<p>A)Find by ID :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : ID</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : textbox (this is the id of this input type)</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-5.png"></p>
+
+<p>B)Find by Class name :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Class Name</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : example(this is the class name of this input type)</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-6.png"></p>
+
+<p>C)Find by Xpath :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Xpath</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : //input[id=&lsquo;textbox&rsquo;] (this is the xpath of this textbox)</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-7.png"></p>
+
+<h3>Function Click</h3>
+
+<p>1) Define : Click into button , link,.. etc! Return false if element is not displayed.</p>
+
+<p>2) Available : All element is visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this element you want to click if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<p>4) Example  : take a look in html source below</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;td id='holder'&gt;
+</span><span class='line'>&lt;a class='link_example'&gt;Click here&lt;/a&gt;
+</span><span class='line'>&lt;/td&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is find the link and click in it.</p>
+
+<p>I choose the demo to you 2 option is :</p>
+
+<p>A) Find by Class name :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Class Name</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : link_example(this is the class name of this link)</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-8.png"></p>
+
+<p>B) Find by Link text :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Link text</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : Click here(this is the text in the link)</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-10.png"></p>
+
+<h3>Function VerifyTitlePage</h3>
+
+<p>1) Define : compare the title page with the text user input.Return false if the title page not equal with the text user input.</p>
+
+<p>2) Available : String for input.</p>
+
+<p>3) Required : &lsquo;ACTION INPUT VALUE&rsquo; : give your String to compare with the current title page.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-11.png"></p>
+
+<h3>Function VerifyText</h3>
+
+<p>1) Define : compare text inside element with text user input.Return false if they are not equals.</p>
+
+<p>2) Available : String input.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : give your String to compare with the current text in element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the location of element like xpath, ID you want to compare.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-12.png"></p>
+
+<h3>Function SelectValueDropdown</h3>
+
+<p>1) Define : select the value of drop-down list via value user input.Return false if value is not existed in drop-down.</p>
+
+<p>2) Available : String input.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : give your String Value you want selected in drop-down</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the location of drop-down like Xpath , or ID  you want to select!</p>
+
+<p>4)Example : take a look in html code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;select id='country'&gt;
+</span><span class='line'>&lt;option value='vietnam'&gt;Viet Nam&lt;/option&gt;
+</span><span class='line'>&lt;option value='thailand'&gt;ThaiLand&lt;/option&gt;
+</span><span class='line'>&lt;/select&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is select value Viet Nam in drop-down list. So this will be look like this :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : vietnam(value of option)</p>
+
+<p>&lsquo;FIND BY&rsquo; : ID</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : country</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-13.png"></p>
+
+<h3>Function SwitchToFrame</h3>
+
+<p>1) Define : switch the driver to iframe.</p>
+
+<p>2) Available : All I-frame visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of IFrame like Xpath , or ID you want to select!</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-14.png"></p>
+
+<h3>Function SwitchToWindow</h3>
+
+<p>1) Define : if browser current have more than once tab , it use to switch to the another tab.</p>
+
+<p>2) Available : All tabs are existed in current browser.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : name of this tab you want to come.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-15.png"></p>
+
+<h3>Function SwitchToDefault</h3>
+
+<p>1) Define :  switch to the default tabs</p>
+
+<p>2) Available :  All tabs are existed in current browser.</p>
+
+<p>3) Required : Just choose the function only , not required any parameters.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-16.png"></p>
+
+<h3>Function EnterAlertAcceptButton</h3>
+
+<p>1) Define : enter the accept button in Alert if alert present.</p>
+
+<p>2) Available : all alert is present.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-17.png"></p>
+
+<h3>Function EnterAlertDismissButton</h3>
+
+<p>1) Define : enter the cancel button in Alert if alert present.Return false if alert is not present.</p>
+
+<p>2) Available : all alert is present.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-18.png"></p>
+
+<h3>Function IsAlertPresent</h3>
+
+<p>1) Define : check if alert is present.Return false if alert is not present.</p>
+
+<p>2) Available : all browser.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-19.png"></p>
+
+<h3>Function IsElementPresent</h3>
+
+<p>1) Define : check if element is present.Return false if element is not present.</p>
+
+<p>2) Available : all element.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-20.png"></p>
+
+<h3>Function WaitElementPresent</h3>
+
+<p>1) Define : wait for element present in website with time out default is 10 second , you can set this timeout by enter in column &lsquo;ACTION VALUE INPUT&rsquo;.Return false if element not present.</p>
+
+<p>2) Available : all element.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : time out you want to wait for this element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-21.png"></p>
+
+<h3>Function WaitElementsInvisible</h3>
+
+<p>1) Define : wait for all elements invisible in the timeout.Return false if once of elements is not invisible.</p>
+
+<p>2) Available : List elements.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : time out you want to wait for this element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-22.png"></p>
+
+<h3>Function TakeScreenShot</h3>
+
+<p>1) Define : take a screen-shot in your current browser tabs and save it under folder &lsquo;Screenshot&rsquo;.</p>
+
+<p>2) Available : all browsers.</p>
+
+<p>3) Required : just choose only action and not required any parameters for this.</p>
+
+<p><img src="http://tabaolan1987.github.io/images/use-function-23.png"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IceCream Framework Part 3 : Running an example test case.]]></title>
@@ -73,7 +396,7 @@
 
 <p><img src="http://tabaolan1987.github.io/images/ICE_TEST-12.png"></p>
 
-<p>12) Now you can create your own test case by copy file &lsquo;TESTEXAMPLE.xslx&rsquo; to the test case folder, rename this file , open this file , choose the browser , and delete row 3 to 8 and define your action in this excel file.We recommend you to take a look in <a href="">How to use Action in Excel</a> . If you have any trouble to setup and run your test case , give your comment to me.</p>
+<p>12) Now you can create your own test case by copy file &lsquo;TESTEXAMPLE.xslx&rsquo; to the test case folder, rename this file , open this file , choose the browser , and delete row 3 to 8 and define your action in this excel file.We recommend you to take a look in <a href="">How to use Action in Excel</a> . If you have any trouble to set up and run your test case , leave your comment below.</p>
 
 <p><img src="http://tabaolan1987.github.io/images/ICE-3.jpg"></p>
 ]]></content>
@@ -167,7 +490,7 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#x3a;&#x74;&#97;&#x62;&#97;&#111;&#108;&#97;&#110;&#x31;&#x39;&#56;&#x37;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#116;&#x61;&#x62;&#x61;&#111;&#108;&#x61;&#x6e;&#49;&#x39;&#x38;&#x37;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#116;&#x61;&#98;&#97;&#x6f;&#x6c;&#97;&#x6e;&#49;&#57;&#x38;&#x37;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#x74;&#97;&#x62;&#97;&#x6f;&#108;&#97;&#110;&#x31;&#57;&#x38;&#x37;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your reading my blog.</p>
 
@@ -3213,194 +3536,6 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 
 <p>Note: You may see some intermittent issues using parallel testing. I will not recommend you this rather run one by one only.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TestNG Framework P8 : Parameters and Data Provider]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider/"/>
-    <updated>2014-05-26T12:05:31+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider</id>
-    <content type="html"><![CDATA[<h2>TestNG Parameters &amp; Data Provider</h2>
-
-<h3>TestNG Parameters</h3>
-
-<p>Everybody knows the importance of Parameterization in testing and in automation testing. It allows us to automatically run a test case multiple times with different input and validation values. As Selenium Webdriver is more an automated testing framework than a ready-to-use tool, you will have to put in some effort to support data driven testing in your automated tests. I usually prefer to use Microsoft Excel as the format for storing my parameters but so many of my followers have requested to write an article on TestNG Data Provider.</p>
-
-<p>TestNG again gives us another interesting feature called TestNG Parameters. TestNG lets you pass parameters directly to your test methods with your testng.xml.</p>
-
-<!--more-->
-
-
-<h4>How to do it…</h4>
-
-<p>Let me take a very simple example of LogIn application, where the username and password is required to clear the authentication.</p>
-
-<p>1) Create a test on my demo OnlineStore application to perform LogIn which takes the two string argument as username &amp; password.</p>
-
-<p>2) Provide Username &amp; Password as parameter using TestNG Annotation.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.By;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>
-</span><span class='line'>import org.testng.annotations.Parameters;
-</span><span class='line'>
-</span><span class='line'>public class TestngParameters {
-</span><span class='line'>  private static WebDriver driver;
-</span><span class='line'>  @Test 
-</span><span class='line'>  @Parameters({ "sUsername", "sPassword" })
-</span><span class='line'>  public void test(String sUsername, String sPassword) {
-</span><span class='line'>    driver = new FirefoxDriver();
-</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'>      driver.get("https://www.facebook.com");
-</span><span class='line'>      driver.findElement(By.id("email")).sendKeys(sUsername);
-</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys(sPassword);
-</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
-</span><span class='line'>      driver.quit();
-</span><span class='line'>  }
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>3) The parameter would be passed values from testng.xml which we will see in the next step.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite name="Suite"&gt;
-</span><span class='line'>    &lt;test name="ToolsQA"&gt;
-</span><span class='line'>  &lt;parameter name="sUsername" value="yourusername"/&gt;
-</span><span class='line'>  &lt;parameter name="sPassword" value="yourpassword"/&gt;
-</span><span class='line'>      &lt;classes&gt;
-</span><span class='line'>          &lt;class name="automationFramework.TestngParameters" /&gt;
-</span><span class='line'>      &lt;/classes&gt;
-</span><span class='line'>    &lt;/test&gt;
-</span><span class='line'>&lt;/suite&gt;
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now, run the testng.xml, which will run the parameterTest method. TestNG will try to find a parameter named sUsername &amp; sPassword.</p>
-
-<h3>TestNG DataProviders</h3>
-
-<p>When you need to pass complex parameters or parameters that need to be created from Java (complex objects, objects read from a property file or a database, etc…), in such cases parameters can be passed using Dataproviders. A Data Provider is a method annotated with @DataProvider. A Data Provider returns an array of objects.</p>
-
-<p>Let us check out the same Sign In examples using Dataproviders.</p>
-
-<h4>How to do it…</h4>
-
-<p>1)  Define the method credentials() which is defined as a Dataprovider using the annotation. This method returns array of object array.</p>
-
-<p>2) Add a method test() to your DataProviderTest class. This method takes two strings as input parameters.</p>
-
-<p>3) Add the annotation @Test(dataProvider = “Authentication”) to this method. The attribute dataProvider is mapped to “Authentication”.</p>
-
-<p>Test will look like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.By;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>import org.testng.annotations.DataProvider;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>
-</span><span class='line'>public class DataProviderTest {
-</span><span class='line'>  private static WebDriver driver;
-</span><span class='line'>  
-</span><span class='line'>  @DataProvider(name = "Authentication")
-</span><span class='line'>  public static Object[][] credentials() {
-</span><span class='line'>        return new Object[][] { { "yourusername", "yourpassword" }, { "yourusername_another", "yourpassword_another" }};
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  // Here we are calling the Data Provider object with its Name
-</span><span class='line'>  @Test(dataProvider = "Authentication")
-</span><span class='line'>  public void test(String sUsername, String sPassword) {
-</span><span class='line'>     driver = new FirefoxDriver();
-</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'>      driver.get("https://www.facebook.com");
-</span><span class='line'>      driver.findElement(By.id("email")).sendKeys(sUsername);
-</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys(sPassword);
-</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
-</span><span class='line'>      driver.quit();
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Run the test by right click on the test case script and select Run As > TestNG Test. Give it few minutes to complete the execution, once it is finished the results will look like this in the TestNg Result window.</p>
-
-<p>Note: As the test data is provided two times, the above test executed two times completely.</p>
-
-<h3>Take a look in : <a href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">P9 : Multi Browser and Parallel Testing</a></h3>
 ]]></content>
   </entry>
   
