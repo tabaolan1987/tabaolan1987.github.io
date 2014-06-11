@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-11T15:30:29+07:00</updated>
+  <updated>2014-06-11T15:56:16+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -33,8 +33,20 @@
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>String data_you_want_to_check = "your data in here";
-</span><span class='line'>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>String data_you_want_to_check = "your data in here";
+</span><span class='line'>boolean check_data_existed = false;
 </span><span class='line'>WebDriver driver = new ChromeDriver();
 </span><span class='line'>
 </span><span class='line'>driver.get('yoururl');
@@ -44,6 +56,16 @@
 </span><span class='line'>//get all tr inside table
 </span><span class='line'>List&lt;WebElement&gt; tr_table = table.findElements(By.tagName("tr"));
 </span><span class='line'>//now we will loop
+</span><span class='line'>for(WebElement el : tr_table){
+</span><span class='line'>  List&lt;WebElement&gt; td_table = tr_table.findElements(By.tagName("td"));
+</span><span class='line'>  for(WebElement elm : td_table){
+</span><span class='line'>      String text_inside_td = elm.getText();
+</span><span class='line'>      if(text_inside_td.equalsIgnoreCase(data_you_want_to_check)){
+</span><span class='line'>          check_data_existed = true;
+</span><span class='line'>          break;
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>}
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -716,7 +738,7 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#116;&#97;&#x62;&#97;&#x6f;&#108;&#x61;&#110;&#49;&#57;&#56;&#55;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x74;&#97;&#98;&#x61;&#x6f;&#108;&#x61;&#x6e;&#49;&#57;&#56;&#55;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#116;&#97;&#x62;&#x61;&#x6f;&#x6c;&#x61;&#110;&#x31;&#x39;&#56;&#x37;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#x74;&#97;&#98;&#x61;&#x6f;&#x6c;&#97;&#x6e;&#49;&#x39;&#x38;&#x37;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
 

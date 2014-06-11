@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/blog/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-11T15:30:29+07:00</updated>
+  <updated>2014-06-11T15:56:16+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -22,10 +22,11 @@
 
 <p>If table have a lot of data inside and you need to find the data you want.Check this code below.</p>
 
-<p>```
-String data_you_want_to_check = &ldquo;your data in here&rdquo;;</p>
+<p>```</p>
 
-<p>WebDriver driver = new ChromeDriver();</p>
+<p>String data_you_want_to_check = &ldquo;your data in here&rdquo;;
+boolean check_data_existed = false;
+WebDriver driver = new ChromeDriver();</p>
 
 <p>driver.get(&lsquo;yoururl&rsquo;);</p>
 
@@ -33,7 +34,20 @@ String data_you_want_to_check = &ldquo;your data in here&rdquo;;</p>
 WebElement table = driver.findElement(By.id(&lsquo;yourTableID&rsquo;));
 //get all tr inside table
 List<WebElement> tr_table = table.findElements(By.tagName(&ldquo;tr&rdquo;));
-//now we will loop</p>
+//now we will loop
+for(WebElement el : tr_table){</p>
+
+<pre><code>List&lt;WebElement&gt; td_table = tr_table.findElements(By.tagName("td"));
+for(WebElement elm : td_table){
+    String text_inside_td = elm.getText();
+    if(text_inside_td.equalsIgnoreCase(data_you_want_to_check)){
+        check_data_existed = true;
+        break;
+    }
+}
+</code></pre>
+
+<p>}</p>
 
 <p>```</p>
 ]]></content>
