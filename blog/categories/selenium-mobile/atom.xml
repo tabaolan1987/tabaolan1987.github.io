@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Selenium-mobile | Selenium Tutorial]]></title>
-  <link href="http://tabaolan1987.github.io/blog/categories/selenium-mobile/atom.xml" rel="self"/>
-  <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-11T09:28:30+07:00</updated>
-  <id>http://tabaolan1987.github.io/</id>
+  <link href="http://www.tabaolan.com/blog/categories/selenium-mobile/atom.xml" rel="self"/>
+  <link href="http://www.tabaolan.com/"/>
+  <updated>2014-06-11T15:30:29+07:00</updated>
+  <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
     <email><![CDATA[tabaolan1987@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Selenium Mobile : Run test scripts in real IPhone]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/"/>
     <updated>2014-05-30T15:22:09+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone</id>
+    <id>http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
 <p>We want to execute our testscripts on a iphone device. The iphone driver allows us to execute the WebDriver tests on a real iphone device.</p>
@@ -118,9 +118,9 @@ private static WebDriver driver;
   
   <entry>
     <title type="html"><![CDATA[Selenium Mobile : Run test scripts on a Xcode iPhone simulator]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/"/>
     <updated>2014-05-30T15:07:42+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator</id>
+    <id>http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
 <p>We want to run our test in a iPhone simulator. The iphone simulator comes with Xcode which is available for the Mac operating systems. This recipe will show us how we can run our WebDriver tests in a iphone simulator.</p>
@@ -211,9 +211,9 @@ private static WebDriver driver;
   
   <entry>
     <title type="html"><![CDATA[Selenium Mobile : Run tests on a real Android device]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/"/>
     <updated>2014-05-30T15:02:24+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device</id>
+    <id>http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
 <p>We want to run our testscripts on a real Android device. The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device.</p>
@@ -327,9 +327,9 @@ private static WebDriver driver;
   
   <entry>
     <title type="html"><![CDATA[Selenium Mobile : Running tests on an Android simulator]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/"/>
     <updated>2014-05-30T14:46:17+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator</id>
+    <id>http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
 <p>The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device. This recipe will walk us through the steps we have to do to run our tests in a simulator.</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: TestNG-Framework | Selenium Tutorial]]></title>
-  <link href="http://tabaolan1987.github.io/blog/categories/testng-framework/atom.xml" rel="self"/>
-  <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-11T09:28:30+07:00</updated>
-  <id>http://tabaolan1987.github.io/</id>
+  <link href="http://www.tabaolan.com/blog/categories/testng-framework/atom.xml" rel="self"/>
+  <link href="http://www.tabaolan.com/"/>
+  <updated>2014-06-11T15:30:29+07:00</updated>
+  <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
     <email><![CDATA[tabaolan1987@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework P9 : Multi Browser and Parallel Testing]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/"/>
     <updated>2014-05-26T12:15:47+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing</id>
+    <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing</id>
     <content type="html"><![CDATA[<h2>Multi Browser, Cross Browser &amp; Parallel Testing using TestNG</h2>
 
 <p>When the time comes to turn your site from mock-up to something fully functional, you’ll want to make sure that it works great for everyone visiting your site whether they’re using Internet Explorer, Firefox, or any other browser. Testing your website with multiple combinations of browsers is known as Cross Browser testing.</p>
@@ -165,9 +165,9 @@ import org.testng.annotations.Test;</p>
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework P8 : Parameters and Data Provider]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-parameters-and-data-provider/"/>
     <updated>2014-05-26T12:05:31+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-parameters-and-data-provider</id>
+    <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-parameters-and-data-provider</id>
     <content type="html"><![CDATA[<h2>TestNG Parameters &amp; Data Provider</h2>
 
 <h3>TestNG Parameters</h3>
@@ -309,9 +309,9 @@ import org.testng.annotations.Test;</p>
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework P7 : Reporters and Asserts ]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-reporters-and-asserts/"/>
     <updated>2014-05-26T11:55:48+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-reporters-and-asserts</id>
+    <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-reporters-and-asserts</id>
     <content type="html"><![CDATA[<h2>TestNG Reporters &amp; Asserts</h2>
 
 <h3>TestNG Reporters</h3>
@@ -481,9 +481,9 @@ import org.testng.annotations.Test;</p>
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework P6 : Prioritizing and Sequencing]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/"/>
     <updated>2014-05-26T11:48:09+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-prioritizing-and-sequencing</id>
+    <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-prioritizing-and-sequencing</id>
     <content type="html"><![CDATA[<h2>TestNG Prioritizing &amp; Sequencing</h2>
 
 <h3>Multiple Tests</h3>
@@ -688,9 +688,9 @@ import org.testng.annotations.Test;</p>
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework P5: Annotations , Groups and OnDepends]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations/"/>
     <updated>2014-05-26T11:35:51+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/testng-framework-annotations</id>
+    <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations</id>
     <content type="html"><![CDATA[<h2>TestNG Annotations, Groups &amp; OnDepends</h2>
 
 <h3>TestNG Annotations</h3>

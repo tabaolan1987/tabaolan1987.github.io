@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Selenium-Framework | Selenium Tutorial]]></title>
-  <link href="http://tabaolan1987.github.io/blog/categories/selenium-framework/atom.xml" rel="self"/>
-  <link href="http://tabaolan1987.github.io/"/>
-  <updated>2014-06-11T09:28:30+07:00</updated>
-  <id>http://tabaolan1987.github.io/</id>
+  <link href="http://www.tabaolan.com/blog/categories/selenium-framework/atom.xml" rel="self"/>
+  <link href="http://www.tabaolan.com/"/>
+  <updated>2014-06-11T15:30:29+07:00</updated>
+  <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
     <email><![CDATA[tabaolan1987@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework P8 : Read Data From Excel File]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file/"/>
+    <link href="http://www.tabaolan.com/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file/"/>
     <updated>2014-06-02T12:05:43+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file</id>
+    <id>http://www.tabaolan.com/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file</id>
     <content type="html"><![CDATA[<h2>Reading data from the Excel</h2>
 
 <h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a></h3>
@@ -179,9 +179,9 @@ private static String password;
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework P7 : Run on Multi Browser]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser/"/>
     <updated>2014-05-29T15:16:59+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser</id>
+    <id>http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser</id>
     <content type="html"><![CDATA[<h2>Multi Browser Test</h2>
 
 <h3>Required knowledge : <a href="/blog/2014/05/29/selenium-automation-framework-create-test-script/">Test Script</a>, <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="/blog/categories/testng-framework/">TestNG Framework</a></h3>
@@ -699,9 +699,9 @@ private static String status_facebook;
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework P6 : Create Test Script]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-create-test-script/"/>
     <updated>2014-05-29T14:48:11+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/29/selenium-automation-framework-create-test-script</id>
+    <id>http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-create-test-script</id>
     <content type="html"><![CDATA[<h2>Create Test Script using TestNG</h2>
 
 <h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="/blog/categories/testng-framework/">TestNG Framework</a></h3>
@@ -812,9 +812,9 @@ private static WebDriver driver;
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework P5 : Modular Driven Framework]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/"/>
     <updated>2014-05-27T10:11:21+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/27/selenium-automation-framework-modular-driven-framework</id>
+    <id>http://www.tabaolan.com/blog/2014/05/27/selenium-automation-framework-modular-driven-framework</id>
     <content type="html"><![CDATA[<h2>Modular Driven Framework</h2>
 
 <h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a></h3>
@@ -921,9 +921,9 @@ public static void Execute(WebDriver driver, String status){
   
   <entry>
     <title type="html"><![CDATA[Selenium Automation Framework P4 : Page Object Model]]></title>
-    <link href="http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model/"/>
+    <link href="http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-page-object-model/"/>
     <updated>2014-05-26T16:03:08+07:00</updated>
-    <id>http://tabaolan1987.github.io/blog/2014/05/26/selenium-automation-framework-page-object-model</id>
+    <id>http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-page-object-model</id>
     <content type="html"><![CDATA[<h2>Page Object Model | POM</h2>
 
 <h3>Required knowledge : <a href="/blog/categories/webdriver/">WebDriver</a>,<a href="/blog/categories/xpath/">Xpath</a></h3>

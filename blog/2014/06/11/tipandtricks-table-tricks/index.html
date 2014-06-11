@@ -3,10 +3,18 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Webdriver : Wait Commands - Selenium Tutorial</title>
+	<title>Tips&Tricks : Table tricks  - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
     
-	<meta name="description" content="Webdriver : Wait Commands WebDriver Wait Commands Listing out the different WebDriver Wait statements that can be useful for an effective scripting &hellip;">
+	<meta name="description" content="Tips&Tricks : Table Tricks Table If table have a lot of data inside and you need to find the data you want.Check this code below. 1
+2
+3
+4
+5
+6
+7
+8
+9 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
@@ -154,35 +162,10 @@
 </script>
         <article class="post">
 
-	<h2 class="title">Webdriver : Wait Commands</h2>
-	<div class="entry-content"><h2>WebDriver Wait Commands</h2>
+	<h2 class="title">Tips&Tricks : Table Tricks</h2>
+	<div class="entry-content"><h2>Table</h2>
 
-<p>Listing out the different WebDriver Wait statements that can be useful for an effective scripting and can avoid using the Thread.sleep() commands.</p>
-
-<!--more-->
-
-
-<h3>ImplicitlyWait Command</h3>
-
-<p>Purpose: Selenium WebDriver has borrowed the idea of implicit waits from Watir. This means that we can tell Selenium that we would like it to wait for a certain amount of time before throwing an exception that it cannot find the element on the page. We should note that implicit waits will be in place for the entire time the browser is open. This means that any search for elements on the page could take the time the implicit wait is set for.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'> WebDriver driver =&gt; new FirefoxDriver();
-</span><span class='line'> driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'> driver.get("http://url_that_delays_loading");
-</span><span class='line'> WebElement myDynamicElement = driver.findElement(By.id("myDynamicElement"));
-</span><span class='line'> </span></code></pre></td></tr></table></div></figure>
-
-
-<h3>FluentWait Command</h3>
-
-<p>Purpose: Each FluentWait instance defines the maximum amount of time to wait for a condition, as well as the frequency with which to check the condition. Furthermore, the user may configure the wait to ignore specific types of exceptions whilst waiting, such as NoSuchElementExceptions when searching for an element on the page.</p>
+<p>If table have a lot of data inside and you need to find the data you want.Check this code below.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -195,58 +178,26 @@
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// Waiting 30 seconds for an element to be present on the page, checking
-</span><span class='line'>  // for its presence once every 5 seconds.
-</span><span class='line'>  Wait wait = new FluentWait(driver)
-</span><span class='line'>    .withTimeout(30, SECONDS)
-</span><span class='line'>    .pollingEvery(5, SECONDS)
-</span><span class='line'>    .ignoring(NoSuchElementException.class);
-</span><span class='line'>  WebElement foo = wait.until(new Function() {
-</span><span class='line'>    public WebElement apply(WebDriver driver) {
-</span><span class='line'>    return driver.findElement(By.id("foo"));
-</span><span class='line'>    }
-</span><span class='line'>   });
+</pre></td><td class='code'><pre><code class=''><span class='line'>String data_you_want_to_check = "your data in here";
+</span><span class='line'>
+</span><span class='line'>WebDriver driver = new ChromeDriver();
+</span><span class='line'>
+</span><span class='line'>driver.get('yoururl');
+</span><span class='line'>
+</span><span class='line'>//you can find table by xpath or some option ,depend on your site.
+</span><span class='line'>WebElement table = driver.findElement(By.id('yourTableID'));
+</span><span class='line'>//get all tr inside table
+</span><span class='line'>List&lt;WebElement&gt; tr_table = table.findElements(By.tagName("tr"));
+</span><span class='line'>//now we will loop
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ExpectedConditions Command</h3>
-
-<p>Purpose: Models a condition that might reasonably be expected to eventually evaluate to something that is neither null nor false.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebDriverWait wait = new WebDriverWait(driver, 10);
-</span><span class='line'>WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(&gt;someid&gt;)));</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>PageLoadTimeout Command</h3>
-
-<p>Purpose: Sets the amount of time to wait for a page load to complete before throwing an error. If the timeout is negative, page loads can be indefinite.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.manage().timeouts().pageLoadTimeout(100, SECONDS);</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>SetScriptTimeout Command</h3>
-
-<p>Purpose: Sets the amount of time to wait for an asynchronous script to finish execution before throwing an error. If the timeout is negative, then the script will be allowed to run indefinitely.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.manage().timeouts().setScriptTimeout(100,SECONDS);</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Sleep Command</h3>
-
-<p>Purpose: This is rarely used, as it always force the browser to wait for a specific time. Thread.Sleep is never a good idea and that’s why Selenium provides wait primitives. If you use them you can specify much higher timeout value which makes tests more reliable without slowing them down as the condition can be evaluated as often as it’s required.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>thread.sleep(1000);</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/blog/2014/05/26/webdriver-wait-commands/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/06/11/tipandtricks-table-tricks/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -305,8 +256,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/05/26/webdriver-wait-commands/';
-        var disqus_url = 'http://www.tabaolan.com/blog/2014/05/26/webdriver-wait-commands/';
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/06/11/tipandtricks-table-tricks/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/06/11/tipandtricks-table-tricks/';
         var disqus_script = 'embed.js';
       
     (function () {
