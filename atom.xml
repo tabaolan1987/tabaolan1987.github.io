@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-12T09:01:03+07:00</updated>
+  <updated>2014-06-12T09:07:53+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium IDE : How to use stored value in a JavaScript comparison]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-use-stored-value-in-a-javascript-comparison/"/>
+    <updated>2014-06-12T09:02:58+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-use-stored-value-in-a-javascript-comparison</id>
+    <content type="html"><![CDATA[<p>In this example I provide you the way to compare the value you stored with number 200. If your value is more than 200 it will pass and if it is less than 200 it will false.</p>
+
+<p>Take a look in this code :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;open&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;your website&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;
+</span><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;storeText&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;give it your xpath to the element holder the value you want to compare with 200&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;resultCount&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;
+</span><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;storeEval&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;(storedVars['resultCount'] &gt; 200) ? true : false&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;isMoreThan200&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;
+</span><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;verifyExpression&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;${isMoreThan200}&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;true&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tips&Tricks : Table tricks ]]></title>
@@ -740,7 +793,7 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x74;&#x61;&#x62;&#x61;&#111;&#x6c;&#x61;&#x6e;&#x31;&#57;&#56;&#x37;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#116;&#x61;&#98;&#97;&#111;&#x6c;&#97;&#x6e;&#x31;&#57;&#56;&#55;&#64;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#116;&#x61;&#98;&#x61;&#111;&#108;&#97;&#110;&#49;&#x39;&#x38;&#x37;&#64;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#x74;&#97;&#98;&#97;&#111;&#108;&#97;&#x6e;&#49;&#x39;&#x38;&#x37;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
 
@@ -3303,181 +3356,6 @@
 
 
 <h3>We are finish to create a Login Page , Home Page follow Page Object Model . Now you will need to create an Action in Java base on User Define, please <a href="">click here</a></h3>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework P3 : Create New Project]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-create-new-project/"/>
-    <updated>2014-05-26T15:01:18+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-create-new-project</id>
-    <content type="html"><![CDATA[<h2>Create new Project</h2>
-
-<h3>Required knowledge : <a href="http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">Maven Project</a></h3>
-
-<p>Maven project is very helpful for us to automate download jar file and manage the version we used, easy to build , easy to configuration with Continuous Integration.</p>
-
-<!--more-->
-
-
-<p>Now we will create a project Maven name &ldquo;Selenium-Automation-Framework&rdquo;.</p>
-
-<h4>Step 1 : Open eclipse &ndash;> Choose File menu &ndash;> Choose New &ndash;> Choose Other..</h4>
-
-<p><img src="http://www.tabaolan.com/images/c-maven-1.png"></p>
-
-<h4>Step 2 : Find Maven &ndash;> Choose Maven Project &ndash;> Click &lsquo;Next&rsquo; button</h4>
-
-<p><img src="http://www.tabaolan.com/images/c-maven-2.png"></p>
-
-<h4>Step 3 : Tick on  &ldquo;Create a simple project&rdquo; , &ldquo;Use default workspace&rdquo;</h4>
-
-<p><img src="http://www.tabaolan.com/images/c-maven-3.png"></p>
-
-<h4>Step 4 : Enter value for &ldquo;Group ID&rdquo; and  &ldquo;Artifact ID&rdquo; . Then click &ldquo;Finish&rdquo;.</h4>
-
-<p><img src="http://www.tabaolan.com/images/c-maven-4.png"></p>
-
-<h4>Step 5 : The new Project &ldquo;Selenium-Automation-Framework&rdquo; will show in the left menu of Eclipse.</h4>
-
-<p><img src="http://www.tabaolan.com/images/c-maven-5.png"></p>
-
-<h2>Configuration Project</h2>
-
-<p>First you need to configuration the pom.xml file to add library required by Selenium.</p>
-
-<h4>Step 1 : Open project &ndash;> Double click to file &ldquo;pom.xml&rdquo;</h4>
-
-<p><img src="http://www.tabaolan.com/images/c-maven-6.png"></p>
-
-<h4>Stemp 2 : Copy this code and paste into your pom.xml file</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
-</span><span class='line'>  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-</span><span class='line'>  &lt;groupId&gt;Selenium-Automation-Framework&lt;/groupId&gt;
-</span><span class='line'>  &lt;artifactId&gt;Selenium-Framework&lt;/artifactId&gt;
-</span><span class='line'>  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
-</span><span class='line'>      &lt;dependencies&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-server&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-firefox-driver&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-chrome-driver&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-remote-driver&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-ie-driver&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;junit&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;junit&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;4.11&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>       &lt;dependency&gt;
-</span><span class='line'>            &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
-</span><span class='line'>            &lt;artifactId&gt;poi&lt;/artifactId&gt;
-</span><span class='line'>            &lt;version&gt;3.10-FINAL&lt;/version&gt;
-</span><span class='line'>        &lt;/dependency&gt;
-</span><span class='line'>        &lt;dependency&gt;
-</span><span class='line'>            &lt;groupId&gt;org.testng&lt;/groupId&gt;
-</span><span class='line'>            &lt;artifactId&gt;testng&lt;/artifactId&gt;
-</span><span class='line'>            &lt;version&gt;6.8.8&lt;/version&gt;
-</span><span class='line'>        &lt;/dependency&gt;
-</span><span class='line'>  &lt;/dependencies&gt;
-</span><span class='line'>&lt;/project&gt;
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>By adding this code , we are telling to maven that we will use jar files that we define in the tag <dependency>.</p>
-
-<h4>Step 3 : Right click into project and choose Maven &ndash;> Update project.</h4>
-
-<p><img src="http://www.tabaolan.com/images/c-maven-7.png"></p>
-
-<h4>Step 4 : Click &ldquo;Ok&rdquo; button to let Maven download jar files.</h4>
-
-<p><img src="http://www.tabaolan.com/images/c-maven-8.png"></p>
-
-<h4>Step 5 : Open the &ldquo;Maven dependencies&rdquo; to see jar file are available in your project.</h4>
-
-<p><img src="http://www.tabaolan.com/images/c-maven-9.png"></p>
-
-<h3>Note : you will need to have an internet in your laptop to allow the download of maven.</h3>
-
-<p>Now the setup and configuration is done , you are able to start writing Selenium Automation Framework.</p>
 ]]></content>
   </entry>
   
