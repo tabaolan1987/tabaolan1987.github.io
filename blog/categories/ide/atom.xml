@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: IDE | Selenium Tutorial]]></title>
+  <link href="http://www.tabaolan.com/blog/categories/ide/atom.xml" rel="self"/>
+  <link href="http://www.tabaolan.com/"/>
+  <updated>2014-06-12T09:49:22+07:00</updated>
+  <id>http://www.tabaolan.com/</id>
+  <author>
+    <name><![CDATA[Ta Bao Lan]]></name>
+    <email><![CDATA[tabaolan1987@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium IDE : How to use stored value in a JavaScript comparison]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-use-stored-value-in-a-javascript-comparison/"/>
+    <updated>2014-06-12T09:02:58+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-use-stored-value-in-a-javascript-comparison</id>
+    <content type="html"><![CDATA[<p>In this example I provide you the way to compare the value you stored with number 200. If your value is more than 200 it will pass and if it is less than 200 it will false.</p>
+
+<p>Take a look in this code :</p>
+
+<p><code>
+&lt;tr&gt;
+&lt;td&gt;open&lt;/td&gt;
+&lt;td&gt;your website&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;storeText&lt;/td&gt;
+&lt;td&gt;give it your xpath to the element holder the value you want to compare with 200&lt;/td&gt;
+&lt;td&gt;resultCount&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;storeEval&lt;/td&gt;
+&lt;td&gt;(storedVars['resultCount'] &amp;gt; 200) ? true : false&lt;/td&gt;
+&lt;td&gt;isMoreThan200&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;verifyExpression&lt;/td&gt;
+&lt;td&gt;${isMoreThan200}&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
