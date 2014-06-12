@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Selenium Tutorial</title>
+	<title>Selenium WebDriver : How to press Keyboard - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
     
-	<meta name="description" content="Selenium WebDriver : How to press multi Keyboard Jun 12th, 2014 tricks Comments For multiple key press : First, get the ascii code for the key. For &hellip;">
+	<meta name="description" content="Selenium WebDriver : How to Press Keyboard In this article we are going to see the functions for keyboard&rsquo;s keypass key events. To find an &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
@@ -144,148 +144,10 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-        
+        <article class="post">
 
-  
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver/">Selenium WebDriver : How to press multi Keyboard</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T11:54:33+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/blog/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>For multiple key press :</h2>
-
-<h3>First, get the ascii code for the key.</h3>
-
-<p>For example if we want to press Ctrl-A, it should be 0001.</p>
-
-<p>The full list is <a href="http://q.gs/7L9JV">here</a> or <a href="http://q.gs/7L9JW">here</a> .</p>
-
-<p>First assign a character&copy; to the value and then convert that as string inside send key.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// ASCII code 1 for Ctrl-A
-</span><span class='line'>char c = '\u0001';
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Convert.ToString(c));
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Use Action Class</h3>
-
-<p>Make a action instance and use action instance .</p>
-
-<p>Inhere, we have used 3 type of method to press three different key , and as they are different from each other, it will make 3 key press together.(means in here Alt+Shift+T)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Actions kpress = new Actions(driver);
-</span><span class='line'>kpress.keyDown(driver.findElement(By.id("name")), Keys.ALT).perform(); 
-</span><span class='line'>kpress.sendKeys(driver.findElement(By.id("name")), "T").perform();
-</span><span class='line'>kpress.keyUp(driver.findElement(By.id("name")),Keys.SHIFT).perform(); 
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/">Selenium WebDriver : How to press Keyboard</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T11:43:38+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/blog/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <p>In this article we are going to see the functions for keyboard&rsquo;s keypass key events.</p>
+	<h2 class="title">Selenium WebDriver : How to Press Keyboard</h2>
+	<div class="entry-content"><p>In this article we are going to see the functions for keyboard&rsquo;s keypass key events.</p>
 
 <p>To find an element we use some function below , depend on your website.</p>
 
@@ -692,340 +554,44 @@
 
 
 
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="3050262353"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide/">Selenium IDE : Check Background colour</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T09:38:19+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/blog/categories//'>,</a></li>
-      
-        <li><a class='category' href='/blog/categories/selenium-ide/'>Selenium-IDE</a></li>
-      
-        <li><a class='category' href='/blog/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <p>If you want to check element background colour , take a look in this example :</p>
-
-<p>Your html code look like that :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="my_div" class = "en" style = "backgroundbackground-color= #0000FF"&gt;
-</span><span class='line'>&lt;/div&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Your Selenium Ide will like this to check background of div :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>command: verifyAttribute
-</span><span class='line'>
-</span><span class='line'>Target : css=div#my_div@style
-</span><span class='line'>
-</span><span class='line'>value  : *background-color= #0000FF*</span></code></pre></td></tr></table></div></figure>
-
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/">Selenium Ide : loop through array variables</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T09:16:02+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/blog/categories//'>,</a></li>
-      
-        <li><a class='category' href='/blog/categories/selenium-ide/'>Selenium-IDE</a></li>
-      
-        <li><a class='category' href='/blog/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <p>If you want Selenium IDE loop through your array , let take a look in code this example :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;storeEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;new Array(&quot;postgresql&quot;,&quot;mysql&quot;);&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;myarray&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;getEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index=0;&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;while&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index &lt; storedVars['myarray'].length&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;storeEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;temp&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;echo&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;javascript{storedVars['myarray'][storedVars['temp']]}&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;getEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index++;&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;endWhile&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or follower there command in this picture</p>
-
-<p><img src="/images/tricks-ide-loop-array.png"></p>
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-how-to-use-stored-value-in-a-javascript-comparison/">Selenium IDE : How to use stored value in a JavaScript comparison</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T09:02:58+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/blog/categories//'>,</a></li>
-      
-        <li><a class='category' href='/blog/categories/ide/'>IDE</a></li>
-      
-        <li><a class='category' href='/blog/categories/selenium/'>Selenium</a></li>
-      
-        <li><a class='category' href='/blog/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-use-stored-value-in-a-javascript-comparison/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <p>In this example I provide you the way to compare the value you stored with number 200. If your value is more than 200 it will pass and if it is less than 200 it will false.</p>
-
-<p>Take a look in this code :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;open&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;your website&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;storeText&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;give it your xpath to the element holder the value you want to compare with 200&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;resultCount&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;storeEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;(storedVars['resultCount'] &gt; 200) ? true : false&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;isMoreThan200&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;verifyExpression&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;${isMoreThan200}&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;true&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-
-  </article>
-  <hr>
-
-
-  <div class="pagination">
-    
-      <a class="btn pull-left" href="/blog/page/2/">&larr; Older</a>
-    
-
-    
-  </div>
     </div>
     <footer id="footer">
     <div style="display:inline">
@@ -1050,7 +616,10 @@
       var disqus_shortname = 'tabaolan1987';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

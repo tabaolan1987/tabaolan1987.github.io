@@ -6,7 +6,7 @@
 	<title>Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
     
-	<meta name="description" content="Selenium WebDriver : Complex Action Jun 11th, 2014 tricks Comments Mouse Hover action There will be situations where it is required to click on the &hellip;">
+	<meta name="description" content="Selenium WebDriver : Table tricks Jun 11th, 2014 tricks Comments Table If table have a lot of data inside and you need to find the data you want. &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
@@ -147,6 +147,182 @@
         
 
   
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/11/tipandtricks-table-tricks/">Selenium WebDriver : Table tricks </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-11T15:02:38+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 11<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/11/tipandtricks-table-tricks/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Table</h2>
+
+<p>If table have a lot of data inside and you need to find the data you want.Check this code below.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>String data_you_want_to_check = "your data in here";
+</span><span class='line'>boolean check_data_existed = false;
+</span><span class='line'>WebDriver driver = new ChromeDriver();
+</span><span class='line'>
+</span><span class='line'>driver.get('yoururl');
+</span><span class='line'>
+</span><span class='line'>//you can find table by xpath or some option ,depend on your site.
+</span><span class='line'>WebElement table = driver.findElement(By.id('yourTableID'));
+</span><span class='line'>//get all tr inside table
+</span><span class='line'>List&lt;WebElement&gt; tr_table = table.findElements(By.tagName("tr"));
+</span><span class='line'>//now we will loop
+</span><span class='line'>for(WebElement el : tr_table){
+</span><span class='line'>  List&lt;WebElement&gt; td_table = tr_table.findElements(By.tagName("td"));
+</span><span class='line'>  for(WebElement elm : td_table){
+</span><span class='line'>      String text_inside_td = elm.getText();
+</span><span class='line'>      if(text_inside_td.equalsIgnoreCase(data_you_want_to_check)){
+</span><span class='line'>          check_data_existed = true;
+</span><span class='line'>          break;
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/11/tipandtricks-call-javascript/">Selenium WebDriver : Call JavaScript </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-11T14:40:40+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 11<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/11/tipandtricks-call-javascript/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Call JavaScript function with JavascriptExecutor</h2>
+
+<p>In some case you need to call some JavaScript function in Page. Just do this like code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>WebDriver driver = new ChromeDriver();
+</span><span class='line'>driver.get('anyurl.com');
+</span><span class='line'>((JavascriptExecutor)driver).executeScript("yourScript();");
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+  </article>
+  <hr>
+
   
   <article class="listing">
     <header>
@@ -784,136 +960,6 @@
 
 
   <a class="btn pull-right" href="/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/09/icecream-framework-download-and-configuration/">IceCream Framework Part 2 : Download and Configuration</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-09T11:51:13+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 9<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/blog/categories/icecream-framework/'>IceCream-Framework</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-download-and-configuration/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>DOWNLOAD</h2>
-
-<h3>Required Tools (If you already have this in your laptop or computer , you can skip this step) :</h3>
-
-<p>1) Download and install Microsoft Office trial here : <a href="http://q.gs/7KN4D">Link Download</a></p>
-
-<p>2) Download and install JAVA here : <a href="/blog/2014/05/22/newbie-part-1-download-and-install-java/">How to download and install Java</a></p>
-
-<h3>IceCream Framework version (all version of framework) :</h3>
-
-
-  <a class="btn pull-right" href="/blog/2014/06/09/icecream-framework-download-and-configuration/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/09/icecream-framework-introduction/">IceCream Framework Part 1 : Introduction</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-09T10:23:15+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 9<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/blog/categories/icecream-framework/'>IceCream-Framework</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-introduction/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>Introduction</h2>
-
-<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
-
-<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/06/09/icecream-framework-introduction/">Continue reading</a>
 </div>
 
   </article>

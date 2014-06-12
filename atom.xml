@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-12T10:32:41+07:00</updated>
+  <updated>2014-06-12T11:59:26+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,464 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium WebDriver : How to press multi Keyboard]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver/"/>
+    <updated>2014-06-12T11:54:33+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver</id>
+    <content type="html"><![CDATA[<h2>For multiple key press :</h2>
+
+<h3>First, get the ascii code for the key.</h3>
+
+<p>For example if we want to press Ctrl-A, it should be 0001.</p>
+
+<p>The full list is <a href="http://q.gs/7L9JV">here</a> or <a href="http://q.gs/7L9JW">here</a> .</p>
+
+<p>First assign a character&copy; to the value and then convert that as string inside send key.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// ASCII code 1 for Ctrl-A
+</span><span class='line'>char c = '\u0001';
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Convert.ToString(c));
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Use Action Class</h3>
+
+<p>Make a action instance and use action instance .</p>
+
+<p>Inhere, we have used 3 type of method to press three different key , and as they are different from each other, it will make 3 key press together.(means in here Alt+Shift+T)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Actions kpress = new Actions(driver);
+</span><span class='line'>kpress.keyDown(driver.findElement(By.id("name")), Keys.ALT).perform(); 
+</span><span class='line'>kpress.sendKeys(driver.findElement(By.id("name")), "T").perform();
+</span><span class='line'>kpress.keyUp(driver.findElement(By.id("name")),Keys.SHIFT).perform(); 
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium WebDriver : How to press Keyboard]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/"/>
+    <updated>2014-06-12T11:43:38+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver</id>
+    <content type="html"><![CDATA[<p>In this article we are going to see the functions for keyboard&rsquo;s keypass key events.</p>
+
+<p>To find an element we use some function below , depend on your website.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.FindElement(By.XPath("String"));
+</span><span class='line'>driver.FindElement(By.id("String"));
+</span><span class='line'>driver.FindElement(By.className("String"));
+</span><span class='line'>driver.FindElement(By.cssSelector("String"));
+</span><span class='line'>driver.FindElement(By.linkText("String"));
+</span><span class='line'>driver.FindElement(By.TagName("String"));</span></code></pre></td></tr></table></div></figure>
+
+
+<p>if we add send keys as keyboard command, then we can use keyboard event with the element that we found. like</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowRight);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here, &ldquo;string&rdquo; is the Xpath location. And on the element that we have found, keyboard&rsquo;s Arrow left will be pressed.</p>
+
+<p>Take a look in some key press on element:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+<span class='line-number'>176</span>
+<span class='line-number'>177</span>
+<span class='line-number'>178</span>
+<span class='line-number'>179</span>
+<span class='line-number'>180</span>
+<span class='line-number'>181</span>
+<span class='line-number'>182</span>
+<span class='line-number'>183</span>
+<span class='line-number'>184</span>
+<span class='line-number'>185</span>
+<span class='line-number'>186</span>
+<span class='line-number'>187</span>
+<span class='line-number'>188</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-For the number pad addition key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Add);
+</span><span class='line'>
+</span><span class='line'>-For  the Alt key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Alt);
+</span><span class='line'>
+</span><span class='line'>-For  the Left arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowDown);
+</span><span class='line'>
+</span><span class='line'>-For  the left arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowLeft);
+</span><span class='line'>
+</span><span class='line'>-For  the right arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowRight);
+</span><span class='line'>
+</span><span class='line'>-For  the up arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowUp);
+</span><span class='line'>
+</span><span class='line'>-For  the Backspace key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Backspace);
+</span><span class='line'>
+</span><span class='line'>-For  the Cancel keystroke.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Cancel);
+</span><span class='line'>
+</span><span class='line'>-For  the Clear keystroke.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Clear);
+</span><span class='line'>
+</span><span class='line'>-For  the function key COMMAND.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Command);
+</span><span class='line'>
+</span><span class='line'>-For  the Control key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Control);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad decimal separator key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Decimal);
+</span><span class='line'>
+</span><span class='line'>-For  the Delete key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Delete);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad division key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Divide);
+</span><span class='line'>
+</span><span class='line'>-For  the Left arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Down);
+</span><span class='line'>
+</span><span class='line'>-For  the End key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.End);
+</span><span class='line'>
+</span><span class='line'>-For  the Enter key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Enter);
+</span><span class='line'>
+</span><span class='line'>-For  the equal sign key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Equal);
+</span><span class='line'>
+</span><span class='line'>-For  the Escape key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Escape);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F1.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F1);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F10.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F10);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F11.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F11);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F12.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F12);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F2.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F2);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F3.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F3);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F4.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F4);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F5.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F5);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F6.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F6);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F7.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F7);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F8.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F8);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F9.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F9);
+</span><span class='line'>
+</span><span class='line'>-For  the Help keystroke.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Help);
+</span><span class='line'>
+</span><span class='line'>-For  the Home key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Home);
+</span><span class='line'>
+</span><span class='line'>-For  the Insert key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Insert);
+</span><span class='line'>
+</span><span class='line'>-For  the left arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Left);
+</span><span class='line'>
+</span><span class='line'>-For  the Alt key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftAlt);
+</span><span class='line'>
+</span><span class='line'>-For  the Control key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftControl);
+</span><span class='line'>
+</span><span class='line'>-For  the Shift key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftShift);
+</span><span class='line'>
+</span><span class='line'>-For  the function key META.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Meta);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad multiplication key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Multiply);
+</span><span class='line'>
+</span><span class='line'>-For  the NUL keystroke.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Null);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 0 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad0);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 1 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad1);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 2 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad2);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 3 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad3);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 4 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad4);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 5 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad5);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 6 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad6);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 7 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad7);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 8 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad8);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 9 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad9);
+</span><span class='line'>
+</span><span class='line'>-For  the Page Down key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.PageDown);
+</span><span class='line'>
+</span><span class='line'>-For  the Page Up key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.PageUp);
+</span><span class='line'>
+</span><span class='line'>-For  the Pause key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Pause);
+</span><span class='line'>
+</span><span class='line'>-For  the Return key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Return);
+</span><span class='line'>
+</span><span class='line'>-For  the right arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Right);
+</span><span class='line'>
+</span><span class='line'>-For  the semi-colon key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Semicolon);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad thousands separator key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Separator);
+</span><span class='line'>
+</span><span class='line'>-For  the Shift key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Shift);
+</span><span class='line'>
+</span><span class='line'>-For  the Space bar key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Space);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad subtraction key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Subtract);
+</span><span class='line'>
+</span><span class='line'>-For  the Tab key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Tab);
+</span><span class='line'>
+</span><span class='line'>-For  the up arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Up);</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Selenium IDE : Check Background colour]]></title>
@@ -909,7 +1367,7 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x74;&#97;&#98;&#97;&#x6f;&#x6c;&#97;&#x6e;&#49;&#57;&#56;&#55;&#64;&#x67;&#109;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">&#x74;&#97;&#98;&#97;&#x6f;&#108;&#97;&#110;&#x31;&#57;&#x38;&#55;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#x74;&#97;&#98;&#x61;&#x6f;&#x6c;&#97;&#110;&#x31;&#57;&#56;&#55;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#116;&#97;&#x62;&#97;&#x6f;&#x6c;&#97;&#x6e;&#x31;&#57;&#56;&#x37;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
 
@@ -2048,1041 +2506,6 @@
 </span><span class='line'>Action selectMultiple = builder.build(); 
 </span><span class='line'>selectMultiple.perform();</span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework P7 : Run on Multi Browser]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser/"/>
-    <updated>2014-05-29T15:16:59+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser</id>
-    <content type="html"><![CDATA[<h2>Multi Browser Test</h2>
-
-<h3>Required knowledge : <a href="http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-create-test-script/">Test Script</a>, <a href="http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="http://www.tabaolan.com/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="http://www.tabaolan.com/blog/categories/testng-framework/">TestNG Framework</a></h3>
-
-<p>In many case of testing , we need enable our script running on cross browser to make sure that the front-end of website is stable with multi browser.In this tutorial , you will know step by step to run script in 3 browser basic is &lsquo;Chrome&rsquo; , &lsquo;IE&rsquo; and &lsquo;FireFox&rsquo; with this action :</p>
-
-<p>Login Facebook</p>
-
-<p>Post Status</p>
-
-<h4>How to do it&hellip;.</h4>
-
-<!--more-->
-
-
-<p>1) Download driver for IE: <a href="http://adf.ly/p8x8u"> 32 bit Windows</a> , <a href="http://adf.ly/p8xEK"> 64 bit Windows</a></p>
-
-<p>2) Download driver for <a href="http://adf.ly/p8xJd">Chrome</a></p>
-
-<p>3) Right click into project &ndash;> New &ndash;> folder &ndash;> name it as &lsquo;Driver&rsquo;</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-1.png"></p>
-
-<p>4) Unzip and Copy 2 driver Chrome and IE to folder &lsquo;Driver&rsquo;.</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-2.png"></p>
-
-<p>5) Double click on &lsquo;pom.xml&rsquo; paste the configuration below the tag &lsquo;dependencies&rsquo; to enable Maven automatic get the Directory of project when build project.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;reporting&gt;
-</span><span class='line'>      &lt;plugins&gt;
-</span><span class='line'>          &lt;!-- &lt;plugin&gt; --&gt;
-</span><span class='line'>          &lt;!-- &lt;groupId&gt;org.codehaus.sonar-plugins&lt;/groupId&gt; --&gt;
-</span><span class='line'>          &lt;!-- &lt;artifactId&gt;maven-report&lt;/artifactId&gt; --&gt;
-</span><span class='line'>          &lt;!-- &lt;version&gt;0.1&lt;/version&gt; --&gt;
-</span><span class='line'>          &lt;!-- &lt;/plugin&gt; --&gt;
-</span><span class='line'>          &lt;plugin&gt;
-</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;maven-surefire-report-plugin&lt;/artifactId&gt;
-</span><span class='line'>              &lt;version&gt;2.14.1&lt;/version&gt;
-</span><span class='line'>              &lt;configuration&gt;
-</span><span class='line'>                  &lt;!-- &lt;showSuccess&gt;false&lt;/showSuccess&gt; --&gt;
-</span><span class='line'>              &lt;/configuration&gt;
-</span><span class='line'>          &lt;/plugin&gt;
-</span><span class='line'>      &lt;/plugins&gt;
-</span><span class='line'>  &lt;/reporting&gt;
-</span><span class='line'>&lt;build&gt;
-</span><span class='line'>      &lt;extensions&gt;
-</span><span class='line'>          &lt;!-- start - for deploying using webdav --&gt;
-</span><span class='line'>          &lt;extension&gt;
-</span><span class='line'>              &lt;groupId&gt;org.apache.maven.wagon&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;wagon-webdav&lt;/artifactId&gt;
-</span><span class='line'>              &lt;version&gt;1.0-beta-2&lt;/version&gt;
-</span><span class='line'>          &lt;/extension&gt;
-</span><span class='line'>          &lt;!-- end - for deploying using webdav --&gt;
-</span><span class='line'>      &lt;/extensions&gt;
-</span><span class='line'>      &lt;plugins&gt;
-</span><span class='line'>          &lt;plugin&gt;
-</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
-</span><span class='line'>              &lt;executions&gt;
-</span><span class='line'>                  &lt;execution&gt;
-</span><span class='line'>                      &lt;id&gt;init-res&lt;/id&gt;
-</span><span class='line'>                      &lt;!-- use the copy resources instead of resources, which adds it to 
-</span><span class='line'>                          the eclipse buildpath --&gt;
-</span><span class='line'>                      &lt;phase&gt;initialize&lt;/phase&gt;
-</span><span class='line'>                      &lt;goals&gt;
-</span><span class='line'>                          &lt;goal&gt;copy-resources&lt;/goal&gt;
-</span><span class='line'>                      &lt;/goals&gt;
-</span><span class='line'>                      &lt;configuration&gt;
-</span><span class='line'>                          &lt;outputDirectory&gt;${project.basedir}/src/main/resources&lt;/outputDirectory&gt;
-</span><span class='line'>                          &lt;resources&gt;
-</span><span class='line'>                              &lt;resource&gt;
-</span><span class='line'>                                  &lt;directory&gt;${project.basedir}/src/template/resources&lt;/directory&gt;
-</span><span class='line'>                                  &lt;targetPath&gt;${project.basedir}/src/main/resources&lt;/targetPath&gt;
-</span><span class='line'>                                  &lt;filtering&gt;true&lt;/filtering&gt;
-</span><span class='line'>                              &lt;/resource&gt;
-</span><span class='line'>                          &lt;/resources&gt;
-</span><span class='line'>                      &lt;/configuration&gt;
-</span><span class='line'>                  &lt;/execution&gt;
-</span><span class='line'>              &lt;/executions&gt;
-</span><span class='line'>          &lt;/plugin&gt;
-</span><span class='line'>          &lt;plugin&gt;
-</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
-</span><span class='line'>              &lt;version&gt;2.7.1&lt;/version&gt;
-</span><span class='line'>              &lt;configuration&gt;
-</span><span class='line'>                  &lt;argLine&gt;-Xmx1024m -Xms1024m&lt;/argLine&gt;
-</span><span class='line'>                  &lt;suiteXmlFiles&gt;
-</span><span class='line'>                      &lt;suiteXmlFile&gt;Test.xml&lt;/suiteXmlFile&gt;
-</span><span class='line'>                  &lt;/suiteXmlFiles&gt;
-</span><span class='line'>              &lt;/configuration&gt;
-</span><span class='line'>          &lt;/plugin&gt;
-</span><span class='line'>          &lt;plugin&gt;
-</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-</span><span class='line'>              &lt;version&gt;3.1&lt;/version&gt;
-</span><span class='line'>              &lt;configuration&gt;
-</span><span class='line'>                  &lt;source&gt;1.5&lt;/source&gt;
-</span><span class='line'>                  &lt;target&gt;1.5&lt;/target&gt;
-</span><span class='line'>              &lt;/configuration&gt;
-</span><span class='line'>          &lt;/plugin&gt;
-</span><span class='line'>          &lt;plugin&gt;
-</span><span class='line'>              &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
-</span><span class='line'>              &lt;version&gt;2.1&lt;/version&gt;
-</span><span class='line'>          &lt;/plugin&gt;
-</span><span class='line'>      &lt;/plugins&gt;
-</span><span class='line'>  &lt;/build&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>6) After that your &lsquo;pom.xml&rsquo; file will look like this :</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-<span class='line-number'>127</span>
-<span class='line-number'>128</span>
-<span class='line-number'>129</span>
-<span class='line-number'>130</span>
-<span class='line-number'>131</span>
-<span class='line-number'>132</span>
-<span class='line-number'>133</span>
-<span class='line-number'>134</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-</span><span class='line'>  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
-</span><span class='line'>  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-</span><span class='line'>  &lt;groupId&gt;Selenium-Automation-Framework&lt;/groupId&gt;
-</span><span class='line'>  &lt;artifactId&gt;Selenium-Framework&lt;/artifactId&gt;
-</span><span class='line'>  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
-</span><span class='line'>  &lt;dependencies&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-server&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-firefox-driver&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-chrome-driver&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-remote-driver&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;selenium-ie-driver&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;junit&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;junit&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;4.11&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;poi&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;3.10-FINAL&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>      &lt;dependency&gt;
-</span><span class='line'>          &lt;groupId&gt;org.testng&lt;/groupId&gt;
-</span><span class='line'>          &lt;artifactId&gt;testng&lt;/artifactId&gt;
-</span><span class='line'>          &lt;version&gt;6.8.8&lt;/version&gt;
-</span><span class='line'>      &lt;/dependency&gt;
-</span><span class='line'>  &lt;/dependencies&gt;
-</span><span class='line'>  &lt;reporting&gt;
-</span><span class='line'>      &lt;plugins&gt;
-</span><span class='line'>          &lt;!-- &lt;plugin&gt; --&gt;
-</span><span class='line'>          &lt;!-- &lt;groupId&gt;org.codehaus.sonar-plugins&lt;/groupId&gt; --&gt;
-</span><span class='line'>          &lt;!-- &lt;artifactId&gt;maven-report&lt;/artifactId&gt; --&gt;
-</span><span class='line'>          &lt;!-- &lt;version&gt;0.1&lt;/version&gt; --&gt;
-</span><span class='line'>          &lt;!-- &lt;/plugin&gt; --&gt;
-</span><span class='line'>          &lt;plugin&gt;
-</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;maven-surefire-report-plugin&lt;/artifactId&gt;
-</span><span class='line'>              &lt;version&gt;2.14.1&lt;/version&gt;
-</span><span class='line'>              &lt;configuration&gt;
-</span><span class='line'>                  &lt;!-- &lt;showSuccess&gt;false&lt;/showSuccess&gt; --&gt;
-</span><span class='line'>              &lt;/configuration&gt;
-</span><span class='line'>          &lt;/plugin&gt;
-</span><span class='line'>      &lt;/plugins&gt;
-</span><span class='line'>  &lt;/reporting&gt;
-</span><span class='line'>  &lt;build&gt;
-</span><span class='line'>      &lt;extensions&gt;
-</span><span class='line'>          &lt;!-- start - for deploying using webdav --&gt;
-</span><span class='line'>          &lt;extension&gt;
-</span><span class='line'>              &lt;groupId&gt;org.apache.maven.wagon&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;wagon-webdav&lt;/artifactId&gt;
-</span><span class='line'>              &lt;version&gt;1.0-beta-2&lt;/version&gt;
-</span><span class='line'>          &lt;/extension&gt;
-</span><span class='line'>          &lt;!-- end - for deploying using webdav --&gt;
-</span><span class='line'>      &lt;/extensions&gt;
-</span><span class='line'>      &lt;plugins&gt;
-</span><span class='line'>          &lt;plugin&gt;
-</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
-</span><span class='line'>              &lt;executions&gt;
-</span><span class='line'>                  &lt;execution&gt;
-</span><span class='line'>                      &lt;id&gt;init-res&lt;/id&gt;
-</span><span class='line'>                      &lt;!-- use the copy resources instead of resources, which adds it to 
-</span><span class='line'>                          the eclipse buildpath --&gt;
-</span><span class='line'>                      &lt;phase&gt;initialize&lt;/phase&gt;
-</span><span class='line'>                      &lt;goals&gt;
-</span><span class='line'>                          &lt;goal&gt;copy-resources&lt;/goal&gt;
-</span><span class='line'>                      &lt;/goals&gt;
-</span><span class='line'>                      &lt;configuration&gt;
-</span><span class='line'>                          &lt;outputDirectory&gt;${project.basedir}/src/main/resources&lt;/outputDirectory&gt;
-</span><span class='line'>                          &lt;resources&gt;
-</span><span class='line'>                              &lt;resource&gt;
-</span><span class='line'>                                  &lt;directory&gt;${project.basedir}/src/template/resources&lt;/directory&gt;
-</span><span class='line'>                                  &lt;targetPath&gt;${project.basedir}/src/main/resources&lt;/targetPath&gt;
-</span><span class='line'>                                  &lt;filtering&gt;true&lt;/filtering&gt;
-</span><span class='line'>                              &lt;/resource&gt;
-</span><span class='line'>                          &lt;/resources&gt;
-</span><span class='line'>                      &lt;/configuration&gt;
-</span><span class='line'>                  &lt;/execution&gt;
-</span><span class='line'>              &lt;/executions&gt;
-</span><span class='line'>          &lt;/plugin&gt;
-</span><span class='line'>          &lt;plugin&gt;
-</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
-</span><span class='line'>              &lt;version&gt;2.7.1&lt;/version&gt;
-</span><span class='line'>              &lt;configuration&gt;
-</span><span class='line'>                  &lt;argLine&gt;-Xmx1024m -Xms1024m&lt;/argLine&gt;
-</span><span class='line'>                  &lt;suiteXmlFiles&gt;
-</span><span class='line'>                      &lt;suiteXmlFile&gt;Test.xml&lt;/suiteXmlFile&gt;
-</span><span class='line'>                  &lt;/suiteXmlFiles&gt;
-</span><span class='line'>              &lt;/configuration&gt;
-</span><span class='line'>          &lt;/plugin&gt;
-</span><span class='line'>          &lt;plugin&gt;
-</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-</span><span class='line'>              &lt;version&gt;3.1&lt;/version&gt;
-</span><span class='line'>              &lt;configuration&gt;
-</span><span class='line'>                  &lt;source&gt;1.5&lt;/source&gt;
-</span><span class='line'>                  &lt;target&gt;1.5&lt;/target&gt;
-</span><span class='line'>              &lt;/configuration&gt;
-</span><span class='line'>          &lt;/plugin&gt;
-</span><span class='line'>          &lt;plugin&gt;
-</span><span class='line'>              &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
-</span><span class='line'>              &lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
-</span><span class='line'>              &lt;version&gt;2.1&lt;/version&gt;
-</span><span class='line'>          &lt;/plugin&gt;
-</span><span class='line'>      &lt;/plugins&gt;
-</span><span class='line'>  &lt;/build&gt;
-</span><span class='line'>&lt;/project&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>7) Right click in folder &lsquo;src&rsquo; &ndash;> New &ndash;> Folder &ndash;> name it as &lsquo;template&rsquo;</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-3.png"></p>
-
-<p>8) Right click in folder &lsquo;template&rsquo; &ndash;> New &ndash;> Folder &ndash;> name it as &lsquo;resources&rsquo;</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-4.png"></p>
-
-<p>9) Right click in folder &lsquo;resources&rsquo; &ndash;> New &ndash;> File &ndash;> name it as &lsquo;system.properties&rsquo;</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-5.png"></p>
-
-<p>10) Open file &lsquo;system.properties&rsquo; and copy the code below and paste to this file:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>project.basedir=${project.basedir}
-</span><span class='line'>project.build.directory=${project.build.directory}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>11) Right click in your project &ndash;> Run as &ndash;> Maven generate-resources.</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-6.png"></p>
-
-<p>12) Right click in &lsquo;src/main/java&rsquo; &ndash;> New &ndash;> Package &ndash;> name it as &lsquo;com.selenium.util&rsquo;</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-7.png"></p>
-
-<p>13) Right click in package &lsquo;com.selenium.util&rsquo; &ndash;> New &ndash;> Class &ndash;> name it as &lsquo;DriverUtil&rsquo;</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-8.png"></p>
-
-<p>14) Double click on &lsquo;DriverUtil.java&rsquo; and paste the below code to it.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.util;
-</span><span class='line'>
-</span><span class='line'>import java.io.File;
-</span><span class='line'>import java.io.IOException;
-</span><span class='line'>import java.util.Properties;
-</span><span class='line'>
-</span><span class='line'>public class DriverUtil {
-</span><span class='line'>  public static final String PROP_PROJECT_BASE_DIR = "project.basedir";
-</span><span class='line'>  public static final String FOLDER_DRIVER = "Driver";
-</span><span class='line'>  public static final String DEFAULT_PROPERTIES = "system.properties";
-</span><span class='line'>  private static Properties prod;
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'>   * @return the path of ie driver file.
-</span><span class='line'>   */
-</span><span class='line'>  public static String getIeDriver(){
-</span><span class='line'>      String path = getKey(PROP_PROJECT_BASE_DIR) + File.separator + FOLDER_DRIVER 
-</span><span class='line'>              + File.separator + "IEDriverServer.exe";
-</span><span class='line'>      try {
-</span><span class='line'>          File driverIe = new File(path);
-</span><span class='line'>          if(driverIe.exists()){
-</span><span class='line'>              return driverIe.getAbsolutePath();
-</span><span class='line'>          }
-</span><span class='line'>      } catch (Exception e) {
-</span><span class='line'>          e.printStackTrace();
-</span><span class='line'>          return null;
-</span><span class='line'>      }
-</span><span class='line'>      return null;    
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'>   * @return the path of chrome driver file
-</span><span class='line'>   */
-</span><span class='line'>  public static String getChromeDriver(){
-</span><span class='line'>      String path = getKey(PROP_PROJECT_BASE_DIR) + File.separator + FOLDER_DRIVER 
-</span><span class='line'>              + File.separator + "chromedriver.exe";
-</span><span class='line'>      try {
-</span><span class='line'>          File driverChrome = new File(path);
-</span><span class='line'>          if(driverChrome.exists()){
-</span><span class='line'>              return driverChrome.getAbsolutePath();
-</span><span class='line'>          }
-</span><span class='line'>      } catch (Exception e) {
-</span><span class='line'>          e.printStackTrace();
-</span><span class='line'>          return null;
-</span><span class='line'>      }
-</span><span class='line'>      return null;    
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'>   * @return load the file system.properties
-</span><span class='line'>   */
-</span><span class='line'>  public static Properties getProperties() {
-</span><span class='line'>      if (prod == null) {
-</span><span class='line'>          prod = new Properties();
-</span><span class='line'>          try {
-</span><span class='line'>              prod.load(DriverUtil.class.getClassLoader().getResourceAsStream(DEFAULT_PROPERTIES));
-</span><span class='line'>          } catch (IOException e) {               
-</span><span class='line'>              //
-</span><span class='line'>          }
-</span><span class='line'>      }
-</span><span class='line'>      return prod;
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'>   * @param key
-</span><span class='line'>   * @return get value of key
-</span><span class='line'>   */
-</span><span class='line'>  public static String getKey(String key) {
-</span><span class='line'>      Object obj = getProperties().get(key);
-</span><span class='line'>      String value = "";
-</span><span class='line'>      if (obj != null) 
-</span><span class='line'>          value = obj.toString();
-</span><span class='line'>      return value;
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>15) Double click on &lsquo;autoTestFacebook.java&rsquo; and paste the code below to it.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.chrome.ChromeDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>import org.openqa.selenium.ie.InternetExplorerDriver;
-</span><span class='line'>import org.testng.annotations.Parameters;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>import org.testng.annotations.BeforeTest;
-</span><span class='line'>import org.testng.annotations.AfterTest;
-</span><span class='line'>
-</span><span class='line'>import com.selenium.pageObject.LoginPage;
-</span><span class='line'>import com.selenium.userAction.PostStatus;
-</span><span class='line'>import com.selenium.userAction.SignIn;
-</span><span class='line'>import com.selenium.util.DriverUtil;
-</span><span class='line'>
-</span><span class='line'>public class autoTestFacebook {
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'>   * Create WebDriver as static variable
-</span><span class='line'>   */
-</span><span class='line'>  private static WebDriver driver;
-</span><span class='line'>  private static String username_login;
-</span><span class='line'>  private static String password_login;
-</span><span class='line'>  private static String status_facebook;
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'> * Setup some variable to run your script test, load from the file TestNg.xml
-</span><span class='line'> * Your parameters in annotation Parameters will match with define in TestNG.xml 
-</span><span class='line'> */
-</span><span class='line'>@Parameters({"browser","status","username","password"})   
-</span><span class='line'>@BeforeTest
-</span><span class='line'>  public void beforeTest(String browser, String status, String username, String password) {
-</span><span class='line'>   if(browser.equalsIgnoreCase("firefox")) {
-</span><span class='line'>        driver = new FirefoxDriver();
-</span><span class='line'>    }else if (browser.equalsIgnoreCase("ie")) { 
-</span><span class='line'>        // Here I am setting up the path for my IEDriver
-</span><span class='line'>        System.setProperty("webdriver.ie.driver", DriverUtil.getIeDriver());
-</span><span class='line'>        driver = new InternetExplorerDriver();
-</span><span class='line'>    }else if (browser.equalsIgnoreCase("chrome")){
-</span><span class='line'>        System.setProperty("webdriver.chrome.driver", DriverUtil.getChromeDriver());
-</span><span class='line'>        driver = new ChromeDriver();
-</span><span class='line'>    } 
-</span><span class='line'>   username_login = username;
-</span><span class='line'>   status_facebook = status;
-</span><span class='line'>   password_login = password;
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'> * your test script call action class here
-</span><span class='line'> */
-</span><span class='line'>@Test
-</span><span class='line'>  public void f() {
-</span><span class='line'>    LoginPage.loadPage(driver);
-</span><span class='line'>    SignIn.Execute(driver, username_login, password_login);
-</span><span class='line'>    PostStatus.Execute(driver, status_facebook);
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'> * after run your script test , use this code to close your browser
-</span><span class='line'> */
-</span><span class='line'>@AfterTest
-</span><span class='line'>  public void afterTest() {
-</span><span class='line'>    driver.quit();
-</span><span class='line'>  } 
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>16) Right Click in Project &ndash;> New &ndash;> File &ndash;> name it as &lsquo;TestNg.xml&rsquo;</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-9.png"></p>
-
-<p>17) Copy code below and paste to &lsquo;TestNg.xml&rsquo;. Remember to change the username and password in tag parameter. You can change the value of parallel to test &ndash;> it will run 3 browser in the same time.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;suite name="Suite" parallel="none"&gt;
-</span><span class='line'>
-</span><span class='line'> &lt;test name="FirefoxTest"&gt;
-</span><span class='line'>   &lt;parameter name="browser" value="firefox" /&gt;
-</span><span class='line'>   &lt;parameter name="status" value="firefox" /&gt;
-</span><span class='line'>   &lt;parameter name="username" value="yourusername" /&gt;
-</span><span class='line'>   &lt;parameter name="password" value="yourpassword" /&gt;
-</span><span class='line'>   &lt;classes&gt;
-</span><span class='line'>   &lt;class name="com.selenium.test.autoTestFacebook" /&gt;
-</span><span class='line'>   &lt;/classes&gt;
-</span><span class='line'> &lt;/test&gt;
-</span><span class='line'>
-</span><span class='line'> &lt;test name="IETest"&gt;
-</span><span class='line'> &lt;parameter name="username" value="yourusername" /&gt;
-</span><span class='line'> &lt;parameter name="password" value="yourpassword" /&gt;
-</span><span class='line'> &lt;parameter name="browser" value="ie" /&gt;
-</span><span class='line'> &lt;parameter name="status" value="ie" /&gt;
-</span><span class='line'> &lt;classes&gt;
-</span><span class='line'> &lt;class name="com.selenium.test.autoTestFacebook" /&gt;
-</span><span class='line'> &lt;/classes&gt;
-</span><span class='line'> &lt;/test&gt;
-</span><span class='line'> 
-</span><span class='line'>&lt;test name="ChromeTest"&gt;
-</span><span class='line'>  &lt;parameter name="username" value="yourusername" /&gt;
-</span><span class='line'> &lt;parameter name="password" value="yourpassword" /&gt;
-</span><span class='line'> &lt;parameter name="browser" value="chrome" /&gt;
-</span><span class='line'>  &lt;parameter name="status" value="chrome" /&gt;
-</span><span class='line'> &lt;classes&gt;
-</span><span class='line'> &lt;class name="com.selenium.test.autoTestFacebook" /&gt;
-</span><span class='line'> &lt;/classes&gt;
-</span><span class='line'> &lt;/test&gt;
-</span><span class='line'>&lt;/suite&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>17) Right click in file &lsquo;TestNG.xml&rsquo; &ndash;> Run as &ndash;> TestNG Suite and wait for the process running.</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-10.png"></p>
-
-<p>18) Open folder &lsquo;Test-Output&rsquo; &ndash;> Open folder &lsquo;Suite&rsquo; &ndash; > You will see 3 file html &ndash;> open to see the report of each browser.</p>
-
-<p><img src="http://www.tabaolan.com/images/mulb-11.png"></p>
-
-<h3>Note : In this tutorial we have many knowledge so I recommend you to read the comment of code to know what it do.</h3>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework P6 : Create Test Script]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-create-test-script/"/>
-    <updated>2014-05-29T14:48:11+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-create-test-script</id>
-    <content type="html"><![CDATA[<h2>Create Test Script using TestNG</h2>
-
-<h3>Required knowledge : <a href="http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="http://www.tabaolan.com/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="http://www.tabaolan.com/blog/categories/testng-framework/">TestNG Framework</a></h3>
-
-<p>TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use. In simple words TestNG is a tool that help us to organize the tests and help us to produce the test reports. TestNG framework can be used for automation testing with Selenium (web application automation testing tool).</p>
-
-<p>TestNG Advantages</p>
-
-<ul>
-<li><p>Multiple built in Annotations which are easier to use and understand</p></li>
-<li><p>Test method can be dependent to other method</p></li>
-<li><p>Test cases can be Grouped and can be execute separately by groups</p></li>
-<li><p>Parallel testing is possible</p></li>
-<li><p>TestNG has built in HTML report and XML report generation facility. It has also built in  logging facility</p></li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>How to do it&hellip;</h4>
-
-<p>1) Right Click in &lsquo;src/test/java&rsquo; &ndash;> New &ndash;> Package &ndash;> name it as &lsquo;com.selenium.test&rsquo;</p>
-
-<p><img src="http://www.tabaolan.com/images/testng-1.png"></p>
-
-<p><img src="http://www.tabaolan.com/images/testng-2.png"></p>
-
-<p>2) Right Click in package &lsquo;com.selenium.test&rsquo; &ndash;> TestNG &ndash;> Create TestNG Class.</p>
-
-<p><img src="http://www.tabaolan.com/images/testng-3.png"></p>
-
-<p>3) Name your class as &lsquo;autoTestFacebook&rsquo; and tick on &lsquo;BeforeTest&rsquo; and &lsquo;AfterTest&rsquo; option.</p>
-
-<p><img src="http://www.tabaolan.com/images/testng-4.png"></p>
-
-<p>4) Double click in &lsquo;autoTestFacebook&rsquo; to open it. Copy and paste the code below to this.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>import org.testng.annotations.Test;
-</span><span class='line'>import org.testng.annotations.BeforeTest;
-</span><span class='line'>import org.testng.annotations.AfterTest;
-</span><span class='line'>
-</span><span class='line'>import com.selenium.pageObject.LoginPage;
-</span><span class='line'>import com.selenium.userAction.PostStatus;
-</span><span class='line'>import com.selenium.userAction.SignIn;
-</span><span class='line'>
-</span><span class='line'>public class autoTestFacebook {
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'>   * Create WebDriver as static variable
-</span><span class='line'>   */
-</span><span class='line'>  private static WebDriver driver;
-</span><span class='line'>  
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'> * Setup some variable to run your script test
-</span><span class='line'> */
-</span><span class='line'>@BeforeTest
-</span><span class='line'>  public void beforeTest() {
-</span><span class='line'>    driver = new FirefoxDriver();
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'> * your test script call action class here
-</span><span class='line'> */
-</span><span class='line'>@Test
-</span><span class='line'>  public void f() {
-</span><span class='line'>    LoginPage.loadPage(driver);
-</span><span class='line'>    SignIn.Execute(driver, "gaumun", "63hamlong");
-</span><span class='line'>    PostStatus.Execute(driver, "this is my status posted by my automation test");
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  
-</span><span class='line'>  /**
-</span><span class='line'> * after run your script test , use this code to close your browser
-</span><span class='line'> */
-</span><span class='line'>@AfterTest
-</span><span class='line'>  public void afterTest() {
-</span><span class='line'>    driver.quit();
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>5) Right click on your class &ndash;> Run As &ndash;> TestNG Test.</p>
-
-<p><img src="http://www.tabaolan.com/images/testng-5.png"></p>
-
-<p>6) Wait for TestNG running and check the result of test in folder &lsquo;test-output&rsquo;</p>
-
-<p><img src="http://www.tabaolan.com/images/testng-6.png"></p>
-
-<h3>After this tutorial you are already have a project base on Selenium Framework. Take a look what you have done , you will see maintain this project is not hard. Your test script is very easy to know base on actually action of user.</h3>
 ]]></content>
   </entry>
   
