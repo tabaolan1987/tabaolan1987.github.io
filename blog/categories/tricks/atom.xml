@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/blog/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-12T09:07:53+07:00</updated>
+  <updated>2014-06-12T09:21:00+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Ide : loop through array variables]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/"/>
+    <updated>2014-06-12T09:16:02+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables</id>
+    <content type="html"><![CDATA[<p>If you want Selenium IDE loop through your array , let take a look in code this example :</p>
+
+<p><code>
+&lt;tr&gt;
+&lt;td&gt;storeEval&lt;/td&gt;
+&lt;td&gt;new Array(&amp;quot;postgresql&amp;quot;,&amp;quot;mysql&amp;quot;);&lt;/td&gt;
+&lt;td&gt;myarray&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;getEval&lt;/td&gt;
+&lt;td&gt;index=0;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;while&lt;/td&gt;
+&lt;td&gt;index &amp;lt; storedVars['myarray'].length&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;storeEval&lt;/td&gt;
+&lt;td&gt;index&lt;/td&gt;
+&lt;td&gt;temp&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;echo&lt;/td&gt;
+&lt;td&gt;javascript{storedVars['myarray'][storedVars['temp']]}&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;getEval&lt;/td&gt;
+&lt;td&gt;index++;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;endWhile&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+</code></p>
+
+<p>or follower there command in this picture</p>
+
+<p><img src="/images/tricks-ide-loop-array.png"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Selenium IDE : How to use stored value in a JavaScript comparison]]></title>
@@ -48,7 +99,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Tips&Tricks : Table tricks ]]></title>
+    <title type="html"><![CDATA[Selenium WebDriver : Table tricks ]]></title>
     <link href="http://www.tabaolan.com/blog/2014/06/11/tipandtricks-table-tricks/"/>
     <updated>2014-06-11T15:02:38+07:00</updated>
     <id>http://www.tabaolan.com/blog/2014/06/11/tipandtricks-table-tricks</id>
@@ -88,7 +139,7 @@ for(WebElement elm : td_table){
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Tips&Tricks : Call JavaScript ]]></title>
+    <title type="html"><![CDATA[Selenium WebDriver : Call JavaScript ]]></title>
     <link href="http://www.tabaolan.com/blog/2014/06/11/tipandtricks-call-javascript/"/>
     <updated>2014-06-11T14:40:40+07:00</updated>
     <id>http://www.tabaolan.com/blog/2014/06/11/tipandtricks-call-javascript</id>
@@ -107,7 +158,7 @@ driver.get(&lsquo;anyurl.com&rsquo;);
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Tips&Tricks : Complex Action]]></title>
+    <title type="html"><![CDATA[Selenium WebDriver : Complex Action]]></title>
     <link href="http://www.tabaolan.com/blog/2014/06/11/tipandtrip-complex-action/"/>
     <updated>2014-06-11T14:30:39+07:00</updated>
     <id>http://www.tabaolan.com/blog/2014/06/11/tipandtrip-complex-action</id>
