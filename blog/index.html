@@ -279,24 +279,6 @@
 
 <p>Here, &ldquo;string&rdquo; is the Xpath location. And on the element that we have found, keyboard&rsquo;s Arrow left will be pressed.</p>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<!-- ad-banner-news -->
-
-
-<p>&lt;ins class=&ldquo;adsbygoogle&rdquo;</p>
-
-<pre><code> style="display:inline-block;width:728px;height:90px"
- data-ad-client="ca-pub-5798698216356388"
- data-ad-slot="6124493152"&gt;&lt;/ins&gt;
-</code></pre>
-
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
 <p>Take a look in some key press on element:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1000,6 +982,824 @@
 </span><span class='line'>&lt;/tr&gt;</span></code></pre></td></tr></table></div></figure>
 
 
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/11/tipandtricks-table-tricks/">Selenium WebDriver : Table tricks </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-11T15:02:38+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 11<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/webdriver/'>Webdriver</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/11/tipandtricks-table-tricks/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Table</h2>
+
+<p>If table have a lot of data inside and you need to find the data you want.Check this code below.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>String data_you_want_to_check = "your data in here";
+</span><span class='line'>boolean check_data_existed = false;
+</span><span class='line'>WebDriver driver = new ChromeDriver();
+</span><span class='line'>
+</span><span class='line'>driver.get('yoururl');
+</span><span class='line'>
+</span><span class='line'>//you can find table by xpath or some option ,depend on your site.
+</span><span class='line'>WebElement table = driver.findElement(By.id('yourTableID'));
+</span><span class='line'>//get all tr inside table
+</span><span class='line'>List&lt;WebElement&gt; tr_table = table.findElements(By.tagName("tr"));
+</span><span class='line'>//now we will loop
+</span><span class='line'>for(WebElement el : tr_table){
+</span><span class='line'>  List&lt;WebElement&gt; td_table = tr_table.findElements(By.tagName("td"));
+</span><span class='line'>  for(WebElement elm : td_table){
+</span><span class='line'>      String text_inside_td = elm.getText();
+</span><span class='line'>      if(text_inside_td.equalsIgnoreCase(data_you_want_to_check)){
+</span><span class='line'>          check_data_existed = true;
+</span><span class='line'>          break;
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/11/tipandtricks-call-javascript/">Selenium WebDriver : Call JavaScript </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-11T14:40:40+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 11<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/webdriver/'>Webdriver</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/11/tipandtricks-call-javascript/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Call JavaScript function with JavascriptExecutor</h2>
+
+<p>In some case you need to call some JavaScript function in Page. Just do this like code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>WebDriver driver = new ChromeDriver();
+</span><span class='line'>driver.get('anyurl.com');
+</span><span class='line'>((JavascriptExecutor)driver).executeScript("yourScript();");
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/11/tipandtrip-complex-action/">Selenium WebDriver : Complex Action</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-11T14:30:39+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 11<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/11/tipandtrip-complex-action/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Mouse Hover action</h2>
+
+<p>There will be situations where it is required to click on the item of the drop down menu that will show up when you mouse over this menu.take a look in the example :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// find the menu that have the dropdown showing when we mouse over it.   
+</span><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
+</span><span class='line'>//Create instance of action class
+</span><span class='line'>Actions action = new Actions(driver);
+</span><span class='line'>//move mouse over the menu.
+</span><span class='line'>action.moveToElement(element).build().perform();
+</span><span class='line'>//find the link you want and click it.
+</span><span class='line'>driver.findElement(By.linkText("News")).click();</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or you can code like this way :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
+</span><span class='line'>        Actions action = new Actions(driver);
+</span><span class='line'>action.moveToElement(element).moveToElement(driver.findElement(By.linkText("News"))).click().build().perform();
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>With some of the browser it happens that once mouse hover action is performed, the menu list disappear with in the fractions of seconds before Selenium identify the next submenu item and perform click action on it. In that case it is better to use perform()&lsquo; action on the main menu to hold the menu list till the time Selenium identify the sub menu item and click on it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
+</span><span class='line'>Actions action = new Actions(driver);
+</span><span class='line'>action.moveToElement(element).perform();
+</span><span class='line'>WebElement subElement = driver.findElement(By.linkText("News"));
+</span><span class='line'>action.moveToElement(subElement);
+</span><span class='line'>action.click();
+</span><span class='line'>action.perform();</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Drag And Drop</h2>
+
+<p>In case you need drag and drop an element to another position , the action class provide us the way like below code :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>WebElement From = driver.findElement(By.xpath("yourlocationElement));
+</span><span class='line'>WebElement To = driver.findElement(By.xpath("yourlocationElement"));
+</span><span class='line'>Actions builder = new Actions(driver);
+</span><span class='line'>Action dragAndDrop = builder.clickAndHold(From)
+</span><span class='line'>.moveToElement(To)
+</span><span class='line'>.release(To)
+</span><span class='line'>.build();
+</span><span class='line'>dragAndDrop.perform();
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h2>Scroll bars dragging</h2>
+
+<p>The following code demonstrates how to drag the vertical scroll bars on a window. The &ldquo;Actions&rdquo; class is used to click and hold on to the scroll bar and then it is dragged to a new location.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Actions dragger = new Actions(driver);
+</span><span class='line'>WebElement draggablePartOfScrollbar = driver.findElement(By.xpath("yourscrollbarsXpaht"));
+</span><span class='line'>
+</span><span class='line'>// drag downwards
+</span><span class='line'>int numberOfPixelsToDragTheScrollbarDown = 10;
+</span><span class='line'>for (int i=10;i&lt;150;i=i+numberOfPixelsToDragTheScrollbarDown){
+</span><span class='line'>  // this causes a gradual drag of the scroll bar, 10 units at a time
+</span><span class='line'>  dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
+</span><span class='line'>  Thread.sleep(1000L);
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>  // now drag opposite way (downwards)
+</span><span class='line'>  numberOfPixelsToDragTheScrollbarDown = -10;
+</span><span class='line'>for (int i=150;i&gt;10;i=i+numberOfPixelsToDragTheScrollbarDown){
+</span><span class='line'>  // this causes a gradual drag of the scroll bar, -10 units at a time
+</span><span class='line'>  dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
+</span><span class='line'>  Thread.sleep(1000L);
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>RightClick on Element</h2>
+
+<p>In case you want right click on Element please follow the code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Actions actions = new Actions(driver);    
+</span><span class='line'>Action action=actions.contextClick(WebElement).build(); //pass WebElement as an argument
+</span><span class='line'>action.perform();</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Sliding</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement draggable = driver.findElement("find your slider in here by id or xpath etc.."); 
+</span><span class='line'>new Actions(driver).dragAndDropBy(draggable, 120, 0).build().perform();</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h2>SelectMulti</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>List&lt;WebElement&gt; listItems = driver.findElements("find your select by id or xpath or etc");
+</span><span class='line'>Actions builder = new Actions(driver); 
+</span><span class='line'>builder.clickAndHold(listItems.get(1)).clickAndHold(listItems.get(2)).click();
+</span><span class='line'>Action selectMultiple = builder.build(); 
+</span><span class='line'>selectMultiple.perform();</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file/">IceCream Framework Part 4 :Function available in excel file and how to use!</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-10T08:53:24+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 10<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/icecream-framework/'>IceCream-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Version Beta 0.1</h2>
+
+<h3>Function Browser</h3>
+
+<p>1) Define : choose your browser you want to run your test case.</p>
+
+<p>2) Available : Chrome , FireFox , IE.</p>
+
+<p>3) Required : All browser must be install in your laptop or computer.</p>
+
+<p><img src="/images/use-function-1.png"></p>
+
+<h3>Function OpenUrl</h3>
+
+<p>1) Define : open the url you want to test.It will wait for the browser load this page success!</p>
+
+<p>2) Available : with any url that publish to internet or your local network.</p>
+
+<p>3) Required : correct the format of URL such as  : www.anyurl.com or http/<a href="https://anyurl.com.">https://anyurl.com.</a> Must put value in column &lsquo;ACTION INPUT VALUE&rsquo;.</p>
+
+<p><img src="/images/use-function-2.png"></p>
+
+<h3>Function CloseBrowser</h3>
+
+<p>1) Define : close the browser.</p>
+
+<p>2) Available : All browser that you choose in the top of excel file.</p>
+
+<p>3) Required : don&rsquo;t need to put any value in &lsquo;ACTION INPUT VALUE&rsquo; , &lsquo;FIND BY&rsquo;, &lsquo;FIND BY VALUE&rsquo;</p>
+
+<p><img src="/images/use-function-3.png"></p>
+
+<h3>Function Type</h3>
+
+<p>1) Define : type in text-box that you want.Return false if element is not display or not is text box or text arena.</p>
+
+<p>2) Available : all text-box that visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type in text-box!</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this text-box if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<p>4) Example : Let&rsquo;s take a look in this html source below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="holder"&gt;
+</span><span class='line'>  &lt;input type='text' id='textbox' class='example'&gt;&lt;/input&gt;
+</span><span class='line'>&lt;/div&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is find the textbox and type in it  value &lsquo;example&rsquo; by using function type in excel.</p>
+
+<p>I choose the demo to you 3 option is :</p>
+
+<p>A)Find by ID :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : ID</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : textbox (this is the id of this input type)</p>
+
+<p><img src="/images/use-function-5.png"></p>
+
+<p>B)Find by Class name :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Class Name</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : example(this is the class name of this input type)</p>
+
+<p><img src="/images/use-function-6.png"></p>
+
+<p>C)Find by Xpath :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Xpath</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : //input[id=&lsquo;textbox&rsquo;] (this is the xpath of this textbox)</p>
+
+<p><img src="/images/use-function-7.png"></p>
+
+<h3>Function Click</h3>
+
+<p>1) Define : Click into button , link,.. etc! Return false if element is not displayed.</p>
+
+<p>2) Available : All element is visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this element you want to click if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<p>4) Example  : take a look in html source below</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;td id='holder'&gt;
+</span><span class='line'>&lt;a class='link_example'&gt;Click here&lt;/a&gt;
+</span><span class='line'>&lt;/td&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is find the link and click in it.</p>
+
+<p>I choose the demo to you 2 option is :</p>
+
+<p>A) Find by Class name :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Class Name</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : link_example(this is the class name of this link)</p>
+
+<p><img src="/images/use-function-8.png"></p>
+
+<p>B) Find by Link text :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Link text</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : Click here(this is the text in the link)</p>
+
+<p><img src="/images/use-function-10.png"></p>
+
+<h3>Function VerifyTitlePage</h3>
+
+<p>1) Define : compare the title page with the text user input.Return false if the title page not equal with the text user input.</p>
+
+<p>2) Available : String for input.</p>
+
+<p>3) Required : &lsquo;ACTION INPUT VALUE&rsquo; : give your String to compare with the current title page.</p>
+
+<p><img src="/images/use-function-11.png"></p>
+
+<h3>Function VerifyText</h3>
+
+<p>1) Define : compare text inside element with text user input.Return false if they are not equals.</p>
+
+<p>2) Available : String input.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : give your String to compare with the current text in element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the location of element like xpath, ID you want to compare.</p>
+
+<p><img src="/images/use-function-12.png"></p>
+
+<h3>Function SelectValueDropdown</h3>
+
+<p>1) Define : select the value of drop-down list via value user input.Return false if value is not existed in drop-down.</p>
+
+<p>2) Available : String input.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : give your String Value you want selected in drop-down</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the location of drop-down like Xpath , or ID  you want to select!</p>
+
+<p>4)Example : take a look in html code below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;select id='country'&gt;
+</span><span class='line'>&lt;option value='vietnam'&gt;Viet Nam&lt;/option&gt;
+</span><span class='line'>&lt;option value='thailand'&gt;ThaiLand&lt;/option&gt;
+</span><span class='line'>&lt;/select&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is select value Viet Nam in drop-down list. So this will be look like this :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : vietnam(value of option)</p>
+
+<p>&lsquo;FIND BY&rsquo; : ID</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : country</p>
+
+<p><img src="/images/use-function-13.png"></p>
+
+<h3>Function SwitchToFrame</h3>
+
+<p>1) Define : switch the driver to iframe.</p>
+
+<p>2) Available : All I-frame visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of IFrame like Xpath , or ID you want to select!</p>
+
+<p><img src="/images/use-function-14.png"></p>
+
+<h3>Function SwitchToWindow</h3>
+
+<p>1) Define : if browser current have more than once tab , it use to switch to the another tab.</p>
+
+<p>2) Available : All tabs are existed in current browser.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : name of this tab you want to come.</p>
+
+<p><img src="/images/use-function-15.png"></p>
+
+<h3>Function SwitchToDefault</h3>
+
+<p>1) Define :  switch to the default tabs</p>
+
+<p>2) Available :  All tabs are existed in current browser.</p>
+
+<p>3) Required : Just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-16.png"></p>
+
+<h3>Function EnterAlertAcceptButton</h3>
+
+<p>1) Define : enter the accept button in Alert if alert present.</p>
+
+<p>2) Available : all alert is present.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-17.png"></p>
+
+<h3>Function EnterAlertDismissButton</h3>
+
+<p>1) Define : enter the cancel button in Alert if alert present.Return false if alert is not present.</p>
+
+<p>2) Available : all alert is present.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-18.png"></p>
+
+<h3>Function IsAlertPresent</h3>
+
+<p>1) Define : check if alert is present.Return false if alert is not present.</p>
+
+<p>2) Available : all browser.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-19.png"></p>
+
+<h3>Function IsElementPresent</h3>
+
+<p>1) Define : check if element is present.Return false if element is not present.</p>
+
+<p>2) Available : all element.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-20.png"></p>
+
+<h3>Function WaitElementPresent</h3>
+
+<p>1) Define : wait for element present in website with time out default is 10 second , you can set this timeout by enter in column &lsquo;ACTION VALUE INPUT&rsquo;.Return false if element not present.</p>
+
+<p>2) Available : all element.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : time out you want to wait for this element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-21.png"></p>
+
+<h3>Function WaitElementsInvisible</h3>
+
+<p>1) Define : wait for all elements invisible in the timeout.Return false if once of elements is not invisible.</p>
+
+<p>2) Available : List elements.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : time out you want to wait for this element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-22.png"></p>
+
+<h3>Function TakeScreenShot</h3>
+
+<p>1) Define : take a screen-shot in your current browser tabs and save it under folder &lsquo;Screenshot&rsquo;.</p>
+
+<p>2) Available : all browsers.</p>
+
+<p>3) Required : just choose only action and not required any parameters for this.</p>
+
+<p><img src="/images/use-function-23.png"></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/">IceCream Framework Part 3 : Running an example test case.</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-09T15:58:03+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 9<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/blog/categories/icecream-framework/'>IceCream-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+<div class="entry-content clearfix">
+  <h2>Running an example test case</h2>
+
+<h3>Follow to there steps below :</h3>
+
+
+  <a class="btn pull-right" href="/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/">Continue reading</a>
+</div>
 
   </article>
   <hr>
