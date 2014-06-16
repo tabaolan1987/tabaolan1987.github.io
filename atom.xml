@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-16T14:42:15+07:00</updated>
+  <updated>2014-06-16T15:32:41+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -26,6 +26,11 @@
 
 <p>The full list is <a href="http://q.gs/7L9JV">here</a> or <a href="http://q.gs/7L9JW">here</a> .</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <p>First assign a character&copy; to the value and then convert that as string inside send key.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -40,6 +45,11 @@
 <h3>Use Action Class</h3>
 
 <p>Make a action instance and use action instance .</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>Inhere, we have used 3 type of method to press three different key , and as they are different from each other, it will make 3 key press together.(means in here Alt+Shift+T)</p>
 
@@ -86,11 +96,6 @@
 
 
 <p>Here, &ldquo;string&rdquo; is the Xpath location. And on the element that we have found, keyboard&rsquo;s Arrow left will be pressed.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -488,6 +493,11 @@
     <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide</id>
     <content type="html"><![CDATA[<p>If you want to check element background colour , take a look in this example :</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <p>Your html code look like that :</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -517,7 +527,14 @@
     <link href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/"/>
     <updated>2014-06-12T09:16:02+07:00</updated>
     <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables</id>
-    <content type="html"><![CDATA[<p>If you want Selenium IDE loop through your array , let take a look in code this example :</p>
+    <content type="html"><![CDATA[<p>If you want Selenium IDE loop through your array ,</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>let take a look in code this example :</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -647,6 +664,13 @@
 </span><span class='line'>&lt;td&gt;true&lt;/td&gt;
 </span><span class='line'>&lt;/tr&gt;</span></code></pre></td></tr></table></div></figure>
 
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 ]]></content>
   </entry>
   
@@ -657,7 +681,14 @@
     <id>http://www.tabaolan.com/blog/2014/06/11/tipandtricks-table-tricks</id>
     <content type="html"><![CDATA[<h2>Table</h2>
 
-<p>If table have a lot of data inside and you need to find the data you want.Check this code below.</p>
+<p>If table have a lot of data inside and you need to find the data you want.</p>
+
+<p>Check this code below.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -717,7 +748,9 @@
     <id>http://www.tabaolan.com/blog/2014/06/11/tipandtricks-call-javascript</id>
     <content type="html"><![CDATA[<h2>Call JavaScript function with JavascriptExecutor</h2>
 
-<p>In some case you need to call some JavaScript function in Page. Just do this like code below :</p>
+<p>In some case you need to call some JavaScript function in Page.</p>
+
+<p>Just do this like code below :</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -731,6 +764,11 @@
 
 
 
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 ]]></content>
   </entry>
   
@@ -741,7 +779,14 @@
     <id>http://www.tabaolan.com/blog/2014/06/11/tipandtrip-complex-action</id>
     <content type="html"><![CDATA[<h2>Mouse Hover action</h2>
 
-<p>There will be situations where it is required to click on the item of the drop down menu that will show up when you mouse over this menu.take a look in the example :</p>
+<p>There will be situations where it is required to click on the item of the drop down menu that will show up when you mouse over this menu.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>take a look in the example :</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -762,6 +807,11 @@
 
 
 <p>or you can code like this way :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -794,6 +844,11 @@
 
 <p>In case you need drag and drop an element to another position , the action class provide us the way like below code :</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -819,7 +874,14 @@
 
 <h2>Scroll bars dragging</h2>
 
-<p>The following code demonstrates how to drag the vertical scroll bars on a window. The &ldquo;Actions&rdquo; class is used to click and hold on to the scroll bar and then it is dragged to a new location.</p>
+<p>The following code demonstrates how to drag the vertical scroll bars on a window.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The &ldquo;Actions&rdquo; class is used to click and hold on to the scroll bar and then it is dragged to a new location.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -861,6 +923,11 @@
 
 
 <h2>RightClick on Element</h2>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>In case you want right click on Element please follow the code below :</p>
 
@@ -917,6 +984,11 @@
 
 <p><img src="http://www.tabaolan.com/images/use-function-1.png"></p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <h3>Function OpenUrl</h3>
 
 <p>1) Define : open the url you want to test.It will wait for the browser load this page success!</p>
@@ -963,6 +1035,11 @@
 
 <p>The scenario is find the textbox and type in it  value &lsquo;example&rsquo; by using function type in excel.</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <p>I choose the demo to you 3 option is :</p>
 
 <p>A)Find by ID :</p>
@@ -1006,6 +1083,11 @@
 <p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
 
 <p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this element you want to click if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>4) Example  : take a look in html source below</p>
 
@@ -1088,6 +1170,13 @@
 </span><span class='line'>&lt;option value='thailand'&gt;ThaiLand&lt;/option&gt;
 </span><span class='line'>&lt;/select&gt;</span></code></pre></td></tr></table></div></figure>
 
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>The scenario is select value Viet Nam in drop-down list. So this will be look like this :</p>
 
@@ -1220,6 +1309,11 @@
 <p>3) Required : just choose only action and not required any parameters for this.</p>
 
 <p><img src="http://www.tabaolan.com/images/use-function-23.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 ]]></content>
   </entry>
   
@@ -1246,6 +1340,11 @@
 <p><img src="http://www.tabaolan.com/images/ICE_TEST-3.png"></p>
 
 <p><img src="http://www.tabaolan.com/images/ICE_TEST-4.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>4) Open this file you copied by Microsoft Excel.</p>
 
@@ -1281,6 +1380,11 @@
 
 <p><img src="http://www.tabaolan.com/images/ICE_TEST-12.png"></p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <p>12) Now you can create your own test case by copy file &lsquo;TESTEXAMPLE.xslx&rsquo; to the test case folder, rename this file , open this file , choose the browser , and delete row 3 to 8 and define your action in this excel file.We recommend you to take a look in <a href="http://www.tabaolan.com/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file/">How to use Action in Excel</a> . If you have any trouble to set up and run your test case , leave your comment below.</p>
 
 <p><img src="http://www.tabaolan.com/images/ICE-3.jpg"></p>
@@ -1299,6 +1403,11 @@
 <p>1) Download and install Microsoft Office trial here : <a href="http://q.gs/7KN4D">Link Download</a></p>
 
 <p>2) Download and install JAVA here : <a href="http://www.tabaolan.com/blog/2014/05/22/newbie-part-1-download-and-install-java/">How to download and install Java</a></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <h3>IceCream Framework version (all version of framework) :</h3>
 
@@ -1345,6 +1454,11 @@
 
 <h2>Now you are finish the configuration , is it easy?</h2>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <h2>It&rsquo;s time to know <a href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/">Running an example test case</a></h2>
 
 <p><img src="http://www.tabaolan.com/images/ICE-2.jpg"></p>
@@ -1367,6 +1481,11 @@
 
 <p>Tester just have the basic understanding of <a href="http://www.tabaolan.com/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
 
 <p>IceCream Framework is written by Java language and use the core <a href="http://www.tabaolan.com/blog/categories/webdriver/">Selenium WebDriver</a>.</p>
@@ -1377,9 +1496,14 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x74;&#x61;&#x62;&#97;&#x6f;&#x6c;&#97;&#x6e;&#x31;&#57;&#x38;&#55;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#116;&#97;&#98;&#97;&#x6f;&#x6c;&#97;&#x6e;&#49;&#57;&#56;&#x37;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x74;&#97;&#98;&#x61;&#111;&#x6c;&#x61;&#x6e;&#x31;&#57;&#56;&#x37;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#109;">&#116;&#97;&#98;&#97;&#111;&#108;&#97;&#x6e;&#x31;&#57;&#x38;&#55;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
 
@@ -1443,6 +1567,11 @@
 
 <p><img src="http://www.tabaolan.com/images/ide-9.png"></p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <p>Note : You need to know that some function when you export from Selenium IDE to another language will be fail. I suggest you need to re-check the export File by running it again.</p>
 ]]></content>
   </entry>
@@ -1481,9 +1610,12 @@
 
 <p>7) After restart you will see the icon of Selenium IDE show in the top of browser.</p>
 
-<p><img src="http://www.tabaolan.com/images/ide-3.png"></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<p>8) Now let us share with you how to playing with ide in the <a href="">Selenium IDE : User action record</a></p>
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p><img src="http://www.tabaolan.com/images/ide-3.png"></p>
 ]]></content>
   </entry>
   
@@ -1518,6 +1650,11 @@
 <p><img src="http://www.tabaolan.com/images/excel-2.png"></p>
 
 <p>4) Open &lsquo;ExcelUtil.java&rsquo; and paste the code below to it :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1638,6 +1775,13 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <p>5) Create a new testNG class and with name &lsquo;loginFacebookByExcelData&rsquo; and paste the code below :</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1739,6 +1883,13 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <p>6) Right click into class and chose &lsquo;Run as&rsquo; &ndash;> &lsquo;TestNg Test&rsquo;</p>
 
 <p><img src="http://www.tabaolan.com/images/excel-5.png"></p>
@@ -1767,6 +1918,11 @@
 
 <p>3) The iPhone WebDriver application is not available from the App Store, therefore we need to check-out the code and build it manually. We can do the check-out by entering the following terminal command:</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>svn checkout http://selenium.googlecode.com/svn/trunk/</span></code></pre></td></tr></table></div></figure>
 
@@ -1786,6 +1942,11 @@
 <p>6) Click on Run (play button). After compiling, the iphone simulator should appear and the iWebDriver app will be installed in it.</p>
 
 <p>7) Now we can use the IPhoneDriver in our tests. You will need to take a look in <a href="http://www.tabaolan.com/blog/categories/testng-framework/">TestNG Framework</a>. Create new TestNG class and paste the code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1901,6 +2062,11 @@
 
 <p>The iPhone WebDriver application is not available from the App Store, therefore we need to check-out the code and build it manually. We can do the check-out by entering the following terminal command</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>
@@ -1917,6 +2083,11 @@
 <p>3) Click on Run (play button). After compiling, the iphone simulator should appear and the iWebDriver app will be installed in it.</p>
 
 <p>4) Now we can use the IPhoneDriver in our tests. You will need to take a look in <a href="http://www.tabaolan.com/blog/categories/testng-framework/">TestNG Framework</a>. Create new TestNG class and paste the code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -2034,6 +2205,11 @@
 
 <p>We can divide this section into three parts: setup the device, install the WebDriver APK and finally run the test.</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <h3>Setup the device</h3>
 
 <p>Connect the android device with the computer using a USB cable.</p>
@@ -2050,6 +2226,11 @@
 
 <p>2) Download the Android server from <a href="http://adf.ly/p8w7c">Selenium website</a> and save it in the platform-tools directory. To install the application enter:</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; -e install -r android-server.apk</span></code></pre></td></tr></table></div></figure>
 
@@ -2061,6 +2242,11 @@
 
 
 <p>4) Now we need to setup the port forwarding in order to forward traffic from the host machine to the emulator. Enter the following in the terminal :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; forward tcp:8080 tcp:8080</span></code></pre></td></tr></table></div></figure>
@@ -2166,6 +2352,13 @@
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <p>5) Run your test.</p>
 ]]></content>
   </entry>
@@ -2192,6 +2385,11 @@
 
 <p>1) Navigate to the tools directory and create an Android Virtual Device. -n: specifies the name of the AVD -t: specifies the platform target -c: specifies the SD card storage space.</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -2203,6 +2401,11 @@
 
 <p>2) We can list the targets with the following command to check if the creation succeeded:</p>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>
@@ -2211,6 +2414,11 @@
 
 
 <p>3)Finally we can start the emulator with the following command:</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$./emulator -avd my_android &</span></code></pre></td></tr></table></div></figure>
@@ -2249,6 +2457,11 @@
 <p>You will need to take a look in <a href="http://www.tabaolan.com/blog/categories/testng-framework/">TestNG Framework</a></p>
 
 <p>Now we have our environment setup we can run our tests. Create new TestNG and paste the code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -2382,6 +2595,11 @@
 </span><span class='line'>driver.findElement(By.linkText("News")).click();</span></code></pre></td></tr></table></div></figure>
 
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
 <p>or you can code like this way :</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -2392,6 +2610,11 @@
 </span><span class='line'>action.moveToElement(element).moveToElement(driver.findElement(By.linkText("News"))).click().build().perform();
 </span></code></pre></td></tr></table></div></figure>
 
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>With some of the browser it happens that once mouse hover action is performed, the menu list disappear with in the fractions of seconds before Selenium identify the next submenu item and perform click action on it. In that case it is better to use perform()&lsquo; action on the main menu to hold the menu list till the time Selenium identify the sub menu item and click on it.</p>
 
@@ -2410,6 +2633,11 @@
 </span><span class='line'>action.click();
 </span><span class='line'>action.perform();</span></code></pre></td></tr></table></div></figure>
 
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <h3>Drag And Drop</h3>
 
@@ -2436,7 +2664,10 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-5798698216356388"data-ad-slot="1275491156"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <h3>Scroll bars dragging</h3>
 
@@ -2480,6 +2711,11 @@
 </span><span class='line'>}
 </span></code></pre></td></tr></table></div></figure>
 
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <h3>RightClick on Element</h3>
 
