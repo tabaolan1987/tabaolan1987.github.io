@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-16T12:21:30+07:00</updated>
+  <updated>2014-06-16T12:22:57+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -77,6 +77,8 @@ driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowRight);
 
 <p>Here, &ldquo;string&rdquo; is the Xpath location. And on the element that we have found, keyboard&rsquo;s Arrow left will be pressed.</p>
 
+<p>{include _include/about.html}</p>
+
 <p>Take a look in some key press on element:</p>
 
 <p>```
@@ -124,8 +126,6 @@ driver.FindElement(By.XPath(&ldquo;String&rdquo;)).SendKeys(Keys.Divide);</p>
 
 <p>-For  the Left arrow key.
 driver.FindElement(By.XPath(&ldquo;String&rdquo;)).SendKeys(Keys.Down);</p>
-
-<p>{include _include/about.html}</p>
 
 <p>-For  the End key.
 driver.FindElement(By.XPath(&ldquo;String&rdquo;)).SendKeys(Keys.End);</p>
