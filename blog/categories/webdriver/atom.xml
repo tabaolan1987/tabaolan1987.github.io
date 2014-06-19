@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/blog/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-19T12:11:20+07:00</updated>
+  <updated>2014-06-19T12:14:34+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -333,7 +333,7 @@ for(WebElement elm : td_table){
 
 <p>In some case you need to call some JavaScript function in Page.</p>
 
-<p>Just do this like code below :</p>
+<p>Just do this like code below and happy learning:</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
