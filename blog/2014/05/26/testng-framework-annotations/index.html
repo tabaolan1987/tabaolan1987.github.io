@@ -1,0 +1,590 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TestNG Framework P5: Annotations , Groups and OnDepends - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+    
+	<meta name="description" content="TestNG Framework : Annotations , Groups and OnDepends">
+	<meta name="keywords" content="Tutorial,Selenium,Webdriver,TestNG,Framework,Annotations,Groups,OnDepends,Browser,Testing ,Java">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-51278981-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">TestNG Framework P5: Annotations , Groups and OnDepends</h2>
+	<div class="entry-content"><h2>TestNG Annotations, Groups &amp; OnDepends</h2>
+
+<h3>TestNG Annotations</h3>
+
+<p>In the TestNG Introduction chapter we have came across different annotations used in TestNG Framework but so far we have used just three(Before, After &amp; Test). All though these are the most frequently used annotations but who know how far you will go with your framework and may like to use other useful TestNG annotations.</p>
+
+<!--more-->
+
+
+<p>Before that I would like you to give a small idea on Annotations hierarchy or Annotations levels in TestNG.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite&gt;
+</span><span class='line'>     &lt;test&gt;
+</span><span class='line'>           &lt;classes&gt;
+</span><span class='line'>                  &lt;method&gt;
+</span><span class='line'>                        &lt;test&gt;
+</span><span class='line'>                  &lt;/method&gt;
+</span><span class='line'>           &lt;/classes&gt;
+</span><span class='line'>     &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>It says that @Test is the smallest annotation here. @Method will be executed first, before and after the execution of @Test. The same way @Class will be executed first, before and after the execution of @Method and so on.</p>
+
+<p>Now with the below example it will be clear to you easily.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'> 
+</span><span class='line'>import org.testng.annotations.AfterClass;
+</span><span class='line'>import org.testng.annotations.AfterMethod;
+</span><span class='line'>import org.testng.annotations.AfterSuite;
+</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>import org.testng.annotations.BeforeClass;
+</span><span class='line'>import org.testng.annotations.BeforeMethod;
+</span><span class='line'>import org.testng.annotations.BeforeSuite;
+</span><span class='line'>import org.testng.annotations.BeforeTest;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>public class Sequencing {
+</span><span class='line'> 
+</span><span class='line'>        @Test
+</span><span class='line'>        public void testCase1() {
+</span><span class='line'>            System.out.println("This is the Test Case 1");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @Test
+</span><span class='line'>        public void testCase2() {
+</span><span class='line'>            System.out.println("This is the Test Case 2");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @BeforeMethod
+</span><span class='line'>        public void beforeMethod() {
+</span><span class='line'>            System.out.println("This will execute before every Method");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @AfterMethod
+</span><span class='line'>        public void afterMethod() {
+</span><span class='line'>            System.out.println("This will execute after every Method");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @BeforeClass
+</span><span class='line'>        public void beforeClass() {
+</span><span class='line'>            System.out.println("This will execute before the Class");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @AfterClass
+</span><span class='line'>        public void afterClass() {
+</span><span class='line'>            System.out.println("This will execute after the Class");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @BeforeTest
+</span><span class='line'>        public void beforeTest() {
+</span><span class='line'>            System.out.println("This will execute before the Test");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @AfterTest
+</span><span class='line'>        public void afterTest() {
+</span><span class='line'>            System.out.println("This will execute after the Test");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @BeforeSuite
+</span><span class='line'>        public void beforeSuite() {
+</span><span class='line'>            System.out.println("This will execute before the Test Suite");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        @AfterSuite
+</span><span class='line'>        public void afterSuite() {
+</span><span class='line'>            System.out.println("This will execute after the Test Suite");
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>    }
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Output of the above code will be like this:</p>
+
+<p><img src="/images/TestNG-Annotations-1.png"></p>
+
+<p>It is clearly visible that the @Suite annotation is the very first and the very lastly executed. Then @Test followed by @Class. Now if you notice, the @Method has executed twice. As @Test is a method in the class, hence @Method will always executed for each @Test method.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Test Case Grouping</h3>
+
+<p>‘Groups‘ is one more annotation of TestNG which can be used in the execution of multiple tests. Let’s say you have hundred tests of class vehicle and in it ten method of car, ten method of scooter and so on. You probably like to run all the scooter tests together in a batch. And you want all to be in a single test suite. With the help of grouping you can easily overcome this situation.</p>
+
+<h4>How to do it…</h4>
+
+<p>1) Create two methods for Car, two methods for Scooter and one method in conjunction with Car &amp; Sedan Car.</p>
+
+<p>2) Group them separately with using  (groups = { ” Group Name” })</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class Grouping {
+</span><span class='line'>  @Test (groups = { "Car" })
+</span><span class='line'>  public void Car1() {
+</span><span class='line'>    System.out.println("Batch Car - Test car 1");
+</span><span class='line'>  }
+</span><span class='line'>  @Test (groups = { "Car" })
+</span><span class='line'>  public void Car2() {
+</span><span class='line'>    System.out.println("Batch Car - Test car 2");
+</span><span class='line'>  }
+</span><span class='line'>  @Test (groups = { "Scooter" })
+</span><span class='line'>  public void Scooter1() {
+</span><span class='line'>    System.out.println("Batch Scooter - Test scooter 1");
+</span><span class='line'>  }
+</span><span class='line'>  @Test (groups = { "Scooter" })
+</span><span class='line'>  public void Scooter2() {
+</span><span class='line'>    System.out.println("Batch Scooter - Test scooter 2");
+</span><span class='line'>  }
+</span><span class='line'>  @Test (groups = { "Car", "Sedan Car" })
+</span><span class='line'>  public void Sedan1() {
+</span><span class='line'>    System.out.println("Batch Sedan Car - Test sedan 1");
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) Create a testng xml like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite name="Suite"&gt;
+</span><span class='line'>    &lt;test name="Practice Grouping"&gt;
+</span><span class='line'>        &lt;groups&gt;
+</span><span class='line'>      &lt;run&gt;
+</span><span class='line'>      &lt;include name="Car" /&gt;
+</span><span class='line'>      &lt;/run&gt;
+</span><span class='line'>  &lt;/groups&gt;
+</span><span class='line'>  &lt;classes&gt;
+</span><span class='line'>      &lt;class name="automationFramework.Grouping" /&gt;
+</span><span class='line'>  &lt;/classes&gt;
+</span><span class='line'>    &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>4) Run the test by right click on the testng.xml file and select Run As > TestNG Suite. Output will be like this in TestNg console:</p>
+
+<p><img src="/images/TestNG-Grouping-1.png"></p>
+
+<p> Note: We have just call the group ‘Car’ from the xml and it also executed the test for Sedan Car, as we have mentioned the ‘Car’ as well while declaring the group of Sedan Car.</p>
+
+<p>Clubbing of groups is also possible, take a look at the below xml:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>&lt;suite name="Suite"&gt;
+</span><span class='line'>   &lt;test name="Practice Grouping"&gt;
+</span><span class='line'>      &lt;groups&gt;
+</span><span class='line'>         &lt;define name="All"&gt;
+</span><span class='line'>           &lt;include name="Car"/&gt;
+</span><span class='line'>           &lt;include name="Scooter"/&gt;
+</span><span class='line'>       &lt;/define&gt;
+</span><span class='line'>      &lt;run&gt;
+</span><span class='line'>           &lt;include name="All"/&gt;
+</span><span class='line'>      &lt;/run&gt;
+</span><span class='line'>       &lt;/groups&gt;
+</span><span class='line'>   &lt;classes&gt;
+</span><span class='line'>        &lt;class name="automationFramework.Grouping" /&gt;
+</span><span class='line'>  &lt;/classes&gt;
+</span><span class='line'>   &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can see that we have created a new Group with the name ‘All’ and include other groups in it. Then simply called the newly created group for execution. The output will be like this:</p>
+
+<p><img src="/images/TestNG-Grouping-2.png"></p>
+
+<h3>Dependent Test</h3>
+
+<p>Sometimes, you may need to invoke methods in a Test case in a particular order or you want to share some data and state between methods. This kind of dependency is supported by TestNG as it supports the declaration of explicit dependencies between test methods.</p>
+
+<p>TestNG allows you to specify dependencies either with:</p>
+
+<p>Using attributes dependsOnMethods in @Test annotations OR</p>
+
+<p>Using attributes dependsOnGroups in @Test annotations.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Take a look over the below example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class Dependent {
+</span><span class='line'>  @Test (dependsOnMethods = { "OpenBrowser" })
+</span><span class='line'>  public void SignIn() {
+</span><span class='line'>    System.out.println("This will execute second (SignIn)");
+</span><span class='line'>  }
+</span><span class='line'>  @Test
+</span><span class='line'>  public void OpenBrowser() {
+</span><span class='line'>    System.out.println("This will execute first (Open Browser)");
+</span><span class='line'>  }
+</span><span class='line'>  @Test (dependsOnMethods = { "SignIn" })
+</span><span class='line'>  public void LogOut() {
+</span><span class='line'>    System.out.println("This will execute third (Log Out)");
+</span><span class='line'>  }
+</span><span class='line'>  </span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output will be like this:</p>
+
+<p><img src="/images/TestNG-Dependent1.png"></p>
+
+<h3>Take look for more information about : <a href="/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/">P6 : Prioritizing and Sequencing</a></h3>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/05/26/testng-framework-annotations/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

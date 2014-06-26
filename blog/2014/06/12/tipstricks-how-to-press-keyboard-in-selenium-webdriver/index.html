@@ -1,0 +1,613 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WebDriver : How to press Keyboard - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+    
+	<meta name="description" content="How to press Keyboard with Selenium Webdriver">
+	<meta name="keywords" content="Selenium,WebDriver, Keyboard ,java,Tips&Trick">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-51278981-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">WebDriver : How to Press Keyboard</h2>
+	<div class="entry-content"><p>In this article we are going to see the functions for keyboard&rsquo;s keypass key events.</p>
+
+<p>To find an element we use some function below , depend on your website.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.FindElement(By.XPath("String"));
+</span><span class='line'>driver.FindElement(By.id("String"));
+</span><span class='line'>driver.FindElement(By.className("String"));
+</span><span class='line'>driver.FindElement(By.cssSelector("String"));
+</span><span class='line'>driver.FindElement(By.linkText("String"));
+</span><span class='line'>driver.FindElement(By.TagName("String"));</span></code></pre></td></tr></table></div></figure>
+
+
+<p>if we add send keys as keyboard command, then we can use keyboard event with the element that we found. like</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowRight);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here, &ldquo;string&rdquo; is the Xpath location. And on the element that we have found, keyboard&rsquo;s Arrow left will be pressed.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Take a look in some key press on element:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+<span class='line-number'>176</span>
+<span class='line-number'>177</span>
+<span class='line-number'>178</span>
+<span class='line-number'>179</span>
+<span class='line-number'>180</span>
+<span class='line-number'>181</span>
+<span class='line-number'>182</span>
+<span class='line-number'>183</span>
+<span class='line-number'>184</span>
+<span class='line-number'>185</span>
+<span class='line-number'>186</span>
+<span class='line-number'>187</span>
+<span class='line-number'>188</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-For the number pad addition key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Add);
+</span><span class='line'>
+</span><span class='line'>-For  the Alt key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Alt);
+</span><span class='line'>
+</span><span class='line'>-For  the Left arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowDown);
+</span><span class='line'>
+</span><span class='line'>-For  the left arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowLeft);
+</span><span class='line'>
+</span><span class='line'>-For  the right arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowRight);
+</span><span class='line'>
+</span><span class='line'>-For  the up arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowUp);
+</span><span class='line'>
+</span><span class='line'>-For  the Backspace key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Backspace);
+</span><span class='line'>
+</span><span class='line'>-For  the Cancel keystroke.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Cancel);
+</span><span class='line'>
+</span><span class='line'>-For  the Clear keystroke.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Clear);
+</span><span class='line'>
+</span><span class='line'>-For  the function key COMMAND.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Command);
+</span><span class='line'>
+</span><span class='line'>-For  the Control key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Control);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad decimal separator key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Decimal);
+</span><span class='line'>
+</span><span class='line'>-For  the Delete key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Delete);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad division key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Divide);
+</span><span class='line'>
+</span><span class='line'>-For  the Left arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Down);
+</span><span class='line'>
+</span><span class='line'>-For  the End key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.End);
+</span><span class='line'>
+</span><span class='line'>-For  the Enter key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Enter);
+</span><span class='line'>
+</span><span class='line'>-For  the equal sign key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Equal);
+</span><span class='line'>
+</span><span class='line'>-For  the Escape key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Escape);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F1.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F1);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F10.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F10);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F11.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F11);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F12.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F12);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F2.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F2);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F3.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F3);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F4.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F4);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F5.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F5);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F6.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F6);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F7.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F7);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F8.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F8);
+</span><span class='line'>
+</span><span class='line'>-For  the function key F9.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F9);
+</span><span class='line'>
+</span><span class='line'>-For  the Help keystroke.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Help);
+</span><span class='line'>
+</span><span class='line'>-For  the Home key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Home);
+</span><span class='line'>
+</span><span class='line'>-For  the Insert key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Insert);
+</span><span class='line'>
+</span><span class='line'>-For  the left arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Left);
+</span><span class='line'>
+</span><span class='line'>-For  the Alt key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftAlt);
+</span><span class='line'>
+</span><span class='line'>-For  the Control key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftControl);
+</span><span class='line'>
+</span><span class='line'>-For  the Shift key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftShift);
+</span><span class='line'>
+</span><span class='line'>-For  the function key META.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Meta);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad multiplication key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Multiply);
+</span><span class='line'>
+</span><span class='line'>-For  the NUL keystroke.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Null);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 0 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad0);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 1 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad1);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 2 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad2);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 3 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad3);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 4 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad4);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 5 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad5);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 6 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad6);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 7 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad7);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 8 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad8);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad 9 key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad9);
+</span><span class='line'>
+</span><span class='line'>-For  the Page Down key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.PageDown);
+</span><span class='line'>
+</span><span class='line'>-For  the Page Up key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.PageUp);
+</span><span class='line'>
+</span><span class='line'>-For  the Pause key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Pause);
+</span><span class='line'>
+</span><span class='line'>-For  the Return key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Return);
+</span><span class='line'>
+</span><span class='line'>-For  the right arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Right);
+</span><span class='line'>
+</span><span class='line'>-For  the semi-colon key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Semicolon);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad thousands separator key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Separator);
+</span><span class='line'>
+</span><span class='line'>-For  the Shift key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Shift);
+</span><span class='line'>
+</span><span class='line'>-For  the Space bar key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Space);
+</span><span class='line'>
+</span><span class='line'>-For  the number pad subtraction key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Subtract);
+</span><span class='line'>
+</span><span class='line'>-For  the Tab key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Tab);
+</span><span class='line'>
+</span><span class='line'>-For  the up arrow key.
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Up);</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
