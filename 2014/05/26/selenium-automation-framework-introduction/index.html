@@ -1,0 +1,244 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Selenium Automation Framework P1 : Introduction - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+    
+	<meta name="description" content="Automation Selenium Framework : Introduction">
+	<meta name="keywords" content="Tutorial,Selenium,WebDriver,Framework , Java">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-51278981-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/blog/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/blog/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/blog/categories/tricks/">Tips&Tricks</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">Selenium Automation Framework P1 : Introduction</h2>
+	<div class="entry-content"><h2>Selenium Automation Framework</h2>
+
+<h3>Introduction</h3>
+
+<p>Mission critical software undergoes rigorous functional tests, especially supported by automated testing frameworks. Automating these frameworks and maintaining quality software releases are critical to business performance. Enterprises often face the dilemma of balancing costs and managing resources to ensure that automation frameworks cover all the business scenarios and the applications delivered are error – free.
+By implementing the appropriate automated testing framework, enterprises can significantly increase the speed and accuracy of the testing process, provide a higher return on investment (ROI) from software projects and systematically minimize risk.</p>
+
+<!--more-->
+
+
+<h3>Why Framework</h3>
+
+<p>A framework defines the organization’s way of doing things – a ‘Single Standard’. Following this standard would result in the project team achieving:</p>
+
+<h4>Script-less representation of Automated tests</h4>
+
+<p>The testing framework should offer point-and-click interface for accessing and interacting with the application components under test—as opposed to presenting line after line of scripting. Testers should be able to visualize each step of the business scenario, view and edit test cases intuitively. This will shorten the learning curve for testers and help QA teams meet deadlines.</p>
+
+<h4>Data Driven tests</h4>
+
+<p>A key benefit of automating functional testing is the ability to test large volumes of data on the system quickly. But you must be able to manipulate the data sets, perform calculations, and quickly create hundreds of test iterations and permutations with minimal effort. Test Automation Frameworks must have capability to integrate with spreadsheets and provide powerful calculation features.</p>
+
+<h4>Concise Reporting</h4>
+
+<p>The ability to run high volume of tests is of little benefit if the results of the tests are not easy to understand. The framework must automatically generate reports of the test run and show the results in an easy-to-read format. The reports should provide specifics about where application failures occurred and what test data was used. Reports must present application screen shots for every step to highlight any discrepancies and provide detailed explanations of each checkpoint pass and failure. Reports must also be easily shared across the entire QA and development teams.</p>
+
+<h4>Standard Scripting and Team Consistency</h4>
+
+<p>Scripting standard should be maintained across the framework library creation, which includes business components, system communications, data check points, loggers, reporters etc. Project team should follow the defined scripting standards. Published standards across the project team pre-empt the effort involved in duplicate coding, which prevent individuals from following their own coding standards.</p>
+
+<h4>Encapsulation from Complexities</h4>
+
+<p>Test engineers are encapsulated from the complexities and critical aspects of the code. Engineers are exposed only to the implemented libraries and tests are executed by just invoking the libraries.</p>
+
+<h4>Implement and Maximize Re-Usability</h4>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Establish the developed libraries across the organization/project team/product team, i.e. publish the library and provide access rights. Utilities/components shared across the team. Usage of available libraries. Minimized effort for repeated regression cycle.</p>
+
+<h3>Class Diagram</h3>
+
+<p><img src="/images/diagram.png"></p>
+
+<p>What does this look like in code? How would we best accomplish this task? Well, that depends on what you are doing. For example, maybe you need to test 5 different types of projects, or maybe you need to test same page differently each time. Either way, as a coding standard, you should always design classes with a specific purpose. Anything that is shared should go into a base class for common functionality.</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/2014/05/26/selenium-automation-framework-introduction/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/2014/05/26/selenium-automation-framework-introduction/';
+        var disqus_url = 'http://www.tabaolan.com/2014/05/26/selenium-automation-framework-introduction/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

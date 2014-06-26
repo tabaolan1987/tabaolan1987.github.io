@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Selenium-Framework | Selenium Tutorial]]></title>
+  <link href="http://www.tabaolan.com/categories/selenium-framework/atom.xml" rel="self"/>
+  <link href="http://www.tabaolan.com/"/>
+  <updated>2014-06-26T10:58:21+07:00</updated>
+  <id>http://www.tabaolan.com/</id>
+  <author>
+    <name><![CDATA[Ta Bao Lan]]></name>
+    <email><![CDATA[tabaolan1987@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework P8 : Read Data From Excel File]]></title>
+    <link href="http://www.tabaolan.com/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file/"/>
+    <updated>2014-06-02T12:05:43+07:00</updated>
+    <id>http://www.tabaolan.com/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file</id>
+    <content type="html"><![CDATA[<h2>Reading data from the Excel</h2>
+
+<h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a></h3>
+
+<p>In some way , the client want us read data from excel file then past it to the automation test.In this tutorial , I will write step by step to read data from excel file then past it to the test.</p>
+
+<p>This is the scenario  : Login to facebook by get username and password from excel file.</p>
+
+<h3>How to do</h3>
+
+<!--more-->
+
+
+<p>1)Create new file excel &lsquo;test.xlsx&rsquo; like this  and paste to the folder &lsquo;Driver&rsquo; or you can create new folder.</p>
+
+<p><img src="/images/excel-3.png"></p>
+
+<p>2) Open your &lsquo;pom.xml&rsquo; to make sure that we added apache POI jar file(this jar file will allow us to open ,get data from excel) in the dependency tag.</p>
+
+<p><img src="/images/excel-1.png"></p>
+
+<p>3) Open your project go to package &lsquo;com.selenium.util&rsquo; and create new class &lsquo;ExcelUtil&rsquo;.</p>
+
+<p><img src="/images/excel-2.png"></p>
+
+<p>4) Open &lsquo;ExcelUtil.java&rsquo; and paste the code below to it :</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package com.selenium.util;</p>
+
+<p>import java.io.File;
+import java.io.FileInputStream;</p>
+
+<p>import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;</p>
+
+<p>public class ExcelUtil {</p>
+
+<pre><code>private static XSSFSheet ExcelWSheet;
+private static XSSFWorkbook ExcelWBook;
+private static XSSFCell Cell;
+
+
+//this method is to get the path of the file 'test.xlsx' in folder driver
+public static String PathExcelInProject(){
+    String path = DriverUtil.getKey(DriverUtil.PROP_PROJECT_BASE_DIR) + File.separator + DriverUtil.FOLDER_DRIVER 
+            + File.separator + "";
+    try {
+        File Excel = new File(path);
+        if(Excel.exists()){
+            return Excel.getAbsolutePath();
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null;
+    }
+    return null;    
+}
+
+// This method is to set the File path and to open the Excel file, Pass
+// Excel Path and Sheetname as Arguments to this method
+public static void setExcelFile(String Path, String SheetName)
+        throws Exception {
+    try {
+        // Open the Excel file
+        FileInputStream ExcelFile = new FileInputStream(Path);
+        // Access the required test data sheet
+        ExcelWBook = new XSSFWorkbook(ExcelFile);
+        ExcelWSheet = ExcelWBook.getSheet(SheetName);
+    } catch (Exception e) {
+        throw (e);
+    }
+}
+
+// This method is to read the test data from the Excel cell, in this we are
+// passing parameters as Row num and Col num
+public static String getCellData(int RowNum, int ColNum) throws Exception {
+    try {
+        Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
+        String CellData = Cell.getStringCellValue();
+        return CellData;
+    } catch (Exception e) {
+        return "";
+    }
+}
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>5) Create a new testNG class and with name &lsquo;loginFacebookByExcelData&rsquo; and paste the code below :</p>
+
+<p>```
+package com.selenium.test;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
+
+<p>import com.selenium.pageObject.LoginPage;
+import com.selenium.userAction.SignIn;
+import com.selenium.util.ExcelUtil;</p>
+
+<p>public class loginFacebookByExcelData {</p>
+
+<pre><code>private WebDriver driver;
+
+private static String username;
+
+private static String password;
+</code></pre>
+
+<p>  @Test
+  public void loginByExcel() {</p>
+
+<pre><code>  //Call loading page of login page facebook , take a look in post [Page Object Model] of my blog
+ LoginPage.loadPage(driver);
+ //Call action SignIn , take a look in post [Modular Driven Framework] of my blogs
+ SignIn.Execute(driver, username, password);
+</code></pre>
+
+<p>  }</p>
+
+<p>  @BeforeTest
+  public void beforeTest() throws Exception {</p>
+
+<pre><code>  driver = new FirefoxDriver();
+
+  //set file excel is my excel file in folder Driver , you can set the other path to your excel file
+  ExcelUtil.setExcelFile(ExcelUtil.PathExcelInProject(), "test");
+  //get the data from file excel
+  username = ExcelUtil.getCellData(2, 1);
+  password = ExcelUtil.getCellData(2, 2);
+</code></pre>
+
+<p>  }</p>
+
+<p>  @AfterTest
+  public void afterTest() {</p>
+
+<pre><code>  driver.quit();
+</code></pre>
+
+<p>  }</p>
+
+<p>}</p>
+
+<p>```</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>6) Right click into class and chose &lsquo;Run as&rsquo; &ndash;> &lsquo;TestNg Test&rsquo;</p>
+
+<p><img src="/images/excel-5.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework P7 : Run on Multi Browser]]></title>
+    <link href="http://www.tabaolan.com/2014/05/29/selenium-automation-framework-run-on-multi-browser/"/>
+    <updated>2014-05-29T15:16:59+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/29/selenium-automation-framework-run-on-multi-browser</id>
+    <content type="html"><![CDATA[<h2>Multi Browser Test</h2>
+
+<h3>Required knowledge : <a href="/blog/2014/05/29/selenium-automation-framework-create-test-script/">Test Script</a>, <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="/blog/categories/testng-framework/">TestNG Framework</a></h3>
+
+<p>In many case of testing , we need enable our script running on cross browser to make sure that the front-end of website is stable with multi browser.In this tutorial , you will know step by step to run script in 3 browser basic is &lsquo;Chrome&rsquo; , &lsquo;IE&rsquo; and &lsquo;FireFox&rsquo; with this action :</p>
+
+<p>Login Facebook</p>
+
+<p>Post Status</p>
+
+<h4>How to do it&hellip;.</h4>
+
+<!--more-->
+
+
+<p>1) Download driver for IE: <a href="http://adf.ly/p8x8u"> 32 bit Windows</a> , <a href="http://adf.ly/p8xEK"> 64 bit Windows</a></p>
+
+<p>2) Download driver for <a href="http://adf.ly/p8xJd">Chrome</a></p>
+
+<p>3) Right click into project &ndash;> New &ndash;> folder &ndash;> name it as &lsquo;Driver&rsquo;</p>
+
+<p><img src="/images/mulb-1.png"></p>
+
+<p>4) Unzip and Copy 2 driver Chrome and IE to folder &lsquo;Driver&rsquo;.</p>
+
+<p><img src="/images/mulb-2.png"></p>
+
+<p>5) Double click on &lsquo;pom.xml&rsquo; paste the configuration below the tag &lsquo;dependencies&rsquo; to enable Maven automatic get the Directory of project when build project.</p>
+
+<p>```
+<reporting></p>
+
+<pre><code>    &lt;plugins&gt;
+        &lt;!-- &lt;plugin&gt; --&gt;
+        &lt;!-- &lt;groupId&gt;org.codehaus.sonar-plugins&lt;/groupId&gt; --&gt;
+        &lt;!-- &lt;artifactId&gt;maven-report&lt;/artifactId&gt; --&gt;
+        &lt;!-- &lt;version&gt;0.1&lt;/version&gt; --&gt;
+        &lt;!-- &lt;/plugin&gt; --&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-surefire-report-plugin&lt;/artifactId&gt;
+            &lt;version&gt;2.14.1&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;!-- &lt;showSuccess&gt;false&lt;/showSuccess&gt; --&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/reporting&gt;
+</code></pre>
+
+<p><build></p>
+
+<pre><code>    &lt;extensions&gt;
+        &lt;!-- start - for deploying using webdav --&gt;
+        &lt;extension&gt;
+            &lt;groupId&gt;org.apache.maven.wagon&lt;/groupId&gt;
+            &lt;artifactId&gt;wagon-webdav&lt;/artifactId&gt;
+            &lt;version&gt;1.0-beta-2&lt;/version&gt;
+        &lt;/extension&gt;
+        &lt;!-- end - for deploying using webdav --&gt;
+    &lt;/extensions&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;id&gt;init-res&lt;/id&gt;
+                    &lt;!-- use the copy resources instead of resources, which adds it to 
+                        the eclipse buildpath --&gt;
+                    &lt;phase&gt;initialize&lt;/phase&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;copy-resources&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;outputDirectory&gt;${project.basedir}/src/main/resources&lt;/outputDirectory&gt;
+                        &lt;resources&gt;
+                            &lt;resource&gt;
+                                &lt;directory&gt;${project.basedir}/src/template/resources&lt;/directory&gt;
+                                &lt;targetPath&gt;${project.basedir}/src/main/resources&lt;/targetPath&gt;
+                                &lt;filtering&gt;true&lt;/filtering&gt;
+                            &lt;/resource&gt;
+                        &lt;/resources&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+            &lt;version&gt;2.7.1&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;argLine&gt;-Xmx1024m -Xms1024m&lt;/argLine&gt;
+                &lt;suiteXmlFiles&gt;
+                    &lt;suiteXmlFile&gt;Test.xml&lt;/suiteXmlFile&gt;
+                &lt;/suiteXmlFiles&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.1&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;source&gt;1.5&lt;/source&gt;
+                &lt;target&gt;1.5&lt;/target&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+            &lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;2.1&lt;/version&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+
+<p>```</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>6) After that your &lsquo;pom.xml&rsquo; file will look like this :</p>
+
+<p>```
+&lt;project xmlns=&ldquo;<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a>&rdquo; xmlns:xsi=&ldquo;<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>&rdquo;</p>
+
+<pre><code>xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+&lt;groupId&gt;Selenium-Automation-Framework&lt;/groupId&gt;
+&lt;artifactId&gt;Selenium-Framework&lt;/artifactId&gt;
+&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-server&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-firefox-driver&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-chrome-driver&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-remote-driver&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+        &lt;artifactId&gt;selenium-ie-driver&lt;/artifactId&gt;
+        &lt;version&gt;2.41.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+        &lt;version&gt;4.11&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+        &lt;artifactId&gt;poi&lt;/artifactId&gt;
+        &lt;version&gt;3.10-FINAL&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.testng&lt;/groupId&gt;
+        &lt;artifactId&gt;testng&lt;/artifactId&gt;
+        &lt;version&gt;6.8.8&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+&lt;reporting&gt;
+    &lt;plugins&gt;
+        &lt;!-- &lt;plugin&gt; --&gt;
+        &lt;!-- &lt;groupId&gt;org.codehaus.sonar-plugins&lt;/groupId&gt; --&gt;
+        &lt;!-- &lt;artifactId&gt;maven-report&lt;/artifactId&gt; --&gt;
+        &lt;!-- &lt;version&gt;0.1&lt;/version&gt; --&gt;
+        &lt;!-- &lt;/plugin&gt; --&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-surefire-report-plugin&lt;/artifactId&gt;
+            &lt;version&gt;2.14.1&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;!-- &lt;showSuccess&gt;false&lt;/showSuccess&gt; --&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/reporting&gt;
+&lt;build&gt;
+    &lt;extensions&gt;
+        &lt;!-- start - for deploying using webdav --&gt;
+        &lt;extension&gt;
+            &lt;groupId&gt;org.apache.maven.wagon&lt;/groupId&gt;
+            &lt;artifactId&gt;wagon-webdav&lt;/artifactId&gt;
+            &lt;version&gt;1.0-beta-2&lt;/version&gt;
+        &lt;/extension&gt;
+        &lt;!-- end - for deploying using webdav --&gt;
+    &lt;/extensions&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;id&gt;init-res&lt;/id&gt;
+                    &lt;!-- use the copy resources instead of resources, which adds it to 
+                        the eclipse buildpath --&gt;
+                    &lt;phase&gt;initialize&lt;/phase&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;copy-resources&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;outputDirectory&gt;${project.basedir}/src/main/resources&lt;/outputDirectory&gt;
+                        &lt;resources&gt;
+                            &lt;resource&gt;
+                                &lt;directory&gt;${project.basedir}/src/template/resources&lt;/directory&gt;
+                                &lt;targetPath&gt;${project.basedir}/src/main/resources&lt;/targetPath&gt;
+                                &lt;filtering&gt;true&lt;/filtering&gt;
+                            &lt;/resource&gt;
+                        &lt;/resources&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+            &lt;version&gt;2.7.1&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;argLine&gt;-Xmx1024m -Xms1024m&lt;/argLine&gt;
+                &lt;suiteXmlFiles&gt;
+                    &lt;suiteXmlFile&gt;Test.xml&lt;/suiteXmlFile&gt;
+                &lt;/suiteXmlFiles&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.1&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;source&gt;1.5&lt;/source&gt;
+                &lt;target&gt;1.5&lt;/target&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+            &lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;2.1&lt;/version&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+
+<p></project>
+```</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>7) Right click in folder &lsquo;src&rsquo; &ndash;> New &ndash;> Folder &ndash;> name it as &lsquo;template&rsquo;</p>
+
+<p><img src="/images/mulb-3.png"></p>
+
+<p>8) Right click in folder &lsquo;template&rsquo; &ndash;> New &ndash;> Folder &ndash;> name it as &lsquo;resources&rsquo;</p>
+
+<p><img src="/images/mulb-4.png"></p>
+
+<p>9) Right click in folder &lsquo;resources&rsquo; &ndash;> New &ndash;> File &ndash;> name it as &lsquo;system.properties&rsquo;</p>
+
+<p><img src="/images/mulb-5.png"></p>
+
+<p>10) Open file &lsquo;system.properties&rsquo; and copy the code below and paste to this file:</p>
+
+<p><code>
+project.basedir=${project.basedir}
+project.build.directory=${project.build.directory}
+</code></p>
+
+<p>11) Right click in your project &ndash;> Run as &ndash;> Maven generate-resources.</p>
+
+<p><img src="/images/mulb-6.png"></p>
+
+<p>12) Right click in &lsquo;src/main/java&rsquo; &ndash;> New &ndash;> Package &ndash;> name it as &lsquo;com.selenium.util&rsquo;</p>
+
+<p><img src="/images/mulb-7.png"></p>
+
+<p>13) Right click in package &lsquo;com.selenium.util&rsquo; &ndash;> New &ndash;> Class &ndash;> name it as &lsquo;DriverUtil&rsquo;</p>
+
+<p><img src="/images/mulb-8.png"></p>
+
+<p>14) Double click on &lsquo;DriverUtil.java&rsquo; and paste the below code to it.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package com.selenium.util;</p>
+
+<p>import java.io.File;
+import java.io.IOException;
+import java.util.Properties;</p>
+
+<p>public class DriverUtil {</p>
+
+<pre><code>public static final String PROP_PROJECT_BASE_DIR = "project.basedir";
+public static final String FOLDER_DRIVER = "Driver";
+public static final String DEFAULT_PROPERTIES = "system.properties";
+private static Properties prod;
+
+/**
+ * @return the path of ie driver file.
+ */
+public static String getIeDriver(){
+    String path = getKey(PROP_PROJECT_BASE_DIR) + File.separator + FOLDER_DRIVER 
+            + File.separator + "IEDriverServer.exe";
+    try {
+        File driverIe = new File(path);
+        if(driverIe.exists()){
+            return driverIe.getAbsolutePath();
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null;
+    }
+    return null;    
+}
+
+/**
+ * @return the path of chrome driver file
+ */
+public static String getChromeDriver(){
+    String path = getKey(PROP_PROJECT_BASE_DIR) + File.separator + FOLDER_DRIVER 
+            + File.separator + "chromedriver.exe";
+    try {
+        File driverChrome = new File(path);
+        if(driverChrome.exists()){
+            return driverChrome.getAbsolutePath();
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null;
+    }
+    return null;    
+}
+
+/**
+ * @return load the file system.properties
+ */
+public static Properties getProperties() {
+    if (prod == null) {
+        prod = new Properties();
+        try {
+            prod.load(DriverUtil.class.getClassLoader().getResourceAsStream(DEFAULT_PROPERTIES));
+        } catch (IOException e) {               
+            //
+        }
+    }
+    return prod;
+}
+
+/**
+ * @param key
+ * @return get value of key
+ */
+public static String getKey(String key) {
+    Object obj = getProperties().get(key);
+    String value = "";
+    if (obj != null) 
+        value = obj.toString();
+    return value;
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>15) Double click on &lsquo;autoTestFacebook.java&rsquo; and paste the code below to it.</p>
+
+<p>```
+package com.selenium.test;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
+
+<p>import com.selenium.pageObject.LoginPage;
+import com.selenium.userAction.PostStatus;
+import com.selenium.userAction.SignIn;
+import com.selenium.util.DriverUtil;</p>
+
+<p>public class autoTestFacebook {</p>
+
+<pre><code>/**
+ * Create WebDriver as static variable
+ */
+private static WebDriver driver;
+private static String username_login;
+private static String password_login;
+private static String status_facebook;
+</code></pre>
+
+<p>  /<em>*
+ * Setup some variable to run your script test, load from the file TestNg.xml
+ * Your parameters in annotation Parameters will match with define in TestNG.xml
+ </em>/
+@Parameters({&ldquo;browser&rdquo;,&ldquo;status&rdquo;,&ldquo;username&rdquo;,&ldquo;password&rdquo;})
+@BeforeTest
+  public void beforeTest(String browser, String status, String username, String password) {</p>
+
+<pre><code> if(browser.equalsIgnoreCase("firefox")) {
+      driver = new FirefoxDriver();
+  }else if (browser.equalsIgnoreCase("ie")) { 
+      // Here I am setting up the path for my IEDriver
+      System.setProperty("webdriver.ie.driver", DriverUtil.getIeDriver());
+      driver = new InternetExplorerDriver();
+  }else if (browser.equalsIgnoreCase("chrome")){
+      System.setProperty("webdriver.chrome.driver", DriverUtil.getChromeDriver());
+      driver = new ChromeDriver();
+  } 
+ username_login = username;
+ status_facebook = status;
+ password_login = password;
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * your test script call action class here
+ </em>/
+@Test
+  public void f() {</p>
+
+<pre><code>  LoginPage.loadPage(driver);
+  SignIn.Execute(driver, username_login, password_login);
+  PostStatus.Execute(driver, status_facebook);
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * after run your script test , use this code to close your browser
+ </em>/
+@AfterTest
+  public void afterTest() {</p>
+
+<pre><code>  driver.quit();
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>16) Right Click in Project &ndash;> New &ndash;> File &ndash;> name it as &lsquo;TestNg.xml&rsquo;</p>
+
+<p><img src="/images/mulb-9.png"></p>
+
+<p>17) Copy code below and paste to &lsquo;TestNg.xml&rsquo;. Remember to change the username and password in tag parameter. You can change the value of parallel to test &ndash;> it will run 3 browser in the same time.</p>
+
+<p>```
+&lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?></p>
+
+<p>&lt;!DOCTYPE suite SYSTEM &ldquo;<a href="http://testng.org/testng-1.0.dtd">http://testng.org/testng-1.0.dtd</a>&rdquo;></p>
+
+<p><suite name="Suite" parallel="none"></p>
+
+<p> <test name="FirefoxTest"></p>
+
+<pre><code> &lt;parameter name="browser" value="firefox" /&gt;
+ &lt;parameter name="status" value="firefox" /&gt;
+ &lt;parameter name="username" value="yourusername" /&gt;
+ &lt;parameter name="password" value="yourpassword" /&gt;
+ &lt;classes&gt;
+ &lt;class name="com.selenium.test.autoTestFacebook" /&gt;
+ &lt;/classes&gt;
+</code></pre>
+
+<p> </test></p>
+
+<p> <test name="IETest">
+ <parameter name="username" value="yourusername" />
+ <parameter name="password" value="yourpassword" />
+ <parameter name="browser" value="ie" />
+ <parameter name="status" value="ie" />
+ <classes>
+ <class name="com.selenium.test.autoTestFacebook" />
+ </classes>
+ </test></p>
+
+<p><test name="ChromeTest">
+  <parameter name="username" value="yourusername" />
+ <parameter name="password" value="yourpassword" />
+ <parameter name="browser" value="chrome" />
+  <parameter name="status" value="chrome" />
+ <classes>
+ <class name="com.selenium.test.autoTestFacebook" />
+ </classes>
+ </test>
+</suite>
+```
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>17) Right click in file &lsquo;TestNG.xml&rsquo; &ndash;> Run as &ndash;> TestNG Suite and wait for the process running.</p>
+
+<p><img src="/images/mulb-10.png"></p>
+
+<p>18) Open folder &lsquo;Test-Output&rsquo; &ndash;> Open folder &lsquo;Suite&rsquo; &ndash; > You will see 3 file html &ndash;> open to see the report of each browser.</p>
+
+<p><img src="/images/mulb-11.png"></p>
+
+<h3>Note : In this tutorial we have many knowledge so I recommend you to read the comment of code to know what it do.</h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework P6 : Create Test Script]]></title>
+    <link href="http://www.tabaolan.com/2014/05/29/selenium-automation-framework-create-test-script/"/>
+    <updated>2014-05-29T14:48:11+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/29/selenium-automation-framework-create-test-script</id>
+    <content type="html"><![CDATA[<h2>Create Test Script using TestNG</h2>
+
+<h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="/blog/categories/testng-framework/">TestNG Framework</a></h3>
+
+<p>TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use. In simple words TestNG is a tool that help us to organize the tests and help us to produce the test reports. TestNG framework can be used for automation testing with Selenium (web application automation testing tool).</p>
+
+<p>TestNG Advantages</p>
+
+<ul>
+<li><p>Multiple built in Annotations which are easier to use and understand</p></li>
+<li><p>Test method can be dependent to other method</p></li>
+<li><p>Test cases can be Grouped and can be execute separately by groups</p></li>
+<li><p>Parallel testing is possible</p></li>
+<li><p>TestNG has built in HTML report and XML report generation facility. It has also built in  logging facility</p></li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>How to do it&hellip;</h4>
+
+<p>1) Right Click in &lsquo;src/test/java&rsquo; &ndash;> New &ndash;> Package &ndash;> name it as &lsquo;com.selenium.test&rsquo;</p>
+
+<p><img src="/images/testng-1.png"></p>
+
+<p><img src="/images/testng-2.png"></p>
+
+<p>2) Right Click in package &lsquo;com.selenium.test&rsquo; &ndash;> TestNG &ndash;> Create TestNG Class.</p>
+
+<p><img src="/images/testng-3.png"></p>
+
+<p>3) Name your class as &lsquo;autoTestFacebook&rsquo; and tick on &lsquo;BeforeTest&rsquo; and &lsquo;AfterTest&rsquo; option.</p>
+
+<p><img src="/images/testng-4.png"></p>
+
+<p>4) Double click in &lsquo;autoTestFacebook&rsquo; to open it. Copy and paste the code below to this.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package com.selenium.test;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
+
+<p>import com.selenium.pageObject.LoginPage;
+import com.selenium.userAction.PostStatus;
+import com.selenium.userAction.SignIn;</p>
+
+<p>public class autoTestFacebook {</p>
+
+<pre><code>/**
+ * Create WebDriver as static variable
+ */
+private static WebDriver driver;
+</code></pre>
+
+<p>  /<em>*
+ * Setup some variable to run your script test
+ </em>/
+@BeforeTest
+  public void beforeTest() {</p>
+
+<pre><code>  driver = new FirefoxDriver();
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * your test script call action class here
+ </em>/
+@Test
+  public void f() {</p>
+
+<pre><code>  LoginPage.loadPage(driver);
+  SignIn.Execute(driver, "gaumun", "63hamlong");
+  PostStatus.Execute(driver, "this is my status posted by my automation test");
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * after run your script test , use this code to close your browser
+ </em>/
+@AfterTest
+  public void afterTest() {</p>
+
+<pre><code>  driver.quit();
+</code></pre>
+
+<p>  }
+}
+```
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>5) Right click on your class &ndash;> Run As &ndash;> TestNG Test.</p>
+
+<p><img src="/images/testng-5.png"></p>
+
+<p>6) Wait for TestNG running and check the result of test in folder &lsquo;test-output&rsquo;</p>
+
+<p><img src="/images/testng-6.png"></p>
+
+<h3>After this tutorial you are already have a project base on Selenium Framework. Take a look what you have done , you will see maintain this project is not hard. Your test script is very easy to know base on actually action of user.</h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework P5 : Modular Driven Framework]]></title>
+    <link href="http://www.tabaolan.com/2014/05/27/selenium-automation-framework-modular-driven-framework/"/>
+    <updated>2014-05-27T10:11:21+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/27/selenium-automation-framework-modular-driven-framework</id>
+    <content type="html"><![CDATA[<h2>Modular Driven Framework</h2>
+
+<h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a></h3>
+
+<p>In most of the web application we have few set of actions which are always executed in the series of actions. Rather than writing those actions again and again in our test, we can club those actions in to a method and then calling that method in our test script. Modularity avoids duplicacy of code. In future if there is any change in the series of action, all you have to do is to make changes in your main modular method script. No test case will be impacted with the change.</p>
+
+<!--more-->
+
+
+<h3>How to do it..</h3>
+
+<p>Look for repeated functionality in your application for example the &lsquo;login&rsquo; functionality. We can simple wrap this functionality in a method and we can give it a sensible name.</p>
+
+<p>1) Create a &lsquo;New Package&rsquo; file and name it as &lsquo;userAction&rsquo;, by right click on the Project and select New > Package. We will be creating different packages for Page Objects, Utilities, Test Data, Test Cases and Modular actions. It is always recommended to use this structure, as it is easy to understand, easy to use and easy to maintain.</p>
+
+<p><img src="/images/pom-1.png"></p>
+
+<p><img src="/images/user-action-1.png"></p>
+
+<p><img src="/images/user-action-2.png"></p>
+
+<p>2) Create &lsquo;New Class&rsquo; and name it as SignIn by right click on package &lsquo;userAction&rsquo; and select New > Class. It will add new class &lsquo;SignIn&rsquo; under package &lsquo;userAction&rsquo;.</p>
+
+<p><img src="/images/user-action-3.png"></p>
+
+<p><img src="/images/user-action-4.png"></p>
+
+<p>3) Now create a Public Static Void Method and name it as Execute  and club the following steps in to it:</p>
+
+<p>Load Page login Facebook</p>
+
+<p>Enter Username</p>
+
+<p>Enter Password</p>
+
+<p>Click on the Submit button</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package com.selenium.userAction;</p>
+
+<p>import org.openqa.selenium.WebDriver;</p>
+
+<p>import com.selenium.pageObject.LoginPage;</p>
+
+<p>public class SignIn {</p>
+
+<pre><code>/**
+ * @param driver
+ * @param username
+ * @param password
+ * execute login to facebook
+ */
+public static void Execute(WebDriver driver , String username, String password) {
+    LoginPage.loadPage(driver);
+    LoginPage.txtbx_UserName(driver).sendKeys(username);
+    LoginPage.txtbx_Password(driver).sendKeys(password);
+    LoginPage.btn_LogIn(driver).click();
+}
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>4) Create &lsquo;New Class&rsquo; and name it as PostStatus by right click on package &lsquo;userAction&rsquo; and select New > Class. It will add new class &lsquo;PostStatus&rsquo; under package &lsquo;userAction&rsquo;.</p>
+
+<p><img src="/images/user-action-3.png"></p>
+
+<p><img src="/images/user-action-5.png"></p>
+
+<p>5) Now create a Public Static Void Method and name it as Execute  and club the following steps in to it:</p>
+
+<p>Enter Status</p>
+
+<p>Click on button Post.</p>
+
+<p>```
+package com.selenium.userAction;</p>
+
+<p>import org.openqa.selenium.WebDriver;</p>
+
+<p>import com.selenium.pageObject.HomePage;</p>
+
+<p>public class PostStatus {</p>
+
+<pre><code>/**
+ * @param driver
+ * @param status
+ * execute post status in facebook
+ */
+public static void Execute(WebDriver driver, String status){
+    HomePage.txt_status(driver).sendKeys(status);
+    HomePage.butt_post(driver).click();
+}
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<h3>We are complete to create the actions next we will follow to create the first test with <a href="/blog/2014/05/29/selenium-automation-framework-create-test-script/">TestNG</a></h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Automation Framework P4 : Page Object Model]]></title>
+    <link href="http://www.tabaolan.com/2014/05/26/selenium-automation-framework-page-object-model/"/>
+    <updated>2014-05-26T16:03:08+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/26/selenium-automation-framework-page-object-model</id>
+    <content type="html"><![CDATA[<h2>Page Object Model | POM</h2>
+
+<h3>Required knowledge : <a href="/blog/categories/webdriver/">WebDriver</a>,<a href="/blog/categories/xpath/">Xpath</a></h3>
+
+<p>Creating Selenium test cases can result in an unmaintainable project. One of the reasons is that too many duplicated code is used. Duplicated code could be caused by duplicated functionality and this will result in duplicated usage of locators. The disadvantage of duplicated code is that the project is less maintainable. If some locator will change, you have to walk through the whole test code to adjust locators where necessary. By using the page object model we can make non-brittle test code and reduce or eliminate duplicate test code. Beside of that it improves the readability and allows us to create interactive documentation. Last but not least, we can create tests with less keystroke. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.</p>
+
+<!--more-->
+
+
+<p>Note : We will try to create Login Page and Homepage follow website <a href="https://facebook.com">Facebook</a></p>
+
+<h3>How to do it</h3>
+
+<ol>
+<li>Create a ‘New Package’ file and name it as ‘pageObjects’, by right click on the Project and select New > Package. We will be creating different packages for Page Objects, Utilities, Test Data, Test Cases and Modular actions. It is always recommended to use this structure, as it is easy to understand, easy to use and easy to maintain.</li>
+</ol>
+
+
+<p><img src="/images/pom-1.png"></p>
+
+<p><img src="/images/pom-2.png"></p>
+
+<p><img src="/images/pom-3.png"></p>
+
+<ol>
+<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is Login Page.</li>
+</ol>
+
+
+<p><img src="/images/pom-4.png"></p>
+
+<p><img src="/images/pom-5.png"></p>
+
+<ol>
+<li>Open URL : <a href="Https://facebook.com">Https://facebook.com</a> . Wait for page loading then we will use firebug to find the location elements of form login Facebook.</li>
+</ol>
+
+
+<p><img src="/images/pom-6.png"></p>
+
+<p>3.Now create a Static Method for each Element (Object) in the Login Page. Each method will have an Argument (driver) and a Return value (element).</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package com.selenium.pageObject;</p>
+
+<p>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;</p>
+
+<p>import com.gargoylesoftware.htmlunit.ElementNotFoundException;</p>
+
+<p>public class LoginPage {</p>
+
+<pre><code> /**
+ * WebElement element 
+ */
+private static WebElement element = null;
+
+/**
+ * @param driver
+ * @return let driver load the login page of facebook
+ * @throws InterruptedException
+ */
+public static WebDriver loadPage(WebDriver driver) {
+    driver.get("https://facebook.com");
+    return driver;
+}
+
+
+/**
+ * @param driver
+ * 
+ * @return the textbox username of login form facebook
+ */
+public static WebElement txtbx_UserName(WebDriver driver) throws ElementNotFoundException{
+    element = driver.findElement(By.id("email"));
+    return element;
+}
+
+/**
+ * @param driver
+ * @return the textbox passwork of login form facebook
+ */
+public static WebElement txtbx_Password(WebDriver driver) throws ElementNotFoundException{
+    element = driver.findElement(By.id("pass"));
+    return element;
+}
+
+/**
+ * @param driver
+ * @return the button login of login form facebook
+ */
+public static WebElement btn_LogIn(WebDriver driver) throws ElementNotFoundException{
+    element = driver.findElement(By.id("loginbutton"));
+    return element;
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<ol>
+<li>Create a ‘New Class’ file and refer the name to the actual page from the test object, by right click on the above created Package and select New > Class. In our case it is Home Page.</li>
+</ol>
+
+
+<p><img src="/images/pom-1.png"></p>
+
+<p><img src="/images/pom-7.png"></p>
+
+<ol>
+<li>Open URL : <a href="Https://facebook.com">Https://facebook.com</a> &ndash;> login in &ndash; use xpath to find element location (textarena to post status and button for post).</li>
+</ol>
+
+
+<p><img src="/images/pom-8.png"></p>
+
+<p>8.Now create a Static Method for each Element (Object) in the Home Page. Each method will have an Argument (driver) and a Return value (element).</p>
+
+<p>```
+package com.selenium.pageObject;</p>
+
+<p>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;</p>
+
+<p>public class HomePage {</p>
+
+<pre><code>/**
+ * WebElement
+ */
+private static WebElement element;
+
+/**
+ * @param driver
+ * @return textbox update status element
+ */
+public static WebElement txt_status(WebDriver driver) {
+    element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[2]/div/div/div[2]/div/div/textarea"));
+    return element;
+}
+
+/**
+ * @param driver
+ * @return button to post status
+ */
+public static WebElement butt_post(WebDriver driver){
+    element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[4]/div/ul/li[3]/button"));
+    return element;
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<h3>We are finish to create a Login Page , Home Page follow Page Object Model . Now you will need to create an Action in Java base on User Define, please <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">click here</a></h3>
+]]></content>
+  </entry>
+  
+</feed>

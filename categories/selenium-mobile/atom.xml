@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Selenium-mobile | Selenium Tutorial]]></title>
+  <link href="http://www.tabaolan.com/categories/selenium-mobile/atom.xml" rel="self"/>
+  <link href="http://www.tabaolan.com/"/>
+  <updated>2014-06-26T10:58:21+07:00</updated>
+  <id>http://www.tabaolan.com/</id>
+  <author>
+    <name><![CDATA[Ta Bao Lan]]></name>
+    <email><![CDATA[tabaolan1987@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Mobile : Run test scripts in real IPhone]]></title>
+    <link href="http://www.tabaolan.com/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/"/>
+    <updated>2014-05-30T15:22:09+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>We want to execute our testscripts on a iphone device. The iphone driver allows us to execute the WebDriver tests on a real iphone device.</p>
+
+<!--more-->
+
+
+<h3>Configuration</h3>
+
+<p>We need to install Xcode which is available for the Mac operating systems. We also need a provisoning profile for running the script on a real device.</p>
+
+<p>1) We need to create a provisioning profile, so go to this <a href="http://adf.ly/p8wJ3">website</a> and create a profile.</p>
+
+<p>2) We need to download Xcode from the following location: <a href="http://adf.ly/p8wOu">this</a></p>
+
+<p>3) The iPhone WebDriver application is not available from the App Store, therefore we need to check-out the code and build it manually. We can do the check-out by entering the following terminal command:</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p><code>
+svn checkout http://selenium.googlecode.com/svn/trunk/
+</code></p>
+
+<h3>Solution</h3>
+
+<p>1) Open the project selenium-read-only/iphone/iWebDriver.xcodeproj in Xcode.</p>
+
+<p>2) Double-click on the project and set the build configuration to the latest version of the iPhone Simulator, by using the drop-down box in the top left corner.</p>
+
+<p>3) Configure and install the iPhone provisioning profile.</p>
+
+<p>4) Open Info.plist and edit the Bundle Identifier to com.NAME.$ {PRODUCT_NAME:identifier} where NAME is the name you registered your provisioning profile to be an authority on.</p>
+
+<p>5) Make sure your device is connected to your computer. Your device must also be routable from your computer. The easiest way to do this is to configure a wifi network and connect your device to it.</p>
+
+<p>6) Click on Run (play button). After compiling, the iphone simulator should appear and the iWebDriver app will be installed in it.</p>
+
+<p>7) Now we can use the IPhoneDriver in our tests. You will need to take a look in <a href="/blog/categories/testng-framework/">TestNG Framework</a>. Create new TestNG class and paste the code below :</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package com.selenium.test;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.iphone.IPhoneDriver;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
+
+<p>import com.selenium.pageObject.LoginPage;
+import com.selenium.userAction.PostStatus;
+import com.selenium.userAction.SignIn;</p>
+
+<p>public class autoTestLoadingFacebook {</p>
+
+<pre><code>/**
+ * Create WebDriver as static variable
+ */
+private static WebDriver driver;
+</code></pre>
+
+<p>  /<em>*
+ * Setup some variable to run your script test
+ </em>/
+@BeforeTest
+  public void beforeTest() {</p>
+
+<pre><code>  driver =  new IPhoneDriver();
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * your test script
+ </em>/
+@Test
+  public void f() {</p>
+
+<pre><code>driver.get("https://facebook.com");
+//create more test script here
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * after run your script test , use this code to close your browser
+ </em>/
+@AfterTest
+  public void afterTest() {</p>
+
+<pre><code>  driver.quit();
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>8) Run your script.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Mobile : Run test scripts on a Xcode iPhone simulator]]></title>
+    <link href="http://www.tabaolan.com/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/"/>
+    <updated>2014-05-30T15:07:42+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>We want to run our test in a iPhone simulator. The iphone simulator comes with Xcode which is available for the Mac operating systems. This recipe will show us how we can run our WebDriver tests in a iphone simulator.</p>
+
+<!--more-->
+
+
+<p>We need to download Xcode from the following location: <a href="http://adf.ly/p8wOu">here</a></p>
+
+<p>The iPhone WebDriver application is not available from the App Store, therefore we need to check-out the code and build it manually. We can do the check-out by entering the following terminal command</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```</p>
+
+<p>svn checkout <a href="http://selenium.googlecode.com/svn/trunk/">http://selenium.googlecode.com/svn/trunk/</a></p>
+
+<p>```</p>
+
+<h2>Solution</h2>
+
+<p>1) Open the project selenium-read-only/iphone/iWebDriver.xcodeproj in Xcode.</p>
+
+<p>2) Double-click on the project and set the build configuration to the latest version of the iPhone Simulator, by using the drop-down box in the top left corner.</p>
+
+<p>3) Click on Run (play button). After compiling, the iphone simulator should appear and the iWebDriver app will be installed in it.</p>
+
+<p>4) Now we can use the IPhoneDriver in our tests. You will need to take a look in <a href="/blog/categories/testng-framework/">TestNG Framework</a>. Create new TestNG class and paste the code below :</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package com.selenium.test;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.iphone.IPhoneDriver;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
+
+<p>import com.selenium.pageObject.LoginPage;
+import com.selenium.userAction.PostStatus;
+import com.selenium.userAction.SignIn;</p>
+
+<p>public class autoTestLoadingFacebook {</p>
+
+<pre><code>/**
+ * Create WebDriver as static variable
+ */
+private static WebDriver driver;
+</code></pre>
+
+<p>  /<em>*
+ * Setup some variable to run your script test
+ </em>/
+@BeforeTest
+  public void beforeTest() {</p>
+
+<pre><code>  driver =  new IPhoneDriver();
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * your test script
+ </em>/
+@Test
+  public void f() {</p>
+
+<pre><code>driver.get("https://facebook.com");
+//create more test script here
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * after run your script test , use this code to close your browser
+ </em>/
+@AfterTest
+  public void afterTest() {</p>
+
+<pre><code>  driver.quit();
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>5) Run your test.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Mobile : Run tests on a real Android device]]></title>
+    <link href="http://www.tabaolan.com/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/"/>
+    <updated>2014-05-30T15:02:24+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>We want to run our testscripts on a real Android device. The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device.</p>
+
+<!--more-->
+
+
+<p>Before we can register our simulator we have to download the android SDK (Software Development Kit) from the following location: <a href="http://adf.ly/p8w0X">SDK</a></p>
+
+<h2>Solution</h2>
+
+<p>We can divide this section into three parts: setup the device, install the WebDriver APK and finally run the test.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Setup the device</h3>
+
+<p>Connect the android device with the computer using a USB cable.</p>
+
+<h2>Install the WebDriver APK</h2>
+
+<p>1) We need to retrieve the serial id with the following command:</p>
+
+<p><code>
+$cd /android_sdk/platform-tools/
+adb devices
+</code></p>
+
+<p>2) Download the Android server from <a href="http://adf.ly/p8w7c">Selenium website</a> and save it in the platform-tools directory. To install the application enter:</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p><code>
+$./adb -s &lt;serialId&gt; -e install -r android-server.apk
+</code></p>
+
+<p>3) Start the Android WebDriver application,by running this command:</p>
+
+<p><code>
+$./adb -s &lt;serialId&gt; shell am start -a android.intent.action.MAIN -n org.openqa.selenium.android.app/.MainActivity
+</code></p>
+
+<p>4) Now we need to setup the port forwarding in order to forward traffic from the host machine to the emulator. Enter the following in the terminal :</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p><code>
+$./adb -s &lt;serialId&gt; forward tcp:8080 tcp:8080
+</code></p>
+
+<h3>Run the test</h3>
+
+<p>You will need to take a look in <a href="/blog/categories/testng-framework/">TestNG Framework</a></p>
+
+<p>Now we have our environment setup we can run our tests.Create new TestNG and paste the code below :</p>
+
+<p>```
+package com.selenium.test;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.android.AndroidDriver;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
+
+<p>import com.selenium.pageObject.LoginPage;
+import com.selenium.userAction.PostStatus;
+import com.selenium.userAction.SignIn;</p>
+
+<p>public class autoTestLoadingFacebook {</p>
+
+<pre><code>/**
+ * Create WebDriver as static variable
+ */
+private static WebDriver driver;
+</code></pre>
+
+<p>  /<em>*
+ * Setup some variable to run your script test
+ </em>/
+@BeforeTest
+  public void beforeTest() {</p>
+
+<pre><code>  driver =  new AndroidDriver();
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * your test script
+ </em>/
+@Test
+  public void f() {</p>
+
+<pre><code>driver.get("https://facebook.com");
+//create more test script here
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * after run your script test , use this code to close your browser
+ </em>/
+@AfterTest
+  public void afterTest() {</p>
+
+<pre><code>  driver.quit();
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>5) Run your test.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium Mobile : Running tests on an Android simulator]]></title>
+    <link href="http://www.tabaolan.com/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/"/>
+    <updated>2014-05-30T14:46:17+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device. This recipe will walk us through the steps we have to do to run our tests in a simulator.</p>
+
+<!--more-->
+
+
+<p>Before we can register our simulator we have to download the android SDK (Software Development Kit) from the following location: <a href="http://adf.ly/p8w0X">SDK</a></p>
+
+<h2>Solution</h2>
+
+<p>We can divide this section into three parts: setup the emulator, install the WebDriver APK and finally run the test.</p>
+
+<h3>Setup the emulator</h3>
+
+<p>1) Navigate to the tools directory and create an Android Virtual Device. -n: specifies the name of the AVD -t: specifies the platform target -c: specifies the SD card storage space.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```</p>
+
+<p>$cd ~/android_sdk/tools/
+$./android create avd -n my_android -t 12 -c 100M</p>
+
+<p>```</p>
+
+<p>2) We can list the targets with the following command to check if the creation succeeded:</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```</p>
+
+<p>./android list targets</p>
+
+<p>```</p>
+
+<p>3)Finally we can start the emulator with the following command:</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p><code>
+$./emulator -avd my_android &amp;
+</code></p>
+
+<h3>Install the WebDriver APK</h3>
+
+<p>1) We need to retrieve the serial id with the following command:</p>
+
+<p><code>
+$cd /android_sdk/platform-tools/
+adb devices
+</code></p>
+
+<p>2) Download the Android server from <a href="http://adf.ly/p8w7c">Selenium website</a> and save it in the platform-tools directory. To install the application enter:</p>
+
+<p><code>
+$./adb -s &lt;serialId&gt; -e install -r android-server.apk
+</code></p>
+
+<p>3) Start the Android WebDriver application,by running this command:</p>
+
+<p><code>
+$./adb -s &lt;serialId&gt; shell am start -a android.intent.action.MAIN -n org.openqa.selenium.android.app/.MainActivity
+</code></p>
+
+<p>4) Now we need to setup the port forwarding in order to forward traffic from the host machine to the emulator. Enter the following in the terminal :</p>
+
+<p><code>
+$./adb -s &lt;serialId&gt; forward tcp:8080 tcp:8080
+</code></p>
+
+<h3>Run the test</h3>
+
+<p>You will need to take a look in <a href="/blog/categories/testng-framework/">TestNG Framework</a></p>
+
+<p>Now we have our environment setup we can run our tests. Create new TestNG and paste the code below :</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package com.selenium.test;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.android.AndroidDriver;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;</p>
+
+<p>import com.selenium.pageObject.LoginPage;
+import com.selenium.userAction.PostStatus;
+import com.selenium.userAction.SignIn;</p>
+
+<p>public class autoTestLoadingFacebook {</p>
+
+<pre><code>/**
+ * Create WebDriver as static variable
+ */
+private static WebDriver driver;
+</code></pre>
+
+<p>  /<em>*
+ * Setup some variable to run your script test
+ </em>/
+@BeforeTest
+  public void beforeTest() {</p>
+
+<pre><code>  driver =  new AndroidDriver();
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * your test script
+ </em>/
+@Test
+  public void f() {</p>
+
+<pre><code>driver.get("https://facebook.com");
+//create more test script here
+</code></pre>
+
+<p>  }</p>
+
+<p>  /<em>*
+ * after run your script test , use this code to close your browser
+ </em>/
+@AfterTest
+  public void afterTest() {</p>
+
+<pre><code>  driver.quit();
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>5) Run your test.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,347 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Webdriver XPath : Selenium Locators - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+    
+	<meta name="description" content="All about Selenium Locators in Selenium Webdriver">
+	<meta name="keywords" content="Tutorial,Selenium,Webdriver,Locators,XPATH,Browser,Java">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-51278981-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/blog/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/blog/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/blog/categories/tricks/">Tips&Tricks</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">Webdriver XPath : Selenium Locators</h2>
+	<div class="entry-content"><h2>Locators in Selenium</h2>
+
+<p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
+
+<p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
+
+<!--more-->
+
+
+<h3>Different types of Locators</h3>
+
+<p>There are 8 explicit locators: id, name, identifier, dom, xpath, link, css and ui that Selenium’s commands support. I will explain just a few most important locators to avoid over dosage and any confusion.</p>
+
+<h4>ID Locator</h4>
+
+<p>Ids are the most preferred way to locate elements on a page, as each id is supposed to be unique which makes ids a very faster and reliable way to locate elements.</p>
+
+<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised.</p>
+
+<p>HTML CODE :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;form name="loginForm"&gt;Login 
+</span><span class='line'> Username: &lt;input id="username" type="text" name="login" /&gt;
+</span><span class='line'> Password: &lt;input id="password" type="password" name="password" /&gt;
+</span><span class='line'> &lt;input type="submit" name="signin" value="SignIn" /&gt;&lt;/form&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>You can easily choose the element with the help of ID locator from the above example:</p>
+
+<p>id = “username”</p>
+
+<p>id = “password”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.id("username"));
+</span><span class='line'>
+</span><span class='line'>WebElement elementPassword = driver.findElement(By.id("password"));
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Even though this is a great locator, obviously it is not realistic for all objects on a page to have ids. In some cases developers make it having non-unique ids on a page or auto-generate the ids, in both cases it should be avoided.</p>
+
+<h4>Name Locator</h4>
+
+<p>This is also an efficient way to locate an element  with name attribute, after Ids give it your second preference but likewise Ids, name attributes don’t have to be unique in a page.</p>
+
+<p>With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a  NoSuchElementException will be raised.</p>
+
+<p>Example: Let’s take the above example:</p>
+
+<p>You can easily choose the element with the help of Name locator from the above example:</p>
+
+<p>name = “login”</p>
+
+<p>name = “password”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement elementUsername = driver.findElement(By.name("login"));
+</span><span class='line'> 
+</span><span class='line'>WebElement elementPassword = driver.findElement(By.name("password"));</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Identifier Locator</h4>
+
+<p>This selects the element with the specified @id attribute. If no match is found, then it tries to select the first element whose @name attribute is id.</p>
+
+<p>Example: Valid locator for above example is:
+identifier = “password”</p>
+
+<p>First it will try to find the locator with id = “password” if it exists, otherwise it would target name = “password”.</p>
+
+<h4>Link Locator</h4>
+
+<p>With this you can find elements of “a” tags(Link) with the link names. Use this when you know link text used within an anchor tag.</p>
+
+<p>Example: If an element is given like this:</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To click this hyperlink using the anchor tag’s text, you can use the link locator:
+link=”Name of the Link”</p>
+
+<p>Use the same in your Selenium test script as well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element=driver.findElement(By.linkText("Name of the Link"));</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>DOM Locator</h4>
+
+<p>The DOM strategy works by locating elements that matches the JavaScript expression referring to an element in the DOM of the page. DOM stands for Document Object Model. DOM is convention for representing objects in HTML documents.</p>
+
+<p>Example: To select the username from the above example you can use the following ways:</p>
+
+<p>document.forms[0].elements[0]</p>
+
+<p>document.forms[&lsquo;loginForm&rsquo;].elements[&lsquo;username&rsquo;]</p>
+
+<p>document.forms[&lsquo;loginForm&rsquo;].username</p>
+
+<p>document.getElementById(‘username’)</p>
+
+<h4>XPath Locator</h4>
+
+<p>While DOM is the recognized standard for navigation through an HTML element tree, XPath is the standard navigation tool for XML; and an HTML document is also an XML document (xHTML). XPath is used everywhere where there is XML.</p>
+
+<p>Example: To select the username from the above example you can use the following ways:</p>
+
+<p>xpath=//*[@id=&lsquo;username&rsquo;]</p>
+
+<p>xpath=//input[@id=&lsquo;username&rsquo;]</p>
+
+<p>xpath=//form[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
+
+<p>xpath=//*[@name=&lsquo;loginForm&rsquo;]/input[1]</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/2014/05/26/xpath-locators-in-selenium/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/2014/05/26/xpath-locators-in-selenium/';
+        var disqus_url = 'http://www.tabaolan.com/2014/05/26/xpath-locators-in-selenium/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

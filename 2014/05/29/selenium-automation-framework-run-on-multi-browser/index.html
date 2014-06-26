@@ -1,0 +1,1103 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Selenium Automation Framework P7 : Run on Multi Browser - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+    
+	<meta name="description" content="Automation Selenium Framework : Run on Multi Browser">
+	<meta name="keywords" content="Tutorial,Selenium,Webdriver,TestNG,Framework,Multi Browser,Testing ,Java">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-51278981-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/blog/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/blog/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/blog/categories/tricks/">Tips&Tricks</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">Selenium Automation Framework P7 : Run on Multi Browser</h2>
+	<div class="entry-content"><h2>Multi Browser Test</h2>
+
+<h3>Required knowledge : <a href="/blog/2014/05/29/selenium-automation-framework-create-test-script/">Test Script</a>, <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="/blog/categories/testng-framework/">TestNG Framework</a></h3>
+
+<p>In many case of testing , we need enable our script running on cross browser to make sure that the front-end of website is stable with multi browser.In this tutorial , you will know step by step to run script in 3 browser basic is &lsquo;Chrome&rsquo; , &lsquo;IE&rsquo; and &lsquo;FireFox&rsquo; with this action :</p>
+
+<p>Login Facebook</p>
+
+<p>Post Status</p>
+
+<h4>How to do it&hellip;.</h4>
+
+<!--more-->
+
+
+<p>1) Download driver for IE: <a href="http://adf.ly/p8x8u"> 32 bit Windows</a> , <a href="http://adf.ly/p8xEK"> 64 bit Windows</a></p>
+
+<p>2) Download driver for <a href="http://adf.ly/p8xJd">Chrome</a></p>
+
+<p>3) Right click into project &ndash;> New &ndash;> folder &ndash;> name it as &lsquo;Driver&rsquo;</p>
+
+<p><img src="/images/mulb-1.png"></p>
+
+<p>4) Unzip and Copy 2 driver Chrome and IE to folder &lsquo;Driver&rsquo;.</p>
+
+<p><img src="/images/mulb-2.png"></p>
+
+<p>5) Double click on &lsquo;pom.xml&rsquo; paste the configuration below the tag &lsquo;dependencies&rsquo; to enable Maven automatic get the Directory of project when build project.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;reporting&gt;
+</span><span class='line'>      &lt;plugins&gt;
+</span><span class='line'>          &lt;!-- &lt;plugin&gt; --&gt;
+</span><span class='line'>          &lt;!-- &lt;groupId&gt;org.codehaus.sonar-plugins&lt;/groupId&gt; --&gt;
+</span><span class='line'>          &lt;!-- &lt;artifactId&gt;maven-report&lt;/artifactId&gt; --&gt;
+</span><span class='line'>          &lt;!-- &lt;version&gt;0.1&lt;/version&gt; --&gt;
+</span><span class='line'>          &lt;!-- &lt;/plugin&gt; --&gt;
+</span><span class='line'>          &lt;plugin&gt;
+</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;maven-surefire-report-plugin&lt;/artifactId&gt;
+</span><span class='line'>              &lt;version&gt;2.14.1&lt;/version&gt;
+</span><span class='line'>              &lt;configuration&gt;
+</span><span class='line'>                  &lt;!-- &lt;showSuccess&gt;false&lt;/showSuccess&gt; --&gt;
+</span><span class='line'>              &lt;/configuration&gt;
+</span><span class='line'>          &lt;/plugin&gt;
+</span><span class='line'>      &lt;/plugins&gt;
+</span><span class='line'>  &lt;/reporting&gt;
+</span><span class='line'>&lt;build&gt;
+</span><span class='line'>      &lt;extensions&gt;
+</span><span class='line'>          &lt;!-- start - for deploying using webdav --&gt;
+</span><span class='line'>          &lt;extension&gt;
+</span><span class='line'>              &lt;groupId&gt;org.apache.maven.wagon&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;wagon-webdav&lt;/artifactId&gt;
+</span><span class='line'>              &lt;version&gt;1.0-beta-2&lt;/version&gt;
+</span><span class='line'>          &lt;/extension&gt;
+</span><span class='line'>          &lt;!-- end - for deploying using webdav --&gt;
+</span><span class='line'>      &lt;/extensions&gt;
+</span><span class='line'>      &lt;plugins&gt;
+</span><span class='line'>          &lt;plugin&gt;
+</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+</span><span class='line'>              &lt;executions&gt;
+</span><span class='line'>                  &lt;execution&gt;
+</span><span class='line'>                      &lt;id&gt;init-res&lt;/id&gt;
+</span><span class='line'>                      &lt;!-- use the copy resources instead of resources, which adds it to 
+</span><span class='line'>                          the eclipse buildpath --&gt;
+</span><span class='line'>                      &lt;phase&gt;initialize&lt;/phase&gt;
+</span><span class='line'>                      &lt;goals&gt;
+</span><span class='line'>                          &lt;goal&gt;copy-resources&lt;/goal&gt;
+</span><span class='line'>                      &lt;/goals&gt;
+</span><span class='line'>                      &lt;configuration&gt;
+</span><span class='line'>                          &lt;outputDirectory&gt;${project.basedir}/src/main/resources&lt;/outputDirectory&gt;
+</span><span class='line'>                          &lt;resources&gt;
+</span><span class='line'>                              &lt;resource&gt;
+</span><span class='line'>                                  &lt;directory&gt;${project.basedir}/src/template/resources&lt;/directory&gt;
+</span><span class='line'>                                  &lt;targetPath&gt;${project.basedir}/src/main/resources&lt;/targetPath&gt;
+</span><span class='line'>                                  &lt;filtering&gt;true&lt;/filtering&gt;
+</span><span class='line'>                              &lt;/resource&gt;
+</span><span class='line'>                          &lt;/resources&gt;
+</span><span class='line'>                      &lt;/configuration&gt;
+</span><span class='line'>                  &lt;/execution&gt;
+</span><span class='line'>              &lt;/executions&gt;
+</span><span class='line'>          &lt;/plugin&gt;
+</span><span class='line'>          &lt;plugin&gt;
+</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+</span><span class='line'>              &lt;version&gt;2.7.1&lt;/version&gt;
+</span><span class='line'>              &lt;configuration&gt;
+</span><span class='line'>                  &lt;argLine&gt;-Xmx1024m -Xms1024m&lt;/argLine&gt;
+</span><span class='line'>                  &lt;suiteXmlFiles&gt;
+</span><span class='line'>                      &lt;suiteXmlFile&gt;Test.xml&lt;/suiteXmlFile&gt;
+</span><span class='line'>                  &lt;/suiteXmlFiles&gt;
+</span><span class='line'>              &lt;/configuration&gt;
+</span><span class='line'>          &lt;/plugin&gt;
+</span><span class='line'>          &lt;plugin&gt;
+</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+</span><span class='line'>              &lt;version&gt;3.1&lt;/version&gt;
+</span><span class='line'>              &lt;configuration&gt;
+</span><span class='line'>                  &lt;source&gt;1.5&lt;/source&gt;
+</span><span class='line'>                  &lt;target&gt;1.5&lt;/target&gt;
+</span><span class='line'>              &lt;/configuration&gt;
+</span><span class='line'>          &lt;/plugin&gt;
+</span><span class='line'>          &lt;plugin&gt;
+</span><span class='line'>              &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
+</span><span class='line'>              &lt;version&gt;2.1&lt;/version&gt;
+</span><span class='line'>          &lt;/plugin&gt;
+</span><span class='line'>      &lt;/plugins&gt;
+</span><span class='line'>  &lt;/build&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>6) After that your &lsquo;pom.xml&rsquo; file will look like this :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+</span><span class='line'>  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+</span><span class='line'>  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+</span><span class='line'>  &lt;groupId&gt;Selenium-Automation-Framework&lt;/groupId&gt;
+</span><span class='line'>  &lt;artifactId&gt;Selenium-Framework&lt;/artifactId&gt;
+</span><span class='line'>  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+</span><span class='line'>  &lt;dependencies&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-server&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-firefox-driver&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-chrome-driver&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-remote-driver&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;selenium-ie-driver&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;2.41.0&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;junit&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;junit&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;4.11&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;poi&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;3.10-FINAL&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>      &lt;dependency&gt;
+</span><span class='line'>          &lt;groupId&gt;org.testng&lt;/groupId&gt;
+</span><span class='line'>          &lt;artifactId&gt;testng&lt;/artifactId&gt;
+</span><span class='line'>          &lt;version&gt;6.8.8&lt;/version&gt;
+</span><span class='line'>      &lt;/dependency&gt;
+</span><span class='line'>  &lt;/dependencies&gt;
+</span><span class='line'>  &lt;reporting&gt;
+</span><span class='line'>      &lt;plugins&gt;
+</span><span class='line'>          &lt;!-- &lt;plugin&gt; --&gt;
+</span><span class='line'>          &lt;!-- &lt;groupId&gt;org.codehaus.sonar-plugins&lt;/groupId&gt; --&gt;
+</span><span class='line'>          &lt;!-- &lt;artifactId&gt;maven-report&lt;/artifactId&gt; --&gt;
+</span><span class='line'>          &lt;!-- &lt;version&gt;0.1&lt;/version&gt; --&gt;
+</span><span class='line'>          &lt;!-- &lt;/plugin&gt; --&gt;
+</span><span class='line'>          &lt;plugin&gt;
+</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;maven-surefire-report-plugin&lt;/artifactId&gt;
+</span><span class='line'>              &lt;version&gt;2.14.1&lt;/version&gt;
+</span><span class='line'>              &lt;configuration&gt;
+</span><span class='line'>                  &lt;!-- &lt;showSuccess&gt;false&lt;/showSuccess&gt; --&gt;
+</span><span class='line'>              &lt;/configuration&gt;
+</span><span class='line'>          &lt;/plugin&gt;
+</span><span class='line'>      &lt;/plugins&gt;
+</span><span class='line'>  &lt;/reporting&gt;
+</span><span class='line'>  &lt;build&gt;
+</span><span class='line'>      &lt;extensions&gt;
+</span><span class='line'>          &lt;!-- start - for deploying using webdav --&gt;
+</span><span class='line'>          &lt;extension&gt;
+</span><span class='line'>              &lt;groupId&gt;org.apache.maven.wagon&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;wagon-webdav&lt;/artifactId&gt;
+</span><span class='line'>              &lt;version&gt;1.0-beta-2&lt;/version&gt;
+</span><span class='line'>          &lt;/extension&gt;
+</span><span class='line'>          &lt;!-- end - for deploying using webdav --&gt;
+</span><span class='line'>      &lt;/extensions&gt;
+</span><span class='line'>      &lt;plugins&gt;
+</span><span class='line'>          &lt;plugin&gt;
+</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+</span><span class='line'>              &lt;executions&gt;
+</span><span class='line'>                  &lt;execution&gt;
+</span><span class='line'>                      &lt;id&gt;init-res&lt;/id&gt;
+</span><span class='line'>                      &lt;!-- use the copy resources instead of resources, which adds it to 
+</span><span class='line'>                          the eclipse buildpath --&gt;
+</span><span class='line'>                      &lt;phase&gt;initialize&lt;/phase&gt;
+</span><span class='line'>                      &lt;goals&gt;
+</span><span class='line'>                          &lt;goal&gt;copy-resources&lt;/goal&gt;
+</span><span class='line'>                      &lt;/goals&gt;
+</span><span class='line'>                      &lt;configuration&gt;
+</span><span class='line'>                          &lt;outputDirectory&gt;${project.basedir}/src/main/resources&lt;/outputDirectory&gt;
+</span><span class='line'>                          &lt;resources&gt;
+</span><span class='line'>                              &lt;resource&gt;
+</span><span class='line'>                                  &lt;directory&gt;${project.basedir}/src/template/resources&lt;/directory&gt;
+</span><span class='line'>                                  &lt;targetPath&gt;${project.basedir}/src/main/resources&lt;/targetPath&gt;
+</span><span class='line'>                                  &lt;filtering&gt;true&lt;/filtering&gt;
+</span><span class='line'>                              &lt;/resource&gt;
+</span><span class='line'>                          &lt;/resources&gt;
+</span><span class='line'>                      &lt;/configuration&gt;
+</span><span class='line'>                  &lt;/execution&gt;
+</span><span class='line'>              &lt;/executions&gt;
+</span><span class='line'>          &lt;/plugin&gt;
+</span><span class='line'>          &lt;plugin&gt;
+</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+</span><span class='line'>              &lt;version&gt;2.7.1&lt;/version&gt;
+</span><span class='line'>              &lt;configuration&gt;
+</span><span class='line'>                  &lt;argLine&gt;-Xmx1024m -Xms1024m&lt;/argLine&gt;
+</span><span class='line'>                  &lt;suiteXmlFiles&gt;
+</span><span class='line'>                      &lt;suiteXmlFile&gt;Test.xml&lt;/suiteXmlFile&gt;
+</span><span class='line'>                  &lt;/suiteXmlFiles&gt;
+</span><span class='line'>              &lt;/configuration&gt;
+</span><span class='line'>          &lt;/plugin&gt;
+</span><span class='line'>          &lt;plugin&gt;
+</span><span class='line'>              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+</span><span class='line'>              &lt;version&gt;3.1&lt;/version&gt;
+</span><span class='line'>              &lt;configuration&gt;
+</span><span class='line'>                  &lt;source&gt;1.5&lt;/source&gt;
+</span><span class='line'>                  &lt;target&gt;1.5&lt;/target&gt;
+</span><span class='line'>              &lt;/configuration&gt;
+</span><span class='line'>          &lt;/plugin&gt;
+</span><span class='line'>          &lt;plugin&gt;
+</span><span class='line'>              &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+</span><span class='line'>              &lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
+</span><span class='line'>              &lt;version&gt;2.1&lt;/version&gt;
+</span><span class='line'>          &lt;/plugin&gt;
+</span><span class='line'>      &lt;/plugins&gt;
+</span><span class='line'>  &lt;/build&gt;
+</span><span class='line'>&lt;/project&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>7) Right click in folder &lsquo;src&rsquo; &ndash;> New &ndash;> Folder &ndash;> name it as &lsquo;template&rsquo;</p>
+
+<p><img src="/images/mulb-3.png"></p>
+
+<p>8) Right click in folder &lsquo;template&rsquo; &ndash;> New &ndash;> Folder &ndash;> name it as &lsquo;resources&rsquo;</p>
+
+<p><img src="/images/mulb-4.png"></p>
+
+<p>9) Right click in folder &lsquo;resources&rsquo; &ndash;> New &ndash;> File &ndash;> name it as &lsquo;system.properties&rsquo;</p>
+
+<p><img src="/images/mulb-5.png"></p>
+
+<p>10) Open file &lsquo;system.properties&rsquo; and copy the code below and paste to this file:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>project.basedir=${project.basedir}
+</span><span class='line'>project.build.directory=${project.build.directory}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>11) Right click in your project &ndash;> Run as &ndash;> Maven generate-resources.</p>
+
+<p><img src="/images/mulb-6.png"></p>
+
+<p>12) Right click in &lsquo;src/main/java&rsquo; &ndash;> New &ndash;> Package &ndash;> name it as &lsquo;com.selenium.util&rsquo;</p>
+
+<p><img src="/images/mulb-7.png"></p>
+
+<p>13) Right click in package &lsquo;com.selenium.util&rsquo; &ndash;> New &ndash;> Class &ndash;> name it as &lsquo;DriverUtil&rsquo;</p>
+
+<p><img src="/images/mulb-8.png"></p>
+
+<p>14) Double click on &lsquo;DriverUtil.java&rsquo; and paste the below code to it.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.util;
+</span><span class='line'>
+</span><span class='line'>import java.io.File;
+</span><span class='line'>import java.io.IOException;
+</span><span class='line'>import java.util.Properties;
+</span><span class='line'>
+</span><span class='line'>public class DriverUtil {
+</span><span class='line'>  public static final String PROP_PROJECT_BASE_DIR = "project.basedir";
+</span><span class='line'>  public static final String FOLDER_DRIVER = "Driver";
+</span><span class='line'>  public static final String DEFAULT_PROPERTIES = "system.properties";
+</span><span class='line'>  private static Properties prod;
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @return the path of ie driver file.
+</span><span class='line'>   */
+</span><span class='line'>  public static String getIeDriver(){
+</span><span class='line'>      String path = getKey(PROP_PROJECT_BASE_DIR) + File.separator + FOLDER_DRIVER 
+</span><span class='line'>              + File.separator + "IEDriverServer.exe";
+</span><span class='line'>      try {
+</span><span class='line'>          File driverIe = new File(path);
+</span><span class='line'>          if(driverIe.exists()){
+</span><span class='line'>              return driverIe.getAbsolutePath();
+</span><span class='line'>          }
+</span><span class='line'>      } catch (Exception e) {
+</span><span class='line'>          e.printStackTrace();
+</span><span class='line'>          return null;
+</span><span class='line'>      }
+</span><span class='line'>      return null;    
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @return the path of chrome driver file
+</span><span class='line'>   */
+</span><span class='line'>  public static String getChromeDriver(){
+</span><span class='line'>      String path = getKey(PROP_PROJECT_BASE_DIR) + File.separator + FOLDER_DRIVER 
+</span><span class='line'>              + File.separator + "chromedriver.exe";
+</span><span class='line'>      try {
+</span><span class='line'>          File driverChrome = new File(path);
+</span><span class='line'>          if(driverChrome.exists()){
+</span><span class='line'>              return driverChrome.getAbsolutePath();
+</span><span class='line'>          }
+</span><span class='line'>      } catch (Exception e) {
+</span><span class='line'>          e.printStackTrace();
+</span><span class='line'>          return null;
+</span><span class='line'>      }
+</span><span class='line'>      return null;    
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @return load the file system.properties
+</span><span class='line'>   */
+</span><span class='line'>  public static Properties getProperties() {
+</span><span class='line'>      if (prod == null) {
+</span><span class='line'>          prod = new Properties();
+</span><span class='line'>          try {
+</span><span class='line'>              prod.load(DriverUtil.class.getClassLoader().getResourceAsStream(DEFAULT_PROPERTIES));
+</span><span class='line'>          } catch (IOException e) {               
+</span><span class='line'>              //
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>      return prod;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * @param key
+</span><span class='line'>   * @return get value of key
+</span><span class='line'>   */
+</span><span class='line'>  public static String getKey(String key) {
+</span><span class='line'>      Object obj = getProperties().get(key);
+</span><span class='line'>      String value = "";
+</span><span class='line'>      if (obj != null) 
+</span><span class='line'>          value = obj.toString();
+</span><span class='line'>      return value;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>15) Double click on &lsquo;autoTestFacebook.java&rsquo; and paste the code below to it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.chrome.ChromeDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.openqa.selenium.ie.InternetExplorerDriver;
+</span><span class='line'>import org.testng.annotations.Parameters;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>import org.testng.annotations.BeforeTest;
+</span><span class='line'>import org.testng.annotations.AfterTest;
+</span><span class='line'>
+</span><span class='line'>import com.selenium.pageObject.LoginPage;
+</span><span class='line'>import com.selenium.userAction.PostStatus;
+</span><span class='line'>import com.selenium.userAction.SignIn;
+</span><span class='line'>import com.selenium.util.DriverUtil;
+</span><span class='line'>
+</span><span class='line'>public class autoTestFacebook {
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'>   * Create WebDriver as static variable
+</span><span class='line'>   */
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  private static String username_login;
+</span><span class='line'>  private static String password_login;
+</span><span class='line'>  private static String status_facebook;
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * Setup some variable to run your script test, load from the file TestNg.xml
+</span><span class='line'> * Your parameters in annotation Parameters will match with define in TestNG.xml 
+</span><span class='line'> */
+</span><span class='line'>@Parameters({"browser","status","username","password"})   
+</span><span class='line'>@BeforeTest
+</span><span class='line'>  public void beforeTest(String browser, String status, String username, String password) {
+</span><span class='line'>   if(browser.equalsIgnoreCase("firefox")) {
+</span><span class='line'>        driver = new FirefoxDriver();
+</span><span class='line'>    }else if (browser.equalsIgnoreCase("ie")) { 
+</span><span class='line'>        // Here I am setting up the path for my IEDriver
+</span><span class='line'>        System.setProperty("webdriver.ie.driver", DriverUtil.getIeDriver());
+</span><span class='line'>        driver = new InternetExplorerDriver();
+</span><span class='line'>    }else if (browser.equalsIgnoreCase("chrome")){
+</span><span class='line'>        System.setProperty("webdriver.chrome.driver", DriverUtil.getChromeDriver());
+</span><span class='line'>        driver = new ChromeDriver();
+</span><span class='line'>    } 
+</span><span class='line'>   username_login = username;
+</span><span class='line'>   status_facebook = status;
+</span><span class='line'>   password_login = password;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * your test script call action class here
+</span><span class='line'> */
+</span><span class='line'>@Test
+</span><span class='line'>  public void f() {
+</span><span class='line'>    LoginPage.loadPage(driver);
+</span><span class='line'>    SignIn.Execute(driver, username_login, password_login);
+</span><span class='line'>    PostStatus.Execute(driver, status_facebook);
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  /**
+</span><span class='line'> * after run your script test , use this code to close your browser
+</span><span class='line'> */
+</span><span class='line'>@AfterTest
+</span><span class='line'>  public void afterTest() {
+</span><span class='line'>    driver.quit();
+</span><span class='line'>  } 
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>16) Right Click in Project &ndash;> New &ndash;> File &ndash;> name it as &lsquo;TestNg.xml&rsquo;</p>
+
+<p><img src="/images/mulb-9.png"></p>
+
+<p>17) Copy code below and paste to &lsquo;TestNg.xml&rsquo;. Remember to change the username and password in tag parameter. You can change the value of parallel to test &ndash;> it will run 3 browser in the same time.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;suite name="Suite" parallel="none"&gt;
+</span><span class='line'>
+</span><span class='line'> &lt;test name="FirefoxTest"&gt;
+</span><span class='line'>   &lt;parameter name="browser" value="firefox" /&gt;
+</span><span class='line'>   &lt;parameter name="status" value="firefox" /&gt;
+</span><span class='line'>   &lt;parameter name="username" value="yourusername" /&gt;
+</span><span class='line'>   &lt;parameter name="password" value="yourpassword" /&gt;
+</span><span class='line'>   &lt;classes&gt;
+</span><span class='line'>   &lt;class name="com.selenium.test.autoTestFacebook" /&gt;
+</span><span class='line'>   &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'>
+</span><span class='line'> &lt;test name="IETest"&gt;
+</span><span class='line'> &lt;parameter name="username" value="yourusername" /&gt;
+</span><span class='line'> &lt;parameter name="password" value="yourpassword" /&gt;
+</span><span class='line'> &lt;parameter name="browser" value="ie" /&gt;
+</span><span class='line'> &lt;parameter name="status" value="ie" /&gt;
+</span><span class='line'> &lt;classes&gt;
+</span><span class='line'> &lt;class name="com.selenium.test.autoTestFacebook" /&gt;
+</span><span class='line'> &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'> 
+</span><span class='line'>&lt;test name="ChromeTest"&gt;
+</span><span class='line'>  &lt;parameter name="username" value="yourusername" /&gt;
+</span><span class='line'> &lt;parameter name="password" value="yourpassword" /&gt;
+</span><span class='line'> &lt;parameter name="browser" value="chrome" /&gt;
+</span><span class='line'>  &lt;parameter name="status" value="chrome" /&gt;
+</span><span class='line'> &lt;classes&gt;
+</span><span class='line'> &lt;class name="com.selenium.test.autoTestFacebook" /&gt;
+</span><span class='line'> &lt;/classes&gt;
+</span><span class='line'> &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>17) Right click in file &lsquo;TestNG.xml&rsquo; &ndash;> Run as &ndash;> TestNG Suite and wait for the process running.</p>
+
+<p><img src="/images/mulb-10.png"></p>
+
+<p>18) Open folder &lsquo;Test-Output&rsquo; &ndash;> Open folder &lsquo;Suite&rsquo; &ndash; > You will see 3 file html &ndash;> open to see the report of each browser.</p>
+
+<p><img src="/images/mulb-11.png"></p>
+
+<h3>Note : In this tutorial we have many knowledge so I recommend you to read the comment of code to know what it do.</h3>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/2014/05/29/selenium-automation-framework-run-on-multi-browser/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/2014/05/29/selenium-automation-framework-run-on-multi-browser/';
+        var disqus_url = 'http://www.tabaolan.com/2014/05/29/selenium-automation-framework-run-on-multi-browser/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

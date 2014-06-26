@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: TestNG-Framework | Selenium Tutorial]]></title>
+  <link href="http://www.tabaolan.com/categories/testng-framework/atom.xml" rel="self"/>
+  <link href="http://www.tabaolan.com/"/>
+  <updated>2014-06-26T10:58:21+07:00</updated>
+  <id>http://www.tabaolan.com/</id>
+  <author>
+    <name><![CDATA[Ta Bao Lan]]></name>
+    <email><![CDATA[tabaolan1987@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TestNG Framework P9 : Multi Browser and Parallel Testing]]></title>
+    <link href="http://www.tabaolan.com/2014/05/26/testng-framework-multi-browser-and-parallel-testing/"/>
+    <updated>2014-05-26T12:15:47+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/26/testng-framework-multi-browser-and-parallel-testing</id>
+    <content type="html"><![CDATA[<h2>Multi Browser, Cross Browser &amp; Parallel Testing using TestNG</h2>
+
+<p>When the time comes to turn your site from mock-up to something fully functional, you’ll want to make sure that it works great for everyone visiting your site whether they’re using Internet Explorer, Firefox, or any other browser. Testing your website with multiple combinations of browsers is known as Cross Browser testing.</p>
+
+<p>Your site will look different in different browsers. That’s because browsers understand some code slightly differently. Your designer should be testing to make sure that your site works well in all modern browsers. But as a tester we need to make sure that functionality should at least tested on Internet Explorer, Firefox, Safari &amp; Google Chrome browser.</p>
+
+<!--more-->
+
+
+<h3>Multi Browser Testing using Selenium TestNG</h3>
+
+<p>In every project it is required to perform multi-browser testing to make sure that the functionality is working as expected with every browser to give equal user experience to all of the wide range of audience. It takes a considerable time to test everything on every browser and when we have used automation to reduce the testing efforts then why don’t we perform the multi-browser testing using automation. TestNG gives us functionality to perform same test on different browsers in a simple and easy way.</p>
+
+<h4>How to do it…</h4>
+
+<p>1)Create your Script to test a LogIn application using TestNG class.</p>
+
+<p>2) Pass ‘Browser Type’ as parameters using TestNG annotations to the before method of the TestNG class. This method will launch only the browser, which will be provided as parameter.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;</p>
+
+<p>public class MultiBrowser {</p>
+
+<pre><code>public WebDriver driver;
+</code></pre>
+
+<p>  @Parameters(&ldquo;browser&rdquo;)
+  @BeforeClass
+  // Passing Browser parameter from TestNG xml
+  public void beforeTest(String browser) {
+  // If the browser is Firefox, then do this
+  if(browser.equalsIgnoreCase(&ldquo;firefox&rdquo;)) {</p>
+
+<pre><code>  driver = new FirefoxDriver();
+</code></pre>
+
+<p>  // If browser is IE, then do this <br/>
+  }else if (browser.equalsIgnoreCase(&ldquo;ie&rdquo;)) {</p>
+
+<pre><code>  // Here I am setting up the path for my IEDriver
+  System.setProperty("webdriver.ie.driver", "D:\OnlineStore\drivers\IEDriverServer.exe");
+  driver = new InternetExplorerDriver();
+</code></pre>
+
+<p>  }
+  // Doesn&rsquo;t the browser type, lauch the Website
+   driver.get(&ldquo;<a href="https://www.facebook.com">https://www.facebook.com</a>&rdquo;);
+  }</p>
+
+<p>  // Once Before method is completed, Test method will start
+  @Test public void login() throws InterruptedException {</p>
+
+<pre><code>  driver.findElement(By.id("email")).sendKeys("your username");
+  driver.findElement(By.id("pass")).sendKeys("your password");
+  driver.findElement(By.id("loginbutton")).click();
+  driver.quit();
+}  
+</code></pre>
+
+<p>  @AfterClass public void afterTest() {</p>
+
+<pre><code>    driver.quit();
+}
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>3) Create a TestNG XML for running your test. Configure the TestNG XML for passing parameters i.e. to tell which browser should be used for Running the Test.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+&lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?></p>
+
+<p>&lt;!DOCTYPE suite SYSTEM &ldquo;<a href="http://testng.org/testng-1.0.dtd">http://testng.org/testng-1.0.dtd</a>&rdquo;></p>
+
+<p><suite name="Suite" parallel="none">
+ <test name="FirefoxTest">
+ <parameter name="browser" value="firefox" />
+ <classes>
+ <class name="automationFramework.MultiBrowser" />
+ </classes>
+ </test></p>
+
+<p> <test name="IETest">
+ <parameter name="browser" value="ie" />
+ <classes>
+ <class name="automationFramework.MultiBrowser" />
+ </classes>
+ </test>
+</suite></p>
+
+<p>```</p>
+
+<p> Note: You can set any number of Browsers here and just for the example purpose I have set up only two main browsers.</p>
+
+<p>4) Now it’s time to run the xml. Run the test by right click on the testng.xml file and select Run As > TestNG Suite.</p>
+
+<p><img src="/images/TestNG-MultiBrowser-1.png"></p>
+
+<p>Note: TestNg will execute the test one by one. You may like to perform parallel tests, next topic will cover that.</p>
+
+<h3>Parallel Tests using TestNG</h3>
+
+<p>Using the feature provided by TestNG for Parallel Executions. just take the above example for Sign In application with two different browsers. This time all we want is to execute test in both browsers simultaneously.</p>
+
+<p>Now just set the ‘parallel‘ attribute to ‘tests‘ in the above used xml and give a run again. This time you will notice that your both browsers will open almost simultaneously and your test will run in parallel.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+&lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?></p>
+
+<p>&lt;!DOCTYPE suite SYSTEM &ldquo;<a href="http://testng.org/testng-1.0.dtd">http://testng.org/testng-1.0.dtd</a>&rdquo;></p>
+
+<p><suite name="Suite" parallel="tests">
+ <test name="FirefoxTest">
+ <parameter name="browser" value="firefox" />
+ <classes>
+ <class name="automationFramework.MultiBrowser" />
+ </classes>
+ </test></p>
+
+<p> <test name="IETest">
+ <parameter name="browser" value="ie" />
+ <classes>
+ <class name="automationFramework.MultiBrowser" />
+ </classes>
+ </test>
+</suite></p>
+
+<p>```</p>
+
+<p>Note: You may see some intermittent issues using parallel testing. I will not recommend you this rather run one by one only.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TestNG Framework P8 : Parameters and Data Provider]]></title>
+    <link href="http://www.tabaolan.com/2014/05/26/testng-framework-parameters-and-data-provider/"/>
+    <updated>2014-05-26T12:05:31+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/26/testng-framework-parameters-and-data-provider</id>
+    <content type="html"><![CDATA[<h2>TestNG Parameters &amp; Data Provider</h2>
+
+<h3>TestNG Parameters</h3>
+
+<p>Everybody knows the importance of Parameterization in testing and in automation testing. It allows us to automatically run a test case multiple times with different input and validation values. As Selenium Webdriver is more an automated testing framework than a ready-to-use tool, you will have to put in some effort to support data driven testing in your automated tests. I usually prefer to use Microsoft Excel as the format for storing my parameters but so many of my followers have requested to write an article on TestNG Data Provider.</p>
+
+<p>TestNG again gives us another interesting feature called TestNG Parameters. TestNG lets you pass parameters directly to your test methods with your testng.xml.</p>
+
+<!--more-->
+
+
+<h4>How to do it…</h4>
+
+<p>Let me take a very simple example of LogIn application, where the username and password is required to clear the authentication.</p>
+
+<p>1) Create a test on my demo OnlineStore application to perform LogIn which takes the two string argument as username &amp; password.</p>
+
+<p>2) Provide Username &amp; Password as parameter using TestNG Annotation.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import java.util.concurrent.TimeUnit;</p>
+
+<p>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;</p>
+
+<p>import org.testng.annotations.Parameters;</p>
+
+<p>public class TestngParameters {</p>
+
+<pre><code>private static WebDriver driver;
+</code></pre>
+
+<p>  @Test
+  @Parameters({ &ldquo;sUsername&rdquo;, &ldquo;sPassword&rdquo; })
+  public void test(String sUsername, String sPassword) {</p>
+
+<pre><code>  driver = new FirefoxDriver();
+  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+  driver.get("https://www.facebook.com");
+  driver.findElement(By.id("email")).sendKeys(sUsername);
+  driver.findElement(By.id("pass")).sendKeys(sPassword);
+  driver.findElement(By.id("loginbutton")).click();
+  driver.quit();
+</code></pre>
+
+<p>  }
+}</p>
+
+<p>```</p>
+
+<p>3) The parameter would be passed values from testng.xml which we will see in the next step.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+<suite name="Suite"></p>
+
+<pre><code>&lt;test name="ToolsQA"&gt;
+&lt;parameter name="sUsername" value="yourusername"/&gt;
+&lt;parameter name="sPassword" value="yourpassword"/&gt;
+    &lt;classes&gt;
+        &lt;class name="automationFramework.TestngParameters" /&gt;
+    &lt;/classes&gt;
+&lt;/test&gt;
+</code></pre>
+
+<p></suite></p>
+
+<p>```</p>
+
+<p>Now, run the testng.xml, which will run the parameterTest method. TestNG will try to find a parameter named sUsername &amp; sPassword.</p>
+
+<h3>TestNG DataProviders</h3>
+
+<p>When you need to pass complex parameters or parameters that need to be created from Java (complex objects, objects read from a property file or a database, etc…), in such cases parameters can be passed using Dataproviders. A Data Provider is a method annotated with @DataProvider. A Data Provider returns an array of objects.</p>
+
+<p>Let us check out the same Sign In examples using Dataproviders.</p>
+
+<h4>How to do it…</h4>
+
+<p>1)  Define the method credentials() which is defined as a Dataprovider using the annotation. This method returns array of object array.</p>
+
+<p>2) Add a method test() to your DataProviderTest class. This method takes two strings as input parameters.</p>
+
+<p>3) Add the annotation @Test(dataProvider = “Authentication”) to this method. The attribute dataProvider is mapped to “Authentication”.</p>
+
+<p>Test will look like this:</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import java.util.concurrent.TimeUnit;</p>
+
+<p>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;</p>
+
+<p>public class DataProviderTest {</p>
+
+<pre><code>private static WebDriver driver;
+</code></pre>
+
+<p>  @DataProvider(name = &ldquo;Authentication&rdquo;)
+  public static Object[][] credentials() {</p>
+
+<pre><code>    return new Object[][] { { "yourusername", "yourpassword" }, { "yourusername_another", "yourpassword_another" }};
+</code></pre>
+
+<p>  }</p>
+
+<p>  // Here we are calling the Data Provider object with its Name
+  @Test(dataProvider = &ldquo;Authentication&rdquo;)
+  public void test(String sUsername, String sPassword) {</p>
+
+<pre><code>   driver = new FirefoxDriver();
+  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+  driver.get("https://www.facebook.com");
+  driver.findElement(By.id("email")).sendKeys(sUsername);
+  driver.findElement(By.id("pass")).sendKeys(sPassword);
+  driver.findElement(By.id("loginbutton")).click();
+  driver.quit();
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>Run the test by right click on the test case script and select Run As > TestNG Test. Give it few minutes to complete the execution, once it is finished the results will look like this in the TestNg Result window.</p>
+
+<p>Note: As the test data is provided two times, the above test executed two times completely.</p>
+
+<h3>Take a look in : <a href="/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/">P9 : Multi Browser and Parallel Testing</a></h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TestNG Framework P7 : Reporters and Asserts ]]></title>
+    <link href="http://www.tabaolan.com/2014/05/26/testng-framework-reporters-and-asserts/"/>
+    <updated>2014-05-26T11:55:48+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/26/testng-framework-reporters-and-asserts</id>
+    <content type="html"><![CDATA[<h2>TestNG Reporters &amp; Asserts</h2>
+
+<h3>TestNG Reporters</h3>
+
+<p>TestNG is a Framework and so far we have already seen the many different powerful features of TestNG. It almost gives you all the important things you are required to complete the Framework.</p>
+
+<!--more-->
+
+
+<h3>TestNG Reporter Logs</h3>
+
+<p>TestNG also gives us the logging facility for the test. For example during the running of test case user wants some information to be logged in the console. Information could be any detail depends upon the purpose. Keeping this in mind that we are using Selenium for testing, we need the information which helps the User to understand the test steps or any failure during the test case execution. With the help of TestNG Logs it is possible to enable logging during the Selenium test case execution.</p>
+
+<p>In selenium there are two types of logging. High level logging and Low level logging. In low level logging you try to produce logs for the every step you take or every action you make in your automation script. In high  level logging you just try to capture main events of your test.</p>
+
+<p>Everybody has their own style of logging and I have mine too. I am also a big fan of Log4j logging and that’s why I do not mix log4j logging with testng logging but on the same side I make to use of both of its. I perform low level logging with log4j and high level logging with testng reporter logs.</p>
+
+<h4>How to do it…</h4>
+
+<p>1) Write a test case for Sign In application and implement Log4j logging on every step.</p>
+
+<p>2) Insert Reporter logs on the main events of the test.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import java.util.concurrent.TimeUnit;</p>
+
+<p>import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Reporter;
+import org.testng.annotations.Test;</p>
+
+<p>import utility.Log;</p>
+
+<p>public class ReporterLogs {</p>
+
+<pre><code>private static WebDriver driver;
+private static Logger Log = Logger.getLogger(Log.class.getName());
+@Test
+public static void test() {
+    DOMConfigurator.configure("log4j.xml");
+    driver = new FirefoxDriver();
+    Log.info("New driver instantiated");
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    Log.info("Implicit wait applied on the driver for 10 seconds");
+    driver.get("https://www.facebook.com/");
+    Log.info("Web application launched");
+    // Our first step is complete, so we produce a main event log here for our reports.
+    Reporter.log("Application Lauched successfully | ");
+
+    driver.findElement(By.id("email")).sendKeys("yourusername");
+    Log.info("Username entered in the Username and email text box");
+    driver.findElement(By.id("pass")).sendKeys("yourpassword");
+    Log.info("Password entered in the Password text box");
+    driver.findElement(By.id("loginbutton")).click();
+    Log.info("Click action performed on Submit button");
+    // Here we are done with our Second main event
+    Reporter.log("Sign In Successful | " );
+    driver.quit();
+    Log.info("Browser closed");
+    // This is the third main event
+    Reporter.log("User is Logged out and Application is closed | ");
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>3) Run the test by right click on the test case script and select Run As > TestNG Test.</p>
+
+<p>Your Log4j logging output will look like this:</p>
+
+<p><img src="/images/TestNG-Reporter-1.png"></p>
+
+<p>But your Reporters log will look like this:</p>
+
+<p><img src="/images/TestNG-Reporter-2.png"></p>
+
+<p>Log4j logging will help you to report a bug or steps taken during the test, on the other hand reporters log will help you to share the test status with leadership. As leadership is just interested in the test results, not the test steps.</p>
+
+<p>I also use reporter’s logs on the verification during the test. For example</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+if(Text1.equals(Text2)){</p>
+
+<pre><code>    Reporter.log("Verification Passed forText");
+}else{
+    Reporter.log("Verification Failed for Text");
+}
+</code></pre>
+
+<p>```</p>
+
+<h3>TestNG Asserts</h3>
+
+<p>TestNG also gives us the power to take decisions in the middle of the test run with the help of Asserts. With this we can put various checkpoints in the test. Asserts are the most popular and frequently used methods while creating Selenium Scripts. In selenium there will be many situations in the test where you just like to check the presence of an element. All you need to do is to put an assert statement on to it to verify its existence.</p>
+
+<h4>Different Asserts Statements</h4>
+
+<p>1) Assert.assertTrue() &amp; Assert.assertFalse()</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import java.util.concurrent.TimeUnit;</p>
+
+<p>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;</p>
+
+<p>public class Asserts {</p>
+
+<pre><code>private static WebDriver driver;
+</code></pre>
+
+<p>  @Test
+  public void f() {</p>
+
+<pre><code>  driver = new FirefoxDriver();
+  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+  driver.get("https://www.facebook.com/");
+
+  // Here driver will try to find out My username textbox on the application
+  WebElement text_username = driver.findElement(By.id("email"));
+
+  //Test will only continue, if the below statement is true
+  //This is to check whether the textbox is displayed or not
+  Assert.assertTrue(text_username.isDisplayed());
+
+  //My username text will be type only if the above condition is true
+  myAccount.sendKeys("your_username");
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>Note: Assert true statement fails the test and stop the execution of the test, if the actual output is false.  Assert.assertFalse() works opposite of Assert.assertTrue(). It means that if you want your test to continue only if when some certain element is not present on the page. You will use Assert false, so it will fail the test in case of the element present on the page.</p>
+
+<p>2) Assert.assertEquals()</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+@Test
+  public void test() {</p>
+
+<pre><code>  String sValue = "Ta bao Lan";
+  System.out.println(" What is your full name");
+  Assert.assertEquals("Ta Bao Lan", sValue);
+  System.out.println(sValue);
+</code></pre>
+
+<p>  }
+```</p>
+
+<p>It also works the same way like assert true and assert fail. It will also stop the execution, if the value is not equal and carry on the execution, if the value is equal.</p>
+
+<h3>Take a look in more helpful: <a href="/blog/2014/05/26/testng-framework-parameters-and-data-provider/">P8 : Parameters and Data Provider</a></h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TestNG Framework P6 : Prioritizing and Sequencing]]></title>
+    <link href="http://www.tabaolan.com/2014/05/26/testng-framework-prioritizing-and-sequencing/"/>
+    <updated>2014-05-26T11:48:09+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/26/testng-framework-prioritizing-and-sequencing</id>
+    <content type="html"><![CDATA[<h2>TestNG Prioritizing &amp; Sequencing</h2>
+
+<h3>Multiple Tests</h3>
+
+<p>There will be situations when you want to put number of tests under a single test class and like to run all in single shot.  With the help of TestNG ‘@Test‘ annotations we can execute multiple tests in single TestNG file.</p>
+
+<p>Take an example of four different tests under one testng class and print the test sequence on the console.</p>
+
+<!--more-->
+
+
+<h4>How to do it…</h4>
+
+<p>1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next.</p>
+
+<p>Or</p>
+
+<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
+
+<p><img src="/images/TestNg-Muliple-0.png"></p>
+
+<p>2) If your project is set up and you have selected the Test Case folder before creating TestNG class then the source folder and the package name will be pre-populated on the form. Set class name as ‘TestNG‘.
+Leave rest of the settings untouched, do not check for “@BeforeMethod”, “@AfterMethod” for now and click Finish. That’s it.</p>
+
+<p><img src="/images/TestNg-Muliple-1.png"></p>
+
+<p>3) By default a new class will have only one @Test method.</p>
+
+<p>Add two more methods by yourself and put your code accordingly in methods. Code will look like:</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;</p>
+
+<p>public class MultipleTest {</p>
+
+<pre><code>public WebDriver driver;
+</code></pre>
+
+<p>  @Test
+  public void One() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number One");
+</code></pre>
+
+<p>  }</p>
+
+<p>  @Test
+  public void Two() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number Two");
+</code></pre>
+
+<p>  }</p>
+
+<p>  @Test
+  public void Three() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number Three");
+</code></pre>
+
+<p>  }</p>
+
+<p>  @Test
+  public void Four() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number Four");
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>This will enable you to execute all four tests with just one testng class. Take a look on the output.</p>
+
+<p><img src="/images/TestNg-Muliple-3.png"></p>
+
+<p>Attention: By default, methods annotated by @Test are executed alphabetically. Take a look over the next topic to see how to prioritize @Test.</p>
+
+<h3>Sequencing &amp; Prioritizing</h3>
+
+<p>You need to use the ‘priority‘ parameter, if you want the methods to be executed in your order. Parameters are keywords that modify the annotation’s function.</p>
+
+<p>Let’s take the same above example and execute all @Test methods in right order. Simply assign priority to all @Test methods starting from 0(Zero).</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;</p>
+
+<p>public class MultipleTest {</p>
+
+<pre><code>public WebDriver driver;
+</code></pre>
+
+<p>  @Test(priority = 0)
+  public void One() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number One");
+</code></pre>
+
+<p>  }</p>
+
+<p>  @Test(priority = 1)
+  public void Two() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number Two");
+</code></pre>
+
+<p>  }</p>
+
+<p>  @Test(priority = 2)
+  public void Three() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number Three");
+</code></pre>
+
+<p>  }</p>
+
+<p>  @Test(priority = 3)
+  public void Four() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number Four");
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>Note: TestNG will execute the @Test annotation with the lowest priority value up to the largest.</p>
+
+<p>Output of the above:</p>
+
+<p><img src="/images/TestNg-Muliple-4.png"></p>
+
+<h3>Skipping a Test Case</h3>
+
+<p>Think of a situation where you are required to skip one or more @Test from your testng class. In testng, you can easily able to handle this situation by setting the ‘enabled’ parameter to ‘false’ for e.g.:</p>
+
+<p>@Test(enabled = false)</p>
+
+<p>To use two or more parameters in a single annotation, separate them with a comma:</p>
+
+<p>@Test(priority = 3, enabled = false)</p>
+
+<p>Again take the same example and set the value false for the third test.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;</p>
+
+<p>public class MultipleTest {</p>
+
+<pre><code>public WebDriver driver;
+</code></pre>
+
+<p>  @Test(priority = 0)
+  public void One() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number One");
+</code></pre>
+
+<p>  }</p>
+
+<p>  @Test(priority = 1)
+  public void Two() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number Two");
+</code></pre>
+
+<p>  }</p>
+
+<p>  @Test(priority = 2, enabled = false)
+  public void Three() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number Three");
+</code></pre>
+
+<p>  }</p>
+
+<p>  @Test(priority = 3)
+  public void Four() {</p>
+
+<pre><code>  System.out.println("This is the Test Case number Four");
+</code></pre>
+
+<p>  }
+}</p>
+
+<p>```</p>
+
+<p>Output of the above example:</p>
+
+<p><img src="/images/TestNg-Muliple-5.png"></p>
+
+<h3>Take a look in more helpful <a href="/blog/2014/05/26/testng-framework-reporters-and-asserts/">P7 : Reporters and Asserts</a></h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TestNG Framework P5: Annotations , Groups and OnDepends]]></title>
+    <link href="http://www.tabaolan.com/2014/05/26/testng-framework-annotations/"/>
+    <updated>2014-05-26T11:35:51+07:00</updated>
+    <id>http://www.tabaolan.com/2014/05/26/testng-framework-annotations</id>
+    <content type="html"><![CDATA[<h2>TestNG Annotations, Groups &amp; OnDepends</h2>
+
+<h3>TestNG Annotations</h3>
+
+<p>In the TestNG Introduction chapter we have came across different annotations used in TestNG Framework but so far we have used just three(Before, After &amp; Test). All though these are the most frequently used annotations but who know how far you will go with your framework and may like to use other useful TestNG annotations.</p>
+
+<!--more-->
+
+
+<p>Before that I would like you to give a small idea on Annotations hierarchy or Annotations levels in TestNG.</p>
+
+<p>```
+<suite></p>
+
+<pre><code>   &lt;test&gt;
+         &lt;classes&gt;
+                &lt;method&gt;
+                      &lt;test&gt;
+                &lt;/method&gt;
+         &lt;/classes&gt;
+   &lt;/test&gt;
+</code></pre>
+
+<p></suite>
+```</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>It says that @Test is the smallest annotation here. @Method will be executed first, before and after the execution of @Test. The same way @Class will be executed first, before and after the execution of @Method and so on.</p>
+
+<p>Now with the below example it will be clear to you easily.</p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+public class Sequencing {</p>
+
+<pre><code>    @Test
+    public void testCase1() {
+        System.out.println("This is the Test Case 1");
+    }
+
+    @Test
+    public void testCase2() {
+        System.out.println("This is the Test Case 2");
+    }
+
+    @BeforeMethod
+    public void beforeMethod() {
+        System.out.println("This will execute before every Method");
+    }
+
+    @AfterMethod
+    public void afterMethod() {
+        System.out.println("This will execute after every Method");
+    }
+
+    @BeforeClass
+    public void beforeClass() {
+        System.out.println("This will execute before the Class");
+    }
+
+    @AfterClass
+    public void afterClass() {
+        System.out.println("This will execute after the Class");
+    }
+
+    @BeforeTest
+    public void beforeTest() {
+        System.out.println("This will execute before the Test");
+    }
+
+    @AfterTest
+    public void afterTest() {
+        System.out.println("This will execute after the Test");
+    }
+
+    @BeforeSuite
+    public void beforeSuite() {
+        System.out.println("This will execute before the Test Suite");
+    }
+
+    @AfterSuite
+    public void afterSuite() {
+        System.out.println("This will execute after the Test Suite");
+    }
+
+}
+</code></pre>
+
+<p>```</p>
+
+<p>Output of the above code will be like this:</p>
+
+<p><img src="/images/TestNG-Annotations-1.png"></p>
+
+<p>It is clearly visible that the @Suite annotation is the very first and the very lastly executed. Then @Test followed by @Class. Now if you notice, the @Method has executed twice. As @Test is a method in the class, hence @Method will always executed for each @Test method.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Test Case Grouping</h3>
+
+<p>‘Groups‘ is one more annotation of TestNG which can be used in the execution of multiple tests. Let’s say you have hundred tests of class vehicle and in it ten method of car, ten method of scooter and so on. You probably like to run all the scooter tests together in a batch. And you want all to be in a single test suite. With the help of grouping you can easily overcome this situation.</p>
+
+<h4>How to do it…</h4>
+
+<p>1) Create two methods for Car, two methods for Scooter and one method in conjunction with Car &amp; Sedan Car.</p>
+
+<p>2) Group them separately with using  (groups = { ” Group Name” })</p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import org.testng.annotations.Test;</p>
+
+<p>public class Grouping {
+  @Test (groups = { &ldquo;Car&rdquo; })
+  public void Car1() {</p>
+
+<pre><code>  System.out.println("Batch Car - Test car 1");
+</code></pre>
+
+<p>  }
+  @Test (groups = { &ldquo;Car&rdquo; })
+  public void Car2() {</p>
+
+<pre><code>  System.out.println("Batch Car - Test car 2");
+</code></pre>
+
+<p>  }
+  @Test (groups = { &ldquo;Scooter&rdquo; })
+  public void Scooter1() {</p>
+
+<pre><code>  System.out.println("Batch Scooter - Test scooter 1");
+</code></pre>
+
+<p>  }
+  @Test (groups = { &ldquo;Scooter&rdquo; })
+  public void Scooter2() {</p>
+
+<pre><code>  System.out.println("Batch Scooter - Test scooter 2");
+</code></pre>
+
+<p>  }
+  @Test (groups = { &ldquo;Car&rdquo;, &ldquo;Sedan Car&rdquo; })
+  public void Sedan1() {</p>
+
+<pre><code>  System.out.println("Batch Sedan Car - Test sedan 1");
+</code></pre>
+
+<p>  }
+}</p>
+
+<p>```</p>
+
+<p>3) Create a testng xml like this:</p>
+
+<p>```
+<suite name="Suite"></p>
+
+<pre><code>&lt;test name="Practice Grouping"&gt;
+    &lt;groups&gt;
+    &lt;run&gt;
+    &lt;include name="Car" /&gt;
+    &lt;/run&gt;
+&lt;/groups&gt;
+&lt;classes&gt;
+    &lt;class name="automationFramework.Grouping" /&gt;
+&lt;/classes&gt;
+&lt;/test&gt;
+</code></pre>
+
+<p></suite></p>
+
+<p>```</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>4) Run the test by right click on the testng.xml file and select Run As > TestNG Suite. Output will be like this in TestNg console:</p>
+
+<p><img src="/images/TestNG-Grouping-1.png"></p>
+
+<p> Note: We have just call the group ‘Car’ from the xml and it also executed the test for Sedan Car, as we have mentioned the ‘Car’ as well while declaring the group of Sedan Car.</p>
+
+<p>Clubbing of groups is also possible, take a look at the below xml:</p>
+
+<p>```</p>
+
+<p><suite name="Suite">
+   <test name="Practice Grouping"></p>
+
+<pre><code>  &lt;groups&gt;
+     &lt;define name="All"&gt;
+         &lt;include name="Car"/&gt;
+         &lt;include name="Scooter"/&gt;
+     &lt;/define&gt;
+    &lt;run&gt;
+         &lt;include name="All"/&gt;
+    &lt;/run&gt;
+ &lt;/groups&gt;
+ &lt;classes&gt;
+      &lt;class name="automationFramework.Grouping" /&gt;
+&lt;/classes&gt;
+</code></pre>
+
+<p>   </test>
+</suite></p>
+
+<p>```</p>
+
+<p>You can see that we have created a new Group with the name ‘All’ and include other groups in it. Then simply called the newly created group for execution. The output will be like this:</p>
+
+<p><img src="/images/TestNG-Grouping-2.png"></p>
+
+<h3>Dependent Test</h3>
+
+<p>Sometimes, you may need to invoke methods in a Test case in a particular order or you want to share some data and state between methods. This kind of dependency is supported by TestNG as it supports the declaration of explicit dependencies between test methods.</p>
+
+<p>TestNG allows you to specify dependencies either with:</p>
+
+<p>Using attributes dependsOnMethods in @Test annotations OR</p>
+
+<p>Using attributes dependsOnGroups in @Test annotations.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Take a look over the below example:</p>
+
+<p>```
+package automationFramework;</p>
+
+<p>import org.testng.annotations.Test;</p>
+
+<p>public class Dependent {
+  @Test (dependsOnMethods = { &ldquo;OpenBrowser&rdquo; })
+  public void SignIn() {</p>
+
+<pre><code>  System.out.println("This will execute second (SignIn)");
+</code></pre>
+
+<p>  }
+  @Test
+  public void OpenBrowser() {</p>
+
+<pre><code>  System.out.println("This will execute first (Open Browser)");
+</code></pre>
+
+<p>  }
+  @Test (dependsOnMethods = { &ldquo;SignIn&rdquo; })
+  public void LogOut() {</p>
+
+<pre><code>  System.out.println("This will execute third (Log Out)");
+</code></pre>
+
+<p>  }</p>
+
+<p>```</p>
+
+<p>The output will be like this:</p>
+
+<p><img src="/images/TestNG-Dependent1.png"></p>
+
+<h3>Take look for more information about : <a href="/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/">P6 : Prioritizing and Sequencing</a></h3>
+]]></content>
+  </entry>
+  
+</feed>

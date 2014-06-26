@@ -1,0 +1,378 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Webdriver : Switch Window Commands - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+    
+	<meta name="description" content="All about Switch Window Commands in Selenium Webdriver">
+	<meta name="keywords" content="Tutorial,Selenium,WebDriver, Window ,Commands, Java">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-51278981-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/blog/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/blog/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/blog/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/blog/categories/tricks/">Tips&Tricks</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">Webdriver : Switch Window Commands</h2>
+	<div class="entry-content"><h2>WebDriver Switch Window Commands</h2>
+
+<p>Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.</p>
+
+<!--more-->
+
+
+<h3>GetWindowHandle Command</h3>
+
+<p>Purpose: To get the window handle of the current window.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>String  handle= driver.getWindowHandle();//Return a string of alphanumeric window handle</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>GetWindowHandles Command</h3>
+
+<p>Purpose: To get the window handle of all the current windows.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Set&lt;String&gt; handle= driver.getWindowHandles();//Return a set of window handle</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>SwitchTo Window Command</h3>
+
+<p>Purpose: WebDriver supports moving between named windows using the “switchTo” method.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.switchTo().window("windowName");
+</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Alternatively, you can pass a “window handle” to the “switchTo().window()” method. Knowing this, it’s possible to iterate over every open window like so:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for (String handle : driver.getWindowHandles()) {
+</span><span class='line'>    driver.switchTo().window(handle);
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Switching between windows with Iterators:</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>driver.findElement(By.id(“id of the link which opens new window”)).click();
+</span><span class='line'> //wait till two windows are not opened
+</span><span class='line'> waitForNumberofWindowsToEqual(2);//this method is for wait
+</span><span class='line'>
+</span><span class='line'> Set handles = driver.getWindowHandles();
+</span><span class='line'> firstWinHandle = driver.getWindowHandle(); handles.remove(firstWinHandle);
+</span><span class='line'> String winHandle=handles.iterator().next();
+</span><span class='line'> if (winHandle!=firstWinHandle){
+</span><span class='line'> //To retrieve the handle of second window, extracting the handle which does not match to first window handle
+</span><span class='line'> secondWinHandle=winHandle; //Storing handle of second window handle
+</span><span class='line'>
+</span><span class='line'>//Switch control to new window
+</span><span class='line'> driver.switchTo().window(secondWinHandle);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>SwitchTo Frame Command</h3>
+
+<p>Purpose: WebDriver supports moving between named frames using the “switchTo” method.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.switchTo().frame("frameName");</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>SwitchTo PopUp Command</h3>
+
+<p>Purpose: WebDriver supports moving between named PopUps using the “switchTo” method. After you’ve triggered an action that opens a popup, you can access the alert and it will return the currently open alert object. With this object you can now accept, dismiss, read its contents or even type into a prompt. This interface works equally well on alerts, confirms, and prompts.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Alert alert = driver.switchTo().alert();</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Practice Exercise 1</h3>
+
+<p>1) Launch new Browser</p>
+
+<p>2) Open URL &ldquo;<a href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a>&rdquo;</p>
+
+<p>3) Get Window name (Use GetWindowHandle command)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package practiceTestCases;
+</span><span class='line'>import java.util.Set;
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>
+</span><span class='line'>public class PracticeSwitchWindow {
+</span><span class='line'>
+</span><span class='line'>      public static WebDriver driver;
+</span><span class='line'>      public static void main(String[] args) {
+</span><span class='line'>
+</span><span class='line'>          // Create a new instance of the Firefox driver
+</span><span class='line'>          driver = new FirefoxDriver();
+</span><span class='line'>
+</span><span class='line'>          // Put an Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
+</span><span class='line'>          driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>
+</span><span class='line'>          // Launch the URL
+</span><span class='line'>          driver.get("http://docs.seleniumhq.org/download/");
+</span><span class='line'>
+</span><span class='line'>          // Store and Print the name of the First window on the console
+</span><span class='line'>          String handle= driver.getWindowHandle();
+</span><span class='line'>          System.out.println(handle);
+</span><span class='line'>
+</span><span class='line'>          // Close Original window
+</span><span class='line'>          driver.quit();
+</span><span class='line'>
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/2014/05/26/webdriver-switch-window-commands/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/2014/05/26/webdriver-switch-window-commands/';
+        var disqus_url = 'http://www.tabaolan.com/2014/05/26/webdriver-switch-window-commands/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
