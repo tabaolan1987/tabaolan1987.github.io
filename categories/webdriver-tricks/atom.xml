@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver,tricks | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/webdriver-tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-26T15:43:43+07:00</updated>
+  <updated>2014-06-26T15:57:38+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to resolve the certificate error in IE browser with Selenium WebDriver]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/06/26/tipstrick-how-to-resolve-the-certificate-error-in-ie-browser-with-selenium-webdriver/"/>
+    <updated>2014-06-26T15:50:25+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/06/26/tipstrick-how-to-resolve-the-certificate-error-in-ie-browser-with-selenium-webdriver</id>
+    <content type="html"><![CDATA[<p>Some website had certificate error when you access to this , it will be blocked by IE browser.</p>
+
+<p>It look like this :</p>
+
+<p><img src="/images/certicate-ie.png"></p>
+
+<p>To resolve this you must enter this code below :</p>
+
+<p>```
+driver.get(&ldquo;yourwebsite url that had certificate error&rdquo;);
+if(driver instanceof InternetExplorerDriver){</p>
+
+<pre><code>driver.navigate().to("javascript:document.getElementById('overridelink').click()");
+Thread.sleep(5000);
+</code></pre>
+
+<p>}
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to get the current browser running in real time with WebDriver]]></title>
