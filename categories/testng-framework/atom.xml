@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TestNG-Framework | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-27T15:20:54+07:00</updated>
+  <updated>2014-06-27T15:51:47+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -79,7 +79,8 @@ import org.testng.annotations.Test;</p>
   }</p>
 
 <p>  // Once Before method is completed, Test method will start
-  @Test public void login() throws InterruptedException {</p>
+  @Test
+  public void login() throws InterruptedException {</p>
 
 <pre><code>  driver.findElement(By.id("email")).sendKeys("your username");
   driver.findElement(By.id("pass")).sendKeys("your password");
@@ -177,7 +178,7 @@ import org.testng.annotations.Test;</p>
 
 <h3>TestNG Parameters</h3>
 
-<p>Everybody knows the importance of Parameterization in testing and in automation testing. It allows us to automatically run a test case multiple times with different input and validation values. As Selenium Webdriver is more an automated testing framework than a ready-to-use tool, you will have to put in some effort to support data driven testing in your automated tests. I usually prefer to use Microsoft Excel as the format for storing my parameters but so many of my followers have requested to write an article on TestNG Data Provider.</p>
+<p>Everybody knows the importance of Parametrization in testing and in automation testing. It allows us to automatically run a test case multiple times with different input and validation values. As Selenium Webdriver is more an automated testing framework than a ready-to-use tool, you will have to put in some effort to support data driven testing in your automated tests. I usually prefer to use Microsoft Excel as the format for storing my parameters but so many of my followers have requested to write an article on TestNG Data Provider.</p>
 
 <p>TestNG again gives us another interesting feature called TestNG Parameters. TestNG lets you pass parameters directly to your test methods with your testng.xml.</p>
 
