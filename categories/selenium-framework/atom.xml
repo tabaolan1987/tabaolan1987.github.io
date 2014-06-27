@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-27T14:30:22+07:00</updated>
+  <updated>2014-06-27T15:20:54+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -45,9 +45,8 @@
 
 <p>4) Open &lsquo;ExcelUtil.java&rsquo; and paste the code below to it :</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 package com.selenium.util;</p>
 
 <p>import java.io.File;
@@ -110,13 +109,13 @@ public static String getCellData(int RowNum, int ColNum) throws Exception {
 
 <p>}</p>
 
-<p>```</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p>```
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>5) Create a new testNG class and with name &lsquo;loginFacebookByExcelData&rsquo; and paste the code below :</p>
 
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 package com.selenium.test;</p>
 
 <p>import org.openqa.selenium.WebDriver;
@@ -173,9 +172,8 @@ private static String password;
 
 <p>}</p>
 
-<p>```</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p>```
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>6) Right click into class and chose &lsquo;Run as&rsquo; &ndash;> &lsquo;TestNg Test&rsquo;</p>
 
@@ -217,7 +215,8 @@ private static String password;
 
 <p>5) Double click on &lsquo;pom.xml&rsquo; paste the configuration below the tag &lsquo;dependencies&rsquo; to enable Maven automatic get the Directory of project when build project.</p>
 
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 <reporting></p>
 
 <pre><code>    &lt;plugins&gt;
@@ -306,11 +305,10 @@ private static String password;
 
 <p>```</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
 <p>6) After that your &lsquo;pom.xml&rsquo; file will look like this :</p>
 
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 &lt;project xmlns=&ldquo;<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a>&rdquo; xmlns:xsi=&ldquo;<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>&rdquo;</p>
 
 <pre><code>xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
@@ -450,8 +448,6 @@ private static String password;
 <p></project>
 ```</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
 <p>7) Right click in folder &lsquo;src&rsquo; &ndash;> New &ndash;> Folder &ndash;> name it as &lsquo;template&rsquo;</p>
 
 <p><img src="/images/mulb-3.png"></p>
@@ -466,7 +462,8 @@ private static String password;
 
 <p>10) Open file &lsquo;system.properties&rsquo; and copy the code below and paste to this file:</p>
 
-<p><code>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5798698216356388" data-ad-slot="6124493152"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<code>
 project.basedir=${project.basedir}
 project.build.directory=${project.build.directory}
 </code></p>
@@ -485,9 +482,8 @@ project.build.directory=${project.build.directory}
 
 <p>14) Double click on &lsquo;DriverUtil.java&rsquo; and paste the below code to it.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 package com.selenium.util;</p>
 
 <p>import java.io.File;
@@ -570,7 +566,8 @@ public static String getKey(String key) {
 
 <p>15) Double click on &lsquo;autoTestFacebook.java&rsquo; and paste the code below to it.</p>
 
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 package com.selenium.test;</p>
 
 <p>import org.openqa.selenium.WebDriver;
@@ -649,15 +646,14 @@ private static String status_facebook;
 }
 ```</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
 <p>16) Right Click in Project &ndash;> New &ndash;> File &ndash;> name it as &lsquo;TestNg.xml&rsquo;</p>
 
 <p><img src="/images/mulb-9.png"></p>
 
 <p>17) Copy code below and paste to &lsquo;TestNg.xml&rsquo;. Remember to change the username and password in tag parameter. You can change the value of parallel to test &ndash;> it will run 3 browser in the same time.</p>
 
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 &lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?></p>
 
 <p>&lt;!DOCTYPE suite SYSTEM &ldquo;<a href="http://testng.org/testng-1.0.dtd">http://testng.org/testng-1.0.dtd</a>&rdquo;></p>
@@ -697,8 +693,7 @@ private static String status_facebook;
  </classes>
  </test>
 </suite>
-```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+```</p>
 
 <p>17) Right click in file &lsquo;TestNG.xml&rsquo; &ndash;> Run as &ndash;> TestNG Suite and wait for the process running.</p>
 
@@ -755,9 +750,8 @@ private static String status_facebook;
 
 <p>4) Double click in &lsquo;autoTestFacebook&rsquo; to open it. Copy and paste the code below to this.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 package com.selenium.test;</p>
 
 <p>import org.openqa.selenium.WebDriver;
@@ -870,9 +864,8 @@ private static WebDriver driver;
 
 <p>Click on the Submit button</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 package com.selenium.userAction;</p>
 
 <p>import org.openqa.selenium.WebDriver;</p>
@@ -911,7 +904,8 @@ public static void Execute(WebDriver driver , String username, String password) 
 
 <p>Click on button Post.</p>
 
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 package com.selenium.userAction;</p>
 
 <p>import org.openqa.selenium.WebDriver;</p>
@@ -986,9 +980,8 @@ public static void Execute(WebDriver driver, String status){
 
 <p>3.Now create a Static Method for each Element (Object) in the Login Page. Each method will have an Argument (driver) and a Return value (element).</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 package com.selenium.pageObject;</p>
 
 <p>import org.openqa.selenium.By;
@@ -1065,7 +1058,8 @@ public static WebElement btn_LogIn(WebDriver driver) throws ElementNotFoundExcep
 
 <p>8.Now create a Static Method for each Element (Object) in the Home Page. Each method will have an Argument (driver) and a Return value (element).</p>
 
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 package com.selenium.pageObject;</p>
 
 <p>import org.openqa.selenium.By;

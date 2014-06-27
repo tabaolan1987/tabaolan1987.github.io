@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-27T14:30:22+07:00</updated>
+  <updated>2014-06-27T15:20:54+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -26,9 +26,8 @@
 
 <p>To resolve this you must enter this code below :</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 driver.get(&ldquo;yourwebsite url that had certificate error&rdquo;);
 if(driver instanceof InternetExplorerDriver){</p>
 
@@ -50,9 +49,8 @@ Thread.sleep(5000);
 
 <p>So take a look in this example code to know :</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 public String getCurrentBrowserName(WebDriver driver){</p>
 
 <pre><code>if(driver instanceof InternetExplorerDriver){
@@ -79,9 +77,8 @@ public String getCurrentBrowserName(WebDriver driver){</p>
 
 <p>It looks something like this:</p>
 
-<p><img src="/images/trick-ide-autocomple-1.png"></p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<img src="/images/trick-ide-autocomple-1.png"></p>
 
 <p>So We will hanlde this by 4 actions :</p>
 
@@ -95,7 +92,8 @@ public String getCurrentBrowserName(WebDriver driver){</p>
 
 <p>Take a look in this image :</p>
 
-<p><img src="/images/trick-ide-autocomple-2.png"></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<img src="/images/trick-ide-autocomple-2.png"></p>
 ]]></content>
   </entry>
   
@@ -106,11 +104,10 @@ public String getCurrentBrowserName(WebDriver driver){</p>
     <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide</id>
     <content type="html"><![CDATA[<p>If you want to check element background colour , take a look in this example :</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
 <p>Your html code look like that :</p>
 
-<p>```</p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```</p>
 
 <div id="my_div" class = "en" style = "backgroundbackground-color= #0000FF">
 </div>
@@ -120,7 +117,8 @@ public String getCurrentBrowserName(WebDriver driver){</p>
 
 <p>Your Selenium Ide will like this to check background of div :</p>
 
-<p>```
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
 command: verifyAttribute</p>
 
 <p>Target : css=div#my_div@style</p>
@@ -137,11 +135,10 @@ command: verifyAttribute</p>
     <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables</id>
     <content type="html"><![CDATA[<p>If you want Selenium IDE loop through your array ,</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
 <p>let take a look in code this example :</p>
 
-<p><code>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<code>
 &lt;tr&gt;
 &lt;td&gt;storeEval&lt;/td&gt;
 &lt;td&gt;new Array(&amp;quot;postgresql&amp;quot;,&amp;quot;mysql&amp;quot;);&lt;/td&gt;
@@ -181,7 +178,8 @@ command: verifyAttribute</p>
 
 <p>or follower there command in this picture</p>
 
-<p><img src="/images/tricks-ide-loop-array.png"></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<img src="/images/tricks-ide-loop-array.png"></p>
 ]]></content>
   </entry>
   

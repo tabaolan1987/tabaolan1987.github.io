@@ -4,73 +4,73 @@
         <loc>
             http://www.tabaolan.com/blog/2014/05/22/newbie-part-1-download-and-install-java/
         </loc>
-        <lastmod>2014-06-26T10:32:31+07:00</lastmod>
+        <lastmod>2014-06-27T14:53:28+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/22/newbie-part-2-download-and-start-eclipse/
         </loc>
-        <lastmod>2014-06-26T10:50:47+07:00</lastmod>
+        <lastmod>2014-06-27T14:42:49+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/22/newbie-part-3-download-webdriver-java-client/
         </loc>
-        <lastmod>2014-06-26T10:51:07+07:00</lastmod>
+        <lastmod>2014-06-27T14:42:17+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/23/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/
         </loc>
-        <lastmod>2014-06-26T10:22:24+07:00</lastmod>
+        <lastmod>2014-06-27T15:16:07+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/23/webdriver-introduction/</loc>
-        <lastmod>2014-06-26T10:25:25+07:00</lastmod>
+        <lastmod>2014-06-27T15:14:49+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/23/webdriver-browser-commands/</loc>
-        <lastmod>2014-06-26T10:10:57+07:00</lastmod>
+        <lastmod>2014-06-27T15:20:47+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/23/webdriver-element-commands/</loc>
-        <lastmod>2014-06-26T10:12:01+07:00</lastmod>
+        <lastmod>2014-06-27T15:20:17+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/webdriver-browser-navigation-commands/</loc>
-        <lastmod>2014-06-26T10:11:55+07:00</lastmod>
+        <lastmod>2014-06-27T15:20:34+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/webdriver-switch-window-commands/</loc>
-        <lastmod>2014-06-26T10:14:13+07:00</lastmod>
+        <lastmod>2014-06-27T15:18:57+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/webdriver-wait-commands/</loc>
-        <lastmod>2014-06-26T10:14:41+07:00</lastmod>
+        <lastmod>2014-06-27T15:18:26+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations/
         </loc>
-        <lastmod>2014-06-26T10:12:39+07:00</lastmod>
+        <lastmod>2014-06-27T15:19:56+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/
         </loc>
-        <lastmod>2014-06-26T10:13:42+07:00</lastmod>
+        <lastmod>2014-06-27T15:19:37+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/xpath-using-browser-inspector/</loc>
-        <lastmod>2014-06-26T10:28:29+07:00</lastmod>
+        <lastmod>2014-06-27T15:14:33+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/xpath-firebug-and-firepath/</loc>
-        <lastmod>2014-06-26T10:21:22+07:00</lastmod>
+        <lastmod>2014-06-27T15:16:47+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/xpath-locators-in-selenium/</loc>
-        <lastmod>2014-06-26T10:21:32+07:00</lastmod>
+        <lastmod>2014-06-27T15:16:25+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-introduction/</loc>
@@ -78,13 +78,13 @@
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-download/</loc>
-        <lastmod>2014-06-26T10:34:27+07:00</lastmod>
+        <lastmod>2014-06-27T14:52:46+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/26/testng-framework-first-test-case-with-testng/
         </loc>
-        <lastmod>2014-06-26T10:34:50+07:00</lastmod>
+        <lastmod>2014-06-27T14:51:56+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-test-suite/</loc>
@@ -92,29 +92,29 @@
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations/</loc>
-        <lastmod>2014-06-26T10:40:45+07:00</lastmod>
+        <lastmod>2014-06-27T14:48:03+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/
         </loc>
-        <lastmod>2014-06-26T10:35:47+07:00</lastmod>
+        <lastmod>2014-06-27T14:51:12+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-reporters-and-asserts/</loc>
-        <lastmod>2014-06-26T10:36:07+07:00</lastmod>
+        <lastmod>2014-06-27T14:50:49+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/26/testng-framework-parameters-and-data-provider/
         </loc>
-        <lastmod>2014-06-26T10:36:33+07:00</lastmod>
+        <lastmod>2014-06-27T14:50:24+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/
         </loc>
-        <lastmod>2014-06-26T10:18:20+07:00</lastmod>
+        <lastmod>2014-06-27T15:17:16+07:00</lastmod>
     </url>
     <url>
         <loc>
@@ -126,177 +126,177 @@
         <loc>
             http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-install-maven-to-eclipse/
         </loc>
-        <lastmod>2014-06-26T10:16:21+07:00</lastmod>
+        <lastmod>2014-06-27T15:17:56+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-create-new-project/
         </loc>
-        <lastmod>2014-06-26T10:16:56+07:00</lastmod>
+        <lastmod>2014-06-27T15:17:43+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-page-object-model/
         </loc>
-        <lastmod>2014-06-26T15:43:00+07:00</lastmod>
+        <lastmod>2014-06-27T14:35:54+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/
         </loc>
-        <lastmod>2014-06-26T10:47:48+07:00</lastmod>
+        <lastmod>2014-06-27T14:43:09+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-create-test-script/
         </loc>
-        <lastmod>2014-06-26T15:37:49+07:00</lastmod>
+        <lastmod>2014-06-27T14:37:28+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-run-on-multi-browser/
         </loc>
-        <lastmod>2014-06-26T15:39:16+07:00</lastmod>
+        <lastmod>2014-06-27T14:37:15+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/05/30/webdriver-action-class/</loc>
-        <lastmod>2014-06-26T10:37:15+07:00</lastmod>
+        <lastmod>2014-06-27T14:50:06+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/
         </loc>
-        <lastmod>2014-06-26T10:29:25+07:00</lastmod>
+        <lastmod>2014-06-27T15:14:19+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/
         </loc>
-        <lastmod>2014-06-26T10:31:43+07:00</lastmod>
+        <lastmod>2014-06-27T14:55:35+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/
         </loc>
-        <lastmod>2014-06-26T10:31:01+07:00</lastmod>
+        <lastmod>2014-06-27T14:55:48+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/
         </loc>
-        <lastmod>2014-06-26T10:30:12+07:00</lastmod>
+        <lastmod>2014-06-27T15:13:48+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file/
         </loc>
-        <lastmod>2014-06-26T10:23:16+07:00</lastmod>
+        <lastmod>2014-06-27T15:15:46+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/02/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser/
         </loc>
-        <lastmod>2014-06-26T10:51:36+07:00</lastmod>
+        <lastmod>2014-06-27T14:41:23+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/
         </loc>
-        <lastmod>2014-06-26T10:24:33+07:00</lastmod>
+        <lastmod>2014-06-27T15:15:20+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/06/09/icecream-framework-introduction/</loc>
-        <lastmod>2014-06-26T10:42:42+07:00</lastmod>
+        <lastmod>2014-06-27T14:43:57+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/09/icecream-framework-download-and-configuration/
         </loc>
-        <lastmod>2014-06-26T10:43:10+07:00</lastmod>
+        <lastmod>2014-06-27T14:43:46+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/
         </loc>
-        <lastmod>2014-06-26T10:42:19+07:00</lastmod>
+        <lastmod>2014-06-27T14:44:28+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file/
         </loc>
-        <lastmod>2014-06-26T10:41:37+07:00</lastmod>
+        <lastmod>2014-06-27T14:45:13+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/06/11/tipandtrip-complex-action/</loc>
-        <lastmod>2014-06-26T11:04:47+07:00</lastmod>
+        <lastmod>2014-06-27T14:40:42+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/06/11/tipandtricks-call-javascript/</loc>
-        <lastmod>2014-06-26T11:04:33+07:00</lastmod>
+        <lastmod>2014-06-27T14:41:06+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/06/11/tipandtricks-table-tricks/</loc>
-        <lastmod>2014-06-26T11:04:41+07:00</lastmod>
+        <lastmod>2014-06-27T14:40:52+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-use-stored-value-in-a-javascript-comparison/
         </loc>
-        <lastmod>2014-06-26T11:05:23+07:00</lastmod>
+        <lastmod>2014-06-27T14:39:12+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/
         </loc>
-        <lastmod>2014-06-26T11:05:29+07:00</lastmod>
+        <lastmod>2014-06-27T14:38:54+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide/
         </loc>
-        <lastmod>2014-06-26T11:04:54+07:00</lastmod>
+        <lastmod>2014-06-27T14:39:51+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/
         </loc>
-        <lastmod>2014-06-26T11:05:07+07:00</lastmod>
+        <lastmod>2014-06-27T14:39:35+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver/
         </loc>
-        <lastmod>2014-06-26T15:27:30+07:00</lastmod>
+        <lastmod>2014-06-27T14:37:52+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/20/tipstricks-test-autocomple-menus-with-selenium-ide/
         </loc>
-        <lastmod>2014-06-27T14:30:11+07:00</lastmod>
+        <lastmod>2014-06-27T14:38:20+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/26/tipstrick-how-to-get-the-current-browser-running-in-real-time-with-webdriver/
         </loc>
-        <lastmod>2014-06-26T16:09:05+07:00</lastmod>
+        <lastmod>2014-06-27T14:35:04+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/06/26/tipstrick-how-to-resolve-the-certificate-error-in-ie-browser-with-selenium-webdriver/
         </loc>
-        <lastmod>2014-06-27T14:29:59+07:00</lastmod>
+        <lastmod>2014-06-27T14:35:11+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/archives/</loc>
-        <lastmod>2014-06-27T14:30:11+07:00</lastmod>
+        <lastmod>2014-06-27T15:20:47+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/</loc>
-        <lastmod>2014-06-27T14:30:11+07:00</lastmod>
+        <lastmod>2014-06-27T15:20:47+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/</loc>
-        <lastmod>2014-06-27T14:30:11+07:00</lastmod>
+        <lastmod>2014-06-27T15:20:47+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/search.html</loc>
