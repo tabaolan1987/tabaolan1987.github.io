@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-06-30T08:53:01+07:00</updated>
+  <updated>2014-06-30T15:33:36+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,11 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework P8 : Read Data From Excel File]]></title>
+    <title type="html"><![CDATA[Automation Framework P8 : Read Data From Excel File]]></title>
     <link href="http://www.tabaolan.com/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file/"/>
     <updated>2014-06-02T12:05:43+07:00</updated>
     <id>http://www.tabaolan.com/blog/2014/06/02/selenium-automation-framework-p8-read-data-from-excel-file</id>
-    <content type="html"><![CDATA[<h2>Reading data from the Excel</h2>
+    <content type="html"><![CDATA[<h2>Automation Framework Reading data from the Excel</h2>
 
 <h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a></h3>
 
@@ -708,11 +708,11 @@ private static String status_facebook;
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework P6 : Create Test Script]]></title>
+    <title type="html"><![CDATA[Automation Framework P6 : Create Test Script]]></title>
     <link href="http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-create-test-script/"/>
     <updated>2014-05-29T14:48:11+07:00</updated>
     <id>http://www.tabaolan.com/blog/2014/05/29/selenium-automation-framework-create-test-script</id>
-    <content type="html"><![CDATA[<h2>Create Test Script using TestNG</h2>
+    <content type="html"><![CDATA[<h2>Automation Framework Create Test Script using TestNG</h2>
 
 <h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a> , <a href="/categories/testng-framework/">TestNG Framework</a></h3>
 
@@ -823,7 +823,7 @@ private static WebDriver driver;
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework P5 : Modular Driven Framework]]></title>
+    <title type="html"><![CDATA[Automation Framework P5 : Modular Driven Framework]]></title>
     <link href="http://www.tabaolan.com/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/"/>
     <updated>2014-05-27T10:11:21+07:00</updated>
     <id>http://www.tabaolan.com/blog/2014/05/27/selenium-automation-framework-modular-driven-framework</id>
@@ -934,11 +934,11 @@ public static void Execute(WebDriver driver, String status){
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Selenium Automation Framework P4 : Page Object Model]]></title>
+    <title type="html"><![CDATA[Automation Framework P4 : Page Object Model]]></title>
     <link href="http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-page-object-model/"/>
     <updated>2014-05-26T16:03:08+07:00</updated>
     <id>http://www.tabaolan.com/blog/2014/05/26/selenium-automation-framework-page-object-model</id>
-    <content type="html"><![CDATA[<h2>Page Object Model | POM</h2>
+    <content type="html"><![CDATA[<h2>Page Object Model | POM IN AUTOMATION FRAMEWORK</h2>
 
 <h3>Required knowledge : <a href="/categories/webdriver/">WebDriver</a>,<a href="/categories/xpath/">Xpath</a></h3>
 
