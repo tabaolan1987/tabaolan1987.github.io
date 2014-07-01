@@ -6,7 +6,7 @@
 	<title>Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
     
-	<meta name="description" content="How to resolve the certificate error in IE browser with Selenium WebDriver Jun 26th, 2014 tricks Comments Some website had certificate error when &hellip;">
+	<meta name="description" content="How to switch Driver to Tab/Window by Title tab? Jul 1st, 2014 tricks Comments In some case when you need to switch driver to the tab with the title &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
@@ -130,6 +130,93 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/07/01/switch-driver-to-tab-by-title/">How to switch Driver to Tab/Window by Title tab?</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-07-01T11:10:38+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jul 1<span>st</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/07/01/switch-driver-to-tab-by-title/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h3>In some case when you need to switch driver to the tab with the title so you can use this method below</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public static WebDriver switchToTabByTitle(WebDriver driver , String title){
+</span><span class='line'>      Set&lt;String&gt; handles = driver.getWindowHandles();
+</span><span class='line'>      for(String handle : handles){
+</span><span class='line'>          if(driver.getTitle().equals(title)){
+</span><span class='line'>              driver.switchTo().window(handle);
+</span><span class='line'>              break;
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>      return driver;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/06/26/tipstrick-how-to-resolve-the-certificate-error-in-ie-browser-with-selenium-webdriver/">How to resolve the certificate error in IE browser with Selenium WebDriver</a>
   </h1>
   
@@ -198,6 +285,11 @@
 </span><span class='line'>  Thread.sleep(5000);
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 
   </article>
@@ -1408,83 +1500,6 @@
 
 
 
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/11/tipandtricks-call-javascript/">Selenium WebDriver : Call JavaScript </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-11T14:40:40+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 11<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/11/tipandtricks-call-javascript/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>Call JavaScript function with JavascriptExecutor</h2>
-
-<p>In some case you need to call some JavaScript function in Page.</p>
-
-<p>Just do this like code below and happy learning:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebDriver driver = new ChromeDriver();
-</span><span class='line'>driver.get('anyurl.com');
-</span><span class='line'>((JavascriptExecutor)driver).executeScript("yourScript();");</span></code></pre></td></tr></table></div></figure>
-
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 
   </article>
