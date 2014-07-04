@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-07-04T10:04:13+07:00</updated>
+  <updated>2014-07-04T11:20:08+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,76 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium WebDriver wait for new tab open]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/"/>
+    <updated>2014-07-04T11:12:22+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open</id>
+    <content type="html"><![CDATA[<h2>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h2>
+
+<p>```</p>
+
+<pre><code>/**
+ * @param driver : this is webdriver
+ * @param timeout : time you define to wait the tab open
+ * @return true if tab open in the time , false if tab not open in the time.
+ */
+</code></pre>
+
+<p>public static boolean waitForNewTab(WebDriver driver,int timeout){</p>
+
+<pre><code>    boolean check = false;
+    int count = 0;
+    while(!check){
+        try {
+            Set&lt;String&gt; winHandle = driver.getWindowHandles();
+            if(winHandle.size() &gt; 1){
+                check = true;
+                return check;
+            }
+            Thread.sleep(1000);
+            count++;
+            if(count &gt; timeout){
+                return check;
+            }
+        } catch (Exception e) {
+        }
+    }
+    return check;
+}
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to switch Driver to Tab/Window by Title tab?]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/07/01/switch-driver-to-tab-by-title/"/>
+    <updated>2014-07-01T11:10:38+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/07/01/switch-driver-to-tab-by-title</id>
+    <content type="html"><![CDATA[<h3>In some case when you need to switch driver to the tab/window that you know the title of this, you can use this method below</h3>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
+public static WebDriver switchToTabByTitle(WebDriver driver , String title){</p>
+
+<pre><code>    Set&lt;String&gt; handles = driver.getWindowHandles();
+    for(String handle : handles){
+        driver.switchTo().window(handle);
+        if(driver.getTitle().equals(title)){
+            break;
+        }
+    }
+    return driver;
+</code></pre>
+
+<p>}
+```
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Selenium WebDriver : How to press multi Keyboard]]></title>
@@ -317,170 +387,6 @@ for(WebElement elm : td_table){
 <p>}</p>
 
 <p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Selenium WebDriver : Call JavaScript ]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/06/11/tipandtricks-call-javascript/"/>
-    <updated>2014-06-11T14:40:40+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/06/11/tipandtricks-call-javascript</id>
-    <content type="html"><![CDATA[<h2>Call JavaScript function with JavascriptExecutor</h2>
-
-<p>In some case you need to call some JavaScript function in Page.</p>
-
-<p>Just do this like code below and happy learning:</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<code>
-WebDriver driver = new ChromeDriver();
-driver.get('anyurl.com');
-((JavascriptExecutor)driver).executeScript("yourScript();");
-</code>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Action Class]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/05/30/webdriver-action-class/"/>
-    <updated>2014-05-30T14:01:08+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/05/30/webdriver-action-class</id>
-    <content type="html"><![CDATA[<h2>Introduction</h2>
-
-<p>The Advanced User Interactions API is a new, more comprehensive API for describing actions a user can perform on a web page. This includes actions such as drag and drop or clicking multiple elements while holding down the Control key.</p>
-
-<!--more-->
-
-
-<h3>Mouse Hover action</h3>
-
-<p>There will be situations where it is required to click on the item of the drop down menu that will show up when you mouse over this menu.take a look in the example :</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<code>
-// find the menu that have the dropdown showing when we mouse over it.  
-WebElement element = driver.findElement(By.linkText("Category"));
-//Create instance of action class
-Actions action = new Actions(driver);
-//move mouse over the menu.
-action.moveToElement(element).build().perform();
-//find the link you want and click it.
-driver.findElement(By.linkText("News")).click();
-</code>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>or you can code like this way :</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-```
-WebElement element = driver.findElement(By.linkText(&ldquo;Category&rdquo;));</p>
-
-<pre><code>    Actions action = new Actions(driver);
-</code></pre>
-
-<p>action.moveToElement(element).moveToElement(driver.findElement(By.linkText(&ldquo;News&rdquo;))).click().build().perform();</p>
-
-<p>```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>With some of the browser it happens that once mouse hover action is performed, the menu list disappear with in the fractions of seconds before Selenium identify the next submenu item and perform click action on it. In that case it is better to use perform()&lsquo; action on the main menu to hold the menu list till the time Selenium identify the sub menu item and click on it.</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<code>
-WebElement element = driver.findElement(By.linkText("Category"));
-Actions action = new Actions(driver);
-action.moveToElement(element).perform();
-WebElement subElement = driver.findElement(By.linkText("News"));
-action.moveToElement(subElement);
-action.click();
-action.perform();
-</code></p>
-
-<h3>Drag And Drop</h3>
-
-<p>In case you need drag and drop an element to another position , the action class provide us the way like below code :</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-```</p>
-
-<p>WebElement From = driver.findElement(By.xpath(&ldquo;yourlocationElement));
-WebElement To = driver.findElement(By.xpath("yourlocationElement&rdquo;));
-Actions builder = new Actions(driver);
-Action dragAndDrop = builder.clickAndHold(From)
-.moveToElement(To)
-.release(To)
-.build();
-dragAndDrop.perform();</p>
-
-<p>```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h3>Scroll bars dragging</h3>
-
-<p>The following code demonstrates how to drag the vertical scroll bars on a window. The &ldquo;Actions&rdquo; class is used to click and hold on to the scroll bar and then it is dragged to a new location.</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-```
-Actions dragger = new Actions(driver);
-WebElement draggablePartOfScrollbar = driver.findElement(By.xpath(&ldquo;yourscrollbarsXpaht&rdquo;));</p>
-
-<p>// drag downwards
-int numberOfPixelsToDragTheScrollbarDown = 10;
-for (int i=10;i&lt;150;i=i+numberOfPixelsToDragTheScrollbarDown){</p>
-
-<pre><code>// this causes a gradual drag of the scroll bar, 10 units at a time
-dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
-Thread.sleep(1000L);
-</code></pre>
-
-<p>}</p>
-
-<pre><code>// now drag opposite way (downwards)
-numberOfPixelsToDragTheScrollbarDown = -10;
-</code></pre>
-
-<p>for (int i=150;i>10;i=i+numberOfPixelsToDragTheScrollbarDown){</p>
-
-<pre><code>// this causes a gradual drag of the scroll bar, -10 units at a time
-dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
-Thread.sleep(1000L);
-</code></pre>
-
-<p>}</p>
-
-<p>```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h3>RightClick on Element</h3>
-
-<p>In case you want right click on Element please follow the code below :</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<code>
-Actions actions = new Actions(driver);    
-Action action=actions.contextClick(WebElement).build(); //pass WebElement as an argument
-action.perform();
-</code></p>
-
-<h3>Sliding</h3>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<code>
-WebElement draggable = driver.findElement("find your slider in here by id or xpath etc..");
-new Actions(driver).dragAndDropBy(draggable, 120, 0).build().perform();
-</code></p>
-
-<h3>SelectMulti</h3>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<code>
-List&lt;WebElement&gt; listItems = driver.findElements("find your select by id or xpath or etc");
-Actions builder = new Actions(driver);
-builder.clickAndHold(listItems.get(1)).clickAndHold(listItems.get(2)).click();
-Action selectMultiple = builder.build();
-selectMultiple.perform();
-</code></p>
 ]]></content>
   </entry>
   

@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>How to switch Driver to Tab/Window by Title tab? - Selenium Tutorial</title>
+	<title>Selenium WebDriver wait for new tab open - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
     
-	<meta name="description" content="How to switch Driver to Tab by Title tab?">
-	<meta name="keywords" content="selenium webdriver,java,switch driver to window by title,eclipse">
+	<meta name="description" content="Selenium WebDriver wait for tab open">
+	<meta name="keywords" content="Selenium WebDriver,java,wait for new tab open,eclipse,java">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
 	<link rel="canonical" href="">
@@ -124,13 +124,8 @@
 <div id="content" class="inner">
         <article class="post">
 
-	<h2 class="title">How to Switch Driver to Tab/Window by Title Tab?</h2>
-	<div class="entry-content"><h3>In some case when you need to switch driver to the tab/window that you know the title of this, you can use this method below</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+	<h2 class="title">Selenium WebDriver Wait for New Tab Open</h2>
+	<div class="entry-content"><h2>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -142,27 +137,54 @@
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>public static WebDriver switchToTabByTitle(WebDriver driver , String title){
-</span><span class='line'>      Set&lt;String&gt; handles = driver.getWindowHandles();
-</span><span class='line'>      for(String handle : handles){
-</span><span class='line'>          driver.switchTo().window(handle);
-</span><span class='line'>          if(driver.getTitle().equals(title)){
-</span><span class='line'>              break;
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver : this is webdriver
+</span><span class='line'>   * @param timeout : time you define to wait the tab open
+</span><span class='line'>   * @return true if tab open in the time , false if tab not open in the time.
+</span><span class='line'>   */
+</span><span class='line'>public static boolean waitForNewTab(WebDriver driver,int timeout){
+</span><span class='line'>      boolean check = false;
+</span><span class='line'>      int count = 0;
+</span><span class='line'>      while(!check){
+</span><span class='line'>          try {
+</span><span class='line'>              Set&lt;String&gt; winHandle = driver.getWindowHandles();
+</span><span class='line'>              if(winHandle.size() &gt; 1){
+</span><span class='line'>                  check = true;
+</span><span class='line'>                  return check;
+</span><span class='line'>              }
+</span><span class='line'>              Thread.sleep(1000);
+</span><span class='line'>              count++;
+</span><span class='line'>              if(count &gt; timeout){
+</span><span class='line'>                  return check;
+</span><span class='line'>              }
+</span><span class='line'>          } catch (Exception e) {
 </span><span class='line'>          }
 </span><span class='line'>      }
-</span><span class='line'>      return driver;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>      return check;
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
 
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/blog/2014/07/01/switch-driver-to-tab-by-title/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -212,8 +234,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/07/01/switch-driver-to-tab-by-title/';
-        var disqus_url = 'http://www.tabaolan.com/blog/2014/07/01/switch-driver-to-tab-by-title/';
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/';
         var disqus_script = 'embed.js';
       
     (function () {

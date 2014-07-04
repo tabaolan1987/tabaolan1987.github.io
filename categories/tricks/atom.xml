@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-07-04T10:04:13+07:00</updated>
+  <updated>2014-07-04T11:20:08+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,49 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium WebDriver wait for new tab open]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/"/>
+    <updated>2014-07-04T11:12:22+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open</id>
+    <content type="html"><![CDATA[<h2>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h2>
+
+<p>```</p>
+
+<pre><code>/**
+ * @param driver : this is webdriver
+ * @param timeout : time you define to wait the tab open
+ * @return true if tab open in the time , false if tab not open in the time.
+ */
+</code></pre>
+
+<p>public static boolean waitForNewTab(WebDriver driver,int timeout){</p>
+
+<pre><code>    boolean check = false;
+    int count = 0;
+    while(!check){
+        try {
+            Set&lt;String&gt; winHandle = driver.getWindowHandles();
+            if(winHandle.size() &gt; 1){
+                check = true;
+                return check;
+            }
+            Thread.sleep(1000);
+            count++;
+            if(count &gt; timeout){
+                return check;
+            }
+        } catch (Exception e) {
+        }
+    }
+    return check;
+}
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to switch Driver to Tab/Window by Title tab?]]></title>
@@ -26,8 +69,8 @@ public static WebDriver switchToTabByTitle(WebDriver driver , String title){</p>
 
 <pre><code>    Set&lt;String&gt; handles = driver.getWindowHandles();
     for(String handle : handles){
+        driver.switchTo().window(handle);
         if(driver.getTitle().equals(title)){
-            driver.switchTo().window(handle);
             break;
         }
     }
@@ -122,37 +165,6 @@ public String getCurrentBrowserName(WebDriver driver){</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <img src="/images/trick-ide-autocomple-2.png"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Selenium IDE : Check Background colour]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide/"/>
-    <updated>2014-06-12T09:38:19+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide</id>
-    <content type="html"><![CDATA[<p>If you want to check element background colour , take a look in this example :</p>
-
-<p>Your html code look like that :</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-```</p>
-
-<div id="my_div" class = "en" style = "backgroundbackground-color= #0000FF">
-</div>
-
-
-<p>```</p>
-
-<p>Your Selenium Ide will like this to check background of div :</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-```
-command: verifyAttribute</p>
-
-<p>Target : css=div#my_div@style</p>
-
-<p>value  : <em>background-color= #0000FF</em>
-```</p>
 ]]></content>
   </entry>
   

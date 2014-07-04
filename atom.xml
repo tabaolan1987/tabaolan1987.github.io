@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-07-04T10:04:13+07:00</updated>
+  <updated>2014-07-04T11:20:08+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Selenium WebDriver wait for new tab open]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/"/>
+    <updated>2014-07-04T11:12:22+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open</id>
+    <content type="html"><![CDATA[<h2>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver : this is webdriver
+</span><span class='line'>   * @param timeout : time you define to wait the tab open
+</span><span class='line'>   * @return true if tab open in the time , false if tab not open in the time.
+</span><span class='line'>   */
+</span><span class='line'>public static boolean waitForNewTab(WebDriver driver,int timeout){
+</span><span class='line'>      boolean check = false;
+</span><span class='line'>      int count = 0;
+</span><span class='line'>      while(!check){
+</span><span class='line'>          try {
+</span><span class='line'>              Set&lt;String&gt; winHandle = driver.getWindowHandles();
+</span><span class='line'>              if(winHandle.size() &gt; 1){
+</span><span class='line'>                  check = true;
+</span><span class='line'>                  return check;
+</span><span class='line'>              }
+</span><span class='line'>              Thread.sleep(1000);
+</span><span class='line'>              count++;
+</span><span class='line'>              if(count &gt; timeout){
+</span><span class='line'>                  return check;
+</span><span class='line'>              }
+</span><span class='line'>          } catch (Exception e) {
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>      return check;
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Run Script Selenium IDE in Chrome]]></title>
@@ -184,8 +247,8 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>public static WebDriver switchToTabByTitle(WebDriver driver , String title){
 </span><span class='line'>      Set&lt;String&gt; handles = driver.getWindowHandles();
 </span><span class='line'>      for(String handle : handles){
+</span><span class='line'>          driver.switchTo().window(handle);
 </span><span class='line'>          if(driver.getTitle().equals(title)){
-</span><span class='line'>              driver.switchTo().window(handle);
 </span><span class='line'>              break;
 </span><span class='line'>          }
 </span><span class='line'>      }
@@ -1847,7 +1910,7 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#116;&#97;&#98;&#97;&#x6f;&#x6c;&#x61;&#x6e;&#x31;&#x39;&#56;&#x37;&#64;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x74;&#x61;&#x62;&#x61;&#x6f;&#x6c;&#97;&#110;&#x31;&#57;&#x38;&#x37;&#x40;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#116;&#97;&#x62;&#x61;&#111;&#108;&#97;&#110;&#49;&#57;&#x38;&#55;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#116;&#x61;&#x62;&#x61;&#x6f;&#108;&#x61;&#x6e;&#x31;&#57;&#56;&#55;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
 
@@ -1924,52 +1987,6 @@
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>Note : You need to know that some function when you export from Selenium IDE to another language will be fail. I suggest you need to re-check the export File by running it again.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Beginner with Selenium Ide Part 1 : Download Selenium Ide and install in FireFox Browser]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/06/02/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser/"/>
-    <updated>2014-06-02T14:34:19+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/06/02/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser</id>
-    <content type="html"><![CDATA[<h2>Introduction</h2>
-
-<p>Selenium IDE is a Firefox plugin which records and plays back user interactions with the browser. Use this to either create simple scripts or assist in exploratory testing. It can also export Remote Control or WebDriver scripts, though they tend to be somewhat brittle and should be overhauled into some sort of Page Object-y structure for any kind of resiliency.</p>
-
-<!--more-->
-
-
-<h3>How to download and install to firefox browser</h3>
-
-<p>1) Install Firefox browser and setup it to your computer by click into this <a href="http://adf.ly/p8vFO">link</a></p>
-
-<p>2) Go to Selenium and download Selenium IDE by click into this <a href="http://adf.ly/p8uzn">link</a></p>
-
-<p>3) Click to the version current of Selenium IDE</p>
-
-<p><img src="http://www.tabaolan.com/images/ide-1.png"></p>
-
-<p>4) Click to &lsquo;Allow&rsquo; button if it existed in the top of browser.</p>
-
-<p><img src="http://www.tabaolan.com/images/ide-2.png"></p>
-
-<p>5) Click on button &lsquo;Install Now&rsquo; when it enable.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="http://www.tabaolan.com/images/ide-3.png"></p>
-
-<p>6) After install please click in the &lsquo;Restart Now&rsquo; button in the top of browser</p>
-
-<p>7) After restart you will see the icon of Selenium IDE show in the top of browser.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="http://www.tabaolan.com/images/ide-3.png"></p>
 ]]></content>
   </entry>
   
