@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Selenium WebDriver wait for new tab open - Selenium Tutorial</title>
+	<title>How to take screenshot in Internet Explore - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
-	<meta name="description" content="Selenium WebDriver wait for tab open" />
+	<meta name="description" content="How to take screenshot in Internet Explore using Selenium WebDriver?" />
 	
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -125,10 +125,12 @@
 <div id="content" class="inner">
         <article class="post">
 
-	<h2 class="title">Selenium WebDriver Wait for New Tab Open</h2>
-	<div class="entry-content"><h2>Selenium Tutorial : How to wait for new tab open using Selenium WebDriver?</h2>
+	<h2 class="title">How to Take Screenshot in Internet Explore</h2>
+	<div class="entry-content"><h2>Selenium Tutorial : How to take screentShot in Internet Explore using Selenium WebDriver?</h2>
 
-<h3>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h3>
+<p>In browser Internet Explore we need to have some alter code for take screenshot in Internet Explore.</p>
+
+<p>Take a look in this code below :</p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -142,51 +144,14 @@
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>  /**
-</span><span class='line'>   * @param driver : this is webdriver
-</span><span class='line'>   * @param timeout : time you define to wait the tab open
-</span><span class='line'>   * @return true if tab open in the time , false if tab not open in the time.
-</span><span class='line'>   */
-</span><span class='line'>public static boolean waitForNewTab(WebDriver driver,int timeout){
-</span><span class='line'>      boolean check = false;
-</span><span class='line'>      int count = 0;
-</span><span class='line'>      while(!check){
-</span><span class='line'>          try {
-</span><span class='line'>              Set&lt;String&gt; winHandle = driver.getWindowHandles();
-</span><span class='line'>              if(winHandle.size() &gt; 1){
-</span><span class='line'>                  check = true;
-</span><span class='line'>                  return check;
-</span><span class='line'>              }
-</span><span class='line'>              Thread.sleep(1000);
-</span><span class='line'>              count++;
-</span><span class='line'>              if(count &gt; timeout){
-</span><span class='line'>                  return check;
-</span><span class='line'>              }
-</span><span class='line'>          } catch (Exception e) {
-</span><span class='line'>          }
-</span><span class='line'>      }
-</span><span class='line'>      return check;
-</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>public static void takeScreenShotIE(WebDriver driver, String name){
+</span><span class='line'>  WebDriver augmentedDriver = new Augmenter().augment(driver);
+</span><span class='line'>  output = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
+</span><span class='line'>  file = new File(screenshootDir, name + ".png");
+</span><span class='line'>  FileUtils.copyFile(output, file);
+</span><span class='line'>} 
+</span></code></pre></td></tr></table></div></figure>
 
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -197,7 +162,7 @@
 
 <div class="meta">
 	
-		<span class="comments"><a href="/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -247,8 +212,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/';
-        var disqus_url = 'http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/';
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/';
         var disqus_script = 'embed.js';
       
     (function () {

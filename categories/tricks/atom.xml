@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-07-07T09:21:13+07:00</updated>
+  <updated>2014-07-07T15:13:28+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,13 +14,45 @@
 
   
   <entry>
+    <title type="html"><![CDATA[How to take screenshot in Internet Explore]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/"/>
+    <updated>2014-07-07T15:07:11+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/07/07/how-to-take-screenshot-in-internet-explore</id>
+    <content type="html"><![CDATA[<h2>Selenium Tutorial : How to take screentShot in Internet Explore using Selenium WebDriver?</h2>
+
+<p>In browser Internet Explore we need to have some alter code for take screenshot in Internet Explore.</p>
+
+<p>Take a look in this code below :</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```</p>
+
+<p>public static void takeScreenShotIE(WebDriver driver, String name){</p>
+
+<pre><code>WebDriver augmentedDriver = new Augmenter().augment(driver);
+output = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
+file = new File(screenshootDir, name + ".png");
+FileUtils.copyFile(output, file);
+</code></pre>
+
+<p>}</p>
+
+<p>```
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Selenium WebDriver wait for new tab open]]></title>
     <link href="http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/"/>
     <updated>2014-07-04T11:12:22+07:00</updated>
     <id>http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open</id>
-    <content type="html"><![CDATA[<h2>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h2>
+    <content type="html"><![CDATA[<h2>Selenium Tutorial : How to wait for new tab open using Selenium WebDriver?</h2>
 
-<p>```</p>
+<h3>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h3>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```</p>
 
 <pre><code>/**
  * @param driver : this is webdriver
@@ -52,7 +84,8 @@
 }
 </code></pre>
 
-<p>```</p>
+<p>```
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 ]]></content>
   </entry>
   
@@ -199,34 +232,6 @@ public static WebDriver switchToTabByTitle(WebDriver driver , String title){</p>
         }
     }
     return driver;
-</code></pre>
-
-<p>}
-```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to resolve the certificate error in IE browser with Selenium WebDriver]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/06/26/tipstrick-how-to-resolve-the-certificate-error-in-ie-browser-with-selenium-webdriver/"/>
-    <updated>2014-06-26T15:50:25+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/06/26/tipstrick-how-to-resolve-the-certificate-error-in-ie-browser-with-selenium-webdriver</id>
-    <content type="html"><![CDATA[<p>Some website had certificate error when you access to this , it will be blocked by IE browser.</p>
-
-<p>It look like this :</p>
-
-<p><img src="/images/certicate-ie.png"></p>
-
-<p>To resolve this you must enter this code below :</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-```
-driver.get(&ldquo;yourwebsite url that had certificate error&rdquo;);
-if(driver instanceof InternetExplorerDriver){</p>
-
-<pre><code>driver.navigate().to("javascript:document.getElementById('overridelink').click()");
-Thread.sleep(5000);
 </code></pre>
 
 <p>}

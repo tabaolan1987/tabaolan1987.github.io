@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-07-07T09:21:13+07:00</updated>
+  <updated>2014-07-07T15:13:28+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,11 +14,58 @@
 
   
   <entry>
+    <title type="html"><![CDATA[How to take screenshot in Internet Explore]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/"/>
+    <updated>2014-07-07T15:07:11+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/07/07/how-to-take-screenshot-in-internet-explore</id>
+    <content type="html"><![CDATA[<h2>Selenium Tutorial : How to take screentShot in Internet Explore using Selenium WebDriver?</h2>
+
+<p>In browser Internet Explore we need to have some alter code for take screenshot in Internet Explore.</p>
+
+<p>Take a look in this code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>public static void takeScreenShotIE(WebDriver driver, String name){
+</span><span class='line'>  WebDriver augmentedDriver = new Augmenter().augment(driver);
+</span><span class='line'>  output = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
+</span><span class='line'>  file = new File(screenshootDir, name + ".png");
+</span><span class='line'>  FileUtils.copyFile(output, file);
+</span><span class='line'>} 
+</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Selenium WebDriver wait for new tab open]]></title>
     <link href="http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/"/>
     <updated>2014-07-04T11:12:22+07:00</updated>
     <id>http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open</id>
-    <content type="html"><![CDATA[<h2>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h2>
+    <content type="html"><![CDATA[<h2>Selenium Tutorial : How to wait for new tab open using Selenium WebDriver?</h2>
+
+<h3>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -73,6 +120,11 @@
 </span><span class='line'>      return check;
 </span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
 
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 ]]></content>
   </entry>
   
@@ -1910,7 +1962,7 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#116;&#97;&#x62;&#x61;&#111;&#x6c;&#x61;&#x6e;&#49;&#57;&#x38;&#55;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x74;&#x61;&#98;&#97;&#x6f;&#108;&#97;&#x6e;&#x31;&#x39;&#56;&#55;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x74;&#97;&#98;&#x61;&#x6f;&#108;&#x61;&#x6e;&#x31;&#57;&#56;&#55;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">&#116;&#97;&#x62;&#97;&#x6f;&#x6c;&#97;&#x6e;&#49;&#x39;&#x38;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
 
@@ -1924,69 +1976,6 @@
 <p>Let IceCream say Hi with you and take a look in <a href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
 
 <p><img src="http://www.tabaolan.com/images/ICE-1.jpg"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Beginner with Selenium Ide Part 2: Record User Action and Export this Script to another language]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/"/>
-    <updated>2014-06-02T15:03:46+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae</id>
-    <content type="html"><![CDATA[<h2>Introduction</h2>
-
-<p>In this tutorial  , we will let you know how to record the user action in browser via Selenium IDE and How to export this to another language like java , &hellip;!</p>
-
-<h3>Record User Action</h3>
-
-<!--more-->
-
-
-<p>1) Open Firefox Browser and click in the icon of Selenium IDE.</p>
-
-<p><img src="http://www.tabaolan.com/images/ide-3.png"></p>
-
-<p>2) The GUI of Selenium Ide will show , click in the red circle button of the top to record user action.</p>
-
-<p><img src="http://www.tabaolan.com/images/ide-5.png"></p>
-
-<p>3) Go back to the firefox driver and type to the url &ldquo;<a href="https://facebook.com">https://facebook.com</a>&rdquo;</p>
-
-<p>4) Login to facebook as normal.</p>
-
-<p>5) Back to Selenium IDE GUI , you will see it recorded your action.</p>
-
-<p><img src="http://www.tabaolan.com/images/ide-6.png"></p>
-
-<p>6) Click in the button play to let Selenium IDE run again each action that you made before.</p>
-
-<p><img src="http://www.tabaolan.com/images/ide-7.png"></p>
-
-<p>7) Now if you can save this test case as html file and re-run it by Open Selenium IDE and Open File &ndash;> choose the path you save this file.</p>
-
-<h3>Export this test script to another language script.</h3>
-
-<p>The most useful option is &ldquo;Export&rdquo; because it allows you to turn your Selenium IDE test cases into file formats that can run on Selenium Remote Control and WebDriver</p>
-
-<p>Selenium IDE , test cases can be exported only to the following formats:</p>
-
-<p>.cs (C# source code)</p>
-
-<p>.java (Java source code)</p>
-
-<p>.py (Python source code)</p>
-
-<p>.rb (Ruby source code)</p>
-
-<p>You just need click in menu File &ndash;> Export Test Case As.</p>
-
-<p><img src="http://www.tabaolan.com/images/ide-9.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Note : You need to know that some function when you export from Selenium IDE to another language will be fail. I suggest you need to re-check the export File by running it again.</p>
 ]]></content>
   </entry>
   
