@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <script>
   $(function() {
     $( "#speed" ).selectmenu();
@@ -32,8 +31,6 @@
 <body>
  
 <div id="demo" class="demo">
- 
-<form action="#">
  
   <fieldset>
     <label for="speed">Special select</label>
@@ -69,8 +66,13 @@
       <option>19</option>
     </select>
   </fieldset>
- 
-</form>
+  
+  <fieldset>
+	<textarea class="form-control" rows="8" id="txtMessage" name="txtMessage" placeholder="Enter your message"></textarea>
+	<input type="text" class="form-control" id="txtFirstName" name="txtFirstName">
+	<input type="text" class="form-control" id="txtEmail" name="txtEmail">
+	<input type="text" class="form-control" id="txtLastName" name="txtLastName">
+  </fieldset>
  
 </div>
  
