@@ -10,9 +10,7 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script>
   $(function() {
-
-    $( "#files" ).selectmenu();
- 
+    $( "#speed" ).selectmenu();
   });
   </script>
   <style>
@@ -38,19 +36,15 @@
 <form action="#">
  
   <fieldset>
-
- 
-    <label for="files">Select a file</label>
-    <select name="files" id="files">
-      <optgroup label="Scripts">
-        <option value="jquery">jQuery.js</option>
-        <option value="jqueryui">ui.jQuery.js</option>
-      </optgroup>
-      <optgroup label="Other files">
-        <option value="somefile">Some unknown file</option>
-        <option value="someotherfile">Some other file with a very long option text</option>
-      </optgroup>
+    <label for="speed">Select a speed</label>
+    <select name="speed" id="speed">
+      <option>Slower</option>
+      <option>Slow</option>
+      <option selected="selected">Medium</option>
+      <option>Fast</option>
+      <option>Faster</option>
     </select>
+ 
  
     <label for="number">Select a number</label>
     <select name="number" id="number">
