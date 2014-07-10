@@ -11,6 +11,15 @@
   $(function() {
     $( "#speed" ).selectmenu();
   });
+  
+  $(document).ready(function(){
+	 var timer = $.timer(function() {
+                $("#btt_ajax").css("display", "block");
+        });
+
+        timer.set({ time : 5000, autostart : true });
+  })
+  
   </script>
   <style>
     fieldset {
@@ -82,7 +91,7 @@
  
   <fieldset>
 	<button>Button 1</button>
-	<button>Button 2</button>
+	<button id='btt_ajax' style="display:none;">Button will show after 10 seconds</button>
  </fieldset>
  
 </div>
