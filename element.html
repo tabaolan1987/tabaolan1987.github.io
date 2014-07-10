@@ -10,14 +10,9 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script>
   $(function() {
-    $( "#speed" ).selectmenu();
- 
+
     $( "#files" ).selectmenu();
  
-    $( "#number" )
-      .selectmenu()
-      .selectmenu( "menuWidget" )
-        .addClass( "overflow" );
   });
   </script>
   <style>
@@ -38,19 +33,12 @@
 </head>
 <body>
  
-<div class="demo">
+<div id="demo" class="demo">
  
 <form action="#">
  
   <fieldset>
-    <label for="speed">Select a speed</label>
-    <select name="speed" id="speed">
-      <option>Slower</option>
-      <option>Slow</option>
-      <option selected="selected">Medium</option>
-      <option>Fast</option>
-      <option>Faster</option>
-    </select>
+
  
     <label for="files">Select a file</label>
     <select name="files" id="files">
