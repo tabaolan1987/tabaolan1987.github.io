@@ -10,6 +10,7 @@
   <script>
   $(function() {
     $( "#speed" ).selectmenu();
+	$( "#slider" ).slider();
 	$("#btt_ajax").delay(10000).slideDown();
   });  
   </script>
@@ -32,7 +33,9 @@
 <body>
  
 <div id="demo" class="demo">
- 
+<fieldset>
+		<div id="slider"></div>
+ </fieldset>		
   <fieldset>
     <label for="speed">Special select</label>
     <select name="speed" id="speed">
