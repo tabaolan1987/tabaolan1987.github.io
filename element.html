@@ -19,11 +19,7 @@ function updateSlider(slideAmount) {
 var display = document.getElementById("chosen");
 //show the amount
 display.innerHTML=slideAmount;
-//get the element
-var pic = document.getElementById("pic");
-//set the dimensions
-pic.style.width=slideAmount+"%";
-pic.style.height=slideAmount+"%";
+
 
 }
 </script>
@@ -86,10 +82,7 @@ margin:10px;
 <div id="demo" class="demo">
 <fieldset>
 		<div id="slider">5% <input id="slide" type="range" min="5" max="200" step="5" value="100" onchange="updateSlider(this.value)"> 200%</div>
-		<div id="chosen">5</div>
-		<div id="picHolder">
-			<img id="pic" src="cateye.jpg" alt="cat eye" style="width: 5%; height: 5%;">
-		</div>
+		
  </fieldset>		
   <fieldset>
     <label for="speed">Special select</label>
