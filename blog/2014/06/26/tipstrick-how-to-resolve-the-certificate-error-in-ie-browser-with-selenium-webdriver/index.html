@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>How to resolve the certificate error in IE browser with Selenium WebDriver - Selenium Tutorial</title>
+	<title>How to resolve the certificate error in IE, Chrome , Firefox browser with Selenium WebDriver - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
 	<meta name="description" content="How to resolve the certificate error in IE browser with Selenium WebDriver" />
@@ -129,8 +129,10 @@
 <div id="content" class="inner">
         <article class="post">
 
-	<h2 class="title">How to Resolve the Certificate Error in IE Browser With Selenium WebDriver</h2>
-	<div class="entry-content"><p>Some website had certificate error when you access to this , it will be blocked by IE browser.</p>
+	<h2 class="title">How to Resolve the Certificate Error in IE, Chrome , Firefox Browser With Selenium WebDriver</h2>
+	<div class="entry-content"><h3>IE BROWSER</h3>
+
+<p>Some website had certificate error when you access to this , it will be blocked by IE browser.</p>
 
 <p>It look like this :</p>
 
@@ -146,19 +148,82 @@
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>driver.get("yourwebsite url that had certificate error");
-</span><span class='line'>if(driver instanceof InternetExplorerDriver){
-</span><span class='line'>  driver.navigate().to("javascript:document.getElementById('overridelink').click()");
-</span><span class='line'>  Thread.sleep(5000);
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>driver.navigate().to("javascript:document.getElementById('overridelink').click()");
+</span><span class='line'>Thread.sleep(5000);
+</span></code></pre></td></tr></table></div></figure>
 
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>FIREFOX BROWSER</h3>
+
+<p>Some website had certificate error when you access to this , it will be blocked by Firefox browser.</p>
+
+<p>It look like this :</p>
+
+<p><img src="/images/certicate-ff.jpg"></p>
+
+<p>To resolve this you must enter this code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DesiredCapabilities capabilities = new DesiredCapabilities(); 
+</span><span class='line'>capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true); 
+</span><span class='line'>driver= new FirefoxDriver(capabilities);
+</span><span class='line'>driver.get("yourwebsite url that had certificate error");</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>It will force disable certificate error.</p>
+
+<h3>Chrome BROWSER</h3>
+
+<p>Some website had certificate error when you access to this , it will be blocked by Chrome browser.</p>
+
+<p>It look like this :</p>
+
+<p><img src="/images/certicate-ch.jpg"></p>
+
+<p>To resolve this you must enter this code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+</span><span class='line'> capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true); 
+</span><span class='line'> System.setProperty("webdriver.chrome.driver", "path to file chromedriver.exe");
+</span><span class='line'> WebDriver driver = new ChromeDriver(capabilities);
+</span><span class='line'> driver.get("yourwebsite url that had certificate error");</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>It will force disable certificate error.</p>
 </div>
 
 <div class="meta">
