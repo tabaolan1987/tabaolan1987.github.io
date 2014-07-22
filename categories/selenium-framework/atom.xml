@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-07-18T17:26:18+07:00</updated>
+  <updated>2014-07-22T10:43:58+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -1089,7 +1089,7 @@ public static WebElement txt_status(WebDriver driver) {
  * @return button to post status
  */
 public static WebElement butt_post(WebDriver driver){
-    element = driver.findElement(By.xpath("//div[@id='pagelet_composer']/div/div/div/form[1]/div[1]/div[4]/div/ul/li[3]/button"));
+    element = driver.findElement(By.xpath("//button[contains(.,'Send')]"));
     return element;
 }
 </code></pre>
