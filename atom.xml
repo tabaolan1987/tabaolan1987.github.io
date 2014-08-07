@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-07-22T10:43:58+07:00</updated>
+  <updated>2014-08-07T15:27:06+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Introduction]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-introduction/"/>
+    <updated>2014-08-07T15:26:35+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-introduction</id>
+    <content type="html"><![CDATA[<h2>Selenium Introduction</h2>
+
+<h3>About Selenium</h3>
+
+<p>Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium project produces various tools for automation testing such as Selenium IDE, Selenium Remote Control (RC), Selenium Grid and Selenium 2.0 &amp; WebDriver. Learning all the tools will give you many different options for approaching different automation problems. The entire suits of tools result in a rich set of testing functions specially geared to the needs of testing of web application of all types.</p>
+
+<!--more-->
+
+
+<h3>Why Selenium</h3>
+
+<ul>
+<li>Selenium is an open source tool with Corporate backing.</li>
+<li>The tests can then be run against most modern web browsers.</li>
+<li>Selenium deploys on Windows, Linux, and Macintosh platforms.</li>
+<li>It allows recording, editing, and debugging tests.</li>
+<li>Recorded tests can be exported in most language e.g. html, Java, .net, perl, ruby etc.</li>
+<li>Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser.</li>
+</ul>
+
+
+<h3>Selenium WebDriver</h3>
+
+<p>The primary new feature in Selenium 2.0 is the integration of the WebDriver API. WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. It enables you to use a programming language to write test scripts in different programming languages like html, Java, .net , perl, ruby and which enables you to use conditional operations, looping and other programming concepts which makes you test script robust. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver’s goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.</p>
+
+<h3>WebDriver Vs Selenium RC</h3>
+
+<p>1) Architecture</p>
+
+<h4>WebDriver&rsquo;s architecture is simpler than Selenium RC&rsquo;s.</h4>
+
+<p>It controls the browser from the OS level</p>
+
+<p>All you need are your programming language&rsquo;s IDE (which contains your Selenium commands) and a browser.</p>
+
+<p><img src="http://www.tabaolan.com/images/compare-1.jpg"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h4>Selenium RC&rsquo;s architecture is way more complicated.</h4>
+
+<p>You first need to launch a separate application called Selenium Remote Control (RC) Server before you can start testing</p>
+
+<p>The Selenium RC Server acts as a &ldquo;middleman&rdquo; between your Selenium commands and your browser</p>
+
+<p>When you begin testing, Selenium RC Server &ldquo;injects&rdquo; a Javascript program called Selenium Core into the browser.</p>
+
+<p>Once injected, Selenium Core will start receiving instructions relayed by the RC Server from your test program.</p>
+
+<p>When the instructions are received, Selenium Core will execute them as Javascript commands.</p>
+
+<p>The browser will obey the instructions of Selenium Core, and will relay its response to the RC Server.</p>
+
+<p>The RC Server will receive the response of the browser and then display the results to you.</p>
+
+<p>RC Server will fetch the next instruction from your test script to repeat the whole cycle.</p>
+
+<p><img src="http://www.tabaolan.com/images/compare-2.jpg"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>2) Speed</p>
+
+<p>WebDriver is faster than Selenium RC since it  speaks directly to the browser uses the browser&rsquo;s own engine to control it.</p>
+
+<p>Selenium RC is slower  sinceit uses a Javascript program called Selenium Core.This Selenium Core is the one that directly controls the browser, not you.</p>
+
+<p>3) Real-life Interaction</p>
+
+<p>WebDriver interacts with page elements in a more realistic way. For example, if you have a disabled text box on a page you were testing, WebDriver really cannot enter any value in it just as how a real person cannot.</p>
+
+<p>Selenium Core, just like other Javascript codes, can access disabled elements .In the past, Selenium testers complain that Selenium Core was able to enter values to a disabled text box in their tests.Differences in API.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to take screenshot in Internet Explore]]></title>
@@ -1993,54 +2079,6 @@
 <h2>It&rsquo;s time to know <a href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/">Running an example test case</a></h2>
 
 <p><img src="http://www.tabaolan.com/images/ICE-2.jpg"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IceCream Framework Part 1 : Introduction]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-introduction/"/>
-    <updated>2014-06-09T10:23:15+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/06/09/icecream-framework-introduction</id>
-    <content type="html"><![CDATA[<h2>Introduction</h2>
-
-<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
-
-<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
-
-<!--more-->
-
-
-<p>Tester just have the basic understanding of <a href="http://www.tabaolan.com/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
-
-<p>IceCream Framework is written by Java language and use the core <a href="http://www.tabaolan.com/blog/categories/webdriver/">Selenium WebDriver</a>.</p>
-
-<p>Currently IceCream Framework version 1.0 Beta version only have the basic functions to perform automatic chemical testing.</p>
-
-<p>The reason for this because I want to collect more of your opinions, feedback and the desire to have more function for me so that I can write to serve you in the next version!</p>
-
-<p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
-
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#x74;&#97;&#98;&#x61;&#x6f;&#108;&#97;&#110;&#49;&#x39;&#x38;&#x37;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#x74;&#97;&#98;&#x61;&#x6f;&#x6c;&#97;&#110;&#49;&#x39;&#56;&#55;&#64;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
-
-<p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
-
-<p>Let IceCream say Hi with you and take a look in <a href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
-
-<p><img src="http://www.tabaolan.com/images/ICE-1.jpg"></p>
 ]]></content>
   </entry>
   
