@@ -135,7 +135,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/05/26/testng-framework-annotations/">TestNG Framework P5: Annotations , Groups and OnDepends</a>
+    <a href="/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file/">IceCream Framework Part 4 :Function available in excel file and how to use!</a>
   </h1>
   
 
@@ -153,7 +153,7 @@
   
 
 
-<time class="pull-left" datetime="2014-05-26T11:35:51+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-06-10T08:53:24+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 10<span>th</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -161,14 +161,418 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/testng-framework/'>TestNG-Framework</a></li>
+        <li><a class='category' href='/categories/icecream-framework/'>IceCream-Framework</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Version Beta 0.1</h2>
+
+<h3>Function Browser</h3>
+
+<p>1) Define : choose your browser you want to run your test case.</p>
+
+<p>2) Available : Chrome , FireFox , IE.</p>
+
+<p>3) Required : All browser must be install in your laptop or computer.</p>
+
+<p><img src="/images/use-function-1.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Function OpenUrl</h3>
+
+<p>1) Define : open the url you want to test.It will wait for the browser load this page success!</p>
+
+<p>2) Available : with any url that publish to internet or your local network.</p>
+
+<p>3) Required : correct the format of URL such as  : www.anyurl.com or http/<a href="https://anyurl.com.">https://anyurl.com.</a> Must put value in column &lsquo;ACTION INPUT VALUE&rsquo;.</p>
+
+<p><img src="/images/use-function-2.png"></p>
+
+<h3>Function CloseBrowser</h3>
+
+<p>1) Define : close the browser.</p>
+
+<p>2) Available : All browser that you choose in the top of excel file.</p>
+
+<p>3) Required : don&rsquo;t need to put any value in &lsquo;ACTION INPUT VALUE&rsquo; , &lsquo;FIND BY&rsquo;, &lsquo;FIND BY VALUE&rsquo;</p>
+
+<p><img src="/images/use-function-3.png"></p>
+
+<h3>Function Type</h3>
+
+<p>1) Define : type in text-box that you want.Return false if element is not display or not is text box or text arena.</p>
+
+<p>2) Available : all text-box that visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type in text-box!</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this text-box if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<p>4) Example : Let&rsquo;s take a look in this html source below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="holder"&gt;
+</span><span class='line'>  &lt;input type='text' id='textbox' class='example'&gt;&lt;/input&gt;
+</span><span class='line'>&lt;/div&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is find the textbox and type in it  value &lsquo;example&rsquo; by using function type in excel.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>I choose the demo to you 3 option is :</p>
+
+<p>A)Find by ID :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : ID</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : textbox (this is the id of this input type)</p>
+
+<p><img src="/images/use-function-5.png"></p>
+
+<p>B)Find by Class name :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Class Name</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : example(this is the class name of this input type)</p>
+
+<p><img src="/images/use-function-6.png"></p>
+
+<p>C)Find by Xpath :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Xpath</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : //input[id=&lsquo;textbox&rsquo;] (this is the xpath of this textbox)</p>
+
+<p><img src="/images/use-function-7.png"></p>
+
+<h3>Function Click</h3>
+
+<p>1) Define : Click into button , link,.. etc! Return false if element is not displayed.</p>
+
+<p>2) Available : All element is visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this element you want to click if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<p>4) Example  : take a look in html source below</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;td id='holder'&gt;
+</span><span class='line'>&lt;a class='link_example'&gt;Click here&lt;/a&gt;
+</span><span class='line'>&lt;/td&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is find the link and click in it.</p>
+
+<p>I choose the demo to you 2 option is :</p>
+
+<p>A) Find by Class name :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Class Name</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : link_example(this is the class name of this link)</p>
+
+<p><img src="/images/use-function-8.png"></p>
+
+<p>B) Find by Link text :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Link text</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : Click here(this is the text in the link)</p>
+
+<p><img src="/images/use-function-10.png"></p>
+
+<h3>Function VerifyTitlePage</h3>
+
+<p>1) Define : compare the title page with the text user input.Return false if the title page not equal with the text user input.</p>
+
+<p>2) Available : String for input.</p>
+
+<p>3) Required : &lsquo;ACTION INPUT VALUE&rsquo; : give your String to compare with the current title page.</p>
+
+<p><img src="/images/use-function-11.png"></p>
+
+<h3>Function VerifyText</h3>
+
+<p>1) Define : compare text inside element with text user input.Return false if they are not equals.</p>
+
+<p>2) Available : String input.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : give your String to compare with the current text in element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the location of element like xpath, ID you want to compare.</p>
+
+<p><img src="/images/use-function-12.png"></p>
+
+<h3>Function SelectValueDropdown</h3>
+
+<p>1) Define : select the value of drop-down list via value user input.Return false if value is not existed in drop-down.</p>
+
+<p>2) Available : String input.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : give your String Value you want selected in drop-down</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the location of drop-down like Xpath , or ID  you want to select!</p>
+
+<p>4)Example : take a look in html code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;select id='country'&gt;
+</span><span class='line'>&lt;option value='vietnam'&gt;Viet Nam&lt;/option&gt;
+</span><span class='line'>&lt;option value='thailand'&gt;ThaiLand&lt;/option&gt;
+</span><span class='line'>&lt;/select&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The scenario is select value Viet Nam in drop-down list. So this will be look like this :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : vietnam(value of option)</p>
+
+<p>&lsquo;FIND BY&rsquo; : ID</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : country</p>
+
+<p><img src="/images/use-function-13.png"></p>
+
+<h3>Function SwitchToFrame</h3>
+
+<p>1) Define : switch the driver to iframe.</p>
+
+<p>2) Available : All I-frame visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of IFrame like Xpath , or ID you want to select!</p>
+
+<p><img src="/images/use-function-14.png"></p>
+
+<h3>Function SwitchToWindow</h3>
+
+<p>1) Define : if browser current have more than once tab , it use to switch to the another tab.</p>
+
+<p>2) Available : All tabs are existed in current browser.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : name of this tab you want to come.</p>
+
+<p><img src="/images/use-function-15.png"></p>
+
+<h3>Function SwitchToDefault</h3>
+
+<p>1) Define :  switch to the default tabs</p>
+
+<p>2) Available :  All tabs are existed in current browser.</p>
+
+<p>3) Required : Just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-16.png"></p>
+
+<h3>Function EnterAlertAcceptButton</h3>
+
+<p>1) Define : enter the accept button in Alert if alert present.</p>
+
+<p>2) Available : all alert is present.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-17.png"></p>
+
+<h3>Function EnterAlertDismissButton</h3>
+
+<p>1) Define : enter the cancel button in Alert if alert present.Return false if alert is not present.</p>
+
+<p>2) Available : all alert is present.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-18.png"></p>
+
+<h3>Function IsAlertPresent</h3>
+
+<p>1) Define : check if alert is present.Return false if alert is not present.</p>
+
+<p>2) Available : all browser.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-19.png"></p>
+
+<h3>Function IsElementPresent</h3>
+
+<p>1) Define : check if element is present.Return false if element is not present.</p>
+
+<p>2) Available : all element.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-20.png"></p>
+
+<h3>Function WaitElementPresent</h3>
+
+<p>1) Define : wait for element present in website with time out default is 10 second , you can set this timeout by enter in column &lsquo;ACTION VALUE INPUT&rsquo;.Return false if element not present.</p>
+
+<p>2) Available : all element.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : time out you want to wait for this element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-21.png"></p>
+
+<h3>Function WaitElementsInvisible</h3>
+
+<p>1) Define : wait for all elements invisible in the timeout.Return false if once of elements is not invisible.</p>
+
+<p>2) Available : List elements.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : time out you want to wait for this element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-22.png"></p>
+
+<h3>Function TakeScreenShot</h3>
+
+<p>1) Define : take a screen-shot in your current browser tabs and save it under folder &lsquo;Screenshot&rsquo;.</p>
+
+<p>2) Available : all browsers.</p>
+
+<p>3) Required : just choose only action and not required any parameters for this.</p>
+
+<p><img src="/images/use-function-23.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/">IceCream Framework Part 3 : Running an example test case.</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-09T15:58:03+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 9<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/icecream-framework/'>IceCream-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -180,14 +584,12 @@
 
 
 <div class="entry-content clearfix">
-  <h2>TestNG Annotations, Groups &amp; OnDepends</h2>
+  <h2>Running an example test case</h2>
 
-<h3>TestNG Annotations</h3>
-
-<p>In the TestNG Introduction chapter we have came across different annotations used in TestNG Framework but so far we have used just three(Before, After &amp; Test). All though these are the most frequently used annotations but who know how far you will go with your framework and may like to use other useful TestNG annotations.</p>
+<h3>Follow to there steps below :</h3>
 
 
-  <a class="btn pull-right" href="/blog/2014/05/26/testng-framework-annotations/">Continue reading</a>
+  <a class="btn pull-right" href="/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/">Continue reading</a>
 </div>
 
   </article>
@@ -198,7 +600,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/05/26/testng-framework-test-suite/">TestNG Framework P4 : Test Suite</a>
+    <a href="/blog/2014/06/09/icecream-framework-download-and-configuration/">IceCream Framework Part 2 : Download and Configuration</a>
   </h1>
   
 
@@ -216,7 +618,7 @@
   
 
 
-<time class="pull-left" datetime="2014-05-26T11:28:33+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-06-09T11:51:13+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 9<span>th</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -224,14 +626,14 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/testng-framework/'>TestNG-Framework</a></li>
+        <li><a class='category' href='/categories/icecream-framework/'>IceCream-Framework</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-test-suite/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-download-and-configuration/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -243,14 +645,18 @@
 
 
 <div class="entry-content clearfix">
-  <h2>TestNG Test Suite</h2>
+  <h2>DOWNLOAD</h2>
 
-<p>In any project, you will end up to a place where you need to execute so many test cases on a run. Running a set of test cases together is call executing a Test Suite. Those test cases can be dependent to each other or may have to be executed in a certain order. TestNg gives us the capability to manage our test execution.</p>
+<h3>Required Tools (If you already have this in your laptop or computer , you can skip this step) :</h3>
 
-<p>In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. This is the xml file where you will configure your test run, set test dependency, include or exclude any test, method, class or package and set priority etc.</p>
+<p>1) Download and install Microsoft Office trial here : <a href="http://q.gs/7KN4D">Link Download</a></p>
+
+<p>2) Download and install JAVA here : <a href="/blog/2014/05/22/newbie-part-1-download-and-install-java/">How to download and install Java</a></p>
+
+<h3>IceCream Framework version (all version of framework) :</h3>
 
 
-  <a class="btn pull-right" href="/blog/2014/05/26/testng-framework-test-suite/">Continue reading</a>
+  <a class="btn pull-right" href="/blog/2014/06/09/icecream-framework-download-and-configuration/">Continue reading</a>
 </div>
 
   </article>
@@ -261,7 +667,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/05/26/testng-framework-first-test-case-with-testng/">TestNG Framework P3 : First Test case with TestNG</a>
+    <a href="/blog/2014/06/09/icecream-framework-introduction/">IceCream Framework Part 1 : Introduction</a>
   </h1>
   
 
@@ -279,7 +685,7 @@
   
 
 
-<time class="pull-left" datetime="2014-05-26T11:09:19+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-06-09T10:23:15+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 9<span>th</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -287,14 +693,14 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/testng-framework/'>TestNG-Framework</a></li>
+        <li><a class='category' href='/categories/icecream-framework/'>IceCream-Framework</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-first-test-case-with-testng/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/09/icecream-framework-introduction/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -306,18 +712,14 @@
 
 
 <div class="entry-content clearfix">
-  <h2>First Test case with TestNG</h2>
+  <h2>Introduction</h2>
 
-<p>Steps to follow:</p>
+<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
 
-<p>1) Press Ctrl+N , select “TestNG Class” under TestNG category and click Next.</p>
-
-<p>Or</p>
-
-<p>Right click on Test Case folder, go to TestNG and select “TestNG Class“.</p>
+<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
 
 
-  <a class="btn pull-right" href="/blog/2014/05/26/testng-framework-first-test-case-with-testng/">Continue reading</a>
+  <a class="btn pull-right" href="/blog/2014/06/09/icecream-framework-introduction/">Continue reading</a>
 </div>
 
   </article>
@@ -328,7 +730,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/05/26/testng-framework-download/">TestNG Framework P2 : Download</a>
+    <a href="/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/">Beginner with Selenium Ide Part 2: Record User Action and Export this Script to another language</a>
   </h1>
   
 
@@ -346,7 +748,7 @@
   
 
 
-<time class="pull-left" datetime="2014-05-26T11:03:25+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-06-02T15:03:46+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 2<span>nd</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -354,14 +756,14 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/testng-framework/'>TestNG-Framework</a></li>
+        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-download/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -373,12 +775,14 @@
 
 
 <div class="entry-content clearfix">
-  <h2>Install TestNG in Eclipse</h2>
+  <h2>Introduction</h2>
 
-<p>It is easy to install TestNG, as it comes as a plugin for Eclipse IDE. Prerequisite for installing TestNG is your Internet connection should be up &amp; running during installation of this plugin and Eclipse IDE should be installed in your computer. Please see Download and Install Eclipse to setup Eclipse to you system.</p>
+<p>In this tutorial  , we will let you know how to record the user action in browser via Selenium IDE and How to export this to another language like java , &hellip;!</p>
+
+<h3>Record User Action</h3>
 
 
-  <a class="btn pull-right" href="/blog/2014/05/26/testng-framework-download/">Continue reading</a>
+  <a class="btn pull-right" href="/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/">Continue reading</a>
 </div>
 
   </article>
@@ -389,7 +793,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/05/26/testng-framework-introduction/">TestNG Framework P1 : Introduction</a>
+    <a href="/blog/2014/06/02/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser/">Beginner with Selenium Ide Part 1 : Download Selenium Ide and install in FireFox Browser</a>
   </h1>
   
 
@@ -407,7 +811,7 @@
   
 
 
-<time class="pull-left" datetime="2014-05-26T11:00:14+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-06-02T14:34:19+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 2<span>nd</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -415,14 +819,14 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/testng-framework/'>TestNG-Framework</a></li>
+        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-introduction/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/02/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -434,12 +838,12 @@
 
 
 <div class="entry-content clearfix">
-  <h2>TestNG Introduction</h2>
+  <h2>Introduction</h2>
 
-<p>TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionality that make it more powerful and easier to use.</p>
+<p>Selenium IDE is a Firefox plugin which records and plays back user interactions with the browser. Use this to either create simple scripts or assist in exploratory testing. It can also export Remote Control or WebDriver scripts, though they tend to be somewhat brittle and should be overhauled into some sort of Page Object-y structure for any kind of resiliency.</p>
 
 
-  <a class="btn pull-right" href="/blog/2014/05/26/testng-framework-introduction/">Continue reading</a>
+  <a class="btn pull-right" href="/blog/2014/06/02/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser/">Continue reading</a>
 </div>
 
   </article>
@@ -450,7 +854,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/05/26/xpath-locators-in-selenium/">Webdriver XPath : Selenium Locators</a>
+    <a href="/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/">Selenium Mobile : Run test scripts in real IPhone</a>
   </h1>
   
 
@@ -468,7 +872,7 @@
   
 
 
-<time class="pull-left" datetime="2014-05-26T10:48:22+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-05-30T15:22:09+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 30<span>th</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -476,16 +880,14 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-        <li><a class='category' href='/categories/xpath/'>xpath</a></li>
+        <li><a class='category' href='/categories/selenium-mobile/'>Selenium-mobile</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/26/xpath-locators-in-selenium/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -497,14 +899,12 @@
 
 
 <div class="entry-content clearfix">
-  <h2>Locators in Selenium</h2>
+  <h2>Introduction</h2>
 
-<p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
-
-<p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
+<p>We want to execute our testscripts on a iphone device. The iphone driver allows us to execute the WebDriver tests on a real iphone device.</p>
 
 
-  <a class="btn pull-right" href="/blog/2014/05/26/xpath-locators-in-selenium/">Continue reading</a>
+  <a class="btn pull-right" href="/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone/">Continue reading</a>
 </div>
 
   </article>
@@ -515,7 +915,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/05/26/xpath-firebug-and-firepath/">Webdriver XPath : FireBug and FirePath</a>
+    <a href="/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/">Selenium Mobile : Run test scripts on a Xcode iPhone simulator</a>
   </h1>
   
 
@@ -533,7 +933,7 @@
   
 
 
-<time class="pull-left" datetime="2014-05-26T10:37:18+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-05-30T15:07:42+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 30<span>th</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -541,16 +941,14 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-        <li><a class='category' href='/categories/xpath/'>xpath</a></li>
+        <li><a class='category' href='/categories/selenium-mobile/'>Selenium-mobile</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/26/xpath-firebug-and-firepath/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -562,14 +960,12 @@
 
 
 <div class="entry-content clearfix">
-  <h2>FireBug and FirePath</h2>
+  <h2>Introduction</h2>
 
-<h3>What is XPath</h3>
-
-<p>XPath is a language that describes a way to locate and process items in Extensible Markup Language (XML) documents by using an addressing syntax based on a path through the document’s logical structure or hierarchy. XPath in used in Selenium  to uniquely identify an element on a Webpage as element locator just like the way we use PostCode and House address in real world to locate Home Address.</p>
+<p>We want to run our test in a iPhone simulator. The iphone simulator comes with Xcode which is available for the Mac operating systems. This recipe will show us how we can run our WebDriver tests in a iphone simulator.</p>
 
 
-  <a class="btn pull-right" href="/blog/2014/05/26/xpath-firebug-and-firepath/">Continue reading</a>
+  <a class="btn pull-right" href="/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/">Continue reading</a>
 </div>
 
   </article>
@@ -580,7 +976,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/05/26/xpath-using-browser-inspector/">Webdriver XPath : Using Browser Inspector</a>
+    <a href="/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/">Selenium Mobile : Run tests on a real Android device</a>
   </h1>
   
 
@@ -598,7 +994,7 @@
   
 
 
-<time class="pull-left" datetime="2014-05-26T10:24:15+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-05-30T15:02:24+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 30<span>th</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -606,16 +1002,14 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-        <li><a class='category' href='/categories/xpath/'>xpath</a></li>
+        <li><a class='category' href='/categories/selenium-mobile/'>Selenium-mobile</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/26/xpath-using-browser-inspector/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -627,14 +1021,12 @@
 
 
 <div class="entry-content clearfix">
-  <h2>Finding Elements using Browser Inspector</h2>
+  <h2>Introduction</h2>
 
-<p>Now days, it is very easy to find elements on the page. All the modern browsers have the web inspector, the built-in tool for to easily examine the structure of webpages.</p>
-
-<p>I used to use Google Chrome’s inspector because Chrome was my default browser; Safari uses the same inspector and IE uses IE Inspector. Firefox has its own built in Inspector and it has an optional extension called Firebug, which has a little more functionality that is sometimes worth switching over for. The steps to use it are largely the same.</p>
+<p>We want to run our testscripts on a real Android device. The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device.</p>
 
 
-  <a class="btn pull-right" href="/blog/2014/05/26/xpath-using-browser-inspector/">Continue reading</a>
+  <a class="btn pull-right" href="/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/">Continue reading</a>
 </div>
 
   </article>
@@ -645,7 +1037,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/">Webdriver : Dropdown and Multiple Select Operations</a>
+    <a href="/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/">Selenium Mobile : Running tests on an Android simulator</a>
   </h1>
   
 
@@ -663,7 +1055,7 @@
   
 
 
-<time class="pull-left" datetime="2014-05-26T10:15:16+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-05-30T14:46:17+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 30<span>th</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -671,14 +1063,14 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
+        <li><a class='category' href='/categories/selenium-mobile/'>Selenium-mobile</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -690,73 +1082,12 @@
 
 
 <div class="entry-content clearfix">
-  <h2>DropDown &amp; Multiple Select Operations</h2>
+  <h2>Introduction</h2>
 
-<p>Just like Checkboxes &amp; Radio buttons, Dropdown and Multiple Select also works together and almost the same way. To perform any action, the first task is to identify the element group. I am saying it a group, as dropdown/multiple select is not a single element. They always have a single name but and they contains one or more than one elements in them. I should rather say more than one option in dropdown and multiple select. The only difference between these two is deselecting statement &amp; multiple selections are not allowed on dropdowns. Let’s look at the different operations:</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/05/26/webdriver-dropdown-and-multiple-select-operations/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations/">Webdriver : Checkbox and Radio Button Operations</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
+<p>The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device. This recipe will walk us through the steps we have to do to run our tests in a simulator.</p>
 
 
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-05-26T10:10:11+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 26<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>CheckBox &amp; Radio Button Operations</h2>
-
-<p>Operations on Checkboxes and Radio Buttons are easy to perform and most of the times the simple ID attributes work fine for both of these. But selection and d-selection is not the only thing we want with checkboxes and radio buttons. We might like to check that if the checkbox is already checked or if the radio button is selected by default or anything. Checkboxes and Radio button deals exactly the same way and you can perform below mentioned operations on either of them.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/05/26/webdriver-checkbox-and-radio-button-operations/">Continue reading</a>
+  <a class="btn pull-right" href="/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/">Continue reading</a>
 </div>
 
   </article>
