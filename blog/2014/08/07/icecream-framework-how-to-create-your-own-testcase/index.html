@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>IceCream Framework Part 2 : Download and Configuration - Selenium Tutorial</title>
+	<title>IceCream Framework Part 3 : Running an example test case. - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
-	<meta name="description" content="IceCream Framework : Download and Configuration" />
+	<meta name="description" content="IceCream Framework : Running an example test case." />
 	
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -129,83 +129,83 @@
 <div id="content" class="inner">
         <article class="post">
 
-	<h2 class="title">IceCream Framework Part 2 : Download and Configuration</h2>
-	<div class="entry-content"><h2>DOWNLOAD</h2>
+	<h2 class="title">IceCream Framework Part 3 : Running an Example Test Case.</h2>
+	<div class="entry-content"><h2>Running an example test case</h2>
 
-<h3>Required Tools (If you already have this in your laptop or computer , you can skip this step) :</h3>
-
-<p>1) Download and install Microsoft Office trial here : <a href="http://q.gs/7KN4D">Link Download</a></p>
-
-<p>2) Download and install JAVA here : <a href="/blog/2014/05/22/newbie-part-1-download-and-install-java/">How to download and install Java</a></p>
-
-<h3>IceCream Framework version (all version of framework) :</h3>
+<h3>Follow to there steps below :</h3>
 
 <!--more-->
 
 
-<p>1) Version Beta 0.1 : <a href="http://q.gs/7KinP">Mediafire</a> , <a href="http://q.gs/7Kxwc">Google Drive</a></p>
+<p>1) Open IceCream folder.You will see the file &lsquo;TESTEXAMPLE.xslx&rsquo;.</p>
 
-<p>2) Version Beta 0.2 hot fix test running in fire-fox browser :<a href="http://q.gs/7Kxwc">Google Drive</a> , <a href="http://q.gs/7Ky4t">Mediafire</a></p>
+<p><img src="/images/ICE_TEST-1.png"></p>
 
-<h2>Configuration</h2>
+<p>3) Copy this file and paste to Folder TestCase then rename this file like you want.</p>
 
-<p>You can follow in these step below :</p>
+<p><img src="/images/ICE_TEST-2.png"></p>
 
-<p>1) Click on this link version of Icecream you want and wait for browser download this.</p>
+<p><img src="/images/ICE_TEST-3.png"></p>
 
-<p>2) After download success , copy and paste the &lsquo;Icecream.zip&rsquo; file to any location in your disk you want.</p>
+<p><img src="/images/ICE_TEST-4.png"></p>
 
-<p><img src="/images/ICE_CONFIG-1.png"></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<p>3) Unzip file &lsquo;Icecream.zip&rsquo; by <a href="http://q.gs/7KNKy">winzar</a> or <a href="http://q.gs/7KNLO">7zip</a></p>
 
-<p><img src="/images/ICE_CONFIG-2.png"></p>
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>4) Open this file you copied by Microsoft Excel.</p>
+
+<p><img src="/images/ICE_TEST-5.png"></p>
+
+<p><img src="/images/ICE_TEST-6.png"></p>
+
+<p>5) In this file , I create my example test case is : Running in Browser Chrome , Open &lsquo;<a href="http://facebook.com">http://facebook.com</a>&rsquo; , wait for text-box password present in 5 second , then I type in text-box email , type in text-box password. Take a screenshot and close the browser.</p>
+
+<p>5) First take a look in the top , you can able to set up browser you want to run this test case. The list provide you 3 browser : Firefox , IE , Chrome. Make sure that 3 browser is install in your laptop. Or you can download <a href="http://q.gs/7KQ8E">Firefox browser here</a> , <a href="http://q.gs/7KQ7q">Chrome browser here</a>. In this case , I choose my test case running in Chrome. You can set IE ,CHROME ,FIREFOX like you want.</p>
+
+<p><img src="/images/ICE_TEST-7.png"></p>
+
+<p>6) Now take a look in row 3. I use the action &lsquo;OpenUrl&rsquo; with value is &lsquo;<a href="http://facebook.com">http://facebook.com</a>&rsquo; , It mean that I will let browser access to url facebook.com and wait for the facebook.com load success.You can change whatever URL you like in this Action Input Value.</p>
+
+<p><img src="/images/ICE_TEST-8.png"></p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>4) You will see the folder &lsquo;Icecream&rsquo; with inside it contain 3 folder : TestCase and Report and Screenshot , 1 file &lsquo;IceCream.jar&rsquo; and 1 file &lsquo;run.cmd&rsquo; and 1 file excel. Do not delete them.</p>
+<p>7) Take a look in row 4 . I use the action &lsquo;WaitElementPresent&rsquo; with the Action Type Input is 5.It mean that I will wait 5 second for the Element that I find BY ID is pass present in this page.</p>
 
-<p><img src="/images/ICE_CONFIG-3.png"></p>
+<p><img src="/images/ICE_TEST-9.png"></p>
 
-<p><img src="/images/ICE_CONFIG-4.png"></p>
+<p>8) You can see row 4- 8  some action , but I think you need to see the <a href="/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file/">How to use Action in Excel</a></p>
 
-<p>5) Open file &lsquo;run.cmd&rsquo; by <a href="http://q.gs/7Kicc">Notepad++</a> or Notepad program</p>
+<p>9) Now save and close this file.</p>
 
-<p><img src="/images/ICE_CONFIG-5.png"></p>
+<p>10) Back to folder IceCream , double click in file &lsquo;run.cmd&rsquo; and see the automation test process.</p>
 
-<p>6) Copy the path to the folder &lsquo;IceCream&rsquo; and paste to the &lsquo;replace-it-with-your-path-to-folder-Icecream&rsquo;</p>
+<p><img src="/images/ICE_TEST-10.png"></p>
 
-<p><img src="/images/ICE_CONFIG-6.png"></p>
+<p>11) After automation test process success , check Report in folder Report and check the screenshot in folder Screenshot.</p>
 
-<p><img src="/images/ICE_CONFIG-7.png"></p>
+<p><img src="/images/ICE_TEST-11.png"></p>
 
-<p><img src="/images/ICE_CONFIG-8.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>7) Save this file &lsquo;run.cmd&rsquo;.</p>
-
-<h2>Now you are finish the configuration , is it easy?</h2>
+<p><img src="/images/ICE_TEST-12.png"></p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<h2>It&rsquo;s time to know <a href="/blog/2014/06/09/icecream-framework-how-to-create-your-own-testcase/">Running an example test case</a></h2>
+<p>12) Now you can create your own test case by copy file &lsquo;TESTEXAMPLE.xslx&rsquo; to the test case folder, rename this file , open this file , choose the browser , and delete row 3 to 8 and define your action in this excel file.We recommend you to take a look in <a href="/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file/">How to use Action in Excel</a> . If you have any trouble to set up and run your test case , leave your comment below.</p>
 
-<p><img src="/images/ICE-2.jpg"></p>
+<p><img src="/images/ICE-3.jpg"></p>
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/blog/2014/06/09/icecream-framework-download-and-configuration/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/08/07/icecream-framework-how-to-create-your-own-testcase/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -255,8 +255,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/06/09/icecream-framework-download-and-configuration/';
-        var disqus_url = 'http://www.tabaolan.com/blog/2014/06/09/icecream-framework-download-and-configuration/';
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-how-to-create-your-own-testcase/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-how-to-create-your-own-testcase/';
         var disqus_script = 'embed.js';
       
     (function () {
