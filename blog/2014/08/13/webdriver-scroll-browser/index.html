@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>IceCream Framework Part 1 : Introduction - Selenium Tutorial</title>
+	<title>WebDriver : Scroll Browser - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
-	<meta name="description" content="IceCream Framework : Introduction" />
+	<meta name="description" content="Scroll Browser using Selenium WebDriver" />
 	
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -129,52 +129,44 @@
 <div id="content" class="inner">
         <article class="post">
 
-	<h2 class="title">IceCream Framework Part 1 : Introduction</h2>
-	<div class="entry-content"><h2>Introduction</h2>
-
-<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
-
-<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
+	<h2 class="title">WebDriver : Scroll Browser</h2>
+	<div class="entry-content"><h2>Scroll until the element is in view</h2>
 
 <!--more-->
 
 
-<p>Tester just have the basic understanding of <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element = driver.findElement(By.id("id_of_element"));
+</span><span class='line'>((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
+<h2>Scroll down page</h2>
 
-<p>IceCream Framework is written by Java language and use the core <a href="/blog/categories/webdriver/">Selenium WebDriver</a>.</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>int range = 400; // Range in pixel
+</span><span class='line'>((JavascriptExecutor) driver).executeScript("window.scrollBy(0," + range + ")", "");</span></code></pre></td></tr></table></div></figure>
 
-<p>Currently IceCream Framework version 1.0 Beta version only have the basic functions to perform automatic chemical testing.</p>
 
-<p>The reason for this because I want to collect more of your opinions, feedback and the desire to have more function for me so that I can write to serve you in the next version!</p>
 
-<p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
-
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x74;&#97;&#x62;&#x61;&#111;&#108;&#97;&#x6e;&#49;&#x39;&#56;&#55;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;">&#x74;&#x61;&#x62;&#97;&#111;&#x6c;&#97;&#110;&#49;&#57;&#56;&#55;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
-
-<p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
-
-<p>Let IceCream say Hi with you and take a look in <a href="/blog/2014/08/07/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
-
-<p><img src="/images/ICE-1.jpg"></p>
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/blog/2014/08/07/icecream-framework-introduction/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/08/13/webdriver-scroll-browser/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -224,8 +216,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
-        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/13/webdriver-scroll-browser/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/13/webdriver-scroll-browser/';
         var disqus_script = 'embed.js';
       
     (function () {

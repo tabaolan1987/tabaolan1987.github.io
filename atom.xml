@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-08-07T15:53:14+07:00</updated>
+  <updated>2014-08-13T10:26:59+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,234 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[WebDriver : Scroll Browser]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/13/webdriver-scroll-browser/"/>
+    <updated>2014-08-13T10:23:57+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/13/webdriver-scroll-browser</id>
+    <content type="html"><![CDATA[<h2>Scroll until the element is in view</h2>
+
+<!--more-->
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element = driver.findElement(By.id("id_of_element"));
+</span><span class='line'>((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>Scroll down page</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>int range = 400; // Range in pixel
+</span><span class='line'>((JavascriptExecutor) driver).executeScript("window.scrollBy(0," + range + ")", "");</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[WebDriver : Set Browser's User-agent]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/13/webdriver-set-browser-useragent/"/>
+    <updated>2014-08-13T10:12:47+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/13/webdriver-set-browser-useragent</id>
+    <content type="html"><![CDATA[<h2>This post demonstrates how to set Chrome, Firefox and PhantomJS’s User Agent (And proxy) using Selenium WebDriver</h2>
+
+<p>You can find user agent string from <a href="http://useragentstring.com/pages/Browserlist/">browser list</a></p>
+
+<!--more-->
+
+
+<h3>Chrome</h3>
+
+<h4>Java language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>String userAgent = "user_agent_string";
+</span><span class='line'>String proxy = "example:80";
+</span><span class='line'>org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+</span><span class='line'>p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
+</span><span class='line'>ChromeOptions co = new ChromeOptions();
+</span><span class='line'>co.addArguments("--user-agent=" + userAgent);
+</span><span class='line'>DesiredCapabilities cap = DesiredCapabilities.chrome();
+</span><span class='line'>cap.setCapability(CapabilityType.PROXY, p);
+</span><span class='line'>cap.setCapability(ChromeOptions.CAPABILITY , co);
+</span><span class='line'>WebDriver driver = new ChromeDriver(cap);</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>C# language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var options = new ChromeOptions();
+</span><span class='line'>var userAgent = "user_agent_string";
+</span><span class='line'>options.AddArgument("--user-agent=" + userAgent);
+</span><span class='line'>IWebDriver driver = new ChromeDriver(options);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Ruby language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require 'selenium-webdriver'
+</span><span class='line'>USER_AGENT = 'user_agent_string'
+</span><span class='line'>driver = Selenium::WebDriver.for :chrome, :switches =&gt; %W[--user-agent=#{USER_AGENT}]</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Firefox</h3>
+
+<h4>Java language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>String proxy = "example:80";
+</span><span class='line'>String userAgent = "user_agent_string";
+</span><span class='line'>FirefoxProfile profile = new FirefoxProfile();
+</span><span class='line'>profile.setPreference("general.useragent.override", userAgent);
+</span><span class='line'>DesiredCapabilities cap = DesiredCapabilities.firefox();
+</span><span class='line'>org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+</span><span class='line'>p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
+</span><span class='line'>cap.setCapability(CapabilityType.PROXY, p);
+</span><span class='line'>cap.setCapability(FirefoxDriver.PROFILE, profile);
+</span><span class='line'>WebDriver driver = new FirefoxDriver(cap);</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>C# language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var profile = new FirefoxProfile();
+</span><span class='line'>var userAgent = "user_agent_string";
+</span><span class='line'>profile.SetPreference("general.useragent.override", userAgent);
+</span><span class='line'>IWebDriver driver = new FirefoxDriver(profile);</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Ruby language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require 'selenium-webdriver'
+</span><span class='line'>USER_AGENT = 'user_agent_string'
+</span><span class='line'>profile = Selenium::WebDriver::Firefox::Profile.new
+</span><span class='line'>profile['general.useragent.override'] = USER_AGENT
+</span><span class='line'>driver = Selenium::WebDriver.for :firefox, :profile =&gt; profile</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>PhantomJS</h3>
+
+<h4>Java language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>String proxy = "example:80";
+</span><span class='line'>String userAgent = "user_agent_string";
+</span><span class='line'>org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+</span><span class='line'>p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
+</span><span class='line'>DesiredCapabilities cap = DesiredCapabilities.phantomjs();
+</span><span class='line'>cap.setCapability(CapabilityType.PROXY, p);
+</span><span class='line'>cap.setJavascriptEnabled(true);
+</span><span class='line'>cap.setCapability("phantomjs.page.settings.userAgent",userAgent);
+</span><span class='line'>WebDriver driver = new PhantomJSDriver(cap);</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>C# language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var options = new PhantomJSOptions();
+</span><span class='line'>var userAgent = "user_agent_string";
+</span><span class='line'>options.AddAdditionalCapability("phantomjs.page.settings.userAgent", userAgent);
+</span><span class='line'> 
+</span><span class='line'>IWebDriver driver = new PhantomJSDriver(options);</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h4>Ruby language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require 'selenium-webdriver'
+</span><span class='line'>USER_AGENT = 'user_agent_string'
+</span><span class='line'>capabilities = Selenium::WebDriver::Remote::Capabilities.phantomjs('phantomjs.page.settings.userAgent' =&gt; USER_AGENT)
+</span><span class='line'>driver = Selenium::WebDriver.for :phantomjs, :desired_capabilities =&gt; capabilities</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Beginner with Selenium 2 WebDriver Part 1 :Download and Install Java ]]></title>
@@ -1305,7 +1533,7 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x74;&#x61;&#x62;&#x61;&#x6f;&#x6c;&#97;&#x6e;&#49;&#x39;&#x38;&#55;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#116;&#x61;&#x62;&#97;&#111;&#x6c;&#x61;&#x6e;&#49;&#x39;&#x38;&#x37;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x74;&#97;&#x62;&#x61;&#111;&#108;&#97;&#x6e;&#49;&#x39;&#56;&#55;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;">&#x74;&#x61;&#x62;&#97;&#111;&#x6c;&#97;&#110;&#49;&#57;&#56;&#55;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
 
@@ -2251,226 +2479,6 @@ By implementing the appropriate automated testing framework, enterprises can sig
 
 
 <h3>We are finish to create a Login Page , Home Page follow Page Object Model . Now you will need to create an Action in Java base on User Define, please <a href="http://www.tabaolan.com/blog/2014/08/07/selenium-automation-framework-modular-driven-framework/">click here</a></h3>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IceCream Framework Part 3 : Running an example test case.]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/icecream-framework-how-to-create-your-own-testcase/"/>
-    <updated>2014-08-07T14:30:35+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/icecream-framework-how-to-create-your-own-testcase</id>
-    <content type="html"><![CDATA[<h2>Running an example test case</h2>
-
-<h3>Follow to there steps below :</h3>
-
-<!--more-->
-
-
-<p>1) Open IceCream folder.You will see the file &lsquo;TESTEXAMPLE.xslx&rsquo;.</p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-1.png"></p>
-
-<p>3) Copy this file and paste to Folder TestCase then rename this file like you want.</p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-2.png"></p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-3.png"></p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-4.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>4) Open this file you copied by Microsoft Excel.</p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-5.png"></p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-6.png"></p>
-
-<p>5) In this file , I create my example test case is : Running in Browser Chrome , Open &lsquo;<a href="http://facebook.com">http://facebook.com</a>&rsquo; , wait for text-box password present in 5 second , then I type in text-box email , type in text-box password. Take a screenshot and close the browser.</p>
-
-<p>5) First take a look in the top , you can able to set up browser you want to run this test case. The list provide you 3 browser : Firefox , IE , Chrome. Make sure that 3 browser is install in your laptop. Or you can download <a href="http://q.gs/7KQ8E">Firefox browser here</a> , <a href="http://q.gs/7KQ7q">Chrome browser here</a>. In this case , I choose my test case running in Chrome. You can set IE ,CHROME ,FIREFOX like you want.</p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-7.png"></p>
-
-<p>6) Now take a look in row 3. I use the action &lsquo;OpenUrl&rsquo; with value is &lsquo;<a href="http://facebook.com">http://facebook.com</a>&rsquo; , It mean that I will let browser access to url facebook.com and wait for the facebook.com load success.You can change whatever URL you like in this Action Input Value.</p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-8.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>7) Take a look in row 4 . I use the action &lsquo;WaitElementPresent&rsquo; with the Action Type Input is 5.It mean that I will wait 5 second for the Element that I find BY ID is pass present in this page.</p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-9.png"></p>
-
-<p>8) You can see row 4- 8  some action , but I think you need to see the <a href="http://www.tabaolan.com/blog/2014/06/10/icecream-framework-part-3-function-avaiable-in-excel-file/">How to use Action in Excel</a></p>
-
-<p>9) Now save and close this file.</p>
-
-<p>10) Back to folder IceCream , double click in file &lsquo;run.cmd&rsquo; and see the automation test process.</p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-10.png"></p>
-
-<p>11) After automation test process success , check Report in folder Report and check the screenshot in folder Screenshot.</p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-11.png"></p>
-
-<p><img src="http://www.tabaolan.com/images/ICE_TEST-12.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>12) Now you can create your own test case by copy file &lsquo;TESTEXAMPLE.xslx&rsquo; to the test case folder, rename this file , open this file , choose the browser , and delete row 3 to 8 and define your action in this excel file.We recommend you to take a look in <a href="http://www.tabaolan.com/blog/2014/08/07/icecream-framework-part-3-function-avaiable-in-excel-file/">How to use Action in Excel</a> . If you have any trouble to set up and run your test case , leave your comment below.</p>
-
-<p><img src="http://www.tabaolan.com/images/ICE-3.jpg"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver XPath : FireBug and FirePath]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/xpath-firebug-and-firepath/"/>
-    <updated>2014-08-07T14:25:35+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/xpath-firebug-and-firepath</id>
-    <content type="html"><![CDATA[<h2>FireBug and FirePath</h2>
-
-<h3>What is XPath</h3>
-
-<p>XPath is a language that describes a way to locate and process items in Extensible Markup Language (XML) documents by using an addressing syntax based on a path through the document’s logical structure or hierarchy. XPath in used in Selenium  to uniquely identify an element on a Webpage as element locator just like the way we use PostCode and House address in real world to locate Home Address.</p>
-
-<!--more-->
-
-
-<h3>What is Firebug</h3>
-
-<p>Firebug integrates with Firefox to put a wealth of web development tools at your fingertips while you browse. You can edit, debug, and monitor CSS, HTML, and JavaScript live in any web page. The whole content of this page is taken from the <a href="https://getfirebug.com/html">firebug</a>.</p>
-
-<h3>Why it is Useful to Selenium Automation Tester</h3>
-
-<p>1) View source live : Firefox has a “View Source” window, but it doesn’t show you what the HTML source really looks like once it has been transformed by JavaScript. Firebug’s HTML tab shows you what the HTML looks like right now.</p>
-
-<p>2) See changes highlighted: In any JavaScript-driven website, HTML elements are constantly being created, removed, and modified. Wouldn’t it be nice if you could see exactly what, when, and where these changes take place? Firebug highlights changes to the HTML in yellow immediately when they occur. If you want to spy even closer, you have the option to also scroll every change into view, so you won’t miss a thing.</p>
-
-<p>3) Find elements with the mouse: Something in your page doesn’t quite look right and you want to know why. There’s no faster way to get answers than to click the “Inspect” button on Firebug’s toolbar and then prepare for immediate gratification. As you move around the page, whatever is beneath your mouse will be instantly revealed within Firebug, showing you the HTML and CSS behind it.</p>
-
-<p>4) Copy the source: Right-click on any element, and you’ll have several options for copying aspects of that element to the clipboard, including its HTML fragment, the value of its “innerHTML” property, or an XPath expression that identifies the element uniquely.</p>
-
-<h3>How to Download FireBug</h3>
-
-<p>FireBug is a plugin which comes with Firefox browser, hence it is easily be downloadable from Firefox itself.</p>
-
-<p>1) Go to Tools > Web Developer > Get More Tools.</p>
-
-<p><img src="http://www.tabaolan.com/images/Firebug-1.png"></p>
-
-<p>2) It will open a Webpage and display all the plugins available for Firefox browser. As we need Firebug, just click on Add to Firefox button for Firebug.</p>
-
-<p><img src="http://www.tabaolan.com/images/Firebug-2.png"></p>
-
-<p>3) Hit on Install Now button to proceed.</p>
-
-<p><img src="http://www.tabaolan.com/images/Firebug-3.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>4) Once the Installation is finished, press ‘F-12′ to open Firebug tool. It will display like this.</p>
-
-<p><img src="http://www.tabaolan.com/images/FIND-ELEMENTS-2.png"></p>
-
-<h3>How to Use it</h3>
-
-<p>Most of the times it is used to Inspect Elements on a Webpage and to get the XPath of the Elements from a Webpage.</p>
-
-<p>1) Inspect Elements: Please visit Finding Elements using Browser Inspector for details explanation on How to find Elements using Browser Inspector.</p>
-
-<p>2) Copy XPath: Copying XPath is really very handy. Once you are done with selecting an Element using Inspector, all you need to do is to Right click on the HTML code of the selected element and select Copy XPath.</p>
-
-<p><img src="http://www.tabaolan.com/images/Firebug-6.png"></p>
-
-<p>3) Now you can paste the copied XPath on your test script by pressing ‘Ctrl + V‘. It will display like this:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/html/body/div/header/div/a/img</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>What is FirePath</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>It is an extension to FireBug that adds a development tool to edit, inspect and generate XPath expressions and CSS3 Selectors.</p>
-
-<h3>Why it is Useful to Selenium Automation Tester</h3>
-
-<p>1) You can type self-written XPath and check if it is correct by highlighting the results directly on the Webpage.</p>
-
-<p>2) Generate an XPath expression or a CSS selector for an element by right clicking on it and selecting “Inspect in FirePath” in the context menu.</p>
-
-<p>3) Like Firebug it also gives you the Xpath of the selected Element.</p>
-
-<h3>How to Download Firepath</h3>
-
-<p>Firepath is an extension to Firebug, so you would only be able to install it after installing FireBug.</p>
-
-<p>1) Go to Tools > Web Developer > Get More Tools.</p>
-
-<p><img src="http://www.tabaolan.com/images/Firebug-1.png"></p>
-
-<p>2) It will open a Webpage and will display all the plugins available for Firefox browser. As I said before that it is an extension to Firebug, you need to click on the Extensions link and the type Firepath on the Search field. As we need FirePath, just click on Add to Firefox button for FirePath.</p>
-
-<p><img src="http://www.tabaolan.com/images/FirePath-1.png"></p>
-
-<p>3) Hit on Install Now button to proceed.</p>
-
-<p><img src="http://www.tabaolan.com/images/FirePath-2.png"></p>
-
-<p>4) Once it is installed, it will ask to Restart the browser. Click on Restart Now button.</p>
-
-<p><img src="http://www.tabaolan.com/images/FirePath-3.png"></p>
-
-<p>4) Once it is opened, press ‘F-12′ to open Firebug tool. It will display the FirePath on the same console.</p>
-
-<h3>How to Use FirePath</h3>
-
-<p>1) Inspect Elements: Please visit Finding Elements using Browser Inspector for details explanation on How to find Elements using Browser Inspector. But unlike FireBug, it displays the XPath of the selected element on the console.</p>
-
-<p><img src="http://www.tabaolan.com/images/FirePath-6.png"></p>
-
-<p>2) Copy XPath: Copying XPath is really very handy. Once you are done with selecting an Element using Inspector, all you need to do is to Copy the XPath of the selected element and paste it to your Test script by pressing ‘Ctrl + V‘. It will display like this:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//*[@id='masthead']/div/a/img</span></code></pre></td></tr></table></div></figure>
-
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h3>Difference between FireBug and FirePath</h3>
-
-<p>The only difference from Automation tester point of view is FireBug returns Absolute XPath and FirePath returns Relative XPath.</p>
 ]]></content>
   </entry>
   

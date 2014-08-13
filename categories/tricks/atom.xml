@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-08-07T15:53:14+07:00</updated>
+  <updated>2014-08-13T10:26:59+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,160 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[WebDriver : Scroll Browser]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/13/webdriver-scroll-browser/"/>
+    <updated>2014-08-13T10:23:57+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/13/webdriver-scroll-browser</id>
+    <content type="html"><![CDATA[<h2>Scroll until the element is in view</h2>
+
+<!--more-->
+
+
+<p><code>
+WebElement element = driver.findElement(By.id("id_of_element"));
+((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+</code></p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>Scroll down page</h2>
+
+<p><code>
+int range = 400; // Range in pixel
+((JavascriptExecutor) driver).executeScript("window.scrollBy(0," + range + ")", "");
+</code></p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[WebDriver : Set Browser's User-agent]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/13/webdriver-set-browser-useragent/"/>
+    <updated>2014-08-13T10:12:47+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/13/webdriver-set-browser-useragent</id>
+    <content type="html"><![CDATA[<h2>This post demonstrates how to set Chrome, Firefox and PhantomJS’s User Agent (And proxy) using Selenium WebDriver</h2>
+
+<p>You can find user agent string from <a href="http://useragentstring.com/pages/Browserlist/">browser list</a></p>
+
+<!--more-->
+
+
+<h3>Chrome</h3>
+
+<h4>Java language</h4>
+
+<p><code>
+String userAgent = "user_agent_string";
+String proxy = "example:80";
+org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
+ChromeOptions co = new ChromeOptions();
+co.addArguments("--user-agent=" + userAgent);
+DesiredCapabilities cap = DesiredCapabilities.chrome();
+cap.setCapability(CapabilityType.PROXY, p);
+cap.setCapability(ChromeOptions.CAPABILITY , co);
+WebDriver driver = new ChromeDriver(cap);
+</code></p>
+
+<h4>C# language</h4>
+
+<p>```
+var options = new ChromeOptions();
+var userAgent = &ldquo;user_agent_string&rdquo;;
+options.AddArgument(&ldquo;&mdash;user-agent=&rdquo; + userAgent);
+IWebDriver driver = new ChromeDriver(options);</p>
+
+<p>```</p>
+
+<h4>Ruby language</h4>
+
+<p><code>
+require 'selenium-webdriver'
+USER_AGENT = 'user_agent_string'
+driver = Selenium::WebDriver.for :chrome, :switches =&gt; %W[--user-agent=#{USER_AGENT}]
+</code></p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Firefox</h3>
+
+<h4>Java language</h4>
+
+<p><code>
+String proxy = "example:80";
+String userAgent = "user_agent_string";
+FirefoxProfile profile = new FirefoxProfile();
+profile.setPreference("general.useragent.override", userAgent);
+DesiredCapabilities cap = DesiredCapabilities.firefox();
+org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
+cap.setCapability(CapabilityType.PROXY, p);
+cap.setCapability(FirefoxDriver.PROFILE, profile);
+WebDriver driver = new FirefoxDriver(cap);
+</code></p>
+
+<h4>C# language</h4>
+
+<p><code>
+var profile = new FirefoxProfile();
+var userAgent = "user_agent_string";
+profile.SetPreference("general.useragent.override", userAgent);
+IWebDriver driver = new FirefoxDriver(profile);
+</code></p>
+
+<h4>Ruby language</h4>
+
+<p><code>
+require 'selenium-webdriver'
+USER_AGENT = 'user_agent_string'
+profile = Selenium::WebDriver::Firefox::Profile.new
+profile['general.useragent.override'] = USER_AGENT
+driver = Selenium::WebDriver.for :firefox, :profile =&gt; profile
+</code></p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>PhantomJS</h3>
+
+<h4>Java language</h4>
+
+<p><code>
+String proxy = "example:80";
+String userAgent = "user_agent_string";
+org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
+DesiredCapabilities cap = DesiredCapabilities.phantomjs();
+cap.setCapability(CapabilityType.PROXY, p);
+cap.setJavascriptEnabled(true);
+cap.setCapability("phantomjs.page.settings.userAgent",userAgent);
+WebDriver driver = new PhantomJSDriver(cap);
+</code></p>
+
+<h4>C# language</h4>
+
+<p>```
+var options = new PhantomJSOptions();
+var userAgent = &ldquo;user_agent_string&rdquo;;
+options.AddAdditionalCapability(&ldquo;phantomjs.page.settings.userAgent&rdquo;, userAgent);</p>
+
+<p>IWebDriver driver = new PhantomJSDriver(options);
+```</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h4>Ruby language</h4>
+
+<p><code>
+require 'selenium-webdriver'
+USER_AGENT = 'user_agent_string'
+capabilities = Selenium::WebDriver::Remote::Capabilities.phantomjs('phantomjs.page.settings.userAgent' =&gt; USER_AGENT)
+driver = Selenium::WebDriver.for :phantomjs, :desired_capabilities =&gt; capabilities
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to take screenshot in Internet Explore]]></title>
@@ -148,95 +302,6 @@ java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\chromedr
 <img src="/images/chrome-ide-1.png"></p>
 
 <p>9) Click on &lsquo;Play current test case&rsquo;.This will open your Chrome and run your script automatic. Have fun and happy learning.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Run Script Selenium IDE in Internet Explorer]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/07/03/run-script-selenium-ide-in-internet-explorer/"/>
-    <updated>2014-07-03T14:05:55+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/07/03/run-script-selenium-ide-in-internet-explorer</id>
-    <content type="html"><![CDATA[<h2>Required download :</h2>
-
-<p>1) <a href="/blog/2014/05/22/newbie-part-1-download-and-install-java/">Download and install JAVA</a></p>
-
-<p>2) Download the latest Selenium server stand alone : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
-
-<p><img src="/images/selenium-server.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>3) Download the latest Internet Explorer Driver server : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
-
-<p><img src="/images/ie-server.png"></p>
-
-<h2>Required setup :</h2>
-
-<p>1) When you download 2 file Selenium server and Internet Explorer Driver server successfully , create new folder , copy 2 file jar to this folder and name this folder is &lsquo;Server&rsquo;.</p>
-
-<p><img src="/images/folder-server.png"></p>
-
-<p>2) Copy this folder &lsquo;Server&rsquo; to whatever you want in your computer.In this tutorial I copy this to Disk &lsquo;C&rsquo;.</p>
-
-<p><img src="/images/folder-server-2.png"></p>
-
-<p>3) Open your command line.</p>
-
-<p><img src="/images/cmd1.png"></p>
-
-<p>4) Locate your command line to the folder &lsquo;Server&rsquo;.</p>
-
-<p><img src="/images/cmd2.png"></p>
-
-<p>5) Start Selenium server and Internet Explorer Driver Server by copy this command to the command line</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<code>
-java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\IEDriverServer.exe
-</code></p>
-
-<p><img src="/images/cmd3.png"></p>
-
-<p>6) Open your Selenium IDE and load your test script you already created.</p>
-
-<p><img src="/images/ie-ide-1.png"></p>
-
-<p>7) Click on menu Options &ndash;> choose Options.</p>
-
-<p><img src="/images/ie-ide-3.png"></p>
-
-<p>8) Click on tab &lsquo;WebDriver&rsquo; &ndash;> check on &lsquo;Enable WebDriver Playback&rsquo; &ndash;> enter value &lsquo;internet explorer&rsquo; &ndash;> Click &lsquo;OK&rsquo; button.</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="/images/ie-ide-4.png"></p>
-
-<p>9) Click on &lsquo;Play current test case&rsquo;.This will open your Internet Explore and run your script automatic. Have fun and happy learning.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to switch Driver to Tab/Window by Title tab?]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/07/01/switch-driver-to-tab-by-title/"/>
-    <updated>2014-07-01T11:10:38+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/07/01/switch-driver-to-tab-by-title</id>
-    <content type="html"><![CDATA[<h3>In some case when you need to switch driver to the tab/window that you know the title of this, you can use this method below</h3>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-```
-public static WebDriver switchToTabByTitle(WebDriver driver , String title){</p>
-
-<pre><code>    Set&lt;String&gt; handles = driver.getWindowHandles();
-    for(String handle : handles){
-        driver.switchTo().window(handle);
-        if(driver.getTitle().equals(title)){
-            break;
-        }
-    }
-    return driver;
-</code></pre>
-
-<p>}
-```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 ]]></content>
   </entry>
   

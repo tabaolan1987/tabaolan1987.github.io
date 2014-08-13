@@ -135,6 +135,243 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide/">Selenium IDE : Check Background colour</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-12T09:38:19+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories//'>,</a></li>
+      
+        <li><a class='category' href='/categories/selenium-ide/'>Selenium-IDE</a></li>
+      
+        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <p>If you want to check element background colour , take a look in this example :</p>
+
+<p>Your html code look like that :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="my_div" class = "en" style = "backgroundbackground-color= #0000FF"&gt;
+</span><span class='line'>&lt;/div&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Your Selenium Ide will like this to check background of div :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>command: verifyAttribute
+</span><span class='line'>
+</span><span class='line'>Target : css=div#my_div@style
+</span><span class='line'>
+</span><span class='line'>value  : *background-color= #0000FF*</span></code></pre></td></tr></table></div></figure>
+
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/">Selenium Ide : loop through array variables</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-12T09:16:02+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories//'>,</a></li>
+      
+        <li><a class='category' href='/categories/selenium-ide/'>Selenium-IDE</a></li>
+      
+        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <p>If you want Selenium IDE loop through your array ,</p>
+
+<p>let take a look in code this example :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;storeEval&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;new Array(&quot;postgresql&quot;,&quot;mysql&quot;);&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;myarray&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;
+</span><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;getEval&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;index=0;&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;
+</span><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;while&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;index &lt; storedVars['myarray'].length&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;
+</span><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;storeEval&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;index&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;temp&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;
+</span><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;echo&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;javascript{storedVars['myarray'][storedVars['temp']]}&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;
+</span><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;getEval&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;index++;&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;
+</span><span class='line'>&lt;tr&gt;
+</span><span class='line'>&lt;td&gt;endWhile&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;&lt;/td&gt;
+</span><span class='line'>&lt;/tr&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or follower there command in this picture</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<img src="/images/tricks-ide-loop-array.png"></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/06/12/tipstricks-how-to-use-stored-value-in-a-javascript-comparison/">Selenium IDE : How to use stored value in a JavaScript comparison</a>
   </h1>
   
@@ -934,128 +1171,6 @@
 
 
   <a class="btn pull-right" href="/blog/2014/05/30/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/">Selenium Mobile : Run tests on a real Android device</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-05-30T15:02:24+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 30<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/selenium-mobile/'>Selenium-mobile</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>Introduction</h2>
-
-<p>We want to run our testscripts on a real Android device. The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/">Selenium Mobile : Running tests on an Android simulator</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-05-30T14:46:17+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> May 30<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/selenium-mobile/'>Selenium-mobile</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>Introduction</h2>
-
-<p>The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device. This recipe will walk us through the steps we have to do to run our tests in a simulator.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/05/30/selenium-mobile-running-tests-on-an-android-simulator/">Continue reading</a>
 </div>
 
   </article>
