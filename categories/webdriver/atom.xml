@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-08-13T10:26:59+07:00</updated>
+  <updated>2014-08-13T10:29:43+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,160 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[WebDriver : Scroll Browser]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/13/webdriver-scroll-browser/"/>
-    <updated>2014-08-13T10:23:57+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/13/webdriver-scroll-browser</id>
-    <content type="html"><![CDATA[<h2>Scroll until the element is in view</h2>
-
-<!--more-->
-
-
-<p><code>
-WebElement element = driver.findElement(By.id("id_of_element"));
-((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-</code></p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h2>Scroll down page</h2>
-
-<p><code>
-int range = 400; // Range in pixel
-((JavascriptExecutor) driver).executeScript("window.scrollBy(0," + range + ")", "");
-</code></p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[WebDriver : Set Browser's User-agent]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/13/webdriver-set-browser-useragent/"/>
-    <updated>2014-08-13T10:12:47+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/13/webdriver-set-browser-useragent</id>
-    <content type="html"><![CDATA[<h2>This post demonstrates how to set Chrome, Firefox and PhantomJS’s User Agent (And proxy) using Selenium WebDriver</h2>
-
-<p>You can find user agent string from <a href="http://useragentstring.com/pages/Browserlist/">browser list</a></p>
-
-<!--more-->
-
-
-<h3>Chrome</h3>
-
-<h4>Java language</h4>
-
-<p><code>
-String userAgent = "user_agent_string";
-String proxy = "example:80";
-org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
-p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
-ChromeOptions co = new ChromeOptions();
-co.addArguments("--user-agent=" + userAgent);
-DesiredCapabilities cap = DesiredCapabilities.chrome();
-cap.setCapability(CapabilityType.PROXY, p);
-cap.setCapability(ChromeOptions.CAPABILITY , co);
-WebDriver driver = new ChromeDriver(cap);
-</code></p>
-
-<h4>C# language</h4>
-
-<p>```
-var options = new ChromeOptions();
-var userAgent = &ldquo;user_agent_string&rdquo;;
-options.AddArgument(&ldquo;&mdash;user-agent=&rdquo; + userAgent);
-IWebDriver driver = new ChromeDriver(options);</p>
-
-<p>```</p>
-
-<h4>Ruby language</h4>
-
-<p><code>
-require 'selenium-webdriver'
-USER_AGENT = 'user_agent_string'
-driver = Selenium::WebDriver.for :chrome, :switches =&gt; %W[--user-agent=#{USER_AGENT}]
-</code></p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h3>Firefox</h3>
-
-<h4>Java language</h4>
-
-<p><code>
-String proxy = "example:80";
-String userAgent = "user_agent_string";
-FirefoxProfile profile = new FirefoxProfile();
-profile.setPreference("general.useragent.override", userAgent);
-DesiredCapabilities cap = DesiredCapabilities.firefox();
-org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
-p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
-cap.setCapability(CapabilityType.PROXY, p);
-cap.setCapability(FirefoxDriver.PROFILE, profile);
-WebDriver driver = new FirefoxDriver(cap);
-</code></p>
-
-<h4>C# language</h4>
-
-<p><code>
-var profile = new FirefoxProfile();
-var userAgent = "user_agent_string";
-profile.SetPreference("general.useragent.override", userAgent);
-IWebDriver driver = new FirefoxDriver(profile);
-</code></p>
-
-<h4>Ruby language</h4>
-
-<p><code>
-require 'selenium-webdriver'
-USER_AGENT = 'user_agent_string'
-profile = Selenium::WebDriver::Firefox::Profile.new
-profile['general.useragent.override'] = USER_AGENT
-driver = Selenium::WebDriver.for :firefox, :profile =&gt; profile
-</code></p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h3>PhantomJS</h3>
-
-<h4>Java language</h4>
-
-<p><code>
-String proxy = "example:80";
-String userAgent = "user_agent_string";
-org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
-p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
-DesiredCapabilities cap = DesiredCapabilities.phantomjs();
-cap.setCapability(CapabilityType.PROXY, p);
-cap.setJavascriptEnabled(true);
-cap.setCapability("phantomjs.page.settings.userAgent",userAgent);
-WebDriver driver = new PhantomJSDriver(cap);
-</code></p>
-
-<h4>C# language</h4>
-
-<p>```
-var options = new PhantomJSOptions();
-var userAgent = &ldquo;user_agent_string&rdquo;;
-options.AddAdditionalCapability(&ldquo;phantomjs.page.settings.userAgent&rdquo;, userAgent);</p>
-
-<p>IWebDriver driver = new PhantomJSDriver(options);
-```</p>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h4>Ruby language</h4>
-
-<p><code>
-require 'selenium-webdriver'
-USER_AGENT = 'user_agent_string'
-capabilities = Selenium::WebDriver::Remote::Capabilities.phantomjs('phantomjs.page.settings.userAgent' =&gt; USER_AGENT)
-driver = Selenium::WebDriver.for :phantomjs, :desired_capabilities =&gt; capabilities
-</code></p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Introduction]]></title>
@@ -554,6 +400,251 @@ public static void main(String[] args) throws InterruptedException {
 
     //Closing browser
     driver.close();
+}
+</code></pre>
+
+<p>}
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Browser Navigation Commands]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-browser-navigation-commands/"/>
+    <updated>2014-08-07T15:10:35+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-browser-navigation-commands</id>
+    <content type="html"><![CDATA[<h2>WebDriver Browser Navigation Commands</h2>
+
+<p>The navigate interface exposes the ability to move backwards and forwards in your browser’s history but navigate().to() and get() do exactly the same thing. One’s just a lot easier to type than the other.</p>
+
+<!--more-->
+
+
+<h3>To Command</h3>
+
+<p>Purpose : This command is use to navigate on specific page or URL in between the  test Command : driver.navigate().to(URL); Parameters : url – The URL to load. It is best to use a fully qualified URL.</p>
+
+<p><code>
+driver.navigate().to("http://www.gooogle.com");
+</code></p>
+
+<h3>Forward Command</h3>
+
+<p>Purpose : This command is use to go on to next page like browser’s forward button.</p>
+
+<p><code>
+driver.navigate().forward();
+</code></p>
+
+<h3>Back Command</h3>
+
+<p>Purpose : This command is use to go back to previous page like browser’s back button.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<code>
+driver.navigate().back();
+</code></p>
+
+<h3>Practice Exercise</h3>
+
+<p>1) Launch new Browser</p>
+
+<p>2) Open Selenium docs website</p>
+
+<p>3) Click on About link ( On top navigation)</p>
+
+<p>4) Come back to Home page (Use ‘Back’ command)</p>
+
+<p>5) Again go back to About page (This time use ‘Forward’ command)</p>
+
+<p>6) Again come back to Home page (This time use ‘To’ command)</p>
+
+<p>7) Refresh the Browser (Use ‘Refresh’ command)</p>
+
+<p>8) Close the Browser</p>
+
+<h4>Solution</h4>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
+package automationFramework;</p>
+
+<p>import java.util.concurrent.TimeUnit;</p>
+
+<p>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;</p>
+
+<p>public class PracticeNavigationCommands {</p>
+
+<pre><code>private static WebDriver driver = null;
+public static void main(String[] args) {
+
+    // Create a new instance of the Firefox driver
+    driver = new FirefoxDriver();
+
+    // Open Selenium website
+    driver.get("http://docs.seleniumhq.org/");
+
+    // Put an Implicit wait on driver
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+    // Click on About link
+    driver.findElement(By.Xpath("//a[contains(@href, '/about/')]")).click();
+
+    // Go back to Home Page
+    driver.navigate().back();
+
+    // Go forward to About page
+    driver.navigate().forward();
+
+    // Go back to Home page
+    driver.navigate().to("http://docs.seleniumhq.org/");
+
+    // Refresh browser
+    driver.navigate().refresh();
+
+    // Close browser
+    driver.close();
+}
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Webdriver : Switch Window Commands]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-switch-window-commands/"/>
+    <updated>2014-08-07T15:05:35+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-switch-window-commands</id>
+    <content type="html"><![CDATA[<h2>WebDriver Switch Window Commands</h2>
+
+<p>Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.</p>
+
+<!--more-->
+
+
+<h3>GetWindowHandle Command</h3>
+
+<p>Purpose: To get the window handle of the current window.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<code>
+String  handle= driver.getWindowHandle();//Return a string of alphanumeric window handle
+</code></p>
+
+<h3>GetWindowHandles Command</h3>
+
+<p>Purpose: To get the window handle of all the current windows.</p>
+
+<p><code>
+Set&lt;String&gt; handle= driver.getWindowHandles();//Return a set of window handle
+</code></p>
+
+<h3>SwitchTo Window Command</h3>
+
+<p>Purpose: WebDriver supports moving between named windows using the “switchTo” method.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
+driver.switchTo().window(&ldquo;windowName&rdquo;);</p>
+
+<p>```
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Alternatively, you can pass a “window handle” to the “switchTo().window()” method. Knowing this, it’s possible to iterate over every open window like so:</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
+for (String handle : driver.getWindowHandles()) {</p>
+
+<pre><code>driver.switchTo().window(handle);
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>Switching between windows with Iterators:</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```</p>
+
+<p>driver.findElement(By.id(“id of the link which opens new window”)).click();
+ //wait till two windows are not opened
+ waitForNumberofWindowsToEqual(2);//this method is for wait</p>
+
+<p> Set handles = driver.getWindowHandles();
+ firstWinHandle = driver.getWindowHandle(); handles.remove(firstWinHandle);
+ String winHandle=handles.iterator().next();
+ if (winHandle!=firstWinHandle){
+ //To retrieve the handle of second window, extracting the handle which does not match to first window handle
+ secondWinHandle=winHandle; //Storing handle of second window handle</p>
+
+<p>//Switch control to new window
+ driver.switchTo().window(secondWinHandle);</p>
+
+<p>```</p>
+
+<h3>SwitchTo Frame Command</h3>
+
+<p>Purpose: WebDriver supports moving between named frames using the “switchTo” method.</p>
+
+<p><code>
+driver.switchTo().frame("frameName");
+</code></p>
+
+<h3>SwitchTo PopUp Command</h3>
+
+<p>Purpose: WebDriver supports moving between named PopUps using the “switchTo” method. After you’ve triggered an action that opens a popup, you can access the alert and it will return the currently open alert object. With this object you can now accept, dismiss, read its contents or even type into a prompt. This interface works equally well on alerts, confirms, and prompts.</p>
+
+<p><code>
+Alert alert = driver.switchTo().alert();
+</code>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Practice Exercise 1</h3>
+
+<p>1) Launch new Browser</p>
+
+<p>2) Open URL &ldquo;<a href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a>&rdquo;</p>
+
+<p>3) Get Window name (Use GetWindowHandle command)</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
+package practiceTestCases;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;</p>
+
+<p>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;</p>
+
+<p>public class PracticeSwitchWindow {</p>
+
+<pre><code>    public static WebDriver driver;
+    public static void main(String[] args) {
+
+        // Create a new instance of the Firefox driver
+        driver = new FirefoxDriver();
+
+        // Put an Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        // Launch the URL
+        driver.get("http://docs.seleniumhq.org/download/");
+
+        // Store and Print the name of the First window on the console
+        String handle= driver.getWindowHandle();
+        System.out.println(handle);
+
+        // Close Original window
+        driver.quit();
+
 }
 </code></pre>
 
