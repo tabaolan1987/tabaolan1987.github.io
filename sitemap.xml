@@ -1,48 +1,48 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-introduction/</loc>
-        <lastmod>2014-07-04T17:29:34+07:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-download/</loc>
-        <lastmod>2014-07-04T17:29:19+07:00</lastmod>
-    </url>
-    <url>
         <loc>
-            http://www.tabaolan.com/blog/2014/05/26/testng-framework-first-test-case-with-testng/
+            http://www.tabaolan.com/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/
         </loc>
-        <lastmod>2014-07-04T17:29:28+07:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-test-suite/</loc>
-        <lastmod>2014-07-04T17:30:02+07:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations/</loc>
-        <lastmod>2014-07-08T14:34:04+07:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.tabaolan.com/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/
-        </loc>
-        <lastmod>2014-07-04T17:33:49+07:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-reporters-and-asserts/</loc>
-        <lastmod>2014-07-04T17:34:05+07:00</lastmod>
+        <lastmod>2014-08-13T10:38:32+07:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.tabaolan.com/blog/2014/05/26/testng-framework-parameters-and-data-provider/
         </loc>
-        <lastmod>2014-07-04T17:29:45+07:00</lastmod>
+        <lastmod>2014-08-13T10:38:24+07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-reporters-and-asserts/</loc>
+        <lastmod>2014-08-13T10:38:15+07:00</lastmod>
     </url>
     <url>
         <loc>
-            http://www.tabaolan.com/blog/2014/05/26/testng-framework-multi-browser-and-parallel-testing/
+            http://www.tabaolan.com/blog/2014/05/26/testng-framework-prioritizing-and-sequencing/
         </loc>
-        <lastmod>2014-07-04T17:29:46+07:00</lastmod>
+        <lastmod>2014-08-13T10:38:08+07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations/</loc>
+        <lastmod>2014-08-13T10:38:01+07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-test-suite/</loc>
+        <lastmod>2014-08-13T10:37:54+07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/blog/2014/05/26/testng-framework-first-test-case-with-testng/
+        </loc>
+        <lastmod>2014-08-13T10:37:49+07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-download/</loc>
+        <lastmod>2014-08-13T10:37:45+07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/blog/2014/05/26/testng-framework-introduction/</loc>
+        <lastmod>2014-07-04T17:29:34+07:00</lastmod>
     </url>
     <url>
         <loc>
@@ -320,15 +320,15 @@
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/archives/</loc>
-        <lastmod>2014-08-13T10:29:34+07:00</lastmod>
+        <lastmod>2014-08-13T10:38:32+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/</loc>
-        <lastmod>2014-08-13T10:29:34+07:00</lastmod>
+        <lastmod>2014-08-13T10:38:32+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/</loc>
-        <lastmod>2014-08-13T10:29:34+07:00</lastmod>
+        <lastmod>2014-08-13T10:38:32+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/search.html</loc>
