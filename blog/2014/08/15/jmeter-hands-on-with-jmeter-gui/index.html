@@ -1,0 +1,349 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jmeter : Hands on with Jmeter GUI - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Jmeter : Hands on with Jmeter GUI" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">Jmeter : Hands on With Jmeter GUI</h2>
+	<div class="entry-content"><h2>Hands on with JMeter GUI</h2>
+
+<p>As soon as you launch JMeter , you will see 2 elements : Test Plan and Workbench</p>
+
+<h3>Test Plan</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Test Plan is where you add elements required for your JMeter Test.</p>
+
+<p>It stores all the elements (like ThreadGroup, Timers etc) and their corresponding settings required to run your desired Tests.</p>
+
+<p>Following figure shows an example of Test Plan</p>
+
+<p><img src="/images/jmeter36.png"></p>
+
+<h3>WorkBench</h3>
+
+<p>The WorkBench simply provides a place to store test elements temporarily. WorkBench has no relation with Test Plan. JMeter will not save the contents of the WorkBench. It only saves the contents of the Test Plan branch</p>
+
+<p><img src="/images/jmeter37.png"></p>
+
+<h2>Adding Elements</h2>
+
+<p>Adding Elements is the essential step to build a Test Plan because without adding elements, JMeter cannot execute your Test Plan</p>
+
+<p>A Test Plan includes many Elements such as Listener, Controller, and Timer</p>
+
+<p>You can add an element to test plan by right-clicking on a Test Plan, and choose new elements from &ldquo;Add&rdquo; list.</p>
+
+<p>Suppose, you want to add 2 elements to Test Plan BeanShell Assertion and Java Request Default.</p>
+
+<p>1)Right click Test Plan &ndash;> Add &ndash;> Assertion-> Bean Shell Assertion</p>
+
+<p>2)Right click Test Plan &ndash;> Add &ndash;> Config Element &ndash;> Java Request Default</p>
+
+<p><img src="/images/jmeter38.gif"></p>
+
+<p>You can also remove unused element</p>
+
+<p>Let&rsquo;s say, you want to remove element &ldquo;HTTP Request Defaults&rdquo;, select &ldquo;HTTP Request Default&rdquo; &ndash;> Right click-> choose Remove from the context menu &ndash;> Click Yes to confirm delete this element on message box</p>
+
+<h2>Loading and Saving Elements</h2>
+
+<h3>Saving Elements</h3>
+
+<p>Suppose you have already added an element name &ldquo;BeanShell Assertion&rdquo;.  Now you want to save it.</p>
+
+<p>Right click BeanShell Assertion &ndash;> select Save Selection As</p>
+
+<p><img src="/images/jmeter39.png"></p>
+
+<p>A dialog box display, click Save button to save your elements under default name BeanShell Assertion.jmx. You can choose other name if you want</p>
+
+<p><img src="/images/jmeter40.png"></p>
+
+<p>JMeter Test Elements and Test plan are stored in *.JMX format. JMX is standing for Java Management Extensions.</p>
+
+<h3>Loading Elements</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Loading exist element helps you save your time required to create &amp; configure new elements</p>
+
+<p>Let&rsquo;s say,  that you have an existing element in Test Plan: Java Request Default</p>
+
+<p>Right click Java Request Defaults-> select Merge</p>
+
+<p><img src="/images/jmeter41.gif"></p>
+
+<p>Choose the Elements (BeanShell Assertion.jmx.) file in the directory. This element will be added to your current test plan.</p>
+
+<p><img src="/images/jmeter42.png"></p>
+
+<h2>Configuring Elements</h2>
+
+<p>In order to configure any Element</p>
+
+<p>1.Select the element in the Tree on Left Pane</p>
+
+<p>2.Enter configuration settings on the Right Pane</p>
+
+<p><img src="/images/jmeter43.png"></p>
+
+<h3>Running and Stopping a Test Plan</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Before running a test, you should save your Test Plan first. Saving your Test Plan helps you avoid unexpected error when running the test plan. Steps to save Test plan &ndash;</p>
+
+<p>1.File &ndash;> Save Test Plan as-> a Dialog box display</p>
+
+<p>2.Enter a filename of Test Plan &ndash;>click Save</p>
+
+<p><img src="/images/jmeter44.gif"></p>
+
+<h3>Create Combo Test Plan</h3>
+
+<p>You can merge one or many Test Plans to create a combo Test Plan as shown in below figure</p>
+
+<p><img src="/images/jmeter45.png"></p>
+
+<p>Suppose you already have an existing Test Plan name Test_Fragment.jmx on your computer (This article includes this file).You can merge this test plan to current Test Plan on JMeter to create a new Test Plan.</p>
+
+<p><img src="/images/jmeter46.gif"></p>
+
+<p>Now all the test elements in file Test_Fragment.jmx are added to your current test plan as shown in the figure below</p>
+
+<p><img src="/images/jmeter47.png"></p>
+
+<h3>Run Test Plan</h3>
+
+<p>To run your single or multiple test plans, choose Start (Control + R) from the Run menu item.</p>
+
+<p><img src="/images/jmeter48.png"></p>
+
+<p>When JMeter is running, it shows a small green box at the right hand end of the menu bar.</p>
+
+<p><img src="/images/jmeter49.png"></p>
+
+<p>The numbers to the left of the green box are the number of active threads / total number of threads.</p>
+
+<p>To Stop the Test, press Stop button or use short key Ctrl + &lsquo;.&rsquo;</p>
+
+<p><img src="/images/jmeter50.png"></p>
+
+<h3>Test Report</h3>
+
+<p>When test execution is done, you can get the test report. The test report includes the error log file, which is saved in jmeter.log, and the test result summary.</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

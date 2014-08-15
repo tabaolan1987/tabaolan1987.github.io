@@ -135,6 +135,751 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/08/07/selenium-automation-framework-p8-read-data-from-excel-file/">Automation Framework P8 : Read Data From Excel File</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-07T14:00:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/selenium-framework/'>Selenium-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/selenium-automation-framework-p8-read-data-from-excel-file/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+<div class="entry-content clearfix">
+  <h2>Automation Framework Reading data from the Excel</h2>
+
+<h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a></h3>
+
+<p>In some way , the client want us read data from excel file then past it to the automation test.In this tutorial , I will write step by step to read data from excel file then past it to the test.</p>
+
+<p>This is the scenario  : Login to facebook by get username and password from excel file.</p>
+
+<h3>How to do</h3>
+
+
+  <a class="btn pull-right" href="/blog/2014/08/07/selenium-automation-framework-p8-read-data-from-excel-file/">Continue reading</a>
+</div>
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/07/icecream-framework-part-3-function-avaiable-in-excel-file/">IceCream Framework Part 4 :Function available in excel file and how to use!</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-07T14:00:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/icecream-framework/'>IceCream-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/icecream-framework-part-3-function-avaiable-in-excel-file/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Version Beta 0.1</h2>
+
+<h3>Function Browser</h3>
+
+<p>1) Define : choose your browser you want to run your test case.</p>
+
+<p>2) Available : Chrome , FireFox , IE.</p>
+
+<p>3) Required : All browser must be install in your laptop or computer.</p>
+
+<p><img src="/images/use-function-1.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Function OpenUrl</h3>
+
+<p>1) Define : open the url you want to test.It will wait for the browser load this page success!</p>
+
+<p>2) Available : with any url that publish to internet or your local network.</p>
+
+<p>3) Required : correct the format of URL such as  : www.anyurl.com or http/<a href="https://anyurl.com.">https://anyurl.com.</a> Must put value in column &lsquo;ACTION INPUT VALUE&rsquo;.</p>
+
+<p><img src="/images/use-function-2.png"></p>
+
+<h3>Function CloseBrowser</h3>
+
+<p>1) Define : close the browser.</p>
+
+<p>2) Available : All browser that you choose in the top of excel file.</p>
+
+<p>3) Required : don&rsquo;t need to put any value in &lsquo;ACTION INPUT VALUE&rsquo; , &lsquo;FIND BY&rsquo;, &lsquo;FIND BY VALUE&rsquo;</p>
+
+<p><img src="/images/use-function-3.png"></p>
+
+<h3>Function Type</h3>
+
+<p>1) Define : type in text-box that you want.Return false if element is not display or not is text box or text arena.</p>
+
+<p>2) Available : all text-box that visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type in text-box!</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this text-box if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<p>4) Example : Let&rsquo;s take a look in this html source below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="holder"&gt;
+</span><span class='line'>  &lt;input type='text' id='textbox' class='example'&gt;&lt;/input&gt;
+</span><span class='line'>&lt;/div&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is find the textbox and type in it  value &lsquo;example&rsquo; by using function type in excel.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>I choose the demo to you 3 option is :</p>
+
+<p>A)Find by ID :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : ID</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : textbox (this is the id of this input type)</p>
+
+<p><img src="/images/use-function-5.png"></p>
+
+<p>B)Find by Class name :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Class Name</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : example(this is the class name of this input type)</p>
+
+<p><img src="/images/use-function-6.png"></p>
+
+<p>C)Find by Xpath :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Xpath</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : //input[id=&lsquo;textbox&rsquo;] (this is the xpath of this textbox)</p>
+
+<p><img src="/images/use-function-7.png"></p>
+
+<h3>Function Click</h3>
+
+<p>1) Define : Click into button , link,.. etc! Return false if element is not displayed.</p>
+
+<p>2) Available : All element is visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this element you want to click if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<p>4) Example  : take a look in html source below</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;td id='holder'&gt;
+</span><span class='line'>&lt;a class='link_example'&gt;Click here&lt;/a&gt;
+</span><span class='line'>&lt;/td&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is find the link and click in it.</p>
+
+<p>I choose the demo to you 2 option is :</p>
+
+<p>A) Find by Class name :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Class Name</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : link_example(this is the class name of this link)</p>
+
+<p><img src="/images/use-function-8.png"></p>
+
+<p>B) Find by Link text :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Link text</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : Click here(this is the text in the link)</p>
+
+<p><img src="/images/use-function-10.png"></p>
+
+<h3>Function VerifyTitlePage</h3>
+
+<p>1) Define : compare the title page with the text user input.Return false if the title page not equal with the text user input.</p>
+
+<p>2) Available : String for input.</p>
+
+<p>3) Required : &lsquo;ACTION INPUT VALUE&rsquo; : give your String to compare with the current title page.</p>
+
+<p><img src="/images/use-function-11.png"></p>
+
+<h3>Function VerifyText</h3>
+
+<p>1) Define : compare text inside element with text user input.Return false if they are not equals.</p>
+
+<p>2) Available : String input.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : give your String to compare with the current text in element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the location of element like xpath, ID you want to compare.</p>
+
+<p><img src="/images/use-function-12.png"></p>
+
+<h3>Function SelectValueDropdown</h3>
+
+<p>1) Define : select the value of drop-down list via value user input.Return false if value is not existed in drop-down.</p>
+
+<p>2) Available : String input.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : give your String Value you want selected in drop-down</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the location of drop-down like Xpath , or ID  you want to select!</p>
+
+<p>4)Example : take a look in html code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;select id='country'&gt;
+</span><span class='line'>&lt;option value='vietnam'&gt;Viet Nam&lt;/option&gt;
+</span><span class='line'>&lt;option value='thailand'&gt;ThaiLand&lt;/option&gt;
+</span><span class='line'>&lt;/select&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The scenario is select value Viet Nam in drop-down list. So this will be look like this :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : vietnam(value of option)</p>
+
+<p>&lsquo;FIND BY&rsquo; : ID</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : country</p>
+
+<p><img src="/images/use-function-13.png"></p>
+
+<h3>Function SwitchToFrame</h3>
+
+<p>1) Define : switch the driver to iframe.</p>
+
+<p>2) Available : All I-frame visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of IFrame like Xpath , or ID you want to select!</p>
+
+<p><img src="/images/use-function-14.png"></p>
+
+<h3>Function SwitchToWindow</h3>
+
+<p>1) Define : if browser current have more than once tab , it use to switch to the another tab.</p>
+
+<p>2) Available : All tabs are existed in current browser.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : name of this tab you want to come.</p>
+
+<p><img src="/images/use-function-15.png"></p>
+
+<h3>Function SwitchToDefault</h3>
+
+<p>1) Define :  switch to the default tabs</p>
+
+<p>2) Available :  All tabs are existed in current browser.</p>
+
+<p>3) Required : Just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-16.png"></p>
+
+<h3>Function EnterAlertAcceptButton</h3>
+
+<p>1) Define : enter the accept button in Alert if alert present.</p>
+
+<p>2) Available : all alert is present.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-17.png"></p>
+
+<h3>Function EnterAlertDismissButton</h3>
+
+<p>1) Define : enter the cancel button in Alert if alert present.Return false if alert is not present.</p>
+
+<p>2) Available : all alert is present.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-18.png"></p>
+
+<h3>Function IsAlertPresent</h3>
+
+<p>1) Define : check if alert is present.Return false if alert is not present.</p>
+
+<p>2) Available : all browser.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-19.png"></p>
+
+<h3>Function IsElementPresent</h3>
+
+<p>1) Define : check if element is present.Return false if element is not present.</p>
+
+<p>2) Available : all element.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-20.png"></p>
+
+<h3>Function WaitElementPresent</h3>
+
+<p>1) Define : wait for element present in website with time out default is 10 second , you can set this timeout by enter in column &lsquo;ACTION VALUE INPUT&rsquo;.Return false if element not present.</p>
+
+<p>2) Available : all element.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : time out you want to wait for this element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-21.png"></p>
+
+<h3>Function WaitElementsInvisible</h3>
+
+<p>1) Define : wait for all elements invisible in the timeout.Return false if once of elements is not invisible.</p>
+
+<p>2) Available : List elements.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : time out you want to wait for this element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-22.png"></p>
+
+<h3>Function TakeScreenShot</h3>
+
+<p>1) Define : take a screen-shot in your current browser tabs and save it under folder &lsquo;Screenshot&rsquo;.</p>
+
+<p>2) Available : all browsers.</p>
+
+<p>3) Required : just choose only action and not required any parameters for this.</p>
+
+<p><img src="/images/use-function-23.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/07/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/">Beginner with Selenium WebDriver Part 4 : Configuration Eclipse with Selenium driver and Create First Test</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-07T13:55:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+<div class="entry-content clearfix">
+  <h2>Beginner with Selenium WebDriver : Configuration Eclipse with Selenium driver and Create First Test</h2>
+
+<h3>Create a simple test case selenium in Eclipse</h3>
+
+<p>To configure Eclipse with Selenium webdriver, we need to launch the Eclipse IDE, create a Workspace, create a Project, create a Package, create a Class and add External libraries to the project.</p>
+
+
+  <a class="btn pull-right" href="/blog/2014/08/07/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/">Continue reading</a>
+</div>
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/">How to take screenshot in Internet Explore</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-07-07T15:07:11+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jul 7<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
+      
+        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Selenium Tutorial : How to take screentShot in Internet Explore using Selenium WebDriver?</h2>
+
+<p>In browser Internet Explore we need to have some alter code for take screenshot in Internet Explore.</p>
+
+<p>Take a look in this code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>public static void takeScreenShotIE(WebDriver driver, String name){
+</span><span class='line'>  WebDriver augmentedDriver = new Augmenter().augment(driver);
+</span><span class='line'>  output = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
+</span><span class='line'>  file = new File(screenshootDir, name + ".png");
+</span><span class='line'>  FileUtils.copyFile(output, file);
+</span><span class='line'>} 
+</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/">Selenium WebDriver wait for new tab open</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-07-04T11:12:22+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jul 4<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
+      
+        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Selenium Tutorial : How to wait for new tab open using Selenium WebDriver?</h2>
+
+<h3>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver : this is webdriver
+</span><span class='line'>   * @param timeout : time you define to wait the tab open
+</span><span class='line'>   * @return true if tab open in the time , false if tab not open in the time.
+</span><span class='line'>   */
+</span><span class='line'>public static boolean waitForNewTab(WebDriver driver,int timeout){
+</span><span class='line'>      boolean check = false;
+</span><span class='line'>      int count = 0;
+</span><span class='line'>      while(!check){
+</span><span class='line'>          try {
+</span><span class='line'>              Set&lt;String&gt; winHandle = driver.getWindowHandles();
+</span><span class='line'>              if(winHandle.size() &gt; 1){
+</span><span class='line'>                  check = true;
+</span><span class='line'>                  return check;
+</span><span class='line'>              }
+</span><span class='line'>              Thread.sleep(1000);
+</span><span class='line'>              count++;
+</span><span class='line'>              if(count &gt; timeout){
+</span><span class='line'>                  return check;
+</span><span class='line'>              }
+</span><span class='line'>          } catch (Exception e) {
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>      return check;
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/07/03/run-script-selenium-ide-in-chrome/">Run Script Selenium IDE in Chrome</a>
   </h1>
   
@@ -687,907 +1432,6 @@
 </span><span class='line'>}
 </span></code></pre></td></tr></table></div></figure>
 
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/20/tipstricks-test-autocomple-menus-with-selenium-ide/">TipsTricks : Test autocomple menus with Selenium IDE</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-20T09:20:52+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 20<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories//'>,</a></li>
-      
-        <li><a class='category' href='/categories/ide/'>IDE</a></li>
-      
-        <li><a class='category' href='/categories/selenium/'>Selenium</a></li>
-      
-        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/20/tipstricks-test-autocomple-menus-with-selenium-ide/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <p>In the work flow I wanted to test, users are asked to type the first few letters of the name of a US County into a text field. An AJAX request is then triggered to find matching counties, and a list of matches is presented to users.</p>
-
-<p>It looks something like this:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="/images/trick-ide-autocomple-1.png"></p>
-
-<p>So We will hanlde this by 4 actions :</p>
-
-<p>First you need to type a little word to this text field  example like &ldquo;lake&rdquo;.</p>
-
-<p>Wait for the ajax load the data with text is present : &ldquo;Lake County, IL&rdquo;</p>
-
-<p>Mouse over to this option of select with value is &ldquo;Lake County, IL&rdquo;.</p>
-
-<p>Click to the option with text : &ldquo;Lake County, IL&rdquo;</p>
-
-<p>Take a look in this image :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="/images/trick-ide-autocomple-2.png"></p>
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver/">Selenium WebDriver : How to press multi Keyboard</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T11:54:33+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>For multiple key press :</h2>
-
-<h3>First, get the ascii code for the key.</h3>
-
-<p>For example if we want to press Ctrl-A, it should be 0001.</p>
-
-<p>The full list is <a href="http://q.gs/7L9JV">here</a> or <a href="http://q.gs/7L9JW">here</a> .</p>
-
-<p>First assign a character&copy; to the value and then convert that as string inside send key.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// ASCII code 1 for Ctrl-A
-</span><span class='line'>char c = '\u0001';
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Convert.ToString(c));
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Use Action Class</h3>
-
-<p>Make a action instance and use action instance .</p>
-
-<p>Inhere, we have used 3 type of method to press three different key , and as they are different from each other, it will make 3 key press together.(means in here Alt+Shift+T)</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Actions kpress = new Actions(driver);
-</span><span class='line'>kpress.keyDown(driver.findElement(By.id("name")), Keys.ALT).perform(); 
-</span><span class='line'>kpress.sendKeys(driver.findElement(By.id("name")), "T").perform();
-</span><span class='line'>kpress.keyUp(driver.findElement(By.id("name")),Keys.SHIFT).perform(); 
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/">WebDriver : How to press Keyboard</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T11:43:38+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <p>In this article we are going to see the functions for keyboard&rsquo;s keypass key events.</p>
-
-<p>To find an element we use some function below , depend on your website.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.FindElement(By.XPath("String"));
-</span><span class='line'>driver.FindElement(By.id("String"));
-</span><span class='line'>driver.FindElement(By.className("String"));
-</span><span class='line'>driver.FindElement(By.cssSelector("String"));
-</span><span class='line'>driver.FindElement(By.linkText("String"));
-</span><span class='line'>driver.FindElement(By.TagName("String"));</span></code></pre></td></tr></table></div></figure>
-
-
-<p>if we add send keys as keyboard command, then we can use keyboard event with the element that we found. like</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowRight);</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Here, &ldquo;string&rdquo; is the Xpath location. And on the element that we have found, keyboard&rsquo;s Arrow left will be pressed.</p>
-
-<p>Take a look in some key press on element:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-<span class='line-number'>127</span>
-<span class='line-number'>128</span>
-<span class='line-number'>129</span>
-<span class='line-number'>130</span>
-<span class='line-number'>131</span>
-<span class='line-number'>132</span>
-<span class='line-number'>133</span>
-<span class='line-number'>134</span>
-<span class='line-number'>135</span>
-<span class='line-number'>136</span>
-<span class='line-number'>137</span>
-<span class='line-number'>138</span>
-<span class='line-number'>139</span>
-<span class='line-number'>140</span>
-<span class='line-number'>141</span>
-<span class='line-number'>142</span>
-<span class='line-number'>143</span>
-<span class='line-number'>144</span>
-<span class='line-number'>145</span>
-<span class='line-number'>146</span>
-<span class='line-number'>147</span>
-<span class='line-number'>148</span>
-<span class='line-number'>149</span>
-<span class='line-number'>150</span>
-<span class='line-number'>151</span>
-<span class='line-number'>152</span>
-<span class='line-number'>153</span>
-<span class='line-number'>154</span>
-<span class='line-number'>155</span>
-<span class='line-number'>156</span>
-<span class='line-number'>157</span>
-<span class='line-number'>158</span>
-<span class='line-number'>159</span>
-<span class='line-number'>160</span>
-<span class='line-number'>161</span>
-<span class='line-number'>162</span>
-<span class='line-number'>163</span>
-<span class='line-number'>164</span>
-<span class='line-number'>165</span>
-<span class='line-number'>166</span>
-<span class='line-number'>167</span>
-<span class='line-number'>168</span>
-<span class='line-number'>169</span>
-<span class='line-number'>170</span>
-<span class='line-number'>171</span>
-<span class='line-number'>172</span>
-<span class='line-number'>173</span>
-<span class='line-number'>174</span>
-<span class='line-number'>175</span>
-<span class='line-number'>176</span>
-<span class='line-number'>177</span>
-<span class='line-number'>178</span>
-<span class='line-number'>179</span>
-<span class='line-number'>180</span>
-<span class='line-number'>181</span>
-<span class='line-number'>182</span>
-<span class='line-number'>183</span>
-<span class='line-number'>184</span>
-<span class='line-number'>185</span>
-<span class='line-number'>186</span>
-<span class='line-number'>187</span>
-<span class='line-number'>188</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>-For the number pad addition key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Add);
-</span><span class='line'>
-</span><span class='line'>-For  the Alt key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Alt);
-</span><span class='line'>
-</span><span class='line'>-For  the Left arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowDown);
-</span><span class='line'>
-</span><span class='line'>-For  the left arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowLeft);
-</span><span class='line'>
-</span><span class='line'>-For  the right arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowRight);
-</span><span class='line'>
-</span><span class='line'>-For  the up arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowUp);
-</span><span class='line'>
-</span><span class='line'>-For  the Backspace key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Backspace);
-</span><span class='line'>
-</span><span class='line'>-For  the Cancel keystroke.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Cancel);
-</span><span class='line'>
-</span><span class='line'>-For  the Clear keystroke.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Clear);
-</span><span class='line'>
-</span><span class='line'>-For  the function key COMMAND.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Command);
-</span><span class='line'>
-</span><span class='line'>-For  the Control key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Control);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad decimal separator key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Decimal);
-</span><span class='line'>
-</span><span class='line'>-For  the Delete key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Delete);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad division key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Divide);
-</span><span class='line'>
-</span><span class='line'>-For  the Left arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Down);
-</span><span class='line'>
-</span><span class='line'>-For  the End key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.End);
-</span><span class='line'>
-</span><span class='line'>-For  the Enter key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Enter);
-</span><span class='line'>
-</span><span class='line'>-For  the equal sign key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Equal);
-</span><span class='line'>
-</span><span class='line'>-For  the Escape key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Escape);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F1.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F1);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F10.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F10);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F11.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F11);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F12.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F12);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F2.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F2);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F3.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F3);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F4.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F4);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F5.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F5);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F6.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F6);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F7.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F7);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F8.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F8);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F9.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F9);
-</span><span class='line'>
-</span><span class='line'>-For  the Help keystroke.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Help);
-</span><span class='line'>
-</span><span class='line'>-For  the Home key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Home);
-</span><span class='line'>
-</span><span class='line'>-For  the Insert key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Insert);
-</span><span class='line'>
-</span><span class='line'>-For  the left arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Left);
-</span><span class='line'>
-</span><span class='line'>-For  the Alt key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftAlt);
-</span><span class='line'>
-</span><span class='line'>-For  the Control key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftControl);
-</span><span class='line'>
-</span><span class='line'>-For  the Shift key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftShift);
-</span><span class='line'>
-</span><span class='line'>-For  the function key META.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Meta);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad multiplication key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Multiply);
-</span><span class='line'>
-</span><span class='line'>-For  the NUL keystroke.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Null);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 0 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad0);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 1 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad1);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 2 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad2);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 3 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad3);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 4 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad4);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 5 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad5);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 6 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad6);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 7 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad7);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 8 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad8);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 9 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad9);
-</span><span class='line'>
-</span><span class='line'>-For  the Page Down key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.PageDown);
-</span><span class='line'>
-</span><span class='line'>-For  the Page Up key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.PageUp);
-</span><span class='line'>
-</span><span class='line'>-For  the Pause key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Pause);
-</span><span class='line'>
-</span><span class='line'>-For  the Return key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Return);
-</span><span class='line'>
-</span><span class='line'>-For  the right arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Right);
-</span><span class='line'>
-</span><span class='line'>-For  the semi-colon key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Semicolon);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad thousands separator key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Separator);
-</span><span class='line'>
-</span><span class='line'>-For  the Shift key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Shift);
-</span><span class='line'>
-</span><span class='line'>-For  the Space bar key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Space);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad subtraction key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Subtract);
-</span><span class='line'>
-</span><span class='line'>-For  the Tab key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Tab);
-</span><span class='line'>
-</span><span class='line'>-For  the up arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Up);</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide/">Selenium IDE : Check Background colour</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T09:38:19+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories//'>,</a></li>
-      
-        <li><a class='category' href='/categories/selenium-ide/'>Selenium-IDE</a></li>
-      
-        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <p>If you want to check element background colour , take a look in this example :</p>
-
-<p>Your html code look like that :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="my_div" class = "en" style = "backgroundbackground-color= #0000FF"&gt;
-</span><span class='line'>&lt;/div&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Your Selenium Ide will like this to check background of div :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>command: verifyAttribute
-</span><span class='line'>
-</span><span class='line'>Target : css=div#my_div@style
-</span><span class='line'>
-</span><span class='line'>value  : *background-color= #0000FF*</span></code></pre></td></tr></table></div></figure>
-
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/">Selenium Ide : loop through array variables</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T09:16:02+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories//'>,</a></li>
-      
-        <li><a class='category' href='/categories/selenium-ide/'>Selenium-IDE</a></li>
-      
-        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <p>If you want Selenium IDE loop through your array ,</p>
-
-<p>let take a look in code this example :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;storeEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;new Array(&quot;postgresql&quot;,&quot;mysql&quot;);&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;myarray&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;getEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index=0;&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;while&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index &lt; storedVars['myarray'].length&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;storeEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;temp&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;echo&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;javascript{storedVars['myarray'][storedVars['temp']]}&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;getEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index++;&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;endWhile&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or follower there command in this picture</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="/images/tricks-ide-loop-array.png"></p>
 
 
   </article>

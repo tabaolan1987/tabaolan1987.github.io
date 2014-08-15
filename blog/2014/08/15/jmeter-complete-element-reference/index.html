@@ -1,0 +1,387 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jmeter : Complete Element reference - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Jmeter : Complete Element reference" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">Jmeter : Complete Element Reference</h2>
+	<div class="entry-content"><h2>Complete Element reference for Jmeter</h2>
+
+<p>The different components of JMeter are called Elements. Each Element is designed for a specific purpose.</p>
+
+<p>The figure below gives the some common elements in JMeter.</p>
+
+<p><img src="/images/jmeter16.png"></p>
+
+<p>Studying all the componens at one go is an invitation to confusion and boredome. Here, we will discuss the must-know components before you can start testing in JMeter.</p>
+
+<p>Remaining components will be discussed as when they are used in the succeeding tutorials. The elements discussed in this tutorial are</p>
+
+<h3>Thread Group</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Thread Groups is a collection of Threads. Each thread represents one user using the application under test. Basically each Thread simulates one real user request to the server.</p>
+
+<p>The controls for a thread group allow you to Set the number of threads for each group.</p>
+
+<p>For example, if you set the number of threads as 100; JMeter will create and simulate 100 user requests to the server under test</p>
+
+<p><img src="/images/jmeter17.png"></p>
+
+<h3>Samplers</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>As we know already that JMeter supports testing HTTP, FTP , JDBC and many other protocols.</p>
+
+<p>We already know that Thread Groups simulate user request to the server</p>
+
+<p>But how does a Thread Group know which type of requests (HTTP, FTP etc.) it needs to make ?</p>
+
+<p>The answer is Samplers</p>
+
+<p>The user request could be FTP Request, HTTP Request, JDBC Request&hellip;Etc.</p>
+
+<p><img src="/images/jmeter18.png"></p>
+
+<h3>FTP request:</h3>
+
+<p>Let imagine you want to performance test an FTP server. You can use FTP request sampler in JMeter to do this task. This controller lets you send an FTP &ldquo;download file&rdquo; or &ldquo;upload file&rdquo; request to an FTP server.</p>
+
+<p><img src="/images/jmeter19.png"></p>
+
+<p>For example, if you want to download a file &ldquo;Test.txt&rdquo; from a FTP server under test, you need to configure some parameters in JMeter as figure below</p>
+
+<p><img src="/images/jmeter20.png"></p>
+
+<p>JMeter will send FTP command to FTP server ftp.example.com, and then download a file Test.txt from that server.</p>
+
+<h3>HTTP request:</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>This sampler lets you send an HTTP/HTTPS request to a web server.</p>
+
+<p>Consider the example below. JMeter send a HTTP request to Google website and retrieve HTML files or image from this website.</p>
+
+<p><img src="/images/jmeter21.png"></p>
+
+<h3>JDBC request:</h3>
+
+<p>This sampler lets you execute Database Performance Testing. It sends a JDBC Request (an SQL query) to a database.</p>
+
+<p><img src="/images/jmeter22.png"></p>
+
+<p>For example, a database server has a field test_result stored in a table name test_tbl. You want to query this data from the database server; you can configure JMeter to send a SQL query to this server to retrieve data.</p>
+
+<p><img src="/images/jmeter23.png"></p>
+
+<h3>BSF Sampler:</h3>
+
+<p>This sampler allows you to write a sampler using a BSF scripting language.</p>
+
+<p>Here is an example of BSF  Sampler in JMeter</p>
+
+<p><img src="/images/jmeter24.png"></p>
+
+<h3>Access Log Sampler:</h3>
+
+<p>This sampler allows you to read access logs and generate http requests. The log could be  image, html, css&hellip;.</p>
+
+<p><img src="/images/jmeter25.png"></p>
+
+<h3>SMTP Sampler:</h3>
+
+<p>If you want to test a mail server, you can use SMTP sampler. This sampler is used to send email messages using SMTP protocol.</p>
+
+<p><img src="/images/jmeter26.png"></p>
+
+<h3>Listeners</h3>
+
+<p>Listeners: shows the results of the test execution. They can show results in different format such as tree, table, graph or log file</p>
+
+<p><img src="/images/jmeter27.png"></p>
+
+<h4>Graph result listeners display the server response times on a Graph</h4>
+
+<p><img src="/images/jmeter28.png"></p>
+
+<h4>View Result Tree show results of user request in basic HTML format</h4>
+
+<p><img src="/images/jmeter29.png"></p>
+
+<h4>Table Result show summary of test result in table format</h4>
+
+<p><img src="/images/jmeter30.png"></p>
+
+<h4>Log show summary of test result in the text file</h4>
+
+<p><img src="/images/jmeter31.png"></p>
+
+<h3>Configuration Elements</h3>
+
+<p>set up defaults and variables for later use by samplers.</p>
+
+<p>The figure below shows some commonly used configuration elements in JMeter</p>
+
+<p><img src="/images/jmeter33.png"></p>
+
+<h4>CSV Data Set Config:</h4>
+
+<p>Suppose you want to test a website for 100 users signing-in with different credentials. You do not need to record the script 100 times! You can parameterization the script to enter different login credentials. This login information (e.g. Username, password) could be stored in a text file. JMeter has an element that allows you to read different parameters from that text file. It is &ldquo;CSV Data Set Config&rdquo;, which is used to read lines from a file, and split them into variables.</p>
+
+<p><img src="/images/jmeter32.png"></p>
+
+<p>This is an example of CSV Data. It&rsquo;s a text file which contains user and password to login your target website</p>
+
+<p><img src="/images/jmeter34.png"></p>
+
+<h4>HTTP Cookie Manager</h4>
+
+<p>Let&rsquo;s understand this with an example &ndash;</p>
+
+<p>You used your browser (Firefox, IE&hellip;Etc) to browse www.google.com</p>
+
+<p>You login with your user and password.</p>
+
+<p>Your username and password will be stored in your computer as cookies.</p>
+
+<p>Next time, when you visit www.google.com, you don&rsquo;t need to do login again because your browser will use your cookies as user data to login.</p>
+
+<p>HTTP Cookie Manager also has the same feature like a web browser. If you have an HTTP Request and the response contains a cookie, the Cookie Manager automatically stores that cookie and will use it for all future requests to that particular web site.</p>
+
+<h4>HTTP request default</h4>
+
+<p>This element lets you set default values that your HTTP Request controllers use.</p>
+
+<p>For example,</p>
+
+<p>You are sending 100 HTTP requests to the server google.com</p>
+
+<p>You would have to manually enter server name = google.com for all these 100 requests</p>
+
+<p>Instead, you could add a single HTTP request defaults with the &ldquo;Server Name or IP&rdquo; field = google.com</p>
+
+<p>No need to type 100 times!</p>
+
+<p><img src="/images/jmeter35.png"></p>
+
+<h4>Login Config Element</h4>
+
+<p>The Login Config Element lets you add or override username and password settings in samplers.</p>
+
+<p>For example, you want to simulate one user login to website www.facebook.com with user and password. You can use Login Config Element to add these user and password setting in user request</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/08/15/jmeter-complete-element-reference/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-complete-element-reference/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-complete-element-reference/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

@@ -1,0 +1,367 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jmeter : Performance testing - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Jmeter : Performance testing" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">Jmeter : Performance Testing</h2>
+	<div class="entry-content"><h2>Performance Testing using Jmeter</h2>
+
+<p>Performance testing is crucial to determine that the web application under test will satisfy high load requirements. It can be used to analyze overall server performance under heavy load.</p>
+
+<p><img src="/images/jmeter51.png"></p>
+
+<p>JMeter offers following benefit in Performance testing</p>
+
+<p>JMeter can be  used to test performance of both static resources such as JavaScript and HTML, as well as dynamic resources, such as JSP, Servlets, and AJAX.</p>
+
+<p>JMeter can discover maximum number of concurrent users that your website can handle</p>
+
+<p>JMeter provides a variety of graphical analyses of performance reports.</p>
+
+<p>JMeter Performance Testing includes:</p>
+
+<p><img src="/images/jmeter52.png"></p>
+
+<p>Load Testing: Modelling the expected usage by simulating multiple user access the web services concurrently.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Stress Testing: Every web server has a maximum load capacity. When the load goes beyond the limit, the web server start responding slowly and produce errors. The purpose of the stress testing is to find the maximum load the web server can handle.</p>
+
+<p>The figure below shows how JMeter simulates the heavy load :</p>
+
+<p><img src="/images/jmeter53.png"></p>
+
+<h3>Create a Performance Test Plan in Jmeter</h3>
+
+<p>In this tutorial, we are doing a performance analysis of Google.com for 1000 users</p>
+
+<p>Before testing the performance of target web application, we should determine-</p>
+
+<p>Normal Load: Average number of users visit your website</p>
+
+<p>Heavy Load: The maximum number of users visit your website</p>
+
+<p>What is your target in this test?</p>
+
+<p>Here is the roadmap of this practical example</p>
+
+<p><img src="/images/jmeter54.png"></p>
+
+<h3>Step 1) Add Thread Group</h3>
+
+<p>1.Start JMeter</p>
+
+<p>2.Select Test Plan on the tree</p>
+
+<p>3.Add Thread Group</p>
+
+<p>Right click on the Test Plan and add a new thread group: Add &ndash;> Threads (Users) &ndash;> Thread Group</p>
+
+<p><img src="/images/jmeter55.png"></p>
+
+<p>In Thread Group control panel, enter Thread Properties as following:</p>
+
+<p><img src="/images/jmeter56.png"></p>
+
+<p>Number of Threads: 100 (Number of users connects to target website: 100)</p>
+
+<p>Loop Count: 10 (Number of time to execute testing)</p>
+
+<p>Ramp-Up Period: 100</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The Thread Count and The Loop Counts are different.</p>
+
+<p><img src="/images/jmeter57.png"></p>
+
+<p>Ramp-Up Period tells JMeter how long to delay before starting next user. For example, if we have 100 users and a 100 second Ramp-Up period, then the delay between starting users would be 1 second (100 users /100 seconds)</p>
+
+<p><img src="/images/jmeter58.png"></p>
+
+<h3>Step 2) Adding JMeter elements</h3>
+
+<p>Now we determine what JMeter elements in this test. The elements are</p>
+
+<h4>HTTP request Default</h4>
+
+<p>This element can be added by right-clicking on the Thread Group and selecting: Add &ndash;> Config Element &ndash;> HTTP Request Defaults.</p>
+
+<p><img src="/images/jmeter59.png"></p>
+
+<p>In the HTTP Request Defaults control panel, enter the Website name under test (<a href="http://www.google.com">http://www.google.com</a>)</p>
+
+<p><img src="/images/jmeter60.png"></p>
+
+<h4>HTTP Request</h4>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Right-click on Thread Group and select: Add &ndash;> Sampler &ndash;> HTTP Request.</p>
+
+<p><img src="/images/jmeter61.png"></p>
+
+<p>In HTTP Request Control Panel, the Path field indicates which URL request you want to send to Google server.</p>
+
+<p><img src="/images/jmeter62.png"></p>
+
+<p>For example, if you enter &ldquo;calendar&rdquo; in Path field. JMeter will create the URL request <a href="http://www.google.com/calendar">http://www.google.com/calendar</a>  to Google server</p>
+
+<p><img src="/images/jmeter63.png"></p>
+
+<p>If you keep  the Path field blank  JMeter will create the URL request <a href="http://www.google.com">http://www.google.com</a> to Google server.</p>
+
+<p>In this test, you keep the Path field blank to make JMeter create the URL request <a href="http://www.google.com">http://www.google.com</a> to Google server.</p>
+
+<h3>Step 3) Adding Graph result</h3>
+
+<p>JMeter can show the test result in Graph format.</p>
+
+<p>Right click Test Plan, Add &ndash;> Listener &ndash;> Graph Results</p>
+
+<p><img src="/images/jmeter64.png"></p>
+
+<h3>Step 4) Run Test and get the test result</h3>
+
+<p>Press Run button (Ctrl + R) on Toolbar to start the testing process. You will see the test result display on Graph at the real time.</p>
+
+<p>The picture below presents a graph of a test plan, where we simulated 100 users who accessed on website www.google.com.</p>
+
+<p><img src="/images/jmeter65.png"></p>
+
+<p>At the bottom of the picture, there are the following statistics, represented in colors:</p>
+
+<p>Black: The total number of current samples sent.</p>
+
+<p>Blue: The current average of all samples sent.</p>
+
+<p>Red: The current standard deviation.</p>
+
+<p>Green: Throughput rate that represents the number of requests per minute the server handled.</p>
+
+<p>Let analyze the performance of Google server in below figure.</p>
+
+<p><img src="/images/jmeter66.png"></p>
+
+<p>To analyse the performance of the web server under test, you should focus on 2 parameters Throughput and Deviation</p>
+
+<p>The Throughput is the most important parameter. It represents the ability of the server to handle heavy load.  The higher the Throughput is, the better is the server performance.</p>
+
+<p>In this test, the throughput of Google server is 1,491.193/minute. It means Google server can handle 1,491.193 requests per minute. This value is quiet high so we can conclude that Google server has good performance</p>
+
+<p>The deviation is shown in red &ndash; it indicates the deviation from the average. The smaller the better.</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/08/15/jmeter-performance-testing/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-performance-testing/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-performance-testing/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
