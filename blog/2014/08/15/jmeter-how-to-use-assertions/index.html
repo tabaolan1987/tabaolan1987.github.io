@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>IceCream Framework Part 1 : Introduction - Selenium Tutorial</title>
+	<title>Jmeter : How to use Assertions - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
-	<meta name="description" content="IceCream Framework : Introduction" />
+	<meta name="description" content="Jmeter : How to use Assertions" />
 	
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -130,52 +130,140 @@
 <div id="content" class="inner">
         <article class="post">
 
-	<h2 class="title">IceCream Framework Part 1 : Introduction</h2>
-	<div class="entry-content"><h2>Introduction</h2>
+	<h2 class="title">Jmeter : How to Use Assertions</h2>
+	<div class="entry-content"><h2>How to use Assertions in JMeter</h2>
 
-<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
+<p>Assertion help verify that your server under test returns the expected results.</p>
 
-<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
+<p>Following are some commonly used Assertion in JMeter:</p>
 
-<!--more-->
+<p>1.Response Assertion</p>
 
+<p>2.Duration Assertion</p>
 
-<p>Tester just have the basic understanding of <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
+<p>3.Size Assertion</p>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<p>4.XML Assertion</p>
 
+<p>5.HTML Assertion</p>
 
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<h3>Response Assertion</h3>
 
-<p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
+<p><img src="/images/jmeter81.png"></p>
 
-<p>IceCream Framework is written by Java language and use the core <a href="/blog/categories/webdriver/">Selenium WebDriver</a>.</p>
+<p>The response assertion lets you add pattern strings to be compared against various fields of the server response.</p>
 
-<p>Currently IceCream Framework version 1.0 Beta version only have the basic functions to perform automatic chemical testing.</p>
-
-<p>The reason for this because I want to collect more of your opinions, feedback and the desire to have more function for me so that I can write to serve you in the next version!</p>
-
-<p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
-
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#116;&#97;&#98;&#x61;&#x6f;&#108;&#x61;&#110;&#x31;&#x39;&#56;&#x37;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#116;&#97;&#x62;&#97;&#111;&#x6c;&#x61;&#x6e;&#49;&#57;&#x38;&#55;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
-
-<p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
+<p>For example, you send a user request to the website <a href="http://www.google.com">http://www.google.com</a> and get the server response. You can use Response Assertion to verify if the server response contains expected pattern string (e.g. &ldquo;OK&rdquo;).</p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
+<h3>Duration Assertion</h3>
 
-<p>Let IceCream say Hi with you and take a look in <a href="/blog/2014/08/07/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
+<p>The Duration Assertion tests that each server response was received within a given amount of time. Any response that takes longer than the given number of milliseconds (specified by the user) is marked as a failed response.</p>
 
-<p><img src="/images/ICE-1.jpg"></p>
+<p>For example, a user request is sent to www.google.com by JMeter and get a response within expected time 5 ms then test case pass, else, test case failed.</p>
+
+<p><img src="/images/jmeter82.png"></p>
+
+<h2>Size Assertion</h2>
+
+<p>The Size Assertion tests that each server response contains the expected number of byte in it. You can specify that the size be equal to, greater than, less than, or not equal to a given number of bytes.</p>
+
+<p>JMeter sends a user request to www.google.com and gets response packet with size less than expected byte 5000 bytes àtest case pass. If else, test case failed.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>XML Assertion</h2>
+
+<p>The XML Assertion tests that the response data consists of a formally correct XML document.</p>
+
+<p><img src="/images/jmeter83.png"></p>
+
+<h3>HTML Assertion</h3>
+
+<p>The HTML Assertion allows the user to check the HTML syntax of the response data. It means the response data must be met the HTML syntax.</p>
+
+<p><img src="/images/jmeter84.png"></p>
+
+<h3>Handson &ndash; Assertion</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>In this test, we are using Response Assertion to compare the response packet from www.google.com matches your expected string.</p>
+
+<p>Here is the roadmap of this test:</p>
+
+<p><img src="/images/jmeter85.png"></p>
+
+<p>The response assertion control panel lets you add pattern strings to be compared against various fields of the response.</p>
+
+<h4>Step 1) Add Response Assertion</h4>
+
+<p>Right-Click Thread Group &ndash;> Add &ndash;> Assertions &ndash;> Response Assertion</p>
+
+<p><img src="/images/jmeter86.png"></p>
+
+<p>Response Assertion Pane displays as below figure:</p>
+
+<p><img src="/images/jmeter87.png"></p>
+
+<h4>Step 2) Add Pattern to test</h4>
+
+<p>When you send a request to Google server, it may return some response code as below:</p>
+
+<p>*404: Server error</p>
+
+<p>*200: Server OK</p>
+
+<p>*302: Web server redirect to other page.This usually happens when you access google.com from outside USA. Google re-directs to country specific website. As shown below, google.com redirects to google.com.vn for Vietnamese Users.</p>
+
+<p>Assume that you want to verify that the web server google.com responses code contains pattern 302,</p>
+
+<p>On Response Field To Test, choose Response Code,</p>
+
+<p>On Response Assertion Panel, click Add &ndash;> a new blank entry display &ndash;> enter 302 in Pattern to Test.</p>
+
+<p><img src="/images/jmeter88.png"></p>
+
+<h4>Step 3) Add Assertion Results</h4>
+
+<p>Right click Thread Group, Add &ndash;> Listener &ndash;> Assertion Results</p>
+
+<p><img src="/images/jmeter89.png"></p>
+
+<p><img src="/images/jmeter90.png"></p>
+
+<h4>Step 4) Run your test</h4>
+
+<p>Click on Thread Group &ndash;> Assertion Result</p>
+
+<p>When you ready to run test, click Run button on the menu bar, or short key Ctrl+R.</p>
+
+<p>The test result will display on Assertion Results pane. If Google server response code contains the pattern 302, the test case is passed. You will see the message displayed as follows:</p>
+
+<p><img src="/images/jmeter91.png"></p>
+
+<p>Now back to Response Assertion Panel, you change the Pattern to test to from 302 to 500.</p>
+
+<p><img src="/images/jmeter92.png"></p>
+
+<p>Because Google server response code doesn&rsquo;t contain this pattern, you will see the test case Failed as following:</p>
+
+<p><img src="/images/jmeter93.png"></p>
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/blog/2014/08/07/icecream-framework-introduction/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/08/15/jmeter-how-to-use-assertions/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -225,8 +313,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
-        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-assertions/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-assertions/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -1110,6 +1110,426 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/08/15/jmeter-how-to-use-assertions/">Jmeter : How to use Assertions</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-15T10:20:51+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-assertions/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>How to use Assertions in JMeter</h2>
+
+<p>Assertion help verify that your server under test returns the expected results.</p>
+
+<p>Following are some commonly used Assertion in JMeter:</p>
+
+<p>1.Response Assertion</p>
+
+<p>2.Duration Assertion</p>
+
+<p>3.Size Assertion</p>
+
+<p>4.XML Assertion</p>
+
+<p>5.HTML Assertion</p>
+
+<h3>Response Assertion</h3>
+
+<p><img src="/images/jmeter81.png"></p>
+
+<p>The response assertion lets you add pattern strings to be compared against various fields of the server response.</p>
+
+<p>For example, you send a user request to the website <a href="http://www.google.com">http://www.google.com</a> and get the server response. You can use Response Assertion to verify if the server response contains expected pattern string (e.g. &ldquo;OK&rdquo;).</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Duration Assertion</h3>
+
+<p>The Duration Assertion tests that each server response was received within a given amount of time. Any response that takes longer than the given number of milliseconds (specified by the user) is marked as a failed response.</p>
+
+<p>For example, a user request is sent to www.google.com by JMeter and get a response within expected time 5 ms then test case pass, else, test case failed.</p>
+
+<p><img src="/images/jmeter82.png"></p>
+
+<h2>Size Assertion</h2>
+
+<p>The Size Assertion tests that each server response contains the expected number of byte in it. You can specify that the size be equal to, greater than, less than, or not equal to a given number of bytes.</p>
+
+<p>JMeter sends a user request to www.google.com and gets response packet with size less than expected byte 5000 bytes àtest case pass. If else, test case failed.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>XML Assertion</h2>
+
+<p>The XML Assertion tests that the response data consists of a formally correct XML document.</p>
+
+<p><img src="/images/jmeter83.png"></p>
+
+<h3>HTML Assertion</h3>
+
+<p>The HTML Assertion allows the user to check the HTML syntax of the response data. It means the response data must be met the HTML syntax.</p>
+
+<p><img src="/images/jmeter84.png"></p>
+
+<h3>Handson &ndash; Assertion</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>In this test, we are using Response Assertion to compare the response packet from www.google.com matches your expected string.</p>
+
+<p>Here is the roadmap of this test:</p>
+
+<p><img src="/images/jmeter85.png"></p>
+
+<p>The response assertion control panel lets you add pattern strings to be compared against various fields of the response.</p>
+
+<h4>Step 1) Add Response Assertion</h4>
+
+<p>Right-Click Thread Group &ndash;> Add &ndash;> Assertions &ndash;> Response Assertion</p>
+
+<p><img src="/images/jmeter86.png"></p>
+
+<p>Response Assertion Pane displays as below figure:</p>
+
+<p><img src="/images/jmeter87.png"></p>
+
+<h4>Step 2) Add Pattern to test</h4>
+
+<p>When you send a request to Google server, it may return some response code as below:</p>
+
+<p>*404: Server error</p>
+
+<p>*200: Server OK</p>
+
+<p>*302: Web server redirect to other page.This usually happens when you access google.com from outside USA. Google re-directs to country specific website. As shown below, google.com redirects to google.com.vn for Vietnamese Users.</p>
+
+<p>Assume that you want to verify that the web server google.com responses code contains pattern 302,</p>
+
+<p>On Response Field To Test, choose Response Code,</p>
+
+<p>On Response Assertion Panel, click Add &ndash;> a new blank entry display &ndash;> enter 302 in Pattern to Test.</p>
+
+<p><img src="/images/jmeter88.png"></p>
+
+<h4>Step 3) Add Assertion Results</h4>
+
+<p>Right click Thread Group, Add &ndash;> Listener &ndash;> Assertion Results</p>
+
+<p><img src="/images/jmeter89.png"></p>
+
+<p><img src="/images/jmeter90.png"></p>
+
+<h4>Step 4) Run your test</h4>
+
+<p>Click on Thread Group &ndash;> Assertion Result</p>
+
+<p>When you ready to run test, click Run button on the menu bar, or short key Ctrl+R.</p>
+
+<p>The test result will display on Assertion Results pane. If Google server response code contains the pattern 302, the test case is passed. You will see the message displayed as follows:</p>
+
+<p><img src="/images/jmeter91.png"></p>
+
+<p>Now back to Response Assertion Panel, you change the Pattern to test to from 302 to 500.</p>
+
+<p><img src="/images/jmeter92.png"></p>
+
+<p>Because Google server response code doesn&rsquo;t contain this pattern, you will see the test case Failed as following:</p>
+
+<p><img src="/images/jmeter93.png"></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/15/jmeter-how-to-use-controllers/">Jmeter : How to use Controllers</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-15T10:15:51+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-controllers/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>How to use Controllers in JMeter</h2>
+
+<p>If you want to control &ldquo;when&rdquo; to send a user request to a web server under test, what would you do?</p>
+
+<p>JMeter gives us a feature to do that. It&rsquo;s Logic Controllers.</p>
+
+<p><img src="/images/jmeter94.png"></p>
+
+<h3>Logic Controllers</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Logic Controllers let you define the order of processing request in a Thread. For example, you can use Random Controllers to send HTTP requests to the server randomly.</p>
+
+<p>Logic Controllers determine the order in which user request are executed.</p>
+
+<p>Some commonly used Logic controllers are below:</p>
+
+<p><img src="/images/jmeter95.png"></p>
+
+<h3>Recording Controller</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>JMeter can record your testing steps; recording controller is a place holder to store these recording steps.</p>
+
+<p><img src="/images/jmeter96.png"></p>
+
+<h3>Simple Controller</h3>
+
+<p>Simple Controller is just a container for user request.</p>
+
+<p><img src="/images/jmeter97.png"></p>
+
+<h3>Loop Controller</h3>
+
+<p>Loop Controller makes the user request run specified number of times or run forever as shown in figure:</p>
+
+<p><img src="/images/jmeter98.png"></p>
+
+<h3>Random Controller</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Random Controller makes all the user requests run in random order in each loop period.</p>
+
+<p>For example, you have 3 user requests to website <a href="http://www.google.com">http://www.google.com</a> in following order:</p>
+
+<p>HTTP request</p>
+
+<p>FTP request</p>
+
+<p>JDBC request</p>
+
+<p>These 3 requests should run 5 times; Total 15 (5*3) user requests will be sent to Google server by JMeter.</p>
+
+<p>In sequential order, requests are sent sequentially in following order:</p>
+
+<p>HTTP request &ndash;>FTP request->JDBC request</p>
+
+<p>for each loop.</p>
+
+<p><img src="/images/jmeter99.png"></p>
+
+<p>vs</p>
+
+<p><img src="/images/jmeter100.png"></p>
+
+<p>In random order, requests are sent as randomly,</p>
+
+<p>FTP request &ndash;>HTTP request->JDBC request</p>
+
+<p>Or</p>
+
+<p>JDBC request &ndash;>FTP request->HTTP request</p>
+
+<p>For each loop.</p>
+
+<h3>Module Controller</h3>
+
+<p>he goal of Module Controller is to add modularity to JMeter.</p>
+
+<p>The general idea is that web applications consist of small units of functionality (i.e. Logon, Create Account, Logoff&hellip;). This functionality can be stored in Simple Controller as &ldquo;modules&rdquo;.  Module Controller will choose which module needs to run.</p>
+
+<p><img src="/images/jmeter101.png"></p>
+
+<p>Consider the following scenario &ndash;</p>
+
+<p>You want to simulate:</p>
+
+<p>50 users logging out,</p>
+
+<p>100 users logging in</p>
+
+<p>30 users  search www.google.com</p>
+
+<p>You can use JMeter to create 3 modules. Each module simulates each user activity: Login, Logout, and Search.</p>
+
+<p><img src="/images/jmeter102.png"></p>
+
+<p>The Module controller chooses which module needs to run.</p>
+
+<p><img src="/images/jmeter103.png"></p>
+
+<h3>Other Important Controllers</h3>
+
+<h4>Interleave Controller:  picks up and makes one of user request run in each loop of the thread.</h4>
+
+<h4>Runtime Controller: controls how long its children are allowed to run.</h4>
+
+<p>For example, if you specified Runtime Controller 10 seconds, JMeter will run your test for 10 seconds.</p>
+
+<p><img src="/images/jmeter104.png"></p>
+
+<h4>Transaction Controller: measures the overall time taken to finish a test execution</h4>
+
+<h4>Include Controller: is designed to use an external test plan. This controller allows you to use multiple test plans in JMeter.</h4>
+
+<h2>Handons with Loop Controller</h2>
+
+<p>This section shows you step-by-steps instruction to add Loop Controller setting to your current performance test plan.</p>
+
+<p>The Loop Controller makes the samplers run as a certain number of times, in addition to the loop value you specified for the Thread Group. For example, if you</p>
+
+<p>Add one HTTP Request to a Loop Controller with a loop count 50</p>
+
+<p>Configure the Thread Group loop count to 2</p>
+
+<p>Then, JMeter will send a total of 50 * 2 = 100 HTTP Requests.</p>
+
+<p>This is the roadmap of this example:</p>
+
+<p><img src="/images/jmeter105.png"></p>
+
+<h3>Step 1) Configuring Thread Group</h3>
+
+<p>Right click on the Test Plan and add a new thread group: Add-> Threads (Users) &ndash;>Thread Group</p>
+
+<p>But in Thread Group control panel, enter Thread Properties as following:</p>
+
+<p><img src="/images/jmeter106.png"></p>
+
+<p>It will make one user request to the web server google.com and  run it 2 times.</p>
+
+<p>Add HTTP request default to www.google.com.</p>
+
+<p>Right Click Thread Group &ndash;> Logic Controller &ndash;> Loop Controller</p>
+
+<p><img src="/images/jmeter107.png"></p>
+
+<h3>Step 2) Configuring Loop Controller</h3>
+
+<p>Add value 50 to Loop Count field as below figure. It will make one user request to the web server google.com run it 50 times, in addition to the loop value =2 , you specified for the Thread Group above.So JMeter will send a total of 2 * 50 = 100 HTTP Requests.</p>
+
+<p><img src="/images/jmeter108.png"></p>
+
+<p>Right click Loop Controller, Add &ndash;> Sampler &ndash;> HTTP request</p>
+
+<p><img src="/images/jmeter109.png"></p>
+
+<h3>Step 3) Add View Results in Table</h3>
+
+<p>We re-use Step 2 in Timer to add View Results in Table</p>
+
+<p>So the test plan is shown in below figure</p>
+
+<p><img src="/images/jmeter110.png"></p>
+
+<h3>Step 4) Run your test</h3>
+
+<p>Now return View Results in Table, click Start button on Menu bar (Ctrl+R) to run test</p>
+
+<p>As shown in the figure below, JMeter simulates one user request, which is sent 100 times, to the web server <a href="http://www.google.com/.">http://www.google.com/.</a> The Test is stopped after user request was sent in 100 times.</p>
+
+<p><img src="/images/jmeter111.png"></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/08/07/newbie-part-1-download-and-install-java/">Beginner with Selenium 2 WebDriver Part 1 :Download and Install Java </a>
   </h1>
   
@@ -1226,130 +1646,6 @@
 
 
   <a class="btn pull-right" href="/blog/2014/08/07/newbie-part-2-download-and-start-eclipse/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/07/webdriver-introduction/">Webdriver : Introduction</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T15:26:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/webdriver-introduction/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>Selenium Introduction</h2>
-
-<h3>About Selenium</h3>
-
-<p>Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium project produces various tools for automation testing such as Selenium IDE, Selenium Remote Control (RC), Selenium Grid and Selenium 2.0 &amp; WebDriver. Learning all the tools will give you many different options for approaching different automation problems. The entire suits of tools result in a rich set of testing functions specially geared to the needs of testing of web application of all types.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/08/07/webdriver-introduction/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/07/webdriver-element-commands/">Webdriver : Element Commands</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T15:20:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/webdriver-element-commands/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>Selenium WebDriver WebElement Commands</h2>
-
-<p>The next thing you like to do is to interact with a web page. You need to locate an element first on the web page before interacting with it and locating elements can be done on the WebDriver instance itself or on a WebElement. Webdriver gives us “Find Element” and “Find Elements” method to locate elements on the web page.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/08/07/webdriver-element-commands/">Continue reading</a>
 </div>
 
   </article>

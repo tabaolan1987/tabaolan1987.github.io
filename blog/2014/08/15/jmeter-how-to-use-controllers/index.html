@@ -1,0 +1,396 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jmeter : How to use Controllers - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Jmeter : How to use Controllers" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">Jmeter : How to Use Controllers</h2>
+	<div class="entry-content"><h2>How to use Controllers in JMeter</h2>
+
+<p>If you want to control &ldquo;when&rdquo; to send a user request to a web server under test, what would you do?</p>
+
+<p>JMeter gives us a feature to do that. It&rsquo;s Logic Controllers.</p>
+
+<p><img src="/images/jmeter94.png"></p>
+
+<h3>Logic Controllers</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Logic Controllers let you define the order of processing request in a Thread. For example, you can use Random Controllers to send HTTP requests to the server randomly.</p>
+
+<p>Logic Controllers determine the order in which user request are executed.</p>
+
+<p>Some commonly used Logic controllers are below:</p>
+
+<p><img src="/images/jmeter95.png"></p>
+
+<h3>Recording Controller</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>JMeter can record your testing steps; recording controller is a place holder to store these recording steps.</p>
+
+<p><img src="/images/jmeter96.png"></p>
+
+<h3>Simple Controller</h3>
+
+<p>Simple Controller is just a container for user request.</p>
+
+<p><img src="/images/jmeter97.png"></p>
+
+<h3>Loop Controller</h3>
+
+<p>Loop Controller makes the user request run specified number of times or run forever as shown in figure:</p>
+
+<p><img src="/images/jmeter98.png"></p>
+
+<h3>Random Controller</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Random Controller makes all the user requests run in random order in each loop period.</p>
+
+<p>For example, you have 3 user requests to website <a href="http://www.google.com">http://www.google.com</a> in following order:</p>
+
+<p>HTTP request</p>
+
+<p>FTP request</p>
+
+<p>JDBC request</p>
+
+<p>These 3 requests should run 5 times; Total 15 (5*3) user requests will be sent to Google server by JMeter.</p>
+
+<p>In sequential order, requests are sent sequentially in following order:</p>
+
+<p>HTTP request &ndash;>FTP request->JDBC request</p>
+
+<p>for each loop.</p>
+
+<p><img src="/images/jmeter99.png"></p>
+
+<p>vs</p>
+
+<p><img src="/images/jmeter100.png"></p>
+
+<p>In random order, requests are sent as randomly,</p>
+
+<p>FTP request &ndash;>HTTP request->JDBC request</p>
+
+<p>Or</p>
+
+<p>JDBC request &ndash;>FTP request->HTTP request</p>
+
+<p>For each loop.</p>
+
+<h3>Module Controller</h3>
+
+<p>he goal of Module Controller is to add modularity to JMeter.</p>
+
+<p>The general idea is that web applications consist of small units of functionality (i.e. Logon, Create Account, Logoff&hellip;). This functionality can be stored in Simple Controller as &ldquo;modules&rdquo;.  Module Controller will choose which module needs to run.</p>
+
+<p><img src="/images/jmeter101.png"></p>
+
+<p>Consider the following scenario &ndash;</p>
+
+<p>You want to simulate:</p>
+
+<p>50 users logging out,</p>
+
+<p>100 users logging in</p>
+
+<p>30 users  search www.google.com</p>
+
+<p>You can use JMeter to create 3 modules. Each module simulates each user activity: Login, Logout, and Search.</p>
+
+<p><img src="/images/jmeter102.png"></p>
+
+<p>The Module controller chooses which module needs to run.</p>
+
+<p><img src="/images/jmeter103.png"></p>
+
+<h3>Other Important Controllers</h3>
+
+<h4>Interleave Controller:  picks up and makes one of user request run in each loop of the thread.</h4>
+
+<h4>Runtime Controller: controls how long its children are allowed to run.</h4>
+
+<p>For example, if you specified Runtime Controller 10 seconds, JMeter will run your test for 10 seconds.</p>
+
+<p><img src="/images/jmeter104.png"></p>
+
+<h4>Transaction Controller: measures the overall time taken to finish a test execution</h4>
+
+<h4>Include Controller: is designed to use an external test plan. This controller allows you to use multiple test plans in JMeter.</h4>
+
+<h2>Handons with Loop Controller</h2>
+
+<p>This section shows you step-by-steps instruction to add Loop Controller setting to your current performance test plan.</p>
+
+<p>The Loop Controller makes the samplers run as a certain number of times, in addition to the loop value you specified for the Thread Group. For example, if you</p>
+
+<p>Add one HTTP Request to a Loop Controller with a loop count 50</p>
+
+<p>Configure the Thread Group loop count to 2</p>
+
+<p>Then, JMeter will send a total of 50 * 2 = 100 HTTP Requests.</p>
+
+<p>This is the roadmap of this example:</p>
+
+<p><img src="/images/jmeter105.png"></p>
+
+<h3>Step 1) Configuring Thread Group</h3>
+
+<p>Right click on the Test Plan and add a new thread group: Add-> Threads (Users) &ndash;>Thread Group</p>
+
+<p>But in Thread Group control panel, enter Thread Properties as following:</p>
+
+<p><img src="/images/jmeter106.png"></p>
+
+<p>It will make one user request to the web server google.com and  run it 2 times.</p>
+
+<p>Add HTTP request default to www.google.com.</p>
+
+<p>Right Click Thread Group &ndash;> Logic Controller &ndash;> Loop Controller</p>
+
+<p><img src="/images/jmeter107.png"></p>
+
+<h3>Step 2) Configuring Loop Controller</h3>
+
+<p>Add value 50 to Loop Count field as below figure. It will make one user request to the web server google.com run it 50 times, in addition to the loop value =2 , you specified for the Thread Group above.So JMeter will send a total of 2 * 50 = 100 HTTP Requests.</p>
+
+<p><img src="/images/jmeter108.png"></p>
+
+<p>Right click Loop Controller, Add &ndash;> Sampler &ndash;> HTTP request</p>
+
+<p><img src="/images/jmeter109.png"></p>
+
+<h3>Step 3) Add View Results in Table</h3>
+
+<p>We re-use Step 2 in Timer to add View Results in Table</p>
+
+<p>So the test plan is shown in below figure</p>
+
+<p><img src="/images/jmeter110.png"></p>
+
+<h3>Step 4) Run your test</h3>
+
+<p>Now return View Results in Table, click Start button on Menu bar (Ctrl+R) to run test</p>
+
+<p>As shown in the figure below, JMeter simulates one user request, which is sent 100 times, to the web server <a href="http://www.google.com/.">http://www.google.com/.</a> The Test is stopped after user request was sent in 100 times.</p>
+
+<p><img src="/images/jmeter111.png"></p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/08/15/jmeter-how-to-use-controllers/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-controllers/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-controllers/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
