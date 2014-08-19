@@ -3,12 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Category: Jmeter - Selenium Tutorial</title>
+	<title>Jmeter : How to perform Distributed Testing - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
-	<meta name="description" content="Category: Jmeter" />
+	<meta name="description" content="Jmeter : How to use Distributed Testing" />
 	
-	<meta name="keywords" content="selenium qa,website testing tools,selenium testing tool,qa testing,qa tools,selenium automation framework,automated testing tools,selenium tool,mobile automation testing tools,web testing,selenium automation,selenium testing,home automation software,functional testing,automated functional testing,selenium framework" />
+	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
 	<link rel="canonical" href="">
@@ -128,221 +128,119 @@
 <div id="toload">
 <!-- begin toload -->
 <div id="content" class="inner">
-        
+        <article class="post">
+
+	<h2 class="title">Jmeter : How to Perform Distributed Testing</h2>
+	<div class="entry-content"><h2>How to perform Distributed Testing in JMeter</h2>
+
+<h3>Overview</h3>
+
+<p>Distributed testing is a kind of testing which use multiple systems to perform stress testing. Distributed testing is applied for testing web sites and server applications when they are working with multiple clients simultaneously.</p>
+
+<p>Distributes testing uses client-server model as figure below:</p>
+
+<p><img src="/images/jmeter123.png"></p>
+
+<p>Master: the system running JMeter GUI, control each slave.</p>
+
+<p>Slave: the system running jmeter-server, receive command from the master and send a request to server under test.</p>
+
+<p>Target: the web server under test, get request from slaves.</p>
+
+<h3>Start your test</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h4>Precondition:</h4>
+
+<p>*The firewalls on the systems are turned off. In some cases, the firewall may still be blocking the traffic. You should disable the Window firewall or Linux firewall.</p>
+
+<p>*All the machines should be on same subnet. If machines are not on same subnet, maybe they will not recognize each other in the network.</p>
+
+<p>*Use the same version of JMeter to avoid unanticipated errors/issues.</p>
+
+<p>Here is the roadmap of this testing:</p>
+
+<p><img src="/images/jmeter124.png"></p>
+
+<h3>Step 1) System configuration</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>On the slave systems, go to jmeter/bin directory and execute file &ldquo;jmeter-server.bat&rdquo;.</p>
+
+<p>Assume that a slave machine has IP address: 192.168.0.10. On windows, you should see a window appear like following figure:</p>
+
+<p><img src="/images/jmeter125.png"></p>
+
+<p>On the master systems, go to /bin directory and edit file jmeter.properites, add IP slave machine as below</p>
+
+<p><img src="/images/jmeter126.png"></p>
+
+<h3>Step 2) Run the test</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>On the master machine, run JMeter GUI and open the test plan.</p>
+
+<p>Click Run on the menu bar; select Remote start &ndash;> select the IP address of slave machine</p>
+
+<p><img src="/images/jmeter127.png"></p>
+
+<h3>Step 3) Troubleshooting</h3>
+
+<p>If you are unable to run test form the above machine and see below error, simply ask owner of slave machine to run the jmeter-server.bat File.</p>
+
+<p><img src="/images/jmeter128.png"></p>
+
+<h3>Limitation</h3>
+
+<p>There are some basic limitations for distributed testing. Here&rsquo;s list of the known items:</p>
+
+<p>1.Server and all clients must be on the same subnet.</p>
+
+<p>2.Distributed testing required target server to have large processing power. The target Server could be easily overloaded in case it gets too many requests by distributed JMeter tests.</p>
+
+<p>3.A single JMeter can only handle a limited number of threads (100- 300 threads).</p>
+
+<p>4.The distributed JMeter tests are complex, difficult for beginner to build.</p>
+</div>
+
+<div class="meta">
 	
-
-
+		<span class="comments"><a href="/blog/2014/08/15/jmeter-how-to-perform-distributed-testing/#disqus_thread">Comments</a></span>
 	
-	
-	<section class="archives"><h1 class="year">2014</h1>
+</div>
 
-<article>
-  <h2 class="title"><a href="/blog/2014/08/15/jmeter-introduction/">Jmeter : Introduction</a></h2>
-	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
-
-
-	<a class='category' href='/categories/jmeter/'>Jmeter</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2014/08/15/jmeter-introduction/#disqus_thread">Comments</a></span>
-	    
-	</div>
+<br>
 </article>
 
-
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
 	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2014/08/15/jmeter-install-jmeter/">Jmeter : Install Jmeter</a></h2>
-	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
-
-
-	<a class='category' href='/categories/jmeter/'>Jmeter</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2014/08/15/jmeter-install-jmeter/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
-
 	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2014/08/15/jmeter-complete-element-reference/">Jmeter : Complete Element Reference</a></h2>
-	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
-
-
-	<a class='category' href='/categories/jmeter/'>Jmeter</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2014/08/15/jmeter-complete-element-reference/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
-
 	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui/">Jmeter : Hands on With Jmeter GUI</a></h2>
-	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
-
-
-	<a class='category' href='/categories/jmeter/'>Jmeter</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui/#disqus_thread">Comments</a></span>
-	    
+	<a class="addthis_counter addthis_pill_style"></a>
 	</div>
-</article>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
 
-	
 
-
-<article>
-  <h2 class="title"><a href="/blog/2014/08/15/jmeter-performance-testing/">Jmeter : Performance Testing</a></h2>
-	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
-
-
-	<a class='category' href='/categories/jmeter/'>Jmeter</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2014/08/15/jmeter-performance-testing/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2014/08/15/jmeter-how-to-use-timers/">Jmeter : How to Use Timers</a></h2>
-	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
-
-
-	<a class='category' href='/categories/jmeter/'>Jmeter</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2014/08/15/jmeter-how-to-use-timers/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2014/08/15/jmeter-how-to-use-assertions/">Jmeter : How to Use Assertions</a></h2>
-	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
-
-
-	<a class='category' href='/categories/jmeter/'>Jmeter</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2014/08/15/jmeter-how-to-use-assertions/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2014/08/15/jmeter-how-to-use-controllers/">Jmeter : How to Use Controllers</a></h2>
-	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
-
-
-	<a class='category' href='/categories/jmeter/'>Jmeter</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2014/08/15/jmeter-how-to-use-controllers/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2014/08/15/jmeter-how-to-use-processor/">Jmeter : How to Use Processor</a></h2>
-	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
-
-
-	<a class='category' href='/categories/jmeter/'>Jmeter</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2014/08/15/jmeter-how-to-use-processor/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
-
-	
-
-
-<article>
-  <h2 class="title"><a href="/blog/2014/08/15/jmeter-how-to-perform-distributed-testing/">Jmeter : How to Perform Distributed Testing</a></h2>
-	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
-
-
-	<a class='category' href='/categories/jmeter/'>Jmeter</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2014/08/15/jmeter-how-to-perform-distributed-testing/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
-
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 
  </div>
     <footer id="footer">
@@ -368,7 +266,10 @@
       var disqus_shortname = 'tabaolan1987';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-perform-distributed-testing/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-perform-distributed-testing/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

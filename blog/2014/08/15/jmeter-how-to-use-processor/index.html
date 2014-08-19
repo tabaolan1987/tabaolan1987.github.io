@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>IceCream Framework Part 1 : Introduction - Selenium Tutorial</title>
+	<title>Jmeter : How to use Processor - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
-	<meta name="description" content="IceCream Framework : Introduction" />
+	<meta name="description" content="Jmeter : How to use Processor" />
 	
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -130,52 +130,127 @@
 <div id="content" class="inner">
         <article class="post">
 
-	<h2 class="title">IceCream Framework Part 1 : Introduction</h2>
-	<div class="entry-content"><h2>Introduction</h2>
+	<h2 class="title">Jmeter : How to Use Processor</h2>
+	<div class="entry-content"><h2>How to use Processor in JMeter</h2>
 
-<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
+<p>Processor is used to modify the Samplers in their scope.</p>
 
-<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
+<p>There are 2 Types of processors:</p>
 
-<!--more-->
+<p>1.Pre-processor</p>
 
+<p>2.Post-processor</p>
 
-<p>Tester just have the basic understanding of <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
-
-<p>IceCream Framework is written by Java language and use the core <a href="/blog/categories/webdriver/">Selenium WebDriver</a>.</p>
-
-<p>Currently IceCream Framework version 1.0 Beta version only have the basic functions to perform automatic chemical testing.</p>
-
-<p>The reason for this because I want to collect more of your opinions, feedback and the desire to have more function for me so that I can write to serve you in the next version!</p>
-
-<p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
-
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#116;&#97;&#98;&#97;&#x6f;&#108;&#x61;&#x6e;&#x31;&#57;&#x38;&#x37;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#x74;&#97;&#98;&#x61;&#111;&#108;&#97;&#110;&#49;&#x39;&#x38;&#x37;&#x40;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
-
-<p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
+<h3>Pre-processor</h3>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
+<p>Pre-processor executes some action before making Sampler Request.</p>
 
-<p>Let IceCream say Hi with you and take a look in <a href="/blog/2014/08/07/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
+<p>onsider a simple example: let&rsquo;s say you wanted JMeter to &ldquo;spider&rdquo; through website under test, parse link(check all links on the page) and return the HTML. You would add some action such as &ldquo;HTML link parser&rdquo; to your controller before creating an HTTP request.</p>
 
-<p><img src="/images/ICE-1.jpg"></p>
+<p><img src="/images/jmeter112.png"></p>
+
+<h3>Post-processor</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Post-processor executes some action after making a Sampler Request.</p>
+
+<p>Consider a simple example: JMeter send HTTP request to the web server under test (etc www.google.com) and get the response. You want JMeter to stop the testif the server response is error. You can use the post-processor to do above task as following:</p>
+
+<p><img src="/images/jmeter113.png"></p>
+
+<h3>Processor-Hands on</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>This tutorial will show you step-by-step instructions how to use Post-processor in JMeter. Let start with simple test script.</p>
+
+<p>1.JMeter sends HTTP request to the web server under test www.google.com.</p>
+
+<ol>
+<li><p>JMeter gets response from the Google server.</p></li>
+<li><p>If server response is error, JMeter will stop the test.</p></li>
+<li><p>If server response OK (no error), JMeter will continue the test.</p></li>
+</ol>
+
+
+<p>Here is the roadmap of this example:</p>
+
+<p><img src="/images/jmeter114.png"></p>
+
+<h4>Step 1) Add Thread Group</h4>
+
+<p>Right click on the Test Plan and add a new thread group: Add &ndash;> Threads (Users) &ndash;> Thread Group</p>
+
+<p>But in Thread Group control panel, enter Thread Properties as following:</p>
+
+<p><img src="/images/jmeter115.png"></p>
+
+<p>This setting lets JMeter create 10 user request to <a href="http://www.google.com">http://www.google.com</a>  10 times.</p>
+
+<h4>Step 2) Add JMeter elements</h4>
+
+<p>Add HTTP request default</p>
+
+<p>Add HTTP request</p>
+
+<p>We still make JMeter send request <a href="http://www.google.com">http://www.google.com</a> to Google server.</p>
+
+<h4>Step 3) Add Post-Processor Element</h4>
+
+<p>Right Click Thread Group &ndash;> Add &ndash;> Post Processor &ndash;> Result Status Action Handler</p>
+
+<p>Result Status Action Handler allows the user to stop the thread or the whole test if the user request failed.</p>
+
+<p><img src="/images/jmeter116.png"></p>
+
+<p>In Result Status Action Handle Pane, choose Stop Test Now. This selection will stop the test if JMeter get the error from server response.</p>
+
+<p><img src="/images/jmeter117.png"></p>
+
+<h4>Step 4) Config the HTTP Request</h4>
+
+<p>Open the HTTP Request Panel. Enter &ldquo;abc&rdquo; to the Path field.</p>
+
+<p><img src="/images/jmeter118.png"></p>
+
+<p>When you enter &ldquo;abc&rdquo; to the path, JMeter will create URL request to Google server: <a href="http://www.google.com/abc.">http://www.google.com/abc.</a> This URL doesn&rsquo;t exist on Google server. It is wrong URL request so Google server will return error.</p>
+
+<h4>Step 5) Add View Result Tree</h4>
+
+<p>Right Click Thread Group  &ndash;> Add  &ndash;> Listener  &ndash;> View Result Tree</p>
+
+<p><img src="/images/jmeter119.png"></p>
+
+<h4>Step 6) Run Test</h4>
+
+<p>Select View Result Tree, press Run button on Menu bar. You will see the error response from Google server and the test will stop with out completing 100 threads.</p>
+
+<p><img src="/images/jmeter120.gif"></p>
+
+<p>Now return to step 4, open the HTTP Request pane, enter &ldquo;calendar&rdquo; to the pane. It makes JMeter create URL request <a href="http://www.google.com/calendar">http://www.google.com/calendar</a> to the Google server. This is correct URL request so Google server will return OK (no error).</p>
+
+<p><img src="/images/jmeter121.png"></p>
+
+<p>Select View Result Tree, press Run button on Menu bar. You will see the OK response from Google server and the test will continue until all 100 threads are complete.</p>
+
+<p><img src="/images/jmeter122.gif"></p>
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/blog/2014/08/07/icecream-framework-introduction/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/08/15/jmeter-how-to-use-processor/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -225,8 +300,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
-        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-processor/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-processor/';
         var disqus_script = 'embed.js';
       
     (function () {

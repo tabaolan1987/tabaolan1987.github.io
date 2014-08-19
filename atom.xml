@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-08-18T16:56:49+07:00</updated>
+  <updated>2014-08-19T11:08:48+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -1230,6 +1230,219 @@
 <p>As shown in the figure below, JMeter simulates one user request, which is sent 100 times, to the web server <a href="http://www.google.com/.">http://www.google.com/.</a> The Test is stopped after user request was sent in 100 times.</p>
 
 <p><img src="http://www.tabaolan.com/images/jmeter111.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Jmeter : How to use Processor]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-processor/"/>
+    <updated>2014-08-15T10:10:51+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-processor</id>
+    <content type="html"><![CDATA[<h2>How to use Processor in JMeter</h2>
+
+<p>Processor is used to modify the Samplers in their scope.</p>
+
+<p>There are 2 Types of processors:</p>
+
+<p>1.Pre-processor</p>
+
+<p>2.Post-processor</p>
+
+<h3>Pre-processor</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Pre-processor executes some action before making Sampler Request.</p>
+
+<p>onsider a simple example: let&rsquo;s say you wanted JMeter to &ldquo;spider&rdquo; through website under test, parse link(check all links on the page) and return the HTML. You would add some action such as &ldquo;HTML link parser&rdquo; to your controller before creating an HTTP request.</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter112.png"></p>
+
+<h3>Post-processor</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Post-processor executes some action after making a Sampler Request.</p>
+
+<p>Consider a simple example: JMeter send HTTP request to the web server under test (etc www.google.com) and get the response. You want JMeter to stop the testif the server response is error. You can use the post-processor to do above task as following:</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter113.png"></p>
+
+<h3>Processor-Hands on</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>This tutorial will show you step-by-step instructions how to use Post-processor in JMeter. Let start with simple test script.</p>
+
+<p>1.JMeter sends HTTP request to the web server under test www.google.com.</p>
+
+<ol>
+<li><p>JMeter gets response from the Google server.</p></li>
+<li><p>If server response is error, JMeter will stop the test.</p></li>
+<li><p>If server response OK (no error), JMeter will continue the test.</p></li>
+</ol>
+
+
+<p>Here is the roadmap of this example:</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter114.png"></p>
+
+<h4>Step 1) Add Thread Group</h4>
+
+<p>Right click on the Test Plan and add a new thread group: Add &ndash;> Threads (Users) &ndash;> Thread Group</p>
+
+<p>But in Thread Group control panel, enter Thread Properties as following:</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter115.png"></p>
+
+<p>This setting lets JMeter create 10 user request to <a href="http://www.google.com">http://www.google.com</a>  10 times.</p>
+
+<h4>Step 2) Add JMeter elements</h4>
+
+<p>Add HTTP request default</p>
+
+<p>Add HTTP request</p>
+
+<p>We still make JMeter send request <a href="http://www.google.com">http://www.google.com</a> to Google server.</p>
+
+<h4>Step 3) Add Post-Processor Element</h4>
+
+<p>Right Click Thread Group &ndash;> Add &ndash;> Post Processor &ndash;> Result Status Action Handler</p>
+
+<p>Result Status Action Handler allows the user to stop the thread or the whole test if the user request failed.</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter116.png"></p>
+
+<p>In Result Status Action Handle Pane, choose Stop Test Now. This selection will stop the test if JMeter get the error from server response.</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter117.png"></p>
+
+<h4>Step 4) Config the HTTP Request</h4>
+
+<p>Open the HTTP Request Panel. Enter &ldquo;abc&rdquo; to the Path field.</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter118.png"></p>
+
+<p>When you enter &ldquo;abc&rdquo; to the path, JMeter will create URL request to Google server: <a href="http://www.google.com/abc.">http://www.google.com/abc.</a> This URL doesn&rsquo;t exist on Google server. It is wrong URL request so Google server will return error.</p>
+
+<h4>Step 5) Add View Result Tree</h4>
+
+<p>Right Click Thread Group  &ndash;> Add  &ndash;> Listener  &ndash;> View Result Tree</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter119.png"></p>
+
+<h4>Step 6) Run Test</h4>
+
+<p>Select View Result Tree, press Run button on Menu bar. You will see the error response from Google server and the test will stop with out completing 100 threads.</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter120.gif"></p>
+
+<p>Now return to step 4, open the HTTP Request pane, enter &ldquo;calendar&rdquo; to the pane. It makes JMeter create URL request <a href="http://www.google.com/calendar">http://www.google.com/calendar</a> to the Google server. This is correct URL request so Google server will return OK (no error).</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter121.png"></p>
+
+<p>Select View Result Tree, press Run button on Menu bar. You will see the OK response from Google server and the test will continue until all 100 threads are complete.</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter122.gif"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Jmeter : How to perform Distributed Testing]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-perform-distributed-testing/"/>
+    <updated>2014-08-15T10:10:00+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-perform-distributed-testing</id>
+    <content type="html"><![CDATA[<h2>How to perform Distributed Testing in JMeter</h2>
+
+<h3>Overview</h3>
+
+<p>Distributed testing is a kind of testing which use multiple systems to perform stress testing. Distributed testing is applied for testing web sites and server applications when they are working with multiple clients simultaneously.</p>
+
+<p>Distributes testing uses client-server model as figure below:</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter123.png"></p>
+
+<p>Master: the system running JMeter GUI, control each slave.</p>
+
+<p>Slave: the system running jmeter-server, receive command from the master and send a request to server under test.</p>
+
+<p>Target: the web server under test, get request from slaves.</p>
+
+<h3>Start your test</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h4>Precondition:</h4>
+
+<p>*The firewalls on the systems are turned off. In some cases, the firewall may still be blocking the traffic. You should disable the Window firewall or Linux firewall.</p>
+
+<p>*All the machines should be on same subnet. If machines are not on same subnet, maybe they will not recognize each other in the network.</p>
+
+<p>*Use the same version of JMeter to avoid unanticipated errors/issues.</p>
+
+<p>Here is the roadmap of this testing:</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter124.png"></p>
+
+<h3>Step 1) System configuration</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>On the slave systems, go to jmeter/bin directory and execute file &ldquo;jmeter-server.bat&rdquo;.</p>
+
+<p>Assume that a slave machine has IP address: 192.168.0.10. On windows, you should see a window appear like following figure:</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter125.png"></p>
+
+<p>On the master systems, go to /bin directory and edit file jmeter.properites, add IP slave machine as below</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter126.png"></p>
+
+<h3>Step 2) Run the test</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>On the master machine, run JMeter GUI and open the test plan.</p>
+
+<p>Click Run on the menu bar; select Remote start &ndash;> select the IP address of slave machine</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter127.png"></p>
+
+<h3>Step 3) Troubleshooting</h3>
+
+<p>If you are unable to run test form the above machine and see below error, simply ask owner of slave machine to run the jmeter-server.bat File.</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter128.png"></p>
+
+<h3>Limitation</h3>
+
+<p>There are some basic limitations for distributed testing. Here&rsquo;s list of the known items:</p>
+
+<p>1.Server and all clients must be on the same subnet.</p>
+
+<p>2.Distributed testing required target server to have large processing power. The target Server could be easily overloaded in case it gets too many requests by distributed JMeter tests.</p>
+
+<p>3.A single JMeter can only handle a limited number of threads (100- 300 threads).</p>
+
+<p>4.The distributed JMeter tests are complex, difficult for beginner to build.</p>
 ]]></content>
   </entry>
   
@@ -2491,207 +2704,6 @@ By implementing the appropriate automated testing framework, enterprises can sig
 <img src="http://www.tabaolan.com/images/Download-Webdriver-Java-Client-6.png"></p>
 
 <p>7 ) Now you will take a look in the <a href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/">Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IceCream Framework Part 1 : Introduction]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/"/>
-    <updated>2014-08-07T14:55:35+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction</id>
-    <content type="html"><![CDATA[<h2>Introduction</h2>
-
-<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
-
-<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
-
-<!--more-->
-
-
-<p>Tester just have the basic understanding of <a href="http://www.tabaolan.com/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
-
-<p>IceCream Framework is written by Java language and use the core <a href="http://www.tabaolan.com/blog/categories/webdriver/">Selenium WebDriver</a>.</p>
-
-<p>Currently IceCream Framework version 1.0 Beta version only have the basic functions to perform automatic chemical testing.</p>
-
-<p>The reason for this because I want to collect more of your opinions, feedback and the desire to have more function for me so that I can write to serve you in the next version!</p>
-
-<p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
-
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#116;&#97;&#98;&#x61;&#x6f;&#108;&#x61;&#110;&#x31;&#x39;&#56;&#x37;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#116;&#97;&#x62;&#97;&#111;&#x6c;&#x61;&#x6e;&#49;&#57;&#x38;&#55;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
-
-<p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
-
-<p>Let IceCream say Hi with you and take a look in <a href="http://www.tabaolan.com/blog/2014/08/07/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
-
-<p><img src="http://www.tabaolan.com/images/ICE-1.jpg"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Checkbox and Radio Button Operations]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-checkbox-and-radio-button-operations/"/>
-    <updated>2014-08-07T14:50:35+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-checkbox-and-radio-button-operations</id>
-    <content type="html"><![CDATA[<h2>CheckBox &amp; Radio Button Operations</h2>
-
-<p>Operations on Checkboxes and Radio Buttons are easy to perform and most of the times the simple ID attributes work fine for both of these. But selection and d-selection is not the only thing we want with checkboxes and radio buttons. We might like to check that if the checkbox is already checked or if the radio button is selected by default or anything. Checkboxes and Radio button deals exactly the same way and you can perform below mentioned operations on either of them.</p>
-
-<!--more-->
-
-
-<h3>Different Selection Method</h3>
-
-<h4>By ID</h4>
-
-<p>If ID is given for the radio button/checkbox and you just want to click the radio button/checkbox Irrespective of its value, then the command will be like this:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement radioBtn = driver.findElement(By.id("toolsqa"));
-</span><span class='line'>radioBtn.click();</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>With ‘IsSelected’</h4>
-
-<p>If your choice is based on the pre-selection of the Radio button/Checkbox and you just need to select the deselected radio button/checkbox. Assume there are two radio buttons/checkboxes, one is selected by default and you want to select the other one for your test. With IsSelected statement, you can get to know that the radio button or the check box is selected or not.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> // Store all the elements of same category in the list of WebLements    
-</span><span class='line'> List  oRadioButton = driver.findElements(By.name("toolsqa"));
-</span><span class='line'>
-</span><span class='line'> // Create a boolean variable which will hold the value (True/False)
-</span><span class='line'> boolean bValue = false;
-</span><span class='line'>
-</span><span class='line'> // This statement will return True, in case of first Radio button is selected
-</span><span class='line'> bValue = oRadioButton.get(0).isSelected();
-</span><span class='line'>
-</span><span class='line'> // This will check that if the bValue is True means if the first radio button is selected
-</span><span class='line'> if(bValue = true){
-</span><span class='line'>
-</span><span class='line'>  // This will select Second radio button, if the first radio button is selected by default
-</span><span class='line'>  oRadioButton.get(1).click();
-</span><span class='line'>
-</span><span class='line'> }else{
-</span><span class='line'>
-</span><span class='line'>  // If the first radio button is not selected by default, the first will be selected
-</span><span class='line'>  oRadioButton.get(0).click();
-</span><span class='line'> }
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: Name is always same for the same group of radio buttons/checkboxes but their Values are different. So if you find the checkbox/radio button element with the name attribute then it means that it may contain more than one element, hence we need to use findElements method and store it the list of WebElements.</p>
-
-<h3>With ‘Value’</h3>
-
-<p>You can even select Radio buttons/Checkboxes with their Values.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// Find the checkbox or radio button element by Name
-</span><span class='line'> List oCheckBox = driver.findElements(By.name("example"));
-</span><span class='line'>
-</span><span class='line'> // This will tell you the number of checkboxes are present
-</span><span class='line'> int iSize = oCheckBox.size();
-</span><span class='line'>
-</span><span class='line'> // Start the loop from first checkbox to last checkboxe
-</span><span class='line'> for(int i=0; i &lt; iSize ; i++ ){
-</span><span class='line'>
-</span><span class='line'>   // Store the checkbox name to the string variable, using 'Value' attribute
-</span><span class='line'>   String sValue = oCheckBox.get(i).getAttribute("value");
-</span><span class='line'>
-</span><span class='line'>   // Select the checkbox it the value of the checkbox is same what you are looking for
-</span><span class='line'>   if (sValue.equalsIgnoreCase("your value")){
-</span><span class='line'>       oCheckBox.get(i).click();
-</span><span class='line'>
-</span><span class='line'>       // This will take the execution out of for loop
-</span><span class='line'>       break;
-</span><span class='line'>       }
-</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>By ‘CssSelector’</h3>
-
-<p>A simple way of selecting a check-box or radio button is by using its value:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement oCheckBox = driver.findElement(By.cssSelector("input[value='example']"));
-</span><span class='line'>oCheckBox.click();</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
 ]]></content>
   </entry>
   

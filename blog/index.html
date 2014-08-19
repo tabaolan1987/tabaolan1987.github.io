@@ -1530,7 +1530,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/08/07/newbie-part-1-download-and-install-java/">Beginner with Selenium 2 WebDriver Part 1 :Download and Install Java </a>
+    <a href="/blog/2014/08/15/jmeter-how-to-use-processor/">Jmeter : How to use Processor</a>
   </h1>
   
 
@@ -1548,7 +1548,7 @@
   
 
 
-<time class="pull-left" datetime="2014-08-07T16:55:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-08-15T10:10:51+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -1556,14 +1556,14 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-1-download-and-install-java/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-processor/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -1574,16 +1574,122 @@
 
 
 
-<div class="entry-content clearfix">
-  <h2>Beginner with Selenium 2 WebDriver : Download and Install Java</h2>
+  <h2>How to use Processor in JMeter</h2>
 
-<h3>Download and Install Java</h3>
+<p>Processor is used to modify the Samplers in their scope.</p>
 
-<p>First of all you need to install JDK (Java development kit) in your system. So your next question will be “how can I download java”. <a href="http://adf.ly/p8uJ7">Click here</a> to download Java and install it in your system as per given installation guide over there or follow the below mentioned steps.</p>
+<p>There are 2 Types of processors:</p>
+
+<p>1.Pre-processor</p>
+
+<p>2.Post-processor</p>
+
+<h3>Pre-processor</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <a class="btn pull-right" href="/blog/2014/08/07/newbie-part-1-download-and-install-java/">Continue reading</a>
-</div>
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Pre-processor executes some action before making Sampler Request.</p>
+
+<p>onsider a simple example: let&rsquo;s say you wanted JMeter to &ldquo;spider&rdquo; through website under test, parse link(check all links on the page) and return the HTML. You would add some action such as &ldquo;HTML link parser&rdquo; to your controller before creating an HTTP request.</p>
+
+<p><img src="/images/jmeter112.png"></p>
+
+<h3>Post-processor</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Post-processor executes some action after making a Sampler Request.</p>
+
+<p>Consider a simple example: JMeter send HTTP request to the web server under test (etc www.google.com) and get the response. You want JMeter to stop the testif the server response is error. You can use the post-processor to do above task as following:</p>
+
+<p><img src="/images/jmeter113.png"></p>
+
+<h3>Processor-Hands on</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>This tutorial will show you step-by-step instructions how to use Post-processor in JMeter. Let start with simple test script.</p>
+
+<p>1.JMeter sends HTTP request to the web server under test www.google.com.</p>
+
+<ol>
+<li><p>JMeter gets response from the Google server.</p></li>
+<li><p>If server response is error, JMeter will stop the test.</p></li>
+<li><p>If server response OK (no error), JMeter will continue the test.</p></li>
+</ol>
+
+
+<p>Here is the roadmap of this example:</p>
+
+<p><img src="/images/jmeter114.png"></p>
+
+<h4>Step 1) Add Thread Group</h4>
+
+<p>Right click on the Test Plan and add a new thread group: Add &ndash;> Threads (Users) &ndash;> Thread Group</p>
+
+<p>But in Thread Group control panel, enter Thread Properties as following:</p>
+
+<p><img src="/images/jmeter115.png"></p>
+
+<p>This setting lets JMeter create 10 user request to <a href="http://www.google.com">http://www.google.com</a>  10 times.</p>
+
+<h4>Step 2) Add JMeter elements</h4>
+
+<p>Add HTTP request default</p>
+
+<p>Add HTTP request</p>
+
+<p>We still make JMeter send request <a href="http://www.google.com">http://www.google.com</a> to Google server.</p>
+
+<h4>Step 3) Add Post-Processor Element</h4>
+
+<p>Right Click Thread Group &ndash;> Add &ndash;> Post Processor &ndash;> Result Status Action Handler</p>
+
+<p>Result Status Action Handler allows the user to stop the thread or the whole test if the user request failed.</p>
+
+<p><img src="/images/jmeter116.png"></p>
+
+<p>In Result Status Action Handle Pane, choose Stop Test Now. This selection will stop the test if JMeter get the error from server response.</p>
+
+<p><img src="/images/jmeter117.png"></p>
+
+<h4>Step 4) Config the HTTP Request</h4>
+
+<p>Open the HTTP Request Panel. Enter &ldquo;abc&rdquo; to the Path field.</p>
+
+<p><img src="/images/jmeter118.png"></p>
+
+<p>When you enter &ldquo;abc&rdquo; to the path, JMeter will create URL request to Google server: <a href="http://www.google.com/abc.">http://www.google.com/abc.</a> This URL doesn&rsquo;t exist on Google server. It is wrong URL request so Google server will return error.</p>
+
+<h4>Step 5) Add View Result Tree</h4>
+
+<p>Right Click Thread Group  &ndash;> Add  &ndash;> Listener  &ndash;> View Result Tree</p>
+
+<p><img src="/images/jmeter119.png"></p>
+
+<h4>Step 6) Run Test</h4>
+
+<p>Select View Result Tree, press Run button on Menu bar. You will see the error response from Google server and the test will stop with out completing 100 threads.</p>
+
+<p><img src="/images/jmeter120.gif"></p>
+
+<p>Now return to step 4, open the HTTP Request pane, enter &ldquo;calendar&rdquo; to the pane. It makes JMeter create URL request <a href="http://www.google.com/calendar">http://www.google.com/calendar</a> to the Google server. This is correct URL request so Google server will return OK (no error).</p>
+
+<p><img src="/images/jmeter121.png"></p>
+
+<p>Select View Result Tree, press Run button on Menu bar. You will see the OK response from Google server and the test will continue until all 100 threads are complete.</p>
+
+<p><img src="/images/jmeter122.gif"></p>
+
 
   </article>
   <hr>
@@ -1593,7 +1699,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/08/07/newbie-part-2-download-and-start-eclipse/">Beginner with WebDriver Part 2 : Download and Start Eclipse</a>
+    <a href="/blog/2014/08/15/jmeter-how-to-perform-distributed-testing/">Jmeter : How to perform Distributed Testing</a>
   </h1>
   
 
@@ -1611,7 +1717,7 @@
   
 
 
-<time class="pull-left" datetime="2014-08-07T15:55:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
+<time class="pull-left" datetime="2014-08-15T10:10:00+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
     
 
   <div class="pull-left">
@@ -1619,14 +1725,14 @@
     <ul class="tags unstyled">
     
       
-        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
       
     
     </ul>
   </div>
 
     
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-2-download-and-start-eclipse/#disqus_thread">
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-perform-distributed-testing/#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     
@@ -1637,16 +1743,89 @@
 
 
 
-<div class="entry-content clearfix">
-  <h2>Beginner with Selenium WebDriver : Download and Start Eclipse</h2>
+  <h2>How to perform Distributed Testing in JMeter</h2>
 
-<h3>Download and Start Eclipse IDE</h3>
+<h3>Overview</h3>
 
-<p>Eclipse free download for Java Developers, extract and save it in any drive. It is totally free. You can run ‘eclipse.exe’ directly so you do not need to install Eclipse in your system.</p>
+<p>Distributed testing is a kind of testing which use multiple systems to perform stress testing. Distributed testing is applied for testing web sites and server applications when they are working with multiple clients simultaneously.</p>
+
+<p>Distributes testing uses client-server model as figure below:</p>
+
+<p><img src="/images/jmeter123.png"></p>
+
+<p>Master: the system running JMeter GUI, control each slave.</p>
+
+<p>Slave: the system running jmeter-server, receive command from the master and send a request to server under test.</p>
+
+<p>Target: the web server under test, get request from slaves.</p>
+
+<h3>Start your test</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <a class="btn pull-right" href="/blog/2014/08/07/newbie-part-2-download-and-start-eclipse/">Continue reading</a>
-</div>
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h4>Precondition:</h4>
+
+<p>*The firewalls on the systems are turned off. In some cases, the firewall may still be blocking the traffic. You should disable the Window firewall or Linux firewall.</p>
+
+<p>*All the machines should be on same subnet. If machines are not on same subnet, maybe they will not recognize each other in the network.</p>
+
+<p>*Use the same version of JMeter to avoid unanticipated errors/issues.</p>
+
+<p>Here is the roadmap of this testing:</p>
+
+<p><img src="/images/jmeter124.png"></p>
+
+<h3>Step 1) System configuration</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>On the slave systems, go to jmeter/bin directory and execute file &ldquo;jmeter-server.bat&rdquo;.</p>
+
+<p>Assume that a slave machine has IP address: 192.168.0.10. On windows, you should see a window appear like following figure:</p>
+
+<p><img src="/images/jmeter125.png"></p>
+
+<p>On the master systems, go to /bin directory and edit file jmeter.properites, add IP slave machine as below</p>
+
+<p><img src="/images/jmeter126.png"></p>
+
+<h3>Step 2) Run the test</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>On the master machine, run JMeter GUI and open the test plan.</p>
+
+<p>Click Run on the menu bar; select Remote start &ndash;> select the IP address of slave machine</p>
+
+<p><img src="/images/jmeter127.png"></p>
+
+<h3>Step 3) Troubleshooting</h3>
+
+<p>If you are unable to run test form the above machine and see below error, simply ask owner of slave machine to run the jmeter-server.bat File.</p>
+
+<p><img src="/images/jmeter128.png"></p>
+
+<h3>Limitation</h3>
+
+<p>There are some basic limitations for distributed testing. Here&rsquo;s list of the known items:</p>
+
+<p>1.Server and all clients must be on the same subnet.</p>
+
+<p>2.Distributed testing required target server to have large processing power. The target Server could be easily overloaded in case it gets too many requests by distributed JMeter tests.</p>
+
+<p>3.A single JMeter can only handle a limited number of threads (100- 300 threads).</p>
+
+<p>4.The distributed JMeter tests are complex, difficult for beginner to build.</p>
+
 
   </article>
   <hr>
