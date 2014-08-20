@@ -136,6 +136,107 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/06/12/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver/">Selenium WebDriver : How to press multi Keyboard</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-12T11:54:33+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
+      
+        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>For multiple key press :</h2>
+
+<h3>First, get the ascii code for the key.</h3>
+
+<p>For example if we want to press Ctrl-A, it should be 0001.</p>
+
+<p>The full list is <a href="http://q.gs/7L9JV">here</a> or <a href="http://q.gs/7L9JW">here</a> .</p>
+
+<p>First assign a character&copy; to the value and then convert that as string inside send key.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// ASCII code 1 for Ctrl-A
+</span><span class='line'>char c = '\u0001';
+</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Convert.ToString(c));
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Use Action Class</h3>
+
+<p>Make a action instance and use action instance .</p>
+
+<p>Inhere, we have used 3 type of method to press three different key , and as they are different from each other, it will make 3 key press together.(means in here Alt+Shift+T)</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Actions kpress = new Actions(driver);
+</span><span class='line'>kpress.keyDown(driver.findElement(By.id("name")), Keys.ALT).perform(); 
+</span><span class='line'>kpress.sendKeys(driver.findElement(By.id("name")), "T").perform();
+</span><span class='line'>kpress.keyUp(driver.findElement(By.id("name")),Keys.SHIFT).perform(); 
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/">WebDriver : How to press Keyboard</a>
   </h1>
   
@@ -1526,69 +1627,6 @@
 
 
   <a class="btn pull-right" href="/blog/2014/06/07/webdriver-scroll-browser/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/">Beginner with Selenium Ide Part 2: Record User Action and Export this Script to another language</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-02T15:03:46+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 2<span>nd</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>Introduction</h2>
-
-<p>In this tutorial  , we will let you know how to record the user action in browser via Selenium IDE and How to export this to another language like java , &hellip;!</p>
-
-<h3>Record User Action</h3>
-
-
-  <a class="btn pull-right" href="/blog/2014/06/02/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/">Continue reading</a>
 </div>
 
   </article>

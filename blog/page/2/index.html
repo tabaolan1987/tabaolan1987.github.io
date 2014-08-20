@@ -590,6 +590,196 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/08/15/jmeter-tips-interpret-the-results/">Jmeter Tips : Interpret the Results</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-15T09:50:00+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-interpret-the-results/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Interpret the results</h2>
+
+<p>We can say that the best way to interpret our stress test results is to use the Summary Report provided by JMeter and to store it in a “csv” file for every run.</p>
+
+<p>In order to interpret the results of a stress tests, it is important to understand some basic elements of Statistics:</p>
+
+<h3>(1) The mean value (μ)</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The following equation show how the mean value (μ) is calculated:</p>
+
+<p>μ = 1/n * Σi=1…n xi</p>
+
+<p>The mean value of a given measure is what is commonly referred to as the average value of this measure. An important thing to understand is that the mean value can be very misleading as it does not show you how close (or far) your values are from the average. An example is always better than a long explanation.</p>
+
+<p>Let’s assume that we are measuring response times in milliseconds in 2 different stress tests:</p>
+
+<p>Stress Test 1:</p>
+
+<p>x1=100</p>
+
+<p>x2=110</p>
+
+<p>x3=90</p>
+
+<p>x4=900</p>
+
+<p>x5=890</p>
+
+<p>x6=910</p>
+
+<p>gives you μ = 1/6 * (100 + 110 + 90 + 900 + 890 + 910) = 500 ms.</p>
+
+<p>Stress Test 2:</p>
+
+<p>x1=490</p>
+
+<p>x2=510</p>
+
+<p>x3=535</p>
+
+<p>x4=465</p>
+
+<p>x5=590</p>
+
+<p>x6=410</p>
+
+<p>gives you μ = 1/6 * (490 + 510 + 535 + 465 + 590 + 410) = 500 ms.</p>
+
+<p>In both cases the mean value (μ) is the same. However if you observe closely the values taken by the response times you will see that in the first case, the values are “far” from the mean value where in the second case, the values are “close” to the mean value.</p>
+
+<p>It is quite obvious with this example that a measure of this distance to the mean value is needed in order to draw any kind of conclusion based on the mean value.</p>
+
+<h3>(2) The standard deviation (σ)</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The following equation show how the standard deviation (σ) is calculated:</p>
+
+<p>σ = 1/n * √ Σi=1…n (xi-μ)2</p>
+
+<p>The standard deviation (σ) measures the mean distance of the values to their average (μ).</p>
+
+<p>In other words it gives us a good idea of the dispersion or variability of the measures to their mean value. Let’s go back to our example and calculate the standard deviation of each of our theoretical stress tests:</p>
+
+<p>Stress Test 1:</p>
+
+<p>σ = 1/6 * sqrt( (100-500)<sup>2</sup> + (110-500)<sup>2</sup> + (90-500)<sup>2</sup> + (900-500)<sup>2</sup> + (890-500)<sup>2</sup> + (910-500)<sup>2</sup> ) ≈ 163 ms</p>
+
+<p>Stress Test 2:</p>
+
+<p>σ = 1/6 * sqrt( (490-500)<sup>2</sup> + (510-500)<sup>2</sup> + (535-500)<sup>2</sup> + (465-500)<sup>2</sup> + (590-500)<sup>2</sup> + (410-500)<sup>2</sup> ) ≈ 23 ms</p>
+
+<p>The 2 values of the standard deviation calculated above are very different:</p>
+
+<p>1.In the first case, the standard deviation is high compared to the mean value, which shows us that our measures are very variable (or mostly far from the mean value) and that the mean value is not very significant.</p>
+
+<p>2.In the second case, the standard deviation is low compared to the mean value, which shows us that our measures are not dispersed (or mostly close to the mean value) and that the mean value is significant.</p>
+
+<h2>(3) The sampling size and the quality of the measure</h2>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Another interesting question is whether our calculated mean value is a good estimation of the “real” mean value. In other word, when calculating the mean value of the response time during a test case do we have a good estimation of the “real” mean response time of the same scenario repeated indefinitely. In probability theory, the Central Limit Theorem states conditions under which the mean of a sufficiently large number of independent random variables, each with finite mean and variance, will be approximately normally distributed.</p>
+
+<p>The measures of response times and throughput obtained during stress tests comply with the Central Limit Theorem as we usually have: a large number of independent and random measures which have a finite (calculated by JMeter) mean value and standard deviation. We can thus assume that the mean values of the response time and the throughput are approximatively normally distributed.</p>
+
+<p>This allow us to calculate a Confidence Interval for these mean values. The Confidence Interval gives us a measure of the quality of our mean values as it allows us to calculated the variability of our mean value (interval) with a predefined probability. You can for example decide to calculate your Confidence Interval at 95%, which will tell you that the probability to have a mean value within the calculated interval is 95%. On the contrary, you can decide to calculate the probability to have you mean value within a given interval (see the examples below).</p>
+
+<p>The following equation show how the Confidence Interval (CI) is calculated:</p>
+
+<p>CI = [μ &ndash; Z<em>σ/√n, μ + Z</em>σ/√n]</p>
+
+<p>where:</p>
+
+<p>1.μ is the calculated mean value of our sample</p>
+
+<p>2.σ is the calculated standard deviation of our sample</p>
+
+<p>3.and Z is the value for which the area under the “bell shaped curve” of the standard normal distribution represents the half the chosen Confidence C (anyone who can explain this better is welcome).</p>
+
+<p>The following table gives values of Z for various given values of Confidence C:</p>
+
+<p><img src="/images/jmeter136.png"></p>
+
+<p>If we go back to our previous examples, we can calculate the confidence intervals of our mean values at 95% :</p>
+
+<p>CI1 = [500 &ndash; 1.96<em>163/sqrt(6); 500 + 1.96</em>163/sqrt(6)] ≈ [370; 630]</p>
+
+<p>CI2 = [500 &ndash; 1.96<em>23/sqrt(6); 500 + 1.96</em>23/sqrt(6)] ≈ [482; 518]</p>
+
+<p>This means that the probability to have a mean response time in the calculated confidence interval is 95%.</p>
+
+<p>We can also calculate the probability to have the mean value in the interval [490, 510]:</p>
+
+<p>10 = Z1 * 163 / sqrt(6) => Z1 = 10 * sqrt(6) / 163 => Z1 ≈ 0.15 => C1 ≈ 12%</p>
+
+<p>10 = Z2 * 23 / sqrt(6) => Z2 = 10 * sqrt(6) / 23 => Z2 ≈ 1.06 => C2 ≈ 71%</p>
+
+<h3>Based on the explanations above, I recommend the following methodology:</h3>
+
+<p>1.If we have a high number of samples (which is usually the case in stress tests) and a low standard deviation than we can  conclude without risk that we have a good estimation of the mean value of both the response time and the throughput of our system and that the “real” number will be close to the calculated mean values.</p>
+
+<p>2.If we have a high number of samples (which is usually the case in stress tests) and a high standard deviation, we probably have a good estimation of the mean value but should however consider to  estimate a confidence interval. In any case, if the variability of the measure is high investigation is needed on a technical point of view as variability of response times and throughput is obviously related to instability of the system tested.</p>
+
+<p>3.If we have a low number of samples and a high standard deviation than we almost certainly have a very bad estimation of the mean value, which means that we are measuring the wrong thing, the wrong way.</p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/08/07/newbie-part-1-download-and-install-java/">Beginner with Selenium 2 WebDriver Part 1 :Download and Install Java </a>
   </h1>
   
@@ -952,67 +1142,6 @@
 
 
   <a class="btn pull-right" href="/blog/2014/08/07/webdriver-browser-navigation-commands/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/07/webdriver-switch-window-commands/">Webdriver : Switch Window Commands</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T15:05:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/webdriver-switch-window-commands/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>WebDriver Switch Window Commands</h2>
-
-<p>Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/08/07/webdriver-switch-window-commands/">Continue reading</a>
 </div>
 
   </article>
