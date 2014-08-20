@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>IceCream Framework Part 1 : Introduction - Selenium Tutorial</title>
+	<title>Jmeter Tips : Determine a thread group's ramp-up period - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
-	<meta name="description" content="IceCream Framework : Introduction" />
+	<meta name="description" content="Jmeter Tips : Determine a thread group's ramp-up period" />
 	
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -130,52 +130,61 @@
 <div id="content" class="inner">
         <article class="post">
 
-	<h2 class="title">IceCream Framework Part 1 : Introduction</h2>
-	<div class="entry-content"><h2>Introduction</h2>
+	<h2 class="title">Jmeter Tips : Determine a Thread Group's Ramp-up Period</h2>
+	<div class="entry-content"><h2>Determine a thread group&rsquo;s ramp-up period</h2>
 
-<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
+<p>The first ingredient in your JMeter script is a thread group, so let&rsquo;s review it first.</p>
 
-<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
+<p>Thread Group element contains the following parameters:</p>
 
-<!--more-->
+<p>1.Number of threads</p>
 
+<p>2.The ramp-up period</p>
 
-<p>Tester just have the basic understanding of <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
+<p>3.The number of times to execute the test.</p>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<p>4.When started, whether the test runs immediately or waits until a scheduled time. If the latter, the Thread Group element must also include the start and end times.</p>
 
+<p><img src="/images/jmeter133.png"></p>
 
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
-
-<p>IceCream Framework is written by Java language and use the core <a href="/blog/categories/webdriver/">Selenium WebDriver</a>.</p>
-
-<p>Currently IceCream Framework version 1.0 Beta version only have the basic functions to perform automatic chemical testing.</p>
-
-<p>The reason for this because I want to collect more of your opinions, feedback and the desire to have more function for me so that I can write to serve you in the next version!</p>
-
-<p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
-
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#x74;&#x61;&#x62;&#97;&#x6f;&#108;&#x61;&#x6e;&#49;&#57;&#56;&#x37;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#116;&#x61;&#x62;&#x61;&#111;&#108;&#x61;&#x6e;&#x31;&#57;&#56;&#x37;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
-
-<p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
+<p>Each thread executes the test plan independently of other threads. Therefore, a thread group is used to model concurrent users. If the client machine running JMeter lacks enough computing power to model a heavy load, JMeter&rsquo;s distributive testing feature allows you to control multiple remote JMeter engines from a single JMeter console.</p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
+<p>The ramp-up period tells JMeter the amount of time for creating the total number of threads. The default value is 0. If the ramp-up period is left unspecified, i.e., the ramp-up period is zero, JMeter will create all the threads immediately. If the ramp-up period is set to T seconds, and the total number of threads is N, JMeter will create a thread every T/N seconds.</p>
 
-<p>Let IceCream say Hi with you and take a look in <a href="/blog/2014/08/07/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
+<p>Most of a thread group&rsquo;s parameters are self-explanatory, but the ramp-up period is a bit weird, since the appropriate number is not always obvious. For one thing, the ramp-up period should not be zero if you have a large number of threads. At the beginning of a load test, if the ramp-up period is zero, JMeter will create all the threads at once and send out requests immediately, thus potentially saturating the server and, more importantly, deceivingly increasing the load. That is, the server could become overloaded, not because the average hit rate is high, but because you send all the threads&#8217; first requests simultaneously, causing an unusual initial peak hit rate. You can see this effect with a JMeter Aggregate Report listener.</p>
 
-<p><img src="/images/ICE-1.jpg"></p>
+<p>As this anomaly is not desirable, therefore, the rule of thumb for determining a reasonable ramp-up period is to keep the initial hit rate close to the average hit rate. Of course, you may need to run the test plan once before discovering a reasonable number.</p>
+
+<p>By the same token, a large ramp-up period is also not appropriate, since the peak load may be underestimated. That is, some of the threads might not have even started, while some initial threads have already terminated.</p>
+
+<p>So how do you verify that the ramp-up period is neither too small nor too large? First, guess the average hit rate and then calculate the initial ramp-up period by dividing the number of threads by the guessed hit rate. For example, if the number of threads is 100, and the estimated hit rate is 10 hits per second, the estimated ideal ramp-up period is 100/10 = 10 seconds. How do you come up with an estimated hit rate? There is no easy way. You just have to run the test script once first.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Second, add an Aggregate Report listener, shown in Figure 2, to the test plan; it contains the average hit rate of each individual request (JMeter samplers). The hit rate of the first sampler (e.g., an HTTP request) is closely related to the ramp-up period and the number of threads. Adjust the ramp-up period so the hit rate of the test plan&rsquo;s first sampler is close to the average hit rate of all other samplers.</p>
+
+<p>Third, verify in the JMeter log (located in JMeter_Home_Directory/bin) that the first thread that finishes does indeed finish after the last thread starts. The time difference between the two should be as far apart as possible.</p>
+
+<p>In summary, the determination of a good ramp-up time is governed by the following two rules:</p>
+
+<p>1.The first sampler&rsquo;s hit rate should be close to the average hit rate of other samplers, thereby preventing a small ramp-up period</p>
+
+<p>2.The first thread that finishes does indeed finish after the last thread starts, preferably as far apart as possible, thereby preventing a large ramp-up period</p>
+
+<p>Sometimes the two rules conflict with each other. That is, you simply cannot find a suitable ramp-up period that passes both rules. A trivial test plan usually causes this problem, because, in such a plan, you lack enough samplers for each thread; thus, the test plan is too short, and a thread quickly finishes its work.</p>
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/blog/2014/08/07/icecream-framework-introduction/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/08/15/jmeter-tips-determine-a-thread-group/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -225,8 +234,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
-        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-determine-a-thread-group/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-determine-a-thread-group/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -136,6 +136,460 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/08/15/jmeter-how-to-use-jmeter-to-record-test-scenarios/">Jmeter : How to use jmeter to record test scenarios</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-15T10:05:00+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-jmeter-to-record-test-scenarios/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>How To Use JMeter To Record Test Scenarios</h2>
+
+<p>In this tutorial, I will teach you how to set up and use the Apache JMeter HTTP(S) Test Script Recorder to record HTTP requests. Recording HTTP requests is a great way to building test plans, and can be useful in creating tests that closely mimic a normal user&rsquo;s behaviour.</p>
+
+<h3>Start Building a Test Plan</h3>
+
+<p>First, start JMeter. Then let&rsquo;s start building a test plan. If you already have a test plan that you would like to start with, skip this section and move on to adding a Recording Controller to your Thread Group (the next section).</p>
+
+<p>Minimally, we will want to add a Thread Group and HTTP Request Defaults. Let&rsquo;s get start by adding a Thread Group.</p>
+
+<h4>Add a Thread Group</h4>
+
+<p>Add a Thread Group to Test Plan:</p>
+
+<p>1.Right-click on Test Plan</p>
+
+<p>2.Mouse over Add ></p>
+
+<p>3.Mouse over Threads (Users)</p>
+
+<p>4.Click on Thread Group</p>
+
+<p>Set the Thread Group properties with the following values:</p>
+
+<p><img src="/images/jmeter129.png"></p>
+
+<h4>Add an HTTP Request Defaults</h4>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Now let&rsquo;s add HTTP Request Defaults to Thread Group:</p>
+
+<p>1.Select Thread Group, then right-click it</p>
+
+<p>2.Mouse over Add</p>
+
+<p>3.Mouse over Config Element</p>
+
+<p>4.Click on HTTP Request Defaults</p>
+
+<p>In HTTP Request Defaults, under the Web Server section, fill in the Server Name or IP field with the name or IP address of the web server you want to test.</p>
+
+<p><img src="/images/jmeter130.png"></p>
+
+<h4>Add an HTTP Cookie Manager</h4>
+
+<p>If your web server uses cookies, you can add support for cookies by adding an HTTP Cookie Manager to the Thread Group:</p>
+
+<p>1.Select Thread Group, then right-click it</p>
+
+<p>2.Mouse over Add</p>
+
+<p>3.Mouse over Config Element</p>
+
+<p>4.Click on HTTP Cookie Manager</p>
+
+<h4>Add a Recording Controller</h4>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Now let&rsquo;s add a Recording Controller to Thread Group:</p>
+
+<p>1.Select Thread Group, then right-click it</p>
+
+<p>2.Mouse over Add</p>
+
+<p>3.Mouse over Logic Controller</p>
+
+<p>4.Click on Recording Controller</p>
+
+<p>The Recording Controller is where recorded HTTP Request samplers will be created. The next step is to set up an HTTP(S) Test Script Recorder.</p>
+
+<h4>Add HTTP(S) Test Script Recorder</h4>
+
+<p>Now let&rsquo;s add an HTTP(S) Test Script Recorder to the WorkBench:</p>
+
+<p>1.Select WorkBench, then right-click it</p>
+
+<p>2.Mouse over Add</p>
+
+<p>3.Mouse over Non-Test Elements</p>
+
+<p>4.Click on HTTP(S) Test Script Recorder</p>
+
+<p>Note: Items that are added to the WorkBench do not get saved with the rest of the test plan. If you want to save your WorkBench, right-click on WorkBench, then click Save Selection As&hellip;, and save it to your desired location. After it is saved, you may add it to any test plan that you have open by using the &ldquo;Merge&rdquo; menu item, and selecting your saved WorkBench.</p>
+
+<h4>Including or Excluding URL Patterns (Optional)</h4>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>In the HTTP(S) Script Recorder, you may add URL Patterns, written as regular expressions, to include or exclude when you record. This can be useful to either include only the types of content you want to request (e.g. <em>.html, </em>.php, etc) or to exclude the types of content you do not want to request (e.g. <em>.jpg, </em>.png, *.js, etc).</p>
+
+<p>To add a URL Pattern, click the &ldquo;Add&rdquo; button under the URL Patterns to Include or URL Patterns to Exclude section, then click on the top of the white area in the section. You should now be able to type in a pattern. Repeat the process to add more patterns.</p>
+
+<p>Example: URL Patterns for webpages</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.*\.html
+</span><span class='line'>.*\.php
+</span><span class='line'>.*\.htm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Adding Items to the Script Recorder (Optional)</h4>
+
+<p>Adding JMeter items to a the HTTP(S) Test Script Recorder will make recorded requests inherit the added item. For example, if we add a Timer item to the Script Recorder, the Timer will be added to each HTTP Request that is recorded. When the test is run, the timer will cause each test thread to wait before performing the HTTP Request.</p>
+
+<p>Let&rsquo;s add a Constant Timer to HTTP(S) Test Script Recorder, as an example:</p>
+
+<p>1.Select HTTP(S) Test Script Recorder, then Right-click it</p>
+
+<p>2.Mouse over Add</p>
+
+<p>3.Mouse over Timers</p>
+
+<p>4.Click on Constant Timers</p>
+
+<p>You may configure the thread delay to whatever you desire.</p>
+
+<p><img src="/images/jmeter131.png"></p>
+
+<p>Suppose that you want to simulate a user clicking on a different page every 2 seconds. Setting the thread delay to 2000 ms will accomplish this by adding a 2 second delay to each HTTP Request that is recorded.</p>
+
+<p>This is just one example of how you can add items to the Script Recorder to help create a test plan that performs the tests that you desire.</p>
+
+<h4>Start Recording</h4>
+
+<p>Clicking on the &ldquo;Start&rdquo; button, on the bottom of the Script Recorder window, will start the JMeter proxy server which will be used to intercept and record browser requests. Click on the Start button (of the recorder) now.</p>
+
+<p>The first time you attempt to run the recorder, it will display an error saying that it can&rsquo;t start because a certificate does not exist. Click OK, then click Start a second time. You should see a message that says that a temporary certificate named ApacheJMeterTemporaryRootCA.crt has been created in JMeter bin directory. Click OK and continue.</p>
+
+<p><img src="/images/jmeter132.png"></p>
+
+<p>Note: If you browser already uses a proxy, then you need to configure JMeter to use that proxy before starting JMeter, using the command-line options -H and -P.</p>
+
+<h4>Configure Firefox To Use JMeter Proxy</h4>
+
+<p>We will use Firefox as our browser when using the JMeter HTTP(S) Test Script Recorder because, unlike Chrome and some other browsers, it does allows you to override system-wide configuration for its proxy settings.</p>
+
+<p>Configure Firefox to use localhost (127.0.0.1) on port 80 as its proxy for all traffic by following these steps:</p>
+
+<p>1.Open Firefox</p>
+
+<p>2.Go to the Preferences menu</p>
+
+<p>3.Click on the Advanced tab</p>
+
+<p>4.Then Network tab</p>
+
+<p>5.In the &ldquo;Connection&rdquo; section, click on &ldquo;Settings&hellip;&rdquo;</p>
+
+<p>6.Select the &ldquo;Manual proxy configuration&rdquo; radio button</p>
+
+<p>7.Set HTTP Proxy to &ldquo;localhost&rdquo; and Port to &ldquo;8080&rdquo;</p>
+
+<p>8.Check &ldquo;Use this proxy server for all protocols&rdquo;</p>
+
+<p>9.Click OK and exit the Preferences menu.</p>
+
+<p>Note: When Firefox is configured to use JMeter&rsquo;s Script Recorder as a proxy, it will only work properly if the Script Recorder is running.</p>
+
+<h4>Recording HTTP Requests</h4>
+
+<p>Now that our test plan&rsquo;s HTTP(S) Test Script Recorder is running, and Firefox is configured to use it as a proxy, the HTTP requests that Firefox sends will be recorded. Let&rsquo;s test it out.</p>
+
+<p>In Firefox, go to your server&rsquo;s homepage (the same server that you configured in your JMeter HTTP Request Defaults):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://your_domain.com/
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now there should be a little triangle next to your Recording Controller. Click on it to expand and show the requests that it has recorded. You should see the HTTP requests that were recorded, depending on which URL Patterns you have included and excluded. Feel free to browse your site to record more requests.</p>
+
+<p>As you can see, a lot of requests were created. You may refine the list of HTTP requests by simply deleting unwanted entries here.</p>
+
+<p>If you do not see any entries under your Recording Controller, you will want to review your URL Patterns in the HTTP(S) Test Script Recorder (Hint: Remove all includes and excludes to record everything).</p>
+
+<p>Once you are done recording, click the &ldquo;Stop&rdquo; button at the bottom of the HTTP(S) Test Script Recorder window. Note that Firefox will no longer be able to reach any pages (because it is configured to use port 8080 as a proxy)&mdash;configure it to use &ldquo;No proxy&rdquo; if you want to function normally.</p>
+
+<h4>Run Your Test Plan</h4>
+
+<p>Once you are happy with the test plan you have recorded, save it, then run it. It will function exactly like a manually created test, so you can configure it, delete, and add items to make it match your desired test case more closely.</p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/15/jmeter-tips-determine-a-thread-group/">Jmeter Tips : Determine a thread group&#8217;s ramp-up period</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-15T10:00:00+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-determine-a-thread-group/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Determine a thread group&rsquo;s ramp-up period</h2>
+
+<p>The first ingredient in your JMeter script is a thread group, so let&rsquo;s review it first.</p>
+
+<p>Thread Group element contains the following parameters:</p>
+
+<p>1.Number of threads</p>
+
+<p>2.The ramp-up period</p>
+
+<p>3.The number of times to execute the test.</p>
+
+<p>4.When started, whether the test runs immediately or waits until a scheduled time. If the latter, the Thread Group element must also include the start and end times.</p>
+
+<p><img src="/images/jmeter133.png"></p>
+
+<p>Each thread executes the test plan independently of other threads. Therefore, a thread group is used to model concurrent users. If the client machine running JMeter lacks enough computing power to model a heavy load, JMeter&rsquo;s distributive testing feature allows you to control multiple remote JMeter engines from a single JMeter console.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The ramp-up period tells JMeter the amount of time for creating the total number of threads. The default value is 0. If the ramp-up period is left unspecified, i.e., the ramp-up period is zero, JMeter will create all the threads immediately. If the ramp-up period is set to T seconds, and the total number of threads is N, JMeter will create a thread every T/N seconds.</p>
+
+<p>Most of a thread group&rsquo;s parameters are self-explanatory, but the ramp-up period is a bit weird, since the appropriate number is not always obvious. For one thing, the ramp-up period should not be zero if you have a large number of threads. At the beginning of a load test, if the ramp-up period is zero, JMeter will create all the threads at once and send out requests immediately, thus potentially saturating the server and, more importantly, deceivingly increasing the load. That is, the server could become overloaded, not because the average hit rate is high, but because you send all the threads&#8217; first requests simultaneously, causing an unusual initial peak hit rate. You can see this effect with a JMeter Aggregate Report listener.</p>
+
+<p>As this anomaly is not desirable, therefore, the rule of thumb for determining a reasonable ramp-up period is to keep the initial hit rate close to the average hit rate. Of course, you may need to run the test plan once before discovering a reasonable number.</p>
+
+<p>By the same token, a large ramp-up period is also not appropriate, since the peak load may be underestimated. That is, some of the threads might not have even started, while some initial threads have already terminated.</p>
+
+<p>So how do you verify that the ramp-up period is neither too small nor too large? First, guess the average hit rate and then calculate the initial ramp-up period by dividing the number of threads by the guessed hit rate. For example, if the number of threads is 100, and the estimated hit rate is 10 hits per second, the estimated ideal ramp-up period is 100/10 = 10 seconds. How do you come up with an estimated hit rate? There is no easy way. You just have to run the test script once first.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Second, add an Aggregate Report listener, shown in Figure 2, to the test plan; it contains the average hit rate of each individual request (JMeter samplers). The hit rate of the first sampler (e.g., an HTTP request) is closely related to the ramp-up period and the number of threads. Adjust the ramp-up period so the hit rate of the test plan&rsquo;s first sampler is close to the average hit rate of all other samplers.</p>
+
+<p>Third, verify in the JMeter log (located in JMeter_Home_Directory/bin) that the first thread that finishes does indeed finish after the last thread starts. The time difference between the two should be as far apart as possible.</p>
+
+<p>In summary, the determination of a good ramp-up time is governed by the following two rules:</p>
+
+<p>1.The first sampler&rsquo;s hit rate should be close to the average hit rate of other samplers, thereby preventing a small ramp-up period</p>
+
+<p>2.The first thread that finishes does indeed finish after the last thread starts, preferably as far apart as possible, thereby preventing a large ramp-up period</p>
+
+<p>Sometimes the two rules conflict with each other. That is, you simply cannot find a suitable ramp-up period that passes both rules. A trivial test plan usually causes this problem, because, in such a plan, you lack enough samplers for each thread; thus, the test plan is too short, and a thread quickly finishes its work.</p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/15/jmeter-tips-user-think-time/">Jmeter Tips : User think time, timer, and proxy server</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-15T09:55:00+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-user-think-time/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>User think time, timer, and proxy server</h2>
+
+<p>An important element to consider in a load test is the think time, or the pause between successive requests. Various circumstances cause the delay: user needs time to read the content, or to fill out a form, or to search for the right link. Failure to properly consider think time often leads to seriously biased test results. For example, the estimated scalability, i.e., the maximum load (concurrent users) that the system can sustain, will appear low.</p>
+
+<p>JMeter provides a set of timer elements to model the think time, but a question still remains: how do you determine an appropriate think time? Fortunately, JMeter offers a good answer: the JMeter HTTP Proxy Server element.</p>
+
+<p>The proxy server records your actions while you browse a Web application with a normal browser (such as FireFox or Internet Explorer). In addition, JMeter creates a test plan when recording your actions. This feature is extremely convenient for several purposes:</p>
+
+<p>1.You don&rsquo;t need to create an HTTP request manually, especially those tedious form parameters. (However, non-English parameters may not work correctly.) JMeter will record everything in the auto-generated requests, including hidden fields.</p>
+
+<p>2.In the generated test plan, JMeter includes all the browser-generated HTTP headers for you, such as User-Agent (e.g., Mozilla/4.0), or AcceptLanguage (e.g., zh-tw,en-us;q=0.7,zh-cn;q=0.3).</p>
+
+<p>3.JMeter can create timers of your choice, where delay time is set according to the actual delay during the recording period.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Let&rsquo;s see how to configure JMeter with the recording feature. In the JMeter console, right-click the WorkBench element and add the HTTP Proxy Server element. Note that you right-click the WorkBench element, not the Test Plan element, because the configuration here is for recording, not for an executable test plan. The HTTP Proxy Server element&rsquo;s purpose is for you to configure the browser&rsquo;s proxy server so all requests go through JMeter.</p>
+
+<p>As illustrated in image below, several fields must be configured for the HTTP Proxy Server element:</p>
+
+<p>1.Port: The listening port used by the proxy server.</p>
+
+<p>2.Target Controller: The controller where the proxy stores the generated samples. By default, JMeter will look for a recording controller in the current test plan and store the samples there. Alternatively, you can select any controller element listed in the menu. Usually, the default is okay.</p>
+
+<p>3.Grouping: How you would like to group the generated elements in the test plan. Several options are available, and the most sensible one is probably &ldquo;Store 1st sampler of each group only,&rdquo; otherwise, URLs embedded in a page such as those for images and JavaScripts will be recorded as well. However, you may want to try the default &ldquo;Do not group samples&rdquo; option to find out what exactly JMeter creates for you in the test plan.</p>
+
+<p>4.Patterns to Include and Patterns to Exclude: Help you filter out some unwanted requests.</p>
+
+<p><img src="/images/jmeter134.png"></p>
+
+<p>When you click the Start button, the proxy server starts and begins recording the HTTP requests it receives. Of course, before clicking Start, you must configure your browser&rsquo;s proxy server setting.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>You can add a timer as a child of the HTTP Proxy Server element, which will instruct JMeter to automatically add a timer as a child of the HTTP request it generates. JMeter automatically stores the actual time delay to a JMeter variable called T, so if you add a Gaussian random timer to the HTTP Proxy Server element, you should type ${T} in the Constant Delay field, as shown in image below. This is another convenient feature that saves you a lot of time.</p>
+
+<p><img src="/images/jmeter135.png"></p>
+
+<p>Note that a timer causes the affected samplers to be delayed. That is, the affected sampling requests are not sent before the specified delay time has passed since the last received response. Therefore, you should manually remove the first sampler&rsquo;s generated timer since the first sampler usually does not need one.</p>
+
+<p>Before starting the HTTP proxy server, you should add a thread group to the test plan and then, to the thread group, add a recording controller, where the generated elements will be stored. Otherwise, those elements will be added to WorkBench directly. In addition, it is important to add an HTTP Request Defaults element (a Configuration element) to the recording controller, so that JMeter will leave blank those fields specified by the HTTP request defaults.</p>
+
+<p>After the recording, stop the HTTP proxy server; right-click the Recording Controller element to save the recorded elements in a separate file so you can retrieve them later. Don&rsquo;t forget to resume your browser&rsquo;s proxy server setting.</p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/08/07/newbie-part-1-download-and-install-java/">Beginner with Selenium 2 WebDriver Part 1 :Download and Install Java </a>
   </h1>
   
@@ -559,194 +1013,6 @@
 
 
   <a class="btn pull-right" href="/blog/2014/08/07/webdriver-switch-window-commands/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/07/webdriver-wait-commands/">Webdriver : Wait Commands</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T14:55:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/webdriver-wait-commands/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>WebDriver Wait Commands</h2>
-
-<p>Listing out the different WebDriver Wait statements that can be useful for an effective scripting and can avoid using the Thread.sleep() commands.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/08/07/webdriver-wait-commands/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/07/selenium-automation-framework-introduction/">Automation Framework P1 : Introduction</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T14:55:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/selenium-framework/'>Selenium-Framework</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/selenium-automation-framework-introduction/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>Selenium Automation Framework</h2>
-
-<h3>Introduction</h3>
-
-<p>Mission critical software undergoes rigorous functional tests, especially supported by automated testing frameworks. Automating these frameworks and maintaining quality software releases are critical to business performance. Enterprises often face the dilemma of balancing costs and managing resources to ensure that automation frameworks cover all the business scenarios and the applications delivered are error – free.
-By implementing the appropriate automated testing framework, enterprises can significantly increase the speed and accuracy of the testing process, provide a higher return on investment (ROI) from software projects and systematically minimize risk.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/08/07/selenium-automation-framework-introduction/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/07/newbie-part-3-download-webdriver-java-client/">Beginner with Selenium WebDriver Part 3 : Download WebDriver Java client</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T14:55:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-3-download-webdriver-java-client/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>Beginner with Selenium WebDriver : Download WebDriver Java client</h2>
-
-<h3>Download Selenium WebDriver Java client</h3>
-
-<p>Selenium webdriver supports many languages and each language has its own client driver. Here we are configuring selenium 2 with Java so we need ‘webdriver Java client driver’.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/08/07/newbie-part-3-download-webdriver-java-client/">Continue reading</a>
 </div>
 
   </article>

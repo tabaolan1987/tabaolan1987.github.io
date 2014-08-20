@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>IceCream Framework Part 1 : Introduction - Selenium Tutorial</title>
+	<title>Jmeter Tips : User think time, timer, and proxy server - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
-	<meta name="description" content="IceCream Framework : Introduction" />
+	<meta name="description" content="Jmeter Tips : User think time, timer, and proxy server" />
 	
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -130,52 +130,61 @@
 <div id="content" class="inner">
         <article class="post">
 
-	<h2 class="title">IceCream Framework Part 1 : Introduction</h2>
-	<div class="entry-content"><h2>Introduction</h2>
+	<h2 class="title">Jmeter Tips : User Think Time, Timer, and Proxy Server</h2>
+	<div class="entry-content"><h2>User think time, timer, and proxy server</h2>
 
-<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
+<p>An important element to consider in a load test is the think time, or the pause between successive requests. Various circumstances cause the delay: user needs time to read the content, or to fill out a form, or to search for the right link. Failure to properly consider think time often leads to seriously biased test results. For example, the estimated scalability, i.e., the maximum load (concurrent users) that the system can sustain, will appear low.</p>
 
-<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
+<p>JMeter provides a set of timer elements to model the think time, but a question still remains: how do you determine an appropriate think time? Fortunately, JMeter offers a good answer: the JMeter HTTP Proxy Server element.</p>
 
-<!--more-->
+<p>The proxy server records your actions while you browse a Web application with a normal browser (such as FireFox or Internet Explorer). In addition, JMeter creates a test plan when recording your actions. This feature is extremely convenient for several purposes:</p>
 
+<p>1.You don&rsquo;t need to create an HTTP request manually, especially those tedious form parameters. (However, non-English parameters may not work correctly.) JMeter will record everything in the auto-generated requests, including hidden fields.</p>
 
-<p>Tester just have the basic understanding of <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
+<p>2.In the generated test plan, JMeter includes all the browser-generated HTTP headers for you, such as User-Agent (e.g., Mozilla/4.0), or AcceptLanguage (e.g., zh-tw,en-us;q=0.7,zh-cn;q=0.3).</p>
+
+<p>3.JMeter can create timers of your choice, where delay time is set according to the actual delay during the recording period.</p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
+<p>Let&rsquo;s see how to configure JMeter with the recording feature. In the JMeter console, right-click the WorkBench element and add the HTTP Proxy Server element. Note that you right-click the WorkBench element, not the Test Plan element, because the configuration here is for recording, not for an executable test plan. The HTTP Proxy Server element&rsquo;s purpose is for you to configure the browser&rsquo;s proxy server so all requests go through JMeter.</p>
 
-<p>IceCream Framework is written by Java language and use the core <a href="/blog/categories/webdriver/">Selenium WebDriver</a>.</p>
+<p>As illustrated in image below, several fields must be configured for the HTTP Proxy Server element:</p>
 
-<p>Currently IceCream Framework version 1.0 Beta version only have the basic functions to perform automatic chemical testing.</p>
+<p>1.Port: The listening port used by the proxy server.</p>
 
-<p>The reason for this because I want to collect more of your opinions, feedback and the desire to have more function for me so that I can write to serve you in the next version!</p>
+<p>2.Target Controller: The controller where the proxy stores the generated samples. By default, JMeter will look for a recording controller in the current test plan and store the samples there. Alternatively, you can select any controller element listed in the menu. Usually, the default is okay.</p>
 
-<p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
+<p>3.Grouping: How you would like to group the generated elements in the test plan. Several options are available, and the most sensible one is probably &ldquo;Store 1st sampler of each group only,&rdquo; otherwise, URLs embedded in a page such as those for images and JavaScripts will be recorded as well. However, you may want to try the default &ldquo;Do not group samples&rdquo; option to find out what exactly JMeter creates for you in the test plan.</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#x74;&#x61;&#x62;&#97;&#x6f;&#108;&#x61;&#x6e;&#49;&#57;&#56;&#x37;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#116;&#x61;&#x62;&#x61;&#111;&#108;&#x61;&#x6e;&#x31;&#57;&#56;&#x37;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>4.Patterns to Include and Patterns to Exclude: Help you filter out some unwanted requests.</p>
 
-<p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
+<p><img src="/images/jmeter134.png"></p>
+
+<p>When you click the Start button, the proxy server starts and begins recording the HTTP requests it receives. Of course, before clicking Start, you must configure your browser&rsquo;s proxy server setting.</p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
+<p>You can add a timer as a child of the HTTP Proxy Server element, which will instruct JMeter to automatically add a timer as a child of the HTTP request it generates. JMeter automatically stores the actual time delay to a JMeter variable called T, so if you add a Gaussian random timer to the HTTP Proxy Server element, you should type ${T} in the Constant Delay field, as shown in image below. This is another convenient feature that saves you a lot of time.</p>
 
-<p>Let IceCream say Hi with you and take a look in <a href="/blog/2014/08/07/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
+<p><img src="/images/jmeter135.png"></p>
 
-<p><img src="/images/ICE-1.jpg"></p>
+<p>Note that a timer causes the affected samplers to be delayed. That is, the affected sampling requests are not sent before the specified delay time has passed since the last received response. Therefore, you should manually remove the first sampler&rsquo;s generated timer since the first sampler usually does not need one.</p>
+
+<p>Before starting the HTTP proxy server, you should add a thread group to the test plan and then, to the thread group, add a recording controller, where the generated elements will be stored. Otherwise, those elements will be added to WorkBench directly. In addition, it is important to add an HTTP Request Defaults element (a Configuration element) to the recording controller, so that JMeter will leave blank those fields specified by the HTTP request defaults.</p>
+
+<p>After the recording, stop the HTTP proxy server; right-click the Recording Controller element to save the recorded elements in a separate file so you can retrieve them later. Don&rsquo;t forget to resume your browser&rsquo;s proxy server setting.</p>
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/blog/2014/08/07/icecream-framework-introduction/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/08/15/jmeter-tips-user-think-time/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -225,8 +234,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
-        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-user-think-time/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-user-think-time/';
         var disqus_script = 'embed.js';
       
     (function () {
