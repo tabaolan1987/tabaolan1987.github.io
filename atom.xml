@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-08-20T14:26:31+07:00</updated>
+  <updated>2014-08-20T14:30:42+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -1741,7 +1741,7 @@
 
 <p>4.Patterns to Include and Patterns to Exclude: Help you filter out some unwanted requests.</p>
 
-<p><img src="http://www.tabaolan.com/images/jmeter134.png"></p>
+<p><img src="http://www.tabaolan.com/images/jmeter134.jpg"></p>
 
 <p>When you click the Start button, the proxy server starts and begins recording the HTTP requests it receives. Of course, before clicking Start, you must configure your browser&rsquo;s proxy server setting.</p>
 
@@ -1752,7 +1752,7 @@
 
 <p>You can add a timer as a child of the HTTP Proxy Server element, which will instruct JMeter to automatically add a timer as a child of the HTTP request it generates. JMeter automatically stores the actual time delay to a JMeter variable called T, so if you add a Gaussian random timer to the HTTP Proxy Server element, you should type ${T} in the Constant Delay field, as shown in image below. This is another convenient feature that saves you a lot of time.</p>
 
-<p><img src="http://www.tabaolan.com/images/jmeter135.png"></p>
+<p><img src="http://www.tabaolan.com/images/jmeter135.jpg"></p>
 
 <p>Note that a timer causes the affected samplers to be delayed. That is, the affected sampling requests are not sent before the specified delay time has passed since the last received response. Therefore, you should manually remove the first sampler&rsquo;s generated timer since the first sampler usually does not need one.</p>
 
