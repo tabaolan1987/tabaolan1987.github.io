@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-08-20T14:30:42+07:00</updated>
+  <updated>2014-08-22T17:04:30+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,319 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mobile Testing : Guide to Functional testing in Mobile App]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-test-mobile-app/"/>
+    <updated>2014-08-21T11:44:47+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-test-mobile-app</id>
+    <content type="html"><![CDATA[<h2>Mobile Testing : Guide to Functional testing in Mobile App</h2>
+
+<p>Some or all of the following testing types may be performed depending on your mobile testing requirements</p>
+
+<p>1.Functional testing</p>
+
+<p>2.Performance testing</p>
+
+<p>3.Security testing</p>
+
+<p>4.Usability testing</p>
+
+<p>5.Compatibility testing</p>
+
+<p>6.Recoverability Testing</p>
+
+<h3>Functional testing</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The functional testing of Mobiles normally consists in the areas of testing user interactions as well as testing the transactions. The various factors which are relevant in functional testing are</p>
+
+<p>1.Type of application based upon the business functionality usages (banking, gaming, social or business)</p>
+
+<p>2.Target audience type (consumer, enterprise, education)</p>
+
+<p>3.Distribution channel which is used to spread the application (e.g. Apple App Store, Google play, direct distribution)</p>
+
+<p>The most fundamental test scenarios in the functional testing can be considered as :</p>
+
+<p>1.To validate whether all the required mandatory fields are working as required.</p>
+
+<p>2.To validate that the mandatory fields are displayed in the screen in a distinctive way than the non-mandatory fields.</p>
+
+<p>3.To validate whether the application works as per as requirement whenever the application starts/stops.</p>
+
+<p>4.To validate whether the application goes into minimized mode whenever there is an incoming phone call. In order to validate the same we need to use a second phone, to call the device.</p>
+
+<p>5.To validate whether the phone is able to store, process and receive SMS whenever the app is running. In order to validate the same we need to use a second phone to send sms to the device which is being tested and where the application under test is currently running.</p>
+
+<p>6.To validate that the device is able to perform required multitasking requirements whenever it is necessary to do so.</p>
+
+<p>7.To validate that the application allows necessary social network options such as sharing, posting and navigation etc.</p>
+
+<p>8.To validate that the application supports any payment gateway transaction such as Visa, Mastercard, Paypal etc as required by the application.</p>
+
+<p>9.To validate that the page scrolling scenarios are being enabled in the application as necessary.</p>
+
+<p>10.To validate that the navigation between relevant modules in the application are as per the requirement.</p>
+
+<p>11.To validate that the truncation errors are absolutely to an affordable limit.</p>
+
+<p>12.To validate that the user receives an appropriate error message like “Network error. Please try after some time” whenever there is any network error.</p>
+
+<p>13.To validate that the installed application enables other applications to perform satisfactorily, and it does not eat into the memory of the other applications.</p>
+
+<p>14.To validate that the application resumes at the last operation in case of a hard reboot or system crash.</p>
+
+<p>15.To validate whether the installation of the application can be done smoothly provided the user has the necessary resources and it does not lead to any significant errors.</p>
+
+<p>16.To validate that the application performs auto start facility according to the requirements.</p>
+
+<p>17.To validate whether the application performs according to the requirement in all versions of Mobile that is 2g, 3g and 4g.</p>
+
+<p>18.To perform regression testing to uncover new software bugs in existing areas of a system after changes have been made to them. Also rerun previously performed tests to determine that the program behavior has not changed due to the changes.</p>
+
+<p>19.To validate whether the application provides an available user guide for those who are not familiar to the app</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mobile Testing : Guide to Performance Testing in Mobile App]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-performance-testing-in-mobile/"/>
+    <updated>2014-08-21T11:40:47+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-performance-testing-in-mobile</id>
+    <content type="html"><![CDATA[<h2>Performance testing</h2>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>This type of testing’s fundamental objective is to ensure that the application performs acceptably under certain performance requirements such as access by a huge number of users or the removal of a key infrastructure part like a database server.</p>
+
+<p>The general test scenarios for performance testing in a Mobile application are:</p>
+
+<p>1.To determine whether the application performs as per the requirement under different load conditions.</p>
+
+<p>2.To determine whether the current network coverage is able to support the application at peak, average and minimum user levels.</p>
+
+<p>3.To determine whether the existing client-server configuration setup provides the required optimum performance level.</p>
+
+<p>4.To identify the various application and infrastructure bottlenecks which prevent the application to perform at the required acceptability levels.</p>
+
+<p>5.To validate whether the response time of the application is as per as the requirements.</p>
+
+<p>6.To evaluate product and/or hardware to determine if it can handle projected load volumes.</p>
+
+<p>7.To evaluate whether the battery life can support the application to perform under projected load volumes.</p>
+
+<p>8.To validate application performance when network is changed to WIFI from 2G/3G or vice versa.</p>
+
+<p>9.To validate each of the required the CPU cycle is optimization</p>
+
+<p>10.To validate that the battery consumption, memory leaks, resources like GPS, Camera performance is well within required guidelines.</p>
+
+<p>11.To validate the application longevity whenever the user load is rigorous.</p>
+
+<p>12.To validate the network performance while moving around with the device.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>13.To validate the application performance when only intermittent phases of connectivity is required.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mobile Testing : Guide to Security Testing in Mobile App]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-security-testing-in-mobile/"/>
+    <updated>2014-08-21T11:35:47+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-security-testing-in-mobile</id>
+    <content type="html"><![CDATA[<h2>Security testing</h2>
+
+<p><img src="http://www.tabaolan.com/images/mb1.png"></p>
+
+<p>The fundamental objective of security testing is to ensure that the application’s data and networking security requirements are met as per guidelines.</p>
+
+<p>The following are the most crucial areas for checking the security of Mobile applications.</p>
+
+<p>1.To validate that the application is able to withstand any brute force attack which is an automated process of trial and error used to guess a person’s username, password or credit-card number.</p>
+
+<p>2.To validate whether an application is not permitting an attacker to access sensitive content or functionality without proper authentication.</p>
+
+<p>3.To validate that the application has a strong password protection system and it does not permit an attacker to obtain, change or recover another user’s password.</p>
+
+<p>4.To validate that the application does not suffer from insufficient session expiration.</p>
+
+<p>5.To identify the dynamic dependencies and take measures to prevent any attacker for accessing these vulnerabilities.</p>
+
+<p>6.To prevent from SQL injection related attacks.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>7.To identify and recover from any unmanaged code scenarios.</p>
+
+<p>8.To ensure whether the certificates are validated, does the application implement Certificate Pinning or not.</p>
+
+<p>9.To protect the application and the network from the denial of service attacks.</p>
+
+<p>10.To analyze the data storage and data validation requirements.</p>
+
+<p>11.To enable the session management for preventing unauthorized users to access unsolicited information.</p>
+
+<p>12.To check if any cryptography code is broken and ensure that it is repaired.</p>
+
+<p>13.To validate whether the business logic implementation is secured and not vulnerable to any attack from outside.</p>
+
+<p>14.To analyze file system interactions, determine any vulnerability and correct these problems.</p>
+
+<p>15.To validate the protocol handlers for example trying to reconfigure the default landing page for the application using a malicious iframe.</p>
+
+<p>16.To protect against malicious client side injections.</p>
+
+<p>17.To protect against malicious runtime injections.</p>
+
+<p>18.To investigate file caching and prevent any malicious possibilities from the same.</p>
+
+<p>19.To prevent from insecure data storage in the keyboard cache of the applications.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>20.To investigate cookies and preventing any malicious deeds from the cookies.</p>
+
+<p>21.To provide regular audits for data protection analysis.</p>
+
+<p>22.Investigate custom created files and preventing any malicious deeds from the custom created files.</p>
+
+<p>23.To prevent from buffer overflows and memory corruption cases.</p>
+
+<p>24.To analyze different data streams and preventing any vulnerabilities from these.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mobile Testing : Other Testing in Mobile App]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-other-testing-in-mobile/"/>
+    <updated>2014-08-21T11:30:47+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-other-testing-in-mobile</id>
+    <content type="html"><![CDATA[<h2>Usability testing</h2>
+
+<p>The usability testing process of the Mobile application is performed to have a quick and easy step application with less functionality than a slow and difficult application with many features. The main objective is to ensure that we end up having an easy-to-use, intuitive and similar to industry-accepted interfaces which are widely used.</p>
+
+<p>1.To ensure that the buttons should have the required size and be suitable to big fingers.</p>
+
+<p>2.To ensure that the buttons are placed in the same section of the screen to avoid confusion to the end users.</p>
+
+<p>3.To ensure that the icons are natural and consistent with the application.</p>
+
+<p>4.To ensure that the buttons, which have the same function should also have the same color.</p>
+
+<p>5.To ensure that the validation for the tapping zoom-in and zoom-out facilities should be enabled.</p>
+
+<p>6.To ensure that the keyboard input can be minimized in an appropriate manner.</p>
+
+<p>7.To ensure that the application provides a method for going back or undoing an action, on touching the wrong item, within an acceptable duration.</p>
+
+<p>8.To ensure that the contextual menus are not overloaded because it has to be used quickly.</p>
+
+<p>9.To ensure that the text is kept simple and clear to be visible to the users.</p>
+
+<p>10.To ensure that the short sentences and paragraphs are readable to the end users.</p>
+
+<p>11.To ensure that the font size is big enough to be readable and not too big or too small.</p>
+
+<p>12.To validate the application prompts the user whenever the user starts downloading a large amount of data which may be not conducive for the application performance.</p>
+
+<p>13.To validate that the closing of the application is performed from different states and verify if it re-opens in the same state.</p>
+
+<p>14.To ensure that all strings are converted into appropriate languages whenever a language translation facility is available.</p>
+
+<p>15.To ensure that the application items are always synchronized according to the user actions.</p>
+
+<p>16.To ensure that the end user is provided with a user manual which helps the end user to understand and operate the application who may be not familiar with the application’s proceedings</p>
+
+<p>Usability testing is normally performed by manual users since only human beings can understand the sensibility and comfort ability of the other users.</p>
+
+<h2>Compatibility testing</h2>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Compatibility testing on mobile devices is performed to ensure that since mobile devices have different size, resolution, screen, version and hardware so the application should be tested across all the devices to ensure that the application works as desired.</p>
+
+<p>The following are the most prominent areas for compatibility testing.</p>
+
+<p>1.To validate that the user Interface of the application is as per the screen size of the device, no text/control is partially invisible or inaccessible.</p>
+
+<p>2.To ensure that the text is readable for all users for the application.</p>
+
+<p>3.To ensure that the call/alarm functionality is enabled whenever the application is running. The application is minimized or suspended on the event of a call and then whenever the call stops the application is resumed.</p>
+
+<h2>Recoverability Testing</h2>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>1.Crash recovery and transaction interruptions</p>
+
+<p>2.Validation of the effective application recovery situation post unexpected interruption/crash scenarios.</p>
+
+<p>3.Verification of how the application handles a transaction during a power failure (i.e. Battery dies or a sudden manual shutdown of the device)</p>
+
+<p>4.The validation of the process where the connection is suspended, the system needs to re-establish for recovering the data directly affected by the suspended connection.</p>
+
+<h2>Other Important Checks</h2>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>1.Installation testing (whether the application can be installed in a reasonable amount of time and with required criterion)</p>
+
+<p>2.Uninstallation testing (whether the application can be uninstalled in a reasonable amount of time and with required criterion)</p>
+
+<p>3.Network test cases (validation of whether the network is performing under required load or not, whether the network is able to support all the necessary applications during the testing procedures).</p>
+
+<p>4.Check Unmapped keys</p>
+
+<p>5.Check application splash screen</p>
+
+<p>6.Continued keypad entry during interrupts and other times like network issues</p>
+
+<p>7.Methods which deal with exiting the application</p>
+
+<p>8.Charger effect while an application is running in the background</p>
+
+<p>9.Low battery and high performance demand</p>
+
+<p>10.Removal of battery while an application is being performed</p>
+
+<p>11.Consumption of battery by application</p>
+
+<p>12.Check Application side effects</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Introduction]]></title>
@@ -2052,684 +2365,6 @@
 <p>11) Now that you have finished installing eclipse restart your computer. By restarting your computer it refreshes system memory and allows changes made by installers and uninstallers to take effect.</p>
 
 <p>12) Take a look in the next part <a href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-3-download-webdriver-java-client/">Part 3 : Download Webdriver Java client</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Introduction]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-introduction/"/>
-    <updated>2014-08-07T15:26:35+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-introduction</id>
-    <content type="html"><![CDATA[<h2>Selenium Introduction</h2>
-
-<h3>About Selenium</h3>
-
-<p>Selenium is a software testing framework for the web that facilitates the automation of browsers. The Selenium project produces various tools for automation testing such as Selenium IDE, Selenium Remote Control (RC), Selenium Grid and Selenium 2.0 &amp; WebDriver. Learning all the tools will give you many different options for approaching different automation problems. The entire suits of tools result in a rich set of testing functions specially geared to the needs of testing of web application of all types.</p>
-
-<!--more-->
-
-
-<h3>Why Selenium</h3>
-
-<ul>
-<li>Selenium is an open source tool with Corporate backing.</li>
-<li>The tests can then be run against most modern web browsers.</li>
-<li>Selenium deploys on Windows, Linux, and Macintosh platforms.</li>
-<li>It allows recording, editing, and debugging tests.</li>
-<li>Recorded tests can be exported in most language e.g. html, Java, .net, perl, ruby etc.</li>
-<li>Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser.</li>
-</ul>
-
-
-<h3>Selenium WebDriver</h3>
-
-<p>The primary new feature in Selenium 2.0 is the integration of the WebDriver API. WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. It enables you to use a programming language to write test scripts in different programming languages like html, Java, .net , perl, ruby and which enables you to use conditional operations, looping and other programming concepts which makes you test script robust. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver’s goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.</p>
-
-<h3>WebDriver Vs Selenium RC</h3>
-
-<p>1) Architecture</p>
-
-<h4>WebDriver&rsquo;s architecture is simpler than Selenium RC&rsquo;s.</h4>
-
-<p>It controls the browser from the OS level</p>
-
-<p>All you need are your programming language&rsquo;s IDE (which contains your Selenium commands) and a browser.</p>
-
-<p><img src="http://www.tabaolan.com/images/compare-1.jpg"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h4>Selenium RC&rsquo;s architecture is way more complicated.</h4>
-
-<p>You first need to launch a separate application called Selenium Remote Control (RC) Server before you can start testing</p>
-
-<p>The Selenium RC Server acts as a &ldquo;middleman&rdquo; between your Selenium commands and your browser</p>
-
-<p>When you begin testing, Selenium RC Server &ldquo;injects&rdquo; a Javascript program called Selenium Core into the browser.</p>
-
-<p>Once injected, Selenium Core will start receiving instructions relayed by the RC Server from your test program.</p>
-
-<p>When the instructions are received, Selenium Core will execute them as Javascript commands.</p>
-
-<p>The browser will obey the instructions of Selenium Core, and will relay its response to the RC Server.</p>
-
-<p>The RC Server will receive the response of the browser and then display the results to you.</p>
-
-<p>RC Server will fetch the next instruction from your test script to repeat the whole cycle.</p>
-
-<p><img src="http://www.tabaolan.com/images/compare-2.jpg"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>2) Speed</p>
-
-<p>WebDriver is faster than Selenium RC since it  speaks directly to the browser uses the browser&rsquo;s own engine to control it.</p>
-
-<p>Selenium RC is slower  sinceit uses a Javascript program called Selenium Core.This Selenium Core is the one that directly controls the browser, not you.</p>
-
-<p>3) Real-life Interaction</p>
-
-<p>WebDriver interacts with page elements in a more realistic way. For example, if you have a disabled text box on a page you were testing, WebDriver really cannot enter any value in it just as how a real person cannot.</p>
-
-<p>Selenium Core, just like other Javascript codes, can access disabled elements .In the past, Selenium testers complain that Selenium Core was able to enter values to a disabled text box in their tests.Differences in API.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Element Commands]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-element-commands/"/>
-    <updated>2014-08-07T15:20:35+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-element-commands</id>
-    <content type="html"><![CDATA[<h2>Selenium WebDriver WebElement Commands</h2>
-
-<p>The next thing you like to do is to interact with a web page. You need to locate an element first on the web page before interacting with it and locating elements can be done on the WebDriver instance itself or on a WebElement. Webdriver gives us “Find Element” and “Find Elements” method to locate elements on the web page.</p>
-
-<!--more-->
-
-
-<h3>Find Element &amp; Find Elements Method</h3>
-
-<p>The difference between “Find Element” and “Find Elements” method is the first returns a WebElement object otherwise it throws an exception and the latter returns a list of WebElements, it can return an empty list if no DOM elements match the query. The “Find” methods take a locator or query object called “By”. “By” strategies are listed below.</p>
-
-<h4>By ID</h4>
-
-<p>With this strategy, the first element with the id attribute value matching the location will be returned. If no element has a matching id attribute, a NoSuchElementException will be raised. This is the most efficient and preferred way to locate an element, as most of the times IDs are unique. But in some cases UI developers make it having non-unique ids on a page or auto-generating the id, in both cases it should be avoided.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>&lt;!-- html code
-</span><span class='line'>&lt;input id="Username"&gt;&lt;/input&gt;
-</span><span class='line'>--!&gt;
-</span><span class='line'>//java code to find the input with id is "Username"
-</span><span class='line'>WebElement element = driver.findElement(By.id("Username"));
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>By Name</h4>
-
-<p>This is also an efficient way to locate an element but again the problem is same as with ID that UI developer make it having non-unique names on a page or auto-generating the names. With this strategy, the first element with the name attribute value matching the location will be returned. If no element has a matching name attribute, a NoSuchElementException will be raised.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!-- html code
-</span><span class='line'>&lt;input name="Username"&gt;&lt;/input&gt;
-</span><span class='line'>--!&gt;
-</span><span class='line'>//java code to find the input with name is "Username"
-</span><span class='line'>WebElement element = driver.findElement(By.name("Username"));
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>By Class Name</h4>
-
-<p>With this you can find elements based on the value of the “class” attribute. If an element has many classes then this will match against each of them. A class can contain many elements.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!-- html code
-</span><span class='line'>&lt;input class="Username"&gt;&lt;/input&gt;
-</span><span class='line'>--!&gt;
-</span><span class='line'>//java code to find the input with className is "Username"
-</span><span class='line'>WebElement element = driver.findElement(By.className("Username"));
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>By Tag Name</h4>
-
-<p>With this you can find elements by their tag names.</p>
-
-<p>Example: If an element is given like this:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//html code
-</span><span class='line'>&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;
-</span><span class='line'>
-</span><span class='line'>// java code to find
-</span><span class='line'>WebElement element=driver.findElement(By.linkText("Name of the Link"));
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>By Partial Link Text</p>
-
-<p>With this you can find elements of “a” tags(Link) with the partial link names. Use this when you know link text used within an anchor tag.</p>
-
-<p>Example: If an element is given like this</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//html code
-</span><span class='line'>&lt;a href="link.html"&gt;Name of the Link&lt;/a&gt;
-</span><span class='line'>// java code to find
-</span><span class='line'>WebElement element=driver.findElement(By.linkText("Name of"));</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element=driver.findElement(By.linkText("the Link"));</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Practice Exercise 1</h3>
-
-<p>1) Launch new Browser</p>
-
-<p>2) Open URL <a href="https://www.facebook.com">https://www.facebook.com</a></p>
-
-<p>3) Type Name &amp; password</p>
-
-<p>4) Click on SignIn button</p>
-
-<h4>Solution</h4>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.By;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>
-</span><span class='line'>public class PracticeWebElementCommands {
-</span><span class='line'>  public static WebDriver driver;
-</span><span class='line'>  public static void main(String[] args) {
-</span><span class='line'>       // Create a new instance of the Firefox driver
-</span><span class='line'>        driver = new FirefoxDriver();
-</span><span class='line'>
-</span><span class='line'>        // Put an Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'>
-</span><span class='line'>        // Launch the ToolsQA Website
-</span><span class='line'>        driver.get("https://www.facebook.com");
-</span><span class='line'>
-</span><span class='line'>        // Type email      
-</span><span class='line'>        driver.findElement(By.id("emaill")).sendKeys("youremail"); 
-</span><span class='line'>
-</span><span class='line'>        //Type passwork
-</span><span class='line'>        driver.findElement(By.name("pass")).sendKeys("yourpassword");
-</span><span class='line'>
-</span><span class='line'>        // Click on SignIn
-</span><span class='line'>        driver.findElement(By.Xpath("//form[@id='login_form']/table/tbody/tr[2]/td[3]/label/input")).click();
-</span><span class='line'>      }
-</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Browser Commands]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-browser-commands/"/>
-    <updated>2014-08-07T15:15:35+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-browser-commands</id>
-    <content type="html"><![CDATA[<h2>Selenium WebDriver Browser Commands</h2>
-
-<p>The very first thing you like to do with Selenium is to opening and closing a new browser. Below are the numbers of commands you can apply on the Selenium opened browser.</p>
-
-<!--more-->
-
-
-<h3>1)Get Command</h3>
-
-<p>Purpose: This command is use to open a new web page in the current browser.</p>
-
-<p>Command: driver.get(URL);</p>
-
-<p>Parameters: url – The URL to load. It is best to use a fully qualified URL.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.get("wwww.google.com");</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>2)Get Title Command</h3>
-
-<p>Purpose: This command is use to get the title of the current page.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.getTitle();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>3)Get Current URL Command</h3>
-
-<p>Purpose: This command is use to get the URL of the page currently loaded in the browser.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.getCurrentUrl();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>4)Get Page Source Command</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Purpose: This command is use to get the source of the last loaded page.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.getPageSource();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>5)Close Command</h3>
-
-<p>Purpose: This command is use to close the current window of the browser, if it’s the last window it will close the browser.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.close();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>6)Quit Command</h3>
-
-<p>Purpose: This command is use to quit the browser and all the opened windows in the browser.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.quit();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>7)Refresh Command</h3>
-
-<p>Purpose: There are some commands is use to refresh the current browser.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().refresh();
-</span><span class='line'>driver.get(driver.getCurrentUrl());
-</span><span class='line'>driver.navigate().to(driver.getCurrentUrl());
-</span><span class='line'>driver.findElement(By.name("s")).sendKeys("\uE035");</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Simple Practice Exercise</h2>
-
-<p>1) Launch a new Firefox browser.</p>
-
-<p>2) Open daringfireball.net</p>
-
-<p>3) Get Page Title name and Title length</p>
-
-<p>4) Print Page Title and Title length on the Eclipse Console.</p>
-
-<p>5) Get Page URL and URL length</p>
-
-<p>6) Print URL and URL length on the Eclipse Console.</p>
-
-<p>7) Refresh current page</p>
-
-<p>8) Get Page Source (HTML Source code) and Page Source length</p>
-
-<p>9) Print Page Source and length on Eclipse Console.</p>
-
-<p>10) Close the Browser.</p>
-
-<h3>Solution</h3>
-
-<h4>1) Create class &lsquo;PracticeBrowserCommands&rsquo; and copy code below paste to your class and Run this class.</h4>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'> 
-</span><span class='line'>public class PracticeBrowserCommands {
-</span><span class='line'>    private static WebDriver driver = null;
-</span><span class='line'> 
-</span><span class='line'>    public static void main(String[] args) throws InterruptedException {
-</span><span class='line'> 
-</span><span class='line'>         // Create a new instance of the Firefox driver
-</span><span class='line'>        driver = new FirefoxDriver();
-</span><span class='line'> 
-</span><span class='line'>        //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'> 
-</span><span class='line'>        //Launch the markdown syntax
-</span><span class='line'>        driver.get("http://daringfireball.net/");
-</span><span class='line'> 
-</span><span class='line'>        // Storing Title name in String variable
-</span><span class='line'>        String sTitle = driver.getTitle();
-</span><span class='line'>        // Storing Title length in Int variable
-</span><span class='line'>        int iTitleLength = driver.getTitle().length();
-</span><span class='line'>        // Printing Title name on Console
-</span><span class='line'>        System.out.println(sTitle);
-</span><span class='line'>        // Printing Title length on console
-</span><span class='line'>        System.out.println(iTitleLength);
-</span><span class='line'> 
-</span><span class='line'>        // Storing URL in String variable
-</span><span class='line'>        sTitle = driver.getCurrentUrl();
-</span><span class='line'>        // Storing URL length in Int variable
-</span><span class='line'>        iTitleLength = driver.getCurrentUrl().length();
-</span><span class='line'>        // Printing URL on Console
-</span><span class='line'>        System.out.println(sTitle);
-</span><span class='line'>        // Printing URL length on console
-</span><span class='line'>        System.out.println(iTitleLength);
-</span><span class='line'> 
-</span><span class='line'>        // Refreshing current page
-</span><span class='line'>        driver.get(driver.getCurrentUrl());  
-</span><span class='line'> 
-</span><span class='line'>        // Storing Page Source in String variable
-</span><span class='line'>        String sPageSource = driver.getPageSource();
-</span><span class='line'>        // Storing Page Source length in Int variable
-</span><span class='line'>        int iPageSourceLength = driver.getPageSource().length();
-</span><span class='line'>        // Printing Page Source on console
-</span><span class='line'>        System.out.println(sPageSource);
-</span><span class='line'>        // Printing Page SOurce length on console
-</span><span class='line'>        System.out.println(iPageSourceLength);
-</span><span class='line'> 
-</span><span class='line'>        //Closing browser
-</span><span class='line'>        driver.close();
-</span><span class='line'>    }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Webdriver : Browser Navigation Commands]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-browser-navigation-commands/"/>
-    <updated>2014-08-07T15:10:35+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-browser-navigation-commands</id>
-    <content type="html"><![CDATA[<h2>WebDriver Browser Navigation Commands</h2>
-
-<p>The navigate interface exposes the ability to move backwards and forwards in your browser’s history but navigate().to() and get() do exactly the same thing. One’s just a lot easier to type than the other.</p>
-
-<!--more-->
-
-
-<h3>To Command</h3>
-
-<p>Purpose : This command is use to navigate on specific page or URL in between the  test Command : driver.navigate().to(URL); Parameters : url – The URL to load. It is best to use a fully qualified URL.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().to("http://www.gooogle.com");</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Forward Command</h3>
-
-<p>Purpose : This command is use to go on to next page like browser’s forward button.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().forward();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Back Command</h3>
-
-<p>Purpose : This command is use to go back to previous page like browser’s back button.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().back();</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Practice Exercise</h3>
-
-<p>1) Launch new Browser</p>
-
-<p>2) Open Selenium docs website</p>
-
-<p>3) Click on About link ( On top navigation)</p>
-
-<p>4) Come back to Home page (Use ‘Back’ command)</p>
-
-<p>5) Again go back to About page (This time use ‘Forward’ command)</p>
-
-<p>6) Again come back to Home page (This time use ‘To’ command)</p>
-
-<p>7) Refresh the Browser (Use ‘Refresh’ command)</p>
-
-<p>8) Close the Browser</p>
-
-<h4>Solution</h4>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
-</span><span class='line'>
-</span><span class='line'>import java.util.concurrent.TimeUnit;
-</span><span class='line'>
-</span><span class='line'>import org.openqa.selenium.By;
-</span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>
-</span><span class='line'>public class PracticeNavigationCommands {
-</span><span class='line'>  private static WebDriver driver = null;
-</span><span class='line'>  public static void main(String[] args) {
-</span><span class='line'>
-</span><span class='line'>      // Create a new instance of the Firefox driver
-</span><span class='line'>      driver = new FirefoxDriver();
-</span><span class='line'>
-</span><span class='line'>      // Open Selenium website
-</span><span class='line'>      driver.get("http://docs.seleniumhq.org/");
-</span><span class='line'>
-</span><span class='line'>      // Put an Implicit wait on driver
-</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-</span><span class='line'>
-</span><span class='line'>      // Click on About link
-</span><span class='line'>        driver.findElement(By.Xpath("//a[contains(@href, '/about/')]")).click();
-</span><span class='line'>
-</span><span class='line'>      // Go back to Home Page
-</span><span class='line'>      driver.navigate().back();
-</span><span class='line'>
-</span><span class='line'>      // Go forward to About page
-</span><span class='line'>        driver.navigate().forward();
-</span><span class='line'>
-</span><span class='line'>      // Go back to Home page
-</span><span class='line'>        driver.navigate().to("http://docs.seleniumhq.org/");
-</span><span class='line'>
-</span><span class='line'>      // Refresh browser
-</span><span class='line'>      driver.navigate().refresh();
-</span><span class='line'>
-</span><span class='line'>      // Close browser
-</span><span class='line'>      driver.close();
-</span><span class='line'>  }
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
 ]]></content>
   </entry>
   
