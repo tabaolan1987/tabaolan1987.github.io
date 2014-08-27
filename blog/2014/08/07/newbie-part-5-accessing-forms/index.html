@@ -1,0 +1,343 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Beginner with Selenium WebDriver Part 5 : Accessing Forms - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Beginner with Selenium WebDriver Part 5 : Accessing Forms" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">Beginner With Selenium WebDriver Part 5 : Accessing Forms</h2>
+	<div class="entry-content"><h2>Accessing Forms using Selenium WebDriver</h2>
+
+<p>In this tutorial , we will learn how to access forms and its elements using Webdriver.</p>
+
+<h3>Accessing Form Elements</h3>
+
+<h4>Input Box</h4>
+
+<h5>Input boxes refer to either of these two types:</h5>
+
+<h5>Text Fields- text boxes that accept typed values and show them as they are.</h5>
+
+<h5>Password Fields- text boxes that accept typed values but mask them as a series of special characters (commonly dots and asterisks) to avoid sensitive values to be displayed.</h5>
+
+<p><img src="/images/newbie1.png"></p>
+
+<h3>Entering Values in Input Boxes</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The sendKeys() method is used to enter values into input boxes.</p>
+
+<p><img src="/images/newbie2.png"></p>
+
+<h3>Deleting Values in Input Boxes</h3>
+
+<p>The clear() method is used to delete the text in an input box. This method does not need any parameter. The code snippet below will clear out the text &ldquo;tutorial&rdquo; in the User Name text box.</p>
+
+<p><img src="/images/newbie3.png"></p>
+
+<h3>Radio Button</h3>
+
+<p>Toggling a radio button on is done using the click() method.</p>
+
+<p><img src="/images/newbie4.png"></p>
+
+<h3>Check Box</h3>
+
+<p>Toggling a check box on/off is also done using the click() method.</p>
+
+<p>The code below will click on Facebook&rsquo;s &ldquo;Keep me logged in&rdquo; check box twice and then output the result as TRUE when it is toggled on, and FALSE if it is toggled off.</p>
+
+<p><img src="/images/newbie5.png"></p>
+
+<p><img src="/images/newbie6.png"></p>
+
+<h3>Links</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Links also are accessed by using the click() method.</p>
+
+<p>Consider the below link found in image below.</p>
+
+<p><img src="/images/newbie7.png"></p>
+
+<p>You can access this link using linkText() or partialLinkText() together with click(). Either of the two lines below will be able to access the &ldquo;Register here&rdquo; link shown above.</p>
+
+<p><img src="/images/newbie8.png"></p>
+
+<p><img src="/images/newbie9.png"></p>
+
+<h3>Drop-Down Box</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Before we can control drop-down boxes, we must do following two things :</p>
+
+<p>1.Import the package org.openqa.selenium.support.ui.Select</p>
+
+<p>2.Instantiate the drop-down box as a &ldquo;Select&rdquo; object in WebDriver</p>
+
+<p>Take a look in this example below :</p>
+
+<p><img src="/images/newbie10.png"></p>
+
+<h4>Step 1</h4>
+
+<p>Import the &ldquo;Select&rdquo; package.</p>
+
+<p><img src="/images/newbie11.png"></p>
+
+<h4>Step 2</h4>
+
+<p>Declare the drop-down element as an instance of the Select class. In the example below, we named this instance as &ldquo;drpCountry&rdquo;.</p>
+
+<p><img src="/images/newbie12.png"></p>
+
+<h4>Step 3</h4>
+
+<p>We can now start controlling &ldquo;drpCountry&rdquo; by using any of the available Select methods. The sample code below will select the option &ldquo;ANTARCTICA&rdquo;.</p>
+
+<p><img src="/images/newbie13.png"></p>
+
+<h3>Selecting Items in a Multiple SELECT element</h3>
+
+<p>We can also use the selectByVisibleText() method in selecting multiple options in a multi SELECT element.</p>
+
+<p>Take a look in this example :</p>
+
+<p><img src="/images/newbie14.png"></p>
+
+<p>The code below will select the first two options using the selectByVisibleText() method.</p>
+
+<p><img src="/images/newbie15.png"></p>
+
+<h3>Select Methods</h3>
+
+<p>The following are the most common methods used on drop-down elements.</p>
+
+<p><img src="/images/newbie16.png"></p>
+
+<h3>Submitting a Form</h3>
+
+<p>The submit() method is used to submit a form. This is an alternative to clicking the form&rsquo;s submit button.</p>
+
+<p>You can use submit() on any element within the form, not just on the submit button itself.</p>
+
+<p><img src="/images/newbie17.png"></p>
+
+<p>When submit() is used, WebDriver will look up the DOM to know which form the element belongs to, and then trigger its submit function.</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/08/07/newbie-part-5-accessing-forms/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/07/newbie-part-5-accessing-forms/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/07/newbie-part-5-accessing-forms/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

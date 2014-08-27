@@ -379,7 +379,7 @@
 <div class="entry-content clearfix">
   <h2>Automation Framework Reading data from the Excel</h2>
 
-<h3>Required knowledge : <a href="/blog/2014/05/26/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/05/27/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a></h3>
+<h3>Required knowledge : <a href="/blog/2014/08/07/selenium-automation-framework-page-object-model/">Page Object Model</a>, <a href="/blog/2014/08/07/selenium-automation-framework-modular-driven-framework/">Modular Driven Framework</a></h3>
 
 <p>In some way , the client want us read data from excel file then past it to the automation test.In this tutorial , I will write step by step to read data from excel file then past it to the test.</p>
 
@@ -866,6 +866,630 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/08/07/newbie-part-5-accessing-forms/">Beginner with Selenium WebDriver Part 5 : Accessing Forms</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-07T13:50:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-5-accessing-forms/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Accessing Forms using Selenium WebDriver</h2>
+
+<p>In this tutorial , we will learn how to access forms and its elements using Webdriver.</p>
+
+<h3>Accessing Form Elements</h3>
+
+<h4>Input Box</h4>
+
+<h5>Input boxes refer to either of these two types:</h5>
+
+<h5>Text Fields- text boxes that accept typed values and show them as they are.</h5>
+
+<h5>Password Fields- text boxes that accept typed values but mask them as a series of special characters (commonly dots and asterisks) to avoid sensitive values to be displayed.</h5>
+
+<p><img src="/images/newbie1.png"></p>
+
+<h3>Entering Values in Input Boxes</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The sendKeys() method is used to enter values into input boxes.</p>
+
+<p><img src="/images/newbie2.png"></p>
+
+<h3>Deleting Values in Input Boxes</h3>
+
+<p>The clear() method is used to delete the text in an input box. This method does not need any parameter. The code snippet below will clear out the text &ldquo;tutorial&rdquo; in the User Name text box.</p>
+
+<p><img src="/images/newbie3.png"></p>
+
+<h3>Radio Button</h3>
+
+<p>Toggling a radio button on is done using the click() method.</p>
+
+<p><img src="/images/newbie4.png"></p>
+
+<h3>Check Box</h3>
+
+<p>Toggling a check box on/off is also done using the click() method.</p>
+
+<p>The code below will click on Facebook&rsquo;s &ldquo;Keep me logged in&rdquo; check box twice and then output the result as TRUE when it is toggled on, and FALSE if it is toggled off.</p>
+
+<p><img src="/images/newbie5.png"></p>
+
+<p><img src="/images/newbie6.png"></p>
+
+<h3>Links</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Links also are accessed by using the click() method.</p>
+
+<p>Consider the below link found in image below.</p>
+
+<p><img src="/images/newbie7.png"></p>
+
+<p>You can access this link using linkText() or partialLinkText() together with click(). Either of the two lines below will be able to access the &ldquo;Register here&rdquo; link shown above.</p>
+
+<p><img src="/images/newbie8.png"></p>
+
+<p><img src="/images/newbie9.png"></p>
+
+<h3>Drop-Down Box</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Before we can control drop-down boxes, we must do following two things :</p>
+
+<p>1.Import the package org.openqa.selenium.support.ui.Select</p>
+
+<p>2.Instantiate the drop-down box as a &ldquo;Select&rdquo; object in WebDriver</p>
+
+<p>Take a look in this example below :</p>
+
+<p><img src="/images/newbie10.png"></p>
+
+<h4>Step 1</h4>
+
+<p>Import the &ldquo;Select&rdquo; package.</p>
+
+<p><img src="/images/newbie11.png"></p>
+
+<h4>Step 2</h4>
+
+<p>Declare the drop-down element as an instance of the Select class. In the example below, we named this instance as &ldquo;drpCountry&rdquo;.</p>
+
+<p><img src="/images/newbie12.png"></p>
+
+<h4>Step 3</h4>
+
+<p>We can now start controlling &ldquo;drpCountry&rdquo; by using any of the available Select methods. The sample code below will select the option &ldquo;ANTARCTICA&rdquo;.</p>
+
+<p><img src="/images/newbie13.png"></p>
+
+<h3>Selecting Items in a Multiple SELECT element</h3>
+
+<p>We can also use the selectByVisibleText() method in selecting multiple options in a multi SELECT element.</p>
+
+<p>Take a look in this example :</p>
+
+<p><img src="/images/newbie14.png"></p>
+
+<p>The code below will select the first two options using the selectByVisibleText() method.</p>
+
+<p><img src="/images/newbie15.png"></p>
+
+<h3>Select Methods</h3>
+
+<p>The following are the most common methods used on drop-down elements.</p>
+
+<p><img src="/images/newbie16.png"></p>
+
+<h3>Submitting a Form</h3>
+
+<p>The submit() method is used to submit a form. This is an alternative to clicking the form&rsquo;s submit button.</p>
+
+<p>You can use submit() on any element within the form, not just on the submit button itself.</p>
+
+<p><img src="/images/newbie17.png"></p>
+
+<p>When submit() is used, WebDriver will look up the DOM to know which form the element belongs to, and then trigger its submit function.</p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/07/newbie-part-6-accessing-links-and-tables/">Beginner with Selenium WebDriver Part 6  : Accessing links and tables</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-07T13:45:35+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-6-accessing-links-and-tables/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Accessing Links &amp; Tables using Selenium Webdriver</h2>
+
+<p>In this tutorial, we are going to learn about accessing links &amp; Tables using Webdriver.</p>
+
+<h3>Accessing Links</h3>
+
+<h3>Links Matching a Criterion</h3>
+
+<p>Links can be accessed using an exact or partial match of their link text. The examples below provide scenarios where multiple matches would exist, and would explain how WebDriver would deal with them.</p>
+
+<h3>Exact Match</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Accessing links using their exact link text is done through the By.linkText() method. However, if there are two links that have the very same link text, this method will only access the first one. Consider the HTML code below.</p>
+
+<p><img src="/images/newbie18.png"></p>
+
+<p><img src="/images/newbie19.png"></p>
+
+<p>When you try to run the WebDriver code below, you will be accessing the first &ldquo;click here&rdquo; link</p>
+
+<p><img src="/images/newbie20.png"></p>
+
+<p>As a result, you will automatically be taken to Google.</p>
+
+<p><img src="/images/newbie21.png"></p>
+
+<h3>Partial Match</h3>
+
+<p>Accessing links using a portion of their link text is done using the By.partialLinkText() method. If you specify a partial link text that has multiple matches, only the first match will be accessed. Consider the HTML code below.</p>
+
+<p><img src="/images/newbie22.png"></p>
+
+<p><img src="/images/newbie23.png"></p>
+
+<p>When you execute the WebDriver code below, you will still be taken to Google.</p>
+
+<p><img src="/images/newbie24.png"></p>
+
+<p><img src="/images/newbie25.png"></p>
+
+<h3>Case-sensitivity</h3>
+
+<p>The parameters for By.linkText() and By.partialLinkText() are both case-sensitive, meaning that capitalization matters.</p>
+
+<p><img src="/images/newbie26.png"></p>
+
+<p><img src="/images/newbie27.png"></p>
+
+<p>Though both links contain the character sequence &ldquo;egis&rdquo;, the &ldquo;By.partialLinkText()&rdquo; method will access these two links separately depending on capitilization of the characters. See the sample code below.</p>
+
+<p><img src="/images/newbie28.png"></p>
+
+<h3>All Links</h3>
+
+<p>One of the common procedures in web testing is to test if all the links present within the page are working. This can be conveniently done using a combination of the Java for-each loop and the By.tagName(&ldquo;a&rdquo;) method. The WebDriver code below checks each link from the Mercury Tours homepage to determine those that are working and those that are still under construction.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>package practice_webdriver;
+</span><span class='line'> 
+</span><span class='line'>import java.util.List;
+</span><span class='line'> 
+</span><span class='line'> 
+</span><span class='line'> 
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>import org.openqa.selenium.*;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.openqa.selenium.support.ui.ExpectedConditions;
+</span><span class='line'>import org.openqa.selenium.support.ui.WebDriverWait;
+</span><span class='line'> 
+</span><span class='line'>public class AllLinks {
+</span><span class='line'> 
+</span><span class='line'>    public static void main(String[] args) {
+</span><span class='line'>        String baseUrl = "http://newtours.demoaut.com/";
+</span><span class='line'>        WebDriver driver = new FirefoxDriver();
+</span><span class='line'>        String underConsTitle = "Under Construction: Mercury Tours";
+</span><span class='line'>        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+</span><span class='line'> 
+</span><span class='line'>        driver.get(baseUrl);
+</span><span class='line'>        List&lt;WebElement&gt; linkElements = driver.findElements(By.tagName("a"));
+</span><span class='line'>        String[] linkTexts = new String[linkElements.size()];
+</span><span class='line'>        int i = 0;
+</span><span class='line'> 
+</span><span class='line'>        //extract the link texts of each link element
+</span><span class='line'>        for (WebElement e : linkElements) {
+</span><span class='line'>            linkTexts[i] = e.getText();
+</span><span class='line'>            i++;
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        //test each link
+</span><span class='line'>        for (String t : linkTexts) {
+</span><span class='line'>            driver.findElement(By.linkText(t)).click();
+</span><span class='line'>            if (driver.getTitle().equals(underConsTitle)) {
+</span><span class='line'>                System.out.println("\"" + t + "\""
+</span><span class='line'>                        + " is under construction.");
+</span><span class='line'>            } else {
+</span><span class='line'>                System.out.println("\"" + t + "\""
+</span><span class='line'>                        + " is working.");
+</span><span class='line'>            }
+</span><span class='line'>            driver.navigate().back();
+</span><span class='line'>        }
+</span><span class='line'>        driver.quit();
+</span><span class='line'>    }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output should be similar to the one indicated below.</p>
+
+<p><img src="/images/newbie29.png"></p>
+
+<h3>Links Outside and Inside a Block</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The latest HTML5 standard allows the <a> tags to be placed inside and outside of block-level tags like <div>, <p>, or <h1>. The &ldquo;By.linkText()&rdquo; and &ldquo;By.partialLinkText()&rdquo; methods can access a link located outside and inside these block-level elements. Consider the HTML code below.</p>
+
+<p><img src="/images/newbie30.png"></p>
+
+<p><img src="/images/newbie31.png"></p>
+
+<p>The WebDriver code below accesses both of these links using By.partialLinkText() method.</p>
+
+<p><img src="/images/newbie33.png"></p>
+
+<p>The output above confirms that both links were accessed successfully because their respective page titles were retrieved correctly.</p>
+
+<h3>Accessing Image Links</h3>
+
+<p>Image links are images that act as references to other sites or sections within the same page. Since they are images, we cannot use the By.linkText() and By.partialLinkText() methods because image links basically have no link texts at all. In this case, we should resort to using either By.cssSelector or By.xpath. The first method is more preferred because of its simplicity.</p>
+
+<p>In the example below, we will access the &ldquo;Facebook&rdquo; logo on the upper left portion of Facebook&rsquo;s Password Recovery page.</p>
+
+<p><img src="/images/newbie34.png"></p>
+
+<p>We will use By.cssSelector and the element&rsquo;s &ldquo;title&rdquo; attribute to access the image link. And then we will verify if we are taken to Facebook&rsquo;s homepage.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>package practice_webdriver;
+</span><span class='line'> 
+</span><span class='line'> 
+</span><span class='line'> 
+</span><span class='line'>import org.openqa.selenium.*;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'> 
+</span><span class='line'>public class ImageLink {
+</span><span class='line'> 
+</span><span class='line'>    public static void main(String[] args) {
+</span><span class='line'>        String baseUrl = "https://www.facebook.com/login/identify?ctx=recover";
+</span><span class='line'>        WebDriver driver = new FirefoxDriver();
+</span><span class='line'> 
+</span><span class='line'>        driver.get(baseUrl);
+</span><span class='line'>        //click on the "Facebook" logo on the upper left portion
+</span><span class='line'>        driver.findElement(By.cssSelector("a[title=\"Go to Facebook Home\"]")).click();
+</span><span class='line'> 
+</span><span class='line'>        //verify that we are now back on Facebook's homepage
+</span><span class='line'>        if (driver.getTitle().equals("Welcome to Facebook - Log In, Sign Up or Learn More")) {
+</span><span class='line'>            System.out.println("We are back at Facebook's homepage");
+</span><span class='line'>        } else {
+</span><span class='line'>            System.out.println("We are NOT in Facebook's homepage");
+</span><span class='line'>        }
+</span><span class='line'>        driver.quit();
+</span><span class='line'>    }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Result</p>
+
+<p><img src="/images/newbie35.png"></p>
+
+<h3>Reading a Table</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>There are times when we need to access elements (usually texts) that are within HTML tables. However, it is very seldom for a web designer to provide an id or name attribute to a certain cell in the table. Therefore, we cannot use the usual methods such as &ldquo;By.id()&rdquo;, &ldquo;By.name()&rdquo;, or &ldquo;By.cssSelector()&rdquo;. In this case, the most reliable option is to access them using the &ldquo;By.xpath()&rdquo; method.</p>
+
+<h4>XPath Syntax</h4>
+
+<p>Consider the HTML code below.</p>
+
+<p><img src="/images/newbie36.png"></p>
+
+<p>We will use XPath to get the inner text of the cell containing the text &ldquo;fourth cell&rdquo;.</p>
+
+<p><img src="/images/newbie37.png"></p>
+
+<h5>Step 1 &ndash; Set the Parent Element (table)</h5>
+
+<p>XPath locators in WebDriver always start with a double forward slash &ldquo;//&rdquo; and then followed by the parent element. Since we are dealing with tables, the parent element should always be the <table> tag. The first portion of our XPath locator should therefore start with &ldquo;//table&rdquo;.</p>
+
+<p><img src="/images/newbie38.png"></p>
+
+<h5>Step 2 &ndash; Add the child elements</h5>
+
+<p>The element immediately under <table> is <tbody> so we can say that <tbody> is the &ldquo;child&rdquo; of <table>. And also, <table> is the &ldquo;parent&rdquo; of <tbody>. All child elements in XPath are placed to the right of their parent element, separated with one forward slash &ldquo;/&rdquo; like the code shown below.</p>
+
+<p><img src="/images/newbie39.png">                <img src="/images/newbie40.png"></p>
+
+<h6>Step 3 &ndash; Add Predicates</h6>
+
+<p>The <tbody> element contains two <tr> tags. We can now say that these two <tr> tags are &ldquo;children&rdquo; of <tbody>. Consequently, we can say that <tbody> is the parent of both the <tr> elements.</p>
+
+<p>Another thing we can conclude is that the two <tr> elements are siblings. Siblings refer to child elements having the same parent.</p>
+
+<p>To get to the <td> we wish to access (the one with the text &ldquo;fourth cell&rdquo;), we must first access the second <tr> and not the first. If we simply write &ldquo;//table/tbody/tr&rdquo;, then we will be accessing the first <tr> tag.</p>
+
+<p>So, how do we access the second <tr> then? The answer to this is to use Predicates.</p>
+
+<p>Predicates are numbers or HTML attributes enclosed in a pair of square brackets &ldquo;[ ]&rdquo; that distinguish a child element from its siblings. Since the <tr> we need to access is the second one, we shall use &ldquo;[2]&rdquo; as the predicate.</p>
+
+<p><img src="/images/newbie41.png"></p>
+
+<p>If we won&rsquo;t use any predicate, XPath will access the first sibling. Therefore, we can access the first <tr> using either of these XPath codes.</p>
+
+<p><img src="/images/newbie42.png"></p>
+
+<h5>Step 4 &ndash; Add the Succeeding Child Elements Using the Appropriate Predicates</h5>
+
+<p>The next element we need to access is the second <td>. Applying the principles we have learned from steps 2 and 3, we will finalize our XPath code to be like the one shown below.</p>
+
+<p><img src="/images/newbie43.png"></p>
+
+<p>Now that we have the correct XPath locator, we can already access the cell that we wanted to and obtain its inner text using the code below. It assumes that you have saved the HTML code above as &ldquo;newhtml.html&rdquo; within your C Drive.</p>
+
+<p><img src="/images/newbie44.png"></p>
+
+<p><img src="/images/newbie45.png"></p>
+
+<h3>Accessing Nested Tables</h3>
+
+<p>The same principles discussed above applies to nested tables. Nested tables are tables located within another table. An example is shown below.</p>
+
+<p><img src="/images/newbie46.png"></p>
+
+<p><img src="/images/newbie47.png"></p>
+
+<p>To access the cell with the text &ldquo;4-5-6&rdquo; using the &ldquo;//parent/child&rdquo; and predicate concepts from the previous section, we should be able to come up with the XPath code below.</p>
+
+<p><img src="/images/newbie48.png"></p>
+
+<p>The WebDriver code below should be able to retrieve the inner text of the cell which we are accessing.</p>
+
+<p><img src="/images/newbie49.png"></p>
+
+<p>The output below confirms that the inner table was successfully accessed.</p>
+
+<p><img src="/images/newbie50.png"></p>
+
+<h3>Using Attributes as Predicates</h3>
+
+<p>If the element is written deep within the HTML code such that the number to use for the predicate is very difficult to determine, we can use that element&rsquo;s unique attribute instead.</p>
+
+<p>In the example below, the &ldquo;New York to Chicago&rdquo; cell is located deep into Mercury Tours homepage&rsquo;s HTML code.</p>
+
+<p><img src="/images/newbie51.png"></p>
+
+<p><img src="/images/newbie52.png"></p>
+
+<p>In this case, we can use the table&rsquo;s unique attribute (width=&ldquo;270&rdquo;) as the predicate. Attributes are used as predicates by prefixing them with the @ symbol. In the example above, the &ldquo;New York to Chicago&rdquo; cell is located in the first <td> of the fourth <tr>, and so our XPath should be as shown below.</p>
+
+<p><img src="/images/newbie53.png"></p>
+
+<p>Remember that when we put the XPath code in Java, we should use the escape character backward slash &ldquo;\&rdquo; for the double quotation marks on both sides of &ldquo;270&rdquo; so that the string argument of By.xpath() will not be terminated prematurely.</p>
+
+<p><img src="/images/newbie54.png"></p>
+
+<p>We are now ready to access that cell using the code below.</p>
+
+<p><img src="/images/newbie55.png"></p>
+
+<p><img src="/images/newbie56.png"></p>
+
+<h3>Shortcut: Use Firebug</h3>
+
+<p>If the number or attribute of an element is extremely difficult or impossible to obtain, the quickest way to generate the XPath code is thru Firebug.</p>
+
+<p>Consider the example below.</p>
+
+<p><img src="/images/newbie57.png"></p>
+
+<h4>Step 1</h4>
+
+<p>Use Firebug to obtain the XPath code.</p>
+
+<p><img src="/images/newbie58.png"></p>
+
+<h4>Step 2</h4>
+
+<p>Look for the first &ldquo;table&rdquo; parent element and delete everything to the left of it.</p>
+
+<p><img src="/images/newbie59.png"></p>
+
+<h4>Step 3</h4>
+
+<p>Prefix the remaining portion of the code with double forward slash &ldquo;//&rdquo; and copy it over to your WebDriver code.</p>
+
+<p><img src="/images/newbie60.png"></p>
+
+<p>The WebDriver code below will be able to successfully retrieve the inner text of the element we are accessing.</p>
+
+<p><img src="/images/newbie61.png"></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/">How to take screenshot in Internet Explore</a>
   </h1>
   
@@ -1067,248 +1691,6 @@
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/07/03/run-script-selenium-ide-in-chrome/">Run Script Selenium IDE in Chrome</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-07-03T14:55:19+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jul 3<span>rd</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
-      
-        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/07/03/run-script-selenium-ide-in-chrome/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>Required download :</h2>
-
-<p>1) <a href="/blog/2014/05/22/newbie-part-1-download-and-install-java/">Download and install JAVA</a></p>
-
-<p>2) Download the latest Selenium server stand alone : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
-
-<p><img src="/images/selenium-server.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>3) Download the latest Chrome Driver server : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
-
-<p><img src="/images/chrome-server.png"></p>
-
-<h2>Required setup :</h2>
-
-<p>1) When you download 2 file Selenium server and Chrome Driver server successfully , create new folder , copy 2 file jar to this folder and name this folder is &lsquo;Server&rsquo;.</p>
-
-<p><img src="/images/folder-server-chrome.png"></p>
-
-<p>2) Copy this folder &lsquo;Server&rsquo; to whatever you want in your computer.In this tutorial I copy this to Disk &lsquo;C&rsquo;.</p>
-
-<p><img src="/images/folder-server-2.png"></p>
-
-<p>3) Open your command line.</p>
-
-<p><img src="/images/cmd1.png"></p>
-
-<p>4) Locate your command line to the folder &lsquo;Server&rsquo;.</p>
-
-<p><img src="/images/cmd2.png"></p>
-
-<p>5) Start Selenium server and Chrome Driver Server by copy this command to the command line</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\chromedriver.exe</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="/images/cmd4.png"></p>
-
-<p>6) Open your Selenium IDE and load your test script you already created.</p>
-
-<p><img src="/images/ie-ide-1.png"></p>
-
-<p>7) Click on menu Options &ndash;> choose Options.</p>
-
-<p><img src="/images/ie-ide-3.png"></p>
-
-<p>8) Click on tab &lsquo;WebDriver&rsquo; &ndash;> check on &lsquo;Enable WebDriver Playback&rsquo; &ndash;> enter value &lsquo;chrome&rsquo; &ndash;> Click &lsquo;OK&rsquo; button.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="/images/chrome-ide-1.png"></p>
-
-<p>9) Click on &lsquo;Play current test case&rsquo;.This will open your Chrome and run your script automatic. Have fun and happy learning.</p>
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/07/03/run-script-selenium-ide-in-internet-explorer/">Run Script Selenium IDE in Internet Explorer</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-07-03T14:05:55+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jul 3<span>rd</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
-      
-        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/07/03/run-script-selenium-ide-in-internet-explorer/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>Required download :</h2>
-
-<p>1) <a href="/blog/2014/05/22/newbie-part-1-download-and-install-java/">Download and install JAVA</a></p>
-
-<p>2) Download the latest Selenium server stand alone : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
-
-<p><img src="/images/selenium-server.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>3) Download the latest Internet Explorer Driver server : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
-
-<p><img src="/images/ie-server.png"></p>
-
-<h2>Required setup :</h2>
-
-<p>1) When you download 2 file Selenium server and Internet Explorer Driver server successfully , create new folder , copy 2 file jar to this folder and name this folder is &lsquo;Server&rsquo;.</p>
-
-<p><img src="/images/folder-server.png"></p>
-
-<p>2) Copy this folder &lsquo;Server&rsquo; to whatever you want in your computer.In this tutorial I copy this to Disk &lsquo;C&rsquo;.</p>
-
-<p><img src="/images/folder-server-2.png"></p>
-
-<p>3) Open your command line.</p>
-
-<p><img src="/images/cmd1.png"></p>
-
-<p>4) Locate your command line to the folder &lsquo;Server&rsquo;.</p>
-
-<p><img src="/images/cmd2.png"></p>
-
-<p>5) Start Selenium server and Internet Explorer Driver Server by copy this command to the command line</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\IEDriverServer.exe</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="/images/cmd3.png"></p>
-
-<p>6) Open your Selenium IDE and load your test script you already created.</p>
-
-<p><img src="/images/ie-ide-1.png"></p>
-
-<p>7) Click on menu Options &ndash;> choose Options.</p>
-
-<p><img src="/images/ie-ide-3.png"></p>
-
-<p>8) Click on tab &lsquo;WebDriver&rsquo; &ndash;> check on &lsquo;Enable WebDriver Playback&rsquo; &ndash;> enter value &lsquo;internet explorer&rsquo; &ndash;> Click &lsquo;OK&rsquo; button.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="/images/ie-ide-4.png"></p>
-
-<p>9) Click on &lsquo;Play current test case&rsquo;.This will open your Internet Explore and run your script automatic. Have fun and happy learning.</p>
 
 
   </article>

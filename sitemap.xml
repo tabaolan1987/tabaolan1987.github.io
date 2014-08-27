@@ -174,9 +174,19 @@
     </url>
     <url>
         <loc>
+            http://www.tabaolan.com/blog/2014/08/07/newbie-part-6-accessing-links-and-tables/
+        </loc>
+        <lastmod>2014-08-27T16:44:28+07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/blog/2014/08/07/newbie-part-5-accessing-forms/</loc>
+        <lastmod>2014-08-27T16:43:43+07:00</lastmod>
+    </url>
+    <url>
+        <loc>
             http://www.tabaolan.com/blog/2014/08/07/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/
         </loc>
-        <lastmod>2014-08-07T15:35:24+07:00</lastmod>
+        <lastmod>2014-08-27T16:43:02+07:00</lastmod>
     </url>
     <url>
         <loc>
@@ -188,7 +198,7 @@
         <loc>
             http://www.tabaolan.com/blog/2014/08/07/selenium-automation-framework-p8-read-data-from-excel-file/
         </loc>
-        <lastmod>2014-08-07T15:38:10+07:00</lastmod>
+        <lastmod>2014-08-27T14:39:28+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/08/07/webdriver-action-class/</loc>
@@ -402,15 +412,15 @@
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/archives/</loc>
-        <lastmod>2014-08-21T12:07:52+07:00</lastmod>
+        <lastmod>2014-08-27T16:44:28+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/</loc>
-        <lastmod>2014-08-21T12:07:52+07:00</lastmod>
+        <lastmod>2014-08-27T16:44:28+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/</loc>
-        <lastmod>2014-08-21T12:07:52+07:00</lastmod>
+        <lastmod>2014-08-27T16:44:28+07:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/search.html</loc>

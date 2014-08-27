@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NewBie | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/newbie/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-08-22T17:06:46+07:00</updated>
+  <updated>2014-08-27T16:44:49+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -203,8 +203,9 @@
 
 <p>a) Double click on ‘eclipse.exe’ to start eclipse. First time when you start eclipse, it will ask you to select your workspace where your work will be stored as shown in below image.</p>
 
-<p><img src="/images/Start-Eclipse-1.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><img src="/images/Start-Eclipse-1.png"></p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <p>b) Create a “working directory” for all of your projects. Think of it like “My Documents” in the Windows operating system. It’s a folder which contains a lot of your documents, but there’s nothing to prevent you from creating another folder called “My Other Documents” (for instance) to house other documents.</p>
 
@@ -335,7 +336,7 @@ public static void main(String[] args) {
     driver.findElement(By.Xpath("//form[@id='login_form']/table/tbody/tr[2]/td[3]/label/input")).click();
 
     // Print a Log In message to the screen
-    System.out.println(" Login Successfully, now it is the time to Log Off buddy.");
+    System.out.println(" Login Successfully.");
 
     // Close the driver
     driver.quit();
@@ -348,7 +349,7 @@ public static void main(String[] args) {
 
 <p>2) Now, to start the test just select Run > Run As > Java Application Or Right Click on Eclipse code and Click Run As  > Java Application</p>
 
-<p>3) After a few Seconds a Mozilla browser will open  and you will see that with the help of your script, Selenium will Launch the Online Store, perform Sign in, display the Message, perform Log out and then Close the browser.</p>
+<p>3) After a few Seconds a Mozilla browser will open  and you will see that with the help of your script, Selenium will Launch the Facebook, perform Sign in and then Close the browser.</p>
 
 <p>Once the execution is finished, you will see the message in Console section of the Eclipse IDE.</p>
 
@@ -357,64 +358,131 @@ public static void main(String[] args) {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Run Script Selenium IDE in Chrome]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/07/03/run-script-selenium-ide-in-chrome/"/>
-    <updated>2014-07-03T14:55:19+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/07/03/run-script-selenium-ide-in-chrome</id>
-    <content type="html"><![CDATA[<h2>Required download :</h2>
+    <title type="html"><![CDATA[Beginner with Selenium WebDriver Part 5 : Accessing Forms]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-5-accessing-forms/"/>
+    <updated>2014-08-07T13:50:35+07:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/07/newbie-part-5-accessing-forms</id>
+    <content type="html"><![CDATA[<h2>Accessing Forms using Selenium WebDriver</h2>
 
-<p>1) <a href="/blog/2014/05/22/newbie-part-1-download-and-install-java/">Download and install JAVA</a></p>
+<p>In this tutorial , we will learn how to access forms and its elements using Webdriver.</p>
 
-<p>2) Download the latest Selenium server stand alone : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
+<h3>Accessing Form Elements</h3>
 
-<p><img src="/images/selenium-server.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<h4>Input Box</h4>
 
-<p>3) Download the latest Chrome Driver server : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
+<h5>Input boxes refer to either of these two types:</h5>
 
-<p><img src="/images/chrome-server.png"></p>
+<h5>Text Fields- text boxes that accept typed values and show them as they are.</h5>
 
-<h2>Required setup :</h2>
+<h5>Password Fields- text boxes that accept typed values but mask them as a series of special characters (commonly dots and asterisks) to avoid sensitive values to be displayed.</h5>
 
-<p>1) When you download 2 file Selenium server and Chrome Driver server successfully , create new folder , copy 2 file jar to this folder and name this folder is &lsquo;Server&rsquo;.</p>
+<p><img src="/images/newbie1.png"></p>
 
-<p><img src="/images/folder-server-chrome.png"></p>
+<h3>Entering Values in Input Boxes</h3>
 
-<p>2) Copy this folder &lsquo;Server&rsquo; to whatever you want in your computer.In this tutorial I copy this to Disk &lsquo;C&rsquo;.</p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p><img src="/images/folder-server-2.png"></p>
+<p>The sendKeys() method is used to enter values into input boxes.</p>
 
-<p>3) Open your command line.</p>
+<p><img src="/images/newbie2.png"></p>
 
-<p><img src="/images/cmd1.png"></p>
+<h3>Deleting Values in Input Boxes</h3>
 
-<p>4) Locate your command line to the folder &lsquo;Server&rsquo;.</p>
+<p>The clear() method is used to delete the text in an input box. This method does not need any parameter. The code snippet below will clear out the text &ldquo;tutorial&rdquo; in the User Name text box.</p>
 
-<p><img src="/images/cmd2.png"></p>
+<p><img src="/images/newbie3.png"></p>
 
-<p>5) Start Selenium server and Chrome Driver Server by copy this command to the command line</p>
+<h3>Radio Button</h3>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<code>
-java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\chromedriver.exe
-</code></p>
+<p>Toggling a radio button on is done using the click() method.</p>
 
-<p><img src="/images/cmd4.png"></p>
+<p><img src="/images/newbie4.png"></p>
 
-<p>6) Open your Selenium IDE and load your test script you already created.</p>
+<h3>Check Box</h3>
 
-<p><img src="/images/ie-ide-1.png"></p>
+<p>Toggling a check box on/off is also done using the click() method.</p>
 
-<p>7) Click on menu Options &ndash;> choose Options.</p>
+<p>The code below will click on Facebook&rsquo;s &ldquo;Keep me logged in&rdquo; check box twice and then output the result as TRUE when it is toggled on, and FALSE if it is toggled off.</p>
 
-<p><img src="/images/ie-ide-3.png"></p>
+<p><img src="/images/newbie5.png"></p>
 
-<p>8) Click on tab &lsquo;WebDriver&rsquo; &ndash;> check on &lsquo;Enable WebDriver Playback&rsquo; &ndash;> enter value &lsquo;chrome&rsquo; &ndash;> Click &lsquo;OK&rsquo; button.</p>
+<p><img src="/images/newbie6.png"></p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="/images/chrome-ide-1.png"></p>
+<h3>Links</h3>
 
-<p>9) Click on &lsquo;Play current test case&rsquo;.This will open your Chrome and run your script automatic. Have fun and happy learning.</p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Links also are accessed by using the click() method.</p>
+
+<p>Consider the below link found in image below.</p>
+
+<p><img src="/images/newbie7.png"></p>
+
+<p>You can access this link using linkText() or partialLinkText() together with click(). Either of the two lines below will be able to access the &ldquo;Register here&rdquo; link shown above.</p>
+
+<p><img src="/images/newbie8.png"></p>
+
+<p><img src="/images/newbie9.png"></p>
+
+<h3>Drop-Down Box</h3>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Before we can control drop-down boxes, we must do following two things :</p>
+
+<p>1.Import the package org.openqa.selenium.support.ui.Select</p>
+
+<p>2.Instantiate the drop-down box as a &ldquo;Select&rdquo; object in WebDriver</p>
+
+<p>Take a look in this example below :</p>
+
+<p><img src="/images/newbie10.png"></p>
+
+<h4>Step 1</h4>
+
+<p>Import the &ldquo;Select&rdquo; package.</p>
+
+<p><img src="/images/newbie11.png"></p>
+
+<h4>Step 2</h4>
+
+<p>Declare the drop-down element as an instance of the Select class. In the example below, we named this instance as &ldquo;drpCountry&rdquo;.</p>
+
+<p><img src="/images/newbie12.png"></p>
+
+<h4>Step 3</h4>
+
+<p>We can now start controlling &ldquo;drpCountry&rdquo; by using any of the available Select methods. The sample code below will select the option &ldquo;ANTARCTICA&rdquo;.</p>
+
+<p><img src="/images/newbie13.png"></p>
+
+<h3>Selecting Items in a Multiple SELECT element</h3>
+
+<p>We can also use the selectByVisibleText() method in selecting multiple options in a multi SELECT element.</p>
+
+<p>Take a look in this example :</p>
+
+<p><img src="/images/newbie14.png"></p>
+
+<p>The code below will select the first two options using the selectByVisibleText() method.</p>
+
+<p><img src="/images/newbie15.png"></p>
+
+<h3>Select Methods</h3>
+
+<p>The following are the most common methods used on drop-down elements.</p>
+
+<p><img src="/images/newbie16.png"></p>
+
+<h3>Submitting a Form</h3>
+
+<p>The submit() method is used to submit a form. This is an alternative to clicking the form&rsquo;s submit button.</p>
+
+<p>You can use submit() on any element within the form, not just on the submit button itself.</p>
+
+<p><img src="/images/newbie17.png"></p>
+
+<p>When submit() is used, WebDriver will look up the DOM to know which form the element belongs to, and then trigger its submit function.</p>
 ]]></content>
   </entry>
   
