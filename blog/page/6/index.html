@@ -137,6 +137,129 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/">Selenium WebDriver wait for new tab open</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-07-04T11:12:22+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jul 4<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
+      
+        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/07/04/selenium-webdriver-wait-for-tab-open/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Selenium Tutorial : How to wait for new tab open using Selenium WebDriver?</h2>
+
+<h3>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>  /**
+</span><span class='line'>   * @param driver : this is webdriver
+</span><span class='line'>   * @param timeout : time you define to wait the tab open
+</span><span class='line'>   * @return true if tab open in the time , false if tab not open in the time.
+</span><span class='line'>   */
+</span><span class='line'>public static boolean waitForNewTab(WebDriver driver,int timeout){
+</span><span class='line'>      boolean check = false;
+</span><span class='line'>      int count = 0;
+</span><span class='line'>      while(!check){
+</span><span class='line'>          try {
+</span><span class='line'>              Set&lt;String&gt; winHandle = driver.getWindowHandles();
+</span><span class='line'>              if(winHandle.size() &gt; 1){
+</span><span class='line'>                  check = true;
+</span><span class='line'>                  return check;
+</span><span class='line'>              }
+</span><span class='line'>              Thread.sleep(1000);
+</span><span class='line'>              count++;
+</span><span class='line'>              if(count &gt; timeout){
+</span><span class='line'>                  return check;
+</span><span class='line'>              }
+</span><span class='line'>          } catch (Exception e) {
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>      return check;
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/07/03/run-script-selenium-ide-in-chrome/">Run Script Selenium IDE in Chrome</a>
   </h1>
   
@@ -1444,152 +1567,6 @@
 </span><span class='line'>
 </span><span class='line'>value  : *background-color= #0000FF*</span></code></pre></td></tr></table></div></figure>
 
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/">Selenium Ide : loop through array variables</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T09:16:02+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories//'>,</a></li>
-      
-        <li><a class='category' href='/categories/selenium-ide/'>Selenium-IDE</a></li>
-      
-        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <p>If you want Selenium IDE loop through your array ,</p>
-
-<p>let take a look in code this example :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;storeEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;new Array(&quot;postgresql&quot;,&quot;mysql&quot;);&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;myarray&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;getEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index=0;&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;while&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index &lt; storedVars['myarray'].length&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;storeEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;temp&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;echo&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;javascript{storedVars['myarray'][storedVars['temp']]}&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;getEval&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;index++;&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;
-</span><span class='line'>&lt;tr&gt;
-</span><span class='line'>&lt;td&gt;endWhile&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;&lt;/td&gt;
-</span><span class='line'>&lt;/tr&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or follower there command in this picture</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="/images/tricks-ide-loop-array.png"></p>
 
 
   </article>
