@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-09-16T17:01:18+07:00</updated>
+  <updated>2014-09-18T08:51:14+07:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -129,7 +129,7 @@ FileUtils.copyFile(output, file);
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <code>
-java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\chromedriver.exe
+java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.chrome.driver=.\chromedriver.exe
 </code></p>
 
 <p><img src="/images/cmd4.png"></p>
