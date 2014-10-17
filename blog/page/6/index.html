@@ -137,6 +137,293 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/08/07/newbie-part-7-keyboard-mouse-events/">Beginner with Selenium WebDriver Part 7 : Keyboard Mouse Events , Uploading Files </a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-07T07:20:35+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-7-keyboard-mouse-events/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Keyboard Mouse Events , Uploading Files &ndash; Webdriver</h2>
+
+<p>In this tutorial we will learn handling keyboard and mouse in Webdriver and deal with file uploads and downloads.</p>
+
+<h3>Handling Keyboard &amp; Mouse Events</h3>
+
+<p><img src="/images/newbie62.jpg"></p>
+
+<p>Handling special keyboard and mouse events are done using the Advanced User Interactions API. It contains the Actions and the Action classes that are needed when executing these events. The following are the most commonly used keyboard and mouse events provided by the Actions class.</p>
+
+<p>Let take a look in methods of Action class below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>1.clickAndHold() : Clicks (without releasing) at the current mouse location.</p>
+
+<p>2.contextClick() : Performs a context-click at the current mouse location.</p>
+
+<p>3.doubleClick() : Performs a double-click at the current mouse location.</p>
+
+<p>4.dragAndDrop(source, target) : Performs click-and-hold at the location of the source element, moves to the location of the target element, then releases the mouse.Parameters : source- element to emulate button down at,target- element to move to and release the mouse at.</p>
+
+<p>5.dragAndDropBy(source, x-offset, y-offset) : Performs click-and-hold at the location of the source element, moves by a given offset, then releases the mouse.Parameters:source- element to emulate button down at , xOffset- horizontal move offset, yOffset- vertical move offset.</p>
+
+<p>6.keyDown(modifier_key) : Performs a modifier key press. Does not release the modifier key &ndash; subsequent interactions may assume it&rsquo;s kept pressed.Parameters: modifier_key &ndash; any of the modifier keys (Keys.ALT, Keys.SHIFT, or Keys.CONTROL)</p>
+
+<p>7.keyUp(modifier _key) : Performs a key release. Parameters: modifier_key &ndash; any of the modifier keys (Keys.ALT, Keys.SHIFT, or Keys.CONTROL)</p>
+
+<p>8.moveByOffset(x-offset, y-offset) : Moves the mouse from its current position (or 0,0) by the given offset.Parameters:x-offset- horizontal offset. A negative value means moving the mouse left.y-offset- vertical offset. A negative value means moving the mouse up.</p>
+
+<p>9.moveToElement(toElement) : Moves the mouse to the middle of the element. Parameters:toElement- element to move to.</p>
+
+<p>10.release() : Releases the depressed left mouse button at the current mouse location</p>
+
+<p>11.sendKeys(onElement, charsequence) : Sends a series of keystrokes onto the element.Parameters: onElement &ndash; element that will receive the keystrokes, usually a text field , charsequence &ndash; any string value representing the sequence of keystrokes to be sent.</p>
+
+<p>In the following example, we shall use the moveToElement() method to mouse-over on one Mercury Tours&#8217; table rows. See the example below.</p>
+
+<p><img src="/images/newbie63.png"></p>
+
+<p>The cell shown above is a portion of a <TR> element. If not hovered, its color is #FFC455 (orange). After hovering, the cell&rsquo;s color becomes transparent. It becomes the same color as the blue background of the whole orange table.</p>
+
+<h4>Step 1</h4>
+
+<p>Import the Actions and Action classes.</p>
+
+<p><img src="/images/newbie64.png"></p>
+
+<h4>Step 2</h4>
+
+<p>Instantiate a new Actions object.</p>
+
+<p><img src="/images/newbie65.png"></p>
+
+<h4>Step 3</h4>
+
+<p>Instantiate an Action using the Actions object in step 2.</p>
+
+<p><img src="/images/newbie66.png"></p>
+
+<p>In this case, we are going to use the moveToElement() method because we are simply going to mouse-over the &ldquo;Home&rdquo; link. The build() method is always the final method used so that all the listed actions will be compiled into a single step.</p>
+
+<h4>Step 4</h4>
+
+<p>Use the perform() method when executing the Action object we designed in Step 3.</p>
+
+<p><img src="/images/newbie67.png"></p>
+
+<p>Below is the whole WebDriver code to check the background color of the <TR> element before and after the mouse-over.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import org.openqa.selenium.*;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'> 
+</span><span class='line'>import org.openqa.selenium.interactions.Action;
+</span><span class='line'>import org.openqa.selenium.interactions.Actions;
+</span><span class='line'> 
+</span><span class='line'>public class myclass {
+</span><span class='line'> 
+</span><span class='line'>public static void main(String[] args) {
+</span><span class='line'>String baseUrl = "http://newtours.demoaut.com/";
+</span><span class='line'>        WebDriver driver = new FirefoxDriver();
+</span><span class='line'> 
+</span><span class='line'>        driver.get(baseUrl);           
+</span><span class='line'>        WebElement link_Home = driver.findElement(By.linkText("Home"));
+</span><span class='line'>        WebElement td_Home = driver
+</span><span class='line'>                .findElement(By
+</span><span class='line'>                .xpath("//html/body/div"
+</span><span class='line'>                + "/table/tbody/tr/td"
+</span><span class='line'>                + "/table/tbody/tr/td"
+</span><span class='line'>                + "/table/tbody/tr/td"
+</span><span class='line'>                + "/table/tbody/tr"));    
+</span><span class='line'>         
+</span><span class='line'>        Actions builder = new Actions(driver);
+</span><span class='line'>        Action mouseOverHome = builder
+</span><span class='line'>                .moveToElement(link_Home)
+</span><span class='line'>                .build();
+</span><span class='line'>         
+</span><span class='line'>        String bgColor = td_Home.getCssValue("background-color");
+</span><span class='line'>        System.out.println("Before hover: " + bgColor);        
+</span><span class='line'>        mouseOverHome.perform();        
+</span><span class='line'>        bgColor = td_Home.getCssValue("background-color");
+</span><span class='line'>        System.out.println("After hover: " + bgColor);
+</span><span class='line'>        driver.quit();
+</span><span class='line'>}
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The output below clearly states that the background color became transparent after the mouse-over.</p>
+
+<p><img src="/images/newbie68.png"></p>
+
+<h3>Building a Series of Multiple Actions</h3>
+
+<p>You can build a series of actions using the Action and Actions classes. Just remember to close the series with the build() method. Consider the sample code below.</p>
+
+<p><img src="/images/newbie69.png"></p>
+
+<p><img src="/images/newbie70.png"></p>
+
+<h3>Uploading Files</h3>
+
+<p>For this section, we will use <a href="http://www.megafileupload.com/">http://www.megafileupload.com/</a> as our test application. This site easily allows any visitor to upload and download files without requiring them to sign up.</p>
+
+<p>Uploading files in WebDriver is done by simply using the sendKeys() method on the file-select input field to enter the path to the file to be uploaded.</p>
+
+<p><img src="/images/newbie71.png"></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import org.openqa.selenium.*;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>public class myclass {
+</span><span class='line'>public static void main(String[] args) {
+</span><span class='line'>String baseUrl = "http://www.megafileupload.com/";
+</span><span class='line'>WebDriver driver = new FirefoxDriver();
+</span><span class='line'> 
+</span><span class='line'>driver.get(baseUrl);
+</span><span class='line'>WebElement uploadElement = driver.findElement(By.id("uploadfile_0"));
+</span><span class='line'> 
+</span><span class='line'>// enter the file path onto the file-selection input field
+</span><span class='line'>uploadElement.sendKeys("C:\\newhtml.html");
+</span><span class='line'> 
+</span><span class='line'>// check the "I accept the terms of service" check box
+</span><span class='line'>driver.findElement(By.id("terms")).click();
+</span><span class='line'> 
+</span><span class='line'>// click the "UploadFile" button
+</span><span class='line'>driver.findElement(By.name("send")).click();
+</span><span class='line'>}
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>After running this script, you should be able to upload the file successfully and you should get a message similar to this.</p>
+
+<p><img src="/images/newbie72.png"></p>
+
+<p>Remember following two things when uploading files in WebDriver</p>
+
+<p>1.There is no need to simulate the clicking of the &ldquo;Browse&rdquo; button.  WebDriver automatically enters the file path onto the file-selection text box of the <input type="file"> element.</p>
+
+<p>2.When setting the file path in your Java IDE, use the proper escape character for the back-slash.</p>
+
+<p><img src="/images/newbie73.png"></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/">How to take screenshot in Internet Explore</a>
   </h1>
   
@@ -1087,482 +1374,6 @@
 </span><span class='line'>kpress.sendKeys(driver.findElement(By.id("name")), "T").perform();
 </span><span class='line'>kpress.keyUp(driver.findElement(By.id("name")),Keys.SHIFT).perform(); 
 </span></code></pre></td></tr></table></div></figure>
-
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/">WebDriver : How to press Keyboard</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-12T05:43:38+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 12<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-how-to-press-keyboard-in-selenium-webdriver/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <p>In this article we are going to see the functions for keyboard&rsquo;s keypass key events.</p>
-
-<p>To find an element we use some function below , depend on your website.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.FindElement(By.XPath("String"));
-</span><span class='line'>driver.FindElement(By.id("String"));
-</span><span class='line'>driver.FindElement(By.className("String"));
-</span><span class='line'>driver.FindElement(By.cssSelector("String"));
-</span><span class='line'>driver.FindElement(By.linkText("String"));
-</span><span class='line'>driver.FindElement(By.TagName("String"));</span></code></pre></td></tr></table></div></figure>
-
-
-<p>if we add send keys as keyboard command, then we can use keyboard event with the element that we found. like</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowRight);</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Here, &ldquo;string&rdquo; is the Xpath location. And on the element that we have found, keyboard&rsquo;s Arrow left will be pressed.</p>
-
-<p>Take a look in some key press on element:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-<span class='line-number'>127</span>
-<span class='line-number'>128</span>
-<span class='line-number'>129</span>
-<span class='line-number'>130</span>
-<span class='line-number'>131</span>
-<span class='line-number'>132</span>
-<span class='line-number'>133</span>
-<span class='line-number'>134</span>
-<span class='line-number'>135</span>
-<span class='line-number'>136</span>
-<span class='line-number'>137</span>
-<span class='line-number'>138</span>
-<span class='line-number'>139</span>
-<span class='line-number'>140</span>
-<span class='line-number'>141</span>
-<span class='line-number'>142</span>
-<span class='line-number'>143</span>
-<span class='line-number'>144</span>
-<span class='line-number'>145</span>
-<span class='line-number'>146</span>
-<span class='line-number'>147</span>
-<span class='line-number'>148</span>
-<span class='line-number'>149</span>
-<span class='line-number'>150</span>
-<span class='line-number'>151</span>
-<span class='line-number'>152</span>
-<span class='line-number'>153</span>
-<span class='line-number'>154</span>
-<span class='line-number'>155</span>
-<span class='line-number'>156</span>
-<span class='line-number'>157</span>
-<span class='line-number'>158</span>
-<span class='line-number'>159</span>
-<span class='line-number'>160</span>
-<span class='line-number'>161</span>
-<span class='line-number'>162</span>
-<span class='line-number'>163</span>
-<span class='line-number'>164</span>
-<span class='line-number'>165</span>
-<span class='line-number'>166</span>
-<span class='line-number'>167</span>
-<span class='line-number'>168</span>
-<span class='line-number'>169</span>
-<span class='line-number'>170</span>
-<span class='line-number'>171</span>
-<span class='line-number'>172</span>
-<span class='line-number'>173</span>
-<span class='line-number'>174</span>
-<span class='line-number'>175</span>
-<span class='line-number'>176</span>
-<span class='line-number'>177</span>
-<span class='line-number'>178</span>
-<span class='line-number'>179</span>
-<span class='line-number'>180</span>
-<span class='line-number'>181</span>
-<span class='line-number'>182</span>
-<span class='line-number'>183</span>
-<span class='line-number'>184</span>
-<span class='line-number'>185</span>
-<span class='line-number'>186</span>
-<span class='line-number'>187</span>
-<span class='line-number'>188</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>-For the number pad addition key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Add);
-</span><span class='line'>
-</span><span class='line'>-For  the Alt key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Alt);
-</span><span class='line'>
-</span><span class='line'>-For  the Left arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowDown);
-</span><span class='line'>
-</span><span class='line'>-For  the left arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowLeft);
-</span><span class='line'>
-</span><span class='line'>-For  the right arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowRight);
-</span><span class='line'>
-</span><span class='line'>-For  the up arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.ArrowUp);
-</span><span class='line'>
-</span><span class='line'>-For  the Backspace key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Backspace);
-</span><span class='line'>
-</span><span class='line'>-For  the Cancel keystroke.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Cancel);
-</span><span class='line'>
-</span><span class='line'>-For  the Clear keystroke.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Clear);
-</span><span class='line'>
-</span><span class='line'>-For  the function key COMMAND.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Command);
-</span><span class='line'>
-</span><span class='line'>-For  the Control key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Control);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad decimal separator key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Decimal);
-</span><span class='line'>
-</span><span class='line'>-For  the Delete key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Delete);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad division key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Divide);
-</span><span class='line'>
-</span><span class='line'>-For  the Left arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Down);
-</span><span class='line'>
-</span><span class='line'>-For  the End key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.End);
-</span><span class='line'>
-</span><span class='line'>-For  the Enter key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Enter);
-</span><span class='line'>
-</span><span class='line'>-For  the equal sign key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Equal);
-</span><span class='line'>
-</span><span class='line'>-For  the Escape key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Escape);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F1.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F1);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F10.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F10);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F11.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F11);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F12.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F12);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F2.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F2);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F3.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F3);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F4.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F4);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F5.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F5);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F6.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F6);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F7.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F7);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F8.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F8);
-</span><span class='line'>
-</span><span class='line'>-For  the function key F9.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.F9);
-</span><span class='line'>
-</span><span class='line'>-For  the Help keystroke.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Help);
-</span><span class='line'>
-</span><span class='line'>-For  the Home key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Home);
-</span><span class='line'>
-</span><span class='line'>-For  the Insert key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Insert);
-</span><span class='line'>
-</span><span class='line'>-For  the left arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Left);
-</span><span class='line'>
-</span><span class='line'>-For  the Alt key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftAlt);
-</span><span class='line'>
-</span><span class='line'>-For  the Control key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftControl);
-</span><span class='line'>
-</span><span class='line'>-For  the Shift key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.LeftShift);
-</span><span class='line'>
-</span><span class='line'>-For  the function key META.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Meta);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad multiplication key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Multiply);
-</span><span class='line'>
-</span><span class='line'>-For  the NUL keystroke.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Null);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 0 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad0);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 1 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad1);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 2 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad2);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 3 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad3);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 4 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad4);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 5 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad5);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 6 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad6);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 7 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad7);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 8 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad8);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad 9 key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.NumberPad9);
-</span><span class='line'>
-</span><span class='line'>-For  the Page Down key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.PageDown);
-</span><span class='line'>
-</span><span class='line'>-For  the Page Up key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.PageUp);
-</span><span class='line'>
-</span><span class='line'>-For  the Pause key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Pause);
-</span><span class='line'>
-</span><span class='line'>-For  the Return key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Return);
-</span><span class='line'>
-</span><span class='line'>-For  the right arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Right);
-</span><span class='line'>
-</span><span class='line'>-For  the semi-colon key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Semicolon);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad thousands separator key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Separator);
-</span><span class='line'>
-</span><span class='line'>-For  the Shift key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Shift);
-</span><span class='line'>
-</span><span class='line'>-For  the Space bar key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Space);
-</span><span class='line'>
-</span><span class='line'>-For  the number pad subtraction key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Subtract);
-</span><span class='line'>
-</span><span class='line'>-For  the Tab key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Tab);
-</span><span class='line'>
-</span><span class='line'>-For  the up arrow key.
-</span><span class='line'>driver.FindElement(By.XPath("String")).SendKeys(Keys.Up);</span></code></pre></td></tr></table></div></figure>
-
-
 
 
 

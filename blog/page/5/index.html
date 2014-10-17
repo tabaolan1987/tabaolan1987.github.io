@@ -345,6 +345,238 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/08/07/selenium-automation-framework-how-to-take-screenshot-on-test-fail-and-test-skip/">Selenium Automation Framework P9 : How to take screenshot on test fail and test skip</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-07T08:05:35+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/selenium-framework/'>Selenium-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/selenium-automation-framework-how-to-take-screenshot-on-test-fail-and-test-skip/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>How to take screenshot on test fail and test skip</h2>
+
+<h3>Step 1 : Right click on the package you want, Create class to handle the screenshot for us</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public class TakeScreenShot {
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  public static void init(WebDriver d) {
+</span><span class='line'>      driver = d;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  public static void takeSnapShot(String methodName) {
+</span><span class='line'>      String folderBaseDriver = null;
+</span><span class='line'>      if (driver instanceof InternetExplorerDriver) {
+</span><span class='line'>          folderBaseDriver = "Internet Explore";
+</span><span class='line'>      } else if (driver instanceof ChromeDriver) {
+</span><span class='line'>          folderBaseDriver = "Chrome";
+</span><span class='line'>      } else if (driver instanceof FirefoxDriver) {
+</span><span class='line'>          folderBaseDriver = "Firefox";
+</span><span class='line'>      }
+</span><span class='line'>      String screenshootDir = "path to your folder you want to save the screenshot"+File.separator + folderBaseDriver;
+</span><span class='line'>      File f = new File(screenshootDir);
+</span><span class='line'>      if (!f.exists() || !f.isDirectory()) {
+</span><span class='line'>          f.mkdirs();
+</span><span class='line'>      }
+</span><span class='line'>      File output = null;
+</span><span class='line'>      File file;
+</span><span class='line'>      if (folderBaseDriver.equalsIgnoreCase("Internet Explore")) {
+</span><span class='line'>          ScreenRegion s = new DesktopScreenRegion();
+</span><span class='line'>          try {
+</span><span class='line'>              ImageIO.write(s.capture(), "png", new File(screenshootDir
+</span><span class='line'>                      + File.separator + methodName + ".png"));
+</span><span class='line'>          } catch (IOException e) {
+</span><span class='line'>              e.printStackTrace();
+</span><span class='line'>          }
+</span><span class='line'>      }else{
+</span><span class='line'>          output = ((TakesScreenshot) driver)
+</span><span class='line'>                  .getScreenshotAs(OutputType.FILE);
+</span><span class='line'>          file = new File(screenshootDir, methodName + ".png");
+</span><span class='line'>          try {
+</span><span class='line'>              FileUtils.copyFile(output, file);
+</span><span class='line'>          } catch (IOException e) {
+</span><span class='line'>              e.printStackTrace();
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>
+</span><span class='line'>  }
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step 2 : Right click on the package of project and Create class ItestListen implement ITestListener of testNG</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public class ItestListen implements ITestListener {
+</span><span class='line'>  
+</span><span class='line'>  public void onTestFailure(ITestResult result) {
+</span><span class='line'>      try {
+</span><span class='line'>          TakeScreenShot.takeSnapShot(result.getName());
+</span><span class='line'>      } catch (Exception e) {
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  public void onTestSkipped(ITestResult result) {
+</span><span class='line'>      try {
+</span><span class='line'>          TakeScreenShot.takeSnapShot(result.getName());
+</span><span class='line'>      } catch (Exception e) {
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step 3 : Open file xml that allow you to manage the test script of testNG and Define your listener to the xml file of TestNG</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite name="Suite" parallel="none"&gt;
+</span><span class='line'>&lt;listeners&gt;
+</span><span class='line'>      &lt;listener class-name="com.cmg.pl.listenner.ItestListen" /&gt;
+</span><span class='line'>&lt;/listeners&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step 4 : init the TakeScreenShot class in  before method of each test script</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@BeforeMethod
+</span><span class='line'>public void beforeMethod(String browser, String super_user_name, String super_user_pass, String walled_ref_no01) 
+</span><span class='line'>{
+</span><span class='line'>  driver = DriverUtil.getInstance(browser);
+</span><span class='line'>  TakeScreenShot.init(driver);
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step 5 : Run your test by right click on your xml of TestNG. If any test script had fail or skip , it will had the screenshot in the folder you define in step 1. Have fun!</h3>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/08/07/webdriver-action-class/">Webdriver : Action Class</a>
   </h1>
   
@@ -406,7 +638,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/08/07/selenium-automation-framework-p8-read-data-from-excel-file/">Automation Framework P8 : Read Data From Excel File</a>
+    <a href="/blog/2014/08/07/selenium-automation-framework-p8-read-data-from-excel-file/">Selenium Automation Framework P8 : Read Data From Excel File</a>
   </h1>
   
 
@@ -1554,293 +1786,6 @@
 <p>The WebDriver code below will be able to successfully retrieve the inner text of the element we are accessing.</p>
 
 <p><img src="/images/newbie61.png"></p>
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/07/newbie-part-7-keyboard-mouse-events/">Beginner with Selenium WebDriver Part 7 : Keyboard Mouse Events , Uploading Files </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T07:20:35+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/newbie/'>NewBie</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-7-keyboard-mouse-events/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>Keyboard Mouse Events , Uploading Files &ndash; Webdriver</h2>
-
-<p>In this tutorial we will learn handling keyboard and mouse in Webdriver and deal with file uploads and downloads.</p>
-
-<h3>Handling Keyboard &amp; Mouse Events</h3>
-
-<p><img src="/images/newbie62.jpg"></p>
-
-<p>Handling special keyboard and mouse events are done using the Advanced User Interactions API. It contains the Actions and the Action classes that are needed when executing these events. The following are the most commonly used keyboard and mouse events provided by the Actions class.</p>
-
-<p>Let take a look in methods of Action class below :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>1.clickAndHold() : Clicks (without releasing) at the current mouse location.</p>
-
-<p>2.contextClick() : Performs a context-click at the current mouse location.</p>
-
-<p>3.doubleClick() : Performs a double-click at the current mouse location.</p>
-
-<p>4.dragAndDrop(source, target) : Performs click-and-hold at the location of the source element, moves to the location of the target element, then releases the mouse.Parameters : source- element to emulate button down at,target- element to move to and release the mouse at.</p>
-
-<p>5.dragAndDropBy(source, x-offset, y-offset) : Performs click-and-hold at the location of the source element, moves by a given offset, then releases the mouse.Parameters:source- element to emulate button down at , xOffset- horizontal move offset, yOffset- vertical move offset.</p>
-
-<p>6.keyDown(modifier_key) : Performs a modifier key press. Does not release the modifier key &ndash; subsequent interactions may assume it&rsquo;s kept pressed.Parameters: modifier_key &ndash; any of the modifier keys (Keys.ALT, Keys.SHIFT, or Keys.CONTROL)</p>
-
-<p>7.keyUp(modifier _key) : Performs a key release. Parameters: modifier_key &ndash; any of the modifier keys (Keys.ALT, Keys.SHIFT, or Keys.CONTROL)</p>
-
-<p>8.moveByOffset(x-offset, y-offset) : Moves the mouse from its current position (or 0,0) by the given offset.Parameters:x-offset- horizontal offset. A negative value means moving the mouse left.y-offset- vertical offset. A negative value means moving the mouse up.</p>
-
-<p>9.moveToElement(toElement) : Moves the mouse to the middle of the element. Parameters:toElement- element to move to.</p>
-
-<p>10.release() : Releases the depressed left mouse button at the current mouse location</p>
-
-<p>11.sendKeys(onElement, charsequence) : Sends a series of keystrokes onto the element.Parameters: onElement &ndash; element that will receive the keystrokes, usually a text field , charsequence &ndash; any string value representing the sequence of keystrokes to be sent.</p>
-
-<p>In the following example, we shall use the moveToElement() method to mouse-over on one Mercury Tours&#8217; table rows. See the example below.</p>
-
-<p><img src="/images/newbie63.png"></p>
-
-<p>The cell shown above is a portion of a <TR> element. If not hovered, its color is #FFC455 (orange). After hovering, the cell&rsquo;s color becomes transparent. It becomes the same color as the blue background of the whole orange table.</p>
-
-<h4>Step 1</h4>
-
-<p>Import the Actions and Action classes.</p>
-
-<p><img src="/images/newbie64.png"></p>
-
-<h4>Step 2</h4>
-
-<p>Instantiate a new Actions object.</p>
-
-<p><img src="/images/newbie65.png"></p>
-
-<h4>Step 3</h4>
-
-<p>Instantiate an Action using the Actions object in step 2.</p>
-
-<p><img src="/images/newbie66.png"></p>
-
-<p>In this case, we are going to use the moveToElement() method because we are simply going to mouse-over the &ldquo;Home&rdquo; link. The build() method is always the final method used so that all the listed actions will be compiled into a single step.</p>
-
-<h4>Step 4</h4>
-
-<p>Use the perform() method when executing the Action object we designed in Step 3.</p>
-
-<p><img src="/images/newbie67.png"></p>
-
-<p>Below is the whole WebDriver code to check the background color of the <TR> element before and after the mouse-over.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import org.openqa.selenium.*;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'> 
-</span><span class='line'>import org.openqa.selenium.interactions.Action;
-</span><span class='line'>import org.openqa.selenium.interactions.Actions;
-</span><span class='line'> 
-</span><span class='line'>public class myclass {
-</span><span class='line'> 
-</span><span class='line'>public static void main(String[] args) {
-</span><span class='line'>String baseUrl = "http://newtours.demoaut.com/";
-</span><span class='line'>        WebDriver driver = new FirefoxDriver();
-</span><span class='line'> 
-</span><span class='line'>        driver.get(baseUrl);           
-</span><span class='line'>        WebElement link_Home = driver.findElement(By.linkText("Home"));
-</span><span class='line'>        WebElement td_Home = driver
-</span><span class='line'>                .findElement(By
-</span><span class='line'>                .xpath("//html/body/div"
-</span><span class='line'>                + "/table/tbody/tr/td"
-</span><span class='line'>                + "/table/tbody/tr/td"
-</span><span class='line'>                + "/table/tbody/tr/td"
-</span><span class='line'>                + "/table/tbody/tr"));    
-</span><span class='line'>         
-</span><span class='line'>        Actions builder = new Actions(driver);
-</span><span class='line'>        Action mouseOverHome = builder
-</span><span class='line'>                .moveToElement(link_Home)
-</span><span class='line'>                .build();
-</span><span class='line'>         
-</span><span class='line'>        String bgColor = td_Home.getCssValue("background-color");
-</span><span class='line'>        System.out.println("Before hover: " + bgColor);        
-</span><span class='line'>        mouseOverHome.perform();        
-</span><span class='line'>        bgColor = td_Home.getCssValue("background-color");
-</span><span class='line'>        System.out.println("After hover: " + bgColor);
-</span><span class='line'>        driver.quit();
-</span><span class='line'>}
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>The output below clearly states that the background color became transparent after the mouse-over.</p>
-
-<p><img src="/images/newbie68.png"></p>
-
-<h3>Building a Series of Multiple Actions</h3>
-
-<p>You can build a series of actions using the Action and Actions classes. Just remember to close the series with the build() method. Consider the sample code below.</p>
-
-<p><img src="/images/newbie69.png"></p>
-
-<p><img src="/images/newbie70.png"></p>
-
-<h3>Uploading Files</h3>
-
-<p>For this section, we will use <a href="http://www.megafileupload.com/">http://www.megafileupload.com/</a> as our test application. This site easily allows any visitor to upload and download files without requiring them to sign up.</p>
-
-<p>Uploading files in WebDriver is done by simply using the sendKeys() method on the file-select input field to enter the path to the file to be uploaded.</p>
-
-<p><img src="/images/newbie71.png"></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import org.openqa.selenium.*;
-</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
-</span><span class='line'>public class myclass {
-</span><span class='line'>public static void main(String[] args) {
-</span><span class='line'>String baseUrl = "http://www.megafileupload.com/";
-</span><span class='line'>WebDriver driver = new FirefoxDriver();
-</span><span class='line'> 
-</span><span class='line'>driver.get(baseUrl);
-</span><span class='line'>WebElement uploadElement = driver.findElement(By.id("uploadfile_0"));
-</span><span class='line'> 
-</span><span class='line'>// enter the file path onto the file-selection input field
-</span><span class='line'>uploadElement.sendKeys("C:\\newhtml.html");
-</span><span class='line'> 
-</span><span class='line'>// check the "I accept the terms of service" check box
-</span><span class='line'>driver.findElement(By.id("terms")).click();
-</span><span class='line'> 
-</span><span class='line'>// click the "UploadFile" button
-</span><span class='line'>driver.findElement(By.name("send")).click();
-</span><span class='line'>}
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>After running this script, you should be able to upload the file successfully and you should get a message similar to this.</p>
-
-<p><img src="/images/newbie72.png"></p>
-
-<p>Remember following two things when uploading files in WebDriver</p>
-
-<p>1.There is no need to simulate the clicking of the &ldquo;Browse&rdquo; button.  WebDriver automatically enters the file path onto the file-selection text box of the <input type="file"> element.</p>
-
-<p>2.When setting the file path in your Java IDE, use the proper escape character for the back-slash.</p>
-
-<p><img src="/images/newbie73.png"></p>
 
 
   </article>
