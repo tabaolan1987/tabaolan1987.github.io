@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TestNG-Framework | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-10-14T14:49:10+07:00</updated>
+  <updated>2014-10-17T04:02:37+01:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[TestNG Framework P1 : Introduction]]></title>
     <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-introduction/"/>
-    <updated>2014-05-26T11:00:14+07:00</updated>
+    <updated>2014-05-26T05:00:14+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-introduction</id>
     <content type="html"><![CDATA[<h2>TestNG Introduction</h2>
 
@@ -104,7 +104,7 @@
   <entry>
     <title type="html"><![CDATA[TestNG Framework P2 : Download]]></title>
     <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-download/"/>
-    <updated>2014-05-26T11:00:12+07:00</updated>
+    <updated>2014-05-26T05:00:12+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-download</id>
     <content type="html"><![CDATA[<h2>Install TestNG in Eclipse</h2>
 
@@ -159,7 +159,7 @@
   <entry>
     <title type="html"><![CDATA[TestNG Framework P3 : First Test case with TestNG]]></title>
     <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-first-test-case-with-testng/"/>
-    <updated>2014-05-26T11:00:11+07:00</updated>
+    <updated>2014-05-26T05:00:11+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-first-test-case-with-testng</id>
     <content type="html"><![CDATA[<h2>First Test case with TestNG</h2>
 
@@ -296,7 +296,7 @@ import org.testng.annotations.AfterMethod;</p>
   <entry>
     <title type="html"><![CDATA[TestNG Framework P4 : Test Suite]]></title>
     <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-test-suite/"/>
-    <updated>2014-05-26T11:00:10+07:00</updated>
+    <updated>2014-05-26T05:00:10+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-test-suite</id>
     <content type="html"><![CDATA[<h2>TestNG Test Suite</h2>
 
@@ -360,7 +360,7 @@ import org.testng.annotations.AfterMethod;</p>
   <entry>
     <title type="html"><![CDATA[TestNG Framework P5: Annotations , Groups and OnDepends]]></title>
     <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations/"/>
-    <updated>2014-05-26T11:00:09+07:00</updated>
+    <updated>2014-05-26T05:00:09+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations</id>
     <content type="html"><![CDATA[<h2>TestNG Annotations, Groups &amp; OnDepends</h2>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-10-14T14:49:10+07:00</updated>
+  <updated>2014-10-17T04:02:37+01:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Guide to Functional testing in Mobile App]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-test-mobile-app/"/>
-    <updated>2014-08-21T11:44:47+07:00</updated>
+    <updated>2014-08-21T05:44:47+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-test-mobile-app</id>
     <content type="html"><![CDATA[<h2>Mobile Testing : Guide to Functional testing in Mobile App</h2>
 
@@ -99,7 +99,7 @@
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Guide to Performance Testing in Mobile App]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-performance-testing-in-mobile/"/>
-    <updated>2014-08-21T11:40:47+07:00</updated>
+    <updated>2014-08-21T05:40:47+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-performance-testing-in-mobile</id>
     <content type="html"><![CDATA[<h2>Performance testing</h2>
 
@@ -148,7 +148,7 @@
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Guide to Security Testing in Mobile App]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-security-testing-in-mobile/"/>
-    <updated>2014-08-21T11:35:47+07:00</updated>
+    <updated>2014-08-21T05:35:47+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-security-testing-in-mobile</id>
     <content type="html"><![CDATA[<h2>Security testing</h2>
 
@@ -221,7 +221,7 @@
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Other Testing in Mobile App]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-other-testing-in-mobile/"/>
-    <updated>2014-08-21T11:30:47+07:00</updated>
+    <updated>2014-08-21T05:30:47+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-other-testing-in-mobile</id>
     <content type="html"><![CDATA[<h2>Usability testing</h2>
 
@@ -329,7 +329,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter : Introduction]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-introduction/"/>
-    <updated>2014-08-15T14:30:28+07:00</updated>
+    <updated>2014-08-15T08:30:28+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-introduction</id>
     <content type="html"><![CDATA[<h2>Introduction to JMeter</h2>
 
@@ -422,7 +422,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter : Install Jmeter]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-install-jmeter/"/>
-    <updated>2014-08-15T14:20:03+07:00</updated>
+    <updated>2014-08-15T08:20:03+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-install-jmeter</id>
     <content type="html"><![CDATA[<h2>How to install Jmeter in easy steps</h2>
 
@@ -557,7 +557,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter : Complete Element reference]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-complete-element-reference/"/>
-    <updated>2014-08-15T13:10:01+07:00</updated>
+    <updated>2014-08-15T07:10:01+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-complete-element-reference</id>
     <content type="html"><![CDATA[<h2>Complete Element reference for Jmeter</h2>
 
@@ -741,7 +741,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter : Hands on with Jmeter GUI]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui/"/>
-    <updated>2014-08-15T12:35:26+07:00</updated>
+    <updated>2014-08-15T06:35:26+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui</id>
     <content type="html"><![CDATA[<h2>Hands on with JMeter GUI</h2>
 
@@ -887,7 +887,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter : Performance testing]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-performance-testing/"/>
-    <updated>2014-08-15T11:58:52+07:00</updated>
+    <updated>2014-08-15T05:58:52+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-performance-testing</id>
     <content type="html"><![CDATA[<h2>Performance Testing using Jmeter</h2>
 
@@ -1051,7 +1051,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter : How to use Timers]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-timers/"/>
-    <updated>2014-08-15T10:26:51+07:00</updated>
+    <updated>2014-08-15T04:26:51+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-timers</id>
     <content type="html"><![CDATA[<h2>How to use Timers in Jmeter</h2>
 
@@ -1221,7 +1221,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter : How to use Assertions]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-assertions/"/>
-    <updated>2014-08-15T10:20:51+07:00</updated>
+    <updated>2014-08-15T04:20:51+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-assertions</id>
     <content type="html"><![CDATA[<h2>How to use Assertions in JMeter</h2>
 
@@ -1357,7 +1357,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter : How to use Controllers]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-controllers/"/>
-    <updated>2014-08-15T10:15:51+07:00</updated>
+    <updated>2014-08-15T04:15:51+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-controllers</id>
     <content type="html"><![CDATA[<h2>How to use Controllers in JMeter</h2>
 
@@ -1549,7 +1549,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter : How to use Processor]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-processor/"/>
-    <updated>2014-08-15T10:10:51+07:00</updated>
+    <updated>2014-08-15T04:10:51+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-processor</id>
     <content type="html"><![CDATA[<h2>How to use Processor in JMeter</h2>
 
@@ -1672,7 +1672,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter : How to perform Distributed Testing]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-perform-distributed-testing/"/>
-    <updated>2014-08-15T10:10:00+07:00</updated>
+    <updated>2014-08-15T04:10:00+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-perform-distributed-testing</id>
     <content type="html"><![CDATA[<h2>How to perform Distributed Testing in JMeter</h2>
 
@@ -1760,9 +1760,83 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[How to use CSV in JMETER]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/15/how-to-use-csv-in-jmeter/"/>
+    <updated>2014-08-15T04:06:00+01:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/15/how-to-use-csv-in-jmeter</id>
+    <content type="html"><![CDATA[<h2>How to use CSV in JMETER</h2>
+
+<p>First, create a CSV file with the logins and passwords. You can just do this in a text editor, and the format should be:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>username,password
+</span><span class='line'>
+</span><span class='line'>username2,password2
+</span><span class='line'>
+</span><span class='line'>username3,password3</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Save that file in the bin directory where your JMeter installation lives. For this example, I saved the file as “logins.csv”.</p>
+
+<p>Now go into JMeter and find the HTTP request step that you want to modify to use the values in this CSV file. Right click on it and go to Add > Config Element > CSV Data Set Config. This adds the CSV Data Set Config as a child of the HTTP request.</p>
+
+<p>Your tree should now look like this:</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter140.png"></p>
+
+<p>In the tree above, you can see that I’m using the CSV data to modify the “Log in” HTTP Request.</p>
+
+<p>Now click on the CSV Data Set Config step to modify it. Its screen looks like this:</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter141.png"></p>
+
+<p>You’ll need to fill in at least 3 values on this screen:</p>
+
+<p>1.Filename: if your file is in the /bin directory, this can be just the filename. If it’s somewhere else, use the full path to the file.</p>
+
+<p>2.Variable names: this is the equivalent to a “column name” in a spreadsheet.</p>
+
+<p>3.Delimiter: comma is the default delimiter, but if your file uses tabs this is the place to say so.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The other fields are optional but may be useful to you. Read all about them on the <a href="http://jmeter.apache.org/usermanual/component_reference.html#CSV_Data_Set_Config">JMeter CSV Data Set Config user manual</a>.</p>
+
+<p>After the CSV step is filled out correctly, go back to your HTTP request and change the value of the login and password fields to variables.</p>
+
+<p>Here’s what that looks like in my test:</p>
+
+<p><img src="http://www.tabaolan.com/images/jmeter142.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Because I had defined my variables as “login” and “password” in the previous step, in this step I need to use those variables as the value of the parameters that are being sent with the request. To do that I replaced the email address with ${login} and the password with ${password}.</p>
+
+<p>Now when you run this test, JMeter will fill in the values of those two variables with what’s in the CSV file. The first thread will use row 1, the second thread uses row 2, etc etc.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Jmeter : How to use jmeter to record test scenarios]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-jmeter-to-record-test-scenarios/"/>
-    <updated>2014-08-15T10:05:00+07:00</updated>
+    <updated>2014-08-15T04:05:00+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-jmeter-to-record-test-scenarios</id>
     <content type="html"><![CDATA[<h2>How To Use JMeter To Record Test Scenarios</h2>
 
@@ -1964,7 +2038,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter Tips : Determine a thread group's ramp-up period]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-determine-a-thread-group/"/>
-    <updated>2014-08-15T10:00:00+07:00</updated>
+    <updated>2014-08-15T04:00:00+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-determine-a-thread-group</id>
     <content type="html"><![CDATA[<h2>Determine a thread group&rsquo;s ramp-up period</h2>
 
@@ -2021,7 +2095,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter Tips : User think time, timer, and proxy server]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-user-think-time/"/>
-    <updated>2014-08-15T09:55:00+07:00</updated>
+    <updated>2014-08-15T03:55:00+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-user-think-time</id>
     <content type="html"><![CDATA[<h2>User think time, timer, and proxy server</h2>
 
@@ -2078,7 +2152,7 @@
   <entry>
     <title type="html"><![CDATA[Jmeter Tips : Interpret the Results]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-interpret-the-results/"/>
-    <updated>2014-08-15T09:50:00+07:00</updated>
+    <updated>2014-08-15T03:50:00+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-interpret-the-results</id>
     <content type="html"><![CDATA[<h2>Interpret the results</h2>
 
@@ -2222,7 +2296,7 @@
   <entry>
     <title type="html"><![CDATA[Beginner with WebDriver Part 1 :Download and Install Java ]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-1-download-and-install-java/"/>
-    <updated>2014-08-07T16:55:35+07:00</updated>
+    <updated>2014-08-07T10:55:35+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/07/newbie-part-1-download-and-install-java</id>
     <content type="html"><![CDATA[<h2>Beginner with Selenium 2 WebDriver : Download and Install Java</h2>
 
@@ -2282,89 +2356,6 @@
 <p><img src="http://www.tabaolan.com/images/Download-And-Install-Java-10.png"></p>
 
 <p>11 ) You have finish download and install Java , take a look in <a href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-2-download-and-start-eclipse/">Part 2 : Download and Start Eclipse</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Beginner with WebDriver Part 2 : Download and Start Eclipse]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-2-download-and-start-eclipse/"/>
-    <updated>2014-08-07T15:55:35+07:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/newbie-part-2-download-and-start-eclipse</id>
-    <content type="html"><![CDATA[<h2>Beginner with Selenium WebDriver : Download and Start Eclipse</h2>
-
-<h3>Download and Start Eclipse IDE</h3>
-
-<p>Eclipse free download for Java Developers, extract and save it in any drive. It is totally free. You can run ‘eclipse.exe’ directly so you do not need to install Eclipse in your system.</p>
-
-<!--more-->
-
-
-<p>1) Go to <a href="http://adf.ly/p8uot">|Eclipse download page</a></p>
-
-<p><img src="http://www.tabaolan.com/images/Download-and-Install-Eclipse-1.png"></p>
-
-<p>2) For Windows users, you will have to know what type of version of your OS you have. If your computer is a 64 bit Windows , select Windows 64 and if you have a 32 bit Windows, select Windows 32 bit.</p>
-
-<p><img src="http://www.tabaolan.com/images/Download-and-Install-Eclipse-2.png"></p>
-
-<p>3) Save the .zip file to your disk.</p>
-
-<p><img src="http://www.tabaolan.com/images/Download-and-Install-Eclipse-3.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>4) Once you have downloaded the Eclipse archive you will need to Extract the zip file, which will create the unzipped Eclipse folder.</p>
-
-<p><img src="http://www.tabaolan.com/images/Download-and-Install-Eclipse-4.png"></p>
-
-<p>5) You may want to Extract the archive to the root of C: drive, thus creating the folder “C:eclipse”, or just moved the extracted eclipse folder to the root of C: drive if you extracted it already. I prefer to leave it as it is.</p>
-
-<p><img src="http://www.tabaolan.com/images/Download-and-Install-Eclipse-5.png"></p>
-
-<p>6) Let the extraction process finished.</p>
-
-<p><img src="http://www.tabaolan.com/images/Download-and-Install-Eclipse-6.png"></p>
-
-<p>7) Open the eclipse folder.</p>
-
-<p><img src="http://www.tabaolan.com/images/Download-and-Install-Eclipse-7.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>8) Since Eclipse IDE does not have any installer, there will be a file inside the Eclipse folder named eclipse.exe. You can double click on the file to run Eclipse.</p>
-
-<p>Note:(This step is not required, but it’s strongly recommended.) Right-click the Eclipse Icon and press “Send To” &ndash;> “Desktop (Create Shortcut).” Now you will be able to launch Eclipse from your desktop.</p>
-
-<p><img src="http://www.tabaolan.com/images/Download-and-Install-Eclipse-8.png"></p>
-
-<p><img src="http://www.tabaolan.com/images/Download-and-Install-Eclipse-9.png"></p>
-
-<p>9) Create a workspace folder where you will contain all the program files you create.  You can choose whatever place you want for your workspace, but it’s easiest to just use the default you’re given. I like to choose my own workplace location and will place all my Toolsqa tutorial projects under it.</p>
-
-<p><img src="http://www.tabaolan.com/images/Start-Eclipse-2.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>10) You may see the window like this, this is the Welcome window for Eclipse.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<img src="http://www.tabaolan.com/images/Download-and-Install-Eclipse-11.png"></p>
-
-<p>11) Now that you have finished installing eclipse restart your computer. By restarting your computer it refreshes system memory and allows changes made by installers and uninstallers to take effect.</p>
-
-<p>12) Take a look in the next part <a href="http://www.tabaolan.com/blog/2014/08/07/newbie-part-3-download-webdriver-java-client/">Part 3 : Download Webdriver Java client</a></p>
 ]]></content>
   </entry>
   

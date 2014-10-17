@@ -4,7 +4,7 @@
   <title><![CDATA[Category: xpath | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/xpath/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-10-14T14:49:10+07:00</updated>
+  <updated>2014-10-17T04:02:37+01:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Webdriver XPath : Using Browser Inspector]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/07/xpath-using-browser-inspector/"/>
-    <updated>2014-08-07T14:35:35+07:00</updated>
+    <updated>2014-08-07T08:35:35+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/07/xpath-using-browser-inspector</id>
     <content type="html"><![CDATA[<h2>Finding Elements using Browser Inspector</h2>
 
@@ -55,7 +55,7 @@ driver.findElement(By.id("email")).sendKeys("your username or email login to fac
   <entry>
     <title type="html"><![CDATA[Webdriver XPath : FireBug and FirePath]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/07/xpath-firebug-and-firepath/"/>
-    <updated>2014-08-07T14:25:35+07:00</updated>
+    <updated>2014-08-07T08:25:35+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/07/xpath-firebug-and-firepath</id>
     <content type="html"><![CDATA[<h2>FireBug and FirePath</h2>
 
@@ -178,7 +178,7 @@ driver.findElement(By.id("email")).sendKeys("your username or email login to fac
   <entry>
     <title type="html"><![CDATA[Webdriver XPath : Selenium Locators]]></title>
     <link href="http://www.tabaolan.com/blog/2014/08/07/xpath-locators-in-selenium/"/>
-    <updated>2014-08-07T14:15:35+07:00</updated>
+    <updated>2014-08-07T08:15:35+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/08/07/xpath-locators-in-selenium</id>
     <content type="html"><![CDATA[<h2>Locators in Selenium</h2>
 
