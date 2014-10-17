@@ -345,238 +345,6 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/08/07/selenium-automation-framework-how-to-take-screenshot-on-test-fail-and-test-skip/">Selenium Automation Framework P9 : How to take screenshot on test fail and test skip</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T08:05:35+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/selenium-framework/'>Selenium-Framework</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/selenium-automation-framework-how-to-take-screenshot-on-test-fail-and-test-skip/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>How to take screenshot on test fail and test skip</h2>
-
-<h3>Step 1 : Right click on the package you want, Create class to handle the screenshot for us</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>public class TakeScreenShot {
-</span><span class='line'>  private static WebDriver driver;
-</span><span class='line'>  
-</span><span class='line'>  public static void init(WebDriver d) {
-</span><span class='line'>      driver = d;
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  public static void takeSnapShot(String methodName) {
-</span><span class='line'>      String folderBaseDriver = null;
-</span><span class='line'>      if (driver instanceof InternetExplorerDriver) {
-</span><span class='line'>          folderBaseDriver = "Internet Explore";
-</span><span class='line'>      } else if (driver instanceof ChromeDriver) {
-</span><span class='line'>          folderBaseDriver = "Chrome";
-</span><span class='line'>      } else if (driver instanceof FirefoxDriver) {
-</span><span class='line'>          folderBaseDriver = "Firefox";
-</span><span class='line'>      }
-</span><span class='line'>      String screenshootDir = "path to your folder you want to save the screenshot"+File.separator + folderBaseDriver;
-</span><span class='line'>      File f = new File(screenshootDir);
-</span><span class='line'>      if (!f.exists() || !f.isDirectory()) {
-</span><span class='line'>          f.mkdirs();
-</span><span class='line'>      }
-</span><span class='line'>      File output = null;
-</span><span class='line'>      File file;
-</span><span class='line'>      if (folderBaseDriver.equalsIgnoreCase("Internet Explore")) {
-</span><span class='line'>          ScreenRegion s = new DesktopScreenRegion();
-</span><span class='line'>          try {
-</span><span class='line'>              ImageIO.write(s.capture(), "png", new File(screenshootDir
-</span><span class='line'>                      + File.separator + methodName + ".png"));
-</span><span class='line'>          } catch (IOException e) {
-</span><span class='line'>              e.printStackTrace();
-</span><span class='line'>          }
-</span><span class='line'>      }else{
-</span><span class='line'>          output = ((TakesScreenshot) driver)
-</span><span class='line'>                  .getScreenshotAs(OutputType.FILE);
-</span><span class='line'>          file = new File(screenshootDir, methodName + ".png");
-</span><span class='line'>          try {
-</span><span class='line'>              FileUtils.copyFile(output, file);
-</span><span class='line'>          } catch (IOException e) {
-</span><span class='line'>              e.printStackTrace();
-</span><span class='line'>          }
-</span><span class='line'>      }
-</span><span class='line'>
-</span><span class='line'>  }
-</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Step 2 : Right click on the package of project and Create class ItestListen implement ITestListener of testNG</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>public class ItestListen implements ITestListener {
-</span><span class='line'>  
-</span><span class='line'>  public void onTestFailure(ITestResult result) {
-</span><span class='line'>      try {
-</span><span class='line'>          TakeScreenShot.takeSnapShot(result.getName());
-</span><span class='line'>      } catch (Exception e) {
-</span><span class='line'>      }
-</span><span class='line'>  }
-</span><span class='line'>
-</span><span class='line'>  public void onTestSkipped(ITestResult result) {
-</span><span class='line'>      try {
-</span><span class='line'>          TakeScreenShot.takeSnapShot(result.getName());
-</span><span class='line'>      } catch (Exception e) {
-</span><span class='line'>      }
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Step 3 : Open file xml that allow you to manage the test script of testNG and Define your listener to the xml file of TestNG</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite name="Suite" parallel="none"&gt;
-</span><span class='line'>&lt;listeners&gt;
-</span><span class='line'>      &lt;listener class-name="com.cmg.pl.listenner.ItestListen" /&gt;
-</span><span class='line'>&lt;/listeners&gt;
-</span><span class='line'>&lt;/suite&gt;
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Step 4 : init the TakeScreenShot class in  before method of each test script</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@BeforeMethod
-</span><span class='line'>public void beforeMethod(String browser, String super_user_name, String super_user_pass, String walled_ref_no01) 
-</span><span class='line'>{
-</span><span class='line'>  driver = DriverUtil.getInstance(browser);
-</span><span class='line'>  TakeScreenShot.init(driver);
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Step 5 : Run your test by right click on your xml of TestNG. If any test script had fail or skip , it will had the screenshot in the folder you define in step 1. Have fun!</h3>
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
     <a href="/blog/2014/08/07/webdriver-action-class/">Webdriver : Action Class</a>
   </h1>
   
@@ -1099,6 +867,238 @@
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/07/selenium-automation-framework-how-to-take-screenshot-on-test-fail-and-test-skip/">Selenium Automation Framework P9 : How to take screenshot on test fail and test skip</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-07T08:00:20+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/selenium-framework/'>Selenium-Framework</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/selenium-automation-framework-how-to-take-screenshot-on-test-fail-and-test-skip/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>How to take screenshot on test fail and test skip</h2>
+
+<h3>Step 1 : Right click on the package you want, Create class to handle the screenshot for us</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public class TakeScreenShot {
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  public static void init(WebDriver d) {
+</span><span class='line'>      driver = d;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  public static void takeSnapShot(String methodName) {
+</span><span class='line'>      String folderBaseDriver = null;
+</span><span class='line'>      if (driver instanceof InternetExplorerDriver) {
+</span><span class='line'>          folderBaseDriver = "Internet Explore";
+</span><span class='line'>      } else if (driver instanceof ChromeDriver) {
+</span><span class='line'>          folderBaseDriver = "Chrome";
+</span><span class='line'>      } else if (driver instanceof FirefoxDriver) {
+</span><span class='line'>          folderBaseDriver = "Firefox";
+</span><span class='line'>      }
+</span><span class='line'>      String screenshootDir = "path to your folder you want to save the screenshot"+File.separator + folderBaseDriver;
+</span><span class='line'>      File f = new File(screenshootDir);
+</span><span class='line'>      if (!f.exists() || !f.isDirectory()) {
+</span><span class='line'>          f.mkdirs();
+</span><span class='line'>      }
+</span><span class='line'>      File output = null;
+</span><span class='line'>      File file;
+</span><span class='line'>      if (folderBaseDriver.equalsIgnoreCase("Internet Explore")) {
+</span><span class='line'>          ScreenRegion s = new DesktopScreenRegion();
+</span><span class='line'>          try {
+</span><span class='line'>              ImageIO.write(s.capture(), "png", new File(screenshootDir
+</span><span class='line'>                      + File.separator + methodName + ".png"));
+</span><span class='line'>          } catch (IOException e) {
+</span><span class='line'>              e.printStackTrace();
+</span><span class='line'>          }
+</span><span class='line'>      }else{
+</span><span class='line'>          output = ((TakesScreenshot) driver)
+</span><span class='line'>                  .getScreenshotAs(OutputType.FILE);
+</span><span class='line'>          file = new File(screenshootDir, methodName + ".png");
+</span><span class='line'>          try {
+</span><span class='line'>              FileUtils.copyFile(output, file);
+</span><span class='line'>          } catch (IOException e) {
+</span><span class='line'>              e.printStackTrace();
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>
+</span><span class='line'>  }
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step 2 : Right click on the package of project and Create class ItestListen implement ITestListener of testNG</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public class ItestListen implements ITestListener {
+</span><span class='line'>  
+</span><span class='line'>  public void onTestFailure(ITestResult result) {
+</span><span class='line'>      try {
+</span><span class='line'>          TakeScreenShot.takeSnapShot(result.getName());
+</span><span class='line'>      } catch (Exception e) {
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  public void onTestSkipped(ITestResult result) {
+</span><span class='line'>      try {
+</span><span class='line'>          TakeScreenShot.takeSnapShot(result.getName());
+</span><span class='line'>      } catch (Exception e) {
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step 3 : Open file xml that allow you to manage the test script of testNG and Define your listener to the xml file of TestNG</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite name="Suite" parallel="none"&gt;
+</span><span class='line'>&lt;listeners&gt;
+</span><span class='line'>      &lt;listener class-name="com.cmg.pl.listenner.ItestListen" /&gt;
+</span><span class='line'>&lt;/listeners&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step 4 : init the TakeScreenShot class in  before method of each test script</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@BeforeMethod
+</span><span class='line'>public void beforeMethod(String browser, String super_user_name, String super_user_pass, String walled_ref_no01) 
+</span><span class='line'>{
+</span><span class='line'>  driver = DriverUtil.getInstance(browser);
+</span><span class='line'>  TakeScreenShot.init(driver);
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step 5 : Run your test by right click on your xml of TestNG. If any test script had fail or skip , it will had the screenshot in the folder you define in step 1. Have fun!</h3>
 
 
   </article>
