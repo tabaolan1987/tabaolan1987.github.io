@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Jmeter | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/jmeter/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-10-20T11:18:02+01:00</updated>
+  <updated>2014-10-22T05:31:33+01:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -77,7 +77,7 @@
 
 <p>Support multi-protocol: JMeter does not only support web application testing, but also evaluate database server performance. All basic protocols such as HTTP, JDBC, LDAP, SOAP, JMS, and FTP are supported by JMeter.</p>
 
-<p>Record &amp; Playback &ndash; Record the user activity on the browser and simulate them in  web application using JMeter.</p>
+<p>Record &amp; Playback &ndash; Record the user activity on the browser and simulate them in web application using JMeter.</p>
 
 <p>Script Test: Jmeter can be integrated with Bean Shell &amp; Selenium for automated testing.</p>
 
@@ -412,7 +412,7 @@ $jmeter -n -t testPlan.jmx - l log.jtl -H 127.0.0.1 -P 8000
 
 <p>Test Plan is where you add elements required for your JMeter Test.</p>
 
-<p>It stores all the elements (like ThreadGroup, Timers etc) and their corresponding settings required to run your desired Tests.</p>
+<p>It stores all the elements (like ThreadGroup, Timers ,etc) and their corresponding settings required to run your desired Tests.</p>
 
 <p>Following figure shows an example of Test Plan</p>
 
@@ -675,7 +675,7 @@ $jmeter -n -t testPlan.jmx - l log.jtl -H 127.0.0.1 -P 8000
 
 <p>Green: Throughput rate that represents the number of requests per minute the server handled.</p>
 
-<p>Let analyze the performance of Google server in below figure.</p>
+<p>Let analyse the performance of Google server in below figure.</p>
 
 <p><img src="/images/jmeter66.png"></p>
 

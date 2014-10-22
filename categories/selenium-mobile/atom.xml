@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-mobile | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/selenium-mobile/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-10-20T11:18:02+01:00</updated>
+  <updated>2014-10-22T05:31:33+01:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -20,7 +20,7 @@
     <id>http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-test-scripts-in-real-iphone</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
-<p>We want to execute our testscripts on a iphone device. The iphone driver allows us to execute the WebDriver tests on a real iphone device.</p>
+<p>We want to execute our test scripts on a iphone device. The iphone driver allows us to execute the WebDriver tests on a real iphone device.</p>
 
 <!--more-->
 
@@ -220,7 +220,7 @@ private static WebDriver driver;
     <id>http://www.tabaolan.com/blog/2014/05/30/selenium-mobile-run-tests-on-a-real-android-device</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
-<p>We want to run our testscripts on a real Android device. The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device.</p>
+<p>We want to run our test scripts on a real Android device. The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device.</p>
 
 <!--more-->
 

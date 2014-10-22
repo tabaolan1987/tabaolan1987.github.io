@@ -4,7 +4,7 @@
   <title><![CDATA[Category: xpath | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/xpath/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-10-20T11:18:02+01:00</updated>
+  <updated>2014-10-22T05:31:33+01:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -182,7 +182,7 @@ driver.findElement(By.id("email")).sendKeys("your username or email login to fac
     <id>http://www.tabaolan.com/blog/2014/08/07/xpath-locators-in-selenium</id>
     <content type="html"><![CDATA[<h2>Locators in Selenium</h2>
 
-<p>Selenium uses what is called locators to find and match the elements of the webpage that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
+<p>Selenium uses what is called locators to find and match the elements of the web page that it needs to interact with. Locators are the lifeblood of the tests. Using the right locator ensures the tests are faster, more reliable or has lower maintenance over releases. If you’re fortunate enough to be working with unique IDs and Classes, then you’re usually all set. But there will be times when choosing a right locator will become a nightmare. It can be a real challenge to verify that you have the right locators to accomplish what you want.</p>
 
 <p>This tutorial explains different locators, how, when and ideal Strategies to use these locators.</p>
 
