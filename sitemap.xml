@@ -89,6 +89,10 @@
         <lastmod>2014-10-22T04:01:55+01:00</lastmod>
     </url>
     <url>
+        <loc>http://www.tabaolan.com/blog/2014/06/07/webdriver-automation-html5-video/</loc>
+        <lastmod>2014-10-30T02:28:10+00:00</lastmod>
+    </url>
+    <url>
         <loc>http://www.tabaolan.com/blog/2014/06/11/tipandtrip-complex-action/</loc>
         <lastmod>2014-10-22T04:48:28+01:00</lastmod>
     </url>
@@ -352,7 +356,15 @@
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/08/15/how-to-use-csv-in-jmeter/</loc>
-        <lastmod>2014-10-22T02:58:01+01:00</lastmod>
+        <lastmod>2014-10-30T02:41:30+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/blog/2014/08/15/jmeter-test-execution-with-maven/</loc>
+        <lastmod>2014-10-30T02:56:42+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/blog/2014/08/15/jmeter-test-of-wsdl-web-services/</loc>
+        <lastmod>2014-10-30T02:56:58+00:00</lastmod>
     </url>
     <url>
         <loc>
@@ -426,15 +438,15 @@
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/archives/</loc>
-        <lastmod>2014-10-30T01:57:34+00:00</lastmod>
+        <lastmod>2014-10-30T02:56:58+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/</loc>
-        <lastmod>2014-10-30T01:57:34+00:00</lastmod>
+        <lastmod>2014-10-30T02:56:58+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/</loc>
-        <lastmod>2014-10-30T01:57:34+00:00</lastmod>
+        <lastmod>2014-10-30T02:56:58+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/search.html</loc>

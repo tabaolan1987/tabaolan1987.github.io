@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>IceCream Framework Part 1 : Introduction - Selenium Tutorial</title>
+	<title>Jmeter : test of wsdl web services - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
-	<meta name="description" content="IceCream Framework : Introduction" />
+	<meta name="description" content="Jmeter : test of wsdl web services" />
 	
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -131,52 +131,69 @@
 <div id="content" class="inner">
         <article class="post">
 
-	<h2 class="title">IceCream Framework Part 1 : Introduction</h2>
-	<div class="entry-content"><h2>Introduction</h2>
+	<h2 class="title">Jmeter : Test of Wsdl Web Services</h2>
+	<div class="entry-content"><h2>Jmeter test of wsdl web services</h2>
 
-<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
+<p>In this post, I am going to explain how to create jmeter test for wsdl api testing to perform load testing.</p>
 
-<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
+<p>Before creating test you need following set up in your machine.</p>
 
-<!--more-->
+<p>1.Download and setup java path in your system environment path.</p>
 
+<p>2.Download and install Jmeter.</p>
 
-<p>Tester just have the basic understanding of <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
-
-<p>IceCream Framework is written by Java language and use the core <a href="/blog/categories/webdriver/">Selenium WebDriver</a>.</p>
-
-<p>Currently IceCream Framework version 1.0 Beta version only have the basic functions to perform automatic chemical testing.</p>
-
-<p>The reason for this because I want to collect more of your opinions, feedback and the desire to have more function for me so that I can write to serve you in the next version!</p>
-
-<p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
-
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#116;&#x61;&#x62;&#x61;&#x6f;&#108;&#97;&#110;&#x31;&#x39;&#56;&#x37;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;">&#x74;&#x61;&#x62;&#x61;&#x6f;&#108;&#x61;&#x6e;&#x31;&#x39;&#x38;&#55;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
-
-<p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
+<p>3.Download and install soapUI.</p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
+<p>Here I am using wsdl url “<a href="http://www.webservicex.com/MyWebservices.asmx?wsdl%E2%80%9D.">http://www.webservicex.com/MyWebservices.asmx?wsdl%E2%80%9D.</a></p>
 
-<p>Let IceCream say Hi with you and take a look in <a href="/blog/2014/08/07/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
+<h3>Steps to create test:</h3>
 
-<p><img src="/images/ICE-1.jpg"></p>
+<p>1.Launch your Jmeter.</p>
+
+<p>2.Right click on test plan add new thread group by choosing option:  Add>>Threads (user)>>Thread Group.</p>
+
+<p>3.Right click on “Thread Group“ add new sampler by choosing option:  Add>>Sampler>> SOAP/XML-RPC Request.</p>
+
+<p><img src="/images/jmeter143.png"></p>
+
+<p>4.Now open soap UI and create new soapui project using wsdl url as I used in below.</p>
+
+<p><img src="/images/jmeter144.jpg"></p>
+
+<p>5.After soap ui project created successfully. Copy soap request data as I copy below soap request.</p>
+
+<p><img src="/images/jmeter145.jpg"></p>
+
+<p>6.Past copied soap request code into created Jmeter SOAP/XML-RPC Request” sampler in  Soap/XML-RPC data as below:</p>
+
+<p><img src="/images/jmeter146.jpg"></p>
+
+<ol>
+<li>Right click on “Thread Group“ add new” View Results Tree” by choosing Add>Lisseners> View Results Tree.</li>
+</ol>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<ol>
+<li>Click on run button. After execution you can see response in “View Result Tree” as below</li>
+</ol>
+
+
+<p><img src="/images/jmeter146.jpg"></p>
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/blog/2014/08/07/icecream-framework-introduction/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/08/15/jmeter-test-of-wsdl-web-services/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -226,8 +243,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
-        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/';
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-test-of-wsdl-web-services/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/08/15/jmeter-test-of-wsdl-web-services/';
         var disqus_script = 'embed.js';
       
     (function () {
