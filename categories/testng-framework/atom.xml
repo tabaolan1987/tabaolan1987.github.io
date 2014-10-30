@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TestNG-Framework | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-10-22T05:31:33+01:00</updated>
+  <updated>2014-10-30T01:58:14+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -123,7 +123,7 @@
 
 <p><img src="/images/Install-TestNG-2.png"></p>
 
-<p>3) Type name as you wish, lets take “TestNG” and type “<a href="http://beust.com/eclipse/%E2%80%9D">http://beust.com/eclipse/%E2%80%9D</a> as location. Click OK.</p>
+<p>3) Type name as you wish, lets take “TestNG” and type [<a href="http://beust.com/eclipse/">http://beust.com/eclipse/</a>] as location. Click OK.</p>
 
 <p><img src="/images/Install-TestNG-3.png"></p>
 
