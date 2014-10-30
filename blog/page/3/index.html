@@ -137,6 +137,332 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/08/15/how-to-use-csv-in-jmeter/">Jmeter : How to use CSV in JMETER</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-15T04:04:00+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/how-to-use-csv-in-jmeter/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>How to use CSV in JMETER</h2>
+
+<p>First, create a CSV file with the logins and passwords. You can just do this in a text editor, and the format should be:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>username,password
+</span><span class='line'>
+</span><span class='line'>username2,password2
+</span><span class='line'>
+</span><span class='line'>username3,password3</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Save that file in the bin directory where your JMeter installation lives. For this example, I saved the file as “logins.csv”.</p>
+
+<p>Now go into JMeter and find the HTTP request step that you want to modify to use the values in this CSV file. Right click on it and go to Add > Config Element > CSV Data Set Config. This adds the CSV Data Set Config as a child of the HTTP request.</p>
+
+<p>Your tree should now look like this:</p>
+
+<p><img src="/images/jmeter140.png"></p>
+
+<p>In the tree above, you can see that I’m using the CSV data to modify the “Log in” HTTP Request.</p>
+
+<p>Now click on the CSV Data Set Config step to modify it. Its screen looks like this:</p>
+
+<p><img src="/images/jmeter141.png"></p>
+
+<p>You’ll need to fill in at least 3 values on this screen:</p>
+
+<p>1.Filename: if your file is in the /bin directory, this can be just the filename. If it’s somewhere else, use the full path to the file.</p>
+
+<p>2.Variable names: this is the equivalent to a “column name” in a spreadsheet.</p>
+
+<p>3.Delimiter: comma is the default delimiter, but if your file uses tabs this is the place to say so.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The other fields are optional but may be useful to you. Read all about them on the <a href="http://jmeter.apache.org/usermanual/component_reference.html#CSV_Data_Set_Config">JMeter CSV Data Set Config user manual</a>.</p>
+
+<p>After the CSV step is filled out correctly, go back to your HTTP request and change the value of the login and password fields to variables.</p>
+
+<p>Here’s what that looks like in my test:</p>
+
+<p><img src="/images/jmeter142.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Because I had defined my variables as “login” and “password” in the previous step, in this step I need to use those variables as the value of the parameters that are being sent with the request. To do that I replaced the email address with ${login} and the password with ${password}.</p>
+
+<p>Now when you run this test, JMeter will fill in the values of those two variables with what’s in the CSV file. The first thread will use row 1, the second thread uses row 2, etc etc.</p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/15/jmeter-tips-determine-a-thread-group/">Jmeter Tips : Determine a thread group&#8217;s ramp-up period</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-15T04:00:00+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-determine-a-thread-group/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Determine a thread group&rsquo;s ramp-up period</h2>
+
+<p>The first ingredient in your JMeter script is a thread group, so let&rsquo;s review it first.</p>
+
+<p>Thread Group element contains the following parameters:</p>
+
+<p>1.Number of threads</p>
+
+<p>2.The ramp-up period</p>
+
+<p>3.The number of times to execute the test.</p>
+
+<p>4.When started, whether the test runs immediately or waits until a scheduled time. If the latter, the Thread Group element must also include the start and end times.</p>
+
+<p><img src="/images/jmeter133.png"></p>
+
+<p>Each thread executes the test plan independently of other threads. Therefore, a thread group is used to model concurrent users. If the client machine running JMeter lacks enough computing power to model a heavy load, JMeter&rsquo;s distributive testing feature allows you to control multiple remote JMeter engines from a single JMeter console.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The ramp-up period tells JMeter the amount of time for creating the total number of threads. The default value is 0. If the ramp-up period is left unspecified, i.e., the ramp-up period is zero, JMeter will create all the threads immediately. If the ramp-up period is set to T seconds, and the total number of threads is N, JMeter will create a thread every T/N seconds.</p>
+
+<p>Most of a thread group&rsquo;s parameters are self-explanatory, but the ramp-up period is a bit weird, since the appropriate number is not always obvious. For one thing, the ramp-up period should not be zero if you have a large number of threads. At the beginning of a load test, if the ramp-up period is zero, JMeter will create all the threads at once and send out requests immediately, thus potentially saturating the server and, more importantly, deceivingly increasing the load. That is, the server could become overloaded, not because the average hit rate is high, but because you send all the threads&#8217; first requests simultaneously, causing an unusual initial peak hit rate. You can see this effect with a JMeter Aggregate Report listener.</p>
+
+<p>As this anomaly is not desirable, therefore, the rule of thumb for determining a reasonable ramp-up period is to keep the initial hit rate close to the average hit rate. Of course, you may need to run the test plan once before discovering a reasonable number.</p>
+
+<p>By the same token, a large ramp-up period is also not appropriate, since the peak load may be underestimated. That is, some of the threads might not have even started, while some initial threads have already terminated.</p>
+
+<p>So how do you verify that the ramp-up period is neither too small nor too large? First, guess the average hit rate and then calculate the initial ramp-up period by dividing the number of threads by the guessed hit rate. For example, if the number of threads is 100, and the estimated hit rate is 10 hits per second, the estimated ideal ramp-up period is 100/10 = 10 seconds. How do you come up with an estimated hit rate? There is no easy way. You just have to run the test script once first.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Second, add an Aggregate Report listener, shown in Figure 2, to the test plan; it contains the average hit rate of each individual request (JMeter samplers). The hit rate of the first sampler (e.g., an HTTP request) is closely related to the ramp-up period and the number of threads. Adjust the ramp-up period so the hit rate of the test plan&rsquo;s first sampler is close to the average hit rate of all other samplers.</p>
+
+<p>Third, verify in the JMeter log (located in JMeter_Home_Directory/bin) that the first thread that finishes does indeed finish after the last thread starts. The time difference between the two should be as far apart as possible.</p>
+
+<p>In summary, the determination of a good ramp-up time is governed by the following two rules:</p>
+
+<p>1.The first sampler&rsquo;s hit rate should be close to the average hit rate of other samplers, thereby preventing a small ramp-up period</p>
+
+<p>2.The first thread that finishes does indeed finish after the last thread starts, preferably as far apart as possible, thereby preventing a large ramp-up period</p>
+
+<p>Sometimes the two rules conflict with each other. That is, you simply cannot find a suitable ramp-up period that passes both rules. A trivial test plan usually causes this problem, because, in such a plan, you lack enough samplers for each thread; thus, the test plan is too short, and a thread quickly finishes its work.</p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/15/jmeter-tips-user-think-time/">Jmeter Tips : User think time, timer, and proxy server</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-15T03:55:00+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-tips-user-think-time/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>User think time, timer, and proxy server</h2>
+
+<p>An important element to consider in a load test is the think time, or the pause between successive requests. Various circumstances cause the delay: user needs time to read the content, or to fill out a form, or to search for the right link. Failure to properly consider think time often leads to seriously biased test results. For example, the estimated scalability, i.e., the maximum load (concurrent users) that the system can sustain, will appear low.</p>
+
+<p>JMeter provides a set of timer elements to model the think time, but a question still remains: how do you determine an appropriate think time? Fortunately, JMeter offers a good answer: the JMeter HTTP Proxy Server element.</p>
+
+<p>The proxy server records your actions while you browse a Web application with a normal browser (such as FireFox or Internet Explorer). In addition, JMeter creates a test plan when recording your actions. This feature is extremely convenient for several purposes:</p>
+
+<p>1.You don&rsquo;t need to create an HTTP request manually, especially those tedious form parameters. (However, non-English parameters may not work correctly.) JMeter will record everything in the auto-generated requests, including hidden fields.</p>
+
+<p>2.In the generated test plan, JMeter includes all the browser-generated HTTP headers for you, such as User-Agent (e.g., Mozilla/4.0), or AcceptLanguage (e.g., zh-tw,en-us;q=0.7,zh-cn;q=0.3).</p>
+
+<p>3.JMeter can create timers of your choice, where delay time is set according to the actual delay during the recording period.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Let&rsquo;s see how to configure JMeter with the recording feature. In the JMeter console, right-click the WorkBench element and add the HTTP Proxy Server element. Note that you right-click the WorkBench element, not the Test Plan element, because the configuration here is for recording, not for an executable test plan. The HTTP Proxy Server element&rsquo;s purpose is for you to configure the browser&rsquo;s proxy server so all requests go through JMeter.</p>
+
+<p>As illustrated in image below, several fields must be configured for the HTTP Proxy Server element:</p>
+
+<p>1.Port: The listening port used by the proxy server.</p>
+
+<p>2.Target Controller: The controller where the proxy stores the generated samples. By default, JMeter will look for a recording controller in the current test plan and store the samples there. Alternatively, you can select any controller element listed in the menu. Usually, the default is okay.</p>
+
+<p>3.Grouping: How you would like to group the generated elements in the test plan. Several options are available, and the most sensible one is probably &ldquo;Store 1st sampler of each group only,&rdquo; otherwise, URLs embedded in a page such as those for images and JavaScripts will be recorded as well. However, you may want to try the default &ldquo;Do not group samples&rdquo; option to find out what exactly JMeter creates for you in the test plan.</p>
+
+<p>4.Patterns to Include and Patterns to Exclude: Help you filter out some unwanted requests.</p>
+
+<p><img src="/images/jmeter134.jpg"></p>
+
+<p>When you click the Start button, the proxy server starts and begins recording the HTTP requests it receives. Of course, before clicking Start, you must configure your browser&rsquo;s proxy server setting.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>You can add a timer as a child of the HTTP Proxy Server element, which will instruct JMeter to automatically add a timer as a child of the HTTP request it generates. JMeter automatically stores the actual time delay to a JMeter variable called T, so if you add a Gaussian random timer to the HTTP Proxy Server element, you should type ${T} in the Constant Delay field, as shown in image below. This is another convenient feature that saves you a lot of time.</p>
+
+<p><img src="/images/jmeter135.jpg"></p>
+
+<p>Note that a timer causes the affected samplers to be delayed. That is, the affected sampling requests are not sent before the specified delay time has passed since the last received response. Therefore, you should manually remove the first sampler&rsquo;s generated timer since the first sampler usually does not need one.</p>
+
+<p>Before starting the HTTP proxy server, you should add a thread group to the test plan and then, to the thread group, add a recording controller, where the generated elements will be stored. Otherwise, those elements will be added to WorkBench directly. In addition, it is important to add an HTTP Request Defaults element (a Configuration element) to the recording controller, so that JMeter will leave blank those fields specified by the HTTP request defaults.</p>
+
+<p>After the recording, stop the HTTP proxy server; right-click the Recording Controller element to save the recorded elements in a separate file so you can retrieve them later. Don&rsquo;t forget to resume your browser&rsquo;s proxy server setting.</p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/08/15/jmeter-tips-interpret-the-results/">Jmeter Tips : Interpret the Results</a>
   </h1>
   
@@ -689,192 +1015,6 @@
 
 
   <a class="btn pull-right" href="/blog/2014/08/07/webdriver-browser-navigation-commands/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/07/webdriver-switch-window-commands/">Webdriver : Switch Window Commands</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T09:05:35+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/webdriver-switch-window-commands/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>WebDriver Switch Window Commands</h2>
-
-<p>Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/08/07/webdriver-switch-window-commands/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/07/webdriver-wait-commands/">Webdriver : Wait Commands</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T08:55:35+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/webdriver-wait-commands/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>WebDriver Wait Commands</h2>
-
-<p>Listing out the different WebDriver Wait statements that can be useful for an effective scripting and can avoid using the Thread.sleep() commands.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/08/07/webdriver-wait-commands/">Continue reading</a>
-</div>
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/07/selenium-automation-framework-introduction/">Automation Framework P1 : Introduction</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-07T08:55:35+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/selenium-framework/'>Selenium-Framework</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/07/selenium-automation-framework-introduction/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-<div class="entry-content clearfix">
-  <h2>Selenium Automation Framework</h2>
-
-<h3>Introduction</h3>
-
-<p>Mission critical software undergoes rigorous functional tests, especially supported by automated testing frameworks. Automating these frameworks and maintaining quality software releases are critical to business performance. Enterprises often face the dilemma of balancing costs and managing resources to ensure that automation frameworks cover all the business scenarios and the applications delivered are error – free.
-By implementing the appropriate automated testing framework, enterprises can significantly increase the speed and accuracy of the testing process, provide a higher return on investment (ROI) from software projects and systematically minimize risk.</p>
-
-
-  <a class="btn pull-right" href="/blog/2014/08/07/selenium-automation-framework-introduction/">Continue reading</a>
 </div>
 
   </article>

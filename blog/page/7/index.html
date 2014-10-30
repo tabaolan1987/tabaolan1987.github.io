@@ -137,6 +137,326 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/07/01/switch-driver-to-tab-by-title/">How to switch Driver to Tab/Window by Title tab?</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-07-01T05:10:38+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jul 1<span>st</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
+      
+        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/07/01/switch-driver-to-tab-by-title/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h3>In some case when you need to switch driver to the tab/window that you know the title of this, you can use this method below</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public static WebDriver switchToTabByTitle(WebDriver driver , String title){
+</span><span class='line'>      Set&lt;String&gt; handles = driver.getWindowHandles();
+</span><span class='line'>      for(String handle : handles){
+</span><span class='line'>          driver.switchTo().window(handle);
+</span><span class='line'>          if(driver.getTitle().equals(title)){
+</span><span class='line'>              break;
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>      return driver;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/26/tipstrick-how-to-resolve-the-certificate-error-in-ie-browser-with-selenium-webdriver/">How to resolve the certificate error in IE, Chrome , Firefox browser with Selenium WebDriver</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-26T09:50:25+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/26/tipstrick-how-to-resolve-the-certificate-error-in-ie-browser-with-selenium-webdriver/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h3>IE BROWSER</h3>
+
+<p>Some website had certificate error when you access to this , it will be blocked by IE browser.</p>
+
+<p>It look like this :</p>
+
+<p><img src="/images/certicate-ie.png"></p>
+
+<p>To resolve this you must enter this code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.get("yourwebsite url that had certificate error");
+</span><span class='line'>driver.navigate().to("javascript:document.getElementById('overridelink').click()");
+</span><span class='line'>Thread.sleep(5000);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>FIREFOX BROWSER</h3>
+
+<p>Some website had certificate error when you access to this , it will be blocked by Firefox browser.</p>
+
+<p>It look like this :</p>
+
+<p><img src="/images/certicate-ff.jpg"></p>
+
+<p>To resolve this you must enter this code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DesiredCapabilities capabilities = new DesiredCapabilities(); 
+</span><span class='line'>capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true); 
+</span><span class='line'>driver= new FirefoxDriver(capabilities);
+</span><span class='line'>driver.get("yourwebsite url that had certificate error");</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>It will force disable certificate error.</p>
+
+<h3>Chrome BROWSER</h3>
+
+<p>Some website had certificate error when you access to this , it will be blocked by Chrome browser.</p>
+
+<p>It look like this :</p>
+
+<p><img src="/images/certicate-ch.jpg"></p>
+
+<p>To resolve this you must enter this code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+</span><span class='line'> capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true); 
+</span><span class='line'> System.setProperty("webdriver.chrome.driver", "path to file chromedriver.exe");
+</span><span class='line'> WebDriver driver = new ChromeDriver(capabilities);
+</span><span class='line'> driver.get("yourwebsite url that had certificate error");</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>It will force disable certificate error.</p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/06/26/tipstrick-how-to-get-the-current-browser-running-in-real-time-with-webdriver/">How to get the current browser running in real time with WebDriver</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-06-26T09:26:07+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 26<span>th</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/26/tipstrick-how-to-get-the-current-browser-running-in-real-time-with-webdriver/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h3>In some case of test automation , you need to find out Selenium WebDriver is running in which browser.</h3>
+
+<p>So take a look in this example code to know :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public String getCurrentBrowserName(WebDriver driver){
+</span><span class='line'>  if(driver instanceof InternetExplorerDriver){
+</span><span class='line'>      return "IE browser";
+</span><span class='line'>  }else if(driver instanceof FirefoxDriver){
+</span><span class='line'>      return "Firefox browser";
+</span><span class='line'>  }else if(driver instanceof ChromeDriver){
+</span><span class='line'>      return "Chrome browser";
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/06/20/tipstricks-test-autocomple-menus-with-selenium-ide/">TipsTricks : Test autocomple menus with Selenium IDE</a>
   </h1>
   
@@ -1256,457 +1576,6 @@
 
 
 
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/11/tipandtricks-call-javascript/">Selenium WebDriver : Call JavaScript </a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-11T08:40:40+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 11<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/11/tipandtricks-call-javascript/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>Call JavaScript function with JavascriptExecutor</h2>
-
-<p>In some case you need to call some JavaScript function in Page.</p>
-
-<p>Just do this like code below and happy learning:</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebDriver driver = new ChromeDriver();
-</span><span class='line'>driver.get('anyurl.com');
-</span><span class='line'>((JavascriptExecutor)driver).executeScript("yourScript();");</span></code></pre></td></tr></table></div></figure>
-
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/11/tipandtrip-complex-action/">Selenium WebDriver : Complex Action</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-11T08:30:39+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 11<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/11/tipandtrip-complex-action/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>Mouse Hover action</h2>
-
-<p>There will be situations where it is required to click on the item of the drop down menu that will show up when you mouse over this menu.</p>
-
-<p>take a look in the example :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// find the menu that have the dropdown showing when we mouse over it.   
-</span><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
-</span><span class='line'>//Create instance of action class
-</span><span class='line'>Actions action = new Actions(driver);
-</span><span class='line'>//move mouse over the menu.
-</span><span class='line'>action.moveToElement(element).build().perform();
-</span><span class='line'>//find the link you want and click it.
-</span><span class='line'>driver.findElement(By.linkText("News")).click();</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or you can code like this way :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
-</span><span class='line'>        Actions action = new Actions(driver);
-</span><span class='line'>action.moveToElement(element).moveToElement(driver.findElement(By.linkText("News"))).click().build().perform();
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>With some of the browser it happens that once mouse hover action is performed, the menu list disappear with in the fractions of seconds before Selenium identify the next submenu item and perform click action on it. In that case it is better to use perform()&lsquo; action on the main menu to hold the menu list till the time Selenium identify the sub menu item and click on it.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement element = driver.findElement(By.linkText("Category"));
-</span><span class='line'>Actions action = new Actions(driver);
-</span><span class='line'>action.moveToElement(element).perform();
-</span><span class='line'>WebElement subElement = driver.findElement(By.linkText("News"));
-</span><span class='line'>action.moveToElement(subElement);
-</span><span class='line'>action.click();
-</span><span class='line'>action.perform();</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Drag And Drop</h2>
-
-<p>In case you need drag and drop an element to another position , the action class provide us the way like below code :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>WebElement From = driver.findElement(By.xpath("yourlocationElement));
-</span><span class='line'>WebElement To = driver.findElement(By.xpath("yourlocationElement"));
-</span><span class='line'>Actions builder = new Actions(driver);
-</span><span class='line'>Action dragAndDrop = builder.clickAndHold(From)
-</span><span class='line'>.moveToElement(To)
-</span><span class='line'>.release(To)
-</span><span class='line'>.build();
-</span><span class='line'>dragAndDrop.perform();
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<h2>Scroll bars dragging</h2>
-
-<p>The following code demonstrates how to drag the vertical scroll bars on a window.</p>
-
-<p>The &ldquo;Actions&rdquo; class is used to click and hold on to the scroll bar and then it is dragged to a new location.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Actions dragger = new Actions(driver);
-</span><span class='line'>WebElement draggablePartOfScrollbar = driver.findElement(By.xpath("yourscrollbarsXpaht"));
-</span><span class='line'>
-</span><span class='line'>// drag downwards
-</span><span class='line'>int numberOfPixelsToDragTheScrollbarDown = 10;
-</span><span class='line'>for (int i=10;i&lt;150;i=i+numberOfPixelsToDragTheScrollbarDown){
-</span><span class='line'>  // this causes a gradual drag of the scroll bar, 10 units at a time
-</span><span class='line'>  dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
-</span><span class='line'>  Thread.sleep(1000L);
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>  // now drag opposite way (downwards)
-</span><span class='line'>  numberOfPixelsToDragTheScrollbarDown = -10;
-</span><span class='line'>for (int i=150;i&gt;10;i=i+numberOfPixelsToDragTheScrollbarDown){
-</span><span class='line'>  // this causes a gradual drag of the scroll bar, -10 units at a time
-</span><span class='line'>  dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
-</span><span class='line'>  Thread.sleep(1000L);
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>RightClick on Element</h2>
-
-<p>In case you want right click on Element please follow the code below :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Actions actions = new Actions(driver);    
-</span><span class='line'>Action action=actions.contextClick(WebElement).build(); //pass WebElement as an argument
-</span><span class='line'>action.perform();</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Sliding</h2>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>WebElement draggable = driver.findElement("find your slider in here by id or xpath etc.."); 
-</span><span class='line'>new Actions(driver).dragAndDropBy(draggable, 120, 0).build().perform();</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<h2>SelectMulti</h2>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>List&lt;WebElement&gt; listItems = driver.findElements("find your select by id or xpath or etc");
-</span><span class='line'>Actions builder = new Actions(driver); 
-</span><span class='line'>builder.clickAndHold(listItems.get(1)).clickAndHold(listItems.get(2)).click();
-</span><span class='line'>Action selectMultiple = builder.build(); 
-</span><span class='line'>selectMultiple.perform();</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/06/07/webdriver-automation-html5-video/">WebDriver : Automation Html5 video</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-06-07T09:26:40+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Jun 7<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/webdriver/'>Webdriver</a></li>
-      
-        <li><a class='category' href='/categories/tricks/'>tricks</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/06/07/webdriver-automation-html5-video/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>Automate Html5 video with Webdriver</h2>
-
-<p>I will show you how to automate HTML5 video.To automate this we will use JavaScript function to control video.</p>
-
-<p>So here we use “document.getElementById(&ldquo;Video ID&rdquo;)” , it return the HTML 5 video object. Using this object we can simulate video. Following the code below :</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>driver = new FirefoxDriver();
-</span><span class='line'>driver.manage().window().maximize();
-</span><span class='line'>driver.get("your url");
-</span><span class='line'>JavascriptExecutor js = (JavascriptExecutor) driver;
-</span><span class='line'>
-</span><span class='line'>//play video
-</span><span class='line'> js .executeScript("document.getElementById(\"id video\").play()");
-</span><span class='line'> Thread.sleep(5000);
-</span><span class='line'>   
-</span><span class='line'> //pause playing video 
-</span><span class='line'> js .executeScript("document.getElementById(\"id video\").pause()");
-</span><span class='line'>   
-</span><span class='line'> //check video is paused
-</span><span class='line'> System.out.println(js .executeScript("document.getElementById(\"id video\").paused"));
-</span><span class='line'>   
-</span><span class='line'> js .executeScript("document.getElementById(\"id video\").play()");
-</span><span class='line'>   
-</span><span class='line'> // play video from starting
-</span><span class='line'> js .executeScript("document.getElementById(\"id video\").currentTime=0");
-</span><span class='line'> Thread.sleep(5000);
-</span><span class='line'>   
-</span><span class='line'> //reload video
-</span><span class='line'> js .executeScript("document.getElementById(\"id video\").load()");</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Good luck and hope this help you!</p>
 
 
   </article>

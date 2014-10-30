@@ -634,6 +634,850 @@
     <header>
   
   <h1 class="beta">
+    <a href="/blog/2014/08/21/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/">Mobile testing : Setup Selendroid and create first test script of android application</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-21T05:30:45+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 21<span>st</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/mobiletest/'>MobileTest</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Setup Selendroid and create first test script of android application</h2>
+
+<h3>About Selendroid :</h3>
+
+<p>Selendroid is an open source automation framework which drives of UI of android native, hybrid and mobile web application.</p>
+
+<p>It supports both emulator and real device. It uses Json Wire Protocol to run webdriver test scripts on device.</p>
+
+<p>It can be integrated with selenium grid for parallel execution on multiple nodes.</p>
+
+<p>No need any modification in application and not need source code to automate application.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Prerequisites:</h3>
+
+<p>1.JDK should be installed and java home path setup in your machine.</p>
+
+<p>2.Android SDK should be installed on your machine and android path should be setup in your machine</p>
+
+<p>3.Download Selendroid from link: <a href="http://selendroid.io/">Click here</a></p>
+
+<p>4.Selenium jar file from : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
+
+<p>5.Eclipse.</p>
+
+<p>6.Create new Emulator or attached real devices with you machine.</p>
+
+<h3>Run Server:</h3>
+
+<p>Open command prompt and go to downloaded Selendroid jar file and run below command</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>java -jar selendroid-standalone-0.9.0-with-dependencies.jar -aut resigned-selendroid-test-app-0.9.0.apk</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Where selendroid-standalone-0.9.0-with-dependencies.jar is downloaded selendroid jar file and resigned-selendroid-test-app-0.9.0.apk application apk file name.</p>
+
+<p>You can download this sample application from link: (Download)[<a href="http://selendroid.io/">http://selendroid.io/</a>]</p>
+
+<p><img src="/images/mb13.jpg"></p>
+
+<h3>Check server status</h3>
+
+<p>launch browser and open url [<a href="http://localhost:4444/wd/hub/status">http://localhost:4444/wd/hub/status</a>] you should see your url like below screen:</p>
+
+<p><img src="/images/mb14.jpg"></p>
+
+<h3>Step to create test script:</h3>
+
+<p>1.Create a java project in eclipse.</p>
+
+<p>2.Add selenium and selendroid jar file in eclipse environments:</p>
+
+<p>3.Create package “com.test“ and add java file “SelendroidTest.java” with below code:</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.test;
+</span><span class='line'> 
+</span><span class='line'>import io.selendroid.SelendroidCapabilities;
+</span><span class='line'>import io.selendroid.SelendroidConfiguration;
+</span><span class='line'>import io.selendroid.SelendroidDriver;
+</span><span class='line'>import io.selendroid.SelendroidLauncher;
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.WebElement;
+</span><span class='line'>import org.testng.Assert;
+</span><span class='line'>import org.testng.annotations.AfterSuite;
+</span><span class='line'>import org.testng.annotations.BeforeSuite;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'> 
+</span><span class='line'>public class SelendroidTest {
+</span><span class='line'>  
+</span><span class='line'> private WebDriver driver ;
+</span><span class='line'>  
+</span><span class='line'> @BeforeSuite
+</span><span class='line'> public void setUp() throws Exception
+</span><span class='line'> {  
+</span><span class='line'>      SelendroidConfiguration config = new SelendroidConfiguration();
+</span><span class='line'>     config.addSupportedApp("selendroid-test-app-0.9.0.apk");
+</span><span class='line'>     SelendroidLauncher selendroidServer = new SelendroidLauncher(config);
+</span><span class='line'>     selendroidServer.lauchSelendroid();
+</span><span class='line'> 
+</span><span class='line'>     SelendroidCapabilities caps = new SelendroidCapabilities("io.selendroid.testapp:0.9.0");
+</span><span class='line'>     driver = new SelendroidDriver(caps);
+</span><span class='line'> }
+</span><span class='line'> 
+</span><span class='line'> @Test
+</span><span class='line'> public void selendroidTest() throws Exception
+</span><span class='line'> {  
+</span><span class='line'>  WebElement inputField = driver.findElement(By.id("my_text_field"));
+</span><span class='line'>  Assert.assertEquals("true", inputField.getAttribute("enabled"));
+</span><span class='line'>  inputField.sendKeys("Selendroid");
+</span><span class='line'> 
+</span><span class='line'>  Assert.assertEquals("Selendroid", inputField.getText());
+</span><span class='line'>   
+</span><span class='line'>  //click EN butoon
+</span><span class='line'>  WebElement button = driver.findElement(By.id("buttonTest"));  
+</span><span class='line'>  button.click();
+</span><span class='line'>   
+</span><span class='line'>  //click accept button
+</span><span class='line'>  button = driver.findElement(By.id("button2"));  
+</span><span class='line'>  button.click();
+</span><span class='line'>   
+</span><span class='line'>  Thread.sleep(5000);
+</span><span class='line'>  //click on registration button
+</span><span class='line'>  button = driver.findElement(By.id("startUserRegistration"));  
+</span><span class='line'>  button.click();
+</span><span class='line'>   
+</span><span class='line'>  Thread.sleep(10000);
+</span><span class='line'>  // fill registration form data
+</span><span class='line'>  WebElement element = driver.findElement(By.id("label_username"));
+</span><span class='line'>  String text = element.getText();
+</span><span class='line'>  System.out.println(text);
+</span><span class='line'>  element = driver.findElement(By.id("inputUsername"));
+</span><span class='line'>  element.sendKeys("bob");
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("inputEmail"));
+</span><span class='line'>  element.sendKeys("test@gmail.com");
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("inputPassword"));
+</span><span class='line'>  element.clear();
+</span><span class='line'>  element.sendKeys("test1233");
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("inputName"));
+</span><span class='line'>  element.clear();
+</span><span class='line'>  element.sendKeys("My Name ");
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("input_preferedProgrammingLanguage"));
+</span><span class='line'>  element.click();
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("text1"));
+</span><span class='line'>  element.click();
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("input_adds"));
+</span><span class='line'>  element.click();
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("btnRegisterUser"));
+</span><span class='line'>  element.click();
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("buttonRegisterUser"));
+</span><span class='line'>  element.click();  
+</span><span class='line'> }
+</span><span class='line'>  
+</span><span class='line'> @AfterSuite
+</span><span class='line'> public void tearDown(){
+</span><span class='line'>        driver.quit();
+</span><span class='line'> }
+</span><span class='line'>} </span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/21/mobile-testing-create-first-appium-webdriver-android-script-in-java/">Mobile testing : Create first Appium WebDriver android script in Java</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-21T05:30:30+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 21<span>st</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/mobiletest/'>MobileTest</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-create-first-appium-webdriver-android-script-in-java/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Setup and create first Appium Webdriver android script in Java</h2>
+
+<h3>About Appium:</h3>
+
+<p>Appium is open source automation tool for iOS and android application supported by Sauce Lab. It is cross platform, supported Native, Hybrid iOS and android application. At backend it uses webdriver JSON wire protocol to communicate with iOS and android applications.</p>
+
+<p>Appium supported many languages like Webdriver. You can write your test scripts any language that has selenium client library.</p>
+
+<p>Appium support UIAutomator framework for ios and android library (For newer Api) and use selendroid for older android platform.</p>
+
+<p>In this post I will show you how to setup and create Appium android script in java language.</p>
+
+<h3>Prerequisite:</h3>
+
+<p>1.JDK should be installed and java home path setup in your machine.</p>
+
+<p>2.Android SDK should be installed on your machine and android path should be setup in your machine.</p>
+
+<p>3.Appium for window download from : <a href="http://appium.io/">Click here</a></p>
+
+<p>4.Selenium jar file from : <a href="http://docs.seleniumhq.org/download/">Download</a></p>
+
+<p>5.Eclipse.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Steps to create and run android test script:</h3>
+
+<p>1.Go to Appium downloaded package unzip and click on “Appium.exe”. Appium server console will be open like below:</p>
+
+<p><img src="/images/mb11.jpg"></p>
+
+<p>2.You can change IP address and port, but keep it as a default.</p>
+
+<p>3.Click on Launch button to run appium server you should see appium server running window like below</p>
+
+<p><img src="/images/mb12.jpg"></p>
+
+<p>4.Launch emulator or connect device to the machine. Run adb command to check device is connected to your machine.</p>
+
+<p>5.Below is sample code of webdriver in java for Appium in TestNg framework.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.test;
+</span><span class='line'> 
+</span><span class='line'>import java.io.File;
+</span><span class='line'>import java.net.URL;
+</span><span class='line'>import java.util.List;
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.Capabilities;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.WebElement;
+</span><span class='line'>import org.openqa.selenium.interactions.HasTouchScreen;
+</span><span class='line'>import org.openqa.selenium.interactions.TouchScreen;
+</span><span class='line'>import org.openqa.selenium.remote.CapabilityType;
+</span><span class='line'>import org.openqa.selenium.remote.DesiredCapabilities;
+</span><span class='line'>import org.openqa.selenium.remote.RemoteTouchScreen;
+</span><span class='line'>import org.openqa.selenium.remote.RemoteWebDriver;
+</span><span class='line'>import org.testng.annotations.AfterMethod;
+</span><span class='line'>import org.testng.annotations.BeforeMethod;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'> 
+</span><span class='line'>public class AppiumTest {
+</span><span class='line'>  
+</span><span class='line'>    private WebDriver driver;
+</span><span class='line'> 
+</span><span class='line'>    @BeforeMethod
+</span><span class='line'>    public void setUp() throws Exception {
+</span><span class='line'>      
+</span><span class='line'>        // set up appium
+</span><span class='line'>        File appDir = new File("{pathApk file}");
+</span><span class='line'>        File app = new File(appDir, "{APK file Name}"); //my case “demo1.apk”
+</span><span class='line'>        DesiredCapabilities capabilities = new DesiredCapabilities();
+</span><span class='line'>        capabilities.setCapability("device","Android");
+</span><span class='line'>        capabilities.setCapability(CapabilityType.BROWSER_NAME,  "");
+</span><span class='line'>        capabilities.setCapability(CapabilityType.VERSION, "4.2");
+</span><span class='line'>        capabilities.setCapability(CapabilityType.PLATFORM, "WINDOW");
+</span><span class='line'>        capabilities.setCapability("app", app.getAbsolutePath());
+</span><span class='line'>        capabilities.setCapability("app-package", "{app package name}");  
+</span><span class='line'>        capabilities.setCapability("app-activity", ".{main activity class}");  //my case RootActivity
+</span><span class='line'>        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+</span><span class='line'>        
+</span><span class='line'>    }
+</span><span class='line'> 
+</span><span class='line'>    @AfterMethod
+</span><span class='line'>    public void tearDown() throws Exception { 
+</span><span class='line'>        driver.quit();
+</span><span class='line'>    }
+</span><span class='line'>     
+</span><span class='line'>    @Test
+</span><span class='line'>    public void loginTest() throws InterruptedException
+</span><span class='line'>    {     
+</span><span class='line'>     List&lt;webelement&gt; textFieldsList = driver.findElements(By.className("android.widget.EditText")); 
+</span><span class='line'>        int size = textFieldsList.size();
+</span><span class='line'> 
+</span><span class='line'>        textFieldsList.get(0).sendKeys("Admin");
+</span><span class='line'>        textFieldsList.get(1).sendKeys("Admin");
+</span><span class='line'>        driver.findElements(By.xpath("android.widget.Button")).get(1).click();
+</span><span class='line'>        WebElement logout = driver.findElement(By.name("LOGOUT"));
+</span><span class='line'>        String logOut = logout.getText();
+</span><span class='line'>        System.out.println(logOut);
+</span><span class='line'>        logout.click();
+</span><span class='line'>    }
+</span><span class='line'>     
+</span><span class='line'>    @Test
+</span><span class='line'>    public void formTest() throws InterruptedException
+</span><span class='line'>    {     
+</span><span class='line'>     List&lt;webelement&gt; textFieldsList = driver.findElements(By.className("android.widget.RelativeLayout")); 
+</span><span class='line'>        textFieldsList.get(2).click();
+</span><span class='line'>         
+</span><span class='line'>        driver.findElement(By.className("android.widget.Spinner")).click();        
+</span><span class='line'>        List&lt;webelement&gt; listsDropDown = driver.findElements(By.className("android.widget.CheckedTextView")); 
+</span><span class='line'>        for(WebElement listdropdown: listsDropDown){
+</span><span class='line'>         String list = listdropdown.getText();        
+</span><span class='line'>         if(list.equals("Oxygen")){
+</span><span class='line'>          listdropdown.click();
+</span><span class='line'>         }
+</span><span class='line'>        }
+</span><span class='line'>         
+</span><span class='line'>        //click on check box
+</span><span class='line'>        WebElement checkBox = driver.findElement(By.className("android.widget.CheckBox"));        
+</span><span class='line'>        if(checkBox.isSelected()){
+</span><span class='line'>         checkBox.click();
+</span><span class='line'>        }
+</span><span class='line'>         
+</span><span class='line'>        //radio button 
+</span><span class='line'>        driver.findElements(By.className("android.widget.RadioButton")).get(1).click();      
+</span><span class='line'>        
+</span><span class='line'>    }      
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
+    <a href="/blog/2014/08/21/mobile-testing-using-robotium-and-testdroid-recorder/">Mobile testing : using Robotium and testdroid recorder</a>
+  </h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-08-21T05:30:20+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 21<span>st</span>, 2014</time>
+    
+
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li><a class='category' href='/categories/mobiletest/'>MobileTest</a></li>
+      
+    
+    </ul>
+  </div>
+
+    
+      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-using-robotium-and-testdroid-recorder/#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h2>Robotium and testdroid recorder</h2>
+
+<p>In this post I will show you how to automate android application using robotium framework with testdroid recorder.</p>
+
+<p>Testdroid recorder is capture user action , generate reusable android test case into robotium framework.</p>
+
+<p>For more detail about Testdroid visit link (click here)[<a href="http://testdroid.com/product/testdroid-recorder#0">http://testdroid.com/product/testdroid-recorder#0</a>]</p>
+
+<h3>Prerequisites:</h3>
+
+<p>1.Eclipse should be installed in your machine.</p>
+
+<p>2.Android SDK should be installed.</p>
+
+<p>3.ADT Plug-in installed in to Eclipse.</p>
+
+<h3>Testdroid installation:</h3>
+
+<p>1.Start Eclipse and go to Help &ndash;> Install New Software</p>
+
+<p>2.Click Add button; enter to field asking you a site to work with.</p>
+
+<p>3.Fill in “Testdroid plug-in” for the Name</p>
+
+<p>4.For the Location provide URL to Testdroid repository:  [<a href="http://www.testdroid.com/updates/">http://www.testdroid.com/updates/</a>]</p>
+
+<p>5.Click ok button.</p>
+
+<p><img src="/images/mb4.jpg"></p>
+
+<p>6.Click next button. During installation you must see below warning pop up</p>
+
+<p>7.Click on “OK” button of warning popup window.</p>
+
+<p><img src="/images/mb5.jpg"></p>
+
+<p>8.After successful installation restart your eclipse.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Creating project in eclipse:</h3>
+
+<p>1.Create new android test project.</p>
+
+<p><img src="/images/mb6.jpg"></p>
+
+<p>2.Click next button.</p>
+
+<p>3.Enter project name and click on next button.</p>
+
+<p>4.Chose Android API and click finish button.</p>
+
+<p><img src="/images/mb7.jpg"></p>
+
+<h3>Run Emulator:</h3>
+
+<p>Run your emulator having API 11 or as per your selection.</p>
+
+<h3>Recording test Script:</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>1.Goto File menu and select New > Other and select option “New Robotium Test”.</p>
+
+<p><img src="/images/mb8.jpg"></p>
+
+<p>2.Click next button.</p>
+
+<p><img src="/images/mb9.jpg"></p>
+
+<p>3.Enter user name and password of Testdroid application and Click Authorize button.</p>
+
+<p>4.Click next button. Browse your apk file and click next button again.</p>
+
+<p><img src="/images/mb10.jpg"></p>
+
+<p>5.Select recording method name and click on recording button. Your apk file will  install in opened emulator , launch the application on emulator and start the recording.</p>
+
+<p>6.After recording click on stop recording button and click on finished button. Your recorded scenario automated converted in java junit test and save in eclipse like as below java code.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import android.test.ActivityInstrumentationTestCase2;
+</span><span class='line'>import android.app.Activity;
+</span><span class='line'>import junit.framework.AssertionFailedError;
+</span><span class='line'>import com.bitbar.recorder.extensions.ExtSolo;
+</span><span class='line'>
+</span><span class='line'>public class NewRobotiumTest extends ActivityInstrumentationTestCase2 {
+</span><span class='line'>
+</span><span class='line'>  private static final String LAUNCHER_ACTIVITY_CLASSNAME = "com.gorillalogic.monkeytalk.demo1.RootActivity";
+</span><span class='line'>  private static Class launchActivityClass;
+</span><span class='line'>  static {
+</span><span class='line'>         try {
+</span><span class='line'>                 launchActivityClass = Class.forName(LAUNCHER_ACTIVITY_CLASSNAME);
+</span><span class='line'>         } catch (ClassNotFoundException e) {
+</span><span class='line'>                 throw new RuntimeException(e);
+</span><span class='line'>         }
+</span><span class='line'>  }
+</span><span class='line'>  private ExtSolo solo; // ExtSolo is an extension of Robotium Solo that helps
+</span><span class='line'>                                               // collecting better test execution data during test
+</span><span class='line'>                                               // runs
+</span><span class='line'>
+</span><span class='line'>  @SuppressWarnings("unchecked")
+</span><span class='line'>  public NewRobotiumTest() {
+</span><span class='line'>         super((Class) launchActivityClass);
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  @Override
+</span><span class='line'>  public void setUp() throws Exception {
+</span><span class='line'>         super.setUp();
+</span><span class='line'>         solo = new ExtSolo(getInstrumentation(), getActivity(), this.getClass()
+</span><span class='line'>                         .getCanonicalName(), getName());
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  @Override
+</span><span class='line'>  public void tearDown() throws Exception {
+</span><span class='line'>         solo.finishOpenedActivities();
+</span><span class='line'>         solo.tearDown();
+</span><span class='line'>         super.tearDown();
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  public void testRecorded() throws Exception {
+</span><span class='line'>         try {
+</span><span class='line'>         } catch (AssertionFailedError e) {
+</span><span class='line'>                 solo.fail("NewRobotiumTest.testRecorded_scr_fail", e);
+</span><span class='line'>                 throw e;
+</span><span class='line'>         } catch (Exception e) {
+</span><span class='line'>                 solo.fail("NewRobotiumTest.testRecorded_scr_fail", e);
+</span><span class='line'>                 throw e;
+</span><span class='line'>         }
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Execution : run java file by choosing “Eclipse Junit launcher” option form eclipse.</h3>
+
+
+  </article>
+  <hr>
+
+  
+  <article class="listing">
+    <header>
+  
+  <h1 class="beta">
     <a href="/blog/2014/08/15/jmeter-introduction/">Jmeter : Introduction</a>
   </h1>
   
@@ -980,624 +1824,6 @@
 <p>The Login Config Element lets you add or override username and password settings in samplers.</p>
 
 <p>For example, you want to simulate one user login to website www.facebook.com with user and password. You can use Login Config Element to add these user and password setting in user request</p>
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui/">Jmeter : Hands on with Jmeter GUI</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-15T06:35:26+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>Hands on with JMeter GUI</h2>
-
-<p>As soon as you launch JMeter , you will see 2 elements : Test Plan and Workbench</p>
-
-<h3>Test Plan</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Test Plan is where you add elements required for your JMeter Test.</p>
-
-<p>It stores all the elements (like ThreadGroup, Timers ,etc) and their corresponding settings required to run your desired Tests.</p>
-
-<p>Following figure shows an example of Test Plan</p>
-
-<p><img src="/images/jmeter36.png"></p>
-
-<h3>WorkBench</h3>
-
-<p>The WorkBench simply provides a place to store test elements temporarily. WorkBench has no relation with Test Plan. JMeter will not save the contents of the WorkBench. It only saves the contents of the Test Plan branch</p>
-
-<p><img src="/images/jmeter37.png"></p>
-
-<h2>Adding Elements</h2>
-
-<p>Adding Elements is the essential step to build a Test Plan because without adding elements, JMeter cannot execute your Test Plan</p>
-
-<p>A Test Plan includes many Elements such as Listener, Controller, and Timer</p>
-
-<p>You can add an element to test plan by right-clicking on a Test Plan, and choose new elements from &ldquo;Add&rdquo; list.</p>
-
-<p>Suppose, you want to add 2 elements to Test Plan BeanShell Assertion and Java Request Default.</p>
-
-<p>1)Right click Test Plan &ndash;> Add &ndash;> Assertion-> Bean Shell Assertion</p>
-
-<p>2)Right click Test Plan &ndash;> Add &ndash;> Config Element &ndash;> Java Request Default</p>
-
-<p><img src="/images/jmeter38.gif"></p>
-
-<p>You can also remove unused element</p>
-
-<p>Let&rsquo;s say, you want to remove element &ldquo;HTTP Request Defaults&rdquo;, select &ldquo;HTTP Request Default&rdquo; &ndash;> Right click-> choose Remove from the context menu &ndash;> Click Yes to confirm delete this element on message box</p>
-
-<h2>Loading and Saving Elements</h2>
-
-<h3>Saving Elements</h3>
-
-<p>Suppose you have already added an element name &ldquo;BeanShell Assertion&rdquo;.  Now you want to save it.</p>
-
-<p>Right click BeanShell Assertion &ndash;> select Save Selection As</p>
-
-<p><img src="/images/jmeter39.png"></p>
-
-<p>A dialog box display, click Save button to save your elements under default name BeanShell Assertion.jmx. You can choose other name if you want</p>
-
-<p><img src="/images/jmeter40.png"></p>
-
-<p>JMeter Test Elements and Test plan are stored in *.JMX format. JMX is standing for Java Management Extensions.</p>
-
-<h3>Loading Elements</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Loading exist element helps you save your time required to create &amp; configure new elements</p>
-
-<p>Let&rsquo;s say,  that you have an existing element in Test Plan: Java Request Default</p>
-
-<p>Right click Java Request Defaults-> select Merge</p>
-
-<p><img src="/images/jmeter41.gif"></p>
-
-<p>Choose the Elements (BeanShell Assertion.jmx.) file in the directory. This element will be added to your current test plan.</p>
-
-<p><img src="/images/jmeter42.png"></p>
-
-<h2>Configuring Elements</h2>
-
-<p>In order to configure any Element</p>
-
-<p>1.Select the element in the Tree on Left Pane</p>
-
-<p>2.Enter configuration settings on the Right Pane</p>
-
-<p><img src="/images/jmeter43.png"></p>
-
-<h3>Running and Stopping a Test Plan</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Before running a test, you should save your Test Plan first. Saving your Test Plan helps you avoid unexpected error when running the test plan. Steps to save Test plan &ndash;</p>
-
-<p>1.File &ndash;> Save Test Plan as-> a Dialog box display</p>
-
-<p>2.Enter a filename of Test Plan &ndash;>click Save</p>
-
-<p><img src="/images/jmeter44.gif"></p>
-
-<h3>Create Combo Test Plan</h3>
-
-<p>You can merge one or many Test Plans to create a combo Test Plan as shown in below figure</p>
-
-<p><img src="/images/jmeter45.png"></p>
-
-<p>Suppose you already have an existing Test Plan name Test_Fragment.jmx on your computer (This article includes this file).You can merge this test plan to current Test Plan on JMeter to create a new Test Plan.</p>
-
-<p><img src="/images/jmeter46.gif"></p>
-
-<p>Now all the test elements in file Test_Fragment.jmx are added to your current test plan as shown in the figure below</p>
-
-<p><img src="/images/jmeter47.png"></p>
-
-<h3>Run Test Plan</h3>
-
-<p>To run your single or multiple test plans, choose Start (Control + R) from the Run menu item.</p>
-
-<p><img src="/images/jmeter48.png"></p>
-
-<p>When JMeter is running, it shows a small green box at the right hand end of the menu bar.</p>
-
-<p><img src="/images/jmeter49.png"></p>
-
-<p>The numbers to the left of the green box are the number of active threads / total number of threads.</p>
-
-<p>To Stop the Test, press Stop button or use short key Ctrl + &lsquo;.&rsquo;</p>
-
-<p><img src="/images/jmeter50.png"></p>
-
-<h3>Test Report</h3>
-
-<p>When test execution is done, you can get the test report. The test report includes the error log file, which is saved in jmeter.log, and the test result summary.</p>
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/15/jmeter-performance-testing/">Jmeter : Performance testing</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-15T05:58:52+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-performance-testing/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>Performance Testing using Jmeter</h2>
-
-<p>Performance testing is crucial to determine that the web application under test will satisfy high load requirements. It can be used to analyze overall server performance under heavy load.</p>
-
-<p><img src="/images/jmeter51.png"></p>
-
-<p>JMeter offers following benefit in Performance testing</p>
-
-<p>JMeter can be  used to test performance of both static resources such as JavaScript and HTML, as well as dynamic resources, such as JSP, Servlets, and AJAX.</p>
-
-<p>JMeter can discover maximum number of concurrent users that your website can handle</p>
-
-<p>JMeter provides a variety of graphical analyses of performance reports.</p>
-
-<p>JMeter Performance Testing includes:</p>
-
-<p><img src="/images/jmeter52.png"></p>
-
-<p>Load Testing: Modelling the expected usage by simulating multiple user access the web services concurrently.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Stress Testing: Every web server has a maximum load capacity. When the load goes beyond the limit, the web server start responding slowly and produce errors. The purpose of the stress testing is to find the maximum load the web server can handle.</p>
-
-<p>The figure below shows how JMeter simulates the heavy load :</p>
-
-<p><img src="/images/jmeter53.png"></p>
-
-<h3>Create a Performance Test Plan in Jmeter</h3>
-
-<p>In this tutorial, we are doing a performance analysis of Google.com for 1000 users</p>
-
-<p>Before testing the performance of target web application, we should determine-</p>
-
-<p>Normal Load: Average number of users visit your website</p>
-
-<p>Heavy Load: The maximum number of users visit your website</p>
-
-<p>What is your target in this test?</p>
-
-<p>Here is the roadmap of this practical example</p>
-
-<p><img src="/images/jmeter54.png"></p>
-
-<h3>Step 1) Add Thread Group</h3>
-
-<p>1.Start JMeter</p>
-
-<p>2.Select Test Plan on the tree</p>
-
-<p>3.Add Thread Group</p>
-
-<p>Right click on the Test Plan and add a new thread group: Add &ndash;> Threads (Users) &ndash;> Thread Group</p>
-
-<p><img src="/images/jmeter55.png"></p>
-
-<p>In Thread Group control panel, enter Thread Properties as following:</p>
-
-<p><img src="/images/jmeter56.png"></p>
-
-<p>Number of Threads: 100 (Number of users connects to target website: 100)</p>
-
-<p>Loop Count: 10 (Number of time to execute testing)</p>
-
-<p>Ramp-Up Period: 100</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>The Thread Count and The Loop Counts are different.</p>
-
-<p><img src="/images/jmeter57.png"></p>
-
-<p>Ramp-Up Period tells JMeter how long to delay before starting next user. For example, if we have 100 users and a 100 second Ramp-Up period, then the delay between starting users would be 1 second (100 users /100 seconds)</p>
-
-<p><img src="/images/jmeter58.png"></p>
-
-<h3>Step 2) Adding JMeter elements</h3>
-
-<p>Now we determine what JMeter elements in this test. The elements are</p>
-
-<h4>HTTP request Default</h4>
-
-<p>This element can be added by right-clicking on the Thread Group and selecting: Add &ndash;> Config Element &ndash;> HTTP Request Defaults.</p>
-
-<p><img src="/images/jmeter59.png"></p>
-
-<p>In the HTTP Request Defaults control panel, enter the Website name under test (<a href="http://www.google.com">http://www.google.com</a>)</p>
-
-<p><img src="/images/jmeter60.png"></p>
-
-<h4>HTTP Request</h4>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Right-click on Thread Group and select: Add &ndash;> Sampler &ndash;> HTTP Request.</p>
-
-<p><img src="/images/jmeter61.png"></p>
-
-<p>In HTTP Request Control Panel, the Path field indicates which URL request you want to send to Google server.</p>
-
-<p><img src="/images/jmeter62.png"></p>
-
-<p>For example, if you enter &ldquo;calendar&rdquo; in Path field. JMeter will create the URL request <a href="http://www.google.com/calendar">http://www.google.com/calendar</a>  to Google server</p>
-
-<p><img src="/images/jmeter63.png"></p>
-
-<p>If you keep  the Path field blank  JMeter will create the URL request <a href="http://www.google.com">http://www.google.com</a> to Google server.</p>
-
-<p>In this test, you keep the Path field blank to make JMeter create the URL request <a href="http://www.google.com">http://www.google.com</a> to Google server.</p>
-
-<h3>Step 3) Adding Graph result</h3>
-
-<p>JMeter can show the test result in Graph format.</p>
-
-<p>Right click Test Plan, Add &ndash;> Listener &ndash;> Graph Results</p>
-
-<p><img src="/images/jmeter64.png"></p>
-
-<h3>Step 4) Run Test and get the test result</h3>
-
-<p>Press Run button (Ctrl + R) on Toolbar to start the testing process. You will see the test result display on Graph at the real time.</p>
-
-<p>The picture below presents a graph of a test plan, where we simulated 100 users who accessed on website www.google.com.</p>
-
-<p><img src="/images/jmeter65.png"></p>
-
-<p>At the bottom of the picture, there are the following statistics, represented in colors:</p>
-
-<p>Black: The total number of current samples sent.</p>
-
-<p>Blue: The current average of all samples sent.</p>
-
-<p>Red: The current standard deviation.</p>
-
-<p>Green: Throughput rate that represents the number of requests per minute the server handled.</p>
-
-<p>Let analyse the performance of Google server in below figure.</p>
-
-<p><img src="/images/jmeter66.png"></p>
-
-<p>To analyse the performance of the web server under test, you should focus on 2 parameters Throughput and Deviation</p>
-
-<p>The Throughput is the most important parameter. It represents the ability of the server to handle heavy load.  The higher the Throughput is, the better is the server performance.</p>
-
-<p>In this test, the throughput of Google server is 1,491.193/minute. It means Google server can handle 1,491.193 requests per minute. This value is quiet high so we can conclude that Google server has good performance</p>
-
-<p>The deviation is shown in red &ndash; it indicates the deviation from the average. The smaller the better.</p>
-
-
-  </article>
-  <hr>
-
-  
-  <article class="listing">
-    <header>
-  
-  <h1 class="beta">
-    <a href="/blog/2014/08/15/jmeter-how-to-use-timers/">Jmeter : How to use Timers</a>
-  </h1>
-  
-
-  
-  <div class="meta clearfix">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time class="pull-left" datetime="2014-08-15T04:26:51+01:00" pubdate data-updated="true"><i class="icon-calendar"></i> Aug 15<span>th</span>, 2014</time>
-    
-
-  <div class="pull-left">
-    <i class="icon-tags"></i>
-    <ul class="tags unstyled">
-    
-      
-        <li><a class='category' href='/categories/jmeter/'>Jmeter</a></li>
-      
-    
-    </ul>
-  </div>
-
-    
-      <a class="pull-right" href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-timers/#disqus_thread">
-        Comments <i class="icon-comment"></i>
-      </a>
-    
-  </div>
-  
-</header>
-
-
-
-
-  <h2>How to use Timers in Jmeter</h2>
-
-<p>By default, JMeter sends the request without pausing between each request. In that case, JMeter could overwhelm your test server by making too many requests in a short amount of times.</p>
-
-<p>Let imagine that you send thousands request to a web server under test in a few seconds. This is what happens!</p>
-
-<p><img src="/images/jmeter67.png"></p>
-
-<p>Timers allow JMeter to delay between each request which a thread makes. Timer can solve the server overload problem.</p>
-
-<p>Also, in real life visitors do not arrive at a website all at the same time, but at different time intervals. So Timer will help mimic the real time behaviour.</p>
-
-<p>Following are some common types of timer in JMeter</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h3>Constant Timer:</h3>
-
-<p>Constant timer delays each user request for the same amount of time.</p>
-
-<p><img src="/images/jmeter68.png"></p>
-
-<h3>Gaussian Random Timer:</h3>
-
-<p>Gaussian random timer delays each user request for a random amount of time.</p>
-
-<p><img src="/images/jmeter69.png"></p>
-
-<p>So the total delay is described as below figure:</p>
-
-<p><img src="/images/jmeter70.png"></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h3>Uniform Random Timer:</h3>
-
-<p>Uniform random timer delays each user request for a random amount of time.</p>
-
-<p><img src="/images/jmeter71.png"></p>
-
-<h3>BeanShell Timer</h3>
-
-<p>The BeanShell Timer can be used to generate a delay time between each user request.</p>
-
-<h3>BSF Timer</h3>
-
-<p>The BSF Timer can be used to generate a delay between each user request using a BSF scripting language.</p>
-
-<h3>JSR223 Timer</h3>
-
-<p>The JSR223 Timer can be used to generate a delay between each user request using a JSR223 scripting language.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h2>Practical Demonstration of Timer Settings</h2>
-
-<p>In this example, you will use Constant Timer to set fixed delay between user requests to google.com.</p>
-
-<p>Let start with a simple test script</p>
-
-<p>1.JMeter creates one user request to <a href="http://www.google.com">http://www.google.com</a> 100 times</p>
-
-<p>2.Delay between each user request is 5000 ms</p>
-
-<p>Here is the roadmap of this practical example:</p>
-
-<p><img src="/images/jmeter72.png"></p>
-
-<h3>Pre-condition:</h3>
-
-<p>We re-use the Step 1 and Step 2 in tutorial (JMeter Performance Testing)[/blog/2014/08/15/jmeter-performance-testing/].</p>
-
-<h3>Step 1) Add Thread Group</h3>
-
-<p>Right click on the Test Plan and add a new thread group: Add-> Threads (Users) &ndash;>Thread Group</p>
-
-<p>In Thread Group control panel, enter Thread Properties as following</p>
-
-<p><img src="/images/jmeter73.png"></p>
-
-<p>This setting lets JMeter create one user request to <a href="http://www.google.com">http://www.google.com</a> in 100 times</p>
-
-<h3>Step 2) Add JMeter elements</h3>
-
-<p>1.Add HTTP request default</p>
-
-<p>2.Add HTTP request</p>
-
-<h3>Step 3) Add Constant Timer</h3>
-
-<p>Right click Thread Group &ndash;> Timer &ndash;> Constant Timer</p>
-
-<p><img src="/images/jmeter74.png"></p>
-
-<p>Configuring Thread Delay of 5000 milliseconds</p>
-
-<p><img src="/images/jmeter75.png"></p>
-
-<h3>Step 4) Add View Results in Table</h3>
-
-<p>View Results in Table displays the test result in table format.</p>
-
-<p>Right click Add &ndash;> Listener &ndash;> View Result in Table.</p>
-
-<p><img src="/images/jmeter76.png"></p>
-
-<p>View Results in Table displays as below figure</p>
-
-<p><img src="/images/jmeter77.png"></p>
-
-<h3>Step 5) Run your test</h3>
-
-<p>When you ready to run test, click Run button on the menu bar, or short key Ctrl+R</p>
-
-<p>This is the result of this test</p>
-
-<p><img src="/images/jmeter78.png"></p>
-
-<p>You can analyze the result as following:</p>
-
-<p>The End Time of one sample is calculated as following:</p>
-
-<p><img src="/images/jmeter79.png"></p>
-
-<p>For example, in the above figure, let analyze the Sample 2</p>
-
-<p>Start time is 22:05:01.866</p>
-
-<p>Sample Time of Sample 2 is 172 ms</p>
-
-<p>Constant Timer : 5000 ms (as configured)</p>
-
-<p>End Time of this sample is = 22:05:01.866 + 172 + 5000 = 22:05:07.038</p>
-
-<p>So the Sample 3 should start at  the time is 22:05:07.039 ( As shown in the above figure)</p>
-
-<p>The delay of each sample is 5000 ms</p>
-
-<p>If you change the Constant Timer is zero, you will see the result is changed</p>
-
-<p><img src="/images/jmeter80.png"></p>
-
-<p>Let analyze the Sample 1</p>
-
-<p>Start time is 22:17:39.141</p>
-
-<p>Sample Time of Sample 2 is 370 ms</p>
-
-<p>Constant Timer : 0 ms (as configured)</p>
-
-<p>End Time of this sample is = 22:17:39.141+ 370 + 0 = 22:17:39.511</p>
-
-<p>So the Sample 2 should start at  the time is 22:17:39.512 (Shown in the above figure)</p>
 
 
   </article>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MobileTest | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/mobiletest/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-10-30T02:57:05+00:00</updated>
+  <updated>2014-10-30T03:45:34+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -296,6 +296,172 @@
 <p>11.Consumption of battery by application</p>
 
 <p>12.Check Application side effects</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mobile testing : Setup Selendroid and create first test script of android application]]></title>
+    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/"/>
+    <updated>2014-08-21T05:30:45+01:00</updated>
+    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application</id>
+    <content type="html"><![CDATA[<h2>Setup Selendroid and create first test script of android application</h2>
+
+<h3>About Selendroid :</h3>
+
+<p>Selendroid is an open source automation framework which drives of UI of android native, hybrid and mobile web application.</p>
+
+<p>It supports both emulator and real device. It uses Json Wire Protocol to run webdriver test scripts on device.</p>
+
+<p>It can be integrated with selenium grid for parallel execution on multiple nodes.</p>
+
+<p>No need any modification in application and not need source code to automate application.</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Prerequisites:</h3>
+
+<p>1.JDK should be installed and java home path setup in your machine.</p>
+
+<p>2.Android SDK should be installed on your machine and android path should be setup in your machine</p>
+
+<p>3.Download Selendroid from link: <a href="http://selendroid.io/">Click here</a></p>
+
+<p>4.Selenium jar file from : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
+
+<p>5.Eclipse.</p>
+
+<p>6.Create new Emulator or attached real devices with you machine.</p>
+
+<h3>Run Server:</h3>
+
+<p>Open command prompt and go to downloaded Selendroid jar file and run below command</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<code>
+java -jar selendroid-standalone-0.9.0-with-dependencies.jar -aut resigned-selendroid-test-app-0.9.0.apk
+</code></p>
+
+<p>Where selendroid-standalone-0.9.0-with-dependencies.jar is downloaded selendroid jar file and resigned-selendroid-test-app-0.9.0.apk application apk file name.</p>
+
+<p>You can download this sample application from link: (Download)[<a href="http://selendroid.io/">http://selendroid.io/</a>]</p>
+
+<p><img src="/images/mb13.jpg"></p>
+
+<h3>Check server status</h3>
+
+<p>launch browser and open url [<a href="http://localhost:4444/wd/hub/status">http://localhost:4444/wd/hub/status</a>] you should see your url like below screen:</p>
+
+<p><img src="/images/mb14.jpg"></p>
+
+<h3>Step to create test script:</h3>
+
+<p>1.Create a java project in eclipse.</p>
+
+<p>2.Add selenium and selendroid jar file in eclipse environments:</p>
+
+<p>3.Create package “com.test“ and add java file “SelendroidTest.java” with below code:</p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+```
+package com.test;</p>
+
+<p>import io.selendroid.SelendroidCapabilities;
+import io.selendroid.SelendroidConfiguration;
+import io.selendroid.SelendroidDriver;
+import io.selendroid.SelendroidLauncher;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;</p>
+
+<p>public class SelendroidTest {</p>
+
+<p> private WebDriver driver ;</p>
+
+<p> @BeforeSuite
+ public void setUp() throws Exception
+ {</p>
+
+<pre><code>  SelendroidConfiguration config = new SelendroidConfiguration();
+ config.addSupportedApp("selendroid-test-app-0.9.0.apk");
+ SelendroidLauncher selendroidServer = new SelendroidLauncher(config);
+ selendroidServer.lauchSelendroid();
+
+ SelendroidCapabilities caps = new SelendroidCapabilities("io.selendroid.testapp:0.9.0");
+ driver = new SelendroidDriver(caps);
+</code></pre>
+
+<p> }</p>
+
+<p> @Test
+ public void selendroidTest() throws Exception
+ {<br/>
+  WebElement inputField = driver.findElement(By.id(&ldquo;my_text_field&rdquo;));
+  Assert.assertEquals(&ldquo;true&rdquo;, inputField.getAttribute(&ldquo;enabled&rdquo;));
+  inputField.sendKeys(&ldquo;Selendroid&rdquo;);</p>
+
+<p>  Assert.assertEquals(&ldquo;Selendroid&rdquo;, inputField.getText());</p>
+
+<p>  //click EN butoon
+  WebElement button = driver.findElement(By.id(&ldquo;buttonTest&rdquo;));<br/>
+  button.click();</p>
+
+<p>  //click accept button
+  button = driver.findElement(By.id(&ldquo;button2&rdquo;));<br/>
+  button.click();</p>
+
+<p>  Thread.sleep(5000);
+  //click on registration button
+  button = driver.findElement(By.id(&ldquo;startUserRegistration&rdquo;));<br/>
+  button.click();</p>
+
+<p>  Thread.sleep(10000);
+  // fill registration form data
+  WebElement element = driver.findElement(By.id(&ldquo;label_username&rdquo;));
+  String text = element.getText();
+  System.out.println(text);
+  element = driver.findElement(By.id(&ldquo;inputUsername&rdquo;));
+  element.sendKeys(&ldquo;bob&rdquo;);</p>
+
+<p>  element = driver.findElement(By.id(&ldquo;inputEmail&rdquo;));
+  element.sendKeys(&ldquo;<a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x74;&#101;&#x73;&#116;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#116;&#x65;&#115;&#116;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;</a>&rdquo;);</p>
+
+<p>  element = driver.findElement(By.id(&ldquo;inputPassword&rdquo;));
+  element.clear();
+  element.sendKeys(&ldquo;test1233&rdquo;);</p>
+
+<p>  element = driver.findElement(By.id(&ldquo;inputName&rdquo;));
+  element.clear();
+  element.sendKeys(&ldquo;My Name &rdquo;);</p>
+
+<p>  element = driver.findElement(By.id(&ldquo;input_preferedProgrammingLanguage&rdquo;));
+  element.click();</p>
+
+<p>  element = driver.findElement(By.id(&ldquo;text1&rdquo;));
+  element.click();</p>
+
+<p>  element = driver.findElement(By.id(&ldquo;input_adds&rdquo;));
+  element.click();</p>
+
+<p>  element = driver.findElement(By.id(&ldquo;btnRegisterUser&rdquo;));
+  element.click();</p>
+
+<p>  element = driver.findElement(By.id(&ldquo;buttonRegisterUser&rdquo;));
+  element.click();<br/>
+ }</p>
+
+<p> @AfterSuite
+ public void tearDown(){</p>
+
+<pre><code>    driver.quit();
+</code></pre>
+
+<p> }
+}
+```</p>
 ]]></content>
   </entry>
   
