@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-10-30T03:45:34+00:00</updated>
+  <updated>2014-11-05T10:17:40+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How to take screenshot in Internet Explore]]></title>
+    <title type="html"><![CDATA[How to take screenshot in Internet Explore , Chrome, Firefox]]></title>
     <link href="http://www.tabaolan.com/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/"/>
     <updated>2014-07-07T09:07:11+01:00</updated>
     <id>http://www.tabaolan.com/blog/2014/07/07/how-to-take-screenshot-in-internet-explore</id>
@@ -30,9 +30,34 @@
 <p>public static void takeScreenShotIE(WebDriver driver, String name){</p>
 
 <pre><code>WebDriver augmentedDriver = new Augmenter().augment(driver);
-output = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
+File output = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
+File file = new File(screenshootDir, name + ".png");
+try {
+    FileUtils.copyFile(output, file);
+} catch (IOException e) {
+    e.printStackTrace();
+}
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>Take screentshot in Chrome and Firefox</p>
+
+<p>```
+public static void takeScreenShotChrome&amp;Firefox(WebDriver driver, String name){</p>
+
+<pre><code>File output = null;
+File file;
+output = ((TakesScreenshot) driver)
+                .getScreenshotAs(OutputType.FILE);
 file = new File(screenshootDir, name + ".png");
-FileUtils.copyFile(output, file);
+try {
+    FileUtils.copyFile(output, file);
+} catch (IOException e) {
+    e.printStackTrace();
+}
 </code></pre>
 
 <p>}</p>

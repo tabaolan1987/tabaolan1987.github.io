@@ -1747,7 +1747,7 @@
     <header>
   
   <h1 class="beta">
-    <a href="/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/">How to take screenshot in Internet Explore</a>
+    <a href="/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/">How to take screenshot in Internet Explore , Chrome, Firefox</a>
   </h1>
   
 
@@ -1811,12 +1811,49 @@
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>
 </span><span class='line'>public static void takeScreenShotIE(WebDriver driver, String name){
 </span><span class='line'>  WebDriver augmentedDriver = new Augmenter().augment(driver);
-</span><span class='line'>  output = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
+</span><span class='line'>  File output = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
+</span><span class='line'>  File file = new File(screenshootDir, name + ".png");
+</span><span class='line'>  try {
+</span><span class='line'>      FileUtils.copyFile(output, file);
+</span><span class='line'>  } catch (IOException e) {
+</span><span class='line'>      e.printStackTrace();
+</span><span class='line'>  }
+</span><span class='line'>} 
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Take screentshot in Chrome and Firefox</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public static void takeScreenShotChrome&Firefox(WebDriver driver, String name){
+</span><span class='line'>  File output = null;
+</span><span class='line'>  File file;
+</span><span class='line'>  output = ((TakesScreenshot) driver)
+</span><span class='line'>                  .getScreenshotAs(OutputType.FILE);
 </span><span class='line'>  file = new File(screenshootDir, name + ".png");
-</span><span class='line'>  FileUtils.copyFile(output, file);
+</span><span class='line'>  try {
+</span><span class='line'>      FileUtils.copyFile(output, file);
+</span><span class='line'>  } catch (IOException e) {
+</span><span class='line'>      e.printStackTrace();
+</span><span class='line'>  }
 </span><span class='line'>} 
 </span></code></pre></td></tr></table></div></figure>
 
