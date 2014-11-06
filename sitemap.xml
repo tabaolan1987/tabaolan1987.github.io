@@ -93,6 +93,12 @@
         <lastmod>2014-10-30T02:28:10+00:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://www.tabaolan.com/blog/2014/06/07/selenium-webdriver-browser-plugin-testing-with-selenium/
+        </loc>
+        <lastmod>2014-11-06T03:00:06+00:00</lastmod>
+    </url>
+    <url>
         <loc>http://www.tabaolan.com/blog/2014/06/11/tipandtrip-complex-action/</loc>
         <lastmod>2014-10-22T04:48:28+01:00</lastmod>
     </url>
@@ -174,7 +180,7 @@
         <loc>
             http://www.tabaolan.com/blog/2014/07/07/how-to-take-screenshot-in-internet-explore/
         </loc>
-        <lastmod>2014-11-05T10:16:28+00:00</lastmod>
+        <lastmod>2014-11-05T10:27:51+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/08/07/newbie-part-7-keyboard-mouse-events/</loc>
@@ -212,7 +218,7 @@
         <loc>
             http://www.tabaolan.com/blog/2014/08/07/selenium-automation-framework-p8-read-data-from-excel-file/
         </loc>
-        <lastmod>2014-10-17T04:14:50+01:00</lastmod>
+        <lastmod>2014-11-06T03:07:12+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/2014/08/07/webdriver-action-class/</loc>
@@ -456,15 +462,15 @@
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/archives/</loc>
-        <lastmod>2014-11-05T10:16:28+00:00</lastmod>
+        <lastmod>2014-11-06T03:07:12+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/blog/</loc>
-        <lastmod>2014-11-05T10:16:28+00:00</lastmod>
+        <lastmod>2014-11-06T03:07:12+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/</loc>
-        <lastmod>2014-11-05T10:16:28+00:00</lastmod>
+        <lastmod>2014-11-06T03:07:12+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/search.html</loc>

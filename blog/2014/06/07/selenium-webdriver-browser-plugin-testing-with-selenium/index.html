@@ -1,0 +1,411 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Selenium Webdriver : Browser plugin testing with Selenium WebDriver - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Browser plugin testing with Selenium WebDriver" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+    
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+        <article class="post">
+
+	<h2 class="title">Selenium Webdriver : Browser Plugin Testing With Selenium WebDriver</h2>
+	<div class="entry-content"><h2>Browser plugin testing with Selenium WebDriver</h2>
+
+<p>Selenium Webdriver supports (remote) installation of browser extensions.</p>
+
+<p>The Chrome and Firefox WebDriver support the installation of extensions, remotely. Here&rsquo;s sample code for Chrome and Firefox:</p>
+
+<h3>Chrome</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>File file = new File("absolutely path to your file extensions"); // zip files are also accepted
+</span><span class='line'>ChromeOptions options = new ChromeOptions();
+</span><span class='line'>options.addExtensions(file);
+</span><span class='line'>
+</span><span class='line'>// Option 1: Locally.
+</span><span class='line'>WebDriver driver = new ChromeDriver(options);
+</span><span class='line'>
+</span><span class='line'>// Option 2: Remotely
+</span><span class='line'>DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+</span><span class='line'>capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+</span><span class='line'>WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Firefox</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>File file = new File("extension.xpi");
+</span><span class='line'>FirefoxProfile firefoxProfile = new FirefoxProfile();
+</span><span class='line'>firefoxProfile.addExtension(file);
+</span><span class='line'>
+</span><span class='line'>// Option 1: Locally
+</span><span class='line'>WebDriver driver = new FirefoxDriver(firefoxProfile);
+</span><span class='line'>
+</span><span class='line'>// Option 2: Remotely
+</span><span class='line'>DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+</span><span class='line'>capabilities.setCapability(FirefoxDriver.PROFILE, firefoxProfile);
+</span><span class='line'>WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I have also implemented automated installation of Opera and Safari extensions.</p>
+
+<p>They&rsquo;re not yet included in the official Selenium release, though the pull requests have been submitted already:</p>
+
+<p>1.OperaDriver : [<a href="https://github.com/operasoftware/operadriver/pull/93">https://github.com/operasoftware/operadriver/pull/93</a>]</p>
+
+<p>2.SafariDriver : [<a href="https://github.com/SeleniumHQ/selenium/pull/87">https://github.com/SeleniumHQ/selenium/pull/87</a>]</p>
+
+<h2>Note:Scroll to the end of the answer for installation instructions.</h2>
+
+<h3>Opera</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>File file = new File("extension.oex"); // Must end with ".oex"
+</span><span class='line'>OperaProfile operaProfile = new OperaProfile();
+</span><span class='line'>operaProfile.addExtension(file);
+</span><span class='line'>
+</span><span class='line'>// Option 1: Locally
+</span><span class='line'>WebDriver driver = new OperaDriver(operaProfile);
+</span><span class='line'>
+</span><span class='line'>// Option 2: Remotely
+</span><span class='line'>DesiredCapabilities capabilities = DesiredCapabilities.opera();
+</span><span class='line'>capabilities.setCapability("opera.profile", operaProfile);
+</span><span class='line'>WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Safari</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>File file = new File("extension.safariextz");
+</span><span class='line'>SafariOptions options = new SafariOptions();
+</span><span class='line'>options.addExtensions(file);
+</span><span class='line'>
+</span><span class='line'>// Option 1: Locally.
+</span><span class='line'>WebDriver driver = new SafariDriver(options);
+</span><span class='line'>
+</span><span class='line'>// Option 2: Remotely
+</span><span class='line'>DesiredCapabilities capabilities = DesiredCapabilities.safari();
+</span><span class='line'>capabilities.setCapability(SafariOptions.CAPABILITY, options);
+</span><span class='line'>WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Getting SafariDriver and OperaDriver</h2>
+
+<h3>Note: The below steps require some disk space (at least 1 GB), a dev env (JDK, Ruby, git) and patience.</h3>
+
+<h4>SafariDriver</h4>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://code.google.com/p/selenium/
+</span><span class='line'>cd selenium
+</span><span class='line'>git remote add rob https://github.com/Rob--W/selenium.git
+</span><span class='line'>git pull rob safari-add-custom-extensions
+</span><span class='line'>./go selenium-server-standalone offline=true</span></code></pre></td></tr></table></div></figure>
+
+
+<p>(Use &ldquo;go&rdquo; instead of &ldquo;./go&rdquo; if you&rsquo;re on Windows).</p>
+
+<p>The result is found at build/java/server/src/org/openqa/grid/selenium/selenium-standalone.jar.</p>
+
+<h4>OperaDriver</h4>
+
+<p>The OperaDriver is build separately from Selenium. Building requires Ant.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/operasoftware/operadriver.git
+</span><span class='line'>cd operadriver
+</span><span class='line'>git remote add rob https://github.com/Rob--W/operadriver.git
+</span><span class='line'>git pull rob feature/install-oex
+</span><span class='line'>ant compile
+</span><span class='line'>ant jar</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The last command outputs something like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>jar:
+</span><span class='line'>      [jar] Building jar: /path/to/operadriver/pkg/operadriver-v1.3-5-XXX.jar</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Copy this file (XXX is actually different) to Selenium&rsquo;s repository, to</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>selenium/third_party/java/opera-driver/operadriver-1.3.jar</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then build the Selenium jar again. If you&rsquo;ve done this before, building will be finished within a minute.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd selenium
+</span><span class='line'>./go selenium-server-standalone offline=true</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which creates build/java/server/src/org/openqa/grid/selenium/selenium-standalone.jar, ready for use.</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/06/07/selenium-webdriver-browser-plugin-testing-with-selenium/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/blog/2014/06/07/selenium-webdriver-browser-plugin-testing-with-selenium/';
+        var disqus_url = 'http://www.tabaolan.com/blog/2014/06/07/selenium-webdriver-browser-plugin-testing-with-selenium/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
