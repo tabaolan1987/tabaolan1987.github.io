@@ -24,6 +24,25 @@
 
     <!-- remove or comment it to disable ajaxification -->   
     <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+	 
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
 <script>
 var fan_page_url = 'https://www.facebook.com/pages/Trollvd/606655129460867'
 var opacity =0.03;
@@ -74,8 +93,8 @@ if((document.getElementById) && window.addEventListener || window.attachEvent){
       
         if(time != 0){
             setTimeout(function(){
-                        document.getElementsByTagName('body')[0].removeChild(like);
-
+                        //document.getElementsByTagName('body')[0].removeChild(like);
+						$("#theiframe").remove();
                         if (window.addEventListener){
                             document.removeEventListener("mousemove",mouse,false);
                         }
@@ -185,25 +204,7 @@ if((document.getElementById) && window.addEventListener || window.attachEvent){
     })();
 }//End
 </script>
-    
-    
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    var pluginUrl =
-            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-    _gaq.push(['_setAccount', 'UA-51278981-1']);
-    _gaq.push(['_trackPageview']);
-    function initGa() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    }
-    setTimeout(initGa, 50);
-</script>
-
-
-
+   
 </head>
 
 <body>
