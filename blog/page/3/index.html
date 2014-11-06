@@ -93,8 +93,8 @@ if((document.getElementById) && window.addEventListener || window.attachEvent){
       
         if(time != 0){
             setTimeout(function(){
-                        //document.getElementsByTagName('body')[0].removeChild(like);
-						$("#theiframe").remove();
+                        document.getElementsByTagName('body')[0].removeChild(like);
+						//$("#theiframe").remove();
                         if (window.addEventListener){
                             document.removeEventListener("mousemove",mouse,false);
                         }
