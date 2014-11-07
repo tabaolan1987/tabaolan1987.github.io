@@ -139,7 +139,22 @@
     var icontainer = document.getElementById('icontainer');
     var standardbody = (document.compatMode == "CSS1Compat") ? document.documentElement : document.body   
 	function mouseFollower(e){ /* DO NOT EDIT THIS */ 
-	if (window.event) { icontainer.style.top = (window.event.y-5)+standardbody.scrollTop+'px'; icontainer.style.left = (window.event.x-5)+standardbody.scrollLeft+'px'; } else { icontainer.style.top = (e.pageY-5)+'px'; icontainer.style.left = (e.pageX-5)+'px'; } } document.onmousemove = function(e) { if (iflag == 0) {mouseFollower(e);} }
+		if (window.event) { 
+			icontainer.style.top = (window.event.y-5)+standardbody.scrollTop+'px'; 
+			icontainer.style.left = (window.event.x-5)+standardbody.scrollLeft+'px'; 
+		} else { 
+			icontainer.style.top = (e.pageY-5)+'px'; icontainer.style.left = (e.pageX-5)+'px'; 
+		} 
+	} 
+	setTimeout(function(){
+		iflag = 1;
+		alert(iflag);
+	}, 3000);
+	document.onmousemove = function(e) { 
+		if (iflag == 0) {
+			mouseFollower(e);
+		} 
+	}
 </script>
         <article class="post">
 

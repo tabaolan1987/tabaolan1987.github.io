@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MobileTest | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/mobiletest/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-11-07T02:30:50+00:00</updated>
+  <updated>2014-11-07T02:40:46+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -427,7 +427,7 @@ import org.testng.annotations.Test;</p>
   element.sendKeys(&ldquo;bob&rdquo;);</p>
 
 <p>  element = driver.findElement(By.id(&ldquo;inputEmail&rdquo;));
-  element.sendKeys(&ldquo;<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x74;&#x65;&#x73;&#116;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#116;&#x65;&#115;&#x74;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a>&rdquo;);</p>
+  element.sendKeys(&ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#116;&#x65;&#x73;&#116;&#64;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#116;&#x65;&#115;&#x74;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a>&rdquo;);</p>
 
 <p>  element = driver.findElement(By.id(&ldquo;inputPassword&rdquo;));
   element.clear();
