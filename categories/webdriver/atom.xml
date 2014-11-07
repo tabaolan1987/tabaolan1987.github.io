@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-11-06T10:38:29+00:00</updated>
+  <updated>2014-11-07T02:30:50+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Introduction]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-introduction/"/>
+    <link href="http://www.tabaolan.com/webdriver-introduction/"/>
     <updated>2014-08-07T09:26:35+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-introduction</id>
+    <id>http://www.tabaolan.com/webdriver-introduction</id>
     <content type="html"><![CDATA[<h2>Selenium Introduction</h2>
 
 <h3>About Selenium</h3>
@@ -93,9 +93,9 @@
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Element Commands]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-element-commands/"/>
+    <link href="http://www.tabaolan.com/webdriver-element-commands/"/>
     <updated>2014-08-07T09:20:35+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-element-commands</id>
+    <id>http://www.tabaolan.com/webdriver-element-commands</id>
     <content type="html"><![CDATA[<h2>Selenium WebDriver WebElement Commands</h2>
 
 <p>The next thing you like to do is to interact with a web page. You need to locate an element first on the web page before interacting with it and locating elements can be done on the WebDriver instance itself or on a WebElement. Webdriver gives us “Find Element” and “Find Elements” method to locate elements on the web page.</p>
@@ -244,9 +244,9 @@ public static void main(String[] args) {
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Browser Commands]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-browser-commands/"/>
+    <link href="http://www.tabaolan.com/webdriver-browser-commands/"/>
     <updated>2014-08-07T09:15:35+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-browser-commands</id>
+    <id>http://www.tabaolan.com/webdriver-browser-commands</id>
     <content type="html"><![CDATA[<h2>Selenium WebDriver Browser Commands</h2>
 
 <p>The very first thing you like to do with Selenium is to opening and closing a new browser. Below are the numbers of commands you can apply on the Selenium opened browser.</p>
@@ -410,9 +410,9 @@ public static void main(String[] args) throws InterruptedException {
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Browser Navigation Commands]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-browser-navigation-commands/"/>
+    <link href="http://www.tabaolan.com/webdriver-browser-navigation-commands/"/>
     <updated>2014-08-07T09:10:35+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-browser-navigation-commands</id>
+    <id>http://www.tabaolan.com/webdriver-browser-navigation-commands</id>
     <content type="html"><![CDATA[<h2>WebDriver Browser Navigation Commands</h2>
 
 <p>The navigate interface exposes the ability to move backwards and forwards in your browser’s history but navigate().to() and get() do exactly the same thing. One’s just a lot easier to type than the other.</p>
@@ -517,9 +517,9 @@ public static void main(String[] args) {
   
   <entry>
     <title type="html"><![CDATA[Webdriver : Switch Window Commands]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/webdriver-switch-window-commands/"/>
+    <link href="http://www.tabaolan.com/webdriver-switch-window-commands/"/>
     <updated>2014-08-07T09:05:35+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/webdriver-switch-window-commands</id>
+    <id>http://www.tabaolan.com/webdriver-switch-window-commands</id>
     <content type="html"><![CDATA[<h2>WebDriver Switch Window Commands</h2>
 
 <p>Some web applications have many frames or multiple windows. Selenium WebDriver assigns an alphanumeric id to each window as soon as the WebDriver object is instantiated. This unique alphanumeric id is called window handle. Selenium uses this unique id to switch control among several windows. In simple terms, each unique window has a unique ID, so that Selenium can differentiate when it is switching controls from one window to the other.</p>

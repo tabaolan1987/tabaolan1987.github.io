@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-IDE | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/selenium-ide/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-11-06T10:38:29+00:00</updated>
+  <updated>2014-11-07T02:30:50+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Selenium IDE : Check Background colour]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide/"/>
+    <link href="http://www.tabaolan.com/tipstricks-check-background-color-in-selenium-ide/"/>
     <updated>2014-06-12T03:38:19+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-check-background-color-in-selenium-ide</id>
+    <id>http://www.tabaolan.com/tipstricks-check-background-color-in-selenium-ide</id>
     <content type="html"><![CDATA[<p>If you want to check element background colour , take a look in this example :</p>
 
 <p>Your html code look like that :</p>
@@ -46,9 +46,9 @@ command: verifyAttribute</p>
   
   <entry>
     <title type="html"><![CDATA[Selenium Ide : loop through array variables]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables/"/>
+    <link href="http://www.tabaolan.com/tipstricks-selenium-ide-loop-through-array-variables/"/>
     <updated>2014-06-12T03:16:02+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/06/12/tipstricks-selenium-ide-loop-through-array-variables</id>
+    <id>http://www.tabaolan.com/tipstricks-selenium-ide-loop-through-array-variables</id>
     <content type="html"><![CDATA[<p>If you want Selenium IDE loop through your array ,</p>
 
 <p>let take a look in code this example :</p>

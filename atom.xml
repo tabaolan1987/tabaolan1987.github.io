@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-11-06T10:38:29+00:00</updated>
+  <updated>2014-11-07T02:30:50+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Guide to Functional testing in Mobile App]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-test-mobile-app/"/>
+    <link href="http://www.tabaolan.com/mobile-testing-guide-to-test-mobile-app/"/>
     <updated>2014-08-21T05:44:47+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-test-mobile-app</id>
+    <id>http://www.tabaolan.com/mobile-testing-guide-to-test-mobile-app</id>
     <content type="html"><![CDATA[<h2>Mobile Testing : Guide to Functional testing in Mobile App</h2>
 
 <p>Some or all of the following testing types may be performed depending on your mobile testing requirements</p>
@@ -98,9 +98,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Guide to Performance Testing in Mobile App]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-performance-testing-in-mobile/"/>
+    <link href="http://www.tabaolan.com/mobile-testing-guide-to-performance-testing-in-mobile/"/>
     <updated>2014-08-21T05:40:47+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-performance-testing-in-mobile</id>
+    <id>http://www.tabaolan.com/mobile-testing-guide-to-performance-testing-in-mobile</id>
     <content type="html"><![CDATA[<h2>Performance testing</h2>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -147,9 +147,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Guide to Security Testing in Mobile App]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-security-testing-in-mobile/"/>
+    <link href="http://www.tabaolan.com/mobile-testing-guide-to-security-testing-in-mobile/"/>
     <updated>2014-08-21T05:35:47+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-guide-to-security-testing-in-mobile</id>
+    <id>http://www.tabaolan.com/mobile-testing-guide-to-security-testing-in-mobile</id>
     <content type="html"><![CDATA[<h2>Security testing</h2>
 
 <p><img src="http://www.tabaolan.com/images/mb1.png"></p>
@@ -220,9 +220,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Other Testing in Mobile App]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-other-testing-in-mobile/"/>
+    <link href="http://www.tabaolan.com/mobile-testing-other-testing-in-mobile/"/>
     <updated>2014-08-21T05:30:47+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-other-testing-in-mobile</id>
+    <id>http://www.tabaolan.com/mobile-testing-other-testing-in-mobile</id>
     <content type="html"><![CDATA[<h2>Usability testing</h2>
 
 <p>The usability testing process of the Mobile application is performed to have a quick and easy step application with less functionality than a slow and difficult application with many features. The main objective is to ensure that we end up having an easy-to-use, intuitive and similar to industry-accepted interfaces which are widely used.</p>
@@ -328,9 +328,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile testing : Setup Selendroid and create first test script of android application]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/"/>
+    <link href="http://www.tabaolan.com/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/"/>
     <updated>2014-08-21T05:30:45+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application</id>
+    <id>http://www.tabaolan.com/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application</id>
     <content type="html"><![CDATA[<h2>Setup Selendroid and create first test script of android application</h2>
 
 <h3>About Selendroid :</h3>
@@ -592,9 +592,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile testing : Create first Appium WebDriver android script in Java]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-create-first-appium-webdriver-android-script-in-java/"/>
+    <link href="http://www.tabaolan.com/mobile-testing-create-first-appium-webdriver-android-script-in-java/"/>
     <updated>2014-08-21T05:30:30+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-create-first-appium-webdriver-android-script-in-java</id>
+    <id>http://www.tabaolan.com/mobile-testing-create-first-appium-webdriver-android-script-in-java</id>
     <content type="html"><![CDATA[<h2>Setup and create first Appium Webdriver android script in Java</h2>
 
 <h3>About Appium:</h3>
@@ -830,9 +830,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile testing : using Robotium and testdroid recorder]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/21/mobile-testing-using-robotium-and-testdroid-recorder/"/>
+    <link href="http://www.tabaolan.com/mobile-testing-using-robotium-and-testdroid-recorder/"/>
     <updated>2014-08-21T05:30:20+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/21/mobile-testing-using-robotium-and-testdroid-recorder</id>
+    <id>http://www.tabaolan.com/mobile-testing-using-robotium-and-testdroid-recorder</id>
     <content type="html"><![CDATA[<h2>Robotium and testdroid recorder</h2>
 
 <p>In this post I will show you how to automate android application using robotium framework with testdroid recorder.</p>
@@ -1034,9 +1034,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Introduction]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-introduction/"/>
+    <link href="http://www.tabaolan.com/jmeter-introduction/"/>
     <updated>2014-08-15T08:30:28+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-introduction</id>
+    <id>http://www.tabaolan.com/jmeter-introduction</id>
     <content type="html"><![CDATA[<h2>Introduction to JMeter</h2>
 
 <p>Have you ever tested a web server to know how efficiently it works? How many concurrent users can a web server handle?</p>
@@ -1127,9 +1127,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Install Jmeter]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-install-jmeter/"/>
+    <link href="http://www.tabaolan.com/jmeter-install-jmeter/"/>
     <updated>2014-08-15T08:20:03+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-install-jmeter</id>
+    <id>http://www.tabaolan.com/jmeter-install-jmeter</id>
     <content type="html"><![CDATA[<h2>How to install Jmeter in easy steps</h2>
 
 <h3>Operating system Support for JMeter</h3>
@@ -1262,9 +1262,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Complete Element reference]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-complete-element-reference/"/>
+    <link href="http://www.tabaolan.com/jmeter-complete-element-reference/"/>
     <updated>2014-08-15T07:10:01+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-complete-element-reference</id>
+    <id>http://www.tabaolan.com/jmeter-complete-element-reference</id>
     <content type="html"><![CDATA[<h2>Complete Element reference for Jmeter</h2>
 
 <p>The different components of JMeter are called Elements. Each Element is designed for a specific purpose.</p>
@@ -1446,9 +1446,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Hands on with Jmeter GUI]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui/"/>
+    <link href="http://www.tabaolan.com/jmeter-hands-on-with-jmeter-gui/"/>
     <updated>2014-08-15T06:35:26+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-hands-on-with-jmeter-gui</id>
+    <id>http://www.tabaolan.com/jmeter-hands-on-with-jmeter-gui</id>
     <content type="html"><![CDATA[<h2>Hands on with JMeter GUI</h2>
 
 <p>As soon as you launch JMeter , you will see 2 elements : Test Plan and Workbench</p>
@@ -1592,9 +1592,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Performance testing]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-performance-testing/"/>
+    <link href="http://www.tabaolan.com/jmeter-performance-testing/"/>
     <updated>2014-08-15T05:58:52+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-performance-testing</id>
+    <id>http://www.tabaolan.com/jmeter-performance-testing</id>
     <content type="html"><![CDATA[<h2>Performance Testing using Jmeter</h2>
 
 <p>Performance testing is crucial to determine that the web application under test will satisfy high load requirements. It can be used to analyze overall server performance under heavy load.</p>
@@ -1756,9 +1756,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : How to use Timers]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-timers/"/>
+    <link href="http://www.tabaolan.com/jmeter-how-to-use-timers/"/>
     <updated>2014-08-15T04:26:51+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-timers</id>
+    <id>http://www.tabaolan.com/jmeter-how-to-use-timers</id>
     <content type="html"><![CDATA[<h2>How to use Timers in Jmeter</h2>
 
 <p>By default, JMeter sends the request without pausing between each request. In that case, JMeter could overwhelm your test server by making too many requests in a short amount of times.</p>
@@ -1926,9 +1926,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : How to use Assertions]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-assertions/"/>
+    <link href="http://www.tabaolan.com/jmeter-how-to-use-assertions/"/>
     <updated>2014-08-15T04:20:51+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-assertions</id>
+    <id>http://www.tabaolan.com/jmeter-how-to-use-assertions</id>
     <content type="html"><![CDATA[<h2>How to use Assertions in JMeter</h2>
 
 <p>Assertion help verify that your server under test returns the expected results.</p>
@@ -2062,9 +2062,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : How to use Controllers]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-controllers/"/>
+    <link href="http://www.tabaolan.com/jmeter-how-to-use-controllers/"/>
     <updated>2014-08-15T04:15:51+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-controllers</id>
+    <id>http://www.tabaolan.com/jmeter-how-to-use-controllers</id>
     <content type="html"><![CDATA[<h2>How to use Controllers in JMeter</h2>
 
 <p>If you want to control &ldquo;when&rdquo; to send a user request to a web server under test, what would you do?</p>
@@ -2254,9 +2254,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : How to use Processor]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-processor/"/>
+    <link href="http://www.tabaolan.com/jmeter-how-to-use-processor/"/>
     <updated>2014-08-15T04:10:51+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-processor</id>
+    <id>http://www.tabaolan.com/jmeter-how-to-use-processor</id>
     <content type="html"><![CDATA[<h2>How to use Processor in JMeter</h2>
 
 <p>Processor is used to modify the Samplers in their scope.</p>
@@ -2377,9 +2377,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : How to perform Distributed Testing]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-perform-distributed-testing/"/>
+    <link href="http://www.tabaolan.com/jmeter-how-to-perform-distributed-testing/"/>
     <updated>2014-08-15T04:10:00+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-perform-distributed-testing</id>
+    <id>http://www.tabaolan.com/jmeter-how-to-perform-distributed-testing</id>
     <content type="html"><![CDATA[<h2>How to perform Distributed Testing in JMeter</h2>
 
 <h3>Overview</h3>
@@ -2467,9 +2467,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : How to use jmeter to record test scenarios]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-jmeter-to-record-test-scenarios/"/>
+    <link href="http://www.tabaolan.com/jmeter-how-to-use-jmeter-to-record-test-scenarios/"/>
     <updated>2014-08-15T04:05:00+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-how-to-use-jmeter-to-record-test-scenarios</id>
+    <id>http://www.tabaolan.com/jmeter-how-to-use-jmeter-to-record-test-scenarios</id>
     <content type="html"><![CDATA[<h2>How To Use JMeter To Record Test Scenarios</h2>
 
 <p>In this tutorial, I will teach you how to set up and use the Apache JMeter HTTP(S) Test Script Recorder to record HTTP requests. Recording HTTP requests is a great way to building test plans, and can be useful in creating tests that closely mimic a normal user&rsquo;s behaviour.</p>
@@ -2669,9 +2669,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : test of wsdl web services]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-test-of-wsdl-web-services/"/>
+    <link href="http://www.tabaolan.com/jmeter-test-of-wsdl-web-services/"/>
     <updated>2014-08-15T04:04:40+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-test-of-wsdl-web-services</id>
+    <id>http://www.tabaolan.com/jmeter-test-of-wsdl-web-services</id>
     <content type="html"><![CDATA[<h2>Jmeter test of wsdl web services</h2>
 
 <p>In this post, I am going to explain how to create jmeter test for wsdl api testing to perform load testing.</p>
@@ -2728,9 +2728,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : test execution with Maven]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/15/jmeter-test-execution-with-maven/"/>
+    <link href="http://www.tabaolan.com/jmeter-test-execution-with-maven/"/>
     <updated>2014-08-15T04:04:35+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/15/jmeter-test-execution-with-maven</id>
+    <id>http://www.tabaolan.com/jmeter-test-execution-with-maven</id>
     <content type="html"><![CDATA[<h2>Jmeter test execution with Maven</h2>
 
 <p>In this post I explain the procedure of Jmeter test execution using maven build tool.</p>

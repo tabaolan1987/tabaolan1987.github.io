@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TestNG-Framework | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-11-06T10:38:29+00:00</updated>
+  <updated>2014-11-07T02:30:50+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework P1 : Introduction]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-introduction/"/>
+    <link href="http://www.tabaolan.com/testng-framework-introduction/"/>
     <updated>2014-05-26T05:00:14+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-introduction</id>
+    <id>http://www.tabaolan.com/testng-framework-introduction</id>
     <content type="html"><![CDATA[<h2>TestNG Introduction</h2>
 
 <p>TestNG is a testing testing framework inspired from JUnit and NUnit but introducing some new functionality that make it more powerful and easier to use.</p>
@@ -103,9 +103,9 @@
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework P2 : Download]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-download/"/>
+    <link href="http://www.tabaolan.com/testng-framework-download/"/>
     <updated>2014-05-26T05:00:12+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-download</id>
+    <id>http://www.tabaolan.com/testng-framework-download</id>
     <content type="html"><![CDATA[<h2>Install TestNG in Eclipse</h2>
 
 <p>It is easy to install TestNG, as it comes as a plugin for Eclipse IDE. Prerequisite for installing TestNG is your Internet connection should be up &amp; running during installation of this plugin and Eclipse IDE should be installed in your computer. Please see Download and Install Eclipse to setup Eclipse to you system.</p>
@@ -158,9 +158,9 @@
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework P3 : First Test case with TestNG]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-first-test-case-with-testng/"/>
+    <link href="http://www.tabaolan.com/testng-framework-first-test-case-with-testng/"/>
     <updated>2014-05-26T05:00:11+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-first-test-case-with-testng</id>
+    <id>http://www.tabaolan.com/testng-framework-first-test-case-with-testng</id>
     <content type="html"><![CDATA[<h2>First Test case with TestNG</h2>
 
 <p>Steps to follow:</p>
@@ -295,9 +295,9 @@ import org.testng.annotations.AfterMethod;</p>
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework P4 : Test Suite]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-test-suite/"/>
+    <link href="http://www.tabaolan.com/testng-framework-test-suite/"/>
     <updated>2014-05-26T05:00:10+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-test-suite</id>
+    <id>http://www.tabaolan.com/testng-framework-test-suite</id>
     <content type="html"><![CDATA[<h2>TestNG Test Suite</h2>
 
 <p>In any project, you will end up to a place where you need to execute so many test cases on a run. Running a set of test cases together is call executing a Test Suite. Those test cases can be dependent to each other or may have to be executed in a certain order. TestNg gives us the capability to manage our test execution.</p>
@@ -359,9 +359,9 @@ import org.testng.annotations.AfterMethod;</p>
   
   <entry>
     <title type="html"><![CDATA[TestNG Framework P5: Annotations , Groups and OnDepends]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations/"/>
+    <link href="http://www.tabaolan.com/testng-framework-annotations/"/>
     <updated>2014-05-26T05:00:09+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/05/26/testng-framework-annotations</id>
+    <id>http://www.tabaolan.com/testng-framework-annotations</id>
     <content type="html"><![CDATA[<h2>TestNG Annotations, Groups &amp; OnDepends</h2>
 
 <h3>TestNG Annotations</h3>

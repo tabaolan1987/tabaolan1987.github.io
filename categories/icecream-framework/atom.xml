@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IceCream-Framework | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/icecream-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-11-06T10:38:29+00:00</updated>
+  <updated>2014-11-07T02:30:50+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[IceCream Framework Part 1 : Introduction]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction/"/>
+    <link href="http://www.tabaolan.com/icecream-framework-introduction/"/>
     <updated>2014-08-07T08:55:35+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/icecream-framework-introduction</id>
+    <id>http://www.tabaolan.com/icecream-framework-introduction</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
 <p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
@@ -41,7 +41,7 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x74;&#x61;&#98;&#x61;&#x6f;&#108;&#97;&#110;&#49;&#x39;&#x38;&#55;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#116;&#97;&#x62;&#97;&#111;&#108;&#97;&#x6e;&#49;&#x39;&#x38;&#55;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#116;&#97;&#98;&#97;&#111;&#x6c;&#97;&#x6e;&#49;&#57;&#x38;&#55;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#x74;&#97;&#x62;&#97;&#111;&#108;&#x61;&#110;&#x31;&#x39;&#56;&#x37;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
 
@@ -57,9 +57,9 @@
   
   <entry>
     <title type="html"><![CDATA[IceCream Framework Part 2 : Download and Configuration]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/icecream-framework-download-and-configuration/"/>
+    <link href="http://www.tabaolan.com/icecream-framework-download-and-configuration/"/>
     <updated>2014-08-07T08:50:35+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/icecream-framework-download-and-configuration</id>
+    <id>http://www.tabaolan.com/icecream-framework-download-and-configuration</id>
     <content type="html"><![CDATA[<h2>DOWNLOAD</h2>
 
 <h3>Required Tools (If you already have this in your laptop or computer , you can skip this step) :</h3>
@@ -125,9 +125,9 @@
   
   <entry>
     <title type="html"><![CDATA[IceCream Framework Part 3 : Running an example test case.]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/icecream-framework-how-to-create-your-own-testcase/"/>
+    <link href="http://www.tabaolan.com/icecream-framework-how-to-create-your-own-testcase/"/>
     <updated>2014-08-07T08:30:35+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/icecream-framework-how-to-create-your-own-testcase</id>
+    <id>http://www.tabaolan.com/icecream-framework-how-to-create-your-own-testcase</id>
     <content type="html"><![CDATA[<h2>Running an example test case</h2>
 
 <h3>Follow to there steps below :</h3>
@@ -192,9 +192,9 @@
   
   <entry>
     <title type="html"><![CDATA[IceCream Framework Part 4 :Function available in excel file and how to use!]]></title>
-    <link href="http://www.tabaolan.com/blog/2014/08/07/icecream-framework-part-3-function-avaiable-in-excel-file/"/>
+    <link href="http://www.tabaolan.com/icecream-framework-part-3-function-avaiable-in-excel-file/"/>
     <updated>2014-08-07T08:00:35+01:00</updated>
-    <id>http://www.tabaolan.com/blog/2014/08/07/icecream-framework-part-3-function-avaiable-in-excel-file</id>
+    <id>http://www.tabaolan.com/icecream-framework-part-3-function-avaiable-in-excel-file</id>
     <content type="html"><![CDATA[<h2>Version Beta 0.1</h2>
 
 <h3>Function Browser</h3>
