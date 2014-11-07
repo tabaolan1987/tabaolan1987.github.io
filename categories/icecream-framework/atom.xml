@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IceCream-Framework | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/icecream-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-11-07T02:42:09+00:00</updated>
+  <updated>2014-11-07T03:01:49+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -41,7 +41,7 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x74;&#x61;&#98;&#97;&#111;&#x6c;&#x61;&#110;&#49;&#x39;&#x38;&#x37;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;">&#116;&#x61;&#x62;&#x61;&#x6f;&#108;&#x61;&#x6e;&#x31;&#57;&#56;&#x37;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#116;&#97;&#98;&#x61;&#x6f;&#x6c;&#97;&#x6e;&#x31;&#x39;&#56;&#x37;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#116;&#97;&#98;&#x61;&#111;&#108;&#x61;&#110;&#x31;&#x39;&#56;&#x37;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
 
@@ -49,7 +49,7 @@
 
 <p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
 
-<p>Let IceCream say Hi with you and take a look in <a href="/blog/2014/08/07/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
+<p>Let IceCream say Hi with you and take a look in <a href="/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
 
 <p><img src="/images/ICE-1.jpg"></p>
 ]]></content>
@@ -117,7 +117,7 @@
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<h2>It&rsquo;s time to know <a href="/blog/2014/08/07/icecream-framework-how-to-create-your-own-testcase/">Running an example test case</a></h2>
+<h2>It&rsquo;s time to know <a href="/icecream-framework-how-to-create-your-own-testcase/">Running an example test case</a></h2>
 
 <p><img src="/images/ICE-2.jpg"></p>
 ]]></content>
@@ -184,7 +184,9 @@
 <p><img src="/images/ICE_TEST-12.png">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>12) Now you can create your own test case by copy file &lsquo;TESTEXAMPLE.xslx&rsquo; to the test case folder, rename this file , open this file , choose the browser , and delete row 3 to 8 and define your action in this excel file.We recommend you to take a look in <a href="/blog/2014/08/07/icecream-framework-part-3-function-avaiable-in-excel-file/">How to use Action in Excel</a> . If you have any trouble to set up and run your test case , leave your comment below.</p>
+<p>12) Now you can create your own test case by copy file &lsquo;TESTEXAMPLE.xslx&rsquo; to the test case folder, rename this file , open this file , choose the browser , and delete row 3 to 8 and define your action in this excel file.</p>
+
+<p>We recommend you to take a look in <a href="/icecream-framework-part-3-function-avaiable-in-excel-file/">How to use Action in Excel</a> . If you have any trouble to set up and run your test case , leave your comment below.</p>
 
 <p><img src="/images/ICE-3.jpg"></p>
 ]]></content>
