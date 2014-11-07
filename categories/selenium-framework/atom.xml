@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium-Framework | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/selenium-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-11-07T03:25:41+00:00</updated>
+  <updated>2014-11-07T03:34:03+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -421,7 +421,11 @@ public static WebElement butt_post(WebDriver driver){
 
 <h3>Required knowledge : <a href="/selenium-automation-framework-page-object-model/">Page Object Model</a></h3>
 
-<p>In most of the web application we have few set of actions which are always executed in the series of actions. Rather than writing those actions again and again in our test, we can club those actions in to a method and then calling that method in our test script. Modularity avoids duplicate of code. In future if there is any change in the series of action, all you have to do is to make changes in your main modular method script. No test case will be impacted with the change.</p>
+<p>In most of the web application we have few set of actions which are always executed in the series of actions.</p>
+
+<p>Rather than writing those actions again and again in our test, we can club those actions in to a method and then calling that method in our test script.</p>
+
+<p>Modularity avoids duplicate of code. In future if there is any change in the series of action, all you have to do is to make changes in your main modular method script. No test case will be impacted with the change.</p>
 
 <!--more-->
 
