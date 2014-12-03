@@ -306,7 +306,11 @@
     </url>
     <url>
         <loc>http://www.tabaolan.com/how-to-use-csv-in-jmeter/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+        <lastmod>2014-12-03T03:22:09+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/jmeter-how-to-use-jmeter-to-test-database/</loc>
+        <lastmod>2014-12-03T04:02:24+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/jmeter-test-execution-with-maven/</loc>
@@ -394,11 +398,11 @@
     </url>
     <url>
         <loc>http://www.tabaolan.com/archives/</loc>
-        <lastmod>2014-11-11T03:09:02+00:00</lastmod>
+        <lastmod>2014-12-03T04:02:24+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/</loc>
-        <lastmod>2014-11-11T03:09:02+00:00</lastmod>
+        <lastmod>2014-12-03T04:02:24+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.tabaolan.com/search.html</loc>

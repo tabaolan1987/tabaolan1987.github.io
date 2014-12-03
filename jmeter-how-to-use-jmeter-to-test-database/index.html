@@ -3,12 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>IceCream Framework Part 1 : Introduction - Selenium Tutorial</title>
+	<title>Jmeter : How to use Jmeter test Database - Selenium Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
-	<meta name="description" content="Introduction" />
+	<meta name="description" content="How to use Jmeter test your Database" />
 	
-	<meta name="keywords" content="Selenium,WebDriver,Framework,automation,website" />
+	<meta name="keywords" content="Jmeter,database" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
 	<link rel="canonical" href="">
@@ -133,52 +133,121 @@
 
         <article class="post">
 
-	<h2 class="title">IceCream Framework Part 1 : Introduction</h2>
-	<div class="entry-content"><h2>Introduction</h2>
+	<h2 class="title">Jmeter : How to Use Jmeter Test Database</h2>
+	<div class="entry-content"><h2>How to use Jmeter test your Database</h2>
 
-<p>IceCream FrameWork was launched to help the tester to run test automation website more easily.</p>
+<p>In this chapter we will see how to create a simple test plan to test the database server.</p>
 
-<p>The IceCream FrameWork installation very easy, just a few basic steps that you can run it.</p>
+<p>For our test purpose we have used the MYSQL database server. You can use any other database for testing.</p>
 
-<!--more-->
+<h3>Precondition</h3>
+
+<ol>
+<li>Install MYSQL, create database and table in MYSQL, save user name and password can access to MYSQL.</li>
+</ol>
 
 
-<p>Tester just have the basic understanding of <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
+<p><img src="/images/jmeter147.png"></p>
+
+<ol>
+<li><p>Download jar file for JMETER connect to MYSQL : <a href="http://www.java2s.com/Code/Jar/c/Downloadcommysqljdbc515jar.htm">Click her</a></p></li>
+<li><p>Extract file &ldquo;com.mysql.jdbc_5.1.5.jar.zip&rdquo;, you will see &ldquo;com.mysql.jdbc_5.1.5.jar&rdquo;. Rename this file to &ldquo;com.mysql.jdbc.jar&rdquo; and put it to folder lib of JMETER.</p></li>
+</ol>
+
+
+<p><img src="/images/jmeter148.png"></p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
+<h3>Create JMeter Test Plan</h3>
 
-<p>IceCream Framework is written by Java language and use the core <a href="/blog/categories/webdriver/">Selenium WebDriver</a>.</p>
+<h4>Open Jmeter from : apache-jmeter/bin/jmeter.bat</h4>
 
-<p>Currently IceCream Framework version 1.0 Beta version only have the basic functions to perform automatic chemical testing.</p>
+<h4>ADD USERS</h4>
 
-<p>The reason for this because I want to collect more of your opinions, feedback and the desire to have more function for me so that I can write to serve you in the next version!</p>
+<p>Now create a Thread group, right click on Test Plan > Add> Threads(Users)> Thread Group.</p>
 
-<p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
+<p>Thread Group will get added under the Test Plan node. Rename this Thread Group as &ldquo;USER CONNECT TO MYSQL&rdquo;.</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#x74;&#97;&#x62;&#x61;&#x6f;&#x6c;&#x61;&#110;&#x31;&#57;&#x38;&#x37;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#x74;&#x61;&#x62;&#97;&#x6f;&#108;&#97;&#110;&#49;&#x39;&#x38;&#x37;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>Set value for Numbers of Threads(users): 10</p>
 
-<p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
+<p>Set value for Ram-up Periods : 5</p>
+
+<p>It means that in 5 seconds, we will set up 10 users connect to MYSQL server.</p>
+
+<p><img src="/images/jmeter149.png"></p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
+<h4>ADD JDBC Connection Configuration</h4>
 
-<p>Let IceCream say Hi with you and take a look in <a href="/icecream-framework-download-and-configuration/">IceCream Framework : Download and Configuration</a></p>
+<p>Right click on the JDBC Users element, select Add > Config Element > JDBC Connection Configuration.</p>
 
-<p><img src="/images/ICE-1.jpg"></p>
+<p>Set up the following fields (we are using MYSQL):</p>
+
+<ol>
+<li><p>Variable name bound to pool. This needs to uniquely identify the configuration. It is used by the JDBC Sampler to identify the configuration to be used. We have named it as &ldquo;dbpooldemo&rdquo; .</p></li>
+<li><p>Database URL: jdbc:mysql://youripserver:3306/yourdatabase</p></li>
+<li><p>JDBC Driver class: com.mysql.jdbc.Driver</p></li>
+<li><p>Username: username can access to your database created before.</p></li>
+<li><p>Password : password of this username.</p></li>
+</ol>
+
+
+<p><img src="/images/jmeter150.png"></p>
+
+<h4>ADD JDBC REQUESTS</h4>
+
+<p>Now that we have defined our users and configuration connection, it is time to define the tasks that they will be performing.</p>
+
+<p>Select JDBC Users element, click your right mouse button to get the Add menu, and then select Add > Sampler > JDBC Request.</p>
+
+<p>Then, select this new element to view its Control Panel. Edit the properties as below:</p>
+
+<ol>
+<li><p>Enter the Pool Name: dbpooldemo (same as in the configuration element)</p></li>
+<li><p>Query Type: Select statement</p></li>
+<li><p>Enter the SQL Query String field.</p></li>
+</ol>
+
+
+<p><img src="/images/jmeter151.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h4>CREATE LISTENER</h4>
+
+<p>Now add the Listener element. This element is responsible for storing all of the results of your JDBC requests in a file and presenting a visual model of the data.</p>
+
+<p>Select the JDBC Users element and add a View Results Tree listener (Add > Listener > View Results Tree).</p>
+
+<p><img src="/images/jmeter152.png"></p>
+
+<h4>SAVE AND EXECUTE TEST PLAN</h4>
+
+<p>Now save the above test plan as db_test.jmx. Execute this test plan using Run > Start option.</p>
+
+<p>You will have output like below :</p>
+
+<p><img src="/images/jmeter153.png"></p>
+
+<p><img src="/images/jmeter154.png"></p>
+
+<p><img src="/images/jmeter155.png"></p>
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/icecream-framework-introduction/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/jmeter-how-to-use-jmeter-to-test-database/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -228,8 +297,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/icecream-framework-introduction/';
-        var disqus_url = 'http://www.tabaolan.com/icecream-framework-introduction/';
+        var disqus_identifier = 'http://www.tabaolan.com/jmeter-how-to-use-jmeter-to-test-database/';
+        var disqus_url = 'http://www.tabaolan.com/jmeter-how-to-use-jmeter-to-test-database/';
         var disqus_script = 'embed.js';
       
     (function () {
