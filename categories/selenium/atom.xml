@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Selenium | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/selenium/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-12-03T04:02:41+00:00</updated>
+  <updated>2014-12-03T04:14:30+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[TipsTricks : Test autocomple menus with Selenium IDE]]></title>
-    <link href="http://www.tabaolan.com/tipstricks-test-autocomple-menus-with-selenium-ide/"/>
+    <link href="http://www.tabaolan.com/tricks/,/Selenium/IDE/tipstricks-test-autocomple-menus-with-selenium-ide/"/>
     <updated>2014-06-20T03:20:52+01:00</updated>
-    <id>http://www.tabaolan.com/tipstricks-test-autocomple-menus-with-selenium-ide</id>
+    <id>http://www.tabaolan.com/tricks/,/Selenium/IDE/tipstricks-test-autocomple-menus-with-selenium-ide</id>
     <content type="html"><![CDATA[<p>In the work flow I wanted to test, users are asked to type the first few letters of the name of a US County into a text field. An AJAX request is then triggered to find matching counties, and a list of matches is presented to users.</p>
 
 <p>It looks something like this:</p>
@@ -44,9 +44,9 @@
   
   <entry>
     <title type="html"><![CDATA[Selenium IDE : How to use stored value in a JavaScript comparison]]></title>
-    <link href="http://www.tabaolan.com/tipstricks-how-to-use-stored-value-in-a-javascript-comparison/"/>
+    <link href="http://www.tabaolan.com/tricks/,/Selenium/IDE/tipstricks-how-to-use-stored-value-in-a-javascript-comparison/"/>
     <updated>2014-06-12T03:02:58+01:00</updated>
-    <id>http://www.tabaolan.com/tipstricks-how-to-use-stored-value-in-a-javascript-comparison</id>
+    <id>http://www.tabaolan.com/tricks/,/Selenium/IDE/tipstricks-how-to-use-stored-value-in-a-javascript-comparison</id>
     <content type="html"><![CDATA[<p>In this example I provide you the way to compare the value you stored with number 200. If your value is more than 200 it will pass and if it is less than 200 it will false.</p>
 
 <p>Take a look in this code :</p>

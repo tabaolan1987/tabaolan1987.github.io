@@ -1,0 +1,467 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TestNG Framework P7 : Reporters and Asserts  - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Reporters and Asserts" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+
+        <article class="post">
+
+	<h2 class="title">TestNG Framework P7 : Reporters and Asserts</h2>
+	<div class="entry-content"><h2>TestNG Reporters &amp; Asserts</h2>
+
+<h3>TestNG Reporters</h3>
+
+<p>TestNG is a Framework and so far we have already seen the many different powerful features of TestNG. It almost gives you all the important things you are required to complete the Framework.</p>
+
+<!--more-->
+
+
+<h3>TestNG Reporter Logs</h3>
+
+<p>TestNG also gives us the logging facility for the test. For example during the running of test case user wants some information to be logged in the console. Information could be any detail depends upon the purpose. Keeping this in mind that we are using Selenium for testing, we need the information which helps the User to understand the test steps or any failure during the test case execution. With the help of TestNG Logs it is possible to enable logging during the Selenium test case execution.</p>
+
+<p>In selenium there are two types of logging. High level logging and Low level logging. In low level logging you try to produce logs for the every step you take or every action you make in your automation script. In high  level logging you just try to capture main events of your test.</p>
+
+<p>Everybody has their own style of logging and I have mine too. I am also a big fan of Log4j logging and that’s why I do not mix log4j logging with testng logging but on the same side I make to use of both of its. I perform low level logging with log4j and high level logging with testng reporter logs.</p>
+
+<h4>How to do it…</h4>
+
+<p>1) Write a test case for Sign In application and implement Log4j logging on every step.</p>
+
+<p>2) Insert Reporter logs on the main events of the test.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>
+</span><span class='line'>import org.apache.log4j.Logger;
+</span><span class='line'>import org.apache.log4j.xml.DOMConfigurator;
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.Reporter;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>import utility.Log;
+</span><span class='line'>
+</span><span class='line'>public class ReporterLogs {
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  private static Logger Log = Logger.getLogger(Log.class.getName());
+</span><span class='line'>    @Test
+</span><span class='line'>  public static void test() {
+</span><span class='line'>      DOMConfigurator.configure("log4j.xml");
+</span><span class='line'>        driver = new FirefoxDriver();
+</span><span class='line'>        Log.info("New driver instantiated");
+</span><span class='line'>        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>        Log.info("Implicit wait applied on the driver for 10 seconds");
+</span><span class='line'>        driver.get("https://www.facebook.com/");
+</span><span class='line'>        Log.info("Web application launched");
+</span><span class='line'>        // Our first step is complete, so we produce a main event log here for our reports.
+</span><span class='line'>        Reporter.log("Application Lauched successfully | ");
+</span><span class='line'>   
+</span><span class='line'>        driver.findElement(By.id("email")).sendKeys("yourusername");
+</span><span class='line'>        Log.info("Username entered in the Username and email text box");
+</span><span class='line'>        driver.findElement(By.id("pass")).sendKeys("yourpassword");
+</span><span class='line'>        Log.info("Password entered in the Password text box");
+</span><span class='line'>        driver.findElement(By.id("loginbutton")).click();
+</span><span class='line'>        Log.info("Click action performed on Submit button");
+</span><span class='line'>        // Here we are done with our Second main event
+</span><span class='line'>        Reporter.log("Sign In Successful | " );
+</span><span class='line'>        driver.quit();
+</span><span class='line'>        Log.info("Browser closed");
+</span><span class='line'>        // This is the third main event
+</span><span class='line'>        Reporter.log("User is Logged out and Application is closed | ");
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) Run the test by right click on the test case script and select Run As > TestNG Test.</p>
+
+<p>Your Log4j logging output will look like this:</p>
+
+<p><img src="/images/TestNG-Reporter-1.png"></p>
+
+<p>But your Reporters log will look like this:</p>
+
+<p><img src="/images/TestNG-Reporter-2.png"></p>
+
+<p>Log4j logging will help you to report a bug or steps taken during the test, on the other hand reporters log will help you to share the test status with leadership. As leadership is just interested in the test results, not the test steps.</p>
+
+<p>I also use reporter’s logs on the verification during the test. For example</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if(Text1.equals(Text2)){
+</span><span class='line'>      Reporter.log("Verification Passed forText");
+</span><span class='line'>  }else{
+</span><span class='line'>      Reporter.log("Verification Failed for Text");
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>TestNG Asserts</h3>
+
+<p>TestNG also gives us the power to take decisions in the middle of the test run with the help of Asserts. With this we can put various checkpoints in the test. Asserts are the most popular and frequently used methods while creating Selenium Scripts. In selenium there will be many situations in the test where you just like to check the presence of an element. All you need to do is to put an assert statement on to it to verify its existence.</p>
+
+<h4>Different Asserts Statements</h4>
+
+<p>1) Assert.assertTrue() &amp; Assert.assertFalse()</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.WebElement;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.Assert;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class Asserts {
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  @Test
+</span><span class='line'>  public void f() {
+</span><span class='line'>    driver = new FirefoxDriver();
+</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>      driver.get("https://www.facebook.com/");
+</span><span class='line'>      
+</span><span class='line'>      // Here driver will try to find out My username textbox on the application
+</span><span class='line'>      WebElement text_username = driver.findElement(By.id("email"));
+</span><span class='line'>      
+</span><span class='line'>      //Test will only continue, if the below statement is true
+</span><span class='line'>      //This is to check whether the textbox is displayed or not
+</span><span class='line'>      Assert.assertTrue(text_username.isDisplayed());
+</span><span class='line'>      
+</span><span class='line'>      //My username text will be type only if the above condition is true
+</span><span class='line'>      myAccount.sendKeys("your_username");
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: Assert true statement fails the test and stop the execution of the test, if the actual output is false. Assert.assertFalse() works opposite of Assert.assertTrue(). It means that if you want your test to continue only if when some certain element is not present on the page. You will use Assert false, so it will fail the test in case of the element present on the page.</p>
+
+<p>2) Assert.assertEquals()</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@Test
+</span><span class='line'>  public void test() {
+</span><span class='line'>    String sValue = "Ta bao Lan";
+</span><span class='line'>    System.out.println(" What is your full name");
+</span><span class='line'>    Assert.assertEquals("Ta Bao Lan", sValue);
+</span><span class='line'>    System.out.println(sValue);
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It also works the same way like assert true and assert fail. It will also stop the execution, if the value is not equal and carry on the execution, if the value is equal.</p>
+
+<h3>Take a look in more helpful: <a href="/testng-framework-parameters-and-data-provider/">P8 : Parameters and Data Provider</a></h3>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/TestNG-Framework/testng-framework-reporters-and-asserts/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/TestNG-Framework/testng-framework-reporters-and-asserts/';
+        var disqus_url = 'http://www.tabaolan.com/TestNG-Framework/testng-framework-reporters-and-asserts/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

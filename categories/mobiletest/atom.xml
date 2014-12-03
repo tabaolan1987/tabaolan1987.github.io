@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MobileTest | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/mobiletest/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-12-03T04:02:41+00:00</updated>
+  <updated>2014-12-03T04:14:30+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Guide to Functional testing in Mobile App]]></title>
-    <link href="http://www.tabaolan.com/mobile-testing-guide-to-test-mobile-app/"/>
+    <link href="http://www.tabaolan.com/MobileTest/mobile-testing-guide-to-test-mobile-app/"/>
     <updated>2014-08-21T05:44:47+01:00</updated>
-    <id>http://www.tabaolan.com/mobile-testing-guide-to-test-mobile-app</id>
+    <id>http://www.tabaolan.com/MobileTest/mobile-testing-guide-to-test-mobile-app</id>
     <content type="html"><![CDATA[<h2>Mobile Testing : Guide to Functional testing in Mobile App</h2>
 
 <p>Some or all of the following testing types may be performed depending on your mobile testing requirements</p>
@@ -92,9 +92,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Guide to Performance Testing in Mobile App]]></title>
-    <link href="http://www.tabaolan.com/mobile-testing-guide-to-performance-testing-in-mobile/"/>
+    <link href="http://www.tabaolan.com/MobileTest/mobile-testing-guide-to-performance-testing-in-mobile/"/>
     <updated>2014-08-21T05:40:47+01:00</updated>
-    <id>http://www.tabaolan.com/mobile-testing-guide-to-performance-testing-in-mobile</id>
+    <id>http://www.tabaolan.com/MobileTest/mobile-testing-guide-to-performance-testing-in-mobile</id>
     <content type="html"><![CDATA[<h2>Performance testing</h2>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
@@ -135,9 +135,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Guide to Security Testing in Mobile App]]></title>
-    <link href="http://www.tabaolan.com/mobile-testing-guide-to-security-testing-in-mobile/"/>
+    <link href="http://www.tabaolan.com/MobileTest/mobile-testing-guide-to-security-testing-in-mobile/"/>
     <updated>2014-08-21T05:35:47+01:00</updated>
-    <id>http://www.tabaolan.com/mobile-testing-guide-to-security-testing-in-mobile</id>
+    <id>http://www.tabaolan.com/MobileTest/mobile-testing-guide-to-security-testing-in-mobile</id>
     <content type="html"><![CDATA[<h2>Security testing</h2>
 
 <p><img src="/images/mb1.png"></p>
@@ -202,9 +202,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Other Testing in Mobile App]]></title>
-    <link href="http://www.tabaolan.com/mobile-testing-other-testing-in-mobile/"/>
+    <link href="http://www.tabaolan.com/MobileTest/mobile-testing-other-testing-in-mobile/"/>
     <updated>2014-08-21T05:30:47+01:00</updated>
-    <id>http://www.tabaolan.com/mobile-testing-other-testing-in-mobile</id>
+    <id>http://www.tabaolan.com/MobileTest/mobile-testing-other-testing-in-mobile</id>
     <content type="html"><![CDATA[<h2>Usability testing</h2>
 
 <p>The usability testing process of the Mobile application is performed to have a quick and easy step application with less functionality than a slow and difficult application with many features. The main objective is to ensure that we end up having an easy-to-use, intuitive and similar to industry-accepted interfaces which are widely used.</p>
@@ -301,9 +301,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile testing : Setup Selendroid and create first test script of android application]]></title>
-    <link href="http://www.tabaolan.com/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/"/>
+    <link href="http://www.tabaolan.com/MobileTest/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/"/>
     <updated>2014-08-21T05:30:45+01:00</updated>
-    <id>http://www.tabaolan.com/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application</id>
+    <id>http://www.tabaolan.com/MobileTest/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application</id>
     <content type="html"><![CDATA[<h2>Setup Selendroid and create first test script of android application</h2>
 
 <h3>About Selendroid :</h3>
@@ -427,7 +427,7 @@ import org.testng.annotations.Test;</p>
   element.sendKeys(&ldquo;bob&rdquo;);</p>
 
 <p>  element = driver.findElement(By.id(&ldquo;inputEmail&rdquo;));
-  element.sendKeys(&ldquo;<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x74;&#101;&#115;&#116;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x74;&#101;&#x73;&#116;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a>&rdquo;);</p>
+  element.sendKeys(&ldquo;<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#116;&#x65;&#x73;&#116;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#x74;&#101;&#115;&#116;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a>&rdquo;);</p>
 
 <p>  element = driver.findElement(By.id(&ldquo;inputPassword&rdquo;));
   element.clear();

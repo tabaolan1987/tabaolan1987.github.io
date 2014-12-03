@@ -1,399 +1,457 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://www.tabaolan.com/testng-framework-multi-browser-and-parallel-testing/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/testng-framework-parameters-and-data-provider/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/testng-framework-reporters-and-asserts/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/testng-framework-prioritizing-and-sequencing/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/testng-framework-annotations/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/testng-framework-test-suite/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/testng-framework-first-test-case-with-testng/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/testng-framework-download/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/testng-framework-introduction/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/selenium-mobile-running-tests-on-an-android-simulator/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/selenium-mobile-run-tests-on-a-real-android-device/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
         <loc>
-            http://www.tabaolan.com/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/
-        </loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/selenium-mobile-run-test-scripts-in-real-iphone/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.tabaolan.com/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser/
+            http://www.tabaolan.com/TestNG-Framework/testng-framework-multi-browser-and-parallel-testing/
         </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
         <loc>
-            http://www.tabaolan.com/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/
-        </loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/webdriver-scroll-browser/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/webdriver-set-browser-useragent/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/webdriver-automation-html5-video/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.tabaolan.com/selenium-webdriver-browser-plugin-testing-with-selenium/
-        </loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/tipandtrip-complex-action/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/tipandtricks-call-javascript/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/tipandtricks-table-tricks/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.tabaolan.com/tipstricks-how-to-use-stored-value-in-a-javascript-comparison/
-        </loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/tipstricks-selenium-ide-loop-through-array-variables/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/tipstricks-check-background-color-in-selenium-ide/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/tipstricks-how-to-press-keyboard-in-selenium-webdriver/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.tabaolan.com/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver/
-        </loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/tipstricks-test-autocomple-menus-with-selenium-ide/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.tabaolan.com/tipstrick-how-to-get-the-current-browser-running-in-real-time-with-webdriver/
+            http://www.tabaolan.com/TestNG-Framework/testng-framework-parameters-and-data-provider/
         </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
         <loc>
-            http://www.tabaolan.com/tipstrick-how-to-resolve-the-certificate-error-in-ie-browser-with-selenium-webdriver/
-        </loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/switch-driver-to-tab-by-title/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/run-script-selenium-ide-in-internet-explorer/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/run-script-selenium-ide-in-chrome/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/selenium-webdriver-wait-for-tab-open/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/how-to-take-screenshot-in-internet-explore/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/newbie-part-7-keyboard-mouse-events/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/newbie-part-6-accessing-links-and-tables/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/newbie-part-5-accessing-forms/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.tabaolan.com/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/
+            http://www.tabaolan.com/TestNG-Framework/testng-framework-reporters-and-asserts/
         </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
         <loc>
-            http://www.tabaolan.com/selenium-automation-framework-how-to-take-screenshot-on-test-fail-and-test-skip/
+            http://www.tabaolan.com/TestNG-Framework/testng-framework-prioritizing-and-sequencing/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/TestNG-Framework/testng-framework-annotations/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/TestNG-Framework/testng-framework-test-suite/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/TestNG-Framework/testng-framework-first-test-case-with-testng/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/TestNG-Framework/testng-framework-download/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/TestNG-Framework/testng-framework-introduction/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Selenium-mobile/selenium-mobile-running-tests-on-an-android-simulator/
         </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
         <loc>
-            http://www.tabaolan.com/icecream-framework-part-3-function-avaiable-in-excel-file/
+            http://www.tabaolan.com/Selenium-mobile/selenium-mobile-run-tests-on-a-real-android-device/
         </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
         <loc>
-            http://www.tabaolan.com/selenium-automation-framework-p8-read-data-from-excel-file/
+            http://www.tabaolan.com/Selenium-mobile/selenium-mobile-run-test-scripts-on-a-xcode-iphone-simulator/
         </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/webdriver-action-class/</loc>
+        <loc>
+            http://www.tabaolan.com/Selenium-mobile/selenium-mobile-run-test-scripts-in-real-iphone/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/selenium-automation-framework-run-on-multi-browser/</loc>
+        <loc>
+            http://www.tabaolan.com/NewBie/beginner-with-selenium-ide-part-1-download-selenium-ide-and-install-in-firefox-browser/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/xpath-locators-in-selenium/</loc>
+        <loc>
+            http://www.tabaolan.com/NewBie/beginner-with-selenium-ide-part-2-record-user-action-and-export-this-script-to-another-langugae/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/selenium-automation-framework-create-test-script/</loc>
+        <loc>http://www.tabaolan.com/tricks/Webdriver/webdriver-scroll-browser/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/selenium-automation-framework-modular-driven-framework/</loc>
+        <loc>http://www.tabaolan.com/tricks/Webdriver/webdriver-set-browser-useragent/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/xpath-firebug-and-firepath/</loc>
+        <loc>http://www.tabaolan.com/tricks/Webdriver/webdriver-automation-html5-video/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/icecream-framework-how-to-create-your-own-testcase/</loc>
+        <loc>
+            http://www.tabaolan.com/tricks/Webdriver/selenium-webdriver-browser-plugin-testing-with-selenium/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/selenium-automation-framework-page-object-model/</loc>
+        <loc>http://www.tabaolan.com/tricks/tipandtrip-complex-action/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/xpath-using-browser-inspector/</loc>
+        <loc>http://www.tabaolan.com/Webdriver/tricks/tipandtricks-call-javascript/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/selenium-automation-framework-create-new-project/</loc>
+        <loc>http://www.tabaolan.com/Webdriver/tipandtricks-table-tricks/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/webdriver-dropdown-and-multiple-select-operations/</loc>
+        <loc>
+            http://www.tabaolan.com/tricks/,/Selenium/IDE/tipstricks-how-to-use-stored-value-in-a-javascript-comparison/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/icecream-framework-download-and-configuration/</loc>
+        <loc>
+            http://www.tabaolan.com/tricks/,/Selenium-IDE/tipstricks-selenium-ide-loop-through-array-variables/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/selenium-automation-framework-install-maven-to-eclipse/</loc>
+        <loc>
+            http://www.tabaolan.com/tricks/,/Selenium-IDE/tipstricks-check-background-color-in-selenium-ide/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/webdriver-checkbox-and-radio-button-operations/</loc>
+        <loc>
+            http://www.tabaolan.com/Webdriver/tipstricks-how-to-press-keyboard-in-selenium-webdriver/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/icecream-framework-introduction/</loc>
+        <loc>
+            http://www.tabaolan.com/tricks/Webdriver/tipstricks-how-to-pressmulti-keyboard-in-selenium-webdriver/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/newbie-part-3-download-webdriver-java-client/</loc>
+        <loc>
+            http://www.tabaolan.com/tricks/,/Selenium/IDE/tipstricks-test-autocomple-menus-with-selenium-ide/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/tricks/tipstrick-how-to-get-the-current-browser-running-in-real-time-with-webdriver/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/tricks/tipstrick-how-to-resolve-the-certificate-error-in-ie-browser-with-selenium-webdriver/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/tricks/Webdriver/switch-driver-to-tab-by-title/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/NewBie/tricks/run-script-selenium-ide-in-internet-explorer/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/NewBie/tricks/run-script-selenium-ide-in-chrome/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/tricks/Webdriver/selenium-webdriver-wait-for-tab-open/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/tricks/Webdriver/how-to-take-screenshot-in-internet-explore/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/NewBie/newbie-part-7-keyboard-mouse-events/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/NewBie/newbie-part-6-accessing-links-and-tables/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/NewBie/newbie-part-5-accessing-forms/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/NewBie/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Selenium-Framework/selenium-automation-framework-how-to-take-screenshot-on-test-fail-and-test-skip/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/IceCream-Framework/icecream-framework-part-3-function-avaiable-in-excel-file/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Selenium-Framework/selenium-automation-framework-p8-read-data-from-excel-file/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Webdriver/webdriver-action-class/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Selenium-Framework/selenium-automation-framework-run-on-multi-browser/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Webdriver/xpath/xpath-locators-in-selenium/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Selenium-Framework/selenium-automation-framework-create-test-script/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Selenium-Framework/selenium-automation-framework-modular-driven-framework/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Webdriver/xpath/xpath-firebug-and-firepath/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/IceCream-Framework/icecream-framework-how-to-create-your-own-testcase/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Selenium-Framework/selenium-automation-framework-page-object-model/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Webdriver/xpath/xpath-using-browser-inspector/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Selenium-Framework/selenium-automation-framework-create-new-project/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Webdriver/webdriver-dropdown-and-multiple-select-operations/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/IceCream-Framework/icecream-framework-download-and-configuration/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Selenium-Framework/selenium-automation-framework-install-maven-to-eclipse/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/Webdriver/webdriver-checkbox-and-radio-button-operations/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/IceCream-Framework/icecream-framework-introduction/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/NewBie/newbie-part-3-download-webdriver-java-client/</loc>
         <lastmod>2014-11-11T03:06:06+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/selenium-automation-framework-introduction/</loc>
+        <loc>
+            http://www.tabaolan.com/Selenium-Framework/selenium-automation-framework-introduction/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/webdriver-wait-commands/</loc>
+        <loc>http://www.tabaolan.com/Webdriver/webdriver-wait-commands/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/webdriver-switch-window-commands/</loc>
+        <loc>http://www.tabaolan.com/Webdriver/webdriver-switch-window-commands/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/webdriver-browser-navigation-commands/</loc>
+        <loc>http://www.tabaolan.com/Webdriver/webdriver-browser-navigation-commands/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/webdriver-browser-commands/</loc>
+        <loc>http://www.tabaolan.com/Webdriver/webdriver-browser-commands/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/webdriver-element-commands/</loc>
+        <loc>http://www.tabaolan.com/Webdriver/webdriver-element-commands/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/webdriver-introduction/</loc>
+        <loc>http://www.tabaolan.com/Webdriver/webdriver-introduction/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/newbie-part-2-download-and-start-eclipse/</loc>
+        <loc>http://www.tabaolan.com/NewBie/newbie-part-2-download-and-start-eclipse/</loc>
         <lastmod>2014-11-11T03:08:25+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/newbie-part-1-download-and-install-java/</loc>
+        <loc>http://www.tabaolan.com/NewBie/newbie-part-1-download-and-install-java/</loc>
         <lastmod>2014-11-11T03:09:02+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/jmeter-tips-interpret-the-results/</loc>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-tips-interpret-the-results/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/jmeter-tips-user-think-time/</loc>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-tips-user-think-time/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/jmeter-tips-determine-a-thread-group/</loc>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-tips-determine-a-thread-group/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/how-to-use-csv-in-jmeter/</loc>
+        <loc>http://www.tabaolan.com/Jmeter/how-to-use-csv-in-jmeter/</loc>
         <lastmod>2014-12-03T03:22:09+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/jmeter-how-to-use-jmeter-to-test-database/</loc>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-how-to-use-jmeter-to-test-database/</loc>
         <lastmod>2014-12-03T04:02:24+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/jmeter-test-execution-with-maven/</loc>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-test-execution-with-maven/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/jmeter-test-of-wsdl-web-services/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-how-to-use-jmeter-to-record-test-scenarios/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-how-to-perform-distributed-testing/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-how-to-use-processor/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-how-to-use-controllers/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-how-to-use-assertions/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-how-to-use-timers/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-performance-testing/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-hands-on-with-jmeter-gui/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-complete-element-reference/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-install-jmeter/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/jmeter-introduction/</loc>
-        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.tabaolan.com/mobile-testing-using-robotium-and-testdroid-recorder/</loc>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-test-of-wsdl-web-services/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
         <loc>
-            http://www.tabaolan.com/mobile-testing-create-first-appium-webdriver-android-script-in-java/
+            http://www.tabaolan.com/Jmeter/jmeter-how-to-use-jmeter-to-record-test-scenarios/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-how-to-perform-distributed-testing/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-how-to-use-processor/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-how-to-use-controllers/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-how-to-use-assertions/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-how-to-use-timers/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-performance-testing/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-hands-on-with-jmeter-gui/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-complete-element-reference/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-install-jmeter/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/Jmeter/jmeter-introduction/</loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.tabaolan.com/MobileTest/mobile-testing-using-robotium-and-testdroid-recorder/
         </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
         <loc>
-            http://www.tabaolan.com/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/
+            http://www.tabaolan.com/MobileTest/mobile-testing-create-first-appium-webdriver-android-script-in-java/
         </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/mobile-testing-other-testing-in-mobile/</loc>
+        <loc>
+            http://www.tabaolan.com/MobileTest/mobile-testing-seup-selendroid-and-create-first-test-script-of-android-application/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/mobile-testing-guide-to-security-testing-in-mobile/</loc>
+        <loc>http://www.tabaolan.com/MobileTest/mobile-testing-other-testing-in-mobile/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/mobile-testing-guide-to-performance-testing-in-mobile/</loc>
+        <loc>
+            http://www.tabaolan.com/MobileTest/mobile-testing-guide-to-security-testing-in-mobile/
+        </loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>
-        <loc>http://www.tabaolan.com/mobile-testing-guide-to-test-mobile-app/</loc>
+        <loc>
+            http://www.tabaolan.com/MobileTest/mobile-testing-guide-to-performance-testing-in-mobile/
+        </loc>
+        <lastmod>2014-11-10T04:34:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.tabaolan.com/MobileTest/mobile-testing-guide-to-test-mobile-app/</loc>
         <lastmod>2014-11-10T04:34:58+00:00</lastmod>
     </url>
     <url>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-12-03T04:02:41+00:00</updated>
+  <updated>2014-12-03T04:14:30+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to take screenshot in Internet Explore , Chrome, Firefox]]></title>
-    <link href="http://www.tabaolan.com/how-to-take-screenshot-in-internet-explore/"/>
+    <link href="http://www.tabaolan.com/tricks/Webdriver/how-to-take-screenshot-in-internet-explore/"/>
     <updated>2014-07-07T09:07:11+01:00</updated>
-    <id>http://www.tabaolan.com/how-to-take-screenshot-in-internet-explore</id>
+    <id>http://www.tabaolan.com/tricks/Webdriver/how-to-take-screenshot-in-internet-explore</id>
     <content type="html"><![CDATA[<h2>Selenium Tutorial : How to take screentShot in Internet Explore using Selenium WebDriver?</h2>
 
 <p>In browser Internet Explore we need to have some alter code for take screenshot in Internet Explore.</p>
@@ -69,9 +69,9 @@ try {
   
   <entry>
     <title type="html"><![CDATA[Selenium WebDriver wait for new tab open]]></title>
-    <link href="http://www.tabaolan.com/selenium-webdriver-wait-for-tab-open/"/>
+    <link href="http://www.tabaolan.com/tricks/Webdriver/selenium-webdriver-wait-for-tab-open/"/>
     <updated>2014-07-04T05:12:22+01:00</updated>
-    <id>http://www.tabaolan.com/selenium-webdriver-wait-for-tab-open</id>
+    <id>http://www.tabaolan.com/tricks/Webdriver/selenium-webdriver-wait-for-tab-open</id>
     <content type="html"><![CDATA[<h2>Selenium Tutorial : How to wait for new tab open using Selenium WebDriver?</h2>
 
 <h3>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h3>
@@ -116,9 +116,9 @@ try {
   
   <entry>
     <title type="html"><![CDATA[Run Script Selenium IDE in Chrome]]></title>
-    <link href="http://www.tabaolan.com/run-script-selenium-ide-in-chrome/"/>
+    <link href="http://www.tabaolan.com/NewBie/tricks/run-script-selenium-ide-in-chrome/"/>
     <updated>2014-07-03T08:55:19+01:00</updated>
-    <id>http://www.tabaolan.com/run-script-selenium-ide-in-chrome</id>
+    <id>http://www.tabaolan.com/NewBie/tricks/run-script-selenium-ide-in-chrome</id>
     <content type="html"><![CDATA[<h2>Required download :</h2>
 
 <p>1) <a href="/blog/2014/05/22/newbie-part-1-download-and-install-java/">Download and install JAVA</a></p>
@@ -178,9 +178,9 @@ java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.chrome.driver=.\chro
   
   <entry>
     <title type="html"><![CDATA[Run Script Selenium IDE in Internet Explorer]]></title>
-    <link href="http://www.tabaolan.com/run-script-selenium-ide-in-internet-explorer/"/>
+    <link href="http://www.tabaolan.com/NewBie/tricks/run-script-selenium-ide-in-internet-explorer/"/>
     <updated>2014-07-03T08:05:55+01:00</updated>
-    <id>http://www.tabaolan.com/run-script-selenium-ide-in-internet-explorer</id>
+    <id>http://www.tabaolan.com/NewBie/tricks/run-script-selenium-ide-in-internet-explorer</id>
     <content type="html"><![CDATA[<h2>Required download :</h2>
 
 <p>1) <a href="/blog/2014/05/22/newbie-part-1-download-and-install-java/">Download and install JAVA</a></p>
@@ -240,9 +240,9 @@ java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\IEDriver
   
   <entry>
     <title type="html"><![CDATA[How to switch Driver to Tab/Window by Title tab?]]></title>
-    <link href="http://www.tabaolan.com/switch-driver-to-tab-by-title/"/>
+    <link href="http://www.tabaolan.com/tricks/Webdriver/switch-driver-to-tab-by-title/"/>
     <updated>2014-07-01T05:10:38+01:00</updated>
-    <id>http://www.tabaolan.com/switch-driver-to-tab-by-title</id>
+    <id>http://www.tabaolan.com/tricks/Webdriver/switch-driver-to-tab-by-title</id>
     <content type="html"><![CDATA[<h3>In some case when you need to switch driver to the tab/window that you know the title of this, you can use this method below</h3>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>

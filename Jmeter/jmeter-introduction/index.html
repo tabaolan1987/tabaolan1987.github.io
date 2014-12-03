@@ -1,0 +1,300 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jmeter : Introduction - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Introduction about Jmeter" />
+	
+	<meta name="keywords" content="Jmeter" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+
+        <article class="post">
+
+	<h2 class="title">Jmeter : Introduction</h2>
+	<div class="entry-content"><h2>Introduction to JMeter</h2>
+
+<p>Have you ever tested a web server to know how efficiently it works? How many concurrent users can a web server handle?</p>
+
+<p>Let say that one day, your boss asks you to do performance testing of www.google.com for 100 users. What would you do?</p>
+
+<!--more-->
+
+
+<p><img src="/images/jmeter1.png"></p>
+
+<p>Maybe your boss, who is a beginner, will ask you</p>
+
+<p><img src="/images/jmeter2.png"></p>
+
+<p>This tutorial will help you to answer his question and complete your task.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>What is JMeter ?</h3>
+
+<p><img src="/images/jmeter3.png"></p>
+
+<p>The Apache JMeterTM is pure Java open source software, which was first developed by Stefano Mazzocchi of the Apache Software Foundation, designed to load test functional behavior and measure performance. You can use JMeter to analyze and measure the performance of web application or variety of services.</p>
+
+<p>Performance testing means testing a web application against heavy load, multiple and concurrent user traffic. JMeter originally is used for testing Web Application or FTP application.</p>
+
+<p>Nowadays, it is used for functional test, database server test etc.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Why JMeter ?</h3>
+
+<p><img src="/images/jmeter4.png"></p>
+
+<p>JMeter advantages are described as figure below</p>
+
+<p><img src="/images/jmeter5.png"></p>
+
+<p>Open source license: JMeter is totally free,  allows developer use the source code for the development.</p>
+
+<p>Friendly GUI: JMeter is extremely easy to use and doesn&rsquo;t take time to get familiar with it.</p>
+
+<p>Platform independent: JMeter is 100% pure Java desktop application. So it can run on multiple platforms.</p>
+
+<p>Full multi-threading framework. JMeter allows concurrent and simultaneous sampling of different functions by a separate thread group.</p>
+
+<p>Visualize Test Result: Test result can be display in a different format such as chart, table, tree and log file.</p>
+
+<p>Easy installation: You just copy and run the *.bat file to run JMeter. No installation needed.</p>
+
+<p>Highly Extensible: You can write your own tests. JMeter also supports visualization plugins allow you extend your testing.</p>
+
+<p>Multiple testing strategy: JMeter supports many testing strategies such as Load Testing, Distributed Testing, and Functional Testing.</p>
+
+<p>Simulation: JMeter can simulate multiple users with concurrent threads, create a heavy load against web application under test.</p>
+
+<p>Support multi-protocol: JMeter does not only support web application testing, but also evaluate database server performance. All basic protocols such as HTTP, JDBC, LDAP, SOAP, JMS, and FTP are supported by JMeter.</p>
+
+<p>Record &amp; Playback &ndash; Record the user activity on the browser and simulate them in web application using JMeter.</p>
+
+<p>Script Test: Jmeter can be integrated with Bean Shell &amp; Selenium for automated testing.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>How does JMeter work ?</h3>
+
+<p>Basic work flow of JMeter as shown in the figures below</p>
+
+<p>JMeter simulates a group of users sending requests to a target server, and return statistics information of target server through graphical diagrams</p>
+
+<p><img src="/images/jmeter6.png"></p>
+
+<p>The completed workflow of JMeter as show in figure below</p>
+
+<p><img src="/images/jmeter7.png"></p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/Jmeter/jmeter-introduction/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/Jmeter/jmeter-introduction/';
+        var disqus_url = 'http://www.tabaolan.com/Jmeter/jmeter-introduction/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

@@ -1,0 +1,324 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jmeter : How to use Jmeter test Database - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="How to use Jmeter test your Database" />
+	
+	<meta name="keywords" content="Jmeter,database" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+
+        <article class="post">
+
+	<h2 class="title">Jmeter : How to Use Jmeter Test Database</h2>
+	<div class="entry-content"><h2>How to use Jmeter test your Database</h2>
+
+<p>In this chapter we will see how to create a simple test plan to test the database server.</p>
+
+<p>For our test purpose we have used the MYSQL database server. You can use any other database for testing.</p>
+
+<h3>Precondition</h3>
+
+<ol>
+<li>Install MYSQL, create database and table in MYSQL, save user name and password can access to MYSQL.</li>
+</ol>
+
+
+<p><img src="/images/jmeter147.png"></p>
+
+<ol>
+<li><p>Download jar file for JMETER connect to MYSQL : <a href="http://www.java2s.com/Code/Jar/c/Downloadcommysqljdbc515jar.htm">Click her</a></p></li>
+<li><p>Extract file &ldquo;com.mysql.jdbc_5.1.5.jar.zip&rdquo;, you will see &ldquo;com.mysql.jdbc_5.1.5.jar&rdquo;. Rename this file to &ldquo;com.mysql.jdbc.jar&rdquo; and put it to folder lib of JMETER.</p></li>
+</ol>
+
+
+<p><img src="/images/jmeter148.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Create JMeter Test Plan</h3>
+
+<h4>Open Jmeter from : apache-jmeter/bin/jmeter.bat</h4>
+
+<h4>ADD USERS</h4>
+
+<p>Now create a Thread group, right click on Test Plan > Add> Threads(Users)> Thread Group.</p>
+
+<p>Thread Group will get added under the Test Plan node. Rename this Thread Group as &ldquo;USER CONNECT TO MYSQL&rdquo;.</p>
+
+<p>Set value for Numbers of Threads(users): 10</p>
+
+<p>Set value for Ram-up Periods : 5</p>
+
+<p>It means that in 5 seconds, we will set up 10 users connect to MYSQL server.</p>
+
+<p><img src="/images/jmeter149.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h4>ADD JDBC Connection Configuration</h4>
+
+<p>Right click on the JDBC Users element, select Add > Config Element > JDBC Connection Configuration.</p>
+
+<p>Set up the following fields (we are using MYSQL):</p>
+
+<ol>
+<li><p>Variable name bound to pool. This needs to uniquely identify the configuration. It is used by the JDBC Sampler to identify the configuration to be used. We have named it as &ldquo;dbpooldemo&rdquo; .</p></li>
+<li><p>Database URL: jdbc:mysql://youripserver:3306/yourdatabase</p></li>
+<li><p>JDBC Driver class: com.mysql.jdbc.Driver</p></li>
+<li><p>Username: username can access to your database created before.</p></li>
+<li><p>Password : password of this username.</p></li>
+</ol>
+
+
+<p><img src="/images/jmeter150.png"></p>
+
+<h4>ADD JDBC REQUESTS</h4>
+
+<p>Now that we have defined our users and configuration connection, it is time to define the tasks that they will be performing.</p>
+
+<p>Select JDBC Users element, click your right mouse button to get the Add menu, and then select Add > Sampler > JDBC Request.</p>
+
+<p>Then, select this new element to view its Control Panel. Edit the properties as below:</p>
+
+<ol>
+<li><p>Enter the Pool Name: dbpooldemo (same as in the configuration element)</p></li>
+<li><p>Query Type: Select statement</p></li>
+<li><p>Enter the SQL Query String field.</p></li>
+</ol>
+
+
+<p><img src="/images/jmeter151.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h4>CREATE LISTENER</h4>
+
+<p>Now add the Listener element. This element is responsible for storing all of the results of your JDBC requests in a file and presenting a visual model of the data.</p>
+
+<p>Select the JDBC Users element and add a View Results Tree listener (Add > Listener > View Results Tree).</p>
+
+<p><img src="/images/jmeter152.png"></p>
+
+<h4>SAVE AND EXECUTE TEST PLAN</h4>
+
+<p>Now save the above test plan as db_test.jmx. Execute this test plan using Run > Start option.</p>
+
+<p>You will have output like below :</p>
+
+<p><img src="/images/jmeter153.png"></p>
+
+<p><img src="/images/jmeter154.png"></p>
+
+<p><img src="/images/jmeter155.png"></p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/Jmeter/jmeter-how-to-use-jmeter-to-test-database/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/Jmeter/jmeter-how-to-use-jmeter-to-test-database/';
+        var disqus_url = 'http://www.tabaolan.com/Jmeter/jmeter-how-to-use-jmeter-to-test-database/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

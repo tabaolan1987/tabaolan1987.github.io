@@ -1,0 +1,377 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jmeter : How to use Timers - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="How to use Timers" />
+	
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+
+        <article class="post">
+
+	<h2 class="title">Jmeter : How to Use Timers</h2>
+	<div class="entry-content"><h2>How to use Timers in Jmeter</h2>
+
+<p>By default, JMeter sends the request without pausing between each request. In that case, JMeter could overwhelm your test server by making too many requests in a short amount of times.</p>
+
+<p>Let imagine that you send thousands request to a web server under test in a few seconds. This is what happens!</p>
+
+<p><img src="/images/jmeter67.png"></p>
+
+<p>Timers allow JMeter to delay between each request which a thread makes. Timer can solve the server overload problem.</p>
+
+<p>Also, in real life visitors do not arrive at a website all at the same time, but at different time intervals. So Timer will help mimic the real time behaviour.</p>
+
+<p>Following are some common types of timer in JMeter</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Constant Timer:</h3>
+
+<p>Constant timer delays each user request for the same amount of time.</p>
+
+<p><img src="/images/jmeter68.png"></p>
+
+<h3>Gaussian Random Timer:</h3>
+
+<p>Gaussian random timer delays each user request for a random amount of time.</p>
+
+<p><img src="/images/jmeter69.png"></p>
+
+<p>So the total delay is described as below figure:</p>
+
+<p><img src="/images/jmeter70.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Uniform Random Timer:</h3>
+
+<p>Uniform random timer delays each user request for a random amount of time.</p>
+
+<p><img src="/images/jmeter71.png"></p>
+
+<h3>BeanShell Timer</h3>
+
+<p>The BeanShell Timer can be used to generate a delay time between each user request.</p>
+
+<h3>BSF Timer</h3>
+
+<p>The BSF Timer can be used to generate a delay between each user request using a BSF scripting language.</p>
+
+<h3>JSR223 Timer</h3>
+
+<p>The JSR223 Timer can be used to generate a delay between each user request using a JSR223 scripting language.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>Practical Demonstration of Timer Settings</h2>
+
+<p>In this example, you will use Constant Timer to set fixed delay between user requests to google.com.</p>
+
+<p>Let start with a simple test script</p>
+
+<p>1.JMeter creates one user request to <a href="http://www.google.com">http://www.google.com</a> 100 times</p>
+
+<p>2.Delay between each user request is 5000 ms</p>
+
+<p>Here is the roadmap of this practical example:</p>
+
+<p><img src="/images/jmeter72.png"></p>
+
+<h3>Pre-condition:</h3>
+
+<p>We re-use the Step 1 and Step 2 in tutorial (JMeter Performance Testing)[/blog/2014/08/15/jmeter-performance-testing/].</p>
+
+<h3>Step 1) Add Thread Group</h3>
+
+<p>Right click on the Test Plan and add a new thread group: Add-> Threads (Users) &ndash;>Thread Group</p>
+
+<p>In Thread Group control panel, enter Thread Properties as following</p>
+
+<p><img src="/images/jmeter73.png"></p>
+
+<p>This setting lets JMeter create one user request to <a href="http://www.google.com">http://www.google.com</a> in 100 times</p>
+
+<h3>Step 2) Add JMeter elements</h3>
+
+<p>1.Add HTTP request default</p>
+
+<p>2.Add HTTP request</p>
+
+<h3>Step 3) Add Constant Timer</h3>
+
+<p>Right click Thread Group &ndash;> Timer &ndash;> Constant Timer</p>
+
+<p><img src="/images/jmeter74.png"></p>
+
+<p>Configuring Thread Delay of 5000 milliseconds</p>
+
+<p><img src="/images/jmeter75.png"></p>
+
+<h3>Step 4) Add View Results in Table</h3>
+
+<p>View Results in Table displays the test result in table format.</p>
+
+<p>Right click Add &ndash;> Listener &ndash;> View Result in Table.</p>
+
+<p><img src="/images/jmeter76.png"></p>
+
+<p>View Results in Table displays as below figure</p>
+
+<p><img src="/images/jmeter77.png"></p>
+
+<h3>Step 5) Run your test</h3>
+
+<p>When you ready to run test, click Run button on the menu bar, or short key Ctrl+R</p>
+
+<p>This is the result of this test</p>
+
+<p><img src="/images/jmeter78.png"></p>
+
+<p>You can analyze the result as following:</p>
+
+<p>The End Time of one sample is calculated as following:</p>
+
+<p><img src="/images/jmeter79.png"></p>
+
+<p>For example, in the above figure, let analyze the Sample 2</p>
+
+<p>Start time is 22:05:01.866</p>
+
+<p>Sample Time of Sample 2 is 172 ms</p>
+
+<p>Constant Timer : 5000 ms (as configured)</p>
+
+<p>End Time of this sample is = 22:05:01.866 + 172 + 5000 = 22:05:07.038</p>
+
+<p>So the Sample 3 should start at  the time is 22:05:07.039 ( As shown in the above figure)</p>
+
+<p>The delay of each sample is 5000 ms</p>
+
+<p>If you change the Constant Timer is zero, you will see the result is changed</p>
+
+<p><img src="/images/jmeter80.png"></p>
+
+<p>Let analyze the Sample 1</p>
+
+<p>Start time is 22:17:39.141</p>
+
+<p>Sample Time of Sample 2 is 370 ms</p>
+
+<p>Constant Timer : 0 ms (as configured)</p>
+
+<p>End Time of this sample is = 22:17:39.141+ 370 + 0 = 22:17:39.511</p>
+
+<p>So the Sample 2 should start at  the time is 22:17:39.512 (Shown in the above figure)</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/Jmeter/jmeter-how-to-use-timers/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/Jmeter/jmeter-how-to-use-timers/';
+        var disqus_url = 'http://www.tabaolan.com/Jmeter/jmeter-how-to-use-timers/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Jmeter | Selenium Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/jmeter/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-12-03T04:02:41+00:00</updated>
+  <updated>2014-12-03T04:14:30+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Introduction]]></title>
-    <link href="http://www.tabaolan.com/jmeter-introduction/"/>
+    <link href="http://www.tabaolan.com/Jmeter/jmeter-introduction/"/>
     <updated>2014-08-15T08:30:28+01:00</updated>
-    <id>http://www.tabaolan.com/jmeter-introduction</id>
+    <id>http://www.tabaolan.com/Jmeter/jmeter-introduction</id>
     <content type="html"><![CDATA[<h2>Introduction to JMeter</h2>
 
 <p>Have you ever tested a web server to know how efficiently it works? How many concurrent users can a web server handle?</p>
@@ -99,9 +99,9 @@
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Install Jmeter]]></title>
-    <link href="http://www.tabaolan.com/jmeter-install-jmeter/"/>
+    <link href="http://www.tabaolan.com/Jmeter/jmeter-install-jmeter/"/>
     <updated>2014-08-15T08:20:03+01:00</updated>
-    <id>http://www.tabaolan.com/jmeter-install-jmeter</id>
+    <id>http://www.tabaolan.com/Jmeter/jmeter-install-jmeter</id>
     <content type="html"><![CDATA[<h2>How to install Jmeter in easy steps</h2>
 
 <h3>Operating system Support for JMeter</h3>
@@ -224,9 +224,9 @@ $jmeter -n -t testPlan.jmx - l log.jtl -H 127.0.0.1 -P 8000
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Complete Element reference]]></title>
-    <link href="http://www.tabaolan.com/jmeter-complete-element-reference/"/>
+    <link href="http://www.tabaolan.com/Jmeter/jmeter-complete-element-reference/"/>
     <updated>2014-08-15T07:10:01+01:00</updated>
-    <id>http://www.tabaolan.com/jmeter-complete-element-reference</id>
+    <id>http://www.tabaolan.com/Jmeter/jmeter-complete-element-reference</id>
     <content type="html"><![CDATA[<h2>Complete Element reference for Jmeter</h2>
 
 <p>The different components of JMeter are called Elements. Each Element is designed for a specific purpose.</p>
@@ -399,9 +399,9 @@ $jmeter -n -t testPlan.jmx - l log.jtl -H 127.0.0.1 -P 8000
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Hands on with Jmeter GUI]]></title>
-    <link href="http://www.tabaolan.com/jmeter-hands-on-with-jmeter-gui/"/>
+    <link href="http://www.tabaolan.com/Jmeter/jmeter-hands-on-with-jmeter-gui/"/>
     <updated>2014-08-15T06:35:26+01:00</updated>
-    <id>http://www.tabaolan.com/jmeter-hands-on-with-jmeter-gui</id>
+    <id>http://www.tabaolan.com/Jmeter/jmeter-hands-on-with-jmeter-gui</id>
     <content type="html"><![CDATA[<h2>Hands on with JMeter GUI</h2>
 
 <p>As soon as you launch JMeter , you will see 2 elements : Test Plan and Workbench</p>
@@ -536,9 +536,9 @@ $jmeter -n -t testPlan.jmx - l log.jtl -H 127.0.0.1 -P 8000
   
   <entry>
     <title type="html"><![CDATA[Jmeter : Performance testing]]></title>
-    <link href="http://www.tabaolan.com/jmeter-performance-testing/"/>
+    <link href="http://www.tabaolan.com/Jmeter/jmeter-performance-testing/"/>
     <updated>2014-08-15T05:58:52+01:00</updated>
-    <id>http://www.tabaolan.com/jmeter-performance-testing</id>
+    <id>http://www.tabaolan.com/Jmeter/jmeter-performance-testing</id>
     <content type="html"><![CDATA[<h2>Performance Testing using Jmeter</h2>
 
 <p>Performance testing is crucial to determine that the web application under test will satisfy high load requirements. It can be used to analyze overall server performance under heavy load.</p>

@@ -1,0 +1,565 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IceCream Framework Part 4 :Function available in excel file and how to use! - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Function available in excel file and how to use!" />
+	
+	<meta name="keywords" content="IceCream, Framework,, function, available" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+
+        <article class="post">
+
+	<h2 class="title">IceCream Framework Part 4 :Function Available in Excel File and How to Use!</h2>
+	<div class="entry-content"><h2>Version Beta 0.1</h2>
+
+<h3>Function Browser</h3>
+
+<p>1) Define : choose your browser you want to run your test case.</p>
+
+<p>2) Available : Chrome , FireFox , IE.</p>
+
+<p>3) Required : All browser must be install in your laptop or computer.</p>
+
+<p><img src="/images/use-function-1.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h3>Function OpenUrl</h3>
+
+<p>1) Define : open the url you want to test.It will wait for the browser load this page success!</p>
+
+<p>2) Available : with any url that publish to internet or your local network.</p>
+
+<p>3) Required : correct the format of URL such as  : www.anyurl.com or http/<a href="https://anyurl.com.">https://anyurl.com.</a> Must put value in column &lsquo;ACTION INPUT VALUE&rsquo;.</p>
+
+<p><img src="/images/use-function-2.png"></p>
+
+<h3>Function CloseBrowser</h3>
+
+<p>1) Define : close the browser.</p>
+
+<p>2) Available : All browser that you choose in the top of excel file.</p>
+
+<p>3) Required : don&rsquo;t need to put any value in &lsquo;ACTION INPUT VALUE&rsquo; , &lsquo;FIND BY&rsquo;, &lsquo;FIND BY VALUE&rsquo;</p>
+
+<p><img src="/images/use-function-3.png"></p>
+
+<h3>Function Type</h3>
+
+<p>1) Define : type in text-box that you want.Return false if element is not display or not is text box or text arena.</p>
+
+<p>2) Available : all text-box that visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type in text-box!</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this text-box if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<p>4) Example : Let&rsquo;s take a look in this html source below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="holder"&gt;
+</span><span class='line'>  &lt;input type='text' id='textbox' class='example'&gt;&lt;/input&gt;
+</span><span class='line'>&lt;/div&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is find the textbox and type in it  value &lsquo;example&rsquo; by using function type in excel.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>I choose the demo to you 3 option is :</p>
+
+<p>A)Find by ID :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : ID</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : textbox (this is the id of this input type)</p>
+
+<p><img src="/images/use-function-5.png"></p>
+
+<p>B)Find by Class name :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Class Name</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : example(this is the class name of this input type)</p>
+
+<p><img src="/images/use-function-6.png"></p>
+
+<p>C)Find by Xpath :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : your value you want to type.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Xpath</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : //input[id=&lsquo;textbox&rsquo;] (this is the xpath of this textbox)</p>
+
+<p><img src="/images/use-function-7.png"></p>
+
+<h3>Function Click</h3>
+
+<p>1) Define : Click into button , link,.. etc! Return false if element is not displayed.</p>
+
+<p>2) Available : All element is visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value like xpath of this element you want to click if you choose Xpath option in &lsquo;Find By&rsquo;.</p>
+
+<p>4) Example  : take a look in html source below</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;td id='holder'&gt;
+</span><span class='line'>&lt;a class='link_example'&gt;Click here&lt;/a&gt;
+</span><span class='line'>&lt;/td&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The scenario is find the link and click in it.</p>
+
+<p>I choose the demo to you 2 option is :</p>
+
+<p>A) Find by Class name :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Class Name</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : link_example(this is the class name of this link)</p>
+
+<p><img src="/images/use-function-8.png"></p>
+
+<p>B) Find by Link text :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Link text</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : Click here(this is the text in the link)</p>
+
+<p><img src="/images/use-function-10.png"></p>
+
+<h3>Function VerifyTitlePage</h3>
+
+<p>1) Define : compare the title page with the text user input.Return false if the title page not equal with the text user input.</p>
+
+<p>2) Available : String for input.</p>
+
+<p>3) Required : &lsquo;ACTION INPUT VALUE&rsquo; : give your String to compare with the current title page.</p>
+
+<p><img src="/images/use-function-11.png"></p>
+
+<h3>Function VerifyText</h3>
+
+<p>1) Define : compare text inside element with text user input.Return false if they are not equals.</p>
+
+<p>2) Available : String input.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : give your String to compare with the current text in element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the location of element like xpath, ID you want to compare.</p>
+
+<p><img src="/images/use-function-12.png"></p>
+
+<h3>Function SelectValueDropdown</h3>
+
+<p>1) Define : select the value of drop-down list via value user input.Return false if value is not existed in drop-down.</p>
+
+<p>2) Available : String input.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : give your String Value you want selected in drop-down</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the location of drop-down like Xpath , or ID  you want to select!</p>
+
+<p>4)Example : take a look in html code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;select id='country'&gt;
+</span><span class='line'>&lt;option value='vietnam'&gt;Viet Nam&lt;/option&gt;
+</span><span class='line'>&lt;option value='thailand'&gt;ThaiLand&lt;/option&gt;
+</span><span class='line'>&lt;/select&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>The scenario is select value Viet Nam in drop-down list. So this will be look like this :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : vietnam(value of option)</p>
+
+<p>&lsquo;FIND BY&rsquo; : ID</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : country</p>
+
+<p><img src="/images/use-function-13.png"></p>
+
+<h3>Function SwitchToFrame</h3>
+
+<p>1) Define : switch the driver to iframe.</p>
+
+<p>2) Available : All I-frame visible in website.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of IFrame like Xpath , or ID you want to select!</p>
+
+<p><img src="/images/use-function-14.png"></p>
+
+<h3>Function SwitchToWindow</h3>
+
+<p>1) Define : if browser current have more than once tab , it use to switch to the another tab.</p>
+
+<p>2) Available : All tabs are existed in current browser.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : name of this tab you want to come.</p>
+
+<p><img src="/images/use-function-15.png"></p>
+
+<h3>Function SwitchToDefault</h3>
+
+<p>1) Define :  switch to the default tabs</p>
+
+<p>2) Available :  All tabs are existed in current browser.</p>
+
+<p>3) Required : Just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-16.png"></p>
+
+<h3>Function EnterAlertAcceptButton</h3>
+
+<p>1) Define : enter the accept button in Alert if alert present.</p>
+
+<p>2) Available : all alert is present.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-17.png"></p>
+
+<h3>Function EnterAlertDismissButton</h3>
+
+<p>1) Define : enter the cancel button in Alert if alert present.Return false if alert is not present.</p>
+
+<p>2) Available : all alert is present.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-18.png"></p>
+
+<h3>Function IsAlertPresent</h3>
+
+<p>1) Define : check if alert is present.Return false if alert is not present.</p>
+
+<p>2) Available : all browser.</p>
+
+<p>3) Required : just choose the function only , not required any parameters.</p>
+
+<p><img src="/images/use-function-19.png"></p>
+
+<h3>Function IsElementPresent</h3>
+
+<p>1) Define : check if element is present.Return false if element is not present.</p>
+
+<p>2) Available : all element.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-20.png"></p>
+
+<h3>Function WaitElementPresent</h3>
+
+<p>1) Define : wait for element present in website with time out default is 10 second , you can set this timeout by enter in column &lsquo;ACTION VALUE INPUT&rsquo;.Return false if element not present.</p>
+
+<p>2) Available : all element.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : time out you want to wait for this element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-21.png"></p>
+
+<h3>Function WaitElementsInvisible</h3>
+
+<p>1) Define : wait for all elements invisible in the timeout.Return false if once of elements is not invisible.</p>
+
+<p>2) Available : List elements.</p>
+
+<p>3) Required :</p>
+
+<p>&lsquo;ACTION INPUT VALUE&rsquo; : time out you want to wait for this element.</p>
+
+<p>&lsquo;FIND BY&rsquo; : Choose once of options : &lsquo;ID&rsquo; , &lsquo;TagName&rsquo; , &lsquo;ClassName&rsquo; , &lsquo;Css Selector&rsquo; , &lsquo;Xpath&rsquo; , &lsquo;Link text&rsquo; , &lsquo;Partial Link Text&rsquo;</p>
+
+<p>&lsquo;FIND BY VALUE&rsquo; : give the value to find the location of element like Xpath , or ID you want to check!</p>
+
+<p><img src="/images/use-function-22.png"></p>
+
+<h3>Function TakeScreenShot</h3>
+
+<p>1) Define : take a screen-shot in your current browser tabs and save it under folder &lsquo;Screenshot&rsquo;.</p>
+
+<p>2) Available : all browsers.</p>
+
+<p>3) Required : just choose only action and not required any parameters for this.</p>
+
+<p><img src="/images/use-function-23.png"></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/IceCream-Framework/icecream-framework-part-3-function-avaiable-in-excel-file/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/IceCream-Framework/icecream-framework-part-3-function-avaiable-in-excel-file/';
+        var disqus_url = 'http://www.tabaolan.com/IceCream-Framework/icecream-framework-part-3-function-avaiable-in-excel-file/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

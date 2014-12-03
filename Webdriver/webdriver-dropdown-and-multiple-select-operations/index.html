@@ -1,0 +1,375 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Webdriver : Dropdown and Multiple Select Operations - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="All about Dropdown and Multiple Select Operations in Selenium Webdriver" />
+	
+	<meta name="keywords" content="Selenium, Webdriver,Dropdown,Multiple, Select, Operations" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+
+        <article class="post">
+
+	<h2 class="title">Webdriver : Dropdown and Multiple Select Operations</h2>
+	<div class="entry-content"><h2>DropDown &amp; Multiple Select Operations</h2>
+
+<p>Just like Checkboxes &amp; Radio buttons, Dropdown and Multiple Select also works together and almost the same way. To perform any action, the first task is to identify the element group. I am saying it a group, as dropdown/multiple select is not a single element. They always have a single name but and they contains one or more than one elements in them. I should rather say more than one option in dropdown and multiple select. The only difference between these two is deselecting statement &amp; multiple selections are not allowed on dropdowns. Let’s look at the different operations:</p>
+
+<!--more-->
+
+
+<h3>Selecting Dropdown/Multiple Select Box</h3>
+
+<p>It is just an ordinary operation like selecting any other type of element on a web page. You can choose it by ID, Name, Css &amp; Xpath etc. But to perform any action on this element it is required to import ‘import org.openqa.selenium.support.ui.Select&#8217; package and to use it we need to create a new select object of class select.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: Select class only works for elements with select tags</p>
+
+<h3>Selecting an option using ‘selectByVisibleText’</h3>
+
+<p>It is very easy to choose or select an option given under any dropdowns and multiple selection boxes with selectByVisibleText method.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>oSelection.selectByVisibleText(text);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Selecting an option using ‘selectByIndex’</h3>
+
+<p>It is almost the same as selectByVisibleText but the only difference here is that we provide the index number of the option here rather the option text.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>
+</span><span class='line'>oSelection.selectByIndex(index);</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Selecting an option using ‘selectByValue’</h3>
+
+<p>It is again the same what we have discussed earlier, the only difference in this is that we need to provide the value of the option rather the option text.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>oSelection.selectByValue(value);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: The value of an option and the text of the option may not be always same and there can be a possibility that the value is not assigned to Select webelement. If the value is given in the Select tag then only you can use the selectByValue method.</p>
+
+<h3>Getting the Size of Select item</h3>
+
+<p>Sometimes you may like to count the element in the dropdown and multiple select box, so that you can use the loop on Select element.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>List&lt;WebElement&gt; oSize = oSelection.getOptions();
+</span><span class='line'>int iListSize = oSize.size();
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Printing the Options</h3>
+
+<p>Once you get the size of the Select element then it is easy to print the Text of the options.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>  List oSize = oSelection.getOptions();
+</span><span class='line'>  int iListSize = oSize.size();
+</span><span class='line'>  for(int i =0; i&gt;iListSize ; i++){
+</span><span class='line'>      String sValue = oSelection.getOptions().get(i).getText();
+</span><span class='line'>      System.out.println(sValue);
+</span><span class='line'>      }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>All of the above methods work on both Dropdown and Multiple select box.</p>
+
+<h3>Deselect methods</h3>
+
+<p>This only works on Multiple selection boxes. If in case you want to deselect any selected option and that can be done with either deselectAll(), deselectByIndex, deselectByValue and deselectByVisibletext.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>  oSelection.deselectAll();
+</span><span class='line'>  oSelection.deselectByIndex(index);
+</span><span class='line'>  oSelection.deselectByValue(value);
+</span><span class='line'>  oSelection.deselectByVisibleText(text);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Multiple selection method</h3>
+
+<p>This one also just works on Multiple selection boxes and not on regular List boxes or dropdowns. There is no additional logic behind selecting multiple options of Select element. All you need to do is to fire select commands on multiple elements one by one that’s it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select oSelection = new Select(driver.findElement(By.id(id)));
+</span><span class='line'>  oSelection.selectByIndex(index)
+</span><span class='line'>  oSelection.selectByIndex(index)
+</span><span class='line'>  // Or
+</span><span class='line'>  oSelection.selectByVisibleText(text)
+</span><span class='line'>  oSelection.selectByVisibleText(text)
+</span><span class='line'>  // Or
+</span><span class='line'>  oSelection.selectByValue(value)
+</span><span class='line'>  oSelection.selectByValue(value)</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/Webdriver/webdriver-dropdown-and-multiple-select-operations/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/Webdriver/webdriver-dropdown-and-multiple-select-operations/';
+        var disqus_url = 'http://www.tabaolan.com/Webdriver/webdriver-dropdown-and-multiple-select-operations/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

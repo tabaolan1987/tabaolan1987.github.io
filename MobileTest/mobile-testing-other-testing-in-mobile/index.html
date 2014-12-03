@@ -1,0 +1,315 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mobile Testing : Other Testing in Mobile App - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Other Testing in Mobile App" />
+	
+	<meta name="keywords" content="Mobile, Testing,Other, Testing,Mobile, App,Usability, testing,Recoverability, Testing" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+
+        <article class="post">
+
+	<h2 class="title">Mobile Testing : Other Testing in Mobile App</h2>
+	<div class="entry-content"><h2>Usability testing</h2>
+
+<p>The usability testing process of the Mobile application is performed to have a quick and easy step application with less functionality than a slow and difficult application with many features. The main objective is to ensure that we end up having an easy-to-use, intuitive and similar to industry-accepted interfaces which are widely used.</p>
+
+<p>1.To ensure that the buttons should have the required size and be suitable to big fingers.</p>
+
+<p>2.To ensure that the buttons are placed in the same section of the screen to avoid confusion to the end users.</p>
+
+<p>3.To ensure that the icons are natural and consistent with the application.</p>
+
+<p>4.To ensure that the buttons, which have the same function should also have the same color.</p>
+
+<p>5.To ensure that the validation for the tapping zoom-in and zoom-out facilities should be enabled.</p>
+
+<p>6.To ensure that the keyboard input can be minimized in an appropriate manner.</p>
+
+<p>7.To ensure that the application provides a method for going back or undoing an action, on touching the wrong item, within an acceptable duration.</p>
+
+<p>8.To ensure that the contextual menus are not overloaded because it has to be used quickly.</p>
+
+<p>9.To ensure that the text is kept simple and clear to be visible to the users.</p>
+
+<p>10.To ensure that the short sentences and paragraphs are readable to the end users.</p>
+
+<p>11.To ensure that the font size is big enough to be readable and not too big or too small.</p>
+
+<p>12.To validate the application prompts the user whenever the user starts downloading a large amount of data which may be not conducive for the application performance.</p>
+
+<p>13.To validate that the closing of the application is performed from different states and verify if it re-opens in the same state.</p>
+
+<p>14.To ensure that all strings are converted into appropriate languages whenever a language translation facility is available.</p>
+
+<p>15.To ensure that the application items are always synchronized according to the user actions.</p>
+
+<p>16.To ensure that the end user is provided with a user manual which helps the end user to understand and operate the application who may be not familiar with the application’s proceedings</p>
+
+<p>Usability testing is normally performed by manual users since only human beings can understand the sensibility and comfort ability of the other users.</p>
+
+<h2>Compatibility testing</h2>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>Compatibility testing on mobile devices is performed to ensure that since mobile devices have different size, resolution, screen, version and hardware so the application should be tested across all the devices to ensure that the application works as desired.</p>
+
+<p>The following are the most prominent areas for compatibility testing.</p>
+
+<p>1.To validate that the user Interface of the application is as per the screen size of the device, no text/control is partially invisible or inaccessible.</p>
+
+<p>2.To ensure that the text is readable for all users for the application.</p>
+
+<p>3.To ensure that the call/alarm functionality is enabled whenever the application is running. The application is minimized or suspended on the event of a call and then whenever the call stops the application is resumed.</p>
+
+<h2>Recoverability Testing</h2>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>1.Crash recovery and transaction interruptions</p>
+
+<p>2.Validation of the effective application recovery situation post unexpected interruption/crash scenarios.</p>
+
+<p>3.Verification of how the application handles a transaction during a power failure (i.e. Battery dies or a sudden manual shutdown of the device)</p>
+
+<p>4.The validation of the process where the connection is suspended, the system needs to re-establish for recovering the data directly affected by the suspended connection.</p>
+
+<h2>Other Important Checks</h2>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>1.Installation testing (whether the application can be installed in a reasonable amount of time and with required criterion)</p>
+
+<p>2.Uninstallation testing (whether the application can be uninstalled in a reasonable amount of time and with required criterion)</p>
+
+<p>3.Network test cases (validation of whether the network is performing under required load or not, whether the network is able to support all the necessary applications during the testing procedures).</p>
+
+<p>4.Check Unmapped keys</p>
+
+<p>5.Check application splash screen</p>
+
+<p>6.Continued keypad entry during interrupts and other times like network issues</p>
+
+<p>7.Methods which deal with exiting the application</p>
+
+<p>8.Charger effect while an application is running in the background</p>
+
+<p>9.Low battery and high performance demand</p>
+
+<p>10.Removal of battery while an application is being performed</p>
+
+<p>11.Consumption of battery by application</p>
+
+<p>12.Check Application side effects</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/MobileTest/mobile-testing-other-testing-in-mobile/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/MobileTest/mobile-testing-other-testing-in-mobile/';
+        var disqus_url = 'http://www.tabaolan.com/MobileTest/mobile-testing-other-testing-in-mobile/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

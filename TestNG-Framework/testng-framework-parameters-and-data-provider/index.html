@@ -1,0 +1,416 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TestNG Framework P8 : Parameters and Data Provider - Selenium Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Parameters and Data Provider" />
+	
+	<meta name="keywords" content="TestNG,framework,Parameters,Data, Provider" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <!--  <script src="/javascripts/ajaxify.js"></script> -->   
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 50);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+
+        <article class="post">
+
+	<h2 class="title">TestNG Framework P8 : Parameters and Data Provider</h2>
+	<div class="entry-content"><h2>TestNG Parameters &amp; Data Provider</h2>
+
+<h3>TestNG Parameters</h3>
+
+<p>Everybody knows the importance of Parametrization in testing and in automation testing.</p>
+
+<p>It allows us to automatically run a test case multiple times with different input and validation values.</p>
+
+<p>As Selenium Webdriver is more an automated testing framework than a ready-to-use tool, you will have to put in some effort to support data driven testing in your automated tests.</p>
+
+<p>I usually prefer to use Microsoft Excel as the format for storing my parameters but so many of my followers have requested to write an article on TestNG Data Provider.</p>
+
+<p>TestNG again gives us another interesting feature called TestNG Parameters. TestNG lets you pass parameters directly to your test methods with your testng.xml.</p>
+
+<!--more-->
+
+
+<h4>How to do it…</h4>
+
+<p>Let me take a very simple example of LogIn application, where the username and password is required to clear the authentication.</p>
+
+<p>1) Create a test on my demo OnlineStore application to perform LogIn which takes the two string argument as username &amp; password.</p>
+
+<p>2) Provide Username &amp; Password as parameter using TestNG Annotation.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>import org.testng.annotations.Parameters;
+</span><span class='line'>
+</span><span class='line'>public class TestngParameters {
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  @Test 
+</span><span class='line'>  @Parameters({ "sUsername", "sPassword" })
+</span><span class='line'>  public void test(String sUsername, String sPassword) {
+</span><span class='line'>    driver = new FirefoxDriver();
+</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>      driver.get("https://www.facebook.com");
+</span><span class='line'>      driver.findElement(By.id("email")).sendKeys(sUsername);
+</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys(sPassword);
+</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
+</span><span class='line'>      driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) The parameter would be passed values from testng.xml which we will see in the next step.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;suite name="Suite"&gt;
+</span><span class='line'>    &lt;test name="ToolsQA"&gt;
+</span><span class='line'>  &lt;parameter name="sUsername" value="yourusername"/&gt;
+</span><span class='line'>  &lt;parameter name="sPassword" value="yourpassword"/&gt;
+</span><span class='line'>      &lt;classes&gt;
+</span><span class='line'>          &lt;class name="automationFramework.TestngParameters" /&gt;
+</span><span class='line'>      &lt;/classes&gt;
+</span><span class='line'>    &lt;/test&gt;
+</span><span class='line'>&lt;/suite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, run the testng.xml, which will run the parameterTest method. TestNG will try to find a parameter named sUsername &amp; sPassword.</p>
+
+<h3>TestNG DataProviders</h3>
+
+<p>When you need to pass complex parameters or parameters that need to be created from Java (complex objects, objects read from a property file or a database, etc…), in such cases parameters can be passed using Dataproviders. A Data Provider is a method annotated with @DataProvider. A Data Provider returns an array of objects.</p>
+
+<p>Let us check out the same Sign In examples using Dataproviders.</p>
+
+<h4>How to do it…</h4>
+
+<p>1)  Define the method credentials() which is defined as a Dataprovider using the annotation. This method returns array of object array.</p>
+
+<p>2) Add a method test() to your DataProviderTest class. This method takes two strings as input parameters.</p>
+
+<p>3) Add the annotation @Test(dataProvider = “Authentication”) to this method. The attribute dataProvider is mapped to “Authentication”.</p>
+
+<p>Test will look like this:</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package automationFramework;
+</span><span class='line'>
+</span><span class='line'>import java.util.concurrent.TimeUnit;
+</span><span class='line'>
+</span><span class='line'>import org.openqa.selenium.By;
+</span><span class='line'>import org.openqa.selenium.WebDriver;
+</span><span class='line'>import org.openqa.selenium.firefox.FirefoxDriver;
+</span><span class='line'>import org.testng.annotations.DataProvider;
+</span><span class='line'>import org.testng.annotations.Test;
+</span><span class='line'>
+</span><span class='line'>public class DataProviderTest {
+</span><span class='line'>  private static WebDriver driver;
+</span><span class='line'>  
+</span><span class='line'>  @DataProvider(name = "Authentication")
+</span><span class='line'>  public static Object[][] credentials() {
+</span><span class='line'>        return new Object[][] { { "yourusername", "yourpassword" }, { "yourusername_another", "yourpassword_another" }};
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  // Here we are calling the Data Provider object with its Name
+</span><span class='line'>  @Test(dataProvider = "Authentication")
+</span><span class='line'>  public void test(String sUsername, String sPassword) {
+</span><span class='line'>     driver = new FirefoxDriver();
+</span><span class='line'>      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>      driver.get("https://www.facebook.com");
+</span><span class='line'>      driver.findElement(By.id("email")).sendKeys(sUsername);
+</span><span class='line'>      driver.findElement(By.id("pass")).sendKeys(sPassword);
+</span><span class='line'>      driver.findElement(By.id("loginbutton")).click();
+</span><span class='line'>      driver.quit();
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Run the test by right click on the test case script and select Run As > TestNG Test. Give it few minutes to complete the execution, once it is finished the results will look like this in the TestNg Result window.</p>
+
+<p>Note: As the test data is provided two times, the above test executed two times completely.</p>
+
+<h3>Take a look in : <a href="/testng-framework-multi-browser-and-parallel-testing/">P9 : Multi Browser and Parallel Testing</a></h3>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/TestNG-Framework/testng-framework-parameters-and-data-provider/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/TestNG-Framework/testng-framework-parameters-and-data-provider/';
+        var disqus_url = 'http://www.tabaolan.com/TestNG-Framework/testng-framework-parameters-and-data-provider/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
