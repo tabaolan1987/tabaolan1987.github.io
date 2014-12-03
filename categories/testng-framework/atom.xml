@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: TestNG-Framework | Selenium Tutorial]]></title>
+  <title><![CDATA[Category: TestNG-Framework | Selenium WebDriver, JMETER, TESTNG Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/testng-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-12-03T07:26:07+00:00</updated>
+  <updated>2014-12-03T08:07:40+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -97,7 +97,7 @@
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<h3>Now take a look in <a href="/testng-framework-download/">TestNG Framework P2 : Download</a></h3>
+<h3>Now take a look in <a href="/TestNG-Framework/testng-framework-download/">TestNG Framework P2 : Download</a></h3>
 ]]></content>
   </entry>
   
@@ -156,7 +156,7 @@
 <p><img src="/images/Install-TestNG-9.png">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<h3>Now after download success , take a look in <a href="/blog/2014/05/26/testng-framework-first-test-case-with-testng/">First Test Case With TestNG</a></h3>
+<h3>Now after download success , take a look in <a href="/TestNG-Framework/testng-framework-first-test-case-with-testng/">First Test Case With TestNG</a></h3>
 ]]></content>
   </entry>
   
@@ -293,7 +293,7 @@ import org.testng.annotations.AfterMethod;</p>
 <p><img src="/images/TestNG-FTC-11.png">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
-<h3>Now take a look how to create a test suite : <a href="/testng-framework-test-suite/">P4 : Test Suite</a></h3>
+<h3>Now take a look how to create a test suite : <a href="/TestNG-Framework/testng-framework-test-suite/">P4 : Test Suite</a></h3>
 ]]></content>
   </entry>
   
@@ -357,7 +357,7 @@ import org.testng.annotations.AfterMethod;</p>
 
 <p>The above test will execute only those tests, which are mentioned in the testng.xml. The rest of the test cases under ‘automationFramework’ package will remain untouched.</p>
 
-<h3>You are able to know how to run the test suite , I think you need to know about : <a href="/testng-framework-annotations/">P5: Annotations , Groups and OnDepends</a></h3>
+<h3>You are able to know how to run the test suite , I think you need to know about : <a href="/TestNG-Framework/testng-framework-annotations/">P5: Annotations , Groups and OnDepends</a></h3>
 ]]></content>
   </entry>
   
