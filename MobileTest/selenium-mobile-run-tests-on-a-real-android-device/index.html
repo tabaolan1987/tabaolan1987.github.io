@@ -3,12 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Selenium Mobile : Run test scripts in real IPhone - Selenium WebDriver, JMETER Tutorial</title>
+	<title>Selenium Mobile : Run tests on a real Android device - Selenium WebDriver, JMETER Tutorial</title>
     <meta name="author" content="Ta Bao Lan">
    	
 	<meta name="description" content="Jmeter Tutorial - learning Jmeter in simple way and easy steps - Selenium tutorial for beginners - learning selenium in simple and easy steps : a beginner's tutorial containing complete knowledge about selenium environment setup, ide, test cases suite, locators, pattern matching, commands, webdrivers, rc, user interactions, design techniques, testng, grids, user extensions, and selenium for mobile applications" />
 	
-	<meta name="keywords" content="Selenium,mobile,test,iphone,device,scripts" />
+	<meta name="keywords" content="Selenium mobile,Android" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="/atom.xml" rel="alternate" title="Selenium WebDriver, JMETER Tutorial" type="application/atom+xml">
 	<link rel="canonical" href="">
@@ -103,10 +103,10 @@
 	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
 	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
 	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
-	<li id="ajax"><a href="/categories/selenium-mobile/">Selenium Mobile</a></li>
     <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
 	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
 	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	<li id="ajax"><a href="/categories/TMT/">Test Management Tool</a></li>
 	
     <li>
     <div id="dark">
@@ -129,23 +129,27 @@
 
         <article class="post">
 
-	<h2 class="title">Selenium Mobile : Run Test Scripts in Real IPhone</h2>
+	<h2 class="title">Selenium Mobile : Run Tests on a Real Android Device</h2>
 	<div class="entry-content"><h2>Introduction</h2>
 
-<p>We want to execute our test scripts on a iphone device. The iphone driver allows us to execute the WebDriver tests on a real iphone device.</p>
+<p>We want to run our test scripts on a real Android device. The android driver allows us to execute our tests against an Android browser. This can be a simulator or a real device.</p>
 
 <!--more-->
 
 
-<h3>Configuration</h3>
+<p>Before we can register our simulator we have to download the android SDK (Software Development Kit) from the following location: <a href="http://adf.ly/p8w0X">SDK</a></p>
 
-<p>We need to install Xcode which is available for the Mac operating systems. We also need a provisoning profile for running the script on a real device.</p>
+<h2>Solution</h2>
 
-<p>1) We need to create a provisioning profile, so go to this <a href="http://adf.ly/p8wJ3">website</a> and create a profile.</p>
+<p>We can divide this section into three parts: setup the device, install the WebDriver APK and finally run the test.</p>
 
-<p>2) We need to download Xcode from the following location: <a href="http://adf.ly/p8wOu">this</a></p>
+<h3>Setup the device</h3>
 
-<p>3) The iPhone WebDriver application is not available from the App Store, therefore we need to check-out the code and build it manually. We can do the check-out by entering the following terminal command:</p>
+<p>Connect the android device with the computer using a USB cable.</p>
+
+<h2>Install the WebDriver APK</h2>
+
+<p>1) We need to retrieve the serial id with the following command:</p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -153,29 +157,54 @@
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>svn checkout http://selenium.googlecode.com/svn/trunk/</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$cd /android_sdk/platform-tools/
+</span><span class='line'>adb devices</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Solution</h3>
-
-<p>1) Open the project selenium-read-only/iphone/iWebDriver.xcodeproj in Xcode.</p>
-
-<p>2) Double-click on the project and set the build configuration to the latest version of the iPhone Simulator, by using the drop-down box in the top left corner.</p>
-
-<p>3) Configure and install the iPhone provisioning profile.</p>
-
-<p>4) Open Info.plist and edit the Bundle Identifier to com.NAME.$ {PRODUCT_NAME:identifier} where NAME is the name you registered your provisioning profile to be an authority on.</p>
-
-<p>5) Make sure your device is connected to your computer. Your device must also be routable from your computer. The easiest way to do this is to configure a wifi network and connect your device to it.</p>
-
-<p>6) Click on Run (play button). After compiling, the iphone simulator should appear and the iWebDriver app will be installed in it.</p>
-
-<p>7) Now we can use the IPhoneDriver in our tests. You will need to take a look in <a href="/blog/categories/testng-framework/">TestNG Framework</a>. Create new TestNG class and paste the code below :</p>
+<p>2) Download the Android server from <a href="http://adf.ly/p8w7c">Selenium website</a> and save it in the platform-tools directory. To install the application enter:</p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; -e install -r android-server.apk</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) Start the Android WebDriver application,by running this command:</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; shell am start -a android.intent.action.MAIN -n org.openqa.selenium.android.app/.MainActivity</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4) Now we need to setup the port forwarding in order to forward traffic from the host machine to the emulator. Enter the following in the terminal :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$./adb -s &lt;serialId&gt; forward tcp:8080 tcp:8080</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Run the test</h3>
+
+<p>You will need to take a look in <a href="/blog/categories/testng-framework/">TestNG Framework</a></p>
+
+<p>Now we have our environment setup we can run our tests.Create new TestNG and paste the code below :</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -226,7 +255,7 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>package com.selenium.test;
 </span><span class='line'>
 </span><span class='line'>import org.openqa.selenium.WebDriver;
-</span><span class='line'>import org.openqa.selenium.iphone.IPhoneDriver;
+</span><span class='line'>import org.openqa.selenium.android.AndroidDriver;
 </span><span class='line'>import org.testng.annotations.Test;
 </span><span class='line'>import org.testng.annotations.BeforeTest;
 </span><span class='line'>import org.testng.annotations.AfterTest;
@@ -248,7 +277,7 @@
 </span><span class='line'> */
 </span><span class='line'>@BeforeTest
 </span><span class='line'>  public void beforeTest() {
-</span><span class='line'>    driver =  new IPhoneDriver();
+</span><span class='line'>    driver =  new AndroidDriver();
 </span><span class='line'>  }
 </span><span class='line'>  
 </span><span class='line'>  /**
@@ -271,12 +300,17 @@
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<p>8) Run your script.</p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<p>5) Run your test.</p>
 </div>
 
 <div class="meta">
 	
-		<span class="comments"><a href="/Selenium-mobile/selenium-mobile-run-test-scripts-in-real-iphone/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/mobiletest/selenium-mobile-run-tests-on-a-real-android-device/#disqus_thread">Comments</a></span>
 	
 </div>
 
@@ -304,11 +338,11 @@
  </div>
     <footer id="footer">
     <div style="display:inline">
-    Copyright &copy; 2014
+    Copyright &copy; 2015
 
     Ta Bao Lan
-. Powered by <a href="http://octopress.org">Octopress</a>
-	<MARQUEE BEHAVIOR="alternate"> Selenium,mobile,test,iphone,device,scripts </MARQUEE>
+. Powered by <a href="http://octopress.org">Octopress</a> . Some source code cloned from <a href="http://www.guru99.com/">Guru</a> 
+	<MARQUEE BEHAVIOR="alternate"> Selenium mobile,Android </MARQUEE>
 </div>
 
 
@@ -327,8 +361,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.tabaolan.com/Selenium-mobile/selenium-mobile-run-test-scripts-in-real-iphone/';
-        var disqus_url = 'http://www.tabaolan.com/Selenium-mobile/selenium-mobile-run-test-scripts-in-real-iphone/';
+        var disqus_identifier = 'http://www.tabaolan.com/mobiletest/selenium-mobile-run-tests-on-a-real-android-device/';
+        var disqus_url = 'http://www.tabaolan.com/mobiletest/selenium-mobile-run-tests-on-a-real-android-device/';
         var disqus_script = 'embed.js';
       
     (function () {

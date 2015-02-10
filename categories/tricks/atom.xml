@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium WebDriver, JMETER Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-12-09T09:38:32+00:00</updated>
+  <updated>2015-02-10T07:51:11+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,95 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Upload file with Selenium and AutoIT]]></title>
+    <link href="http://www.tabaolan.com/tricks/upload-file-with-selenium/"/>
+    <updated>2015-02-10T07:26:29+00:00</updated>
+    <id>http://www.tabaolan.com/tricks/upload-file-with-selenium</id>
+    <content type="html"><![CDATA[<h2>How to upload file with Selenium and AutoIt</h2>
+
+<h3>Download AutoIt : <a href="https://www.autoitscript.com/site/autoit/downloads/">Click here</a></h3>
+
+<h3>Install AutoIt : Double click on file &ldquo;autoit-v3-setup.exe&rdquo; then click button Next.</h3>
+
+<h3>Scenario :</h3>
+
+<p>You will face with problem when you want to upload a file, you must click on the input and the browser will show the popup like below :</p>
+
+<p><img src="/images/autoit.jpg"></p>
+
+<h3>Solution : We will include script AutoIT into Selenium Script</h3>
+
+<p>Step 1 : After install AutoIt, locate to your desktop, right-click and create a new file: &ldquo;upload_script_autoit.au3&rdquo;</p>
+
+<p>Step 2 : Open file you created above and copy the code below to it :</p>
+
+<p>```</p>
+
+<p>; Wait 10 seconds for the Upload window to appear</p>
+
+<p>WinWait(&ldquo;[CLASS:#32770]&rdquo;, &ldquo;&rdquo;, 10)</p>
+
+<p>; Set input focus to the edit control of Upload window using the handle returned by WinWait</p>
+
+<p>ControlFocus(&ldquo;Open&rdquo;, &ldquo;&rdquo;, &ldquo;Edit1&rdquo;)</p>
+
+<p>Sleep(2000)</p>
+
+<p>; Set the File name text on the Edit field</p>
+
+<p>ControlSetText(&ldquo;Open&rdquo;, &ldquo;&rdquo;, &ldquo;Edit1&rdquo;, &ldquo;C:\bt.jpg&rdquo;)</p>
+
+<p>Sleep(2000)</p>
+
+<p>; Click on the Open button</p>
+
+<p>ControlClick(&ldquo;Open&rdquo;, &ldquo;&rdquo;, &ldquo;Button1&rdquo;);</p>
+
+<p>```</p>
+
+<p>Step 3 : Save this file.</p>
+
+<p>Step 4 : right-click to this file &ndash;> Compile script (x86).</p>
+
+<p>Step 5 : You will see the new file : &ldquo;upload_file_autoit.exe&rdquo;. Copy this file to disk C or whatever you want.</p>
+
+<p>Step 6 : write up a simple selenium script with main function like below :</p>
+
+<p>```
+public class App
+{</p>
+
+<pre><code>public static void main( String[] args ) throws IOException, InterruptedException
+{
+    String path = PropertiesHelper.getKey("project.basedir")
+            + File.separator + "target" + File.separator + "surefire";
+    long size = FileUtils.sizeOfDirectory(new File(path));
+    System.setProperty("webdriver.chrome.driver",
+            DriverUtil.getChromeDriver());
+     WebDriver driver = new ChromeDriver();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        driver.get("yourURL.com");
+
+        //find the input file then click to it.
+        driver.findElement(By.id("photo")).click();
+
+        // call the autoit script
+        Runtime.getRuntime().exec("C:\\upload_file_autoit.exe");
+
+        Thread.sleep(5000);
+
+        //driver.close();
+}
+</code></pre>
+
+<p>}
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to take screenshot in Internet Explore , Chrome, Firefox]]></title>
@@ -235,33 +324,6 @@ java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\IEDriver
 <img src="/images/ie-ide-4.png"></p>
 
 <p>9) Click on &lsquo;Play current test case&rsquo;.This will open your Internet Explore and run your script automatic. Have fun and happy learning.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to switch Driver to Tab/Window by Title tab?]]></title>
-    <link href="http://www.tabaolan.com/tricks/Webdriver/switch-driver-to-tab-by-title/"/>
-    <updated>2014-07-01T05:10:38+01:00</updated>
-    <id>http://www.tabaolan.com/tricks/Webdriver/switch-driver-to-tab-by-title</id>
-    <content type="html"><![CDATA[<h3>In some case when you need to switch driver to the tab/window that you know the title of this, you can use this method below</h3>
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-```
-public static WebDriver switchToTabByTitle(WebDriver driver , String title){</p>
-
-<pre><code>    Set&lt;String&gt; handles = driver.getWindowHandles();
-    for(String handle : handles){
-        driver.switchTo().window(handle);
-        if(driver.getTitle().equals(title)){
-            break;
-        }
-    }
-    return driver;
-</code></pre>
-
-<p>}
-```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
 ]]></content>
   </entry>
   

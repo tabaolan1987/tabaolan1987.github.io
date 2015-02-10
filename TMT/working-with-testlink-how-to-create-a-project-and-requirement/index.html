@@ -1,0 +1,276 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Working with TestLink : How to create a Project and Requirement in TestLink? - Selenium WebDriver, JMETER Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Jmeter Tutorial - learning Jmeter in simple way and easy steps - Selenium tutorial for beginners - learning selenium in simple and easy steps : a beginner's tutorial containing complete knowledge about selenium environment setup, ide, test cases suite, locators, pattern matching, commands, webdrivers, rc, user interactions, design techniques, testng, grids, user extensions, and selenium for mobile applications" />
+	
+	<meta name="keywords" content="TestLink, How to create a Project and Requirement" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium WebDriver, JMETER Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 5);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium WebDriver, JMETER Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	<li id="ajax"><a href="/categories/TMT/">Test Management Tool</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+
+        <article class="post">
+
+	<h2 class="title">Working With TestLink : How to Create a Project and Requirement in TestLink?</h2>
+	<div class="entry-content"><h2>How to create a Project</h2>
+
+<ol>
+<li><p>Go to &ldquo;localhost/testlink&rdquo; and enter username and password to login.</p></li>
+<li><p>Go to the Test Project Management section:</p></li>
+</ol>
+
+
+<p><img src="/images/testlink8.png"></p>
+
+<p><img src="/images/testlink9.png"></p>
+
+<ol type="a">
+<li><p>Name Field : name of this project.</p></li>
+<li><p>Project Description  : what is the aim of the Project, what is the target group, what is the business logic, what is the Test Environment.</p></li>
+<li><p>Requirements feature : we may specify requirements and see if they are well-covered by Test Cases.</p></li>
+<li><p>Testing priority – we may assign priority to Test Cases (high, medium, low).</p></li>
+<li><p>Test Automation – we may specify whether the test should be performed manually or automatically</p></li>
+<li><p>Inventory – Enable the inventory to this project.</p></li>
+</ol>
+
+
+<p>3.You can now set this project here, in the top right corner</p>
+
+<p><img src="/images/testlink10.png"></p>
+
+<h2>How to create a Requirement for Specific Project</h2>
+
+<ol>
+<li>Choose a Project in the top right corner</li>
+</ol>
+
+
+<p><img src="/images/testlink10.png"></p>
+
+<ol>
+<li>Go to the Requirement Specification in Requirement section:</li>
+</ol>
+
+
+<p><img src="/images/testlink11.png"></p>
+
+<ol>
+<li>Select button Create for create requirement or select button Import for import the requirement.</li>
+</ol>
+
+
+<p><img src="/images/testlink12.png"></p>
+
+<ol>
+<li>With Select button Create, it will look like this :</li>
+</ol>
+
+
+<p><img src="/images/testlink13.png"></p>
+
+<ol type="a">
+<li><p>Document ID : setup the id for this document.</p></li>
+<li><p>Title : write the title for this requirement.</p></li>
+<li><p>Scope : write the scope of this requirement.</p></li>
+<li><p>Type : select the type of this requirement such as : user or system requirement.</p></li>
+<li><p>After enter Save Button, you will see the Requirement is available in the left corner.</p></li>
+</ol>
+
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/TMT/working-with-testlink-how-to-create-a-project-and-requirement/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2015
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a> . Some source code cloned from <a href="http://www.guru99.com/">Guru</a> 
+	<MARQUEE BEHAVIOR="alternate"> TestLink, How to create a Project and Requirement </MARQUEE>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/TMT/working-with-testlink-how-to-create-a-project-and-requirement/';
+        var disqus_url = 'http://www.tabaolan.com/TMT/working-with-testlink-how-to-create-a-project-and-requirement/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

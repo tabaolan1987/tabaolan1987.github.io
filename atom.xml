@@ -4,7 +4,7 @@
   <title><![CDATA[Selenium WebDriver, JMETER Tutorial]]></title>
   <link href="http://www.tabaolan.com/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2014-12-09T09:38:32+00:00</updated>
+  <updated>2015-02-10T07:51:11+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -12,6 +12,490 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Upload file with Selenium and AutoIT]]></title>
+    <link href="http://www.tabaolan.com/tricks/upload-file-with-selenium/"/>
+    <updated>2015-02-10T07:26:29+00:00</updated>
+    <id>http://www.tabaolan.com/tricks/upload-file-with-selenium</id>
+    <content type="html"><![CDATA[<h2>How to upload file with Selenium and AutoIt</h2>
+
+<h3>Download AutoIt : <a href="https://www.autoitscript.com/site/autoit/downloads/">Click here</a></h3>
+
+<h3>Install AutoIt : Double click on file &ldquo;autoit-v3-setup.exe&rdquo; then click button Next.</h3>
+
+<h3>Scenario :</h3>
+
+<p>You will face with problem when you want to upload a file, you must click on the input and the browser will show the popup like below :</p>
+
+<p><img src="http://www.tabaolan.com/images/autoit.jpg"></p>
+
+<h3>Solution : We will include script AutoIT into Selenium Script</h3>
+
+<p>Step 1 : After install AutoIt, locate to your desktop, right-click and create a new file: &ldquo;upload_script_autoit.au3&rdquo;</p>
+
+<p>Step 2 : Open file you created above and copy the code below to it :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>; Wait 10 seconds for the Upload window to appear
+</span><span class='line'>
+</span><span class='line'>WinWait("[CLASS:#32770]", "", 10)
+</span><span class='line'>
+</span><span class='line'>; Set input focus to the edit control of Upload window using the handle returned by WinWait
+</span><span class='line'>
+</span><span class='line'>ControlFocus("Open", "", "Edit1")
+</span><span class='line'>
+</span><span class='line'>Sleep(2000)
+</span><span class='line'>
+</span><span class='line'>; Set the File name text on the Edit field
+</span><span class='line'>
+</span><span class='line'>ControlSetText("Open", "", "Edit1", "C:\bt.jpg")
+</span><span class='line'>
+</span><span class='line'>Sleep(2000)
+</span><span class='line'>
+</span><span class='line'>; Click on the Open button
+</span><span class='line'>
+</span><span class='line'>ControlClick("Open", "", "Button1");
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Step 3 : Save this file.</p>
+
+<p>Step 4 : right-click to this file &ndash;> Compile script (x86).</p>
+
+<p>Step 5 : You will see the new file : &ldquo;upload_file_autoit.exe&rdquo;. Copy this file to disk C or whatever you want.</p>
+
+<p>Step 6 : write up a simple selenium script with main function like below :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public class App 
+</span><span class='line'>{
+</span><span class='line'>    public static void main( String[] args ) throws IOException, InterruptedException
+</span><span class='line'>    {
+</span><span class='line'>      String path = PropertiesHelper.getKey("project.basedir")
+</span><span class='line'>              + File.separator + "target" + File.separator + "surefire";
+</span><span class='line'>      long size = FileUtils.sizeOfDirectory(new File(path));
+</span><span class='line'>      System.setProperty("webdriver.chrome.driver",
+</span><span class='line'>              DriverUtil.getChromeDriver());
+</span><span class='line'>       WebDriver driver = new ChromeDriver();
+</span><span class='line'>       
+</span><span class='line'>          driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+</span><span class='line'>   
+</span><span class='line'>          driver.get("yourURL.com");
+</span><span class='line'>   
+</span><span class='line'>          //find the input file then click to it.
+</span><span class='line'>          driver.findElement(By.id("photo")).click();
+</span><span class='line'>          
+</span><span class='line'>          // call the autoit script
+</span><span class='line'>          Runtime.getRuntime().exec("C:\\upload_file_autoit.exe");
+</span><span class='line'>   
+</span><span class='line'>          Thread.sleep(5000);
+</span><span class='line'>   
+</span><span class='line'>          //driver.close();
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Working with TestLink : How to install TestLink?]]></title>
+    <link href="http://www.tabaolan.com/TMT/working-with-testlink-how-to-install-testlink/"/>
+    <updated>2014-12-12T03:53:25+00:00</updated>
+    <id>http://www.tabaolan.com/TMT/working-with-testlink-how-to-install-testlink</id>
+    <content type="html"><![CDATA[<h2>Perquisite</h2>
+
+<ol>
+<li><p>Download and install XAMPP application into your machine from link: <a href="https://www.apachefriends.org/download.html">Click here</a></p></li>
+<li><p>Download TestLink from link : <a href="http://sourceforge.net/projects/testlink/files/">Click Here</a></p></li>
+<li><p>Extract downloaded TestLink zip file and rename this to &ldquo;TestLink&rdquo;.</p></li>
+<li><p>Go to folder &ldquo;\xampp\htdocs&rdquo; and copy test link to it.</p></li>
+<li><p>Start Xampp application and start “Apache” and “MySql” Server, your window look like below screen:</p></li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink1.png"></p>
+
+<p>Note : The default port for Apache is : 80 and Mysql is : 3306. You should check there port are not use in your computer.</p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>Setup</h2>
+
+<ol>
+<li><p>Open browser and go to url “localhost/phpmyadmin”</p></li>
+<li><p>Click on “DataBases” menu and create new data base like “testlink”</p></li>
+<li><p>Your created database listed in left side panel like as in below screen:</p></li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink2.png"></p>
+
+<ol>
+<li><p>Click on created database from left panel then Click on “More” >> “Privileges”.</p></li>
+<li><p>Click on “Add User”after that enter user details and click on “Check All” link.</p></li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink3.png"></p>
+
+<ol>
+<li><p>Click on “Go” button. Now your database created with database user.</p></li>
+<li><p>Navigate “<a href="http://localhost/testlink%E2%80%9D">http://localhost/testlink%E2%80%9D</a> on browser.</p></li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink4.png"></p>
+
+<ol>
+<li><p>Click on &ldquo;New installation&rdquo; link.</p></li>
+<li><p>Click on check box “I agree to the terms set out in this license.” And click on “Continue” button. You should see below screen:</p></li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink5.png"></p>
+
+<ol>
+<li><p>You should see that “Checking if /var/testlink/logs/ directory exists” and “Checking if /var/testlink/upload_area/ directory exists ” status failed.</p></li>
+<li><p>You need to set path according your machine.</p></li>
+<li><p>Goto testlink package and open “config.inc.php” file, update path “$tlCfg->log_path” and “$g_repositoryPath” as below:</p></li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//Old path:
+</span><span class='line'>$tlCfg-&gt;log_path = '/var/testlink/logs/';
+</span><span class='line'>$g_repositoryPath = '/var/testlink/upload_area/';
+</span><span class='line'>
+</span><span class='line'>//Updated path:
+</span><span class='line'>$tlCfg-&gt;log_path = 'your disk install xampp'+'/xampp/htdocs/testlink-1.9.7/logs/'
+</span><span class='line'>$g_repositoryPath = 'your disk install xampp'+'/xampp/htdocs/testlink-1.9.7/upload_area/';</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<ol>
+<li>Again refresh page and you should see that “Failed” status change with “OK”</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink6.png"></p>
+
+<ol>
+<li><p>Click on “Continue” button. Enter your data base name into “Database name” input field. Enter root into “Database admin login” input filed.</p></li>
+<li><p>Enter data base user name and password into “TestLink DB login” and “TestLink DB password” field.</p></li>
+<li><p>Click on “Process TestLink Setup” button. You should see that test link “Installation was successful!” message display.</p></li>
+</ol>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<ol>
+<li>Go to url “<a href="http://localhost/testlink%E2%80%9D.">http://localhost/testlink%E2%80%9D.</a> and enter “admin” into both “Login Name” and Password” field. Click on “Login” button.</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink7.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Working with TestLink : How to create a Project and Requirement in TestLink?]]></title>
+    <link href="http://www.tabaolan.com/TMT/working-with-testlink-how-to-create-a-project-and-requirement/"/>
+    <updated>2014-12-12T03:53:24+00:00</updated>
+    <id>http://www.tabaolan.com/TMT/working-with-testlink-how-to-create-a-project-and-requirement</id>
+    <content type="html"><![CDATA[<h2>How to create a Project</h2>
+
+<ol>
+<li><p>Go to &ldquo;localhost/testlink&rdquo; and enter username and password to login.</p></li>
+<li><p>Go to the Test Project Management section:</p></li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink8.png"></p>
+
+<p><img src="http://www.tabaolan.com/images/testlink9.png"></p>
+
+<ol type="a">
+<li><p>Name Field : name of this project.</p></li>
+<li><p>Project Description  : what is the aim of the Project, what is the target group, what is the business logic, what is the Test Environment.</p></li>
+<li><p>Requirements feature : we may specify requirements and see if they are well-covered by Test Cases.</p></li>
+<li><p>Testing priority – we may assign priority to Test Cases (high, medium, low).</p></li>
+<li><p>Test Automation – we may specify whether the test should be performed manually or automatically</p></li>
+<li><p>Inventory – Enable the inventory to this project.</p></li>
+</ol>
+
+
+<p>3.You can now set this project here, in the top right corner</p>
+
+<p><img src="http://www.tabaolan.com/images/testlink10.png"></p>
+
+<h2>How to create a Requirement for Specific Project</h2>
+
+<ol>
+<li>Choose a Project in the top right corner</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink10.png"></p>
+
+<ol>
+<li>Go to the Requirement Specification in Requirement section:</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink11.png"></p>
+
+<ol>
+<li>Select button Create for create requirement or select button Import for import the requirement.</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink12.png"></p>
+
+<ol>
+<li>With Select button Create, it will look like this :</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink13.png"></p>
+
+<ol type="a">
+<li><p>Document ID : setup the id for this document.</p></li>
+<li><p>Title : write the title for this requirement.</p></li>
+<li><p>Scope : write the scope of this requirement.</p></li>
+<li><p>Type : select the type of this requirement such as : user or system requirement.</p></li>
+<li><p>After enter Save Button, you will see the Requirement is available in the left corner.</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Test Management Tool : Introduction]]></title>
+    <link href="http://www.tabaolan.com/TMT/test-management-tool-introduction/"/>
+    <updated>2014-12-12T03:53:24+00:00</updated>
+    <id>http://www.tabaolan.com/TMT/test-management-tool-introduction</id>
+    <content type="html"><![CDATA[<h2>What is the Test Management Tool?</h2>
+
+<p>Test management tool actually is a website with 7 module are responsible for handle the testing process.</p>
+
+<ol>
+<li><p>The First module use to manage the Project for testing.</p></li>
+<li><p>The Second module use to manage the Requirement for specific Project created above, it also allow user can link test case with Requirement and manage the version of Requirement.</p></li>
+<li><p>The Third module use to manage the Test Design or Test Specification. It allow user can create test case, manage the version of each test case or link this test case with specific requirement.</p></li>
+<li><p>The Fourth module use to manage the Test Plan for each release of Software. It allow user can create a build for specific Test Plan and added a Test Suite for this plan. It also allow test lead can assign the test case for each tester.</p></li>
+<li><p>The Fifth module use to manage the Execution Test. It allow tester can update the result of each test case that assigned to him.</p></li>
+<li><p>The Sixth module use to manage the integration with Bug Tracker System. It allow tester can created a bug in Bug Tracker System and mapped with the specific test case.</p></li>
+<li><p>The Seventh module absolute to manage the Report for each Project, Test Plan or specific build with more information include Requirement, Test Result for each build,&hellip; etc!</p></li>
+</ol>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>Test Management Tool Activities</h2>
+
+<p><img src="http://www.tabaolan.com/images/tmt1.png"></p>
+
+<ol>
+<li><p>You can see in this image above , The Test Project contain all activities such as : Requirements,Test Specification, Test Plan, Execution Test.</p></li>
+<li><p>It also have some functionality such as  : Integrate with Bug Tracker, Report, Export and Import (user can import the requirement, test case or export them to use in another tools)</p></li>
+</ol>
+
+
+<h2>Test Management Tool Use Case Diagram</h2>
+
+<p><img src="http://www.tabaolan.com/images/tmt2.png"></p>
+
+<ol>
+<li><p>In this Diagram , I had created a basic use case diagram with : Guest, Tester, Test Lead, Project Manager (PM), Administrator. You can created more than use case base on the process of your company.</p></li>
+<li><p>With Guest, the use case diagram show that he can access to the Test Management tool and see the report only (In here Guest can be your client).</p></li>
+<li><p>With Tester, she have a permission for design test case, execute and update result for test case that assigned to her. She can assign the keywords also.</p></li>
+<li><p>With Test Leader,  she have a permission for write of import the product requirement, she also can define test plan for each release and assign test case to requirement or assign test case to tester for execute update the result.</p></li>
+<li><p>With Project Manager , he have a permission for create specific project and assign whom can be join to this project.</p></li>
+<li><p>With Administrator, he have a permission for backup database and manage the user in the Test Management Tool.</p></li>
+</ol>
+
+
+<h2>Test Management Tool Process</h2>
+
+<p><img src="http://www.tabaolan.com/images/tmt3.png"></p>
+
+<ol>
+<li><p>The first test to manage the testing process in Test Management Tool is create Project with some information to definition about this project.</p></li>
+<li><p>The next thing we should do is created or import the Requirement to this specific Project.</p></li>
+<li><p>Now it is the time for us to design test case and linked test case to the Requirement that we created above.</p></li>
+<li><p>After we have all test cased needed to cover 100% Requirement, We can create a Test Plan for the release of Software.</p></li>
+<li><p>In the Test Plan, we can create the build for this Test Plan.</p></li>
+<li><p>We have a Test Plan and the specific build , now we will created a test suite for this Test Plan by pick up test cases in step 2.</p></li>
+<li><p>Now the time we execute the test.</p></li>
+<li><p>During the time execute test if any test case fail, we will create issue and it will be tracked in the Bug Tracked System with mapping to this specific Test Case.</p></li>
+</ol>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>Test Management Tool integrate with Automation Test</h2>
+
+<p><img src="http://www.tabaolan.com/images/tmt4.png"></p>
+
+<h2>Benefits when we apply the Test Management Tool</h2>
+
+<ol>
+<li><p>We have all the documentation structured and organized.</p></li>
+<li><p>We solve the problem of version control.</p></li>
+<li><p>We can control the testing process (Events log + different kinds of Reports) .</p></li>
+<li><p>We can see if all the requirements are covered with Test Cases.</p></li>
+<li><p>We can select Test Cases for Regression Testing .</p></li>
+<li><p>We can bring the automation test and manual test together.</p></li>
+<li><p>We can see the results of testing in a very clear and easy to use form.</p></li>
+</ol>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>There are many Test Management Tool available in the market, you can choose once of them base on your company require. In here, I want to introduction about TestLink (once of the best Test Management Tool). Please take a look in the first step is : <a href="http://www.tabaolan.com/TMT/working-with-testlink-how-to-install-testlink/">How to install TestLink?</a></h2>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Working with TestLink : How to create a Test Case]]></title>
+    <link href="http://www.tabaolan.com/TMT/working-with-testlink-how-to-create-a-test-case/"/>
+    <updated>2014-12-12T03:53:23+00:00</updated>
+    <id>http://www.tabaolan.com/TMT/working-with-testlink-how-to-create-a-test-case</id>
+    <content type="html"><![CDATA[<h2>Create A Test Case in TestLink</h2>
+
+<ol>
+<li>Go to the main page , click to Test Specification</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink14.png"></p>
+
+<ol>
+<li>Click to New test suite button :</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink15.png"></p>
+
+<ol>
+<li>Enter information about this test suite  :</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink16.png"></p>
+
+<ol>
+<li>After create test suite success, enter the button Create Test Cases in the Top Menu :</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink17.png"></p>
+
+<ol>
+<li>Fill information to this test case :</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink18.png"></p>
+
+<ol>
+<li>Create test step for this test case :</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink19.png"></p>
+
+<p><img src="http://www.tabaolan.com/images/testlink20.png"></p>
+
+<ol>
+<li><p>We may also import &amp; export Test Suites &amp; Test Cases (in the .XML format)</p></li>
+<li><p>We import them from one project</p></li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink21.png"></p>
+
+<ol type="a">
+<li>And export the file in other</li>
+</ol>
+
+
+<p><img src="http://www.tabaolan.com/images/testlink21.png"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mobile Testing : Guide to Functional testing in Mobile App]]></title>
@@ -2249,580 +2733,6 @@
 <p>As shown in the figure below, JMeter simulates one user request, which is sent 100 times, to the web server <a href="http://www.google.com/.">http://www.google.com/.</a> The Test is stopped after user request was sent in 100 times.</p>
 
 <p><img src="http://www.tabaolan.com/images/jmeter111.png"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Jmeter : How to use Processor]]></title>
-    <link href="http://www.tabaolan.com/Jmeter/jmeter-how-to-use-processor/"/>
-    <updated>2014-08-15T04:10:51+01:00</updated>
-    <id>http://www.tabaolan.com/Jmeter/jmeter-how-to-use-processor</id>
-    <content type="html"><![CDATA[<h2>How to use Processor in JMeter</h2>
-
-<p>Processor is used to modify the Samplers in their scope.</p>
-
-<p>There are 2 Types of processors:</p>
-
-<p>1.Pre-processor</p>
-
-<p>2.Post-processor</p>
-
-<h3>Pre-processor</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Pre-processor executes some action before making Sampler Request.</p>
-
-<p>onsider a simple example: let&rsquo;s say you wanted JMeter to &ldquo;spider&rdquo; through website under test, parse link(check all links on the page) and return the HTML. You would add some action such as &ldquo;HTML link parser&rdquo; to your controller before creating an HTTP request.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter112.png"></p>
-
-<h3>Post-processor</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Post-processor executes some action after making a Sampler Request.</p>
-
-<p>Consider a simple example: JMeter send HTTP request to the web server under test (etc www.google.com) and get the response. You want JMeter to stop the testif the server response is error. You can use the post-processor to do above task as following:</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter113.png"></p>
-
-<h3>Processor-Hands on</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>This tutorial will show you step-by-step instructions how to use Post-processor in JMeter. Let start with simple test script.</p>
-
-<p>1.JMeter sends HTTP request to the web server under test www.google.com.</p>
-
-<ol>
-<li><p>JMeter gets response from the Google server.</p></li>
-<li><p>If server response is error, JMeter will stop the test.</p></li>
-<li><p>If server response OK (no error), JMeter will continue the test.</p></li>
-</ol>
-
-
-<p>Here is the roadmap of this example:</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter114.png"></p>
-
-<h4>Step 1) Add Thread Group</h4>
-
-<p>Right click on the Test Plan and add a new thread group: Add &ndash;> Threads (Users) &ndash;> Thread Group</p>
-
-<p>But in Thread Group control panel, enter Thread Properties as following:</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter115.png"></p>
-
-<p>This setting lets JMeter create 10 user request to <a href="http://www.google.com">http://www.google.com</a>  10 times.</p>
-
-<h4>Step 2) Add JMeter elements</h4>
-
-<p>Add HTTP request default</p>
-
-<p>Add HTTP request</p>
-
-<p>We still make JMeter send request <a href="http://www.google.com">http://www.google.com</a> to Google server.</p>
-
-<h4>Step 3) Add Post-Processor Element</h4>
-
-<p>Right Click Thread Group &ndash;> Add &ndash;> Post Processor &ndash;> Result Status Action Handler</p>
-
-<p>Result Status Action Handler allows the user to stop the thread or the whole test if the user request failed.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter116.png"></p>
-
-<p>In Result Status Action Handle Pane, choose Stop Test Now. This selection will stop the test if JMeter get the error from server response.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter117.png"></p>
-
-<h4>Step 4) Configure the HTTP Request</h4>
-
-<p>Open the HTTP Request Panel. Enter &ldquo;abc&rdquo; to the Path field.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter118.png"></p>
-
-<p>When you enter &ldquo;abc&rdquo; to the path, JMeter will create URL request to Google server: <a href="http://www.google.com/abc.">http://www.google.com/abc.</a> This URL doesn&rsquo;t exist on Google server. It is wrong URL request so Google server will return error.</p>
-
-<h4>Step 5) Add View Result Tree</h4>
-
-<p>Right Click Thread Group  &ndash;> Add  &ndash;> Listener  &ndash;> View Result Tree</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter119.png"></p>
-
-<h4>Step 6) Run Test</h4>
-
-<p>Select View Result Tree, press Run button on Menu bar. You will see the error response from Google server and the test will stop with out completing 100 threads.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter120.gif"></p>
-
-<p>Now return to step 4, open the HTTP Request pane, enter &ldquo;calendar&rdquo; to the pane. It makes JMeter create URL request <a href="http://www.google.com/calendar">http://www.google.com/calendar</a> to the Google server. This is correct URL request so Google server will return OK (no error).</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter121.png"></p>
-
-<p>Select View Result Tree, press Run button on Menu bar. You will see the OK response from Google server and the test will continue until all 100 threads are complete.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter122.gif"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Jmeter : How to perform Distributed Testing]]></title>
-    <link href="http://www.tabaolan.com/Jmeter/jmeter-how-to-perform-distributed-testing/"/>
-    <updated>2014-08-15T04:10:00+01:00</updated>
-    <id>http://www.tabaolan.com/Jmeter/jmeter-how-to-perform-distributed-testing</id>
-    <content type="html"><![CDATA[<h2>How to perform Distributed Testing in JMeter</h2>
-
-<h3>Overview</h3>
-
-<p>Distributed testing is a kind of testing which use multiple systems to perform stress testing. Distributed testing is applied for testing web sites and server applications when they are working with multiple clients simultaneously.</p>
-
-<p>Distributes testing uses client-server model as figure below:</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter123.png"></p>
-
-<p>Master: the system running JMeter GUI, control each slave.</p>
-
-<p>Slave: the system running jmeter-server, receive command from the master and send a request to server under test.</p>
-
-<p>Target: the web server under test, get request from slaves.</p>
-
-<h3>Start your test</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h4>Precondition:</h4>
-
-<p>*The firewalls on the systems are turned off. In some cases, the firewall may still be blocking the traffic. You should disable the Window firewall or Linux firewall.</p>
-
-<p>*All the machines should be on same subnet. If machines are not on same subnet, maybe they will not recognize each other in the network.</p>
-
-<p>*Use the same version of JMeter to avoid unanticipated errors/issues.</p>
-
-<p>Here is the roadmap of this testing:</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter124.png"></p>
-
-<h3>Step 1) System configuration</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>On the slave systems, go to jmeter/bin directory and execute file &ldquo;jmeter-server.bat&rdquo;.</p>
-
-<p>Assume that a slave machine has IP address: 192.168.0.10. On windows, you should see a window appear like following figure:</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter125.png"></p>
-
-<p>On the master systems, go to /bin directory and edit file jmeter.properites, add IP slave machine as below</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter126.png"></p>
-
-<h3>Step 2) Run the test</h3>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>On the master machine, run JMeter GUI and open the test plan.</p>
-
-<p>Click Run on the menu bar; select Remote start &ndash;> select the IP address of slave machine</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter127.png"></p>
-
-<h3>Step 3) Troubleshooting</h3>
-
-<p>If you are unable to run test form the above machine and see below error, simply ask owner of slave machine to run the jmeter-server.bat File.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter128.png"></p>
-
-<h3>Limitation</h3>
-
-<p>There are some basic limitations for distributed testing. Here&rsquo;s list of the known items:</p>
-
-<p>1.Server and all clients must be on the same subnet.</p>
-
-<p>2.Distributed testing required target server to have large processing power. The target Server could be easily overloaded in case it gets too many requests by distributed JMeter tests.</p>
-
-<p>3.A single JMeter can only handle a limited number of threads (100- 300 threads).</p>
-
-<p>4.The distributed JMeter tests are complex, difficult for beginner to build.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Jmeter : How to use jmeter to record test scenarios]]></title>
-    <link href="http://www.tabaolan.com/Jmeter/jmeter-how-to-use-jmeter-to-record-test-scenarios/"/>
-    <updated>2014-08-15T04:05:00+01:00</updated>
-    <id>http://www.tabaolan.com/Jmeter/jmeter-how-to-use-jmeter-to-record-test-scenarios</id>
-    <content type="html"><![CDATA[<h2>How To Use JMeter To Record Test Scenarios</h2>
-
-<p>In this tutorial, I will teach you how to set up and use the Apache JMeter HTTP(S) Test Script Recorder to record HTTP requests. Recording HTTP requests is a great way to building test plans, and can be useful in creating tests that closely mimic a normal user&rsquo;s behaviour.</p>
-
-<h3>Start Building a Test Plan</h3>
-
-<p>First, start JMeter. Then let&rsquo;s start building a test plan. If you already have a test plan that you would like to start with, skip this section and move on to adding a Recording Controller to your Thread Group (the next section).</p>
-
-<p>Minimally, we will want to add a Thread Group and HTTP Request Defaults. Let&rsquo;s get start by adding a Thread Group.</p>
-
-<h4>Add a Thread Group</h4>
-
-<p>Add a Thread Group to Test Plan:</p>
-
-<p>1.Right-click on Test Plan</p>
-
-<p>2.Mouse over Add ></p>
-
-<p>3.Mouse over Threads (Users)</p>
-
-<p>4.Click on Thread Group</p>
-
-<p>Set the Thread Group properties with the following values:</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter129.png"></p>
-
-<h4>Add an HTTP Request Defaults</h4>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Now let&rsquo;s add HTTP Request Defaults to Thread Group:</p>
-
-<p>1.Select Thread Group, then right-click it</p>
-
-<p>2.Mouse over Add</p>
-
-<p>3.Mouse over Config Element</p>
-
-<p>4.Click on HTTP Request Defaults</p>
-
-<p>In HTTP Request Defaults, under the Web Server section, fill in the Server Name or IP field with the name or IP address of the web server you want to test.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter130.png"></p>
-
-<h4>Add an HTTP Cookie Manager</h4>
-
-<p>If your web server uses cookies, you can add support for cookies by adding an HTTP Cookie Manager to the Thread Group:</p>
-
-<p>1.Select Thread Group, then right-click it</p>
-
-<p>2.Mouse over Add</p>
-
-<p>3.Mouse over Config Element</p>
-
-<p>4.Click on HTTP Cookie Manager</p>
-
-<h4>Add a Recording Controller</h4>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Now let&rsquo;s add a Recording Controller to Thread Group:</p>
-
-<p>1.Select Thread Group, then right-click it</p>
-
-<p>2.Mouse over Add</p>
-
-<p>3.Mouse over Logic Controller</p>
-
-<p>4.Click on Recording Controller</p>
-
-<p>The Recording Controller is where recorded HTTP Request samplers will be created. The next step is to set up an HTTP(S) Test Script Recorder.</p>
-
-<h4>Add HTTP(S) Test Script Recorder</h4>
-
-<p>Now let&rsquo;s add an HTTP(S) Test Script Recorder to the WorkBench:</p>
-
-<p>1.Select WorkBench, then right-click it</p>
-
-<p>2.Mouse over Add</p>
-
-<p>3.Mouse over Non-Test Elements</p>
-
-<p>4.Click on HTTP(S) Test Script Recorder</p>
-
-<p>Note: Items that are added to the WorkBench do not get saved with the rest of the test plan. If you want to save your WorkBench, right-click on WorkBench, then click Save Selection As&hellip;, and save it to your desired location. After it is saved, you may add it to any test plan that you have open by using the &ldquo;Merge&rdquo; menu item, and selecting your saved WorkBench.</p>
-
-<h4>Including or Excluding URL Patterns (Optional)</h4>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>In the HTTP(S) Script Recorder, you may add URL Patterns, written as regular expressions, to include or exclude when you record. This can be useful to either include only the types of content you want to request (e.g. <em>.html, </em>.php, etc) or to exclude the types of content you do not want to request (e.g. <em>.jpg, </em>.png, *.js, etc).</p>
-
-<p>To add a URL Pattern, click the &ldquo;Add&rdquo; button under the URL Patterns to Include or URL Patterns to Exclude section, then click on the top of the white area in the section. You should now be able to type in a pattern. Repeat the process to add more patterns.</p>
-
-<p>Example: URL Patterns for webpages</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>.*\.html
-</span><span class='line'>.*\.php
-</span><span class='line'>.*\.htm
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Adding Items to the Script Recorder (Optional)</h4>
-
-<p>Adding JMeter items to a the HTTP(S) Test Script Recorder will make recorded requests inherit the added item. For example, if we add a Timer item to the Script Recorder, the Timer will be added to each HTTP Request that is recorded. When the test is run, the timer will cause each test thread to wait before performing the HTTP Request.</p>
-
-<p>Let&rsquo;s add a Constant Timer to HTTP(S) Test Script Recorder, as an example:</p>
-
-<p>1.Select HTTP(S) Test Script Recorder, then Right-click it</p>
-
-<p>2.Mouse over Add</p>
-
-<p>3.Mouse over Timers</p>
-
-<p>4.Click on Constant Timers</p>
-
-<p>You may configure the thread delay to whatever you desire.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter131.png"></p>
-
-<p>Suppose that you want to simulate a user clicking on a different page every 2 seconds. Setting the thread delay to 2000 ms will accomplish this by adding a 2 second delay to each HTTP Request that is recorded.</p>
-
-<p>This is just one example of how you can add items to the Script Recorder to help create a test plan that performs the tests that you desire.</p>
-
-<h4>Start Recording</h4>
-
-<p>Clicking on the &ldquo;Start&rdquo; button, on the bottom of the Script Recorder window, will start the JMeter proxy server which will be used to intercept and record browser requests. Click on the Start button (of the recorder) now.</p>
-
-<p>The first time you attempt to run the recorder, it will display an error saying that it can&rsquo;t start because a certificate does not exist. Click OK, then click Start a second time. You should see a message that says that a temporary certificate named ApacheJMeterTemporaryRootCA.crt has been created in JMeter bin directory. Click OK and continue.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter132.png"></p>
-
-<p>Note: If you browser already uses a proxy, then you need to configure JMeter to use that proxy before starting JMeter, using the command-line options -H and -P.</p>
-
-<h4>Configure Firefox To Use JMeter Proxy</h4>
-
-<p>We will use Firefox as our browser when using the JMeter HTTP(S) Test Script Recorder because, unlike Chrome and some other browsers, it does allows you to override system-wide configuration for its proxy settings.</p>
-
-<p>Configure Firefox to use localhost (127.0.0.1) on port 80 as its proxy for all traffic by following these steps:</p>
-
-<p>1.Open Firefox</p>
-
-<p>2.Go to the Preferences menu</p>
-
-<p>3.Click on the Advanced tab</p>
-
-<p>4.Then Network tab</p>
-
-<p>5.In the &ldquo;Connection&rdquo; section, click on &ldquo;Settings&hellip;&rdquo;</p>
-
-<p>6.Select the &ldquo;Manual proxy configuration&rdquo; radio button</p>
-
-<p>7.Set HTTP Proxy to &ldquo;localhost&rdquo; and Port to &ldquo;8080&rdquo;</p>
-
-<p>8.Check &ldquo;Use this proxy server for all protocols&rdquo;</p>
-
-<p>9.Click OK and exit the Preferences menu.</p>
-
-<p>Note: When Firefox is configured to use JMeter&rsquo;s Script Recorder as a proxy, it will only work properly if the Script Recorder is running.</p>
-
-<h4>Recording HTTP Requests</h4>
-
-<p>Now that our test plan&rsquo;s HTTP(S) Test Script Recorder is running, and Firefox is configured to use it as a proxy, the HTTP requests that Firefox sends will be recorded. Let&rsquo;s test it out.</p>
-
-<p>In Firefox, go to your server&rsquo;s homepage (the same server that you configured in your JMeter HTTP Request Defaults):</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>http://your_domain.com/
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now there should be a little triangle next to your Recording Controller. Click on it to expand and show the requests that it has recorded. You should see the HTTP requests that were recorded, depending on which URL Patterns you have included and excluded. Feel free to browse your site to record more requests.</p>
-
-<p>As you can see, a lot of requests were created. You may refine the list of HTTP requests by simply deleting unwanted entries here.</p>
-
-<p>If you do not see any entries under your Recording Controller, you will want to review your URL Patterns in the HTTP(S) Test Script Recorder (Hint: Remove all includes and excludes to record everything).</p>
-
-<p>Once you are done recording, click the &ldquo;Stop&rdquo; button at the bottom of the HTTP(S) Test Script Recorder window. Note that Firefox will no longer be able to reach any pages (because it is configured to use port 8080 as a proxy)&mdash;configure it to use &ldquo;No proxy&rdquo; if you want to function normally.</p>
-
-<h4>Run Your Test Plan</h4>
-
-<p>Once you are happy with the test plan you have recorded, save it, then run it. It will function exactly like a manually created test, so you can configure it, delete, and add items to make it match your desired test case more closely.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Jmeter : test of wsdl web services]]></title>
-    <link href="http://www.tabaolan.com/Jmeter/jmeter-test-of-wsdl-web-services/"/>
-    <updated>2014-08-15T04:04:40+01:00</updated>
-    <id>http://www.tabaolan.com/Jmeter/jmeter-test-of-wsdl-web-services</id>
-    <content type="html"><![CDATA[<h2>Jmeter test of wsdl web services</h2>
-
-<p>In this post, I am going to explain how to create jmeter test for wsdl api testing to perform load testing.</p>
-
-<p>Before creating test you need following set up in your machine.</p>
-
-<p>1.Download and setup java path in your system environment path.</p>
-
-<p>2.Download and install Jmeter.</p>
-
-<p>3.Download and install soapUI.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Here I am using wsdl url [<a href="http://www.webservicex.com/MyWebservices.asmx?wsdl">http://www.webservicex.com/MyWebservices.asmx?wsdl</a>]</p>
-
-<h3>Steps to create test:</h3>
-
-<p>1.Launch your Jmeter.</p>
-
-<p>2.Right click on test plan add new thread group by choosing option:  Add>>Threads (user)>>Thread Group.</p>
-
-<p>3.Right click on “Thread Group“ add new sampler by choosing option:  Add>>Sampler>> SOAP/XML-RPC Request.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter143.png"></p>
-
-<p>4.Now open soap UI and create new soapui project using wsdl url as I used in below.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter144.jpg"></p>
-
-<p>5.After soap ui project created successfully. Copy soap request data as I copy below soap request.</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter145.jpg"></p>
-
-<p>6.Past copied soap request code into created Jmeter SOAP/XML-RPC Request” sampler in  Soap/XML-RPC data as below:</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter146.jpg"></p>
-
-<p>7.Right click on “Thread Group“ add new” View Results Tree” by choosing Add>Lisseners> View Results Tree.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>8.Click on run button. After execution you can see response in “View Result Tree” as below</p>
-
-<p><img src="http://www.tabaolan.com/images/jmeter146.jpg"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Jmeter : test execution with Maven]]></title>
-    <link href="http://www.tabaolan.com/Jmeter/jmeter-test-execution-with-maven/"/>
-    <updated>2014-08-15T04:04:35+01:00</updated>
-    <id>http://www.tabaolan.com/Jmeter/jmeter-test-execution-with-maven</id>
-    <content type="html"><![CDATA[<h2>Jmeter test execution with Maven</h2>
-
-<p>In this post I explain the procedure of Jmeter test execution using maven build tool.</p>
-
-<h3>Setup</h3>
-
-<p>1.Download and setup java path in your system environment path.</p>
-
-<p>2.Download and install Jmeter.</p>
-
-<p>3.Download and setup maven bin path in your system environment path.</p>
-
-<p>After set up above points create a maven project having folder structure “src > test >jmeter”.</p>
-
-<p>Put created Jmeter “.jmx” project in “src > test >jmeter” folder.</p>
-
-<p>Below is pom.xml maven build file which need to put parallel src folder under project.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;project xmlns="http://maven.apache.org/POM/4.0.0"     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-</span><span class='line'>        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt;
-</span><span class='line'>        &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-</span><span class='line'>        &lt;groupId&gt;demo-maven-jmeter&lt;/groupId&gt;
-</span><span class='line'>        &lt;artifactId&gt;demo-maven-jmeter&lt;/artifactId&gt;
-</span><span class='line'>        &lt;packaging&gt;jar&lt;/packaging&gt;
-</span><span class='line'>        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-</span><span class='line'>        &lt;name&gt;demo&lt;/name&gt;
-</span><span class='line'>        &lt;build&gt;
-</span><span class='line'>             &lt;plugins&gt;
-</span><span class='line'>               &lt;plugin&gt;
-</span><span class='line'>                       &lt;groupId&gt;com.lazerycode.jmeter&lt;/groupId&gt;
-</span><span class='line'>                       &lt;artifactId&gt;jmeter-maven-plugin&lt;/artifactId&gt;
-</span><span class='line'>                       &lt;version&gt;1.4.1&lt;/version&gt;
-</span><span class='line'>                       &lt;executions&gt;
-</span><span class='line'>                               &lt;execution&gt;
-</span><span class='line'>                                       &lt;id&gt;jmeter-tests&lt;/id&gt;
-</span><span class='line'>                                       &lt;phase&gt;verify&lt;/phase&gt;
-</span><span class='line'>                                       &lt;goals&gt;
-</span><span class='line'>                                              &lt;goal&gt;jmeter&lt;/goal&gt;
-</span><span class='line'>                                       &lt;/goals&gt;
-</span><span class='line'>                               &lt;/execution&gt;
-</span><span class='line'>                       &lt;/executions&gt;
-</span><span class='line'>               &lt;/plugin&gt;
-</span><span class='line'>            &lt;/plugins&gt;
-</span><span class='line'>        &lt;/build&gt;
-</span><span class='line'>&lt;/project&gt;
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Open command prompt and go to project and run command “mvn install”.</p>
-
-<p>Run command “mvn verify” to execute Jmeter test.</p>
-
-<p>After execution jmeter test report is generated under target>Jmeter>report folder in html format as below screen.</p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
-<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<p>Good luck and hope this help you</p>
 ]]></content>
   </entry>
   

@@ -1,0 +1,300 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test Management Tool : Introduction - Selenium WebDriver, JMETER Tutorial</title>
+    <meta name="author" content="Ta Bao Lan">
+   	
+	<meta name="description" content="Jmeter Tutorial - learning Jmeter in simple way and easy steps - Selenium tutorial for beginners - learning selenium in simple and easy steps : a beginner's tutorial containing complete knowledge about selenium environment setup, ide, test cases suite, locators, pattern matching, commands, webdrivers, rc, user interactions, design techniques, testng, grids, user extensions, and selenium for mobile applications" />
+	
+	<meta name="keywords" content="Test Management Tool,Test Management Tool integrate with Automation Test,Benefits,,Requirement,Test Management Tool Use Case Diagram,Report,Test Management Tool Activities,Test Design,Test Specification,test case,Bug Tracker System,Execution Test,Test Plan,Test Suite" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/atom.xml" rel="alternate" title="Selenium WebDriver, JMETER Tutorial" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-51278981-1']);
+    _gaq.push(['_trackPageview']);
+    function initGa() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    }
+    setTimeout(initGa, 5);
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+		Selenium WebDriver, JMETER Tutorial
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad-banner-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5798698216356388"
+     data-ad-slot="7145934352"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/lantabao?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/gaumun" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  
+  <!-- LinkedIn -->
+  <li>
+  <a href="http://www.linkedin.com/in/tabaolan" class="linkedin" title="LinkedIn"></a>
+  </li>
+  
+  
+  <!-- Skype -->
+  <li>
+  <a href="http://myskype.info/lantb1987" class="skype" title="Skype"></a>
+  </li>
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/categories/webdriver/">WebDriver</a></li>
+	<li id="ajax"><a href="/categories/newbie/">Selenium Beginner</a></li>
+	<li id="ajax"><a href="/categories/testng-framework/">TestNG Framework</a></li>
+	<li id="ajax"><a href="/categories/selenium-framework/">Automation Framework</a></li>
+	<li id="ajax"><a href="/categories/icecream-framework/">IceCream Framework</a></li>
+    <li id="ajax"><a href="/categories/tricks/">Tips&Tricks</a></li>
+	<li id="ajax"><a href="/categories/jmeter/">JMETER</a></li>
+	<li id="ajax"><a href="/categories/mobiletest/">Mobile Testing</a></li>
+	<li id="ajax"><a href="/categories/TMT/">Test Management Tool</a></li>
+	
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+﻿
+</header>
+
+<div id="toload">
+<!-- begin toload -->
+<div id="content" class="inner">
+
+        <article class="post">
+
+	<h2 class="title">Test Management Tool : Introduction</h2>
+	<div class="entry-content"><h2>What is the Test Management Tool?</h2>
+
+<p>Test management tool actually is a website with 7 module are responsible for handle the testing process.</p>
+
+<ol>
+<li><p>The First module use to manage the Project for testing.</p></li>
+<li><p>The Second module use to manage the Requirement for specific Project created above, it also allow user can link test case with Requirement and manage the version of Requirement.</p></li>
+<li><p>The Third module use to manage the Test Design or Test Specification. It allow user can create test case, manage the version of each test case or link this test case with specific requirement.</p></li>
+<li><p>The Fourth module use to manage the Test Plan for each release of Software. It allow user can create a build for specific Test Plan and added a Test Suite for this plan. It also allow test lead can assign the test case for each tester.</p></li>
+<li><p>The Fifth module use to manage the Execution Test. It allow tester can update the result of each test case that assigned to him.</p></li>
+<li><p>The Sixth module use to manage the integration with Bug Tracker System. It allow tester can created a bug in Bug Tracker System and mapped with the specific test case.</p></li>
+<li><p>The Seventh module absolute to manage the Report for each Project, Test Plan or specific build with more information include Requirement, Test Result for each build,&hellip; etc!</p></li>
+</ol>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>Test Management Tool Activities</h2>
+
+<p><img src="/images/tmt1.png"></p>
+
+<ol>
+<li><p>You can see in this image above , The Test Project contain all activities such as : Requirements,Test Specification, Test Plan, Execution Test.</p></li>
+<li><p>It also have some functionality such as  : Integrate with Bug Tracker, Report, Export and Import (user can import the requirement, test case or export them to use in another tools)</p></li>
+</ol>
+
+
+<h2>Test Management Tool Use Case Diagram</h2>
+
+<p><img src="/images/tmt2.png"></p>
+
+<ol>
+<li><p>In this Diagram , I had created a basic use case diagram with : Guest, Tester, Test Lead, Project Manager (PM), Administrator. You can created more than use case base on the process of your company.</p></li>
+<li><p>With Guest, the use case diagram show that he can access to the Test Management tool and see the report only (In here Guest can be your client).</p></li>
+<li><p>With Tester, she have a permission for design test case, execute and update result for test case that assigned to her. She can assign the keywords also.</p></li>
+<li><p>With Test Leader,  she have a permission for write of import the product requirement, she also can define test plan for each release and assign test case to requirement or assign test case to tester for execute update the result.</p></li>
+<li><p>With Project Manager , he have a permission for create specific project and assign whom can be join to this project.</p></li>
+<li><p>With Administrator, he have a permission for backup database and manage the user in the Test Management Tool.</p></li>
+</ol>
+
+
+<h2>Test Management Tool Process</h2>
+
+<p><img src="/images/tmt3.png"></p>
+
+<ol>
+<li><p>The first test to manage the testing process in Test Management Tool is create Project with some information to definition about this project.</p></li>
+<li><p>The next thing we should do is created or import the Requirement to this specific Project.</p></li>
+<li><p>Now it is the time for us to design test case and linked test case to the Requirement that we created above.</p></li>
+<li><p>After we have all test cased needed to cover 100% Requirement, We can create a Test Plan for the release of Software.</p></li>
+<li><p>In the Test Plan, we can create the build for this Test Plan.</p></li>
+<li><p>We have a Test Plan and the specific build , now we will created a test suite for this Test Plan by pick up test cases in step 2.</p></li>
+<li><p>Now the time we execute the test.</p></li>
+<li><p>During the time execute test if any test case fail, we will create issue and it will be tracked in the Bug Tracked System with mapping to this specific Test Case.</p></li>
+</ol>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>Test Management Tool integrate with Automation Test</h2>
+
+<p><img src="/images/tmt4.png"></p>
+
+<h2>Benefits when we apply the Test Management Tool</h2>
+
+<ol>
+<li><p>We have all the documentation structured and organized.</p></li>
+<li><p>We solve the problem of version control.</p></li>
+<li><p>We can control the testing process (Events log + different kinds of Reports) .</p></li>
+<li><p>We can see if all the requirements are covered with Test Cases.</p></li>
+<li><p>We can select Test Cases for Regression Testing .</p></li>
+<li><p>We can bring the automation test and manual test together.</p></li>
+<li><p>We can see the results of testing in a very clear and easy to use form.</p></li>
+</ol>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+
+<h2>There are many Test Management Tool available in the market, you can choose once of them base on your company require. In here, I want to introduction about TestLink (once of the best Test Management Tool). Please take a look in the first step is : <a href="/TMT/working-with-testlink-how-to-install-testlink/">How to install TestLink?</a></h2>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/TMT/test-management-tool-introduction/#disqus_thread">Comments</a></span>
+	
+</div>
+
+<br>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+ </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2015
+
+    Ta Bao Lan
+. Powered by <a href="http://octopress.org">Octopress</a> . Some source code cloned from <a href="http://www.guru99.com/">Guru</a> 
+	<MARQUEE BEHAVIOR="alternate"> Test Management Tool,Test Management Tool integrate with Automation Test,Benefits,,Requirement,Test Management Tool Use Case Diagram,Report,Test Management Tool Activities,Test Design,Test Specification,test case,Bug Tracker System,Execution Test,Test Plan,Test Suite </MARQUEE>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'tabaolan1987';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.tabaolan.com/TMT/test-management-tool-introduction/';
+        var disqus_url = 'http://www.tabaolan.com/TMT/test-management-tool-introduction/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
