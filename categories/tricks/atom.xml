@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium WebDriver, JMETER Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2015-11-09T02:52:42+00:00</updated>
+  <updated>2015-11-09T02:58:45+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -154,6 +154,7 @@ try {
 <p>}</p>
 
 <p>```
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
 data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 ]]></content>
@@ -204,6 +205,7 @@ data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-579869821635
 </code></pre>
 
 <p>```
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
 data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 ]]></content>
@@ -221,6 +223,7 @@ data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-579869821635
 <p>2) Download the latest Selenium server stand alone : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
 
 <p><img src="/images/selenium-server.png">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
 data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
@@ -267,7 +270,8 @@ java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.chrome.driver=.\chro
 
 <p>8) Click on tab &lsquo;WebDriver&rsquo; &ndash;> check on &lsquo;Enable WebDriver Playback&rsquo; &ndash;> enter value &lsquo;chrome&rsquo; &ndash;> Click &lsquo;OK&rsquo; button.</p>
 
-<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
 data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <img src="/images/chrome-ide-1.png"></p>
 
@@ -287,6 +291,7 @@ data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-579869821635
 <p>2) Download the latest Selenium server stand alone : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
 
 <p><img src="/images/selenium-server.png">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
 data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
@@ -333,7 +338,8 @@ java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\IEDriver
 
 <p>8) Click on tab &lsquo;WebDriver&rsquo; &ndash;> check on &lsquo;Enable WebDriver Playback&rsquo; &ndash;> enter value &lsquo;internet explorer&rsquo; &ndash;> Click &lsquo;OK&rsquo; button.</p>
 
-<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
 data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <img src="/images/ie-ide-4.png"></p>
 
