@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TMT | Selenium WebDriver, JMETER Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tmt/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2015-11-09T02:28:48+00:00</updated>
+  <updated>2015-11-09T02:52:42+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -14,9 +14,100 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Test Management Tool : Introduction]]></title>
+    <link href="http://www.tabaolan.com/TMT/test-management-tool-introduction/"/>
+    <updated>2014-12-12T03:55:24+00:00</updated>
+    <id>http://www.tabaolan.com/TMT/test-management-tool-introduction</id>
+    <content type="html"><![CDATA[<h2>What is the Test Management Tool?</h2>
+
+<p>Test management tool actually is a website with 7 module are responsible for handle the testing process.</p>
+
+<ol>
+<li><p>The First module use to manage the Project for testing.</p></li>
+<li><p>The Second module use to manage the Requirement for specific Project created above, it also allow user can link test case with Requirement and manage the version of Requirement.</p></li>
+<li><p>The Third module use to manage the Test Design or Test Specification. It allow user can create test case, manage the version of each test case or link this test case with specific requirement.</p></li>
+<li><p>The Fourth module use to manage the Test Plan for each release of Software. It allow user can create a build for specific Test Plan and added a Test Suite for this plan. It also allow test lead can assign the test case for each tester.</p></li>
+<li><p>The Fifth module use to manage the Execution Test. It allow tester can update the result of each test case that assigned to him.</p></li>
+<li><p>The Sixth module use to manage the integration with Bug Tracker System. It allow tester can created a bug in Bug Tracker System and mapped with the specific test case.</p></li>
+<li><p>The Seventh module absolute to manage the Report for each Project, Test Plan or specific build with more information include Requirement, Test Result for each build,&hellip; etc!</p></li>
+</ol>
+
+
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
+
+<h2>Test Management Tool Activities</h2>
+
+<p><img src="/images/tmt1.png"></p>
+
+<ol>
+<li><p>You can see in this image above , The Test Project contain all activities such as : Requirements,Test Specification, Test Plan, Execution Test.</p></li>
+<li><p>It also have some functionality such as  : Integrate with Bug Tracker, Report, Export and Import (user can import the requirement, test case or export them to use in another tools)</p></li>
+</ol>
+
+
+<h2>Test Management Tool Use Case Diagram</h2>
+
+<p><img src="/images/tmt2.png"></p>
+
+<ol>
+<li><p>In this Diagram , I had created a basic use case diagram with : Guest, Tester, Test Lead, Project Manager (PM), Administrator. You can created more than use case base on the process of your company.</p></li>
+<li><p>With Guest, the use case diagram show that he can access to the Test Management tool and see the report only (In here Guest can be your client).</p></li>
+<li><p>With Tester, she have a permission for design test case, execute and update result for test case that assigned to her. She can assign the keywords also.</p></li>
+<li><p>With Test Leader,  she have a permission for write of import the product requirement, she also can define test plan for each release and assign test case to requirement or assign test case to tester for execute update the result.</p></li>
+<li><p>With Project Manager , he have a permission for create specific project and assign whom can be join to this project.</p></li>
+<li><p>With Administrator, he have a permission for backup database and manage the user in the Test Management Tool.</p></li>
+</ol>
+
+
+<h2>Test Management Tool Process</h2>
+
+<p><img src="/images/tmt3.png"></p>
+
+<ol>
+<li><p>The first test to manage the testing process in Test Management Tool is create Project with some information to definition about this project.</p></li>
+<li><p>The next thing we should do is created or import the Requirement to this specific Project.</p></li>
+<li><p>Now it is the time for us to design test case and linked test case to the Requirement that we created above.</p></li>
+<li><p>After we have all test cased needed to cover 100% Requirement, We can create a Test Plan for the release of Software.</p></li>
+<li><p>In the Test Plan, we can create the build for this Test Plan.</p></li>
+<li><p>We have a Test Plan and the specific build , now we will created a test suite for this Test Plan by pick up test cases in step 2.</p></li>
+<li><p>Now the time we execute the test.</p></li>
+<li><p>During the time execute test if any test case fail, we will create issue and it will be tracked in the Bug Tracked System with mapping to this specific Test Case.</p></li>
+</ol>
+
+
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
+
+<h2>Test Management Tool integrate with Automation Test</h2>
+
+<p><img src="/images/tmt4.png"></p>
+
+<h2>Benefits when we apply the Test Management Tool</h2>
+
+<ol>
+<li><p>We have all the documentation structured and organized.</p></li>
+<li><p>We solve the problem of version control.</p></li>
+<li><p>We can control the testing process (Events log + different kinds of Reports) .</p></li>
+<li><p>We can see if all the requirements are covered with Test Cases.</p></li>
+<li><p>We can select Test Cases for Regression Testing .</p></li>
+<li><p>We can bring the automation test and manual test together.</p></li>
+<li><p>We can see the results of testing in a very clear and easy to use form.</p></li>
+</ol>
+
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
+
+<h2>There are many Test Management Tool available in the market, you can choose once of them base on your company require. In here, I want to introduction about TestLink (once of the best Test Management Tool). Please take a look in the first step is : <a href="/TMT/working-with-testlink-how-to-install-testlink/">How to install TestLink?</a></h2>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Working with TestLink : How to install TestLink?]]></title>
     <link href="http://www.tabaolan.com/TMT/working-with-testlink-how-to-install-testlink/"/>
-    <updated>2014-12-12T03:53:25+00:00</updated>
+    <updated>2014-12-12T03:54:27+00:00</updated>
     <id>http://www.tabaolan.com/TMT/working-with-testlink-how-to-install-testlink</id>
     <content type="html"><![CDATA[<h2>Perquisite</h2>
 
@@ -33,7 +124,8 @@
 
 <p>Note : The default port for Apache is : 80 and Mysql is : 3306. You should check there port are not use in your computer.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <h2>Setup</h2>
 
@@ -87,7 +179,8 @@ $tlCfg->log_path = &lsquo;your disk install xampp&rsquo;+&lsquo;/xampp/htdocs/te
 $g_repositoryPath = &lsquo;your disk install xampp&rsquo;+&lsquo;/xampp/htdocs/testlink-1.9.7/upload_area/&rsquo;;
 ```</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <ol>
 <li>Again refresh page and you should see that “Failed” status change with “OK”</li>
@@ -103,7 +196,9 @@ $g_repositoryPath = &lsquo;your disk install xampp&rsquo;+&lsquo;/xampp/htdocs/t
 </ol>
 
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <ol>
 <li>Go to url “<a href="http://localhost/testlink%E2%80%9D.">http://localhost/testlink%E2%80%9D.</a> and enter “admin” into both “Login Name” and Password” field. Click on “Login” button.</li>
@@ -117,7 +212,7 @@ $g_repositoryPath = &lsquo;your disk install xampp&rsquo;+&lsquo;/xampp/htdocs/t
   <entry>
     <title type="html"><![CDATA[Working with TestLink : How to create a Project and Requirement in TestLink?]]></title>
     <link href="http://www.tabaolan.com/TMT/working-with-testlink-how-to-create-a-project-and-requirement/"/>
-    <updated>2014-12-12T03:53:24+00:00</updated>
+    <updated>2014-12-12T03:52:30+00:00</updated>
     <id>http://www.tabaolan.com/TMT/working-with-testlink-how-to-create-a-project-and-requirement</id>
     <content type="html"><![CDATA[<h2>How to create a Project</h2>
 
@@ -187,96 +282,9 @@ $g_repositoryPath = &lsquo;your disk install xampp&rsquo;+&lsquo;/xampp/htdocs/t
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Test Management Tool : Introduction]]></title>
-    <link href="http://www.tabaolan.com/TMT/test-management-tool-introduction/"/>
-    <updated>2014-12-12T03:53:24+00:00</updated>
-    <id>http://www.tabaolan.com/TMT/test-management-tool-introduction</id>
-    <content type="html"><![CDATA[<h2>What is the Test Management Tool?</h2>
-
-<p>Test management tool actually is a website with 7 module are responsible for handle the testing process.</p>
-
-<ol>
-<li><p>The First module use to manage the Project for testing.</p></li>
-<li><p>The Second module use to manage the Requirement for specific Project created above, it also allow user can link test case with Requirement and manage the version of Requirement.</p></li>
-<li><p>The Third module use to manage the Test Design or Test Specification. It allow user can create test case, manage the version of each test case or link this test case with specific requirement.</p></li>
-<li><p>The Fourth module use to manage the Test Plan for each release of Software. It allow user can create a build for specific Test Plan and added a Test Suite for this plan. It also allow test lead can assign the test case for each tester.</p></li>
-<li><p>The Fifth module use to manage the Execution Test. It allow tester can update the result of each test case that assigned to him.</p></li>
-<li><p>The Sixth module use to manage the integration with Bug Tracker System. It allow tester can created a bug in Bug Tracker System and mapped with the specific test case.</p></li>
-<li><p>The Seventh module absolute to manage the Report for each Project, Test Plan or specific build with more information include Requirement, Test Result for each build,&hellip; etc!</p></li>
-</ol>
-
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h2>Test Management Tool Activities</h2>
-
-<p><img src="/images/tmt1.png"></p>
-
-<ol>
-<li><p>You can see in this image above , The Test Project contain all activities such as : Requirements,Test Specification, Test Plan, Execution Test.</p></li>
-<li><p>It also have some functionality such as  : Integrate with Bug Tracker, Report, Export and Import (user can import the requirement, test case or export them to use in another tools)</p></li>
-</ol>
-
-
-<h2>Test Management Tool Use Case Diagram</h2>
-
-<p><img src="/images/tmt2.png"></p>
-
-<ol>
-<li><p>In this Diagram , I had created a basic use case diagram with : Guest, Tester, Test Lead, Project Manager (PM), Administrator. You can created more than use case base on the process of your company.</p></li>
-<li><p>With Guest, the use case diagram show that he can access to the Test Management tool and see the report only (In here Guest can be your client).</p></li>
-<li><p>With Tester, she have a permission for design test case, execute and update result for test case that assigned to her. She can assign the keywords also.</p></li>
-<li><p>With Test Leader,  she have a permission for write of import the product requirement, she also can define test plan for each release and assign test case to requirement or assign test case to tester for execute update the result.</p></li>
-<li><p>With Project Manager , he have a permission for create specific project and assign whom can be join to this project.</p></li>
-<li><p>With Administrator, he have a permission for backup database and manage the user in the Test Management Tool.</p></li>
-</ol>
-
-
-<h2>Test Management Tool Process</h2>
-
-<p><img src="/images/tmt3.png"></p>
-
-<ol>
-<li><p>The first test to manage the testing process in Test Management Tool is create Project with some information to definition about this project.</p></li>
-<li><p>The next thing we should do is created or import the Requirement to this specific Project.</p></li>
-<li><p>Now it is the time for us to design test case and linked test case to the Requirement that we created above.</p></li>
-<li><p>After we have all test cased needed to cover 100% Requirement, We can create a Test Plan for the release of Software.</p></li>
-<li><p>In the Test Plan, we can create the build for this Test Plan.</p></li>
-<li><p>We have a Test Plan and the specific build , now we will created a test suite for this Test Plan by pick up test cases in step 2.</p></li>
-<li><p>Now the time we execute the test.</p></li>
-<li><p>During the time execute test if any test case fail, we will create issue and it will be tracked in the Bug Tracked System with mapping to this specific Test Case.</p></li>
-</ol>
-
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h2>Test Management Tool integrate with Automation Test</h2>
-
-<p><img src="/images/tmt4.png"></p>
-
-<h2>Benefits when we apply the Test Management Tool</h2>
-
-<ol>
-<li><p>We have all the documentation structured and organized.</p></li>
-<li><p>We solve the problem of version control.</p></li>
-<li><p>We can control the testing process (Events log + different kinds of Reports) .</p></li>
-<li><p>We can see if all the requirements are covered with Test Cases.</p></li>
-<li><p>We can select Test Cases for Regression Testing .</p></li>
-<li><p>We can bring the automation test and manual test together.</p></li>
-<li><p>We can see the results of testing in a very clear and easy to use form.</p></li>
-</ol>
-
-
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
-
-<h2>There are many Test Management Tool available in the market, you can choose once of them base on your company require. In here, I want to introduction about TestLink (once of the best Test Management Tool). Please take a look in the first step is : <a href="/TMT/working-with-testlink-how-to-install-testlink/">How to install TestLink?</a></h2>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Working with TestLink : How to create a Test Case]]></title>
     <link href="http://www.tabaolan.com/TMT/working-with-testlink-how-to-create-a-test-case/"/>
-    <updated>2014-12-12T03:53:23+00:00</updated>
+    <updated>2014-12-12T03:51:35+00:00</updated>
     <id>http://www.tabaolan.com/TMT/working-with-testlink-how-to-create-a-test-case</id>
     <content type="html"><![CDATA[<h2>Create A Test Case in TestLink</h2>
 

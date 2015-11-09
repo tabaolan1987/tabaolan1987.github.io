@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IceCream-Framework | Selenium WebDriver, JMETER Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/icecream-framework/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2015-11-09T02:28:48+00:00</updated>
+  <updated>2015-11-09T02:52:42+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -29,7 +29,9 @@
 
 <p>Tester just have the basic understanding of <a href="/blog/2014/05/26/xpath-locators-in-selenium/">XPATH Location</a> and Excel files is enough to make one test automation programs running on multiple browsers.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>In addition, it supports IceCream Framework Report for each test case are stored in the folder Report, the screen image was taken by the command will be stored in the folder Screen-shot to tester easily manage test case.</p>
 
@@ -41,11 +43,12 @@
 
 <p>IceCream Framework is completely free to use for personal learning and doing the simple test case.If you like this framework , please share my blog to your friend or your partner!</p>
 
-<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#x61;&#x62;&#97;&#x6f;&#x6c;&#97;&#110;&#49;&#57;&#56;&#55;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#116;&#x61;&#98;&#97;&#111;&#108;&#97;&#x6e;&#x31;&#x39;&#x38;&#x37;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
+<p>If your company wants to use this IceCream Framework for automating the process of test sites or want to build your own Framework, please contact me via email: <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x74;&#x61;&#98;&#x61;&#111;&#108;&#97;&#x6e;&#49;&#57;&#56;&#x37;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;">&#116;&#97;&#98;&#97;&#111;&#108;&#97;&#110;&#x31;&#57;&#x38;&#x37;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#x63;&#111;&#x6d;</a> or ping me via skype: lantb1987. I would be happy to discuss with you!</p>
 
 <p>All the download links and installation instructions in my blog post I use Adfly to earn a bit of money to serve the development. Hopefully it will not bother you too much during your learning in my blog.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>I named this framework is IceCream because it is the name of my first child. She was so cute and gentle, smile every time, so I hope this framework will also create a comfortable and cozy up to you.</p>
 
@@ -90,7 +93,9 @@
 <p>3) Unzip file &lsquo;Icecream.zip&rsquo; by <a href="http://q.gs/7KNKy">winzar</a> or <a href="http://q.gs/7KNLO">7zip</a></p>
 
 <p><img src="/images/ICE_CONFIG-2.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>4) You will see the folder &lsquo;Icecream&rsquo; with inside it contain 3 folder : TestCase and Report and Screenshot , 1 file &lsquo;IceCream.jar&rsquo; and 1 file &lsquo;run.cmd&rsquo; and 1 file excel. Do not delete them.</p>
 
@@ -109,13 +114,17 @@
 <p><img src="/images/ICE_CONFIG-7.png"></p>
 
 <p><img src="/images/ICE_CONFIG-8.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>7) Save this file &lsquo;run.cmd&rsquo;.</p>
 
 <h2>Now you are finish the configuration , is it easy?</h2>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <h2>It&rsquo;s time to know <a href="/IceCream-Framework/icecream-framework-how-to-create-your-own-testcase/">Running an example test case</a></h2>
 
@@ -146,7 +155,8 @@
 <p><img src="/images/ICE_TEST-3.png"></p>
 
 <p><img src="/images/ICE_TEST-4.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>4) Open this file you copied by Microsoft Excel.</p>
 
@@ -163,7 +173,9 @@
 <p>6) Now take a look in row 3. I use the action &lsquo;OpenUrl&rsquo; with value is &lsquo;<a href="http://facebook.com">http://facebook.com</a>&rsquo; , It mean that I will let browser access to url facebook.com and wait for the facebook.com load success.You can change whatever URL you like in this Action Input Value.</p>
 
 <p><img src="/images/ICE_TEST-8.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>7) Take a look in row 4 . I use the action &lsquo;WaitElementPresent&rsquo; with the Action Type Input is 5.It mean that I will wait 5 second for the Element that I find BY ID is pass present in this page.</p>
 
@@ -182,7 +194,8 @@
 <p><img src="/images/ICE_TEST-11.png"></p>
 
 <p><img src="/images/ICE_TEST-12.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>12) Now you can create your own test case by copy file &lsquo;TESTEXAMPLE.xslx&rsquo; to the test case folder, rename this file , open this file , choose the browser , and delete row 3 to 8 and define your action in this excel file.</p>
 
@@ -209,7 +222,9 @@
 
 <p><img src="/images/use-function-1.png"></p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <h3>Function OpenUrl</h3>
 
@@ -247,7 +262,8 @@
 
 <p>4) Example : Let&rsquo;s take a look in this html source below :</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```</p>
 
 <div id="holder">
@@ -259,7 +275,8 @@
 
 <p>The scenario is find the textbox and type in it  value &lsquo;example&rsquo; by using function type in excel.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>I choose the demo to you 3 option is :</p>
 
@@ -308,6 +325,8 @@
 <p>4) Example  : take a look in html source below</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <code>
 &lt;td id='holder'&gt;
 &lt;a class='link_example'&gt;Click here&lt;/a&gt;
@@ -376,14 +395,17 @@
 
 <p>4)Example : take a look in html code below :</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <code>
 &lt;select id='country'&gt;
 &lt;option value='vietnam'&gt;Viet Nam&lt;/option&gt;
 &lt;option value='thailand'&gt;ThaiLand&lt;/option&gt;
 &lt;/select&gt;
 </code>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>The scenario is select value Viet Nam in drop-down list. So this will be look like this :</p>
 
@@ -517,7 +539,9 @@
 
 <p><img src="/images/use-function-23.png"></p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 ]]></content>
   </entry>
   

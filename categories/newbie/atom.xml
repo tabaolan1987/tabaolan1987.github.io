@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NewBie | Selenium WebDriver, JMETER Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/newbie/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2015-11-09T02:28:48+00:00</updated>
+  <updated>2015-11-09T02:52:42+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -29,7 +29,8 @@
 
 <p>1) Visit the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java downloads page</a> on Oracle’s website to find the JDK environment download. Scroll down until you find Java SE Latest Version and download JDK.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <img src="/images/Download-And-Install-Java-1.png"></p>
 
 <p>2) Once you have selected download, accept the terms of service and choose the correct OS corresponding for the specific JDK. (Windows, Mac, Linux, etc.)</p>
@@ -55,6 +56,8 @@
 <p>7) On the next screen you will encounter some options. Just leave these alone and click Next unless you know what you are doing.</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <img src="/images/Download-And-Install-Java-7.png"></p>
 
 <p>8) After the initial installation is done, a pop up asking you where your source java files will be. You can choose to change where you want to keep your folder but it’s best to stick with what you were given first. Click Next to continue.</p>
@@ -98,7 +101,8 @@
 <p>3) Save the .zip file to your disk.</p>
 
 <p><img src="/images/Download-and-Install-Eclipse-3.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>4) Once you have downloaded the Eclipse archive you will need to Extract the zip file, which will create the unzipped Eclipse folder.</p>
 
@@ -115,7 +119,8 @@
 <p>7) Open the eclipse folder.</p>
 
 <p><img src="/images/Download-and-Install-Eclipse-7.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>8) Since Eclipse IDE does not have any installer, there will be a file inside the Eclipse folder named eclipse.exe. You can double click on the file to run Eclipse.</p>
 
@@ -128,11 +133,14 @@
 <p>9) Create a workspace folder where you will contain all the program files you create.  You can choose whatever place you want for your workspace, but it’s easiest to just use the default you’re given. I like to choose my own workplace location and will place all my Toolsqa tutorial projects under it.</p>
 
 <p><img src="/images/Start-Eclipse-2.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>10) You may see the window like this, this is the Welcome window for Eclipse.</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <img src="/images/Download-and-Install-Eclipse-11.png"></p>
 
 <p>11) Now that you have finished installing eclipse restart your computer. By restarting your computer it refreshes system memory and allows changes made by installers and uninstallers to take effect.</p>
@@ -165,7 +173,8 @@
 
 <p>3) Once you have downloaded the archive you will need to Extract the zip file, which will create the unzipped Selenium Java folder.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <img src="/images/Download-Webdriver-Java-Client-3.png"></p>
 
 <p>4) You may want to Extract the archive to the folder where you are maintaing the test ware for your project. I like to extract it at the same location and then move it as per my needs.</p>
@@ -179,6 +188,8 @@
 <p>6) There will be ‘libs’ folder, 2 jar files and change log in unzipped folder as shown in bellow figure. We will use all these files for configuring webdriver in eclipse.</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <img src="/images/Download-Webdriver-Java-Client-6.png"></p>
 
 <p>7 ) Now you will take a look in the <a href="/NewBie/newbie-part-4-configuration-eclipse-with-selenium-driver-and-create-fisrt-test/">Part 4 : Configuration Eclipse with Selenium driver and Create Fisrt Test</a></p>
@@ -205,7 +216,9 @@
 
 <p><img src="/images/Start-Eclipse-1.png"></p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>b) Create a “working directory” for all of your projects. Think of it like “My Documents” in the Windows operating system. It’s a folder which contains a lot of your documents, but there’s nothing to prevent you from creating another folder called “My Other Documents” (for instance) to house other documents.</p>
 
@@ -273,7 +286,8 @@
 
 <h3>5) Add External Jars to Java build path</h3>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>Now you need to add selenium webdriver’s jar files in to Java build path.</p>
 
@@ -301,7 +315,8 @@
 
 <p>a) Copy &amp; paste the below code to your First Test Case class and give it a run.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```
 package automationFramework;
 import java.util.concurrent.TimeUnit;</p>
@@ -345,7 +360,9 @@ public static void main(String[] args) {
 </code></pre>
 
 <p>```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>2) Now, to start the test just select Run > Run As > Java Application Or Right Click on Eclipse code and Click Run As  > Java Application</p>
 
@@ -380,7 +397,9 @@ public static void main(String[] args) {
 
 <h3>Entering Values in Input Boxes</h3>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>The sendKeys() method is used to enter values into input boxes.</p>
 
@@ -410,7 +429,8 @@ public static void main(String[] args) {
 
 <h3>Links</h3>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>Links also are accessed by using the click() method.</p>
 
@@ -426,7 +446,8 @@ public static void main(String[] args) {
 
 <h3>Drop-Down Box</h3>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>Before we can control drop-down boxes, we must do following two things :</p>
 

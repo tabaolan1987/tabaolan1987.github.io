@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Selenium WebDriver, JMETER Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/tricks/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2015-11-09T02:28:48+00:00</updated>
+  <updated>2015-11-09T02:52:42+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -114,6 +114,8 @@ public class App
 <p>Take a look in this code below :</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```</p>
 
 <p>public static void takeScreenShotIE(WebDriver driver, String name){</p>
@@ -152,7 +154,8 @@ try {
 <p>}</p>
 
 <p>```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 ]]></content>
   </entry>
   
@@ -166,6 +169,8 @@ try {
 <h3>In some of case when you click in link or button , the new tab will be open.But we don&rsquo;t know what time the tab will be open success. Take a look in this code to resolve this problem</h3>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```</p>
 
 <pre><code>/**
@@ -199,7 +204,8 @@ try {
 </code></pre>
 
 <p>```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 ]]></content>
   </entry>
   
@@ -215,7 +221,8 @@ try {
 <p>2) Download the latest Selenium server stand alone : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
 
 <p><img src="/images/selenium-server.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>3) Download the latest Chrome Driver server : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
 
@@ -242,6 +249,8 @@ try {
 <p>5) Start Selenium server and Chrome Driver Server by copy this command to the command line</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <code>
 java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.chrome.driver=.\chromedriver.exe
 </code></p>
@@ -258,7 +267,8 @@ java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.chrome.driver=.\chro
 
 <p>8) Click on tab &lsquo;WebDriver&rsquo; &ndash;> check on &lsquo;Enable WebDriver Playback&rsquo; &ndash;> enter value &lsquo;chrome&rsquo; &ndash;> Click &lsquo;OK&rsquo; button.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <img src="/images/chrome-ide-1.png"></p>
 
 <p>9) Click on &lsquo;Play current test case&rsquo;.This will open your Chrome and run your script automatic. Have fun and happy learning.</p>
@@ -277,7 +287,8 @@ java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.chrome.driver=.\chro
 <p>2) Download the latest Selenium server stand alone : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
 
 <p><img src="/images/selenium-server.png">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>3) Download the latest Internet Explorer Driver server : <a href="http://docs.seleniumhq.org/download/">Click here</a></p>
 
@@ -304,6 +315,8 @@ java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.chrome.driver=.\chro
 <p>5) Start Selenium server and Internet Explorer Driver Server by copy this command to the command line</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <code>
 java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\IEDriverServer.exe
 </code></p>
@@ -320,7 +333,8 @@ java -jar selenium-server-standalone-2.42.0.jar -Dwebdriver.ie.driver=.\IEDriver
 
 <p>8) Click on tab &lsquo;WebDriver&rsquo; &ndash;> check on &lsquo;Enable WebDriver Playback&rsquo; &ndash;> enter value &lsquo;internet explorer&rsquo; &ndash;> Click &lsquo;OK&rsquo; button.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <img src="/images/ie-ide-4.png"></p>
 
 <p>9) Click on &lsquo;Play current test case&rsquo;.This will open your Internet Explore and run your script automatic. Have fun and happy learning.</p>

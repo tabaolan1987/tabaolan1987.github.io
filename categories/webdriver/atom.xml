@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Webdriver | Selenium WebDriver, JMETER Tutorial]]></title>
   <link href="http://www.tabaolan.com/categories/webdriver/atom.xml" rel="self"/>
   <link href="http://www.tabaolan.com/"/>
-  <updated>2015-11-09T02:28:48+00:00</updated>
+  <updated>2015-11-09T02:52:42+00:00</updated>
   <id>http://www.tabaolan.com/</id>
   <author>
     <name><![CDATA[Ta Bao Lan]]></name>
@@ -54,7 +54,9 @@
 <p>All you need are your programming language&rsquo;s IDE (which contains your Selenium commands) and a browser.</p>
 
 <p><img src="/images/compare-1.jpg">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <h4>Selenium RC&rsquo;s architecture is way more complicated.</h4>
 
@@ -75,7 +77,8 @@
 <p>RC Server will fetch the next instruction from your test script to repeat the whole cycle.</p>
 
 <p><img src="/images/compare-2.jpg">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>2) Speed</p>
 
@@ -113,7 +116,9 @@
 
 <p>Example: If an element is given like this:</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>```</p>
 
@@ -146,7 +151,8 @@ WebElement element = driver.findElement(By.name(&ldquo;Username&rdquo;));</p>
 
 <p>Example: If an element is given like this:</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```
 <!-- html code
 <input class="Username"></input>
@@ -163,6 +169,8 @@ WebElement element = driver.findElement(By.className(&ldquo;Username&rdquo;));</
 <p>Example: If an element is given like this:</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```
 //html code
 <a href="link.html">Name of the Link</a></p>
@@ -203,7 +211,8 @@ WebElement element=driver.findElement(By.linkText("the Link"));
 
 <h4>Solution</h4>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```
 package automationFramework;</p>
 
@@ -284,7 +293,9 @@ driver.getCurrentUrl();
 
 <h3>4)Get Page Source Command</h3>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>Purpose: This command is use to get the source of the last loaded page.</p>
 
@@ -312,7 +323,8 @@ driver.quit();
 
 <p>Purpose: There are some commands is use to refresh the current browser.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <code>
 driver.navigate().refresh();
 driver.get(driver.getCurrentUrl());
@@ -346,7 +358,8 @@ driver.findElement(By.name("s")).sendKeys("\uE035");
 
 <h4>1) Create class &lsquo;PracticeBrowserCommands&rsquo; and copy code below paste to your class and Run this class.</h4>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```
 package automationFramework;
 import java.util.concurrent.TimeUnit;
@@ -441,6 +454,8 @@ driver.navigate().forward();
 <p>Purpose : This command is use to go back to previous page like browser’s back button.</p>
 
 <p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <code>
 driver.navigate().back();
 </code></p>
@@ -465,7 +480,8 @@ driver.navigate().back();
 
 <h4>Solution</h4>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```
 package automationFramework;</p>
 
@@ -531,7 +547,8 @@ public static void main(String[] args) {
 
 <p>Purpose: To get the window handle of the current window.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 <code>
 String  handle= driver.getWindowHandle();//Return a string of alphanumeric window handle
 </code></p>
@@ -548,16 +565,20 @@ Set&lt;String&gt; handle= driver.getWindowHandles();//Return a set of window han
 
 <p>Purpose: WebDriver supports moving between named windows using the “switchTo” method.</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```
 driver.switchTo().window(&ldquo;windowName&rdquo;);</p>
 
 <p>```
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="3378542759" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <p>Alternatively, you can pass a “window handle” to the “switchTo().window()” method. Knowing this, it’s possible to iterate over every open window like so:</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```
 for (String handle : driver.getWindowHandles()) {</p>
 
@@ -570,7 +591,8 @@ for (String handle : driver.getWindowHandles()) {</p>
 
 <p>Switching between windows with Iterators:</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```</p>
 
 <p>driver.findElement(By.id(“id of the link which opens new window”)).click();
@@ -604,7 +626,8 @@ driver.switchTo().frame("frameName");
 <p><code>
 Alert alert = driver.switchTo().alert();
 </code>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="7145934352" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>
+<script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90"  
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script></p>
 
 <h3>Practice Exercise 1</h3>
 
@@ -614,7 +637,8 @@ Alert alert = driver.switchTo().alert();
 
 <p>3) Get Window name (Use GetWindowHandle command)</p>
 
-<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798698216356388" data-ad-slot="9425076351" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<p><script src="https://www.gstatic.com/xads/publisher_badge/contributor_badge.js" data-width="728" data-height="90" 
+data-theme="light" data-pub-name="tabaolan.com" data-pub-id="ca-pub-5798698216356388"></script>
 ```
 package practiceTestCases;
 import java.util.Set;
